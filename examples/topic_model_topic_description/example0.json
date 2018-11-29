@@ -4,7 +4,6 @@
    "topic":1,
    "tp_desc":"FREE DESCRIPTION",
    "meta":"any unstructured meta information",
-   "lang":"fr",
    "word_probs":[  
       {  
          "word":"election",
