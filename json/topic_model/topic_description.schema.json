@@ -4,7 +4,7 @@
   "description": "A representation for each topic (=probability distribution of words) of a topic model.",
   "type": "object",
   "properties": {
-    "lang": {
+    "lg": {
       "type": "string",
       "comment": "https://en.wikipedia.org/wiki/List_of_ISO_639-2_codes"
     },
