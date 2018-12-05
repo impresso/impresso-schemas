@@ -12,6 +12,10 @@
       "type": "string",
       "description": "https://en.wikipedia.org/wiki/List_of_ISO_639-2_codes"
     },
+    "topic_model": {
+      "type": "string",
+      "description": "internal symbolic name of the model, starts with tm"
+    },
     "topic_count": {
       "type": "integer",
       "description": "The number of topics in the topic model"
@@ -29,6 +33,7 @@
     "lang",
     "topics",
     "topic_count",
+    "topic_model",
     "ci_ref"
   ],
   "definitions": {
