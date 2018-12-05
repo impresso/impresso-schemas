@@ -43,8 +43,8 @@
           "maximum": 1
         },
         "t": {
-          "type": "integer",
-         "description": "Topic id, ranging from 0 to topic_count - 1"
+          "type": ["integer", "string"],
+         "description": "Topic id "
         }
       },
       "required": [
