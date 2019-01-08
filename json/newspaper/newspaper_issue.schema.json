@@ -1,75 +1,92 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
 
-    "definitions": {
-        "metadata":{
-            "type": "object",
-            "properties": {
-                "id": {"type": "string"},
-                "l": {"type": "string"},
-                "pp": {
-                    "type": "array",
-                    "items": {
-                        "type": "integer"
-                    }
-                },
-                "t": {"type": "string"},
-                "tp": {"type": "string"}
-            },
-            "required": ["id", "l", "tp"]
-        },
-        "style":{
-            "type": "object",
-            "properties": {
-                "rgb": {
-                    "$ref": "#/definitions/rgbColor"
-                },
-                "f": {"type": "string"},
-                "fs": {"type": "number"},
-                "id": {"type": "integer"}
-            }
-        },
-        "rgbColor": {
-            "type": "array",
-            "items": {
-                "type": "integer"
-            }
-        },
-        "item": {
-            "type": "object",
-            "properties": {
-                "m": {
-                    "$ref": "#/definitions/metadata"
-                }
-            }
-        }
+    "$id":"newspaper_issue.schema.json",
 
-
-    },
-
-    "id": "IssueSchema",
+    "title": "Newspaper Issue",
 
     "type": "object",
 
     "properties": {
-        "id": {"type": "string"},
-        "cdt":{"type": "string"},
+        "id": {
+            "type": "string",
+            "description": "Canonical ID of the newspaper issue (e.g. GDL-1900-01-02-a-i0001)"
+        },
+        "cdt":{
+            "type": "string",
+            "description": "Creation date timestamp (of the JSON file)."
+        },
         "i": {
             "type": "array",
             "items": {
-                "$ref": "#/definitions/item"
-            }
+                "type": "object",
+                "description": "A content item (e.g. article, advertisement, etc.)",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Content item ID (e.g. `GDL-1900-01-02-a-i0001`)."
+                    },
+                    "l": {
+                        "type": "string",
+                        "description": "Language of the content item."
+                    },
+                    "pp": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        },
+                        "description": "Page numbers over which the content item spans."
+                    },
+                    "t": {
+                        "type": "string",
+                        "description": "Title of the content item."
+                    },
+                    "tp": {
+                        "type": "string",
+                        "description": "Type of the content item.",
+                        "enum": ["article", "ad"]
+                    }
+                },
+                "required": ["id", "l", "tp"]
+            },
+            "description": "The content items contained in the newspaper issue."
         },
         "s": {
+            "description": "The text style as defined in the OCR output. \nEach style consists of:\n - a name (`id`)\n - a type-face (`f`)\n - a font-size (`fs`)\n - a color (`rgb`).",
             "type": "array",
             "items": {
-                "$ref": "#/definitions/style"
+                "type": "object",
+                "properties": {
+                    "rgb": {
+                        "type": "array",
+                        "description": "Color of the text (in RGB).",
+                        "items": {
+                            "type": "integer"
+                        },
+                        "minItems":3
+                    },
+                    "f": {
+                        "type": "string",
+                        "description": "Font name"
+                    },
+                    "fs": {
+                        "type": "number",
+                        "description": "Font size"
+                    },
+                    "id": {
+                        "type": "integer",
+                        "description": "Local ID of the style"
+                    }
+                },
+                "required": ["id"]
             }
         },
         "pp": {
             "type": "array",
+            "description": "Canonical IDs of pages in the issue, without file extension (e.g. GDL-1900-01-02-a-p0004).",
             "items": {"type": "string"}
         }
     },
     "required": ["id", "cdt", "i", "pp"]
+
 }
