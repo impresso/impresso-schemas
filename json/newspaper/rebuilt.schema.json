@@ -1,0 +1,124 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/product.schema.json",
+  "title": "Rebuilt (to change)",
+  "description": "A newspaper content item",
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The unique identifier for a content item (CI)",
+      "type": "string"
+    },
+    "s3v": {
+      "description": "S3 version ID of the corresponding issue.json file",
+      "type": "string"
+    },
+    "tp": {
+      "description": "content item type (ar, ad)",
+      "type": "string"
+    },
+    "cc": {
+      "description": "True if image box coordinates are known to be correct, False otherwise",
+      "type": "boolean"
+    },
+    "olr": {
+      "description": "True if optical layout recognition was applied to the issue this content item originates from.",
+      "type": "boolean"
+    },
+    "pp": {
+      "description": "array of page numbers over which the CI spans; it's the physical page number issue-based, as we get it from the OCR.",
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 1
+    },
+    "d": {
+      "description": "issue date (yyyy-mm-dd)",
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "ts": {
+      "description": "timestamp of creation of the rebuilt JSON (e.g. '2018-09-18T08:00:08Z')",
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+    },
+    "lg": {
+      "description": "two letter language code",
+      "type": "string",
+      "pattern": "^[a-z]{2}$"
+    },
+    "tp": {
+      "description": "content item type (e.g. 'ar' for article, 'ad' for advertisement)",
+      "type": "string"
+    },
+    "ft": {
+      "description": "the rebuilt fulltext",
+      "type": "string"
+    },
+    "lb": {
+      "description": "text offsets of physical line breaks (relative to 'ft' field)",
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "pb": {
+      "description": "text offsets of physical paragraph breaks  (relative to 'ft' field)",
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "rb": {
+      "description": "text offsets of page regions (relative to 'ft' field)",
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "ppreb": {
+      "description": "a list of rebuilt pages",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "canonical ID",
+            "type": "string"
+          },
+          "n": {
+            "description": "page number",
+            "type": "number"
+          },
+          "t": {
+            "description": "a list of tokens",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "c": {
+                  "description": "page coordinates of token",
+                  "type": "array",
+                  "maxItems": 4,
+                  "minItems": 4
+                },
+                "s": {
+                  "description": "offset start (relative to ft field)",
+                  "type": "number"
+                },
+                "l": {
+                  "description": "token length",
+                  "type": "number"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "required": [
+      "id"
+    ]
+  }
+}
