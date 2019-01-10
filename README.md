@@ -40,3 +40,11 @@ later on it will be simply:
 ```bash
 make docs
 ```
+
+## License
+
+TBD
+
+## Credits
+
+The schemas resulted from the work of [Simon Clematide](https://github.com/simon-clematide), [Maud Ehrmann](https://github.com/e-maud) and [Matteo Romanello](http://github.com/mromanello/) in the context of the Impresso project, funded by the [SNF Sinergia Grant n. 173719](http://p3.snf.ch/project-173719).
