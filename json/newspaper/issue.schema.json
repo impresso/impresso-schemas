@@ -1,12 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-
-    "$id":"newspaper_issue.schema.json",
-
+    "$id":"issue.schema.json",
     "title": "Newspaper Issue",
-
     "type": "object",
-
     "properties": {
         "id": {
             "type": "string",
@@ -88,5 +84,4 @@
         }
     },
     "required": ["id", "cdt", "i", "pp"]
-
 }

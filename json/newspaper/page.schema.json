@@ -1,83 +1,91 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-
-    "definitions": {
-
-        "region": {
-            "type": "object",
-            "properties": {
-                "c": {
-                    "$ref": "#/definitions/coordinates"
-                },
-                "p": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/paragraph"
-                    }
-                },
-                "pOf": { "type": "string" }
-            },
-            "required": ["c"]
-        },
-        "line":{
-            "type": "object",
-            "properties": {
-                "c": {
-                    "$ref": "#/definitions/coordinates"
-                },
-                "t": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/token"
-                    }
-                }
-            },
-            "required": ["c", "t"]
-        },
-        "token":{
-            "type": "object",
-            "properties": {
-                "c": {
-                    "$ref": "#/definitions/coordinates"
-                },
-                "tx": {"type": "string"},
-                "s": {"type": "integer"}
-            },
-            "required": ["c", "tx"]
-        },
-        "coordinates": {
-            "type": "array",
-            "items": {
-                "type": "integer"
-            }
-        },
-        "paragraph": {
-            "type": "object",
-            "properties": {
-                "l": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/line"
-                    }
-                }
-            }
-        }
-
-
-    },
-
-    "id": "PageSchema",
-
+    "$id":"page.schema.json",
+    "title": "Newspaper Page",
     "type": "object",
-
     "properties": {
-        "id": {"type": "string"},
-        "cc":{"type": "boolean"},
-        "cdt":{"type": "string"},
+        "id": {
+            "type": "string",
+            "description": "Canonical ID of the newspaper page (e.g. GDL-1900-01-02-a-p0001)"
+        },
+        "cc":{
+            "type": "boolean",
+            "description": "Flag indicating whether the legacy coordinates have been converted into IIIF-compliant ones."
+        },
+        "cdt":{
+            "type": "string",
+            "description": "Creation date timestamp (of the JSON file)."
+        },
         "r": {
             "type": "array",
+            "description": "Page regions.",
             "items": {
-                "$ref": "#/definitions/region"
+                "type": "object",
+                "description":"Page region.",
+                "properties": {
+                    "c": {
+                        "type": "array",
+                        "description": "Coordinates of image-region.",
+                        "minItems":4,
+                        "items": {
+                            "type": "integer"
+                        }
+                    },
+                    "p": {
+                        "type": "array",
+                        "description": "Text paragraphs.",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "l": {
+                                    "type": "array",
+                                    "description": "Lines of text (belonging to a given paragraph)",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "c": {
+                                                "type": "array",
+                                                "description": "Coordinates of image-region.",
+                                                "minItems":4,
+                                                "items": {
+                                                    "type": "integer"
+                                                }
+                                            },
+                                            "t": {
+                                                "type": "array",
+                                                "description": "Tokens (as detected by the OCR engine).",
+                                                "items": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "c": {
+                                                            "$ref": "#/definitions/coordinates"
+                                                        },
+                                                        "tx": {
+                                                            "type": "string",
+                                                            "description": "Token surface form."
+                                                        },
+                                                        "s": {
+                                                            "type": "integer",
+                                                            "description": "A style ID as defined in issue.schema.json/s"
+                                                        }
+                                                    },
+                                                    "required": ["c", "tx"]
+                                                }
+                                            }
+                                        },
+                                        "required": ["c", "t"]
+                                    }
+                                }
+                            },
+                            "required": ["l"]
+                        }
+                    },
+                    "pOf": {
+                        "type": "string",
+                        "description": "The canonical ID of the content item to which the page region belongs."
+                    }
+                },
+                "required": ["c", "p"]
             }
         }
     },
