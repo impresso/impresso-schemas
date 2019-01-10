@@ -2,7 +2,7 @@
 # Newspaper Issue Schema
 
 ```
-newspaper_issue.schema.json
+issue.schema.json
 ```
 
 
