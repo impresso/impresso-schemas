@@ -2,6 +2,16 @@
 
 Repository of JSON schemas used in the [Impresso project](https://impresso-project.ch/).
 
+We define schemas for:
+
+- Newspaper
+    - [Issue](docs/issue.schema.md)
+    - [Page](docs/page.schema.md)
+    - [Rebuilt](docs/rebuilt.schema.md)
+- Topic Model
+    - [Topic Assignment](docs/topic_assignment.schema.md)
+    - [Topic Description](docs/topic_description.schema.md)
+
 ## File organisation
 
  - `json/` subdirectory for JSON schemas
