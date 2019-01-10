@@ -63,125 +63,65 @@ All items must be of the type:
 
 | Property | Type | Required |
 |----------|------|----------|
-| `id`| string | **Required** |
-| `l`| string | **Required** |
-| `pp`| array | Optional |
-| `t`| string | Optional |
-| `tp`| string | **Required** |
+| `m`| object | **Required** |
 
 
 
-#### id
+#### m
 
-Content item ID (e.g. `GDL-1900-01-02-a-i0001`).
+Metadata about the content item.
 
-`id`
+`m`
 
 * is **required**
-* type: `string`
-
-##### id Type
-
-
-`string`
-
-
-
-
-
-
-
-
-
-#### l
-
-Language of the content item.
-
-`l`
-
-* is **required**
-* type: `string`
-
-##### l Type
-
-
-`string`
-
-
-
-
-
-
-
-
-
-#### pp
-
-Page numbers over which the content item spans.
-
-`pp`
-
-* is optional
-* type: `integer[]`
-
-
-##### pp Type
-
-
-Array type: `integer[]`
-
-All items must be of the type:
-`integer`
-
-
-
-
-
-
-
-
-
-
-
-
-#### t
-
-Title of the content item.
-
-`t`
-
-* is optional
-* type: `string`
-
-##### t Type
-
-
-`string`
-
-
-
-
-
-
-
-
-
-#### tp
-
-Type of the content item.
-
-`tp`
-
-* is **required**
-* type: `enum`
-
-The value of this property **must** be equal to one of the [known values below](#i-known-values).
-
-##### tp Known Values
-| Value | Description |
-|-------|-------------|
-| `article` |  |
-| `ad` |  |
+* type: `object`
+
+##### m Type
+
+Unknown type `object`.
+
+```json
+{
+  "type": "object",
+  "description": "Metadata about the content item.",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Content item ID (e.g. `GDL-1900-01-02-a-i0001`)."
+    },
+    "l": {
+      "type": "string",
+      "description": "Language of the content item."
+    },
+    "pp": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      },
+      "description": "Page numbers over which the content item spans."
+    },
+    "t": {
+      "type": "string",
+      "description": "Title of the content item."
+    },
+    "tp": {
+      "type": "string",
+      "description": "Type of the content item.",
+      "enum": [
+        "article",
+        "ad"
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "l",
+    "pp",
+    "tp"
+  ],
+  "simpletype": "`object`"
+}
+```
 
 
 

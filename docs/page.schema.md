@@ -238,7 +238,7 @@ All items must be of the type:
 
 | Property | Type | Required |
 |----------|------|----------|
-| `c`|  | **Required** |
+| `c`| array | **Required** |
 | `s`| integer | Optional |
 | `tx`| string | **Required** |
 
@@ -246,17 +246,26 @@ All items must be of the type:
 
 #### c
 
-undefined
+Coordinates of image-region.
 
 `c`
 
 * is **required**
-* type: reference
+* type: `integer[]`* at least `4` items in the array
+
 
 ##### c Type
 
 
-* []() – `#/definitions/coordinates`
+Array type: `integer[]`
+
+All items must be of the type:
+`integer`
+
+
+
+
+
 
 
 

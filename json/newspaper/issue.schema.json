@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "$id":"issue.schema.json",
+    "$id": "issue.schema.json",
     "title": "Newspaper Issue",
     "type": "object",
     "properties": {
@@ -8,7 +8,7 @@
             "type": "string",
             "description": "Canonical ID of the newspaper issue (e.g. GDL-1900-01-02-a-i0001)"
         },
-        "cdt":{
+        "cdt": {
             "type": "string",
             "description": "Creation date timestamp (of the JSON file)."
         },
@@ -18,32 +18,39 @@
                 "type": "object",
                 "description": "A content item (e.g. article, advertisement, etc.)",
                 "properties": {
-                    "id": {
-                        "type": "string",
-                        "description": "Content item ID (e.g. `GDL-1900-01-02-a-i0001`)."
-                    },
-                    "l": {
-                        "type": "string",
-                        "description": "Language of the content item."
-                    },
-                    "pp": {
-                        "type": "array",
-                        "items": {
-                            "type": "integer"
+                    "m": {
+                        "type":"object",
+                        "description": "Metadata about the content item.",
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "description": "Content item ID (e.g. `GDL-1900-01-02-a-i0001`)."
+                            },
+                            "l": {
+                                "type": "string",
+                                "description": "Language of the content item."
+                            },
+                            "pp": {
+                                "type": "array",
+                                "items": {
+                                    "type": "integer"
+                                },
+                                "description": "Page numbers over which the content item spans."
+                            },
+                            "t": {
+                                "type": "string",
+                                "description": "Title of the content item."
+                            },
+                            "tp": {
+                                "type": "string",
+                                "description": "Type of the content item.",
+                                "enum": ["article", "ad"]
+                            }
                         },
-                        "description": "Page numbers over which the content item spans."
-                    },
-                    "t": {
-                        "type": "string",
-                        "description": "Title of the content item."
-                    },
-                    "tp": {
-                        "type": "string",
-                        "description": "Type of the content item.",
-                        "enum": ["article", "ad"]
+                        "required": ["id", "l", "pp", "tp"]
                     }
                 },
-                "required": ["id", "l", "tp"]
+                "required": ["m"]
             },
             "description": "The content items contained in the newspaper issue."
         },
@@ -59,7 +66,7 @@
                         "items": {
                             "type": "integer"
                         },
-                        "minItems":3
+                        "minItems": 3
                     },
                     "f": {
                         "type": "string",
@@ -80,7 +87,9 @@
         "pp": {
             "type": "array",
             "description": "Canonical IDs of pages in the issue, without file extension (e.g. GDL-1900-01-02-a-p0004).",
-            "items": {"type": "string"}
+            "items": {
+                "type": "string"
+            }
         }
     },
     "required": ["id", "cdt", "i", "pp"]

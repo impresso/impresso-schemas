@@ -58,7 +58,12 @@
                                                     "type": "object",
                                                     "properties": {
                                                         "c": {
-                                                            "$ref": "#/definitions/coordinates"
+                                                            "type": "array",
+                                                            "description": "Coordinates of image-region.",
+                                                            "minItems":4,
+                                                            "items": {
+                                                                "type": "integer"
+                                                            }
                                                         },
                                                         "tx": {
                                                             "type": "string",
