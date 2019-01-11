@@ -19,6 +19,7 @@
                 "description": "A content item (e.g. article, advertisement, etc.)",
                 "properties": {
                     "m": {
+                        "description": "Metadata about the content item.",
                         "$ref": "#/definitions/metadata"
                     }
                 },
@@ -68,7 +69,6 @@
     "definitions":{
         "metadata": {
             "type":"object",
-            "description": "Metadata about the content item.",
             "properties": {
                 "id": {
                     "type": "string",

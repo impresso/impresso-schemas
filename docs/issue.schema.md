@@ -69,7 +69,7 @@ All items must be of the type:
 
 #### m
 
-undefined
+Metadata about the content item.
 
 `m`
 
