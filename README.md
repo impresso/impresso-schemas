@@ -7,7 +7,7 @@ We define schemas for:
 - Newspaper
     - [Issue](docs/issue.schema.md)
     - [Page](docs/page.schema.md)
-    - [Rebuilt](docs/rebuilt.schema.md)
+    - [Content Item](docs/contentitem.schema.md)
 - Topic Model
     - [Topic Assignment](docs/topic_assignment.schema.md)
     - [Topic Description](docs/topic_description.schema.md)
