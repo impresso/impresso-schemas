@@ -7,6 +7,7 @@ import os
 import json
 
 
+# note: pjs is insensitive to json shcema versions
 def test_get_issue_schema():
 
     schema_path = "../json/newspaper/issue.schema.json"
