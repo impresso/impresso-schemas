@@ -1,5 +1,5 @@
 {
-    "$schema": "http://json-schema.org/draft-04/schema#",
+    "$schema": "http://json-schema.org/draft-06/schema#",
     "$id": "issue.schema.json",
     "title": "Newspaper Issue",
     "type": "object",
