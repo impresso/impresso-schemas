@@ -9,7 +9,7 @@ A representation for the probabilistic assignments of the topics of a topic mode
 
 | Abstract | Extensible | Status | Identifiable | Custom Properties | Additional Properties | Defined In |
 |----------|------------|--------|--------------|-------------------|-----------------------|------------|
-| Can be instantiated | Yes | Experimental | No | Forbidden | Permitted |  |
+| Can be instantiated | Yes | Experimental | No | Forbidden | Permitted | [topic_assignment.schema.json](topic_assignment.schema.json) |
 
 #  Properties
 

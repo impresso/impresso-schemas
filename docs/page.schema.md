@@ -8,7 +8,7 @@ page.schema.json
 
 | Abstract | Extensible | Status | Identifiable | Custom Properties | Additional Properties | Defined In |
 |----------|------------|--------|--------------|-------------------|-----------------------|------------|
-| Can be instantiated | No | Experimental | No | Forbidden | Permitted |  |
+| Can be instantiated | No | Experimental | No | Forbidden | Permitted | [page.schema.json](page.schema.json) |
 
 # Newspaper Page Properties
 

@@ -9,7 +9,7 @@ A newspaper content item (e.g. article, advertisement, etc.).
 
 | Abstract | Extensible | Status | Identifiable | Custom Properties | Additional Properties | Defined In |
 |----------|------------|--------|--------------|-------------------|-----------------------|------------|
-| Can be instantiated | No | Experimental | No | Forbidden | Permitted |  |
+| Can be instantiated | No | Experimental | No | Forbidden | Permitted | [contentitem.schema.json](contentitem.schema.json) |
 
 # Content Item Properties
 

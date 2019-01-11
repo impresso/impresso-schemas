@@ -8,7 +8,7 @@ issue.schema.json
 
 | Abstract | Extensible | Status | Identifiable | Custom Properties | Additional Properties | Defined In |
 |----------|------------|--------|--------------|-------------------|-----------------------|------------|
-| Can be instantiated | Yes | Experimental | No | Forbidden | Permitted |  |
+| Can be instantiated | Yes | Experimental | No | Forbidden | Permitted | [issue.schema.json](issue.schema.json) |
 
 # Newspaper Issue Properties
 

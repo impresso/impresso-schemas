@@ -9,7 +9,7 @@ A representation for each topic (=probability distribution of words) of a topic 
 
 | Abstract | Extensible | Status | Identifiable | Custom Properties | Additional Properties | Defined In |
 |----------|------------|--------|--------------|-------------------|-----------------------|------------|
-| Can be instantiated | Yes | Experimental | No | Forbidden | Permitted |  |
+| Can be instantiated | Yes | Experimental | No | Forbidden | Permitted | [topic_description.schema.json](topic_description.schema.json) |
 
 #  Properties
 
