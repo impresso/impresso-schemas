@@ -43,7 +43,7 @@ make docs
 
 ## License
 
-TBD
+The content in this repository is licensed under an MIT license.
 
 ## Credits
 
