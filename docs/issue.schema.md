@@ -8,7 +8,7 @@ issue.schema.json
 
 | Abstract | Extensible | Status | Identifiable | Custom Properties | Additional Properties | Defined In |
 |----------|------------|--------|--------------|-------------------|-----------------------|------------|
-| Can be instantiated | No | Experimental | No | Forbidden | Permitted |  |
+| Can be instantiated | Yes | Experimental | No | Forbidden | Permitted |  |
 
 # Newspaper Issue Properties
 
@@ -63,65 +63,23 @@ All items must be of the type:
 
 | Property | Type | Required |
 |----------|------|----------|
-| `m`| object | **Required** |
+| `m`|  | **Required** |
 
 
 
 #### m
 
-Metadata about the content item.
+undefined
 
 `m`
 
 * is **required**
-* type: `object`
+* type: reference
 
 ##### m Type
 
-Unknown type `object`.
 
-```json
-{
-  "type": "object",
-  "description": "Metadata about the content item.",
-  "properties": {
-    "id": {
-      "type": "string",
-      "description": "Content item ID (e.g. `GDL-1900-01-02-a-i0001`)."
-    },
-    "l": {
-      "type": "string",
-      "description": "Language of the content item."
-    },
-    "pp": {
-      "type": "array",
-      "items": {
-        "type": "integer"
-      },
-      "description": "Page numbers over which the content item spans."
-    },
-    "t": {
-      "type": "string",
-      "description": "Title of the content item."
-    },
-    "tp": {
-      "type": "string",
-      "description": "Type of the content item.",
-      "enum": [
-        "article",
-        "ad"
-      ]
-    }
-  },
-  "required": [
-    "id",
-    "l",
-    "pp",
-    "tp"
-  ],
-  "simpletype": "`object`"
-}
-```
+* []() – `#/definitions/metadata`
 
 
 
@@ -314,6 +272,77 @@ All items must be of the type:
 
 
 
+
+
+
+
+# Newspaper Issue Definitions
+
+| Property | Type | Group |
+|----------|------|-------|
+| [l](#l) | `string` | `issue.schema.json#/definitions/metadata` |
+| [t](#t) | `string` | `issue.schema.json#/definitions/metadata` |
+| [tp](#tp) | `enum` | `issue.schema.json#/definitions/metadata` |
+
+## l
+
+Language of the content item.
+
+`l`
+
+* is optional
+* type: `string`
+* defined in this schema
+
+### l Type
+
+
+`string`
+
+
+
+
+
+
+
+## t
+
+Title of the content item.
+
+`t`
+
+* is optional
+* type: `string`
+* defined in this schema
+
+### t Type
+
+
+`string`
+
+
+
+
+
+
+
+## tp
+
+Type of the content item.
+
+`tp`
+
+* is optional
+* type: `enum`
+* defined in this schema
+
+The value of this property **must** be equal to one of the [known values below](#tp-known-values).
+
+### tp Known Values
+| Value | Description |
+|-------|-------------|
+| `article` |  |
+| `ad` |  |
 
 
 

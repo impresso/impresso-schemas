@@ -19,35 +19,7 @@
                 "description": "A content item (e.g. article, advertisement, etc.)",
                 "properties": {
                     "m": {
-                        "type":"object",
-                        "description": "Metadata about the content item.",
-                        "properties": {
-                            "id": {
-                                "type": "string",
-                                "description": "Content item ID (e.g. `GDL-1900-01-02-a-i0001`)."
-                            },
-                            "l": {
-                                "type": "string",
-                                "description": "Language of the content item."
-                            },
-                            "pp": {
-                                "type": "array",
-                                "items": {
-                                    "type": "integer"
-                                },
-                                "description": "Page numbers over which the content item spans."
-                            },
-                            "t": {
-                                "type": "string",
-                                "description": "Title of the content item."
-                            },
-                            "tp": {
-                                "type": "string",
-                                "description": "Type of the content item.",
-                                "enum": ["article", "ad"]
-                            }
-                        },
-                        "required": ["id", "l", "pp", "tp"]
+                        "$ref": "#/definitions/metadata"
                     }
                 },
                 "required": ["m"]
@@ -92,5 +64,38 @@
             }
         }
     },
-    "required": ["id", "cdt", "i", "pp"]
+    "required": ["id", "cdt", "i", "pp"],
+    "definitions":{
+        "metadata": {
+            "type":"object",
+            "description": "Metadata about the content item.",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Content item ID (e.g. `GDL-1900-01-02-a-i0001`)."
+                },
+                "l": {
+                    "type": "string",
+                    "description": "Language of the content item."
+                },
+                "pp": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "Page numbers over which the content item spans."
+                },
+                "t": {
+                    "type": "string",
+                    "description": "Title of the content item."
+                },
+                "tp": {
+                    "type": "string",
+                    "description": "Type of the content item.",
+                    "enum": ["article", "ad"]
+                }
+            },
+            "required": ["id", "l", "pp", "tp"]
+        }
+    }
 }
