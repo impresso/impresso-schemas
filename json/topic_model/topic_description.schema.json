@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$id": "https://impresso-project.ch/topic_model_topic_description.schema.json",
+  "description": "A representation for each topic (=probability distribution of words) of a topic model.",
+  "type": "object",
+  "properties": {
+    "lg": {
+      "type": "string",
+      "comment": "https://en.wikipedia.org/wiki/List_of_ISO_639-2_codes"
+    },
+    "topic": {
+      "type": "integer"
+    },
+    "topic_model": {
+      "type": "string",
+      "comment": "short identifier for model"
+    },
+    "topic_description": {
+      "type": "string",
+      "comment": "free conceptual description of the topic"
+    },
+    "meta": {
+      "type": "string",
+      "comment": "any meta information about the topic modeling tool, corpus etc."
+    },
+    "word_probs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/word_prob"
+      }
+    }
+  },
+  "required": [
+    "topic",
+    "word_probs"
+  ],
+  "definitions": {
+    "word_prob": {
+      "description": "A (partial) probability distribution of words for a topic.",
+      "type": "object",
+      "properties": {
+        "word": {
+          "type": "string"
+        },
+        "prob": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      },
+      "required": [
+        "word",
+        "prob"
+      ]
+    }
+  }
+}

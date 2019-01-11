@@ -1,0 +1,18 @@
+{  
+   "lang":"fr",
+   "topic_model":"tm001",
+   "topic":1,
+   "tp_desc":"FREE DESCRIPTION",
+   "meta":"any unstructured meta information",
+   "lang":"fr",
+   "word_probs":[  
+      {  
+         "word":"election",
+         "prob":0.02
+      },
+      {  
+         "word":"voter",
+         "prob":4.1493775933609963E-4
+      }
+   ]
+}
