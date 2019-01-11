@@ -2,7 +2,7 @@
 #  Schema
 
 ```
-https://impresso-project.ch/topic_model_topic_description.schema.json
+https://impresso.github.io/impresso-schemas/json/topic_model/topic_description.schema.json
 ```
 
 A representation for each topic (=probability distribution of words) of a topic model.
@@ -151,8 +151,8 @@ All items must be of the type:
 
 | Property | Type | Group |
 |----------|------|-------|
-| [prob](#prob) | `number` | `https://impresso-project.ch/topic_model_topic_description.schema.json#/definitions/word_prob` |
-| [word](#word) | `string` | `https://impresso-project.ch/topic_model_topic_description.schema.json#/definitions/word_prob` |
+| [prob](#prob) | `number` | `https://impresso.github.io/impresso-schemas/json/topic_model/topic_description.schema.json#/definitions/word_prob` |
+| [word](#word) | `string` | `https://impresso.github.io/impresso-schemas/json/topic_model/topic_description.schema.json#/definitions/word_prob` |
 
 ## prob
 

@@ -2,9 +2,10 @@
 # Newspaper Page Schema
 
 ```
-page.schema.json
+https://impresso.github.io/impresso-schemas/json/newspaper/page.schema.json
 ```
 
+Physical representation of a newspaper page as recognized by a given OCR engine.
 
 | Abstract | Extensible | Status | Identifiable | Custom Properties | Additional Properties | Defined In |
 |----------|------------|--------|--------------|-------------------|-----------------------|------------|

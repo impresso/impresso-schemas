@@ -2,9 +2,10 @@
 # Newspaper Issue Schema
 
 ```
-issue.schema.json
+https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json
 ```
 
+Logical representation of the contents of a newspaper issue.
 
 | Abstract | Extensible | Status | Identifiable | Custom Properties | Additional Properties | Defined In |
 |----------|------------|--------|--------------|-------------------|-----------------------|------------|
@@ -280,9 +281,9 @@ All items must be of the type:
 
 | Property | Type | Group |
 |----------|------|-------|
-| [l](#l) | `string` | `issue.schema.json#/definitions/metadata` |
-| [t](#t) | `string` | `issue.schema.json#/definitions/metadata` |
-| [tp](#tp) | `enum` | `issue.schema.json#/definitions/metadata` |
+| [l](#l) | `string` | `https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/definitions/metadata` |
+| [t](#t) | `string` | `https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/definitions/metadata` |
+| [tp](#tp) | `enum` | `https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/definitions/metadata` |
 
 ## l
 

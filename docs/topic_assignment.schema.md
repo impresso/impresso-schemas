@@ -2,7 +2,7 @@
 #  Schema
 
 ```
-https://impresso-project.ch/topic_model_topic_assignment.schema.json
+https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json
 ```
 
 A representation for the probabilistic assignments of the topics of a topic model to content items.
@@ -135,8 +135,8 @@ All items must be of the type:
 
 | Property | Type | Group |
 |----------|------|-------|
-| [p](#p) | `number` | `https://impresso-project.ch/topic_model_topic_assignment.schema.json#/definitions/topic` |
-| [t](#t) | complex | `https://impresso-project.ch/topic_model_topic_assignment.schema.json#/definitions/topic` |
+| [p](#p) | `number` | `https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/definitions/topic` |
+| [t](#t) | complex | `https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/definitions/topic` |
 
 ## p
 

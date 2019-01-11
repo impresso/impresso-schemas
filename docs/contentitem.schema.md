@@ -2,7 +2,7 @@
 # Content Item Schema
 
 ```
-http://example.com/product.schema.json
+https://impresso.github.io/impresso-schemas/json/newspaper/contentitem.schema.json
 ```
 
 A newspaper content item (e.g. article, advertisement, etc.).
