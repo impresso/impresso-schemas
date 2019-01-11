@@ -1,6 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-06/schema#",
-    "$id": "issue.schema.json",
+    "$id": "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json",
+    "description": "Logical representation of the contents of a newspaper issue.",
     "title": "Newspaper Issue",
     "type": "object",
     "properties": {

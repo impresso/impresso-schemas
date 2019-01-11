@@ -1,7 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-06/schema#",
-    "$id":"page.schema.json",
+    "$id":"https://impresso.github.io/impresso-schemas/json/newspaper/page.schema.json",
     "title": "Newspaper Page",
+    "description": "Physical representation of a newspaper page as recognized by a given OCR engine.",
     "type": "object",
     "properties": {
         "id": {
