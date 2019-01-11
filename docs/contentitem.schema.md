@@ -1,34 +1,34 @@
 
-# Rebuilt (to change) Schema
+# Content Item Schema
 
 ```
 http://example.com/product.schema.json
 ```
 
-A newspaper content item
+A newspaper content item (e.g. article, advertisement, etc.).
 
 | Abstract | Extensible | Status | Identifiable | Custom Properties | Additional Properties | Defined In |
 |----------|------------|--------|--------------|-------------------|-----------------------|------------|
 | Can be instantiated | No | Experimental | No | Forbidden | Permitted |  |
 
-# Rebuilt (to change) Properties
+# Content Item Properties
 
 | Property | Type | Required | Defined by |
 |----------|------|----------|------------|
-| [cc](#cc) | `boolean` | Optional | Rebuilt (to change) (this schema) |
-| [d](#d) | `string` | Optional | Rebuilt (to change) (this schema) |
-| [ft](#ft) | `string` | Optional | Rebuilt (to change) (this schema) |
-| [id](#id) | `string` | **Required** | Rebuilt (to change) (this schema) |
-| [lb](#lb) | `number[]` | Optional | Rebuilt (to change) (this schema) |
-| [lg](#lg) | `string` | Optional | Rebuilt (to change) (this schema) |
-| [olr](#olr) | `boolean` | Optional | Rebuilt (to change) (this schema) |
-| [pb](#pb) | `number[]` | Optional | Rebuilt (to change) (this schema) |
-| [pp](#pp) | `number[]` | Optional | Rebuilt (to change) (this schema) |
-| [ppreb](#ppreb) | `object[]` | Optional | Rebuilt (to change) (this schema) |
-| [rb](#rb) | `number[]` | Optional | Rebuilt (to change) (this schema) |
-| [s3v](#s3v) | `string` | Optional | Rebuilt (to change) (this schema) |
-| [tp](#tp) | `string` | Optional | Rebuilt (to change) (this schema) |
-| [ts](#ts) | `string` | Optional | Rebuilt (to change) (this schema) |
+| [cc](#cc) | `boolean` | Optional | Content Item (this schema) |
+| [d](#d) | `string` | Optional | Content Item (this schema) |
+| [ft](#ft) | `string` | Optional | Content Item (this schema) |
+| [id](#id) | `string` | **Required** | Content Item (this schema) |
+| [lb](#lb) | `number[]` | Optional | Content Item (this schema) |
+| [lg](#lg) | `string` | Optional | Content Item (this schema) |
+| [olr](#olr) | `boolean` | Optional | Content Item (this schema) |
+| [pb](#pb) | `number[]` | Optional | Content Item (this schema) |
+| [pp](#pp) | `number[]` | Optional | Content Item (this schema) |
+| [ppreb](#ppreb) | `object[]` | Optional | Content Item (this schema) |
+| [rb](#rb) | `number[]` | Optional | Content Item (this schema) |
+| [s3v](#s3v) | `string` | Optional | Content Item (this schema) |
+| [tp](#tp) | `string` | Optional | Content Item (this schema) |
+| [ts](#ts) | `string` | Optional | Content Item (this schema) |
 | `*` | any | Additional | this schema *allows* additional properties |
 
 ## cc
@@ -497,7 +497,7 @@ content item type (e.g. 'ar' for article, 'ad' for advertisement)
 
 ## ts
 
-timestamp of creation of the rebuilt JSON (e.g. '2018-09-18T08:00:08Z')
+timestamp of creation of the JSON file (e.g. '2018-09-18T08:00:08Z')
 
 `ts`
 

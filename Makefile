@@ -15,7 +15,7 @@ clean-docs:
 docs-v4:
 	jsonschema2md -d json/newspaper/issue.schema.json -v 04 -o docs/
 	jsonschema2md -d json/newspaper/page.schema.json -v 04 -o docs/
-	jsonschema2md -d json/newspaper/rebuilt.schema.json -v 04 -o docs/
+	jsonschema2md -d json/newspaper/contentitem.schema.json -v 04 -o docs/
 
 docs-v6:
 	jsonschema2md -d json/topic_model/topic_assignment.schema.json -v 06 -o docs
