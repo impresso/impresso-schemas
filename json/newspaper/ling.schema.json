@@ -1,141 +1,139 @@
-  1 {
-  2   "definitions": {},
-  3   "$schema": "http://json-schema.org/draft-07/schema#",
-  4   "$id": "https://impresso.github.io/impresso-schemas/json/newspaper/ling.schema.json",
-  5   "type": "object",
-  6   "title": "The Linguistic Annotation Schema",
-	  "description": "Schema for validation of linguistic annotation as produced by spacy for newspaper data"
-  7   "required": [
-  8     "id",
-  9     "sents"
- 10   ],
- 11   "properties": {
- 12     "id": {
- 13       "$id": "#/properties/id",
- 14       "type": "string",
- 15       "title": "The Id Schema",
-		  "description": "id of text"
- 16       "default": "",
- 17       "examples": [
- 18         "NZZ-1794-07-26-a-i0002"
- 19       ],
- 20       "pattern": "^(.*)$"
- 21     },
- 22     "sents": {
- 23       "$id": "#/properties/sents",
- 24       "type": "array",
- 25       "title": "The Sents Schema",
+{
+   "definitions": {},
+   "$schema": "http://json-schema.org/draft-07/schema#",
+   "$id": "https://impresso.github.io/impresso-schemas/json/newspaper/ling.schema.json",
+   "type": "object",
+   "description": "Schema for validation of linguistic annotation as produced by spacy for newspaper data"
+   "required": [
+     "id",
+     "sents"
+   ],
+   "properties": {
+     "id": {
+       "$id": "#/properties/id",
+       "type": "string",
+       "title": "The Id Schema",
+       "description": "id of text",
+       "examples": [
+         "NZZ-1794-07-26-a-i0002"
+       ],
+       "pattern": "^(.*)$"
+     },
+     "sents": {
+       "$id": "#/properties/sents",
+       "type": "array",
+       "title": "The Sents Schema",
 		  "description": "container for sentences (boundaries produced by spacy)",
- 26       "items": {
- 27         "$id": "#/properties/sents/items",
- 28         "type": "object",
- 29         "title": "The Items Schema",
- 30         "required": [
- 31           "sid",
- 32           "tok"
- 33         ],
- 34         "properties": {
- 35           "sid": {
- 36             "$id": "#/properties/sents/items/properties/sid",
- 37             "type": "integer",
- 38             "title": "The Sid Schema",
-                "description": "Sentence ids"
- 40             "examples": [
- 41               1
- 42             ]
- 43           },
- 44           "tok": {
- 45             "$id": "#/properties/sents/items/properties/tok",
- 46             "type": "array",
- 47             "title": "The Tok Schema",
-                "description": "container for tokens"
- 48             "items": {
- 49               "$id": "#/properties/sents/items/properties/tok/items",
- 50               "type": "object",
- 51               "title": "The Items Schema",
- 52               "required": [
- 53                 "tid",
- 54                 "t",
- 55                 "l",
- 56                 "p",
- 57                 "idx",
- 58                 "ner",
- 59                 "iob"
- 60               ],
- 61               "properties": {
- 62                 "tid": {
- 63                   "$id": "#/properties/sents/items/properties/tok/items/properties/tid",
- 64                   "type": "integer",
- 65                   "title": "The Tid Schema",
- 66                   "description": "Token id",
- 67                   "examples": [
- 68                     1
- 69                   ]
- 70                 },
- 71                 "t": {
- 72                   "$id": "#/properties/sents/items/properties/tok/items/properties/t",
- 73                   "type": "string",
- 74                   "title": "The T Schema",
- 75                   "description": "token text",
- 76                   "examples": [
- 77                     "Kumpel"
- 78                   ],
- 79                   "pattern": "^(.*)$"
- 80                 },
- 81                 "l": {
- 82                   "$id": "#/properties/sents/items/properties/tok/items/properties/l",
- 83                   "type": "string",
- 84                   "title": "The L Schema",
-                      "description": "token lemma"
- 86                   "examples": [
- 87                     "Kumpel"
- 88                   ],
- 89                   "pattern": "^(.*)$"
- 90                 },
- 91                 "p": {
- 92                   "$id": "#/properties/sents/items/properties/tok/items/properties/p",
- 93                   "type": "string",
- 94                   "title": "The P Schema",
- 95                   "description": "token lemma",
- 96                   "examples": [
- 97                     "NOUN"
- 98                   ],
- 99                   "pattern": "^(.*)$"
-100                 },
-101                 "idx": {
-102                   "$id": "#/properties/sents/items/properties/tok/items/properties/idx",
-103                   "type": "integer",
-104                   "title": "The Idx Schema",
-                      "description": "character offset corresponding to position in ft element"
-106                   "examples": [
-107                     0
-108                   ]
-109                 },
-110                 "ner": {
-111                   "$id": "#/properties/sents/items/properties/tok/items/properties/ner",
-112                   "type": "string",
-113                   "title": "The Ner Schema",
-114                   "description": "named entity type",
-115                   "examples": [
-116                     "LOC"
-117                   ],
-118                   "pattern": "^(.*)$"
-119                 },
-120                 "iob": {
-121                   "$id": "#/properties/sents/items/properties/tok/items/properties/iob",
-122                   "type": "string",
-123                   "title": "The Iob Schema",
-124                   "description": "continuation of named entities in IOB schema",
-125                   "examples": [
-126                     "B"
-127                   ],
-128                   "pattern": "^(.*)$"
-129                 }
-130               }
-131             }
-132           }
-133         }
-134       }
-135     }
-136   }
-137 }
+       "items": {
+         "$id": "#/properties/sents/items",
+         "type": "object",
+         "title": "The Items Schema",
+         "required": [
+           "sid",
+           "tok"
+         ],
+         "properties": {
+           "sid": {
+             "$id": "#/properties/sents/items/properties/sid",
+             "type": "integer",
+             "title": "The Sid Schema",
+                "description": "Sentence ids",
+             "examples": [
+               1
+             ]
+           },
+           "tok": {
+             "$id": "#/properties/sents/items/properties/tok",
+             "type": "array",
+             "title": "The Tok Schema",
+                "description": "container for tokens",
+             "items": {
+               "$id": "#/properties/sents/items/properties/tok/items",
+               "type": "object",
+               "title": "The Items Schema",
+               "required": [
+                 "tid",
+                 "t",
+                 "l",
+                 "p",
+                 "idx",
+                 "ner",
+                 "iob"
+               ],
+               "properties": {
+                 "tid": {
+                   "$id": "#/properties/sents/items/properties/tok/items/properties/tid",
+                   "type": "integer",
+                   "title": "The Tid Schema",
+                   "description": "Token id",
+                   "examples": [
+                     1
+                   ]
+                 },
+                 "t": {
+                   "$id": "#/properties/sents/items/properties/tok/items/properties/t",
+                   "type": "string",
+                   "title": "The T Schema",
+                   "description": "token text",
+                   "examples": [
+                     "Kumpel"
+                   ],
+                   "pattern": "^(.*)$"
+                 },
+                 "l": {
+                   "$id": "#/properties/sents/items/properties/tok/items/properties/l",
+                   "type": "string",
+                   "title": "The L Schema",
+                   "description": "token lemma",
+                   "examples": [
+                     "Kumpel"
+                   ],
+                   "pattern": "^(.*)$"
+                 },
+                 "p": {
+                   "$id": "#/properties/sents/items/properties/tok/items/properties/p",
+                   "type": "string",
+                   "title": "The P Schema",
+                   "description": "token lemma",
+                   "examples": [
+                     "NOUN"
+                   ],
+                   "pattern": "^(.*)$"
+                 },
+                 "idx": {
+                   "$id": "#/properties/sents/items/properties/tok/items/properties/idx",
+                   "type": "integer",
+                   "title": "The Idx Schema",
+                   "description": "character offset corresponding to position in ft element"
+                   "examples": [
+                     0
+                   ]
+                 },
+                 "ner": {
+                   "$id": "#/properties/sents/items/properties/tok/items/properties/ner",
+                   "type": "string",
+                   "title": "The Ner Schema",
+                   "description": "named entity type",
+                   "examples": [
+                     "LOC"
+                   ],
+                   "pattern": "^(.*)$"
+                 },
+                 "iob": {
+                   "$id": "#/properties/sents/items/properties/tok/items/properties/iob",
+                   "type": "string",
+                   "title": "The Iob Schema",
+                   "description": "continuation of named entities in IOB schema",
+                   "examples": [
+                     "B"
+                   ],
+                   "pattern": "^(.*)$"
+                 }
+               }
+             }
+           }
+         }
+       }
+     }
+   }
+ }
