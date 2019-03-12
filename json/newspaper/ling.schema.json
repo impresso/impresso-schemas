@@ -125,22 +125,12 @@
                     "$id": "#/properties/sents/items/properties/tok/items/properties/ner",
                     "type": "string",
                     "title": "The Ner Schema",
-                    "description": "named entity type",
+                    "description": "named entity type with information about position according to IOB schema",
                     "examples": [
-                      "LOC"
+                      "B-LOC"
                     ],
                     "pattern": "^(.*)$"
                   },
-                  "iob": {
-                    "$id": "#/properties/sents/items/properties/tok/items/properties/iob",
-                    "type": "string",
-                    "title": "The Iob Schema",
-                    "description": "continuation of named entities in IOB schema",
-                    "examples": [
-                      "B"
-                    ],
-                    "pattern": "^(.*)$"
-                  }
                 }
               }
             }
