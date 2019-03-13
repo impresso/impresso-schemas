@@ -1,7 +1,7 @@
 {
   "definitions": {},
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://impresso.github.io/impresso-schemas/json/newspaper/ling.schema.json",
+  "$id": "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json",
   "type": "object",
   "description": "Schema for validation of linguistic annotation as produced by spacy for newspaper data",
   "required": [
