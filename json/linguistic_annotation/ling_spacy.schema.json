@@ -41,7 +41,6 @@
           "type": "object",
           "title": "The Items Schema",
           "required": [
-            "sid",
             "tok"
           ],
           "properties": {
@@ -54,6 +53,15 @@
                 1
               ]
             },
+            "lg": {
+              "$id": "#/properties/sents/items/properties/sid",
+              "type": "string",
+              "title": "The Lg Schema",
+              "description": "ISO language identifier",
+              "examples": [
+                "de"
+              ]
+            },
             "tok": {
               "$id": "#/properties/sents/items/properties/tok",
               "type": "array",
@@ -64,24 +72,10 @@
                 "type": "object",
                 "title": "The Items Schema",
                 "required": [
-                  "tid",
                   "t",
-                  "l",
-                  "p",
-                  "idx",
-                  "ner",
-                  "iob"
+                  "o",
                 ],
                 "properties": {
-                  "tid": {
-                    "$id": "#/properties/sents/items/properties/tok/items/properties/tid",
-                    "type": "integer",
-                    "title": "The Tid Schema",
-                    "description": "Token id",
-                    "examples": [
-                      1
-                    ]
-                  },
                   "t": {
                     "$id": "#/properties/sents/items/properties/tok/items/properties/t",
                     "type": "string",
@@ -112,19 +106,19 @@
                     ],
                     "pattern": "^(.*)$"
                   },
-                  "idx": {
+                  "o": {
                     "$id": "#/properties/sents/items/properties/tok/items/properties/idx",
                     "type": "integer",
-                    "title": "The Idx Schema",
-                    "description": "character offset corresponding to position in ft element",
+                    "title": "The O Schema",
+                    "description": "zero-based character offset corresponding to position in ft element",
                     "examples": [
                       0
                     ]
                   },
-                  "ner": {
+                  "e": {
                     "$id": "#/properties/sents/items/properties/tok/items/properties/ner",
                     "type": "string",
-                    "title": "The Ner Schema",
+                    "title": "The E Schema",
                     "description": "named entity type with information about position according to IOB schema",
                     "examples": [
                       "B-LOC"
