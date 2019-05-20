@@ -9,6 +9,10 @@
             "type": "string",
             "description": "Canonical ID of the newspaper page (e.g. GDL-1900-01-02-a-p0001)"
         },
+        "iiif":{
+          "type": "string",
+          "description": "URI of the IIIF Manifest of the newspaper page image."
+        },
         "cc":{
             "type": "boolean",
             "description": "Flag indicating whether the legacy coordinates have been converted into IIIF-compliant ones."
