@@ -103,6 +103,10 @@
                     "type": "string",
                     "description": "Type of the content item.",
                     "enum": ["article", "ad", "image", "table", "death_notice", "weather"]
+                },
+                "iiif_link": {
+                  "type": "string",
+                  "description": "IIIF image link, depending on content item type (if `tp == image`)"
                 }
             },
             "required": ["id","pp", "tp"]
