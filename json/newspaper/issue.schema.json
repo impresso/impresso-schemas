@@ -96,7 +96,7 @@
                     "enum": ["article", "ad", "image", "table", "death_notice", "weather"]
                 }
             },
-            "required": ["id", "l", "pp", "tp"]
+            "required": ["id","pp", "tp"]
         }
     }
 }
