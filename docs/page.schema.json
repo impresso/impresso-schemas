@@ -1,0 +1,118 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$id": "https://impresso.github.io/impresso-schemas/json/newspaper/page.schema.json",
+    "title": "Newspaper Page",
+    "description": "Physical representation of a newspaper page as recognized by a given OCR engine.",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string",
+            "description": "Canonical ID of the newspaper page (e.g. GDL-1900-01-02-a-p0001)"
+        },
+        "iiif": {
+            "type": "string",
+            "description": "URI of the IIIF Manifest of the newspaper page image."
+        },
+        "cc": {
+            "type": "boolean",
+            "description": "Flag indicating whether the legacy coordinates have been converted into IIIF-compliant ones."
+        },
+        "cdt": {
+            "type": "string",
+            "description": "Creation date timestamp (of the JSON file)."
+        },
+        "r": {
+            "type": "array",
+            "description": "Page regions.",
+            "items": {
+                "type": "object",
+                "description": "Page region.",
+                "properties": {
+                    "c": {
+                        "type": "array",
+                        "description": "Coordinates of image-region.",
+                        "minItems": 4,
+                        "items": {
+                            "type": "integer"
+                        }
+                    },
+                    "p": {
+                        "type": "array",
+                        "description": "Text paragraphs.",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "l": {
+                                    "type": "array",
+                                    "description": "Lines of text (belonging to a given paragraph)",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "c": {
+                                                "type": "array",
+                                                "description": "Coordinates of image-region.",
+                                                "minItems": 4,
+                                                "items": {
+                                                    "type": "integer"
+                                                }
+                                            },
+                                            "t": {
+                                                "type": "array",
+                                                "description": "Tokens (as detected by the OCR engine).",
+                                                "items": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "c": {
+                                                            "type": "array",
+                                                            "description": "Coordinates of image-region.",
+                                                            "minItems": 4,
+                                                            "items": {
+                                                                "type": "integer"
+                                                            }
+                                                        },
+                                                        "tx": {
+                                                            "type": "string",
+                                                            "description": "Token surface form."
+                                                        },
+                                                        "s": {
+                                                            "type": "integer",
+                                                            "description": "A style ID as defined in issue.schema.json/s"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "c",
+                                                        "tx"
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        "required": [
+                                            "c",
+                                            "t"
+                                        ]
+                                    }
+                                }
+                            },
+                            "required": [
+                                "l"
+                            ]
+                        }
+                    },
+                    "pOf": {
+                        "type": "string",
+                        "description": "The canonical ID of the content item to which the page region belongs."
+                    }
+                },
+                "required": [
+                    "c",
+                    "p"
+                ]
+            }
+        }
+    },
+    "required": [
+        "id",
+        "cdt",
+        "r"
+    ]
+}

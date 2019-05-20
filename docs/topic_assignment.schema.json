@@ -1,0 +1,63 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$id": "https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json",
+    "description": "A representation for the probabilistic assignments of the topics of a topic model to content items.",
+    "type": "object",
+    "properties": {
+        "ci_ref": {
+            "type": "string",
+            "description": "Reference to canonical content item id, typically an article"
+        },
+        "lang": {
+            "type": "string",
+            "description": "https://en.wikipedia.org/wiki/List_of_ISO_639-2_codes"
+        },
+        "topic_model": {
+            "type": "string",
+            "description": "internal symbolic name of the model, starts with tm"
+        },
+        "topic_count": {
+            "type": "integer",
+            "description": "The number of topics in the topic model"
+        },
+        "topics": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/topic"
+            },
+            "description": "Sparse representation of topics"
+        }
+    },
+    "required": [
+        "lang",
+        "topics",
+        "topic_count",
+        "topic_model",
+        "ci_ref"
+    ],
+    "definitions": {
+        "topic": {
+            "description": "The probability/proportion of a topic in the document",
+            "type": "object",
+            "properties": {
+                "p": {
+                    "type": "number",
+                    "description": "Probability or proportion of topic",
+                    "minimum": 0,
+                    "maximum": 1
+                },
+                "t": {
+                    "type": [
+                        "integer",
+                        "string"
+                    ],
+                    "description": "Topic id "
+                }
+            },
+            "required": [
+                "p",
+                "t"
+            ]
+        }
+    }
+}
