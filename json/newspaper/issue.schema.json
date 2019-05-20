@@ -93,7 +93,7 @@
                 "tp": {
                     "type": "string",
                     "description": "Type of the content item.",
-                    "enum": ["article", "ad"]
+                    "enum": ["article", "ad", "image", "table", "death_notice", "weather"]
                 }
             },
             "required": ["id", "l", "pp", "tp"]
