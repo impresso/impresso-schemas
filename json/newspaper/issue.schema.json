@@ -7,7 +7,7 @@
     "properties": {
         "id": {
             "type": "string",
-            "description": "Canonical ID of the newspaper issue (e.g. GDL-1900-01-02-a-i0001)"
+            "description": "Canonical ID of the newspaper issue (e.g. GDL-1900-01-02-a)"
         },
         "cdt": {
             "type": "string",
