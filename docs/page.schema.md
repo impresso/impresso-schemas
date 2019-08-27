@@ -101,7 +101,7 @@ All items must be of the type: `object` with following properties:
 
 #### c
 
-Coordinates of image-region.
+Coordinates of image-region, following IIIF regions schema (x, y, width, height).
 
 `c`
 

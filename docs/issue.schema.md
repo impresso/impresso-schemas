@@ -12,11 +12,26 @@ Logical representation of the contents of a newspaper issue.
 
 # Newspaper Issue Definitions
 
-| Property  | Type     | Group                                                                                                |
-| --------- | -------- | ---------------------------------------------------------------------------------------------------- |
-| [l](#l)   | `string` | `https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/definitions/metadata` |
-| [t](#t)   | `string` | `https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/definitions/metadata` |
-| [tp](#tp) | `enum`   | `https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/definitions/metadata` |
+| Property                | Type     | Group                                                                                                |
+| ----------------------- | -------- | ---------------------------------------------------------------------------------------------------- |
+| [iiif_link](#iiif_link) | `string` | `https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/definitions/metadata` |
+| [l](#l)                 | `string` | `https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/definitions/metadata` |
+| [t](#t)                 | `string` | `https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/definitions/metadata` |
+| [tp](#tp)               | `enum`   | `https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/definitions/metadata` |
+
+## iiif_link
+
+IIIF image link, depending on content item type (if `tp == image`)
+
+`iiif_link`
+
+- is optional
+- type: `string`
+- defined in this schema
+
+### iiif_link Type
+
+`string`
 
 ## l
 
@@ -68,6 +83,7 @@ The value of this property **must** be equal to one of the [known values below](
 | `table`        |             |
 | `death_notice` |             |
 | `weather`      |             |
+| `page`         |             |
 
 # Newspaper Issue Properties
 
@@ -157,7 +173,7 @@ A content item (e.g. article, advertisement, etc.)
 
 ## id
 
-Canonical ID of the newspaper issue (e.g. GDL-1900-01-02-a-i0001)
+Canonical ID of the newspaper issue (e.g. GDL-1900-01-02-a)
 
 `id`
 

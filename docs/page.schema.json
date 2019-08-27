@@ -30,7 +30,7 @@
                 "properties": {
                     "c": {
                         "type": "array",
-                        "description": "Coordinates of image-region.",
+                        "description": "Coordinates of image-region, following IIIF regions schema (x, y, width, height).",
                         "minItems": 4,
                         "items": {
                             "type": "integer"
