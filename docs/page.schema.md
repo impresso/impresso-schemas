@@ -223,8 +223,8 @@ stands for 'glue next'). When not specified it is assumed to be `false`.
 
 #### hy
 
-Indicates whether the token constitutes the first part of a hyphenated word. When not specified it is assumed to be
-`false`.
+Indicates whether the token constitutes the former part of a hyphenated word (including hyphen). When not specified it
+is assumed to be `false`.
 
 `hy`
 
@@ -237,7 +237,7 @@ Indicates whether the token constitutes the first part of a hyphenated word. Whe
 
 #### nf
 
-It is specified on the second part of a hyphenated word, and contains its normalized (reconstructed) form.
+It is specified on the latter part(s) of a hyphenated word, and contains its normalized (dehyphenated) form.
 
 `nf`
 
