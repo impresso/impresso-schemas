@@ -186,6 +186,9 @@ All items must be of the type: `object` with following properties:
 | Property | Type    | Required     |
 | -------- | ------- | ------------ |
 | `c`      | array   | **Required** |
+| `gn`     | boolean | Optional     |
+| `hy`     | boolean | Optional     |
+| `nf`     | string  | Optional     |
 | `s`      | integer | Optional     |
 | `tx`     | string  | **Required** |
 
@@ -203,6 +206,47 @@ Coordinates of image-region.
 Array type: `integer[]`
 
 All items must be of the type: `integer`
+
+#### gn
+
+Indicates whether the token is/should be followed by a whitespace. `gn==true` means no white space is required (`gn`
+stands for 'glue next'). When not specified it is assumed to be `false`.
+
+`gn`
+
+- is optional
+- type: `boolean`
+
+##### gn Type
+
+`boolean`
+
+#### hy
+
+Indicates whether the token constitutes the former part of a hyphenated word (including hyphen). When not specified it
+is assumed to be `false`.
+
+`hy`
+
+- is optional
+- type: `boolean`
+
+##### hy Type
+
+`boolean`
+
+#### nf
+
+It is specified on the latter part(s) of a hyphenated word, and contains its normalized (dehyphenated) form.
+
+`nf`
+
+- is optional
+- type: `string`
+
+##### nf Type
+
+`string`
 
 #### s
 

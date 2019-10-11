@@ -77,6 +77,18 @@
                                                         "s": {
                                                             "type": "integer",
                                                             "description": "A style ID as defined in issue.schema.json/s"
+                                                        },
+                                                        "gn": {
+                                                            "type": "boolean",
+                                                            "description": "Indicates whether the token is/should be followed by a whitespace. `gn==true` means no white space is required (`gn` stands for 'glue next'). When not specified it is assumed to be `false`."
+                                                        },
+                                                        "hy":{
+                                                          "type": "boolean",
+                                                          "description": "Indicates whether the token constitutes the former part of a hyphenated word (including hyphen). When not specified it is assumed to be `false`."
+                                                        },
+                                                        "nf":{
+                                                          "type": "string",
+                                                          "description": "It is specified on the latter part(s) of a hyphenated word, and contains its normalized (dehyphenated) form."
                                                         }
                                                     },
                                                     "required": ["c", "tx"]
