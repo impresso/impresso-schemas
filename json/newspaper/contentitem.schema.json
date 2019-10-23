@@ -119,6 +119,6 @@
     }
 },
 "required": [
-  "id"
+  "id", "tp", "olr", "ts"
 ]
 }
