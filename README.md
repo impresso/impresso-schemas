@@ -36,7 +36,7 @@ make documentation
 
 ## License
 
-The content in this repository is licensed under an MIT license.
+The content in this repository is licensed under a GNU Affero General Public License (AGPL).
 
 ## Credits
 
