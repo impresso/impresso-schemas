@@ -35,9 +35,11 @@ make documentation
 ```
 
 
-## License
+## Project
 
 The 'impresso - Media Monitoring of the Past' project is funded by the Swiss National Science Foundation (SNSF) under grant number [CRSII5_173719](http://p3.snf.ch/project-173719) (Sinergia program). The project aims at developing tools to process and explore large-scale collections of historical newspapers, and at studying the impact of this new tooling on historical research practices. More information at https://impresso-project.ch.
+
+## License
 
 Copyright (C) 2020  The *impresso* team. Contributors to this program include: [Simon Clematide](https://github.com/simon-clematide), [Maud Ehrmann](https://github.com/e-maud) and [Matteo Romanello](http://github.com/mromanello/) ).
 
