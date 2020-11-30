@@ -1,0 +1,43 @@
+{
+    "tp": "tb",
+    "id": "luxzeit1858-1859-01-01-a-i0019",
+    "len": 278,
+    "orig_lg": null,
+    "alphabetical_ratio": 0.39,
+    "langdetect": [
+        {
+            "lang": "de",
+            "prob": 1
+        }
+    ],
+    "langid": [
+        {
+            "lang": "lb",
+            "prob": 0.94
+        }
+    ],
+    "impresso_ft": [
+        {
+            "lang": "de",
+            "prob": 0.99
+        },
+        {
+            "lang": "fr",
+            "prob": 0.01
+        }
+    ],
+    "wp_ft": [
+        {
+            "lang": "uk",
+            "prob": 0.14
+        },
+        {
+            "lang": "es",
+            "prob": 0.07
+        },
+        {
+            "lang": "lb",
+            "prob": 0.06
+        }
+    ]
+}

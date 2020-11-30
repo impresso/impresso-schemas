@@ -5,12 +5,14 @@ Repository of JSON schemas (draft 06) used in the [Impresso project](https://imp
 We define schemas for:
 
 - Newspaper
-    - [Issue](docs/issue.schema.md)
-    - [Page](docs/page.schema.md)
-    - [Content Item](docs/contentitem.schema.md)
+    - [Issue](docs/issue.md)
+    - [Page](docs/page.md)
+    - [Content Item](docs/contentitem.md)
 - Topic Model
-    - [Topic Assignment](docs/topic_assignment.schema.md)
-    - [Topic Description](docs/topic_description.schema.md)
+    - [Topic Assignment](docs/topic_assignment.md)
+    - [Topic Description](docs/topic_description.md)
+- Language Identification
+    - [Language Identification](docs/language_identification.md)
 
 ## File organisation
 

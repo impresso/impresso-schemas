@@ -1,0 +1,87 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$id": "https://impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json",
+    "description": "A representation for the language identifications of various models per content item.",
+    "type": "object",
+    "properties": {
+        "tp": {
+            "type": "string",
+            "description": "Type of the content item, cf. https://github.com/impresso/impresso-schemas/blob/master/json/newspaper/contentitem.schema.json"
+        },
+        "id": {
+            "type": "string",
+            "description": "Canonical ID of the newspaper issue (e.g. GDL-1900-01-02-a), cf. https://github.com/impresso/impresso-schemas/blob/master/json/newspaper/contentitem.schema.json"
+        },
+        "len": {
+            "type": "integer",
+            "description": "Length of content item"
+        },
+        "orig_lg": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Original language of the content item as provided by the meta data, cf. https://github.com/impresso/impresso-schemas/blob/master/json/newspaper/contentitem.schema.json",
+            "pattern": "^[a-z]{2}$"
+        },
+        "alphabetical_ratio": {
+            "type": "number",
+            "description": "Ratio of alphabetical characters (letters) wtr to text length of content item"
+        },
+        "langdetect": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/lid"
+            },
+            "description": "List of predicted languages using Langdetect, sorted by probability"
+        },
+        "langid": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/lid"
+            },
+            "description": "List of predicted languages using Langid, sorted by probability"
+        },
+        "impresso_ft": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/lid"
+            },
+            "description": "List of predicted languages using a FastText model trained on Impresso articles, sorted by probability"
+        },
+        "wp_ft": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/lid"
+            },
+            "description": "List of predicted languages using a FastText model trained on Wikipedia, sorted by probability"
+        }
+    },
+    "required": [
+        "tp",
+        "id",
+        "len",
+        "orig_lg"
+    ],
+    "definitions": {
+        "lid": {
+            "description": "Predicted language and its probability",
+            "type": "object",
+            "properties": {
+                "lang": {
+                    "type": "string",
+                    "description": "https://en.wikipedia.org/wiki/List_of_ISO_639-2_codes",
+                    "pattern": "^[a-z]{2}$"
+                },
+                "prob": {
+                    "type": "number",
+                    "description": "Probability of prediction"
+                }
+            },
+            "required": [
+                "lang",
+                "prob"
+            ]
+        }
+    }
+}

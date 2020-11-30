@@ -1,0 +1,31 @@
+{
+    "tp": "ar",
+    "id": "luxzeit1858-1859-01-01-a-i0001",
+    "len": 1138,
+    "orig_lg": "de",
+    "alphabetical_ratio": 0.76,
+    "langdetect": [
+        {
+            "lang": "de",
+            "prob": 1
+        }
+    ],
+    "langid": [
+        {
+            "lang": "de",
+            "prob": 1
+        }
+    ],
+    "impresso_ft": [
+        {
+            "lang": "de",
+            "prob": 1
+        }
+    ],
+    "wp_ft": [
+        {
+            "lang": "de",
+            "prob": 0.99
+        }
+    ]
+}
