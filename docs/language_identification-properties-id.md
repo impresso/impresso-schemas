@@ -1,10 +1,10 @@
-# Untitled string in undefined Schema
+# Untitled string in Impresso Language Identification Information Schema
 
 ```txt
 https://impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/id
 ```
 
-Canonical ID of the newspaper issue (e.g. GDL-1900-01-02-a), cf. <https://github.com/impresso/impresso-schemas/blob/master/json/newspaper/contentitem.schema.json>
+The unique identifier for a content item, cf. <https://github.com/impresso/impresso-schemas/blob/master/json/newspaper/contentitem.schema.json>
 
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                 |

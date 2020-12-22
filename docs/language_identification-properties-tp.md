@@ -1,4 +1,4 @@
-# Untitled string in undefined Schema
+# Untitled string in Impresso Language Identification Information Schema
 
 ```txt
 https://impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/tp

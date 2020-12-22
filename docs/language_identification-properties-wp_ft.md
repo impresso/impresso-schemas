@@ -1,4 +1,4 @@
-# Untitled array in undefined Schema
+# Untitled array in Impresso Language Identification Information Schema
 
 ```txt
 https://impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/wp_ft

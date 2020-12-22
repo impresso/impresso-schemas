@@ -1,4 +1,4 @@
-# Untitled number in undefined Schema
+# Untitled number in Impresso Language Identification Information Schema
 
 ```txt
 https://impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/definitions/lid/properties/prob
@@ -14,3 +14,9 @@ Probability of prediction
 ## prob Type
 
 `number`
+
+## prob Constraints
+
+**maximum**: the value of this number must smaller than or equal to: `1`
+
+**minimum**: the value of this number must greater than or equal to: `0`

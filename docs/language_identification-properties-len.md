@@ -1,10 +1,10 @@
-# Untitled integer in undefined Schema
+# Untitled integer in Impresso Language Identification Information Schema
 
 ```txt
 https://impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/len
 ```
 
-Length of content item
+Number of characters of content item
 
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                                 |
@@ -14,3 +14,7 @@ Length of content item
 ## len Type
 
 `integer`
+
+## len Constraints
+
+**minimum**: the value of this number must greater than or equal to: `0`
