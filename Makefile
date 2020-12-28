@@ -20,6 +20,8 @@ clean-documentation:
 	rm -fv docs/*
 
 documentation:
+	# make sure to install the correct jsonschema2md tool:
+	# npm install -g @adobe/jsonschema2md
 	jsonschema2md -d json/newspaper/ --header false -n -v 06 -o docs  -x -  -s propTable
 	jsonschema2md -d json/topic_model/ --header false -n -v 06 -o docs  -x -  -s propTable
 	jsonschema2md -d json/language_identification/ --header false -n -v 06 -o docs -x -  -s propTable
