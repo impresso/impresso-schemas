@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-06/schema#",
   "$id": "https://impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json",
   "title": "Impresso Language Identification Information",
-  "description": "A representation for informations relevant to impresso's content item language recognition. This defines the output of the following impresso NLP component. https://github.com/impresso/impresso-language-identification ",
+  "description": "A representation for information relevant to impresso's content item language recognition. This defines the output of the following impresso NLP component. https://github.com/impresso/impresso-language-identification ",
   "type": "object",
   "properties": {
     "id": {
@@ -10,33 +10,48 @@
       "description": "The unique identifier for a content item, cf. https://github.com/impresso/impresso-schemas/blob/master/json/newspaper/contentitem.schema.json"
     },
     "orig_lg": {
+      "type": [
+        "string",
+        "null"
+      ],
       "oneOf": [
         {
+          "title": "null",
+          "description": "No information on language from original metadata is available.",
           "type": "null"
         },
         {
-          "$ref": "#/definitions/lang"
+          "$ref": "#/definitions/langISO639Type"
         }
       ],
-      "description": "Original language of the content item as provided by the meta data, cf. https://github.com/impresso/impresso-schemas/blob/master/json/newspaper/contentitem.schema.json"
+      "description": "Original language of the content item as provided by the metadata, cf. https://github.com/impresso/impresso-schemas/blob/master/json/newspaper/contentitem.schema.json"
     },
     "lg": {
+      "type": [
+        "string",
+        "null"
+      ],
       "oneOf": [
         {
+          "title": "null",
           "type": "null"
         },
         {
-          "$ref": "#/definitions/lang"
+          "$ref": "#/definitions/langISO639Type"
         }
       ],
       "description": "Computed language of the content item, cf. https://github.com/impresso/impresso-schemas/blob/master/json/newspaper/contentitem.schema.json"
     },
     "lg_decision": {
-      "type": [
-        "string",
-        "null"
+      "enum": [
+        "all",
+        "all-but-impresso-ft",
+        "voting",
+        "dominant-by-len",
+        "dominant-by-lowvote"
       ],
-      "description": "An identifier for the decision strategy applied to the content item: 'all' = all LID systems/info agreed, ' "
+      "type": "string",
+      "description": "An identifier for the decision strategy applied to the content item: 'all' = all LID systems/info agree; 'all-but-impresso-ft' = all LID except impresso_ft agree on a language other than de/fr; 'dominant-by-len' = the most frequent language of the ensemble decisions is selected because there are too few characters; 'dominant-by-lowvote' = the most frequent language of the ensemble decisions is selected because there are too few votes; 'voting' = the language with the highest vote count is selected "
     },
     "tp": {
       "type": "string",
@@ -47,47 +62,70 @@
       "description": "Number of characters of content item",
       "minimum": 0
     },
-    "impresso_language_identifier": {
-      "$ref": "#/definitions/version",
-      "description": "Version information of used impresso language identifier script and file creation timestamp"
+    "impresso_language_identifier_version": {
+      "$ref": "#/definitions/versionType",
+      "description": "Version information of used impresso language identifier script and the file creation timestamp"
     },
-    "language_identifier": {
-      "$ref": "#/definitions/version",
-      "description": "Version information of underlying language identifier script and file creation timestamp"
+    "language_identifier_version": {
+      "$ref": "#/definitions/versionType",
+      "description": "Version information of used impresso language identifier script and the timestamp of the file used for the decision"
     },
     "alphabetical_ratio": {
-      "type": ["number","null"],
-      "description": "Ratio of alphabetical characters (letters) wtr to text length of content item",
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Ratio of alphabetical characters (Unicode letter class matched by \\w) w.r.t. text length of content item",
       "minimum": 0,
       "maximum": 1
     },
     "langdetect": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/lid"
+        "$ref": "#/definitions/lidType"
       },
       "description": "List of predicted languages using Langdetect, sorted by probability"
     },
     "langid": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/lid"
+        "$ref": "#/definitions/lidType"
       },
       "description": "List of predicted languages using Langid, sorted by probability"
     },
     "impresso_ft": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/lid"
+        "$ref": "#/definitions/lidType"
       },
       "description": "List of predicted languages using a FastText model trained on Impresso articles, sorted by probability"
     },
     "wp_ft": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/lid"
+        "$ref": "#/definitions/lidType"
       },
       "description": "List of predicted languages using a FastText model trained on Wikipedia, sorted by probability"
+    },
+    "votes": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "lang": {
+              "$ref": "#/definitions/langISO639Type"
+            },
+            "vote": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "lang",
+            "vote"
+          ]
+        }
+      ]
     }
   },
   "required": [
@@ -98,15 +136,16 @@
     "orig_lg"
   ],
   "definitions": {
-    "lid": {
+    "lidType": {
+      "title": "lidType",
       "description": "Predicted language and its probability",
       "type": "object",
       "properties": {
         "lang": {
-          "$ref": "#/definitions/lang"
+          "$ref": "#/definitions/langISO639Type"
         },
         "prob": {
-          "$ref": "#/definitions/prob"
+          "$ref": "#/definitions/probType"
         }
       },
       "required": [
@@ -114,26 +153,30 @@
         "prob"
       ]
     },
-    "lang": {
+    "langISO639Type": {
       "type": "string",
-      "description": "Two or three letter ISO language abbreviation, cf. https://en.wikipedia.org/wiki/List_of_ISO_639-2_codes or https://en.wikipedia.org/wiki/List_of_ISO_639-3_codes",
+      "title": "langISO639Type",
+      "description": "Two- or three-letter ISO language abbreviation, cf. https://en.wikipedia.org/wiki/List_of_ISO_639-2_codes or https://en.wikipedia.org/wiki/List_of_ISO_639-3_codes",
       "pattern": "^[a-z]{2,3}$"
     },
-    "prob": {
+    "probType": {
       "type": "number",
-      "description": "Probability of prediction",
+      "title": "probType",
+      "description": "Probability of the prediction",
       "minimum": 0,
       "maximum": 1
     },
-    "version": {
+    "versionType": {
+      "title": "versionType",
+      "description": "Administrative information on tool version and data creation time.",
       "type": "object",
       "properties": {
-        "version": {
+        "versionType": {
           "description": "Version of tool. Either date or output of command 'git describe'",
           "type": "string"
         },
         "ts": {
-          "description": "timestamp of creation of the JSON file (e.g. '2018-09-18T08:00:08+')",
+          "description": "timestamp of creation of the JSON file (e.g. '2018-09-18T08:00:08+00:00')",
           "type": "string",
           "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(Z|\\+00:00)$"
         }
