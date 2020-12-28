@@ -2,6 +2,7 @@
 
 
 
+
 tests:
 	jsonschema -i examples/newspaper_issue/example0.json  json/newspaper/issue.schema.json && $(print-test-ok) || $(print-test-failed)
 	jsonschema -i examples/newspaper_issue/example1.json  json/newspaper/issue.schema.json && $(print-test-ok)|| $(print-test-failed)
