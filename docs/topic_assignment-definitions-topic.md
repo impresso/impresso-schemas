@@ -1,16 +1,3 @@
-# Untitled object in undefined Schema
-
-```txt
-https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/definitions/topic
-```
-
-The probability/proportion of a topic in the document
-
-
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                   |
-| :------------------ | ---------- | -------------- | ------------ | :---------------- | --------------------- | ------------------- | -------------------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [topic_assignment.schema.json\*](../out/topic_assignment.schema.json "open original schema") |
-
 ## topic Type
 
 `object` ([Details](topic_assignment-definitions-topic.md))

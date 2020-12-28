@@ -1,33 +1,111 @@
-# Untitled object in undefined Schema
+## Impresso Language Identification Information Type
 
-```txt
-https://impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json
-```
+`object` ([Impresso Language Identification Information](language_identification.md))
 
-A representation for the language identifications of various models per content item.
+# Impresso Language Identification Information Properties
+
+| Property                                                                      | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                                                                             |
+| :---------------------------------------------------------------------------- | --------- | -------- | -------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [id](#id)                                                                     | `string`  | Required | cannot be null | [Impresso Language Identification Information](language_identification-properties-id.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/id")                                            |
+| [orig_lg](#orig_lg)                                                           | Merged    | Required | can be null    | [Impresso Language Identification Information](language_identification-properties-orig_lg.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/orig_lg")                                  |
+| [lg](#lg)                                                                     | Merged    | Required | can be null    | [Impresso Language Identification Information](language_identification-properties-lg.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/lg")                                            |
+| [lg_decision](#lg_decision)                                                   | `string`  | Optional | cannot be null | [Impresso Language Identification Information](language_identification-properties-lg_decision.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/lg_decision")                          |
+| [tp](#tp)                                                                     | `string`  | Required | cannot be null | [Impresso Language Identification Information](language_identification-properties-tp.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/tp")                                            |
+| [len](#len)                                                                   | `integer` | Required | cannot be null | [Impresso Language Identification Information](language_identification-properties-len.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/len")                                          |
+| [impresso_language_identifier_version](#impresso_language_identifier_version) | `object`  | Optional | cannot be null | [Impresso Language Identification Information](language_identification-properties-versiontype.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/impresso_language_identifier_version") |
+| [language_identifier_version](#language_identifier_version)                   | `object`  | Optional | cannot be null | [Impresso Language Identification Information](language_identification-properties-versiontype-1.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/language_identifier_version")        |
+| [alphabetical_ratio](#alphabetical_ratio)                                     | `number`  | Optional | can be null    | [Impresso Language Identification Information](language_identification-properties-alphabetical_ratio.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/alphabetical_ratio")            |
+| [langdetect](#langdetect)                                                     | `array`   | Optional | cannot be null | [Impresso Language Identification Information](language_identification-properties-langdetect.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/langdetect")                            |
+| [langid](#langid)                                                             | `array`   | Optional | cannot be null | [Impresso Language Identification Information](language_identification-properties-langid.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/langid")                                    |
+| [impresso_ft](#impresso_ft)                                                   | `array`   | Optional | cannot be null | [Impresso Language Identification Information](language_identification-properties-impresso_ft.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/impresso_ft")                          |
+| [wp_ft](#wp_ft)                                                               | `array`   | Optional | cannot be null | [Impresso Language Identification Information](language_identification-properties-wp_ft.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/wp_ft")                                      |
+| [votes](#votes)                                                               | `array`   | Optional | cannot be null | [Impresso Language Identification Information](language_identification-properties-votes.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/votes")                                      |
+
+## id
+
+The unique identifier for a content item, cf. <https://github.com/impresso/impresso-schemas/blob/master/json/newspaper/contentitem.schema.json>
 
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                               |
-| :------------------ | ---------- | -------------- | ------------ | :---------------- | --------------------- | ------------------- | -------------------------------------------------------------------------------------------------------- |
-| Can be instantiated | Yes        | Unknown status | No           | Forbidden         | Allowed               | none                | [language_identification.schema.json](../out/language_identification.schema.json "open original schema") |
+`id`
 
-## Untitled object in undefined Type
+-   is required
+-   Type: `string`
+-   cannot be null
+-   defined in: [Impresso Language Identification Information](language_identification-properties-id.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/id")
 
-`object` ([Details](language_identification.md))
+### id Type
 
-# undefined Properties
+`string`
 
-| Property                                  | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                                     |
-| :---------------------------------------- | --------- | -------- | -------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [tp](#tp)                                 | `string`  | Required | cannot be null | [Untitled schema](language_identification-properties-tp.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/tp")                                 |
-| [id](#id)                                 | `string`  | Required | cannot be null | [Untitled schema](language_identification-properties-id.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/id")                                 |
-| [len](#len)                               | `integer` | Required | cannot be null | [Untitled schema](language_identification-properties-len.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/len")                               |
-| [orig_lg](#orig_lg)                       | `string`  | Required | can be null    | [Untitled schema](language_identification-properties-orig_lg.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/orig_lg")                       |
-| [alphabetical_ratio](#alphabetical_ratio) | `number`  | Optional | cannot be null | [Untitled schema](language_identification-properties-alphabetical_ratio.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/alphabetical_ratio") |
-| [langdetect](#langdetect)                 | `array`   | Optional | cannot be null | [Untitled schema](language_identification-properties-langdetect.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/langdetect")                 |
-| [langid](#langid)                         | `array`   | Optional | cannot be null | [Untitled schema](language_identification-properties-langid.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/langid")                         |
-| [impresso_ft](#impresso_ft)               | `array`   | Optional | cannot be null | [Untitled schema](language_identification-properties-impresso_ft.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/impresso_ft")               |
-| [wp_ft](#wp_ft)                           | `array`   | Optional | cannot be null | [Untitled schema](language_identification-properties-wp_ft.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/wp_ft")                           |
+## orig_lg
+
+Original language of the content item as provided by the metadata, cf. <https://github.com/impresso/impresso-schemas/blob/master/json/newspaper/contentitem.schema.json>
+
+
+`orig_lg`
+
+-   is required
+-   Type: `string` ([Details](language_identification-properties-orig_lg.md))
+-   can be null
+-   defined in: [Impresso Language Identification Information](language_identification-properties-orig_lg.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/orig_lg")
+
+### orig_lg Type
+
+`string` ([Details](language_identification-properties-orig_lg.md))
+
+one (and only one) of
+
+-   [null](language_identification-properties-orig_lg-oneof-null.md "check type definition")
+-   [langISO639Type](language_identification-properties-orig_lg-oneof-langiso639type.md "check type definition")
+
+## lg
+
+Computed language of the content item, cf. <https://github.com/impresso/impresso-schemas/blob/master/json/newspaper/contentitem.schema.json>
+
+
+`lg`
+
+-   is required
+-   Type: `string` ([Details](language_identification-properties-lg.md))
+-   can be null
+-   defined in: [Impresso Language Identification Information](language_identification-properties-lg.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/lg")
+
+### lg Type
+
+`string` ([Details](language_identification-properties-lg.md))
+
+one (and only one) of
+
+-   [null](language_identification-properties-lg-oneof-null.md "check type definition")
+-   [langISO639Type](language_identification-properties-lg-oneof-langiso639type.md "check type definition")
+
+## lg_decision
+
+An identifier for the decision strategy applied to the content item: 'all' = all LID systems/info agree; 'all-but-impresso-ft' = all LID except impresso_ft agree on a language other than de/fr; 'dominant-by-len' = the most frequent language of the ensemble decisions is selected because there are too few characters; 'dominant-by-lowvote' = the most frequent language of the ensemble decisions is selected because there are too few votes; 'voting' = the language with the highest vote count is selected 
+
+
+`lg_decision`
+
+-   is optional
+-   Type: `string`
+-   cannot be null
+-   defined in: [Impresso Language Identification Information](language_identification-properties-lg_decision.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/lg_decision")
+
+### lg_decision Type
+
+`string`
+
+### lg_decision Constraints
+
+**enum**: the value of this property must be equal to one of the following values:
+
+| Value                   | Explanation |
+| :---------------------- | ----------- |
+| `"all"`                 |             |
+| `"all-but-impresso-ft"` |             |
+| `"voting"`              |             |
+| `"dominant-by-len"`     |             |
+| `"dominant-by-lowvote"` |             |
 
 ## tp
 
@@ -39,31 +117,15 @@ Type of the content item, cf. <https://github.com/impresso/impresso-schemas/blob
 -   is required
 -   Type: `string`
 -   cannot be null
--   defined in: [Untitled schema](language_identification-properties-tp.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/tp")
+-   defined in: [Impresso Language Identification Information](language_identification-properties-tp.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/tp")
 
 ### tp Type
 
 `string`
 
-## id
-
-Canonical ID of the newspaper issue (e.g. GDL-1900-01-02-a), cf. <https://github.com/impresso/impresso-schemas/blob/master/json/newspaper/contentitem.schema.json>
-
-
-`id`
-
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [Untitled schema](language_identification-properties-id.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/id")
-
-### id Type
-
-`string`
-
 ## len
 
-Length of content item
+Number of characters of content item
 
 
 `len`
@@ -71,53 +133,69 @@ Length of content item
 -   is required
 -   Type: `integer`
 -   cannot be null
--   defined in: [Untitled schema](language_identification-properties-len.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/len")
+-   defined in: [Impresso Language Identification Information](language_identification-properties-len.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/len")
 
 ### len Type
 
 `integer`
 
-## orig_lg
+### len Constraints
 
-Original language of the content item as provided by the meta data, cf. <https://github.com/impresso/impresso-schemas/blob/master/json/newspaper/contentitem.schema.json>
+**minimum**: the value of this number must greater than or equal to: `0`
+
+## impresso_language_identifier_version
+
+Administrative information on tool version and data creation time.
 
 
-`orig_lg`
+`impresso_language_identifier_version`
 
--   is required
--   Type: `string`
--   can be null
--   defined in: [Untitled schema](language_identification-properties-orig_lg.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/orig_lg")
+-   is optional
+-   Type: `object` ([versionType](language_identification-properties-versiontype.md))
+-   cannot be null
+-   defined in: [Impresso Language Identification Information](language_identification-properties-versiontype.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/impresso_language_identifier_version")
 
-### orig_lg Type
+### impresso_language_identifier_version Type
 
-`string`
+`object` ([versionType](language_identification-properties-versiontype.md))
 
-### orig_lg Constraints
+## language_identifier_version
 
-**pattern**: the string must match the following regular expression: 
+Administrative information on tool version and data creation time.
 
-```regexp
-^[a-z]{2}$
-```
 
-[try pattern](https://regexr.com/?expression=%5E%5Ba-z%5D%7B2%7D%24 "try regular expression with regexr.com")
+`language_identifier_version`
+
+-   is optional
+-   Type: `object` ([versionType](language_identification-properties-versiontype-1.md))
+-   cannot be null
+-   defined in: [Impresso Language Identification Information](language_identification-properties-versiontype-1.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/language_identifier_version")
+
+### language_identifier_version Type
+
+`object` ([versionType](language_identification-properties-versiontype-1.md))
 
 ## alphabetical_ratio
 
-Ratio of alphabetical characters (letters) wtr to text length of content item
+Ratio of alphabetical characters (Unicode letter class matched by \\w) w.r.t. text length of content item
 
 
 `alphabetical_ratio`
 
 -   is optional
 -   Type: `number`
--   cannot be null
--   defined in: [Untitled schema](language_identification-properties-alphabetical_ratio.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/alphabetical_ratio")
+-   can be null
+-   defined in: [Impresso Language Identification Information](language_identification-properties-alphabetical_ratio.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/alphabetical_ratio")
 
 ### alphabetical_ratio Type
 
 `number`
+
+### alphabetical_ratio Constraints
+
+**maximum**: the value of this number must smaller than or equal to: `1`
+
+**minimum**: the value of this number must greater than or equal to: `0`
 
 ## langdetect
 
@@ -127,13 +205,13 @@ List of predicted languages using Langdetect, sorted by probability
 `langdetect`
 
 -   is optional
--   Type: `object[]` ([Details](language_identification-properties-langdetect-items.md))
+-   Type: `object[]` ([lidType](language_identification-properties-langdetect-lidtype.md))
 -   cannot be null
--   defined in: [Untitled schema](language_identification-properties-langdetect.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/langdetect")
+-   defined in: [Impresso Language Identification Information](language_identification-properties-langdetect.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/langdetect")
 
 ### langdetect Type
 
-`object[]` ([Details](language_identification-properties-langdetect-items.md))
+`object[]` ([lidType](language_identification-properties-langdetect-lidtype.md))
 
 ## langid
 
@@ -143,13 +221,13 @@ List of predicted languages using Langid, sorted by probability
 `langid`
 
 -   is optional
--   Type: `object[]` ([Details](language_identification-properties-langid-items.md))
+-   Type: `object[]` ([lidType](language_identification-properties-langid-lidtype.md))
 -   cannot be null
--   defined in: [Untitled schema](language_identification-properties-langid.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/langid")
+-   defined in: [Impresso Language Identification Information](language_identification-properties-langid.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/langid")
 
 ### langid Type
 
-`object[]` ([Details](language_identification-properties-langid-items.md))
+`object[]` ([lidType](language_identification-properties-langid-lidtype.md))
 
 ## impresso_ft
 
@@ -159,13 +237,13 @@ List of predicted languages using a FastText model trained on Impresso articles,
 `impresso_ft`
 
 -   is optional
--   Type: `object[]` ([Details](language_identification-properties-impresso_ft-items.md))
+-   Type: `object[]` ([lidType](language_identification-properties-impresso_ft-lidtype.md))
 -   cannot be null
--   defined in: [Untitled schema](language_identification-properties-impresso_ft.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/impresso_ft")
+-   defined in: [Impresso Language Identification Information](language_identification-properties-impresso_ft.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/impresso_ft")
 
 ### impresso_ft Type
 
-`object[]` ([Details](language_identification-properties-impresso_ft-items.md))
+`object[]` ([lidType](language_identification-properties-impresso_ft-lidtype.md))
 
 ## wp_ft
 
@@ -175,67 +253,170 @@ List of predicted languages using a FastText model trained on Wikipedia, sorted 
 `wp_ft`
 
 -   is optional
--   Type: `object[]` ([Details](language_identification-properties-wp_ft-items.md))
+-   Type: `object[]` ([lidType](language_identification-properties-wp_ft-lidtype.md))
 -   cannot be null
--   defined in: [Untitled schema](language_identification-properties-wp_ft.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/wp_ft")
+-   defined in: [Impresso Language Identification Information](language_identification-properties-wp_ft.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/wp_ft")
 
 ### wp_ft Type
 
-`object[]` ([Details](language_identification-properties-wp_ft-items.md))
+`object[]` ([lidType](language_identification-properties-wp_ft-lidtype.md))
 
-# Untitled object in undefined Definitions
+## votes
 
-## Definitions group lid
+
+
+
+`votes`
+
+-   is optional
+-   Type: an array where each item follows the corresponding schema in the following list:
+
+    1.  [Untitled object in Impresso Language Identification Information](language_identification-properties-votes-items-0.md "check type definition")
+-   cannot be null
+-   defined in: [Impresso Language Identification Information](language_identification-properties-votes.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/votes")
+
+### votes Type
+
+an array where each item follows the corresponding schema in the following list:
+
+1.  [Untitled object in Impresso Language Identification Information](language_identification-properties-votes-items-0.md "check type definition")
+
+# Impresso Language Identification Information Definitions
+
+## Definitions group lidType
 
 Reference this group by using
 
 ```json
-{"$ref":"https://impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/definitions/lid"}
+{"$ref":"https://impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/definitions/lidType"}
 ```
 
-| Property      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                         |
-| :------------ | -------- | -------- | -------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [lang](#lang) | `string` | Required | cannot be null | [Untitled schema](language_identification-definitions-lid-properties-lang.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/definitions/lid/properties/lang") |
-| [prob](#prob) | `number` | Required | cannot be null | [Untitled schema](language_identification-definitions-lid-properties-prob.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/definitions/lid/properties/prob") |
+| Property      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                        |
+| :------------ | -------- | -------- | -------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [lang](#lang) | `string` | Required | cannot be null | [Impresso Language Identification Information](language_identification-definitions-lidtype-properties-langiso639type.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/definitions/lidType/properties/lang") |
+| [prob](#prob) | `number` | Required | cannot be null | [Impresso Language Identification Information](language_identification-definitions-lidtype-properties-probtype.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/definitions/lidType/properties/prob")       |
 
 ### lang
 
-<https://en.wikipedia.org/wiki/List_of_ISO_639-2_codes>
+Two- or three-letter ISO language abbreviation, cf. <https://en.wikipedia.org/wiki/List_of_ISO_639-2_codes> or <https://en.wikipedia.org/wiki/List_of_ISO_639-3_codes>
 
 
 `lang`
 
 -   is required
--   Type: `string`
+-   Type: `string` ([langISO639Type](language_identification-definitions-lidtype-properties-langiso639type.md))
 -   cannot be null
--   defined in: [Untitled schema](language_identification-definitions-lid-properties-lang.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/definitions/lid/properties/lang")
+-   defined in: [Impresso Language Identification Information](language_identification-definitions-lidtype-properties-langiso639type.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/definitions/lidType/properties/lang")
 
 #### lang Type
 
-`string`
+`string` ([langISO639Type](language_identification-definitions-lidtype-properties-langiso639type.md))
 
 #### lang Constraints
 
 **pattern**: the string must match the following regular expression: 
 
 ```regexp
-^[a-z]{2}$
+^[a-z]{2,3}$
 ```
 
-[try pattern](https://regexr.com/?expression=%5E%5Ba-z%5D%7B2%7D%24 "try regular expression with regexr.com")
+[try pattern](https://regexr.com/?expression=%5E%5Ba-z%5D%7B2%2C3%7D%24 "try regular expression with regexr.com")
 
 ### prob
 
-Probability of prediction
+Probability of the prediction
 
 
 `prob`
 
 -   is required
--   Type: `number`
+-   Type: `number` ([probType](language_identification-definitions-lidtype-properties-probtype.md))
 -   cannot be null
--   defined in: [Untitled schema](language_identification-definitions-lid-properties-prob.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/definitions/lid/properties/prob")
+-   defined in: [Impresso Language Identification Information](language_identification-definitions-lidtype-properties-probtype.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/definitions/lidType/properties/prob")
 
 #### prob Type
 
-`number`
+`number` ([probType](language_identification-definitions-lidtype-properties-probtype.md))
+
+#### prob Constraints
+
+**maximum**: the value of this number must smaller than or equal to: `1`
+
+**minimum**: the value of this number must greater than or equal to: `0`
+
+## Definitions group langISO639Type
+
+Reference this group by using
+
+```json
+{"$ref":"https://impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/definitions/langISO639Type"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | ---- | -------- | -------- | :--------- |
+
+## Definitions group probType
+
+Reference this group by using
+
+```json
+{"$ref":"https://impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/definitions/probType"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | ---- | -------- | -------- | :--------- |
+
+## Definitions group versionType
+
+Reference this group by using
+
+```json
+{"$ref":"https://impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/definitions/versionType"}
+```
+
+| Property                    | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                    |
+| :-------------------------- | -------- | -------- | -------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [versionType](#versiontype) | `string` | Optional | cannot be null | [Impresso Language Identification Information](language_identification-definitions-versiontype-properties-versiontype.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/definitions/versionType/properties/versionType") |
+| [ts](#ts)                   | `string` | Required | cannot be null | [Impresso Language Identification Information](language_identification-definitions-versiontype-properties-ts.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/definitions/versionType/properties/ts")                   |
+
+### versionType
+
+Version of tool. Either date or output of command 'git describe'
+
+
+`versionType`
+
+-   is optional
+-   Type: `string`
+-   cannot be null
+-   defined in: [Impresso Language Identification Information](language_identification-definitions-versiontype-properties-versiontype.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/definitions/versionType/properties/versionType")
+
+#### versionType Type
+
+`string`
+
+### ts
+
+timestamp of creation of the JSON file (e.g. '2018-09-18T08:00:08+00:00')
+
+
+`ts`
+
+-   is required
+-   Type: `string`
+-   cannot be null
+-   defined in: [Impresso Language Identification Information](language_identification-definitions-versiontype-properties-ts.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/definitions/versionType/properties/ts")
+
+#### ts Type
+
+`string`
+
+#### ts Constraints
+
+**pattern**: the string must match the following regular expression: 
+
+```regexp
+^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(Z|\+00:00)$
+```
+
+[try pattern](https://regexr.com/?expression=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D-%5B0-9%5D%7B2%7DT%5B0-9%5D%7B2%7D%3A%5B0-9%5D%7B2%7D%3A%5B0-9%5D%7B2%7D(Z%7C%5C%2B00%3A00)%24 "try regular expression with regexr.com")

@@ -1,16 +1,3 @@
-# Untitled object in Content Item Schema
-
-```txt
-https://impresso.github.io/impresso-schemas/json/newspaper/contentitem.schema.json#/properties/ppreb/items/properties/t/items
-```
-
-
-
-
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                         |
-| :------------------ | ---------- | -------------- | ------------ | :---------------- | --------------------- | ------------------- | ---------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [contentitem.schema.json\*](../out/contentitem.schema.json "open original schema") |
-
 ## items Type
 
 `object` ([Details](contentitem-properties-ppreb-items-properties-t-items.md))

@@ -43,7 +43,7 @@ The 'impresso - Media Monitoring of the Past' project is funded by the Swiss Nat
 
 ## License
 
-Copyright (C) 2020  The *impresso* team. Contributors to this program include: [Simon Clematide](https://github.com/simon-clematide), [Maud Ehrmann](https://github.com/e-maud) and [Matteo Romanello](http://github.com/mromanello/) ).
+Copyright (C) 2020  The *impresso* team. Contributors to this program include: [Simon Clematide](https://github.com/simon-clematide), [Maud Ehrmann](https://github.com/e-maud) and [Matteo Romanello](http://github.com/mromanello/).
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. 
 This program is distributed in the hope that it will be useful, but without any warranty; without even the implied warranty of merchantability or fitness for a particular purpose. See the [GNU Affero General Public License](https://github.com/impresso/impresso-schemas/blob/master/LICENSE) for more details.
