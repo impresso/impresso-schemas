@@ -1,16 +1,3 @@
-# Untitled object in undefined Schema
-
-```txt
-https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json
-```
-
-A representation for the probabilistic assignments of the topics of a topic model to content items.
-
-
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                                 |
-| :------------------ | ---------- | -------------- | ------------ | :---------------- | --------------------- | ------------------- | ------------------------------------------------------------------------------------------ |
-| Can be instantiated | Yes        | Unknown status | No           | Forbidden         | Allowed               | none                | [topic_assignment.schema.json](../out/topic_assignment.schema.json "open original schema") |
-
 ## Untitled object in undefined Type
 
 `object` ([Details](topic_assignment.md))

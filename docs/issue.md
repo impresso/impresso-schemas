@@ -1,16 +1,3 @@
-# Newspaper Issue Schema
-
-```txt
-https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json
-```
-
-Logical representation of the contents of a newspaper issue.
-
-
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                           |
-| :------------------ | ---------- | -------------- | ------------ | :---------------- | --------------------- | ------------------- | -------------------------------------------------------------------- |
-| Can be instantiated | Yes        | Unknown status | No           | Forbidden         | Allowed               | none                | [issue.schema.json](../out/issue.schema.json "open original schema") |
-
 ## Newspaper Issue Type
 
 `object` ([Newspaper Issue](issue.md))

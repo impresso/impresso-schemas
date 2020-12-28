@@ -1,16 +1,3 @@
-# Newspaper Page Schema
-
-```txt
-https://impresso.github.io/impresso-schemas/json/newspaper/page.schema.json
-```
-
-Physical representation of a newspaper page as recognized by a given OCR engine.
-
-
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                         |
-| :------------------ | ---------- | -------------- | ------------ | :---------------- | --------------------- | ------------------- | ------------------------------------------------------------------ |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [page.schema.json](../out/page.schema.json "open original schema") |
-
 ## Newspaper Page Type
 
 `object` ([Newspaper Page](page.md))
