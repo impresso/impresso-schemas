@@ -2,24 +2,26 @@
 
 `object` ([Details](topic_description-definitions-word_prob.md))
 
-# undefined Properties
+# word_prob Properties
 
-| Property      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                             |
-| :------------ | -------- | -------- | -------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [word](#word) | `string` | Required | cannot be null | [Untitled schema](topic_description-definitions-word_prob-properties-word.md "https&#x3A;//impresso.github.io/impresso-schemas/json/topic_model/topic_description.schema.json#/definitions/word_prob/properties/word") |
-| [prob](#prob) | `number` | Required | cannot be null | [Untitled schema](topic_description-definitions-word_prob-properties-prob.md "https&#x3A;//impresso.github.io/impresso-schemas/json/topic_model/topic_description.schema.json#/definitions/word_prob/properties/prob") |
+| Property      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                        |
+| :------------ | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [word](#word) | `string` | Required | cannot be null | [Untitled schema](topic_description-definitions-word_prob-properties-word.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_description.schema.json#/definitions/word_prob/properties/word") |
+| [prob](#prob) | `number` | Required | cannot be null | [Untitled schema](topic_description-definitions-word_prob-properties-prob.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_description.schema.json#/definitions/word_prob/properties/prob") |
 
 ## word
 
 
 
-
 `word`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [Untitled schema](topic_description-definitions-word_prob-properties-word.md "https&#x3A;//impresso.github.io/impresso-schemas/json/topic_model/topic_description.schema.json#/definitions/word_prob/properties/word")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [Untitled schema](topic_description-definitions-word_prob-properties-word.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_description.schema.json#/definitions/word_prob/properties/word")
 
 ### word Type
 
@@ -29,13 +31,15 @@
 
 
 
-
 `prob`
 
--   is required
--   Type: `number`
--   cannot be null
--   defined in: [Untitled schema](topic_description-definitions-word_prob-properties-prob.md "https&#x3A;//impresso.github.io/impresso-schemas/json/topic_model/topic_description.schema.json#/definitions/word_prob/properties/prob")
+*   is required
+
+*   Type: `number`
+
+*   cannot be null
+
+*   defined in: [Untitled schema](topic_description-definitions-word_prob-properties-prob.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_description.schema.json#/definitions/word_prob/properties/prob")
 
 ### prob Type
 

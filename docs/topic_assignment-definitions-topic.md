@@ -2,24 +2,26 @@
 
 `object` ([Details](topic_assignment-definitions-topic.md))
 
-# undefined Properties
+# topic Properties
 
-| Property | Type     | Required | Nullable       | Defined by                                                                                                                                                                                             |
-| :------- | -------- | -------- | -------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [p](#p)  | `number` | Required | cannot be null | [Untitled schema](topic_assignment-definitions-topic-properties-p.md "https&#x3A;//impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/definitions/topic/properties/p") |
-| [t](#t)  | Multiple | Required | cannot be null | [Untitled schema](topic_assignment-definitions-topic-properties-t.md "https&#x3A;//impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/definitions/topic/properties/t") |
+| Property | Type     | Required | Nullable       | Defined by                                                                                                                                                                                        |
+| :------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [p](#p)  | `number` | Required | cannot be null | [Untitled schema](topic_assignment-definitions-topic-properties-p.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/definitions/topic/properties/p") |
+| [t](#t)  | Multiple | Required | cannot be null | [Untitled schema](topic_assignment-definitions-topic-properties-t.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/definitions/topic/properties/t") |
 
 ## p
 
 Probability or proportion of topic
 
-
 `p`
 
--   is required
--   Type: `number`
--   cannot be null
--   defined in: [Untitled schema](topic_assignment-definitions-topic-properties-p.md "https&#x3A;//impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/definitions/topic/properties/p")
+*   is required
+
+*   Type: `number`
+
+*   cannot be null
+
+*   defined in: [Untitled schema](topic_assignment-definitions-topic-properties-p.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/definitions/topic/properties/p")
 
 ### p Type
 
@@ -33,15 +35,17 @@ Probability or proportion of topic
 
 ## t
 
-Topic id 
-
+Topic id
 
 `t`
 
--   is required
--   Type: any of the folllowing: `integer` or `string` ([Details](topic_assignment-definitions-topic-properties-t.md))
--   cannot be null
--   defined in: [Untitled schema](topic_assignment-definitions-topic-properties-t.md "https&#x3A;//impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/definitions/topic/properties/t")
+*   is required
+
+*   Type: any of the folllowing: `integer` or `string` ([Details](topic_assignment-definitions-topic-properties-t.md))
+
+*   cannot be null
+
+*   defined in: [Untitled schema](topic_assignment-definitions-topic-properties-t.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/definitions/topic/properties/t")
 
 ### t Type
 

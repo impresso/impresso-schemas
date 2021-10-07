@@ -4,22 +4,24 @@
 
 # lidType Properties
 
-| Property      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                        |
-| :------------ | -------- | -------- | -------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [lang](#lang) | `string` | Required | cannot be null | [Impresso Language Identification Information](language_identification-definitions-lidtype-properties-langiso639type.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/definitions/lidType/properties/lang") |
-| [prob](#prob) | `number` | Required | cannot be null | [Impresso Language Identification Information](language_identification-definitions-lidtype-properties-probtype.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/definitions/lidType/properties/prob")       |
+| Property      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                   |
+| :------------ | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [lang](#lang) | `string` | Required | cannot be null | [Impresso Language Identification Information](language_identification-definitions-lidtype-properties-langiso639type.md "https://impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/definitions/lidType/properties/lang") |
+| [prob](#prob) | `number` | Required | cannot be null | [Impresso Language Identification Information](language_identification-definitions-lidtype-properties-probtype.md "https://impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/definitions/lidType/properties/prob")       |
 
 ## lang
 
 Two- or three-letter ISO language abbreviation, cf. <https://en.wikipedia.org/wiki/List_of_ISO_639-2_codes> or <https://en.wikipedia.org/wiki/List_of_ISO_639-3_codes>
 
-
 `lang`
 
--   is required
--   Type: `string` ([langISO639Type](language_identification-definitions-lidtype-properties-langiso639type.md))
--   cannot be null
--   defined in: [Impresso Language Identification Information](language_identification-definitions-lidtype-properties-langiso639type.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/definitions/lidType/properties/lang")
+*   is required
+
+*   Type: `string` ([langISO639Type](language_identification-definitions-lidtype-properties-langiso639type.md))
+
+*   cannot be null
+
+*   defined in: [Impresso Language Identification Information](language_identification-definitions-lidtype-properties-langiso639type.md "https://impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/definitions/lidType/properties/lang")
 
 ### lang Type
 
@@ -39,13 +41,15 @@ Two- or three-letter ISO language abbreviation, cf. <https://en.wikipedia.org/wi
 
 Probability of the prediction
 
-
 `prob`
 
--   is required
--   Type: `number` ([probType](language_identification-definitions-lidtype-properties-probtype.md))
--   cannot be null
--   defined in: [Impresso Language Identification Information](language_identification-definitions-lidtype-properties-probtype.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/definitions/lidType/properties/prob")
+*   is required
+
+*   Type: `number` ([probType](language_identification-definitions-lidtype-properties-probtype.md))
+
+*   cannot be null
+
+*   defined in: [Impresso Language Identification Information](language_identification-definitions-lidtype-properties-probtype.md "https://impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/definitions/lidType/properties/prob")
 
 ### prob Type
 
