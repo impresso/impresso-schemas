@@ -1,28 +1,41 @@
-# Impresso Schemas
+# Impresso JSON Schemas
 
-Repository of JSON schemas (draft 06) used in the [Impresso project](https://impresso-project.ch/).
+This repository contains the JSON schemas used in the [Impresso project](https://impresso-project.ch/).
 
+Impresso JSON Schemas are used to define, declare, validate and document the structure, constraint  and data types of Impresso JSON documents that can represent data or processes (e.g. manifests).
+
+
+### Schemas
 We define schemas for:
+#### Newspaper data
+  - Canonical format:
+      - [Issue](docs/issue.md) (draft 06)
+      - [Page](docs/page.md) (draft 06)
+      - [Content Item](docs/contentitem.md) (draft 06)
+  - Rebuilt format:
+      - Rebuilt (todo)
+#### Semantic enrichments
+  - Topic Model
+      - [Topic Assignment](docs/topic_assignment.md) (draft 06)
+      - [Topic Description](docs/topic_description.md) (draft 06)
+  - Language Identification
+      - [Language Identification](docs/language_identification.md) (draft 06)
+  - Entities
+    - [Entities](docs/entities.md) (2020-12)
 
-- Newspaper
-    - [Issue](docs/issue.md)
-    - [Page](docs/page.md)
-    - [Content Item](docs/contentitem.md)
-- Topic Model
-    - [Topic Assignment](docs/topic_assignment.md)
-    - [Topic Description](docs/topic_description.md)
-- Language Identification
-    - [Language Identification](docs/language_identification.md)
+#### Processes
+  - Data processing manifests (todo)
+  - Data release manifests (todo)
 
-## File organisation
+## File organisation in this repository
 
  - `json/` subdirectory for JSON schemas
  - `examples/` subdirectory for example/test files
  - `docs/` documentation of schemas in markdown format
 
-## Validation examples
+## Validation
 
-Run:
+To validate an instance (example file) against a JSON schema, run:
 
 ```bash
 make tests
