@@ -1,0 +1,95 @@
+{
+    "version": "v0.0.1",
+    "date_last_modified": "2020-01-31 21:16:58",
+    "input_data_manifest": "s3://path/to/manifest_of_input_data.json",
+    "data_type": "rebuilt",
+    "media_list": [
+        {  
+            "title": "NP_title1",
+            "date_last_modified": "2020-01-30 21:16:58",
+            "action_type": "addition",
+            "granularity_level": "year",
+            "elements": [],
+            "code_version": "commit_number",
+            "stats – option 0": {
+                "full_title": {
+                    "nb_issues": 2,
+                    "nb_pages": 10,
+                    "nb_ci": 100,
+                    "n_tokens": 1000
+                },
+                "yearly": [
+                    {
+                        "year": 1980,
+                        "stats": {
+                            "nb_issues": 2,
+                            "nb_pages": 10,
+                            "nb_ci": 100,
+                            "n_tokens": 1000
+                        }
+                    }, {
+                        "year": 1981,
+                        "stats": {
+                            "nb_issues": 2,
+                            "nb_pages": 10,
+                            "nb_ci": 100,
+                            "n_tokens": 1000
+                        }
+                    }
+                ]
+            }
+        },{
+            "title": "NP_title2",
+            "date_last_modified": "2020-01-30 21:16:58",
+            "action_type": "modification",
+            "granularity_level": "issue",
+            "elements": [],
+            "code_version": "commit_number",
+            "stats – option 0": {
+                "full_title": {
+                    "nb_issues": 2,
+                    "nb_pages": 10,
+                    "nb_ci": 100,
+                    "n_tokens": 1000
+                },
+                "yearly": [
+                    {
+                        "year": 1980,
+                        "stats": {
+                            "nb_issues": 2,
+                            "nb_pages": 10,
+                            "nb_ci": 100,
+                            "n_tokens": 1000
+                        }
+                    }, {
+                        "year": 1981,
+                        "stats": {
+                            "nb_issues": 2,
+                            "nb_pages": 10,
+                            "nb_ci": 100,
+                            "n_tokens": 1000
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "stats – option 0": {
+        "canonical_stats": {
+            "n_newspapers": 0,
+            "n_issues": 0,
+            "n_pages": 0,
+            "n_tokens": 0,
+            "n_images": 0,
+            "n_content_items": 0
+        },
+        "rebuilt_stats": {
+            "n_newspapers": 0,
+            "n_issues": 0,
+            "n_pages": 0,
+            "n_tokens": 0,
+            "n_content_items": 0
+        }
+    },
+    "note": ""
+}
