@@ -14,7 +14,7 @@
       "type": "string"
     },
     "tp": {
-      "description": "content item type (ar, ad)",
+      "description": "content item type (e.g. 'ar' for article, 'ad' for advertisement)",
       "type": "string"
     },
     "cc": {
@@ -47,10 +47,6 @@
       "description": "two letter language code",
       "type": "string",
       "pattern": "^[a-z]{2}$"
-    },
-    "tp": {
-      "description": "content item type (e.g. 'ar' for article, 'ad' for advertisement)",
-      "type": "string"
     },
     "ft": {
       "description": "the rebuilt fulltext",

@@ -8,13 +8,13 @@
             "date_last_modified": "2020-01-30 21:16:58",
             "action_type": "addition",
             "granularity_level": "year",
-            "elements": [],
+            "elements": [1980, 1981],
             "code_version": "commit_number",
-            "stats – option 1": [
+            "stats (option 1)": [
                 {   
                     "type": "canonical",
                     "granularity": "title", 
-                    "title": "NP_title1",
+                    "element": "NP_title1",
                     "nps_stats": {
                         "n_issues": 0,
                         "n_pages": 0,
@@ -26,7 +26,7 @@
                 {   
                     "type": "canonical",
                     "granularity": "year",
-                    "year": 1980,
+                    "element": "NP_title1-1980",
                     "nps_stats": {
                         "n_issues": 0,
                         "n_pages": 0,
@@ -38,7 +38,7 @@
                 {   
                     "type": "canonical",
                     "granularity": "year",
-                    "year": 1981,
+                    "element": "NP_title1-1981",
                     "nps_stats": {
                         "n_issues": 0,
                         "n_pages": 0,
@@ -53,15 +53,13 @@
             "date_last_modified": "2020-01-30 21:16:58",
             "action_type": "modification",
             "granularity_level": "issue",
-            "elements": [],
+            "elements": ["issue_id1", "issue_id2"],
             "code_version": "commit_number",
-            "stats – option 2": [
+            "stats (option 1)": [
                 {   
                     "type": "canonical",
-                    "granularity": {
-                        "level": "title",
-                        "value": "NP_title2"
-                    },
+                    "granularity": "title", 
+                    "element": "NP_title2",
                     "nps_stats": {
                         "n_issues": 0,
                         "n_pages": 0,
@@ -71,10 +69,8 @@
                     }
                 },{
                     "type": "canonical",
-                    "granularity": {
-                        "level": "year",
-                        "value": "1980"
-                    },
+                    "granularity": "year",
+                    "element": "NP_title1-1850",
                     "nps_stats": {
                         "n_issues": 0,
                         "n_pages": 0,
@@ -85,10 +81,8 @@
                 },
                 {   
                     "type": "canonical",
-                    "granularity": {
-                        "level": "year",
-                        "value": "1981"
-                    },
+                    "granularity": "year",
+                    "element": "NP_title1-1852",
                     "nps_stats": {
                         "n_issues": 0,
                         "n_pages": 0,
@@ -106,13 +100,13 @@
             "date_last_modified": "2020-01-30 21:16:58",
             "action_type": "addition",
             "granularity_level": "year",
-            "elements": [],
+            "elements": [1980, 1981],
             "code_version": "commit_number",
-            "stats – option 1": [
+            "stats (option 1)": [
                 {   
                     "type": "rebuilt",
                     "granularity": "title", 
-                    "title": "NP_title1",
+                    "element": "NP_title1",
                     "nps_stats": {
                         "n_issues": 0,
                         "n_pages": 0,
@@ -123,7 +117,7 @@
                 {   
                     "type": "rebuilt",
                     "granularity": "year",
-                    "year": 1980,
+                    "element": "NP_title1-1980",
                     "nps_stats": {
                         "n_issues": 0,
                         "n_pages": 0,
@@ -134,7 +128,7 @@
                 {   
                     "type": "rebuilt",
                     "granularity": "year",
-                    "year": 1981,
+                    "element": "NP_title1-1981",
                     "nps_stats": {
                         "n_issues": 0,
                         "n_pages": 0,
@@ -147,16 +141,14 @@
             "title": "NP_title2",
             "date_last_modified": "2020-01-30 21:16:58",
             "action_type": "modification",
-            "granularity_level": "issue",
+            "granularity_level": "title",
             "elements": [],
             "code_version": "commit_number",
-            "stats – option 2": [
+            "stats (option 1)": [
                 {   
                     "type": "rebuilt",
-                    "granularity": {
-                        "level": "title",
-                        "value": "NP_title2"
-                    },
+                    "granularity": "title", 
+                    "element": "NP_title2",
                     "nps_stats": {
                         "n_issues": 0,
                         "n_pages": 0,
@@ -165,10 +157,8 @@
                     }
                 },{   
                     "type": "rebuilt",
-                    "granularity": {
-                        "level": "year",
-                        "value": "1981"
-                    },
+                    "granularity": "year",
+                    "element": "NP_title2-2000",
                     "nps_stats": {
                         "n_issues": 0,
                         "n_pages": 0,
@@ -179,7 +169,7 @@
             ]
         }
     ],
-    "stats – option 1": [
+    "stats (option 1)": [
         {  
             "type": "canonical",
             "granularity": "collection", 
@@ -195,52 +185,6 @@
         },{   
             "type": "rebuilt",
             "granularity": "collection",
-            "nps_stats": {
-                "n_newspapers": 0,
-                "n_issues": 0,
-                "n_pages": 0,
-                "n_tokens": 0,
-                "n_content_items": 0
-            },
-            "radio_stats": {}
-        }
-    ],
-    "stats – option 2": [
-        {   
-            "type": "canonical",
-            "granularity": {
-                "level": "collection",
-                "value": "impresso"
-            },
-            "nps_stats": {
-                "n_newspapers": 0,
-                "n_issues": 0,
-                "n_pages": 0,
-                "n_tokens": 0,
-                "n_images": 0,
-                "n_content_items": 0
-            },
-            "radio_stats": {}
-        },{   
-            "type": "rebuilt",
-            "granularity": {
-                "level": "collection",
-                "value": "impresso"
-            },
-            "nps_stats": {
-                "n_newspapers": 0,
-                "n_issues": 0,
-                "n_pages": 0,
-                "n_tokens": 0,
-                "n_content_items": 0
-            },
-            "radio_stats": {}
-        },{   
-            "type": "embeddings",
-            "granularity": {
-                "level": "collection",
-                "value": "impresso"
-            },
             "nps_stats": {
                 "n_newspapers": 0,
                 "n_issues": 0,

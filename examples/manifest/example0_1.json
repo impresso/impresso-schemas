@@ -11,7 +11,7 @@
             "granularity_level": "year",
             "elements": [],
             "code_version": "commit_number",
-            "stats – option 0": {
+            "stats (option 0)": {
                 "full_title": {
                     "nb_issues": 2,
                     "nb_pages": 10,
@@ -45,7 +45,7 @@
             "granularity_level": "issue",
             "elements": [],
             "code_version": "commit_number",
-            "stats – option 0": {
+            "stats (option 0)": {
                 "full_title": {
                     "nb_issues": 2,
                     "nb_pages": 10,
@@ -74,7 +74,7 @@
             }
         }
     ],
-    "stats – option 0": {
+    "stats (option 0)": {
         "canonical_stats": {
             "n_newspapers": 0,
             "n_issues": 0,
