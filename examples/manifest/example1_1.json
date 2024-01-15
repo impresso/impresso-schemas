@@ -1,5 +1,5 @@
 {
-    "version": "v0.0.1",
+    "version": "v0.1.1",
     "date_last_modified": "2020-01-30 21:16:58",
     "input_data_manifest": "s3://path/to/manifest_of_input_data.json",
     "media_lists": [
