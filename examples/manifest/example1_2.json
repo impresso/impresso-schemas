@@ -1,17 +1,19 @@
 {
-    "version": "v0.1.2",
-    "date_last_modified": "2020-01-30 21:16:58",
-    "input_data_manifest": "s3://path/to/manifest_of_input_data.json",
-    "data_type": "rebuilt",
+    "mft_version": "v0.1.2",
+    "mft_generation_date": "2020-01-30 21:16:58",
+    "mft_s3_path": "s3://path/to/this_manifest.json", 
+    "input_mft_s3_path": "s3://path/to/manifest_of_input_data.json", 
+    "input_mft_git_path": "/path/to/manifest_of_input_data.json", 
+    "code_git_commit": "last update commit hash/number",
     "media_list": [
         {  
-            "title": "NP_title1",
-            "date_last_modified": "2020-01-30 21:16:58",
-            "action_type": "addition",
-            "granularity_level": "year",
-            "elements": [1980, 1980],
-            "code_version": "commit_number",
-            "stats (option 1)": [
+            "media_title": "NP_title1",
+            "last_modification_date": "2020-01-30 21:16:58",
+            "update_type": "addition",
+            "update_level": "year",
+            "update_targets": [1980, 1980],
+            "code_git_commit": "last update commit hash/number",
+            "media_statistics": [
                 {   
                     "type": "rebuilt",
                     "granularity": "title", 
@@ -48,13 +50,13 @@
                 }
             ]
         },{
-            "title": "NP_title2",
+            "media_title": "NP_title2",
             "date_last_modified": "2020-01-30 21:16:58",
-            "action_type": "modification",
-            "granularity_level": "issue",
-            "elements": ["issue_id1", "issue_id2"],
-            "code_version": "commit_number",
-            "stats (option 1)": [
+            "update_type": "modification",
+            "update_level": "media_title",
+            "update_targets": ["manifest_iiif_uri", "i['c']"],
+            "code_git_commit": "commit_number",
+            "media_statistics": [
                 {   
                     "type": "rebuilt",
                     "granularity": "title", 
@@ -92,10 +94,10 @@
             ]
         }
     ],
-    "stats (option 1)": [
+    "overall_statistics": [
         {  
             "type": "canonical",
-            "granularity": "collection", 
+            "granularity": "corpus", 
             "nps_stats": {
                 "n_newspapers": 0,
                 "n_issues": 0,
@@ -107,7 +109,7 @@
             "radio_stats": {}
         },{  
             "type": "rebuilt",
-            "granularity": "collection", 
+            "granularity": "corpus", 
             "nps_stats": {
                 "n_newspapers": 0,
                 "n_issues": 0,
@@ -118,5 +120,5 @@
             "radio_stats": {}
         }
     ],
-    "note": ""
+    "notes": ""
 }
