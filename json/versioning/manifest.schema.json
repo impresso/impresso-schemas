@@ -120,7 +120,7 @@
         },
         "notes": {
             "type": "string",
-            "description": ""
+            "description": "Free text notes for any relevant information about processing."
         }
     },
     "definitions": {
