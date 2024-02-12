@@ -1,3 +1,3 @@
-## topic_description Type
+## topic\_description Type
 
 `string`

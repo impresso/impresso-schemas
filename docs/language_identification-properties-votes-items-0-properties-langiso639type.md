@@ -4,7 +4,7 @@
 
 ## lang Constraints
 
-**pattern**: the string must match the following regular expression: 
+**pattern**: the string must match the following regular expression:&#x20;
 
 ```regexp
 ^[a-z]{2,3}$

@@ -2,24 +2,26 @@
 
 `object` ([Details](language_identification-properties-votes-items-0.md))
 
-# undefined Properties
+# 0 Properties
 
-| Property      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                  |
-| :------------ | -------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [lang](#lang) | `string` | Required | cannot be null | [Impresso Language Identification Information](language_identification-properties-votes-items-0-properties-langiso639type.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/votes/items/0/properties/lang") |
-| [vote](#vote) | `number` | Required | cannot be null | [Impresso Language Identification Information](language_identification-properties-votes-items-0-properties-vote.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/votes/items/0/properties/vote")           |
+| Property      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                             |
+| :------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [lang](#lang) | `string` | Required | cannot be null | [Impresso Language Identification Information](language_identification-properties-votes-items-0-properties-langiso639type.md "https://impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/votes/items/0/properties/lang") |
+| [vote](#vote) | `number` | Required | cannot be null | [Impresso Language Identification Information](language_identification-properties-votes-items-0-properties-vote.md "https://impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/votes/items/0/properties/vote")           |
 
 ## lang
 
 Two- or three-letter ISO language abbreviation, cf. <https://en.wikipedia.org/wiki/List_of_ISO_639-2_codes> or <https://en.wikipedia.org/wiki/List_of_ISO_639-3_codes>
 
-
 `lang`
 
--   is required
--   Type: `string` ([langISO639Type](language_identification-properties-votes-items-0-properties-langiso639type.md))
--   cannot be null
--   defined in: [Impresso Language Identification Information](language_identification-properties-votes-items-0-properties-langiso639type.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/votes/items/0/properties/lang")
+*   is required
+
+*   Type: `string` ([langISO639Type](language_identification-properties-votes-items-0-properties-langiso639type.md))
+
+*   cannot be null
+
+*   defined in: [Impresso Language Identification Information](language_identification-properties-votes-items-0-properties-langiso639type.md "https://impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/votes/items/0/properties/lang")
 
 ### lang Type
 
@@ -27,7 +29,7 @@ Two- or three-letter ISO language abbreviation, cf. <https://en.wikipedia.org/wi
 
 ### lang Constraints
 
-**pattern**: the string must match the following regular expression: 
+**pattern**: the string must match the following regular expression:&#x20;
 
 ```regexp
 ^[a-z]{2,3}$
@@ -39,13 +41,15 @@ Two- or three-letter ISO language abbreviation, cf. <https://en.wikipedia.org/wi
 
 
 
-
 `vote`
 
--   is required
--   Type: `number`
--   cannot be null
--   defined in: [Impresso Language Identification Information](language_identification-properties-votes-items-0-properties-vote.md "https&#x3A;//impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/votes/items/0/properties/vote")
+*   is required
+
+*   Type: `number`
+
+*   cannot be null
+
+*   defined in: [Impresso Language Identification Information](language_identification-properties-votes-items-0-properties-vote.md "https://impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/votes/items/0/properties/vote")
 
 ### vote Type
 

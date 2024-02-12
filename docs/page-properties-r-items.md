@@ -2,25 +2,27 @@
 
 `object` ([Details](page-properties-r-items.md))
 
-# undefined Properties
+# items Properties
 
-| Property    | Type     | Required | Nullable       | Defined by                                                                                                                                                                        |
-| :---------- | -------- | -------- | -------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [c](#c)     | `array`  | Required | cannot be null | [Newspaper Page](page-properties-r-items-properties-c.md "https&#x3A;//impresso.github.io/impresso-schemas/json/newspaper/page.schema.json#/properties/r/items/properties/c")     |
-| [p](#p)     | `array`  | Required | cannot be null | [Newspaper Page](page-properties-r-items-properties-p.md "https&#x3A;//impresso.github.io/impresso-schemas/json/newspaper/page.schema.json#/properties/r/items/properties/p")     |
-| [pOf](#pof) | `string` | Optional | cannot be null | [Newspaper Page](page-properties-r-items-properties-pof.md "https&#x3A;//impresso.github.io/impresso-schemas/json/newspaper/page.schema.json#/properties/r/items/properties/pOf") |
+| Property    | Type     | Required | Nullable       | Defined by                                                                                                                                                                   |
+| :---------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [c](#c)     | `array`  | Required | cannot be null | [Newspaper Page](page-properties-r-items-properties-c.md "https://impresso.github.io/impresso-schemas/json/newspaper/page.schema.json#/properties/r/items/properties/c")     |
+| [p](#p)     | `array`  | Required | cannot be null | [Newspaper Page](page-properties-r-items-properties-p.md "https://impresso.github.io/impresso-schemas/json/newspaper/page.schema.json#/properties/r/items/properties/p")     |
+| [pOf](#pof) | `string` | Optional | cannot be null | [Newspaper Page](page-properties-r-items-properties-pof.md "https://impresso.github.io/impresso-schemas/json/newspaper/page.schema.json#/properties/r/items/properties/pOf") |
 
 ## c
 
 Coordinates of image-region, following IIIF regions schema (x, y, width, height).
 
-
 `c`
 
--   is required
--   Type: `integer[]`
--   cannot be null
--   defined in: [Newspaper Page](page-properties-r-items-properties-c.md "https&#x3A;//impresso.github.io/impresso-schemas/json/newspaper/page.schema.json#/properties/r/items/properties/c")
+*   is required
+
+*   Type: `integer[]`
+
+*   cannot be null
+
+*   defined in: [Newspaper Page](page-properties-r-items-properties-c.md "https://impresso.github.io/impresso-schemas/json/newspaper/page.schema.json#/properties/r/items/properties/c")
 
 ### c Type
 
@@ -34,13 +36,15 @@ Coordinates of image-region, following IIIF regions schema (x, y, width, height)
 
 Text paragraphs.
 
-
 `p`
 
--   is required
--   Type: `object[]` ([Details](page-properties-r-items-properties-p-items.md))
--   cannot be null
--   defined in: [Newspaper Page](page-properties-r-items-properties-p.md "https&#x3A;//impresso.github.io/impresso-schemas/json/newspaper/page.schema.json#/properties/r/items/properties/p")
+*   is required
+
+*   Type: `object[]` ([Details](page-properties-r-items-properties-p-items.md))
+
+*   cannot be null
+
+*   defined in: [Newspaper Page](page-properties-r-items-properties-p.md "https://impresso.github.io/impresso-schemas/json/newspaper/page.schema.json#/properties/r/items/properties/p")
 
 ### p Type
 
@@ -50,13 +54,15 @@ Text paragraphs.
 
 The canonical ID of the content item to which the page region belongs.
 
-
 `pOf`
 
--   is optional
--   Type: `string`
--   cannot be null
--   defined in: [Newspaper Page](page-properties-r-items-properties-pof.md "https&#x3A;//impresso.github.io/impresso-schemas/json/newspaper/page.schema.json#/properties/r/items/properties/pOf")
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [Newspaper Page](page-properties-r-items-properties-pof.md "https://impresso.github.io/impresso-schemas/json/newspaper/page.schema.json#/properties/r/items/properties/pOf")
 
 ### pOf Type
 

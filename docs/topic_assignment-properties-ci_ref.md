@@ -1,3 +1,3 @@
-## ci_ref Type
+## ci\_ref Type
 
 `string`

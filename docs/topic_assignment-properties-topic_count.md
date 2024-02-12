@@ -1,3 +1,3 @@
-## topic_count Type
+## topic\_count Type
 
 `integer`

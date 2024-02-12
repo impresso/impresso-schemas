@@ -1,3 +1,3 @@
-## iiif_link Type
+## iiif\_link Type
 
 `string`
