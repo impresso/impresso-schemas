@@ -3,7 +3,7 @@
     "mft_generation_date": "2020-01-30 21:16:58",
     "mft_s3_path": "s3://path/to/this_manifest.json", 
     "input_mft_s3_path": "s3://path/to/manifest_of_input_data.json", 
-    "input_mft_git_path": "/path/to/manifest_of_input_data.json", 
+    "input_mft_git_path": "git/path/to/manifest_of_input_data.json", 
     "code_git_commit": "last update commit hash/number",
     "media_list": [
         {  
