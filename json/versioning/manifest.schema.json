@@ -71,17 +71,25 @@
                         "enum": [
                             "title",
                             "year",
-                            "issue",
                             null
                         ]
                     },
-                    "update_targets": {
+                    "updated_years": {
                         "type": "array",
-                        "description": "List of years or issue/page properties which were updated. Empty if entire media title was re-ingested.",
+                        "description": "List of years which were updated. Empty if entire media title was re-ingested or patched.",
                         "items": {
                             "type": [
                                 "string",
-                                "integer",
+                                "null"
+                            ]
+                        }
+                    },
+                    "updated_fields": {
+                        "type": "array",
+                        "description": "List of (json output) properties which were updated. Empty if all properties were modified or re-ingested.",
+                        "items": {
+                            "type": [
+                                "string",
                                 "null"
                             ]
                         }
@@ -172,7 +180,7 @@
                             "type": "integer",
                             "description": "Number of images present in the data."
                         },
-                        "ne_entites": {
+                        "ne_entities": {
                             "type": "integer",
                             "description": "Number of unique named entities present in the data."
                         },
