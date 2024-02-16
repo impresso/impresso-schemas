@@ -1,0 +1,124 @@
+{
+    "mft_version": "v0.1.2",
+    "mft_generation_date": "2020-01-30 21:16:58",
+    "mft_s3_path": "s3://path/to/this_manifest.json", 
+    "input_mft_s3_path": "s3://path/to/manifest_of_input_data.json", 
+    "input_mft_git_path": "git/path/to/manifest_of_input_data.json", 
+    "code_git_commit": "last update commit hash/number",
+    "media_list": [
+        {  
+            "media_title": "NP_title1",
+            "last_modification_date": "2020-01-30 21:16:58",
+            "update_type": "addition",
+            "update_level": "year",
+            "update_targets": [1980, 1980],
+            "code_git_commit": "last update commit hash/number",
+            "media_statistics": [
+                {   
+                    "type": "rebuilt",
+                    "granularity": "title", 
+                    "element": "NP_title1",
+                    "nps_stats": {
+                        "n_issues": 0,
+                        "n_pages": 0,
+                        "n_tokens": 0,
+                        "n_images": 0,
+                        "n_content_items": 0
+                    }
+                },{   
+                    "type": "rebuilt",
+                    "granularity": "year",
+                    "element": "NP_title1-1980",
+                    "nps_stats": {
+                        "n_issues": 0,
+                        "n_pages": 0,
+                        "n_tokens": 0,
+                        "n_images": 0,
+                        "n_content_items": 0
+                    }
+                },{   
+                    "type": "rebuilt",
+                    "granularity": "year",
+                    "element": "NP_title1-1981",
+                    "nps_stats": {
+                        "n_issues": 0,
+                        "n_pages": 0,
+                        "n_tokens": 0,
+                        "n_images": 0,
+                        "n_content_items": 0
+                    }
+                }
+            ]
+        },{
+            "media_title": "NP_title2",
+            "date_last_modified": "2020-01-30 21:16:58",
+            "update_type": "modification",
+            "update_level": "media_title",
+            "update_targets": ["manifest_iiif_uri", "i['c']"],
+            "code_git_commit": "commit_number",
+            "media_statistics": [
+                {   
+                    "type": "rebuilt",
+                    "granularity": "title", 
+                    "element": "NP_title2",
+                    "nps_stats": {
+                        "n_issues": 0,
+                        "n_pages": 0,
+                        "n_tokens": 0,
+                        "n_images": 0,
+                        "n_content_items": 0
+                    }
+                },{
+                    "type": "rebuilt",
+                    "granularity": "year",
+                    "element": "NP_title2-1980",
+                    "nps_stats": {
+                        "n_issues": 0,
+                        "n_pages": 0,
+                        "n_tokens": 0,
+                        "n_images": 0,
+                        "n_content_items": 0
+                    }
+                },{   
+                    "type": "rebuilt",
+                    "granularity": "year",
+                    "element": "NP_title2-1981",
+                    "nps_stats": {
+                        "n_issues": 0,
+                        "n_pages": 0,
+                        "n_tokens": 0,
+                        "n_images": 0,
+                        "n_content_items": 0
+                    }
+                }
+            ]
+        }
+    ],
+    "overall_statistics": [
+        {  
+            "type": "canonical",
+            "granularity": "corpus", 
+            "nps_stats": {
+                "n_newspapers": 0,
+                "n_issues": 0,
+                "n_pages": 0,
+                "n_tokens": 0,
+                "n_images": 0,
+                "n_content_items": 0
+            },
+            "radio_stats": {}
+        },{  
+            "type": "rebuilt",
+            "granularity": "corpus", 
+            "nps_stats": {
+                "n_newspapers": 0,
+                "n_issues": 0,
+                "n_pages": 0,
+                "n_tokens": 0,
+                "n_content_items": 0
+            },
+            "radio_stats": {}
+        }
+    ],
+    "notes": ""
+}

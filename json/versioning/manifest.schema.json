@@ -1,0 +1,242 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json",
+    "title": "Versioning Manifest",
+    "type": "object",
+    "properties": {
+        "mft_version": {
+            "type": "string",
+            "description": "Version of the manifest in format 'vM.m.p'.",
+            "pattern": "^v([0-9]+[.]){2}[0-9]+$"
+        },
+        "mft_generation_date": {
+            "type": "string",
+            "description": "Creation date timestamp of this manifest."
+        },
+        "mft_s3_path": {
+            "type": "string",
+            "description": "S3 path to this manifest ('s3://[stage bucket]/[partition]/[stage]_vM-m-p.json')."
+        },
+        "input_mft_s3_path": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "S3 path to manifest of the input data used for processing."
+        },
+        "input_mft_git_path": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Path within impresso-data-release Git repo to manifest of input data used for processing."
+        },
+        "code_git_commit": {
+            "$ref": "#/definitions/commit_link",
+            "description": "Link to git commit of the code used to generate/modify the output data."
+        },
+        "media_list": {
+            "type": "array",
+            "description": "List of all media collections (metadata and statistics) present in the s3 bucket versioned by this manifest.",
+            "items": {
+                "type": "object",
+                "description": "Information and statistics about a given media collection and the last updates made to the data.",
+                "properties": {
+                    "media_title": {
+                        "type": "string",
+                        "description": "Internal alias of newspaper newspaper (or program for radio)."
+                    },
+                    "last_modification_date": {
+                        "type": "string",
+                        "description": "Date timestamp of last modification of this specific media."
+                    },
+                    "update_type": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "description": "Type of update made to the data.",
+                        "enum": [
+                            "addition",
+                            "modification",
+                            null
+                        ]
+                    },
+                    "update_level": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "description": "How much this media was updated (only a few issues, years or entire media title).",
+                        "enum": [
+                            "title",
+                            "year",
+                            null
+                        ]
+                    },
+                    "updated_years": {
+                        "type": "array",
+                        "description": "List of years which were updated. Empty if entire media title was re-ingested or patched.",
+                        "items": {
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        }
+                    },
+                    "updated_fields": {
+                        "type": "array",
+                        "description": "List of (json output) properties which were updated. Empty if all properties were modified or re-ingested.",
+                        "items": {
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        }
+                    },
+                    "code_git_commit": {
+                        "$ref": "#/definitions/commit_link",
+                        "description": "Link to git commit of the code used to generate/modify the output data."
+                    },
+                    "media_statistics": {
+                        "type": "array",
+                        "description": "List of statistics describing the contents of the data. The first element is at title level, the following ones are yearly.",
+                        "items": {
+                            "$ref": "#/definitions/media_statistics"
+                        },
+                        "minItems": 2
+                    }
+                },
+                "required": [
+                    "media_title",
+                    "last_modification_date",
+                    "update_type",
+                    "update_level",
+                    "update_targets",
+                    "code_git_commit",
+                    "media_statistics"
+                ]
+            }
+        },
+        "overall_statistics": {
+            "type": "array",
+            "description": "List of statistics describing the contents of the data at the corpus level, for current format, as well as all previous upstream formats.",
+            "items": {
+                "$ref": "#/definitions/media_statistics"
+            },
+            "minItems": 1
+        },
+        "notes": {
+            "type": "string",
+            "description": "Free text notes for any relevant information about processing."
+        }
+    },
+    "definitions": {
+        "media_statistics": {
+            "type": "object",
+            "properties": {
+                "stage": {
+                    "type": "string",
+                    "description": "Stage of the data for which the statistics were computed."
+                },
+                "granularity": {
+                    "type": "string",
+                    "description": "Granularity level according to which the statistics were computed.",
+                    "enum": [
+                        "corpus",
+                        "title",
+                        "year"
+                    ]
+                },
+                "element": {
+                    "type": "string",
+                    "description": "Element of the data on which they were computed, based on the granularity (title-year pairs in the case of 'year')."
+                },
+                "nps_stats": {
+                    "type": "object",
+                    "description": "Counts of various elements/enrichments in newspaper data corresponding to above granularity and element. The exact keys used depend on the data stage.",
+                    "properties": {
+                        "titles": {
+                            "type": "integer",
+                            "description": "Number of newspaper titles included in the data."
+                        },
+                        "issues": {
+                            "type": "integer",
+                            "description": "Number of issues present in the data."
+                        },
+                        "pages": {
+                            "type": "integer",
+                            "description": "Number of pages present in the data."
+                        },
+                        "content_items_out": {
+                            "type": "integer",
+                            "description": "Number of content-items present in the (output) data."
+                        },
+                        "content_items_in": {
+                            "type": "integer",
+                            "description": "Number of content-items present in the input data used for processing and included in count. Used to track loss of data within a processing step."
+                        },
+                        "images": {
+                            "type": "integer",
+                            "description": "Number of images present in the data."
+                        },
+                        "ne_entities": {
+                            "type": "integer",
+                            "description": "Number of unique named entities present in the data."
+                        },
+                        "ne_mentions": {
+                            "type": "integer",
+                            "description": "Number of named-entity mentions present in the data."
+                        },
+                        "ne_links": {
+                            "type": "integer",
+                            "description": "Number of named-entity links present in the data."
+                        },
+                        "topics": {
+                            "type": "integer",
+                            "description": "Number of topics extracted from the data."
+                        }
+                    },
+                    "required": [
+                        "content_items_out"
+                    ]
+                },
+                "radio_stats": {
+                    "type": "object",
+                    "description": "Counts of various elements/enrichments in radio data corresponding to above granularity and element. The exact keys used depend on the data stage."
+                }
+            },
+            "required": [
+                "stage",
+                "granularity"
+            ],
+            "anyOf": [
+                {
+                    "required": [
+                        "nps_stats"
+                    ]
+                },
+                {
+                    "required": [
+                        "radio_stats"
+                    ]
+                }
+            ]
+        },
+        "commit_link": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Link to git commit of the code used to generate/modify the output data."
+        }
+    },
+    "required": [
+        "mft_version",
+        "mft_generation_date",
+        "mft_s3_path",
+        "input_mft_git_path",
+        "code_git_commit",
+        "media_list"
+    ]
+}

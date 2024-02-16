@@ -1,8 +1,8 @@
-## alphabetical_ratio Type
+## alphabetical\_ratio Type
 
 `number`
 
-## alphabetical_ratio Constraints
+## alphabetical\_ratio Constraints
 
 **maximum**: the value of this number must smaller than or equal to: `1`
 

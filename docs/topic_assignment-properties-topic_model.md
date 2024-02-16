@@ -1,3 +1,3 @@
-## topic_model Type
+## topic\_model Type
 
 `string`

@@ -1,0 +1,3 @@
+## pages Type
+
+`integer`
