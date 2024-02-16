@@ -112,7 +112,8 @@
                     "last_modification_date",
                     "update_type",
                     "update_level",
-                    "update_targets",
+                    "updated_years",
+                    "updated_fields",
                     "code_git_commit",
                     "media_statistics"
                 ]
@@ -179,6 +180,10 @@
                         "images": {
                             "type": "integer",
                             "description": "Number of images present in the data."
+                        },
+                        "ft_tokens": {
+                            "type": "integer",
+                            "description": "Number of tokens present in the full-text of the data."
                         },
                         "ne_entities": {
                             "type": "integer",
