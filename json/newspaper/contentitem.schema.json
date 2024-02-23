@@ -48,6 +48,10 @@
       "type": "string",
       "pattern": "^[a-z]{2}$"
     },
+    "ro": {
+        "description": "Reading order index of the content item, for the table of contents view on the interface. If not defined, the CI number (after 'i' in the ID) should be used.",
+        "type": "integer"
+    },
     "ft": {
       "description": "the rebuilt fulltext",
       "type": "string"

@@ -11,7 +11,11 @@
         },
         "iiif":{
           "type": "string",
-          "description": "URI of the IIIF Manifest of the newspaper page image."
+          "description": "URI of the IIIF Manifest of the newspaper page image. Deprecated in favor of `iiif_img_base_uri` which should be used whenever it's defined, kept for backwards compatibility."
+        },
+        "iiif_img_base_uri":{
+          "type": "string",
+          "description": "Base of the IIIF image URI of the newspaper page image. Should follow format `{scheme}://{server}/{prefix}/{identifier}` and not include any suffix."
         },
         "cc":{
             "type": "boolean",
