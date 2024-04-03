@@ -193,17 +193,13 @@
                             "type": "integer",
                             "description": "Number of named-entity mentions present in the data."
                         },
-                        "lang_fd": {
-                            "type": "object",
-                            "description": "Frequency dict with the occurences of each lang identified in the data."
+                        "ne_links": {
+                            "type": "integer",
+                            "description": "Number of named-entity links present in the data."
                         },
                         "topics": {
                             "type": "integer",
                             "description": "Number of topics extracted from the data."
-                        },
-                        "text_reuse_clusters": {
-                            "type": "integer",
-                            "description": "Number of text-reuse clusters indentified in the data."
                         }
                     },
                     "required": [
