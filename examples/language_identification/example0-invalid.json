@@ -1,0 +1,62 @@
+{
+  "id": "luxzeit1858-1859-01-18-a-i0026",
+  "lg_decision": "voting",
+  "tp": "tb",
+  "len": 63,
+  "orig_lg": null,
+  "alphabetical_ratio": 0.254,
+  "impresso_language_identifier_version": {
+    "version": "v1.4.1",
+    "ts": "2020-12-28T10:27:11+00:00"
+  },
+  "language_identifier_version": {
+    "version": "v1.4.1",
+    "ts": "2020-12-28T10:15:45+00:00"
+  },
+  "impresso_ft": [
+    {
+      "lang": "fr",
+      "prob": 0.969
+    },
+    {
+      "lang": "de",
+      "prob": 0.03
+    }
+  ],
+  "langdetect": [
+    {
+      "lang": "ro",
+      "prob": 0.667
+    },
+    {
+      "lang": "ca",
+      "prob": 0.333
+    }
+  ],
+  "langid": [
+    {
+      "lang": "ro",
+      "prob": 0.655
+    }
+  ],
+  "wp_ft": [
+    {
+      "lang": "es",
+      "prob": 0.305
+    },
+    {
+      "lang": "ca",
+      "prob": 0.121
+    },
+    {
+      "lang": "war",
+      "prob": 0.106
+    }
+  ],
+  "votes": [
+    {
+      "lang": "fr",
+      "vote": 0.942
+    }
+  ]
+}
