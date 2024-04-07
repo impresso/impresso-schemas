@@ -5,6 +5,9 @@ A module to validate JSON Line files (raw or compressed) against a specified JSO
 schema. This script can handle files from various sources (local, cloud storage) through
 smart_open, and logs validation errors while allowing for command-line configured
 verbosity.
+
+In cases of validation errors, the offending JSON object is logged and skipped. The
+script exits with a non-zero status if any validation errors are encountered.
 """
 
 __author__ = "simon.clematide@uzh.ch"
@@ -56,6 +59,7 @@ class JSONLSchemaValidator:
 
         self.input_files = input_files
         self.file_format = file_format
+        self.validation_errors = 0
         self.output_writer = (
             smart_open.open(output_file, mode="w", encoding="utf-8")
             if output_file
@@ -68,6 +72,9 @@ class JSONLSchemaValidator:
         """Starts the validation process."""
 
         self.process()
+        if self.validation_errors > 0:
+            log.error("Validation errors encountered: %d", self.validation_errors)
+            sys.exit(1)
 
     def process(self) -> None:
         """
@@ -83,6 +90,7 @@ class JSONLSchemaValidator:
             except jsonschema.exceptions.ValidationError as e:
                 log.error("Validation error: %s", e.message)
                 log.info("Offending JSON object ignored: %s", jo)
+                self.validation_errors += 1
                 continue
             print(
                 json.dumps(jo, ensure_ascii=False, separators=(",", ":")),
