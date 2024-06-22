@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/ocr_qa/ocr_qa.schema.json",
+  "title": "OCR-QA JSON Schema",
+  "description": "A representation for the assessment of OCR quality of content items.",
+  "type": "object",
+  "properties": {
+    "ci_ref": {
+      "type": "string",
+      "description": "Reference to canonical content item id, typically an article"
+    },
+    "ocrqa": {
+      "type": "number",
+      "description": "The estimated OCR quality, between 0 and 1"
+    }
+  },
+  "required": [
+    "ocrqa",
+    "ci_ref"
+  ]
+}
