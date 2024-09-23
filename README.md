@@ -22,6 +22,8 @@ We define schemas for:
       - [Language Identification](docs/language_identification.md) (draft 06)
   - Entities
     - [Entities](docs/entities.md) (2020-12)
+  - [OCR Quality Assessment](docs/ocr_qa.md) (OCR-QA)
+
 
 #### Processes
   - Data processing manifests (todo)
