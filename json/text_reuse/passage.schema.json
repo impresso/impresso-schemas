@@ -1,0 +1,86 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://impresso.github.io/impresso-schemas/json/text_reuse/passage.schema.json",
+    "title": "Text-Reuse Passage",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string",
+            "description": "Unique identifier for this passage.",
+            "pattern": "^c\\d+-[a-zA-Z0-9]+-\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])-[a-z]-i\\d{4}@\\d+:\\d+$"
+        },
+        "begin": {
+            "type": "integer",
+            "description": "Start index of the text-reuse passage within the article"
+        },
+        "ci_id": {
+            "type": "string",
+            "description": "Content-item ID this passage is from.",
+            "pattern": "^c\\d+-[a-zA-Z0-9]+-\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])-[a-z]-i\\d{4}$"
+        },
+        "cluster_id": {
+            "type": "string",
+            "description": "Unique identifier for this passage's cluster."
+        },
+        "date": {
+            "type": "string",
+            "description": "Date of publication of the issue in which the passage appears.",
+            "pattern": "^(\\d{4})-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$"
+        },
+        "end": {
+            "type": "integer",
+            "description": "End index of the text-reuse passage within the article"
+        },
+        "pages": {
+            "type": "object",
+            "description": "Pages content, with id, seq and regions it corresponds to."
+        },
+        "cluster_size": {
+            "type": "integer",
+            "description": "Number of passages in this passage's cluster."
+        },
+        "text": {
+            "type": "string",
+            "description": "Full text of the passage."
+        },
+        "title": {
+            "type": "string",
+            "description": "Title of the article this passage is from."
+        },
+        "type": {
+            "type": "string",
+            "description": "Type of the article the passage is from (Not in this release)."
+        },
+        "cluster_time_delta": {
+            "type": "integer",
+            "description": "Number of days between min_date and max_date."
+        },
+        "cluster_lexical_overlap": {
+            "type": "number",
+            "description": "Computed average lexical overlap of the passages within the cluster."
+        },
+        "connected_clusters": {
+            "type": "array",
+            "description": "List of clusters also with passages present in this content-item."
+        },
+        "n_connected_clusters": {
+            "type": "integer",
+            "description": "Number of connected_clusters for this content-item."
+        }
+    },
+    "required": [
+        "id",
+        "begin",
+        "ci_id",
+        "cluster_id",
+        "date",
+        "end",
+        "cluster_size",
+        "text",
+        "title",
+        "cluster_time_delta",
+        "cluster_lexical_overlap",
+        "connected_clusters",
+        "n_connected_clusters"
+    ]
+}
