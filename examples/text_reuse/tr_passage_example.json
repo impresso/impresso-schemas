@@ -1,0 +1,36 @@
+{
+    "id": "c171799274114-legaulois-1917-07-29-a-i0002@2683:4968",
+    "begin": 2683,
+    "ci_id": "legaulois-1917-07-29-a-i0002",
+    "cluster_id": "tr-all-v1-24-c171799274114",
+    "date": "1917-07-29",
+    "end": 4968,
+    "pages": [
+        {
+            "id": "legaulois-1917-07-29-a-p0001",
+            "seq": 1,
+            "regions": [
+                {
+                    "start": 2683,
+                    "length": 2285,
+                    "coords": {
+                        "x": 4116,
+                        "y": 1257,
+                        "w": 1863,
+                        "h": 6796
+                    }
+                }
+            ]
+        }
+    ],
+    "cluster_size": 3,
+    "text": "L'histoire de ce mois de juillet 1914 montrerait\ncomment un petit groupe d'officiers prussiens, in-\nvestis de la confiance de l'Empereur, r\u00e9ussirent \u00e0\nd\u00e9cha\u00eener la guerre europ\u00e9enne.\nQuand l'empereur Guillaume revint de son\nvoyage sur la c\u00f4te de Norv\u00e8ge entrepris pour ne\npas donner l'alarme aux.cabinets europ\u00e9ens il\npara\u00eet avoir h\u00e9sit\u00e9 un moment encore avant de se\nlancer dans l'ab\u00eeme. Son entourage militaire, con-\nnaissant sa nature ind\u00e9cise et nerveuse, ne recu-\nla devant aucun moyen pour lui arracher la fa-\ntale d\u00e9cision. On m'a rapport\u00e9 que des t\u00e9l\u00e9gram-\nmes chiffr\u00e9s furent adress\u00e9s \u00e0 l'attach\u00e9 militaire \u00e0\nP\u00e9trograde pour lui indiquer en quel sens il de-\nvait r\u00e9diger ses d\u00e9p\u00eaches, afin qu'elles agissent\ns\u00fbrement sur l'esprit d.u souverain.\nBien plus, le 30 juillet, afin de contraindre\nl'Empereur \u00e0 ordonner la mobilisation, on orga-\nnisa, para\u00eet-il, tout un sc\u00e9nario. Une d\u00e9p\u00eache de\nl'attach\u00e9 militaire \u00e0 P\u00e9trograde ayant annonc\u00e9\ncertaines mesures militaires russes, on attendit,\npour la remettre \u00e0 Guillaume 11, le moment o\u00f9 il\nse trouvait en conf\u00e9rence avec son \u00e9tat-major. La\ncamarilla militaire redoutait, en effet, que l'effet\nde ce t\u00e9l\u00e9gramme ne f\u00fbt att\u00e9nu\u00e9 si certaines in-\nfluences s'interposaient entre le moment de la re-\nmise de la d\u00e9p\u00eache et celui de la conversation de\nl'Empereur avec son cabinet. Le t\u00e9l\u00e9gramme fut\napport\u00e9 au mar\u00e9chal de Moltke au moment m\u00eame\no\u00f9 celui-ci insistait pour obtenir du souverain l'au-\ntorisation de prendre des mesures militaires tr\u00e8s\ncompl\u00e8tes.\n'\u25a0M &sss\u00b0. uvrit I e.t\u00e9l\u00e9gramme Je tendit\na'un geste dramatique \u00e0 Guillaume IL qui aprew\nlavoir lu, tomba, dit-on, dafis les bras du mar\u00e9-\nchal, en disant : \u00ab Cette fois-ci, le sort en est jet\u00e9 ;\nc est la guerre ! \u00bb\nPar une curieuse co\u00efncidence, en m\u00eame\ntemps que les pr\u00e9cisions du Times sur le coni\nseil de la couronne du 5 juillet, l'officieuse!\nNouvelle Correspondance prussienne fait, bien\nque sans le vouloir, un aveu pr\u00e9cieux. Rela-\ntant les \u00e9v\u00e9nements de l\u00e0 semaine o\u00f9, sous\nl'inspiration de Guillaume 11, l'Autriche d\u00e9\u00ab\nclencha la guerre europ\u00e9enne, elle rappelle que\nla nouvelle du soi-disant rejet par la Serbie\nde l'ultimatum autrichien, \u00ab lut salu\u00e9e \u00e0 Ber-\nlin avec une vive joie \u00bb. Le Vorwserts signale\nl'importance de l'aveu, qui demeure d'autant'\np,lus significatif.\n",
+    "title": "Qui a voulu la guerre ?",
+    "time_delta": 2,
+    "lexial_overlap": 64.28571428571429,
+    "connected_clusters": [
+        "tr-all-v1-24-c171799274114",
+        "tr-all-v1-24-c25770397641"
+    ],
+    "n_connected_clusters": 2
+}
