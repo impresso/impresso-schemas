@@ -1,0 +1,20 @@
+{
+    "id": "tr-all-v1-24-c25770444430",
+    "min_date": "2014-12-04",
+    "max_date": "2015-11-03",
+    "cluster_size": 2,
+    "time_delta": 334,
+    "newspapers": [
+        "EXP",
+        "IMP"
+    ],
+    "passages": [
+        "IMP-2014-12-04-a-i0049@203:410",
+        "EXP-2015-11-03-a-i0035@5348:5593"
+    ],
+    "doc_ids": [
+        "EXP-2015-11-03-a-i0035",
+        "IMP-2014-12-04-a-i0049"
+    ],
+    "lexical_overlap": 65.71428571428571
+}

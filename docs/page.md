@@ -4,13 +4,14 @@
 
 # Newspaper Page Properties
 
-| Property      | Type      | Required | Nullable       | Defined by                                                                                                                               |
-| :------------ | :-------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------- |
-| [id](#id)     | `string`  | Required | cannot be null | [Newspaper Page](page-properties-id.md "https://impresso.github.io/impresso-schemas/json/newspaper/page.schema.json#/properties/id")     |
-| [iiif](#iiif) | `string`  | Optional | cannot be null | [Newspaper Page](page-properties-iiif.md "https://impresso.github.io/impresso-schemas/json/newspaper/page.schema.json#/properties/iiif") |
-| [cc](#cc)     | `boolean` | Optional | cannot be null | [Newspaper Page](page-properties-cc.md "https://impresso.github.io/impresso-schemas/json/newspaper/page.schema.json#/properties/cc")     |
-| [cdt](#cdt)   | `string`  | Required | cannot be null | [Newspaper Page](page-properties-cdt.md "https://impresso.github.io/impresso-schemas/json/newspaper/page.schema.json#/properties/cdt")   |
-| [r](#r)       | `array`   | Required | cannot be null | [Newspaper Page](page-properties-r.md "https://impresso.github.io/impresso-schemas/json/newspaper/page.schema.json#/properties/r")       |
+| Property                                   | Type      | Required | Nullable       | Defined by                                                                                                                                                         |
+| :----------------------------------------- | :-------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [id](#id)                                  | `string`  | Required | cannot be null | [Newspaper Page](page-properties-id.md "https://impresso.github.io/impresso-schemas/json/newspaper/page.schema.json#/properties/id")                               |
+| [iiif](#iiif)                              | `string`  | Optional | cannot be null | [Newspaper Page](page-properties-iiif.md "https://impresso.github.io/impresso-schemas/json/newspaper/page.schema.json#/properties/iiif")                           |
+| [iiif\_img\_base\_uri](#iiif_img_base_uri) | `string`  | Optional | cannot be null | [Newspaper Page](page-properties-iiif_img_base_uri.md "https://impresso.github.io/impresso-schemas/json/newspaper/page.schema.json#/properties/iiif_img_base_uri") |
+| [cc](#cc)                                  | `boolean` | Optional | cannot be null | [Newspaper Page](page-properties-cc.md "https://impresso.github.io/impresso-schemas/json/newspaper/page.schema.json#/properties/cc")                               |
+| [cdt](#cdt)                                | `string`  | Required | cannot be null | [Newspaper Page](page-properties-cdt.md "https://impresso.github.io/impresso-schemas/json/newspaper/page.schema.json#/properties/cdt")                             |
+| [r](#r)                                    | `array`   | Required | cannot be null | [Newspaper Page](page-properties-r.md "https://impresso.github.io/impresso-schemas/json/newspaper/page.schema.json#/properties/r")                                 |
 
 ## id
 
@@ -32,7 +33,7 @@ Canonical ID of the newspaper page (e.g. GDL-1900-01-02-a-p0001)
 
 ## iiif
 
-URI of the IIIF Manifest of the newspaper page image.
+URI of the IIIF Manifest of the newspaper page image. Deprecated in favor of `iiif_img_base_uri` which should be used whenever it's defined, kept for backwards compatibility.
 
 `iiif`
 
@@ -45,6 +46,24 @@ URI of the IIIF Manifest of the newspaper page image.
 *   defined in: [Newspaper Page](page-properties-iiif.md "https://impresso.github.io/impresso-schemas/json/newspaper/page.schema.json#/properties/iiif")
 
 ### iiif Type
+
+`string`
+
+## iiif\_img\_base\_uri
+
+Base of the IIIF image URI of the newspaper page image. Should follow format `{scheme}://{server}/{prefix}/{identifier}` and not include any suffix.
+
+`iiif_img_base_uri`
+
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [Newspaper Page](page-properties-iiif_img_base_uri.md "https://impresso.github.io/impresso-schemas/json/newspaper/page.schema.json#/properties/iiif_img_base_uri")
+
+### iiif\_img\_base\_uri Type
 
 `string`
 

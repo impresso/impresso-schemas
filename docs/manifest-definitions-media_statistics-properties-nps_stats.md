@@ -10,9 +10,9 @@
 | [issues](#issues)                         | `integer` | Optional | cannot be null | [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-issues.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/issues")                       |
 | [pages](#pages)                           | `integer` | Optional | cannot be null | [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-pages.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/pages")                         |
 | [content\_items\_out](#content_items_out) | `integer` | Required | cannot be null | [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-content_items_out.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/content_items_out") |
-| [content\_items\_in](#content_items_in)   | `integer` | Optional | cannot be null | [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-content_items_in.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/content_items_in")   |
 | [images](#images)                         | `integer` | Optional | cannot be null | [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-images.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/images")                       |
-| [ne\_entites](#ne_entites)                | `integer` | Optional | cannot be null | [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-ne_entites.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/ne_entites")               |
+| [ft\_tokens](#ft_tokens)                  | `integer` | Optional | cannot be null | [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-ft_tokens.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/ft_tokens")                 |
+| [ne\_entities](#ne_entities)              | `integer` | Optional | cannot be null | [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-ne_entities.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/ne_entities")             |
 | [ne\_mentions](#ne_mentions)              | `integer` | Optional | cannot be null | [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-ne_mentions.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/ne_mentions")             |
 | [ne\_links](#ne_links)                    | `integer` | Optional | cannot be null | [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-ne_links.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/ne_links")                   |
 | [topics](#topics)                         | `integer` | Optional | cannot be null | [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-topics.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/topics")                       |
@@ -89,24 +89,6 @@ Number of content-items present in the (output) data.
 
 `integer`
 
-## content\_items\_in
-
-Number of content-items present in the input data used for processing and included in count. Used to track loss of data within a processing step.
-
-`content_items_in`
-
-*   is optional
-
-*   Type: `integer`
-
-*   cannot be null
-
-*   defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-content_items_in.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/content_items_in")
-
-### content\_items\_in Type
-
-`integer`
-
 ## images
 
 Number of images present in the data.
@@ -125,11 +107,11 @@ Number of images present in the data.
 
 `integer`
 
-## ne\_entites
+## ft\_tokens
 
-Number of unique named entities present in the data.
+Number of tokens present in the full-text of the data.
 
-`ne_entites`
+`ft_tokens`
 
 *   is optional
 
@@ -137,9 +119,27 @@ Number of unique named entities present in the data.
 
 *   cannot be null
 
-*   defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-ne_entites.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/ne_entites")
+*   defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-ft_tokens.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/ft_tokens")
 
-### ne\_entites Type
+### ft\_tokens Type
+
+`integer`
+
+## ne\_entities
+
+Number of unique named entities present in the data.
+
+`ne_entities`
+
+*   is optional
+
+*   Type: `integer`
+
+*   cannot be null
+
+*   defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-ne_entities.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/ne_entities")
+
+### ne\_entities Type
 
 `integer`
 

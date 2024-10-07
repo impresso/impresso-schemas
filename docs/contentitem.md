@@ -15,6 +15,7 @@
 | [d](#d)         | `string`  | Optional | cannot be null | [Content Item](contentitem-properties-d.md "https://impresso.github.io/impresso-schemas/json/newspaper/contentitem.schema.json#/properties/d")         |
 | [ts](#ts)       | `string`  | Required | cannot be null | [Content Item](contentitem-properties-ts.md "https://impresso.github.io/impresso-schemas/json/newspaper/contentitem.schema.json#/properties/ts")       |
 | [lg](#lg)       | `string`  | Optional | cannot be null | [Content Item](contentitem-properties-lg.md "https://impresso.github.io/impresso-schemas/json/newspaper/contentitem.schema.json#/properties/lg")       |
+| [ro](#ro)       | `integer` | Optional | cannot be null | [Content Item](contentitem-properties-ro.md "https://impresso.github.io/impresso-schemas/json/newspaper/contentitem.schema.json#/properties/ro")       |
 | [ft](#ft)       | `string`  | Optional | cannot be null | [Content Item](contentitem-properties-ft.md "https://impresso.github.io/impresso-schemas/json/newspaper/contentitem.schema.json#/properties/ft")       |
 | [lb](#lb)       | `array`   | Optional | cannot be null | [Content Item](contentitem-properties-lb.md "https://impresso.github.io/impresso-schemas/json/newspaper/contentitem.schema.json#/properties/lb")       |
 | [pb](#pb)       | `array`   | Optional | cannot be null | [Content Item](contentitem-properties-pb.md "https://impresso.github.io/impresso-schemas/json/newspaper/contentitem.schema.json#/properties/pb")       |
@@ -216,6 +217,24 @@ two letter language code
 ```
 
 [try pattern](https://regexr.com/?expression=%5E%5Ba-z%5D%7B2%7D%24 "try regular expression with regexr.com")
+
+## ro
+
+Reading order index of the content item, for the table of contents view on the interface. If not defined, the CI number (after 'i' in the ID) should be used.
+
+`ro`
+
+*   is optional
+
+*   Type: `integer`
+
+*   cannot be null
+
+*   defined in: [Content Item](contentitem-properties-ro.md "https://impresso.github.io/impresso-schemas/json/newspaper/contentitem.schema.json#/properties/ro")
+
+### ro Type
+
+`integer`
 
 ## ft
 

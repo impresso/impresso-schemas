@@ -9,7 +9,7 @@
 | Value                   | Explanation |
 | :---------------------- | :---------- |
 | `"all"`                 |             |
-| `"all-but-impresso-ft"` |             |
+| `"all-but-impresso_ft"` |             |
 | `"voting"`              |             |
 | `"dominant-by-len"`     |             |
 | `"dominant-by-lowvote"` |             |

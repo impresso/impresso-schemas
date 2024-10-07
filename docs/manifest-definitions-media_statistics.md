@@ -10,13 +10,14 @@ any of
 
 # media\_statistics Properties
 
-| Property                     | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                     |
-| :--------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [stage](#stage)              | `string` | Required | cannot be null | [Versioning Manifest](manifest-definitions-media_statistics-properties-stage.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/stage")             |
-| [granularity](#granularity)  | `string` | Required | cannot be null | [Versioning Manifest](manifest-definitions-media_statistics-properties-granularity.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/granularity") |
-| [element](#element)          | `string` | Optional | cannot be null | [Versioning Manifest](manifest-definitions-media_statistics-properties-element.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/element")         |
-| [nps\_stats](#nps_stats)     | `object` | Optional | cannot be null | [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats")     |
-| [radio\_stats](#radio_stats) | `object` | Optional | cannot be null | [Versioning Manifest](manifest-definitions-media_statistics-properties-radio_stats.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/radio_stats") |
+| Property                                            | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                           |
+| :-------------------------------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [stage](#stage)                                     | `string` | Required | cannot be null | [Versioning Manifest](manifest-definitions-media_statistics-properties-stage.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/stage")                                   |
+| [granularity](#granularity)                         | `string` | Required | cannot be null | [Versioning Manifest](manifest-definitions-media_statistics-properties-granularity.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/granularity")                       |
+| [element](#element)                                 | `string` | Optional | cannot be null | [Versioning Manifest](manifest-definitions-media_statistics-properties-element.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/element")                               |
+| [last\_modification\_date](#last_modification_date) | `string` | Optional | cannot be null | [Versioning Manifest](manifest-definitions-media_statistics-properties-last_modification_date.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/last_modification_date") |
+| [nps\_stats](#nps_stats)                            | `object` | Optional | cannot be null | [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats")                           |
+| [radio\_stats](#radio_stats)                        | `object` | Optional | cannot be null | [Versioning Manifest](manifest-definitions-media_statistics-properties-radio_stats.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/radio_stats")                       |
 
 ## stage
 
@@ -79,6 +80,24 @@ Element of the data on which they were computed, based on the granularity (title
 *   defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-element.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/element")
 
 ### element Type
+
+`string`
+
+## last\_modification\_date
+
+Date timestamp of last modification of the media statistics for this specific element.
+
+`last_modification_date`
+
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-last_modification_date.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/last_modification_date")
+
+### last\_modification\_date Type
 
 `string`
 
