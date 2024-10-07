@@ -10,7 +10,8 @@
 | [last\_modification\_date](#last_modification_date) | `string` | Required | cannot be null | [Versioning Manifest](manifest-properties-media_list-items-properties-last_modification_date.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list/items/properties/last_modification_date") |
 | [update\_type](#update_type)                        | `string` | Required | can be null    | [Versioning Manifest](manifest-properties-media_list-items-properties-update_type.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list/items/properties/update_type")                       |
 | [update\_level](#update_level)                      | `string` | Required | can be null    | [Versioning Manifest](manifest-properties-media_list-items-properties-update_level.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list/items/properties/update_level")                     |
-| [update\_targets](#update_targets)                  | `array`  | Required | cannot be null | [Versioning Manifest](manifest-properties-media_list-items-properties-update_targets.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list/items/properties/update_targets")                 |
+| [updated\_years](#updated_years)                    | `array`  | Required | cannot be null | [Versioning Manifest](manifest-properties-media_list-items-properties-updated_years.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list/items/properties/updated_years")                   |
+| [updated\_fields](#updated_fields)                  | `array`  | Required | cannot be null | [Versioning Manifest](manifest-properties-media_list-items-properties-updated_fields.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list/items/properties/updated_fields")                 |
 | [code\_git\_commit](#code_git_commit)               | `string` | Required | can be null    | [Versioning Manifest](manifest-properties-media_list-items-properties-code_git_commit.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list/items/properties/code_git_commit")               |
 | [media\_statistics](#media_statistics)              | `array`  | Required | cannot be null | [Versioning Manifest](manifest-properties-media_list-items-properties-media_statistics.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list/items/properties/media_statistics")             |
 
@@ -104,26 +105,43 @@ How much this media was updated (only a few issues, years or entire media title)
 | :-------- | :---------- |
 | `"title"` |             |
 | `"year"`  |             |
-| `"issue"` |             |
 | `null`    |             |
 
-## update\_targets
+## updated\_years
 
-List of years or issue/page properties which were updated. Empty if entire media title was re-ingested.
+List of years which were updated. Empty if entire media title was re-ingested or patched.
 
-`update_targets`
+`updated_years`
 
 *   is required
 
-*   Type: an array of the following:`string` or `integer` ([Details](manifest-properties-media_list-items-properties-update_targets-items.md))
+*   Type: `string[]`
 
 *   cannot be null
 
-*   defined in: [Versioning Manifest](manifest-properties-media_list-items-properties-update_targets.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list/items/properties/update_targets")
+*   defined in: [Versioning Manifest](manifest-properties-media_list-items-properties-updated_years.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list/items/properties/updated_years")
 
-### update\_targets Type
+### updated\_years Type
 
-an array of the following:`string` or `integer` ([Details](manifest-properties-media_list-items-properties-update_targets-items.md))
+`string[]`
+
+## updated\_fields
+
+List of (json output) properties which were updated. Empty if all properties were modified or re-ingested.
+
+`updated_fields`
+
+*   is required
+
+*   Type: `string[]`
+
+*   cannot be null
+
+*   defined in: [Versioning Manifest](manifest-properties-media_list-items-properties-updated_fields.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list/items/properties/updated_fields")
+
+### updated\_fields Type
+
+`string[]`
 
 ## code\_git\_commit
 

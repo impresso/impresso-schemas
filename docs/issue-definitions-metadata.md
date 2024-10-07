@@ -4,14 +4,15 @@
 
 # metadata Properties
 
-| Property                 | Type     | Required | Nullable       | Defined by                                                                                                                                                                                      |
-| :----------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [id](#id)                | `string` | Required | cannot be null | [Newspaper Issue](issue-definitions-metadata-properties-id.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/definitions/metadata/properties/id")               |
-| [l](#l)                  | `string` | Optional | cannot be null | [Newspaper Issue](issue-definitions-metadata-properties-l.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/definitions/metadata/properties/l")                 |
-| [pp](#pp)                | `array`  | Required | cannot be null | [Newspaper Issue](issue-definitions-metadata-properties-pp.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/definitions/metadata/properties/pp")               |
-| [t](#t)                  | `string` | Optional | cannot be null | [Newspaper Issue](issue-definitions-metadata-properties-t.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/definitions/metadata/properties/t")                 |
-| [tp](#tp)                | `string` | Required | cannot be null | [Newspaper Issue](issue-definitions-metadata-properties-tp.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/definitions/metadata/properties/tp")               |
-| [iiif\_link](#iiif_link) | `string` | Optional | cannot be null | [Newspaper Issue](issue-definitions-metadata-properties-iiif_link.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/definitions/metadata/properties/iiif_link") |
+| Property                 | Type      | Required | Nullable       | Defined by                                                                                                                                                                                      |
+| :----------------------- | :-------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [id](#id)                | `string`  | Required | cannot be null | [Newspaper Issue](issue-definitions-metadata-properties-id.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/definitions/metadata/properties/id")               |
+| [l](#l)                  | `string`  | Optional | cannot be null | [Newspaper Issue](issue-definitions-metadata-properties-l.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/definitions/metadata/properties/l")                 |
+| [pp](#pp)                | `array`   | Required | cannot be null | [Newspaper Issue](issue-definitions-metadata-properties-pp.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/definitions/metadata/properties/pp")               |
+| [t](#t)                  | `string`  | Optional | cannot be null | [Newspaper Issue](issue-definitions-metadata-properties-t.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/definitions/metadata/properties/t")                 |
+| [tp](#tp)                | `string`  | Required | cannot be null | [Newspaper Issue](issue-definitions-metadata-properties-tp.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/definitions/metadata/properties/tp")               |
+| [iiif\_link](#iiif_link) | `string`  | Optional | cannot be null | [Newspaper Issue](issue-definitions-metadata-properties-iiif_link.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/definitions/metadata/properties/iiif_link") |
+| [ro](#ro)                | `integer` | Optional | cannot be null | [Newspaper Issue](issue-definitions-metadata-properties-ro.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/definitions/metadata/properties/ro")               |
 
 ## id
 
@@ -119,7 +120,7 @@ Type of the content item.
 
 ## iiif\_link
 
-IIIF image link, depending on content item type (if `tp == image`)
+IIIF image link, depending on content item type (if `tp == image`). Should follow the format: '{scheme}://{server}/{prefix}/{identifier}/info.json'.
 
 `iiif_link`
 
@@ -134,3 +135,21 @@ IIIF image link, depending on content item type (if `tp == image`)
 ### iiif\_link Type
 
 `string`
+
+## ro
+
+Reading order index of the content item, for the table of contents view on the interface. If not defined, the CI number (after 'i' in the ID) should be used.
+
+`ro`
+
+*   is optional
+
+*   Type: `integer`
+
+*   cannot be null
+
+*   defined in: [Newspaper Issue](issue-definitions-metadata-properties-ro.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/definitions/metadata/properties/ro")
+
+### ro Type
+
+`integer`

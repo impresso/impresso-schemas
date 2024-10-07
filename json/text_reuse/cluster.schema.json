@@ -18,7 +18,7 @@
             "description": "Latest date represented in the article passages of the cluster",
             "pattern": "^(\\d{4})-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$"
         },
-        "size": {
+        "cluster_size": {
             "type": "integer",
             "description": "Number of article passages present in the cluster."
         },
@@ -48,7 +48,7 @@
             "items": {
                 "type": "string",
                 "description": "One article passage, defined by its content-item ID, followed by '@' and the start and end indices of the passage separated by ':'.",
-                "pattern": "^[a-zA-Z0-9]+-\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])-[a-z]-i\\d{4}@\\d+:\\d+$"
+                "pattern": "^[a-zA-Z0-9]+-\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])-[a-z]-i\\d{4}$"
             }
         },
         "lexical_overlap": {
@@ -60,7 +60,7 @@
         "id",
         "min_date",
         "max_date",
-        "size",
+        "cluster_size",
         "time_delta",
         "newspapers",
         "passages",

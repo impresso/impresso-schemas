@@ -16,7 +16,7 @@
         "ci_id": {
             "type": "string",
             "description": "Content-item ID this passage is from.",
-            "pattern": "^c\\d+-[a-zA-Z0-9]+-\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])-[a-z]-i\\d{4}$"
+            "pattern": "^[a-zA-Z0-9]+-\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])-[a-z]-i\\d{4}$"
         },
         "cluster_id": {
             "type": "string",
@@ -32,7 +32,7 @@
             "description": "End index of the text-reuse passage within the article"
         },
         "pages": {
-            "type": "object",
+            "type": "array",
             "description": "Pages content, with id, seq and regions it corresponds to."
         },
         "cluster_size": {
@@ -57,7 +57,7 @@
         },
         "cluster_lexical_overlap": {
             "type": "number",
-            "description": "Computed average lexical overlap of the passages within the cluster."
+            "description": "Computed average lexical overlap of the passages within the cluster. Note these was a mistake in the last processing and this key might be `cluster_lexial_overlap`."
         },
         "connected_clusters": {
             "type": "array",
