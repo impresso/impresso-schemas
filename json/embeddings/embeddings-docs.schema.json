@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema#",
+  "$id": "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-docs.schema.json",
+  "title": "Document Embeddings JSON Schema",
+  "description": "A representation for the vector embedding representation of content items.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the content item.",
+      "examples": ["actionfem-1940-01-08-a-i0001"],
+      "pattern": "^(.*)$"
+    },
+    "embedding": {
+      "oneOf": [
+        {
+          "type": "array",
+          "description": "The vector embedding representation of the content item as a single list.",
+          "items": {
+            "type": "number",
+            "description": "A single number in the vector embedding of the document.",
+            "examples": [-0.11429]
+          }
+        },
+        {
+          "type": "array",
+          "description": "The vector embedding representation of the content item as a list of lists (e.g., for chunked embeddings).",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "description": "A single number in a chunk's vector embedding.",
+              "examples": [-0.11429]
+            }
+          }
+        }
+      ]
+    },
+    "num_embeddings": {
+      "type": "integer",
+      "description": "The number of embeddings that were averaged to represent the content item."
+    },
+    "len": {
+      "type": "integer",
+      "description": "The length of the original text (chars) from which the embedding was generated."
+    },
+    "chunks": {
+      "type": "integer",
+      "description": "The number of chunks that were used to generate the embedding representation of the content item."
+    },
+    "chunk_length": {
+      "type": "integer",
+      "description": "The maximum length of each chunk in tokens."
+    },
+    "embedding_type": {
+      "type": "string",
+      "description": "The type of embedding (e.g., 'page', 'paragraph', etc.)."
+    },
+    "sys_id": {
+      "type": "string",
+      "description": "Identifier for the system or model that generated the embedding, used for traceability."
+    },
+    "ts": {
+      "type": "string",
+      "description": "Timestamp indicating when the embedding was created (e.g., '2024-10-09T09:29:02Z').",
+      "format": "date-time"
+    },
+    "embedder": {
+      "type": "string",
+      "description": "Name of the embedding model used, including version or unique identifier."
+    }
+  },
+  "required": [
+    "id",
+    "embedding",
+    "sys_id",
+    "ts",
+    "embedder"
+  ]
+}
