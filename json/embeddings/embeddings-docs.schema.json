@@ -12,13 +12,29 @@
       "pattern": "^(.*)$"
     },
     "embedding": {
-      "type": "array",
-      "description": "The vector embedding representation of the content item.",
-      "items": {
-        "type": "number",
-        "description": "A single number in the vector embeddings of the document",
-        "examples": [-0.11429]
-      }
+      "oneOf": [
+        {
+          "type": "array",
+          "description": "The vector embedding representation of the content item as a single list.",
+          "items": {
+            "type": "number",
+            "description": "A single number in the vector embedding of the document.",
+            "examples": [-0.11429]
+          }
+        },
+        {
+          "type": "array",
+          "description": "The vector embedding representation of the content item as a list of lists (e.g., for chunked embeddings).",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "description": "A single number in a chunk's vector embedding.",
+              "examples": [-0.11429]
+            }
+          }
+        }
+      ]
     },
     "num_embeddings": {
       "type": "integer",
@@ -27,6 +43,18 @@
     "len": {
       "type": "integer",
       "description": "The length of the original text (chars) from which the embedding was generated."
+    },
+    "chunks": {
+      "type": "integer",
+      "description": "The number of chunks that were used to generate the embedding representation of the content item."
+    },
+    "chunk_length": {
+      "type": "integer",
+      "description": "The maximum length of each chunk in tokens."
+    },
+    "embedding_type": {
+      "type": "string",
+      "description": "The type of embedding (e.g., 'page', 'paragraph', etc.)."
     },
     "sys_id": {
       "type": "string",
