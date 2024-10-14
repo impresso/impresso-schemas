@@ -12,7 +12,10 @@
       "name": "Sylvie Maurial",
       "function": "championne de France de ski nautique",
       "wkd_id": "Q20993704",
-      "wkpedia_pagename": "Sylvie_Maurial"
+      "wkpedia_pagename": "Sylvie_Maurial",
+      "confidence_ner": 50.45,
+      "confidence_nel": 50.45
+
     },
     {
       "type": "loc.adm.nat",
@@ -23,7 +26,9 @@
       "nested": true,
       "wkd_id": "Q20993704",
       "wkpedia_pagename": "France",
-      "confidence": "medium"
+      "confidence": "medium",
+      "confidence_ner": 50.45,
+      "confidence_nel": 50.45
     }
   ]
 }

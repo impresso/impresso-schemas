@@ -12,7 +12,8 @@
       "name": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
       "wkd_id": "Q683672",
       "wkpedia_pagename": "Société_du_Grütli",
-      "confidence": "medium"
+      "confidence_ner": 50.45,
+      "confidence_nel": 50.45
     },
     {
       "type": "pers.ind",
@@ -24,7 +25,9 @@
       "function": "mécanicien à Echallens",
       "wkd_id": "NIL",
       "wkpedia_pagename": "NIL",
-      "confidence": "high"
+      "confidence_ner": 50.45,
+      "confidence_nel": 50.45,
+      "function": "mécanicien à Echallens"
     }
   ]
 }

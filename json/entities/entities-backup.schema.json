@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/entities.schema.json",
+  "title": "Named Entity JSON Schema",
+  "description": "Definition of the output representation of entity processing, before indexing. Named entity mentions are expressed as offline annotations with character offsets relative to content items. Essentially, the NE output is a list of JSON documents (in json line format), where each document corresponds to a content item that has a list of NE mentions (no output for CI with no mentions). The tagset corresponds to impresso-HIPE.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "impresso content item id."
+    },
+    "ts": {
+      "type": "string",
+      "description": "Timestamp of creation of the JSON file (e.g. '2018-09-18T08:00:08Z')"
+    },
+    "sys_id": {
+      "type": "string",
+      "description": "An alias for the system or model that produced this output (preferably short, but still understandable), used for transparency and traceability. Should be unique and thus include elements that distinguish one model from another, such as a base name, a version, the language, e.g. bert-xxxx-xxxx-fr."
+    },
+    "nes": {
+      "type": "array",
+      "description": "The list of named entity mentions identified in the document",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description":"NE type",
+            "enum": [
+              "building",
+              "loc",
+              "loc.add",
+              "loc.add.elec",
+              "loc.add.phys",
+              "loc.adm",
+              "loc.adm.nat",
+              "loc.adm.reg",
+              "loc.adm.sup",
+              "loc.adm.town",
+              "loc.admin.sup",
+              "loc.fac",
+              "loc.oro",
+              "loc.phys",
+              "loc.phys.astro",
+              "loc.phys.geo",
+              "loc.phys.hydro",
+              "loc.unk",
+              "org",
+              "org.adm",
+              "org.ent",
+              "org.ent.pressagency",
+              "per",
+              "per.author",
+              "pers",
+              "pers.coll",
+              "pers.ind",
+              "pers.ind.articleauthor",
+              "prod",
+              "prod.doctr",
+              "prod.media",
+              "street",
+              "time",
+              "time.date.abs"
+            ]
+          },
+          "surface": {
+            "type": "string",
+            "description":"The (string) surface of the named entity mention, as it appears in the text"
+          },
+          "name": {
+            "type": "string",
+            "description":"In case of a person mention, the entity component of type name."
+          },
+          "lOffset": {
+            "type": "integer",
+            "description":"The left character offset of the named entity with respect to the content item, as in the rebuilt format."
+          },
+          "rOffset": {
+            "type": "integer",
+            "description":"The right character offset of the named entity with respect to the content item, as in the rebuilt format."
+          },          
+          "firstname": {
+            "type": "string",
+             "description":"In case of a person mention and if available, the first name."
+          },
+          "surname": {
+            "type": "string",
+             "description":"In case of a person mention and if available, the surname."
+          },
+          "title": {
+            "type": "string",
+            "description":"In case of a person mention, the entity component of type 'title'."
+          },
+          "function": {
+            "type": "string",
+            "description":"In case of a person mention, the entity component of type 'function'."
+          },
+          "demonym": {
+            "type": "string",
+            "description":"In case of a person mention, the entity component of type 'demonym'."
+          },
+          "nested": {
+            "type": "boolean",
+            "description":"In case of a nested mention, this property should be set to true. Can be ignored if not."
+          },
+          "wkd_id": {
+            "type": "string",
+            "description":"If exists, wikidata QID"
+          },
+          "wkpedia_pagename": {
+            "type": "string",
+            "description":"If exists, wikipedia page name or, if not possible, wikipedia URL, in the language the NE recognition is made (e.g. page name 'Etats-Unis' if EL performed against French wikipedia, and 'United_States' is against English Wikipedia.  "
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ]
+          },
+          "id": {
+            "type": "string",
+            "description":"The id of the named entity mention composed of the following set of values concatenated with a colon (':') : content item id + loffset + roffset + type + sys_id (e.g. 'LLE-1989-04-04-a-i0195:56:69:person:bert-xxxx-xxxx-fr'."
+          }
+        },
+        "required": [
+          "type",
+          "surface",
+          "lOffset",
+          "rOffset",
+          "id"
+        ]
+      }
+    }
+  },
+  "required": [
+    "id",
+    "ts",
+    "sys_id",
+    "nes"
+  ]
+}

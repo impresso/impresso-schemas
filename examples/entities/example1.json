@@ -14,7 +14,8 @@
       "function": "ancien ministre du gouvernement cantonais",
       "wkd_id": "NIL",
       "wkpedia_pagename": "NIL",
-      "confidence": "medium"
+      "confidence_ner": 50.45,
+      "confidence_nel": 50.45
     },
     {
       "type": "loc.adm.nat",
@@ -24,7 +25,8 @@
       "id": "EXP-1888-01-09-a-i0035:32:42:loc.adm.nat:bert-fr",
       "wkd_id": "Q30",
       "wkpedia_pagename": "États-Unis",
-      "confidence": "medium"
+      "confidence_ner": 50.45,
+      "confidence_nel": 50.45
     }
   ]
 }
