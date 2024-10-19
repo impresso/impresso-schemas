@@ -53,12 +53,7 @@
               "loc.fac",
               "loc.add.phys",
               "loc.add.elec",
-              "loc.unk",
-              "comp.name",
-              "comp.title",
-              "comp.qualifier",
-              "comp.function",
-              "comp.demonym"
+              "loc.unk"
             ]
           },
           "surface": {
@@ -72,10 +67,6 @@
           "rOffset": {
             "type": "integer",
             "description": "The right character offset of the named entity with respect to the content item."
-          },
-          "nested": {
-            "type": "boolean",
-            "description": "Indicates whether the mention is nested."
           },
           "confidence_ner": {
             "type": "number",
@@ -91,23 +82,27 @@
           },
           "wkpedia_pagename": {
             "type": "string",
-            "description": "Wikipedia page name or URL in the relevant language."
+            "description": "Wikipedia page name, i.e. the last part of the wikipedia URL (e.g.  United_States)"
+          },
+          "wkpedia_url": {
+            "type": "string",
+            "description": "Wikipedia page URL, e.g. https://en.wikipedia.org/wiki/United_States"
           },
           "name": {
             "type": "string",
-            "description": "Full name of the entity, including first, middle, and last names as well as initials and nicknames, if applicable."
+            "description": "Full name of the entity, including first, middle, and last names as well as initials and nicknames, if applicable. For other types of entities (ie. location, organization), this field can be used to store the full surface of the entity."
           },
           "title": {
             "type": "string",
-            "description": "Title or designator of a person (e.g., 'Herr Chirac', 'Son Altesse le prince Rainier'), if applicable."
+            "description": "Title or designator of a person (e.g., 'Herr Chirac', 'Son Altesse le prince Rainier'), if applicable. N/A if it is not applicable."
           },
           "function": {
             "type": "string",
-            "description": "Function or job of a named person (e.g., 'Bürgermeister Ann Hidalgo von Paris'), if applicable."
+            "description": "Function or job of a named person (e.g., 'Bürgermeister Ann Hidalgo von Paris'), if applicable. N/A if it is not applicable."
           },
           "demonym": {
             "type": "string",
-            "description": "Demonym or nationality of a person, if applicable."
+            "description": "Demonym or nationality of a person, if applicable. N/A if it is not applicable."
           },
           "id": {
             "type": "string",
