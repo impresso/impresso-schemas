@@ -14,6 +14,7 @@
       "function": "ancien ministre du gouvernement cantonais",
       "wkd_id": "NIL",
       "wkpedia_pagename": "NIL",
+      "wkpedia_url": "N/A",
       "confidence_ner": 50.45,
       "confidence_nel": 50.45
     },
@@ -25,8 +26,9 @@
       "rOffset": 42,
       "wkd_id": "Q30",
       "wkpedia_pagename": "États-Unis",
+      "wkpedia_url": "https://fr.wikipedia.org/wiki/%C3%89tats-Unis",
       "confidence_ner": 50.45,
-      "confidence_nel": 50.45,
+      "confidence_nel": 50.45
     }
   ]
 }
