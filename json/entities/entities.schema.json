@@ -90,19 +90,19 @@
           },
           "name": {
             "type": "string",
-            "description": "Full name of the entity, including first, middle, and last names as well as initials and nicknames, if applicable. For other types of entities (ie. location, organization), this field can be used to store the full surface of the entity."
+            "description":"In case of a person mention, the entity component of type 'name', as defined in the Impresso HIPE NE Annotation guidelines (https://zenodo.org/records/3585750). For technical reasons, all entities have a name component, but it is only relevant for person mentions."
           },
           "title": {
             "type": "string",
-            "description": "Title or designator of a person (e.g., 'Herr Chirac', 'Son Altesse le prince Rainier'), if applicable. N/A if it is not applicable."
+            "description":"In case of a person mention, the entity component of type 'title', as defined in the Impresso HIPE NE Annotation guidelines (https://zenodo.org/records/3585750). "
           },
           "function": {
             "type": "string",
-            "description": "Function or job of a named person (e.g., 'Bürgermeister Ann Hidalgo von Paris'), if applicable. N/A if it is not applicable."
+            "description":"In case of a person mention, the entity component of type 'function', as defined in the Impresso HIPE NE Annotation guidelines (https://zenodo.org/records/3585750). "
           },
           "demonym": {
             "type": "string",
-            "description": "Demonym or nationality of a person, if applicable. N/A if it is not applicable."
+            "description":"In case of a person mention, the entity component of type 'demonym', as defined in the Impresso HIPE NE Annotation guidelines (https://zenodo.org/records/3585750). "
           },
           "id": {
             "type": "string",
