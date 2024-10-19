@@ -4,30 +4,31 @@
   "sys_id": "bert-fr",
   "nes": [
     {
+      "id": "EXP-1888-01-09-a-i0035:32:56:org.adm:bert-fr",
       "type": "org.adm",
       "surface": "Société suisse du Grutli",
       "lOffset": 32,
       "rOffset": 56,
-      "id": "EXP-1888-01-09-a-i0035:32:56:org.adm:bert-fr",
-      "name": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+      "name": "Société suisse du Grutli",
       "wkd_id": "Q683672",
       "wkpedia_pagename": "Société_du_Grütli",
+      "wkpedia_url": "https://fr.wikipedia.org/wiki/Soci%C3%A9t%C3%A9_du_Gr%C3%BCtli",
       "confidence_ner": 50.45,
       "confidence_nel": 50.45
     },
     {
       "type": "pers.ind",
-      "surface": "Bovat, mécanicien à Echallens",
+      "surface": "Mr. Bovat, mécanicien à Echallens",
       "lOffset": 156,
       "rOffset": 178,
       "id": "EXP-1888-01-09-a-i0035:156:178:pers.ind:bert-fr",
-      "name": "EXP-1888-01-09-a-i0035:156:178:pers.ind:bert-fr",
-      "function": "mécanicien à Echallens",
+      "name": "Bovat",
       "wkd_id": "NIL",
       "wkpedia_pagename": "NIL",
       "confidence_ner": 50.45,
       "confidence_nel": 50.45,
-      "function": "mécanicien à Echallens"
+      "function": "mécanicien à Echallens",
+      "title": "Mr."
     }
   ]
 }

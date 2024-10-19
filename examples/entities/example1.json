@@ -4,11 +4,11 @@
   "sys_id": "bert-fr",
   "nes": [
     {
+      "id": "EXP-1928-05-15-a-i0009:50:99:loc.adm.nat:bert-fr",
       "type": "pers.ind",
       "surface": "M. Wou, ancien ministre du gouvernement cantonais",
       "lOffset": 50,
       "rOffset": 99,
-      "id": "EXP-1928-05-15-a-i0009:50:99:loc.adm.nat:bert-fr",
       "name": "Wou",
       "title": "M.",
       "function": "ancien ministre du gouvernement cantonais",
@@ -18,15 +18,16 @@
       "confidence_nel": 50.45
     },
     {
+      "id": "EXP-1888-01-09-a-i0035:32:42:loc.adm.nat:bert-fr",
       "type": "loc.adm.nat",
       "surface": "Etats-Unis",
       "lOffset": 32,
       "rOffset": 42,
-      "id": "EXP-1888-01-09-a-i0035:32:42:loc.adm.nat:bert-fr",
       "wkd_id": "Q30",
       "wkpedia_pagename": "États-Unis",
       "confidence_ner": 50.45,
-      "confidence_nel": 50.45
+      "confidence_nel": 50.45,
+      "name": "Etats-Unis"
     }
   ]
 }

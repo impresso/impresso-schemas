@@ -90,7 +90,7 @@
           },
           "name": {
             "type": "string",
-            "description":"In case of a person mention, the entity component of type 'name', as defined in the Impresso HIPE NE Annotation guidelines (https://zenodo.org/records/3585750). For technical reasons, all entities have a name component, but it is only relevant for person mentions."
+            "description":"In case of a person mention, the entity component of type 'name', as defined in the Impresso HIPE NE Annotation guidelines (https://zenodo.org/records/3585750)."
           },
           "title": {
             "type": "string",
