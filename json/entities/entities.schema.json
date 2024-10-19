@@ -7,122 +7,106 @@
   "properties": {
     "id": {
       "type": "string",
-      "description": "impresso content item id."
+      "description": "Impresso content item ID."
     },
     "ts": {
       "type": "string",
-      "description": "Timestamp of creation of the JSON file (e.g. '2018-09-18T08:00:08Z')"
+      "description": "Timestamp of creation of the JSON file (e.g. '2024-05-26T09:48:01Z')."
     },
     "sys_id": {
       "type": "string",
-      "description": "An alias for the system or model that produced this output (preferably short, but still understandable), used for transparency and traceability. Should be unique and thus include elements that distinguish one model from another, such as a base name, a version, the language, e.g. bert-xxxx-xxxx-fr."
+      "description": "An alias for the system or model that produced this output, used for transparency and traceability. It should include distinguishing elements like a base name, version, and language."
     },
     "nes": {
       "type": "array",
-      "description": "The list of named entity mentions identified in the document",
-      "minItems": 1,
+      "description": "The list of named entity mentions identified in the document.",
+      "minItems": 0,
       "items": {
         "type": "object",
         "properties": {
           "type": {
             "type": "string",
-            "description":"NE type",
+            "description": "NE type (coarse-grained and fine-grained).",
             "enum": [
-              "building",
-              "loc",
-              "loc.add",
-              "loc.add.elec",
-              "loc.add.phys",
-              "loc.adm",
-              "loc.adm.nat",
-              "loc.adm.reg",
-              "loc.adm.sup",
-              "loc.adm.town",
-              "loc.admin.sup",
-              "loc.fac",
-              "loc.oro",
-              "loc.phys",
-              "loc.phys.astro",
-              "loc.phys.geo",
-              "loc.phys.hydro",
-              "loc.unk",
+              "pers",
+              "pers.ind",
+              "pers.coll",
+              "pers.ind.articleauthor",
               "org",
               "org.adm",
               "org.ent",
               "org.ent.pressagency",
-              "per",
-              "per.author",
-              "pers",
-              "pers.coll",
-              "pers.ind",
-              "pers.ind.articleauthor",
               "prod",
-              "prod.doctr",
               "prod.media",
-              "street",
+              "prod.doctr",
               "time",
-              "time.date.abs"
+              "time.date.abs",
+              "loc",
+              "loc.adm.town",
+              "loc.adm.reg",
+              "loc.adm.nat",
+              "loc.adm.sup",
+              "loc.phys.geo",
+              "loc.phys.hydro",
+              "loc.phys.astro",
+              "loc.oro",
+              "loc.fac",
+              "loc.add.phys",
+              "loc.add.elec",
+              "loc.unk"
             ]
           },
           "surface": {
             "type": "string",
-            "description":"The (string) surface of the named entity mention, as it appears in the text"
-          },
-          "name": {
-            "type": "string",
-            "description":"In case of a person mention, the entity component of type name."
+            "description": "The surface form of the named entity mention, as it appears in the text."
           },
           "lOffset": {
             "type": "integer",
-            "description":"The left character offset of the named entity with respect to the content item, as in the rebuilt format."
+            "description": "The left character offset of the named entity with respect to the content item."
           },
           "rOffset": {
             "type": "integer",
-            "description":"The right character offset of the named entity with respect to the content item, as in the rebuilt format."
-          },          
-          "firstname": {
-            "type": "string",
-             "description":"In case of a person mention and if available, the first name."
+            "description": "The right character offset of the named entity with respect to the content item."
           },
-          "surname": {
-            "type": "string",
-             "description":"In case of a person mention and if available, the surname."
+          "confidence_ner": {
+            "type": "number",
+            "description": "Confidence score of the Named Entity Recognition process."
           },
-          "title": {
-            "type": "string",
-            "description":"In case of a person mention, the entity component of type 'title'."
-          },
-          "function": {
-            "type": "string",
-            "description":"In case of a person mention, the entity component of type 'function'."
-          },
-          "demonym": {
-            "type": "string",
-            "description":"In case of a person mention, the entity component of type 'demonym'."
-          },
-          "nested": {
-            "type": "boolean",
-            "description":"In case of a nested mention, this property should be set to true. Can be ignored if not."
+          "confidence_nel": {
+            "type": "number",
+            "description": "Confidence score of the Named Entity Linking process."
           },
           "wkd_id": {
             "type": "string",
-            "description":"If exists, wikidata QID"
+            "description": "Wikidata QID if available."
           },
           "wkpedia_pagename": {
             "type": "string",
-            "description":"If exists, wikipedia page name or, if not possible, wikipedia URL, in the language the NE recognition is made (e.g. page name 'Etats-Unis' if EL performed against French wikipedia, and 'United_States' is against English Wikipedia.  "
+            "description": "Wikipedia page name, i.e. the last part of the wikipedia URL (e.g.  United_States)"
           },
-          "confidence": {
+          "wkpedia_url": {
             "type": "string",
-            "enum": [
-              "low",
-              "medium",
-              "high"
-            ]
+            "description": "Wikipedia page URL, e.g. https://en.wikipedia.org/wiki/United_States"
+          },
+          "name": {
+            "type": "string",
+            "description":"In case of a person mention, the entity component of type 'name', as defined in the Impresso HIPE NE Annotation guidelines (https://zenodo.org/records/3585750)."
+          },
+          "title": {
+            "type": "string",
+            "description":"In case of a person mention, the entity component of type 'title', as defined in the Impresso HIPE NE Annotation guidelines (https://zenodo.org/records/3585750). "
+          },
+          "function": {
+            "type": "string",
+            "description":"In case of a person mention, the entity component of type 'function', as defined in the Impresso HIPE NE Annotation guidelines (https://zenodo.org/records/3585750). "
+          },
+          "demonym": {
+            "type": "string",
+            "description":"In case of a person mention, the entity component of type 'demonym', as defined in the Impresso HIPE NE Annotation guidelines (https://zenodo.org/records/3585750). "
           },
           "id": {
             "type": "string",
-            "description":"The id of the named entity mention composed of the following set of values concatenated with a colon (':') : content item id + loffset + roffset + type + sys_id (e.g. 'LLE-1989-04-04-a-i0195:56:69:person:bert-xxxx-xxxx-fr'."
+            "description": "The unique identifier of the named entity mention: [Document ID]:[Left Offset]:[Right Offset]:[Entity Type]:[NER Model]|[NEL Model]"
           }
         },
         "required": [
