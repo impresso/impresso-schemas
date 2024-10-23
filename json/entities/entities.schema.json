@@ -18,6 +18,10 @@
       "description": "An alias for the system or model that produced this output, used for transparency and traceability. It should include distinguishing elements like a base name, version, and language."
     },
     "nes": {
+      "id": {
+        "type": "string",
+        "description": "The unique identifier of the named entity mention: [Document ID]:[Left Offset]:[Right Offset]:[Entity Type]:[NER Model]|[NEL Model]"
+      },
       "type": "array",
       "description": "The list of named entity mentions identified in the document.",
       "minItems": 0,
@@ -29,31 +33,11 @@
             "description": "NE type (coarse-grained and fine-grained).",
             "enum": [
               "pers",
-              "pers.ind",
-              "pers.coll",
-              "pers.ind.articleauthor",
               "org",
-              "org.adm",
-              "org.ent",
-              "org.ent.pressagency",
               "prod",
-              "prod.media",
-              "prod.doctr",
               "time",
-              "time.date.abs",
               "loc",
-              "loc.adm.town",
-              "loc.adm.reg",
-              "loc.adm.nat",
-              "loc.adm.sup",
-              "loc.phys.geo",
-              "loc.phys.hydro",
-              "loc.phys.astro",
-              "loc.oro",
-              "loc.fac",
-              "loc.add.phys",
-              "loc.add.elec",
-              "loc.unk"
+              "unk"
             ]
           },
           "surface": {
@@ -99,22 +83,14 @@
           "function": {
             "type": "string",
             "description":"In case of a person mention, the entity component of type 'function', as defined in the Impresso HIPE NE Annotation guidelines (https://zenodo.org/records/3585750). "
-          },
-          "demonym": {
-            "type": "string",
-            "description":"In case of a person mention, the entity component of type 'demonym', as defined in the Impresso HIPE NE Annotation guidelines (https://zenodo.org/records/3585750). "
-          },
-          "id": {
-            "type": "string",
-            "description": "The unique identifier of the named entity mention: [Document ID]:[Left Offset]:[Right Offset]:[Entity Type]:[NER Model]|[NEL Model]"
           }
         },
         "required": [
+          "id",
           "type",
           "surface",
           "lOffset",
           "rOffset",
-          "id"
         ]
       }
     }
