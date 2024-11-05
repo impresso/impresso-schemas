@@ -146,7 +146,7 @@
         },
         "required": [
           "ci_id",
-          "ci_type",
+          "type",
           "surface",
           "lOffset",
           "rOffset"
@@ -157,7 +157,7 @@
   "required": [
     "id",
     "ts",
-    "sys_id",
+    "model_id",
     "nes"
   ]
 }

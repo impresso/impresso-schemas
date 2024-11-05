@@ -1,7 +1,7 @@
 {
-  "id": "EXP-1888-01-09-a-i0035",
+  "ci_id": "EXP-1888-01-09-a-i0035",
   "ts": "2019-10-17T11:49:50Z",
-  "sys_id": "bert-fr",
+  "model_id": "bert-fr",
   "nes": [
     {
       "type": "org.adm",
