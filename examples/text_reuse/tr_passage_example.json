@@ -1,0 +1,35 @@
+{
+    "id": "c81238-EXP-1976-10-08-a-i0176@0:386",
+    "begin": 0,
+    "ci_id": "EXP-1976-10-08-a-i0176",
+    "cluster_id": "tr-all-v1-24-c81238",
+    "date": "1976-10-08",
+    "end": 386,
+    "pages": [
+        {
+            "id": "EXP-1976-10-08-a-p0008",
+            "seq": 8,
+            "regions": [
+                {
+                    "start": 0,
+                    "length": 386,
+                    "coords": {
+                        "x": 621,
+                        "y": 1564,
+                        "w": 555,
+                        "h": 274
+                    }
+                }
+            ]
+        }
+    ],
+    "cluster_size": 76,
+    "text": "BANQUE CANTONALE NEUCH\u00c2TELOISE\ncherche pour son si\u00e8ge de Neuch\u00e2tel\nRESPONSABLE\npour son SERVICE EXP\u00c9DITION\nayant si possible quelques ann\u00e9es de pratique et poss\u00e9dant un permis de\nconduire.\nEntr\u00e9e en fonction d\u00e8s que possible.\nEmploi stable avec les avantages sociaux d'une grande entreprise.\nFaire offres \u00e9crites avec documents d'usage au Service du personnel de la\nBCN-2001 Neuch\u00e2tel.\n",
+    "title": "",
+    "cluster_time_delta": 4590,
+    "cluster_lexical_overlap": 3.3707865168539324,
+    "connected_clusters": [
+        "tr-all-v1-24-c81238"
+    ],
+    "n_connected_clusters": 1
+}

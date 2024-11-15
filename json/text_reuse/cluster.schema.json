@@ -1,0 +1,70 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://impresso.github.io/impresso-schemas/json/text_reuse/cluster.schema.json",
+    "title": "Text-Reuse Cluster",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string",
+            "description": "Unique identifier for this cluster."
+        },
+        "min_date": {
+            "type": "string",
+            "description": "Earliest date represented in the article passages of the cluster",
+            "pattern": "^(\\d{4})-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$"
+        },
+        "max_date": {
+            "type": "string",
+            "description": "Latest date represented in the article passages of the cluster",
+            "pattern": "^(\\d{4})-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$"
+        },
+        "cluster_size": {
+            "type": "integer",
+            "description": "Number of article passages present in the cluster."
+        },
+        "time_delta": {
+            "type": "integer",
+            "description": "Number of days between min_date and max_date."
+        },
+        "newspapers": {
+            "type": "array",
+            "description": "List of all newspapers represented in this cluster with article passages.",
+            "items": {
+                "type": "string"
+            }
+        },
+        "passages": {
+            "type": "array",
+            "description": "List of all article passages composing this cluster.",
+            "items": {
+                "type": "string",
+                "description": "One article passage, defined by its content-item ID, followed by '@' and the start and end indices of the passage separated by ':'.",
+                "pattern": "^[a-zA-Z0-9]+-\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])-[a-z]-i\\d{4}@\\d+:\\d+$"
+            }
+        },
+        "doc_ids": {
+            "type": "array",
+            "description": "List of all article passages composing this cluster.",
+            "items": {
+                "type": "string",
+                "description": "One article passage, defined by its content-item ID, followed by '@' and the start and end indices of the passage separated by ':'.",
+                "pattern": "^[a-zA-Z0-9]+-\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])-[a-z]-i\\d{4}$"
+            }
+        },
+        "lexical_overlap": {
+            "type": "number",
+            "description": "Computed average lexical overlap of the passages within the cluster."
+        }
+    },
+    "required": [
+        "id",
+        "min_date",
+        "max_date",
+        "cluster_size",
+        "time_delta",
+        "newspapers",
+        "passages",
+        "doc_ids",
+        "lexical_overlap"
+    ]
+}

@@ -89,7 +89,7 @@ one (and only one) of
 
 ## lg\_decision
 
-An identifier for the decision strategy applied to the content item: 'all' = all LID systems/info agree; 'all-but-impresso-ft' = all LID except impresso\_ft agree on a language other than de/fr; 'dominant-by-len' = the most frequent language of the ensemble decisions is selected because there are too few characters; 'dominant-by-lowvote' = the most frequent language of the ensemble decisions is selected because there are too few votes; 'voting' = the language with the highest vote count is selected
+An identifier for the decision strategy applied to the content item: 'all' = all LID systems/info agree; 'all-but-impresso\_ft' = all LID except impresso\_ft agree on a language other than de/fr; 'dominant-by-len' = the most frequent language of the ensemble decisions is selected because there are too few characters; 'dominant-by-lowvote' = the most frequent language of the ensemble decisions is selected because there are too few votes; 'voting' = the language with the highest vote count is selected
 
 `lg_decision`
 
@@ -112,7 +112,7 @@ An identifier for the decision strategy applied to the content item: 'all' = all
 | Value                   | Explanation |
 | :---------------------- | :---------- |
 | `"all"`                 |             |
-| `"all-but-impresso-ft"` |             |
+| `"all-but-impresso_ft"` |             |
 | `"voting"`              |             |
 | `"dominant-by-len"`     |             |
 | `"dominant-by-lowvote"` |             |

@@ -1,30 +1,34 @@
 {
-  "id": "EXP-1928-05-15-a-i0009",
+  "ci_id": "EXP-1928-05-15-a-i0009",
   "ts": "2019-10-17T11:49:50Z",
-  "sys_id": "bert-fr",
+  "model_id": "bert-fr",
   "nes": [
     {
+      "id": "EXP-1928-05-15-a-i0009:50:99:pers.ind:bert-fr",
       "type": "pers.ind",
       "surface": "M. Wou, ancien ministre du gouvernement cantonais",
       "lOffset": 50,
       "rOffset": 99,
-      "id": "EXP-1928-05-15-a-i0009:50:99:loc.adm.nat:bert-fr",
       "name": "Wou",
       "title": "M.",
       "function": "ancien ministre du gouvernement cantonais",
       "wkd_id": "NIL",
       "wkpedia_pagename": "NIL",
-      "confidence": "medium"
+      "wkpedia_url": "N/A",
+      "confidence_ner": 50.45,
+      "confidence_nel": 50.45
     },
     {
+      "id": "EXP-1888-01-09-a-i0035:32:42:loc.adm.nat:bert-fr",
       "type": "loc.adm.nat",
       "surface": "Etats-Unis",
       "lOffset": 32,
       "rOffset": 42,
-      "id": "EXP-1888-01-09-a-i0035:32:42:loc.adm.nat:bert-fr",
       "wkd_id": "Q30",
       "wkpedia_pagename": "États-Unis",
-      "confidence": "medium"
+      "wkpedia_url": "https://fr.wikipedia.org/wiki/%C3%89tats-Unis",
+      "confidence_ner": 50.45,
+      "confidence_nel": 50.45
     }
   ]
 }

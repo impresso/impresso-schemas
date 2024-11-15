@@ -153,6 +153,10 @@
                     "type": "string",
                     "description": "Element of the data on which they were computed, based on the granularity (title-year pairs in the case of 'year')."
                 },
+                "last_modification_date": {
+                    "type": "string",
+                    "description": "Date timestamp of last modification of the media statistics for this specific element."
+                },
                 "nps_stats": {
                     "type": "object",
                     "description": "Counts of various elements/enrichments in newspaper data corresponding to above granularity and element. The exact keys used depend on the data stage.",
@@ -173,10 +177,6 @@
                             "type": "integer",
                             "description": "Number of content-items present in the (output) data."
                         },
-                        "content_items_in": {
-                            "type": "integer",
-                            "description": "Number of content-items present in the input data used for processing and included in count. Used to track loss of data within a processing step."
-                        },
                         "images": {
                             "type": "integer",
                             "description": "Number of images present in the data."
@@ -193,17 +193,13 @@
                             "type": "integer",
                             "description": "Number of named-entity mentions present in the data."
                         },
-                        "lang_fd": {
-                            "type": "object",
-                            "description": "Frequency dict with the occurences of each lang identified in the data."
+                        "ne_links": {
+                            "type": "integer",
+                            "description": "Number of named-entity links present in the data."
                         },
                         "topics": {
                             "type": "integer",
                             "description": "Number of topics extracted from the data."
-                        },
-                        "text_reuse_clusters": {
-                            "type": "integer",
-                            "description": "Number of text-reuse clusters indentified in the data."
                         }
                     },
                     "required": [
