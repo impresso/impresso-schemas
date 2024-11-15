@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-docs.schema.json",
+  "title": "Document Embeddings JSON Schema",
+  "description": "A representation for the vector embedding representation of content items.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "$id": "#/properties/id",
+      "type": "string",
+      "title": "The Id Schema",
+      "description": "The unique identifier for a content item, cf. https://github.com/impresso/impresso-schemas/blob/master/json/newspaper/contentitem.schema.json",
+      "examples": ["actionfem-1940-01-08-a-i0001"],
+      "pattern": "^(.*)$"
+    },
+    "ts": {
+      "$id": "#/properties/ts",
+      "type": "string",
+      "title": "The Ts Schema",
+      "description": "The timestamp when the embeddings were created",
+      "examples": ["2024-08-29T06:42:53+00:00Z"],
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\+00:00|Z)$"
+    },
+    "embedder": {
+      "$id": "#/properties/embedder",
+      "type": "string",
+      "title": "The Embedder Schema",
+      "description": "The model or tool used to generate the embeddings",
+      "examples": ["Alibaba-NLP/gte-multilingual-base@f7d567e"]
+    },
+    "len": {
+      "$id": "#/properties/len",
+      "type": "integer",
+      "title": "The Length Schema",
+      "description": "The length of the document in characters.",
+      "examples": [2976]
+    },
+    "embedding": {
+      "$id": "#/properties/embedding",
+      "type": "array",
+      "title": "The Embedding Schema",
+      "description": "The vector embeddings of the document",
+      "items": {
+        "$id": "#/properties/embedding/items",
+        "type": "number",
+        "title": "The Items Schema",
+        "description": "A single number in the vector embeddings of the document",
+        "examples": [-0.11429]
+      }
+    }
+  },
+  "required": ["id", "ts", "embedder", "embedding"]
+}
