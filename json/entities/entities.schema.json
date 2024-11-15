@@ -9,6 +9,11 @@
       "type": "string",
       "description": "Impresso content item ID."
     },
+    "ci_type":
+    {
+      "type": "string",
+      "description": "Impresso content item type."
+    },
     "ts": {
       "type": "string",
       "description": "Timestamp of creation of the JSON file (e.g. '2024-05-26T09:48:01Z')."
