@@ -8,17 +8,16 @@
     "ci_id": {
       "type": "string",
       "description": "Unique identifier for the content item.",
-      "examples": "actionfem-1940-01-08-a-i0001",
+      "examples": ["actionfem-1940-01-08-a-i0001"]
     },
     "ci_type":
     {
       "type": "string",
-      "description": "Type of content item (e.g., 'article', 'adv').",
-      "examples": "article"
+      "description": "Type of content item as present in the rebuilt"
     },
     "model_id": {
       "type": "string",
-      "description": "An alias for the system or model that produced this output, used for transparency and traceability. It should include distinguishing elements like a base name, version, and language."
+      "description": "The ID of the model that produced this output, composed as specified in these slides: https://docs.google.com/presentation/d/1wH4LygLcT28rvMA82k5fyEyzdX49inGkqCLnBNZsFaw/edit#slide=id.g30cf04393c4_1_46."
     },
     "embedding": {
       "oneOf": [
