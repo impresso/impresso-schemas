@@ -31,10 +31,11 @@ documentation:
 	jsonschema2md -d json/topic_model/ --header false -n -v 06 -o docs  -x -  -s propTable
 	jsonschema2md -d json/language_identification/ --header false -n -v 06 -o docs -x -  -s propTable
 	jsonschema2md -d json/entities/ --header false -n -v 2020-12 -o docs -x -  -s propTable
-	jsonschema2md -d json/embeddings/ --header false -n -v 2020-12 -o docs -x -  -s propTable
-	#jsonschema2md -d json/linguistic_annotation/ -n -v 06 -o docs
+	jsonschema2md -d json/embeddings/ --header false -n -v 2024-09 -o docs -x -  -s propTable
+	jsonschema2md -d json/linguistic_annotation/ -n -v 06 -o docs
 	jsonschema2md -d json/versioning/ --header false -n -v 2024-02 -o docs -x -  -s propTable
 	jsonschema2md -d json/text_reuse/ --header false -n -v 2024-09 -o docs -x -  -s propTable
+
 
 ##########################################################################################
 # Simple macros for tests
