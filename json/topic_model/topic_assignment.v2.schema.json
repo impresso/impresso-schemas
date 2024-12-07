@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.vs.schema.json",
+  "$id": "https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.v2.schema.json",
   "description": "A representation for the probabilistic assignments of the topics of a topic model to content items. impresso 2 schema version.",
   "type": "object",
   "properties": {
