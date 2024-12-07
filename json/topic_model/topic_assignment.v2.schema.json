@@ -1,0 +1,82 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.vs.schema.json",
+  "description": "A representation for the probabilistic assignments of the topics of a topic model to content items. impresso 2 schema version.",
+  "type": "object",
+  "properties": {
+    "ci_id": {
+      "type": "string",
+      "description": "Unique identifier for the content item.",
+      "examples": ["actionfem-1940-01-08-a-i0001"]
+    },
+    "ts": {
+      "$id": "#/properties/ts",
+      "type": "string",
+      "title": "The Ts Schema",
+      "description": "timestamp",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+    },
+    "lg": {
+      "type": "string",
+      "description": "https://en.wikipedia.org/wiki/List_of_ISO_639-2_codes"
+    },
+    "topic_model_id": {
+      "type": "string",
+      "description": "internal symbolic name of the model corresponding to actual model file stems and the topic names in property 't', starts with tm"
+    },
+    "model_id": {
+      "type": "string",
+      "description": "impresso internal symbolic name of the model as part of the s3 file path"
+    },
+    "topics_git": {
+      "type": "string",
+      "description": "git describe of the repository code used to generate the topics"
+    },
+    "topic_count": {
+      "type": "integer",
+      "description": "The overall number of topics in the topic model"
+    },
+    "min_p": {
+      "type": "number",
+      "description": "The minimum proportion threshold of a topic in the document to be included in the output.",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "topics": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/topic"
+      },
+
+      "description": "Sparse representation of topics"
+    },
+    "lingproc_run_id": {
+      "type": "string",
+      "description": "The impresso s3 run id name of the lingproc input data for traceability."
+    },
+    "lingproc_run_id": {
+      "type": "string",
+      "description": "The impresso s3 run id name of the lingproc input data for traceability."
+    }
+  },
+  "required": ["lg", "topics", "topic_count", "topic_model_id", "ci_id"],
+  "definitions": {
+    "topic": {
+      "description": "The probability/proportion of a topic in the document",
+      "type": "object",
+      "properties": {
+        "p": {
+          "type": "number",
+          "description": "Probability or proportion of topic",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "t": {
+          "type": ["integer", "string"],
+          "description": "Topic id "
+        }
+      },
+      "required": ["p", "t"]
+    }
+  }
+}
