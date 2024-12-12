@@ -54,9 +54,9 @@
       "type": "string",
       "description": "The impresso s3 run id name of the lingproc input data for traceability."
     },
-    "lingproc_run_id": {
+    "topics_run_id": {
       "type": "string",
-      "description": "The impresso s3 run id name of the lingproc input data for traceability."
+      "description": "The impresso s3 run id name of the topic processing that created this data."
     }
   },
   "required": ["lg", "topics", "topic_count", "topic_model_id", "ci_id"],
