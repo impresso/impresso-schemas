@@ -66,7 +66,7 @@
                   "type": "string",
                   "title": "The E Schema",
                   "description": "named entity type as IOB tag",
-                  "pattern": "^[IOBES]-[A-Za-z]+$",
+                  "pattern": "^[IOBES]-[A-Za-z_0-9]+$",
                   "examples": ["B-LOC"]
                 }
               }
