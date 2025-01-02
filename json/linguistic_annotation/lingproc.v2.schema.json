@@ -137,6 +137,42 @@
       "title": "The Max Chars Schema",
       "description": "Maximum number of characters for a valid content item (including title and full text)",
       "examples": [50000]
+    },
+    "title_status": {
+      "type": "object",
+      "title": "The Title Status Schema",
+      "description": "Status of the title with respect to full text content based on various criteria",
+      "properties": {
+        "exact_prefix": {
+          "type": "boolean",
+          "description": "True if title is an exact case-sensitive prefix of full text"
+        },
+        "ellipsis": {
+          "type": "boolean",
+          "description": "Is there an ellipsis added to the title (that cannot be found in the text)? ... "
+        },
+        "alnum_prefix": {
+          "type": "boolean",
+          "description": "When reducing title and full text to alphanumeric characters, is the title a prefix of the full text?"
+        },
+        "alnum_infix": {
+          "type": "boolean",
+          "description": "When reducing title and full text to alphanumeric characters, is the title an infix of the full text? Sometimes the real title comes second (because of page numbers or secondary titles that come first)"
+        },
+        "unknown": {
+          "type": "boolean",
+          "description": "Is there an artificial title (UNKWNON, UNTITLED) that indicates that there is no title"
+        },
+        "title_longer": {
+          "type": "boolean",
+
+          "description": "True if title is longer than full text which indicates a weird problematic situation."
+        },
+        "advertisement": {
+          "type": "boolean",
+          "description": "For some newspapers, advertisements have an artifical title consisting of a serial number of a an advertisement and the page. This is not a real title. Examples: Adv.7 Page 4,  "
+        }
+      }
     }
   }
 }
