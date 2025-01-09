@@ -50,6 +50,12 @@ Unique identifier for this passage.
 
 [try pattern](https://regexr.com/?expression=%5Ec%5Cd%2B-%5Ba-zA-Z0-9%5D%2B-%5Cd%7B4%7D-\(0%5B1-9%5D%7C1%5B0-2%5D\)-\(0%5B1-9%5D%7C%5B12%5D%5Cd%7C3%5B01%5D\)-%5Ba-z%5D-i%5Cd%7B4%7D%40%5Cd%2B%3A%5Cd%2B%24 "try regular expression with regexr.com")
 
+### id Examples
+
+```json
+"c68720283542-armeteufel-1904-08-07-a-i0010@8067:8460"
+```
+
 ## begin
 
 Start index of the text-reuse passage within the article
@@ -96,6 +102,12 @@ Content-item ID this passage is from.
 
 [try pattern](https://regexr.com/?expression=%5E%5Ba-zA-Z0-9%5D%2B-%5Cd%7B4%7D-\(0%5B1-9%5D%7C1%5B0-2%5D\)-\(0%5B1-9%5D%7C%5B12%5D%5Cd%7C3%5B01%5D\)-%5Ba-z%5D-i%5Cd%7B4%7D%24 "try regular expression with regexr.com")
 
+### ci\_id Examples
+
+```json
+"armeteufel-1904-08-07-a-i0010"
+```
+
 ## cluster\_id
 
 Unique identifier for this passage's cluster.
@@ -113,6 +125,12 @@ Unique identifier for this passage's cluster.
 ### cluster\_id Type
 
 `string`
+
+### cluster\_id Examples
+
+```json
+"tr-all-v1-24-c68720283542"
+```
 
 ## date
 
