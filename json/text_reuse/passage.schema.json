@@ -7,7 +7,10 @@
         "id": {
             "type": "string",
             "description": "Unique identifier for this passage.",
-            "pattern": "^c\\d+-[a-zA-Z0-9]+-\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])-[a-z]-i\\d{4}@\\d+:\\d+$"
+            "pattern": "^c\\d+-[a-zA-Z0-9]+-\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])-[a-z]-i\\d{4}@\\d+:\\d+$",
+            "examples": [
+                "c68720283542-armeteufel-1904-08-07-a-i0010@8067:8460"
+            ]
         },
         "begin": {
             "type": "integer",
@@ -16,11 +19,17 @@
         "ci_id": {
             "type": "string",
             "description": "Content-item ID this passage is from.",
-            "pattern": "^[a-zA-Z0-9]+-\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])-[a-z]-i\\d{4}$"
+            "pattern": "^[a-zA-Z0-9]+-\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])-[a-z]-i\\d{4}$",
+            "examples": [
+                "armeteufel-1904-08-07-a-i0010"
+            ]
         },
         "cluster_id": {
             "type": "string",
-            "description": "Unique identifier for this passage's cluster."
+            "description": "Unique identifier for this passage's cluster.",
+            "examples": [
+                "tr-all-v1-24-c68720283542"
+            ]
         },
         "date": {
             "type": "string",

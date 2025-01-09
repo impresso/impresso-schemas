@@ -6,7 +6,10 @@
     "properties": {
         "id": {
             "type": "string",
-            "description": "Unique identifier for this cluster."
+            "description": "Unique identifier for this cluster.",
+            "examples": [
+                "tr-all-v1-24-c600067"
+            ]
         },
         "min_date": {
             "type": "string",
@@ -39,7 +42,10 @@
             "items": {
                 "type": "string",
                 "description": "One article passage, defined by its content-item ID, followed by '@' and the start and end indices of the passage separated by ':'.",
-                "pattern": "^[a-zA-Z0-9]+-\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])-[a-z]-i\\d{4}@\\d+:\\d+$"
+                "pattern": "^[a-zA-Z0-9]+-\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])-[a-z]-i\\d{4}@\\d+:\\d+$",
+                "examples": [
+                    "JDG-1991-11-01-a-i0153@3285:3768"
+                ]
             }
         },
         "doc_ids": {
@@ -48,7 +54,10 @@
             "items": {
                 "type": "string",
                 "description": "One article passage, defined by its content-item ID, followed by '@' and the start and end indices of the passage separated by ':'.",
-                "pattern": "^[a-zA-Z0-9]+-\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])-[a-z]-i\\d{4}$"
+                "pattern": "^[a-zA-Z0-9]+-\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])-[a-z]-i\\d{4}$",
+                "examples": [
+                    "JDG-1991-11-01-a-i0153"
+                ]
             }
         },
         "lexical_overlap": {
