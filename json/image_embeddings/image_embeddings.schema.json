@@ -45,9 +45,11 @@
             ]
         },
         "seconds": {
-            "type": "integer",
-            "description": "Timestamp indicating when the embedding was created (e.g., '2024-10-09T09:29:02Z').",
-            "format": "date-time"
+            "type": "number",
+            "description": "Number of seconds it took to generate the embedding for this image.",
+            "examples": [
+                0.973115
+            ]
         },
         "title_year": {
             "type": "string",

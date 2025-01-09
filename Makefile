@@ -19,6 +19,7 @@ tests:
 	jsonschema -V Draft202012Validator -i examples/doc_embeddings/example0.json  json/embeddings/embeddings-docs.schema.json && $(print-test-ok)|| $(print-test-failed)
 	jsonschema -V Draft202012Validator -i examples/text_reuse/tr_cluster_example.json  json/text_reuse/cluster.schema.json && $(print-test-ok)|| $(print-test-failed)
 	jsonschema -V Draft202012Validator -i examples/text_reuse/tr_passage_example.json  json/text_reuse/passage.schema.json && $(print-test-ok)|| $(print-test-failed)
+	jsonschema -V Draft202012Validator -i examples/image_embeddings/image_emendding_example.json  json/image_embeddings/image_embeddings.schema.json && $(print-test-ok)|| $(print-test-failed)
 
 
 clean-documentation:
@@ -35,6 +36,7 @@ documentation:
 	jsonschema2md -d json/linguistic_annotation/ -n -v 06 -o docs
 	jsonschema2md -d json/versioning/ --header false -n -v 2024-02 -o docs -x -  -s propTable
 	jsonschema2md -d json/text_reuse/ --header false -n -v 2024-09 -o docs -x -  -s propTable
+	jsonschema2md -d json/image_embeddings/ --header false -n -v 2025-01 -o docs -x -  -s propTable
 
 
 ##########################################################################################
