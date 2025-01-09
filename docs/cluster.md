@@ -34,6 +34,12 @@ Unique identifier for this cluster.
 
 `string`
 
+### id Examples
+
+```json
+"tr-all-v1-24-c600067"
+```
+
 ## min\_date
 
 Earliest date represented in the article passages of the cluster
