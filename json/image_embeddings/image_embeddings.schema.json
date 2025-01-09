@@ -1,0 +1,69 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema#",
+    "$id": "https://impresso.github.io/impresso-schemas/json/embeddings/image_embeddings.schema.json",
+    "title": "Image Embeddings JSON Schema",
+    "description": "A representation for the vector embedding representation of the content-items of type image.",
+    "type": "object",
+    "properties": {
+        "ci_id": {
+            "type": "string",
+            "description": "Unique identifier for the content item.",
+            "pattern": "^[a-zA-Z0-9]+-\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])-[a-z]-i\\d{4}$",
+            "examples": [
+                "actionfem-1940-01-08-a-i0001"
+            ]
+        },
+        "ts": {
+            "type": "string",
+            "description": "Timestamp indicating when the embedding was created (e.g., '2024-10-09T09:29:02Z').",
+            "format": "date-time"
+        },
+        "model_id": {
+            "type": "string",
+            "description": "The ID of the model that produced this output, composed as specified in these slides: https://docs.google.com/presentation/d/1wH4LygLcT28rvMA82k5fyEyzdX49inGkqCLnBNZsFaw/edit#slide=id.g30cf04393c4_1_46.",
+            "examples": [
+                "emb-images_dinov2-v0.0.1"
+            ]
+        },
+        "size": {
+            "type": "integer",
+            "description": "The size of the embedding vector."
+        },
+        "embedding": {
+            "oneOf": [
+                {
+                    "type": "array",
+                    "description": "The vector embedding representation of the content item as a single list.",
+                    "items": {
+                        "type": "number",
+                        "description": "A single number in the vector embedding of the document.",
+                        "examples": [
+                            -0.732441
+                        ]
+                    }
+                }
+            ]
+        },
+        "seconds": {
+            "type": "number",
+            "description": "Number of seconds it took to generate the embedding for this image.",
+            "examples": [
+                0.973115
+            ]
+        },
+        "title_year": {
+            "type": "string",
+            "description": "Title-year key this image emebeddings corresponds to.",
+            "pattern": "^[a-zA-Z0-9]+-\\d{4}$",
+            "examples": [
+                "actionfem-1940"
+            ]
+        }
+    },
+    "required": [
+        "ci_id",
+        "embedding",
+        "model_id",
+        "size"
+    ]
+}
