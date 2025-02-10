@@ -5,7 +5,7 @@
   "description": "A representation for the assessment of OCR quality of content items.",
   "type": "object",
   "properties": {
-    "ci_ref": {
+    "ci_id": {
       "type": "string",
       "description": "Reference to canonical content item id, typically an article"
     },
@@ -16,6 +16,6 @@
   },
   "required": [
     "ocrqa",
-    "ci_ref"
+    "ci_id"
   ]
 }
