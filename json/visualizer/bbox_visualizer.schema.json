@@ -1,0 +1,59 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$id": "https://impresso.github.io/impresso-schemas/json/visualizer/bbox_visualizer.schema.json",
+    "title": "Content Item",
+    "description": "A visualizable IIIF file to observe bounding boxes of content items or pages from canonical or rebuilt",
+    "type": "object",
+    "properties": {
+        "iiif_img_base_uri": {
+            "description": "The base URI of the IIIF image server. There can be multiple images as content items can span multiple pages.",
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 1
+        },
+        "bboxes": {
+            "description": "Bounding boxes of the content items or pages in the IIIF image. The bounding box is defined as an array of four numbers: [x, y, width, height]. Each page is associated with its corresponding bounding boxes.",
+            "type": "object",
+            "minItems": 1,
+            "additionalProperties": {
+                "type": "array",
+                "minItems": 0,
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "t": {
+                            "description": "The type of the bounding box (article, image, etc.).",
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "ci": {
+                            "description": "The content item ID that the bounding box belongs to.",
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "c": {
+                            "description": "The coordinates of the bounding box in the IIIF image. The bounding box is defined as an array of four numbers: [x, y, width, height].",
+                            "type": "array",
+                            "items": {
+                                "type": "number"
+                            },
+                            "minItems": 4,
+                            "maxItems": 4
+                        }
+                    },
+                    "required": [
+                        "t",
+                        "ci",
+                        "c"
+                    ]
+                }
+            }
+        }
+    }
+}

@@ -1,3 +1,0 @@
-## ocrqa Type
-
-`number`

@@ -1,0 +1,62 @@
+{
+	"iiif_img_base_uri": [
+		"https://iiif.eluxemburgensia.lu/image/iiif/2/ark:70795%2fs8qgx6%2fpages%2f1",
+		"https://iiif.eluxemburgensia.lu/image/iiif/2/ark:70795%2fs8qgx6%2fpages%2f2"
+	],
+	"bboxes": {
+		"https://iiif.eluxemburgensia.lu/image/iiif/2/ark:70795%2fs8qgx6%2fpages%2f1": [
+			{
+				"t": "ar",
+				"ci": "actionfem-1927-10-15-a-i0012",
+				"c": [
+					146,
+					2050,
+					421,
+					46
+				]
+			},
+			{
+				"t": "ar",
+				"ci": "actionfem-1927-10-15-a-i0012",
+				"c": [
+					146,
+					2122,
+					859,
+					532
+				]
+			},
+			{
+				"t": "ar",
+				"ci": "actionfem-1927-10-15-a-i0012",
+				"c": [
+					1059,
+					1647,
+					856,
+					1006
+				]
+			}
+		],
+		"https://iiif.eluxemburgensia.lu/image/iiif/2/ark:70795%2fs8qgx6%2fpages%2f2": [
+			{
+				"t": "ar",
+				"ci": "actionfem-1927-10-15-a-i0012",
+				"c": [
+					95,
+					1744,
+					859,
+					907
+				]
+			},
+			{
+				"t": "ar",
+				"ci": "actionfem-1927-10-15-a-i0012",
+				"c": [
+					1007,
+					198,
+					859,
+					1499
+				]
+			}
+		]
+	}
+}
