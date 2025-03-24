@@ -20,6 +20,9 @@ tests:
 	jsonschema -V Draft202012Validator -i examples/text_reuse/tr_cluster_example.json  json/text_reuse/cluster.schema.json && $(print-test-ok)|| $(print-test-failed)
 	jsonschema -V Draft202012Validator -i examples/text_reuse/tr_passage_example.json  json/text_reuse/passage.schema.json && $(print-test-ok)|| $(print-test-failed)
 	jsonschema -V Draft202012Validator -i examples/image_embeddings/image_emendding_example.json  json/image_embeddings/image_embeddings.schema.json && $(print-test-ok)|| $(print-test-failed)
+	jsonschema -V Draft202012Validator -i examples/visualizer/actionfem-1927-10-15-a_bbox.json  json/visualizer/bbox_visualizer.schema.json && $(print-test-ok)|| $(print-test-failed)
+	jsonschema -V Draft202012Validator -i examples/visualizer/actionfem-1927-10-15-a-i0012_bbox.json  json/visualizer/bbox_visualizer.schema.json && $(print-test-ok)|| $(print-test-failed)
+	jsonschema -V Draft202012Validator -i examples/visualizer/actionfem-1927-10-15-a-p0001_bbox.json  json/visualizer/bbox_visualizer.schema.json && $(print-test-ok)|| $(print-test-failed)
 
 
 clean-documentation:
@@ -37,6 +40,7 @@ documentation:
 	jsonschema2md -d json/versioning/ --header false -n -v 2024-02 -o docs -x -  -s propTable
 	jsonschema2md -d json/text_reuse/ --header false -n -v 2024-09 -o docs -x -  -s propTable
 	jsonschema2md -d json/image_embeddings/ --header false -n -v 2025-01 -o docs -x -  -s propTable
+	jsonschema2md -d json/visualizer/ --header false -n -v 2025-01 -o docs -x -  -s propTable
 
 
 ##########################################################################################
