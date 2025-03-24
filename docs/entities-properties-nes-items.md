@@ -8,23 +8,20 @@
 | :------------------------------------- | :-------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [type](#type)                          | `string`  | Required | cannot be null | [Named Entity JSON Schema](entities-properties-nes-items-properties-type.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/type")                         |
 | [surface](#surface)                    | `string`  | Required | cannot be null | [Named Entity JSON Schema](entities-properties-nes-items-properties-surface.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/surface")                   |
-| [name](#name)                          | `string`  | Optional | cannot be null | [Named Entity JSON Schema](entities-properties-nes-items-properties-name.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/name")                         |
 | [lOffset](#loffset)                    | `integer` | Required | cannot be null | [Named Entity JSON Schema](entities-properties-nes-items-properties-loffset.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/lOffset")                   |
 | [rOffset](#roffset)                    | `integer` | Required | cannot be null | [Named Entity JSON Schema](entities-properties-nes-items-properties-roffset.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/rOffset")                   |
-| [firstname](#firstname)                | `string`  | Optional | cannot be null | [Named Entity JSON Schema](entities-properties-nes-items-properties-firstname.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/firstname")               |
-| [surname](#surname)                    | `string`  | Optional | cannot be null | [Named Entity JSON Schema](entities-properties-nes-items-properties-surname.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/surname")                   |
-| [title](#title)                        | `string`  | Optional | cannot be null | [Named Entity JSON Schema](entities-properties-nes-items-properties-title.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/title")                       |
-| [function](#function)                  | `string`  | Optional | cannot be null | [Named Entity JSON Schema](entities-properties-nes-items-properties-function.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/function")                 |
-| [demonym](#demonym)                    | `string`  | Optional | cannot be null | [Named Entity JSON Schema](entities-properties-nes-items-properties-demonym.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/demonym")                   |
-| [nested](#nested)                      | `boolean` | Optional | cannot be null | [Named Entity JSON Schema](entities-properties-nes-items-properties-nested.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/nested")                     |
+| [confidence\_ner](#confidence_ner)     | `number`  | Optional | cannot be null | [Named Entity JSON Schema](entities-properties-nes-items-properties-confidence_ner.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/confidence_ner")     |
+| [confidence\_nel](#confidence_nel)     | `number`  | Optional | cannot be null | [Named Entity JSON Schema](entities-properties-nes-items-properties-confidence_nel.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/confidence_nel")     |
 | [wkd\_id](#wkd_id)                     | `string`  | Optional | cannot be null | [Named Entity JSON Schema](entities-properties-nes-items-properties-wkd_id.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/wkd_id")                     |
 | [wkpedia\_pagename](#wkpedia_pagename) | `string`  | Optional | cannot be null | [Named Entity JSON Schema](entities-properties-nes-items-properties-wkpedia_pagename.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/wkpedia_pagename") |
-| [confidence](#confidence)              | `string`  | Optional | cannot be null | [Named Entity JSON Schema](entities-properties-nes-items-properties-confidence.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/confidence")             |
-| [id](#id)                              | `string`  | Required | cannot be null | [Named Entity JSON Schema](entities-properties-nes-items-properties-id.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/id")                             |
+| [wkpedia\_url](#wkpedia_url)           | `string`  | Optional | cannot be null | [Named Entity JSON Schema](entities-properties-nes-items-properties-wkpedia_url.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/wkpedia_url")           |
+| [name](#name)                          | `string`  | Optional | cannot be null | [Named Entity JSON Schema](entities-properties-nes-items-properties-name.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/name")                         |
+| [title](#title)                        | `string`  | Optional | cannot be null | [Named Entity JSON Schema](entities-properties-nes-items-properties-title.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/title")                       |
+| [function](#function)                  | `string`  | Optional | cannot be null | [Named Entity JSON Schema](entities-properties-nes-items-properties-function.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/function")                 |
 
 ## type
 
-NE type
+NE type (coarse-grained and fine-grained).
 
 `type`
 
@@ -44,46 +41,77 @@ NE type
 
 **enum**: the value of this property must be equal to one of the following values:
 
-| Value                      | Explanation |
-| :------------------------- | :---------- |
-| `"building"`               |             |
-| `"loc"`                    |             |
-| `"loc.add"`                |             |
-| `"loc.add.elec"`           |             |
-| `"loc.add.phys"`           |             |
-| `"loc.adm"`                |             |
-| `"loc.adm.nat"`            |             |
-| `"loc.adm.reg"`            |             |
-| `"loc.adm.sup"`            |             |
-| `"loc.adm.town"`           |             |
-| `"loc.admin.sup"`          |             |
-| `"loc.fac"`                |             |
-| `"loc.oro"`                |             |
-| `"loc.phys"`               |             |
-| `"loc.phys.astro"`         |             |
-| `"loc.phys.geo"`           |             |
-| `"loc.phys.hydro"`         |             |
-| `"loc.unk"`                |             |
-| `"org"`                    |             |
-| `"org.adm"`                |             |
-| `"org.ent"`                |             |
-| `"org.ent.pressagency"`    |             |
-| `"per"`                    |             |
-| `"per.author"`             |             |
-| `"pers"`                   |             |
-| `"pers.coll"`              |             |
-| `"pers.ind"`               |             |
-| `"pers.ind.articleauthor"` |             |
-| `"prod"`                   |             |
-| `"prod.doctr"`             |             |
-| `"prod.media"`             |             |
-| `"street"`                 |             |
-| `"time"`                   |             |
-| `"time.date.abs"`          |             |
+| Value                               | Explanation |
+| :---------------------------------- | :---------- |
+| `"comp.demonym"`                    |             |
+| `"comp.function"`                   |             |
+| `"comp.name"`                       |             |
+| `"comp.qualifier"`                  |             |
+| `"comp.title"`                      |             |
+| `"loc"`                             |             |
+| `"loc.add.elec"`                    |             |
+| `"loc.add.phys"`                    |             |
+| `"loc.adm.nat"`                     |             |
+| `"loc.adm.reg"`                     |             |
+| `"loc.adm.sup"`                     |             |
+| `"loc.adm.town"`                    |             |
+| `"loc.fac"`                         |             |
+| `"loc.oro"`                         |             |
+| `"loc.phys.astro"`                  |             |
+| `"loc.phys.geo"`                    |             |
+| `"loc.phys.hydro"`                  |             |
+| `"loc.unk"`                         |             |
+| `"org"`                             |             |
+| `"org.adm"`                         |             |
+| `"org.ent"`                         |             |
+| `"org.ent.pressagency"`             |             |
+| `"pers"`                            |             |
+| `"pers.coll"`                       |             |
+| `"pers.ind"`                        |             |
+| `"pers.ind.articleauthor"`          |             |
+| `"prod"`                            |             |
+| `"prod.doctr"`                      |             |
+| `"prod.media"`                      |             |
+| `"time"`                            |             |
+| `"time.date.abs"`                   |             |
+| `"time.hour.abs"`                   |             |
+| `"org.ent.pressagency.Reuters"`     |             |
+| `"org.ent.pressagency.Stefani"`     |             |
+| `"org.ent.pressagency.Extel"`       |             |
+| `"org.ent.pressagency.Havas"`       |             |
+| `"org.ent.pressagency.Xinhua"`      |             |
+| `"org.ent.pressagency.Domei"`       |             |
+| `"org.ent.pressagency.Belga"`       |             |
+| `"org.ent.pressagency.CTK"`         |             |
+| `"org.ent.pressagency.ANSA"`        |             |
+| `"org.ent.pressagency.DNB"`         |             |
+| `"pers.ind.articleauthor"`          |             |
+| `"org.ent.pressagency.Wolff"`       |             |
+| `"org.ent.pressagency.unk"`         |             |
+| `"org.ent.pressagency.UP-UPI"`      |             |
+| `"org.ent.pressagency.ATS-SDA"`     |             |
+| `"org.ent.pressagency.DPA"`         |             |
+| `"org.ent.pressagency.AFP"`         |             |
+| `"pers.ind.articleauthor"`          |             |
+| `"org.ent.pressagency.Kipa"`        |             |
+| `"org.ent.pressagency.ag"`          |             |
+| `"org.ent.pressagency.Extel"`       |             |
+| `"org.ent.pressagency.ATS-SDA"`     |             |
+| `"org.ent.pressagency.Havas"`       |             |
+| `"org.ent.pressagency.Reuters"`     |             |
+| `"org.ent.pressagency.Xinhua"`      |             |
+| `"org.ent.pressagency.AP"`          |             |
+| `"org.ent.pressagency.APA"`         |             |
+| `"org.ent.pressagency.ANSA"`        |             |
+| `"org.ent.pressagency.DDP-DAPD"`    |             |
+| `"org.ent.pressagency.TASS"`        |             |
+| `"org.ent.pressagency.Europapress"` |             |
+| `"org.ent.pressagency.SPK-SMP"`     |             |
+| `"unk"`                             |             |
 
 ## surface
 
-The (string) surface of the named entity mention, as it appears in the text
+The surface form of the named entity mention, as it appears in the text.
 
 `surface`
 
@@ -99,27 +127,9 @@ The (string) surface of the named entity mention, as it appears in the text
 
 `string`
 
-## name
-
-In case of a person mention, the entity component of type name.
-
-`name`
-
-*   is optional
-
-*   Type: `string`
-
-*   cannot be null
-
-*   defined in: [Named Entity JSON Schema](entities-properties-nes-items-properties-name.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/name")
-
-### name Type
-
-`string`
-
 ## lOffset
 
-The left character offset of the named entity with respect to the content item, as in the rebuilt format.
+The left character offset of the named entity with respect to the content item.
 
 `lOffset`
 
@@ -137,7 +147,7 @@ The left character offset of the named entity with respect to the content item, 
 
 ## rOffset
 
-The right character offset of the named entity with respect to the content item, as in the rebuilt format.
+The right character offset of the named entity with respect to the content item.
 
 `rOffset`
 
@@ -153,117 +163,45 @@ The right character offset of the named entity with respect to the content item,
 
 `integer`
 
-## firstname
+## confidence\_ner
 
-In case of a person mention and if available, the first name.
+Confidence score of the Named Entity Recognition process.
 
-`firstname`
-
-*   is optional
-
-*   Type: `string`
-
-*   cannot be null
-
-*   defined in: [Named Entity JSON Schema](entities-properties-nes-items-properties-firstname.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/firstname")
-
-### firstname Type
-
-`string`
-
-## surname
-
-In case of a person mention and if available, the surname.
-
-`surname`
+`confidence_ner`
 
 *   is optional
 
-*   Type: `string`
+*   Type: `number`
 
 *   cannot be null
 
-*   defined in: [Named Entity JSON Schema](entities-properties-nes-items-properties-surname.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/surname")
+*   defined in: [Named Entity JSON Schema](entities-properties-nes-items-properties-confidence_ner.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/confidence_ner")
 
-### surname Type
+### confidence\_ner Type
 
-`string`
+`number`
 
-## title
+## confidence\_nel
 
-In case of a person mention, the entity component of type 'title'.
+Confidence score of the Named Entity Linking process.
 
-`title`
+`confidence_nel`
 
 *   is optional
 
-*   Type: `string`
+*   Type: `number`
 
 *   cannot be null
 
-*   defined in: [Named Entity JSON Schema](entities-properties-nes-items-properties-title.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/title")
+*   defined in: [Named Entity JSON Schema](entities-properties-nes-items-properties-confidence_nel.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/confidence_nel")
 
-### title Type
+### confidence\_nel Type
 
-`string`
-
-## function
-
-In case of a person mention, the entity component of type 'function'.
-
-`function`
-
-*   is optional
-
-*   Type: `string`
-
-*   cannot be null
-
-*   defined in: [Named Entity JSON Schema](entities-properties-nes-items-properties-function.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/function")
-
-### function Type
-
-`string`
-
-## demonym
-
-In case of a person mention, the entity component of type 'demonym'.
-
-`demonym`
-
-*   is optional
-
-*   Type: `string`
-
-*   cannot be null
-
-*   defined in: [Named Entity JSON Schema](entities-properties-nes-items-properties-demonym.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/demonym")
-
-### demonym Type
-
-`string`
-
-## nested
-
-In case of a nested mention, this property should be set to true. Can be ignored if not.
-
-`nested`
-
-*   is optional
-
-*   Type: `boolean`
-
-*   cannot be null
-
-*   defined in: [Named Entity JSON Schema](entities-properties-nes-items-properties-nested.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/nested")
-
-### nested Type
-
-`boolean`
+`number`
 
 ## wkd\_id
 
-If exists, wikidata QID
+Wikidata QID if available.
 
 `wkd_id`
 
@@ -281,7 +219,7 @@ If exists, wikidata QID
 
 ## wkpedia\_pagename
 
-If exists, wikipedia page name or, if not possible, wikipedia URL, in the language the NE recognition is made (e.g. page name 'Etats-Unis' if EL performed against French wikipedia, and 'United\_States' is against English Wikipedia.
+Wikipedia page name, i.e. the last part of the wikipedia URL (e.g.  United\_States)
 
 `wkpedia_pagename`
 
@@ -297,11 +235,11 @@ If exists, wikipedia page name or, if not possible, wikipedia URL, in the langua
 
 `string`
 
-## confidence
+## wkpedia\_url
 
+Wikipedia page URL, e.g. <https://en.wikipedia.org/wiki/United_States>
 
-
-`confidence`
+`wkpedia_url`
 
 *   is optional
 
@@ -309,36 +247,62 @@ If exists, wikipedia page name or, if not possible, wikipedia URL, in the langua
 
 *   cannot be null
 
-*   defined in: [Named Entity JSON Schema](entities-properties-nes-items-properties-confidence.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/confidence")
+*   defined in: [Named Entity JSON Schema](entities-properties-nes-items-properties-wkpedia_url.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/wkpedia_url")
 
-### confidence Type
+### wkpedia\_url Type
 
 `string`
 
-### confidence Constraints
+## name
 
-**enum**: the value of this property must be equal to one of the following values:
+In case of a person mention, the entity component of type 'name', as defined in the Impresso HIPE NE Annotation guidelines (<https://zenodo.org/records/3585750>).
 
-| Value      | Explanation |
-| :--------- | :---------- |
-| `"low"`    |             |
-| `"medium"` |             |
-| `"high"`   |             |
+`name`
 
-## id
-
-The id of the named entity mention composed of the following set of values concatenated with a colon (':') : content item id + loffset + roffset + type + sys\_id (e.g. 'LLE-1989-04-04-a-i0195:56:69:person:bert-xxxx-xxxx-fr'.
-
-`id`
-
-*   is required
+*   is optional
 
 *   Type: `string`
 
 *   cannot be null
 
-*   defined in: [Named Entity JSON Schema](entities-properties-nes-items-properties-id.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/id")
+*   defined in: [Named Entity JSON Schema](entities-properties-nes-items-properties-name.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/name")
 
-### id Type
+### name Type
+
+`string`
+
+## title
+
+In case of a person mention, the entity component of type 'title', as defined in the Impresso HIPE NE Annotation guidelines (<https://zenodo.org/records/3585750>).
+
+`title`
+
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [Named Entity JSON Schema](entities-properties-nes-items-properties-title.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/title")
+
+### title Type
+
+`string`
+
+## function
+
+In case of a person mention, the entity component of type 'function', as defined in the Impresso HIPE NE Annotation guidelines (<https://zenodo.org/records/3585750>).
+
+`function`
+
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [Named Entity JSON Schema](entities-properties-nes-items-properties-function.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/function")
+
+### function Type
 
 `string`

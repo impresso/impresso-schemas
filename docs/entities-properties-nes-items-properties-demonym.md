@@ -1,3 +1,0 @@
-## demonym Type
-
-`string`
