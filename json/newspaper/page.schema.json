@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-06/schema#",
-    "$id":"https://impresso.github.io/impresso-schemas/json/newspaper/page.schema.json",
+    "$id": "https://impresso.github.io/impresso-schemas/json/newspaper/page.schema.json",
     "title": "Newspaper Page",
     "description": "Physical representation of a newspaper page as recognized by a given OCR engine.",
     "type": "object",
@@ -9,19 +9,27 @@
             "type": "string",
             "description": "Canonical ID of the newspaper page (e.g. GDL-1900-01-02-a-p0001)"
         },
-        "iiif":{
-          "type": "string",
-          "description": "URI of the IIIF Manifest of the newspaper page image. Deprecated in favor of `iiif_img_base_uri` which should be used whenever it's defined, kept for backwards compatibility."
+        "iiif": {
+            "type": "string",
+            "description": "URI of the IIIF Manifest of the newspaper page image. Deprecated in favor of `iiif_img_base_uri` which should be used whenever it's defined, kept for backwards compatibility."
         },
-        "iiif_img_base_uri":{
-          "type": "string",
-          "description": "Base of the IIIF image URI of the newspaper page image. Should follow format `{scheme}://{server}/{prefix}/{identifier}` and not include any suffix."
+        "iiif_img_base_uri": {
+            "type": "string",
+            "description": "Base of the IIIF image URI of the newspaper page image. Should follow format `{scheme}://{server}/{prefix}/{identifier}` and not include any suffix."
         },
-        "cc":{
+        "fw": {
+            "type": "integer",
+            "description": "Width in pixels of the facsimile corresponding to this page."
+        },
+        "fh": {
+            "type": "integer",
+            "description": "Height in pixels of the facsimile corresponding to this page."
+        },
+        "cc": {
             "type": "boolean",
             "description": "Flag indicating whether the legacy coordinates have been converted into IIIF-compliant ones."
         },
-        "cdt":{
+        "cdt": {
             "type": "string",
             "description": "Creation date timestamp (of the JSON file)."
         },
@@ -30,12 +38,12 @@
             "description": "Page regions.",
             "items": {
                 "type": "object",
-                "description":"Page region.",
+                "description": "Page region.",
                 "properties": {
                     "c": {
                         "type": "array",
                         "description": "Coordinates of image-region, following IIIF regions schema (x, y, width, height).",
-                        "minItems":4,
+                        "minItems": 4,
                         "items": {
                             "type": "integer"
                         }
@@ -55,7 +63,7 @@
                                             "c": {
                                                 "type": "array",
                                                 "description": "Coordinates of image-region.",
-                                                "minItems":4,
+                                                "minItems": 4,
                                                 "items": {
                                                     "type": "integer"
                                                 }
@@ -69,7 +77,7 @@
                                                         "c": {
                                                             "type": "array",
                                                             "description": "Coordinates of image-region.",
-                                                            "minItems":4,
+                                                            "minItems": 4,
                                                             "items": {
                                                                 "type": "integer"
                                                             }
@@ -86,24 +94,32 @@
                                                             "type": "boolean",
                                                             "description": "Indicates whether the token is/should be followed by a whitespace. `gn==true` means no white space is required (`gn` stands for 'glue next'). When not specified it is assumed to be `false`."
                                                         },
-                                                        "hy":{
-                                                          "type": "boolean",
-                                                          "description": "Indicates whether the token constitutes the former part of a hyphenated word (including hyphen). When not specified it is assumed to be `false`."
+                                                        "hy": {
+                                                            "type": "boolean",
+                                                            "description": "Indicates whether the token constitutes the former part of a hyphenated word (including hyphen). When not specified it is assumed to be `false`."
                                                         },
-                                                        "nf":{
-                                                          "type": "string",
-                                                          "description": "It is specified on the latter part(s) of a hyphenated word, and contains its normalized (dehyphenated) form."
+                                                        "nf": {
+                                                            "type": "string",
+                                                            "description": "It is specified on the latter part(s) of a hyphenated word, and contains its normalized (dehyphenated) form."
                                                         }
                                                     },
-                                                    "required": ["c", "tx"]
+                                                    "required": [
+                                                        "c",
+                                                        "tx"
+                                                    ]
                                                 }
                                             }
                                         },
-                                        "required": ["c", "t"]
+                                        "required": [
+                                            "c",
+                                            "t"
+                                        ]
                                     }
                                 }
                             },
-                            "required": ["l"]
+                            "required": [
+                                "l"
+                            ]
                         }
                     },
                     "pOf": {
@@ -111,9 +127,16 @@
                         "description": "The canonical ID of the content item to which the page region belongs."
                     }
                 },
-                "required": ["c", "p"]
+                "required": [
+                    "c",
+                    "p"
+                ]
             }
         }
     },
-    "required": ["id", "cdt", "r"]
+    "required": [
+        "id",
+        "cdt",
+        "r"
+    ]
 }
