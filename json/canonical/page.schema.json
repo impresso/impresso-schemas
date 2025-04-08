@@ -1,8 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-06/schema#",
-    "$id": "https://impresso.github.io/impresso-schemas/json/newspaper/page.schema.json",
-    "title": "Newspaper Page",
-    "description": "Physical representation of a newspaper page as recognized by a given OCR engine.",
+    "$id": "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json",
+    "title": "Printed Page",
+    "description": "Physical representation of a newspaper or typescript page as recognized by a given OCR engine.",
     "type": "object",
     "properties": {
         "id": {
@@ -54,6 +54,14 @@
                         "items": {
                             "type": "object",
                             "properties": {
+                                "c": {
+                                    "type": "array",
+                                    "description": "Coordinates of paragraph, following IIIF regions schema (x, y, width, height).",
+                                    "minItems": 4,
+                                    "items": {
+                                        "type": "integer"
+                                    }
+                                },
                                 "l": {
                                     "type": "array",
                                     "description": "Lines of text (belonging to a given paragraph)",
