@@ -200,6 +200,10 @@
                     "items": {
                         "type": "string"
                     }
+                },
+                "var_t": {
+                    "type": "string",
+                    "description": "Variant title of the media title this CI is from (only in the case of BL newspapers)."
                 }
             },
             "required": [
