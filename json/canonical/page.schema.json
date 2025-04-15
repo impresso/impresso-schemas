@@ -61,12 +61,8 @@
                 "description": "Page region.",
                 "properties": {
                     "c": {
-                        "type": "array",
-                        "description": "Coordinates of image-region, following IIIF regions schema (x, y, width, height).",
-                        "minItems": 4,
-                        "items": {
-                            "type": "integer"
-                        }
+                        "description": "Coordinates of image-region.",
+                        "$ref": "#/definitions/coordinates"
                     },
                     "p": {
                         "type": "array",
@@ -75,12 +71,8 @@
                             "type": "object",
                             "properties": {
                                 "c": {
-                                    "type": "array",
-                                    "description": "Coordinates of paragraph, following IIIF regions schema (x, y, width, height).",
-                                    "minItems": 4,
-                                    "items": {
-                                        "type": "integer"
-                                    }
+                                    "description": "Coordinates of paragraph.",
+                                    "$ref": "#/definitions/coordinates"
                                 },
                                 "l": {
                                     "type": "array",
@@ -89,12 +81,8 @@
                                         "type": "object",
                                         "properties": {
                                             "c": {
-                                                "type": "array",
-                                                "description": "Coordinates of image-region.",
-                                                "minItems": 4,
-                                                "items": {
-                                                    "type": "integer"
-                                                }
+                                                "description": "Coordinates of image-region for the line.",
+                                                "$ref": "#/definitions/coordinates"
                                             },
                                             "t": {
                                                 "type": "array",
@@ -103,12 +91,8 @@
                                                     "type": "object",
                                                     "properties": {
                                                         "c": {
-                                                            "type": "array",
-                                                            "description": "Coordinates of image-region.",
-                                                            "minItems": 4,
-                                                            "items": {
-                                                                "type": "integer"
-                                                            }
+                                                            "description": "Coordinates of image-region for the token.",
+                                                            "$ref": "#/definitions/coordinates"
                                                         },
                                                         "tx": {
                                                             "type": "string",
@@ -160,6 +144,16 @@
                     "c",
                     "p"
                 ]
+            }
+        }
+    },
+    "definitions": {
+        "coordinates": {
+            "type": "array",
+            "description": "Coordinates of bounding-box, following IIIF regions schema (x, y, width, height).",
+            "minItems": 4,
+            "items": {
+                "type": "integer"
             }
         }
     },
