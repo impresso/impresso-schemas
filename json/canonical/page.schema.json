@@ -7,7 +7,8 @@
     "properties": {
         "id": {
             "type": "string",
-            "description": "Canonical ID of the newspaper page (e.g. GDL-1900-01-02-a-p0001)"
+            "description": "Canonical ID of the newspaper or typescript page (e.g. GDL-1900-01-02-a-p0001, or SOC_CJ-1940-07-22-aa-p0001)",
+            "pattern": "^[A-Z_]+-d{4}-d{2}-d{2}-[a-z]{1,3}-p[0-9]{4}$"
         },
         "iiif": {
             "type": "string",
@@ -25,9 +26,28 @@
             "type": "integer",
             "description": "Height in pixels of the facsimile corresponding to this page."
         },
+        "st": {
+            "type": "string",
+            "description": "Type of media source. Should be a value the impresso-essentials.utils SourceType enum.",
+            "enum": [
+                "newspaper",
+                "radio_broadcast",
+                "radio_magazine",
+                "radio_schedule",
+                "monograph"
+            ]
+        },
+        "sm": {
+            "type": "string",
+            "description": "Source medium, format in which the media was originally produced. If `tp == radio_broadcast`, this is typically `typescript` or `audio`.",
+            "enum": [
+                "print",
+                "typescript"
+            ]
+        },
         "cc": {
             "type": "boolean",
-            "description": "Flag indicating whether the legacy coordinates have been converted into IIIF-compliant ones."
+            "description": "Flag indicating whether the legacy coordinates have been converted into IIIF-compliant ones (or rescaled if there was the need)."
         },
         "cdt": {
             "type": "string",
@@ -126,6 +146,7 @@
                                 }
                             },
                             "required": [
+                                "c",
                                 "l"
                             ]
                         }
@@ -146,5 +167,57 @@
         "id",
         "cdt",
         "r"
+    ],
+    "oneOf": [
+        {
+            "required": [
+                "iiif_img_base_uri"
+            ]
+        },
+        {
+            "required": [
+                "iiif"
+            ]
+        }
+    ],
+    "dependentRequired": {
+        "fw": "fh",
+        "fh": "fw",
+        "sm": "st",
+        "st": "sm"
+    },
+    "allOf": [
+        {
+            "if": {
+                "properties": {
+                    "st": {
+                        "const": "newspaper"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "sm": {
+                        "const": "print"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "st": {
+                        "const": "radio_broadcast"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "sm": {
+                        "const": "typescript"
+                    }
+                }
+            }
+        }
     ]
 }
