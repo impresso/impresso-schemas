@@ -1,0 +1,206 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$id": "https://impresso.github.io/impresso-schemas/json/rebuilt/print_contentitem.schema.json",
+    "title": "Print Content Item",
+    "description": "A printed or typescripted content item (e.g. radio bulletin or newspaper article, advertisement, etc.).",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string",
+            "description": "The unique identifier for a content item (CI), (e.g. GDL-1900-01-02-a-i0001, or SOC_CJ-1940-07-22-a-i0001)",
+            "pattern": "^[A-Z_]+-d{4}-d{2}-d{2}-[a-z]{1,2}-i[0-9]{4}$"
+        },
+        "ts": {
+            "description": "timestamp of creation of the JSON file (e.g. '2018-09-18T08:00:08Z')",
+            "type": "string",
+            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+        },
+        "d": {
+            "description": "Date of publication of issue or broadcast (yyyy-mm-dd)",
+            "type": "string",
+            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        },
+        "cc": {
+            "description": "True if image box coordinates are known to be correct (eg. have been checked, converted or rescaled), False otherwise",
+            "type": "boolean"
+        },
+        "olr": {
+            "description": "True if optical layout recognition was applied to the issue/bulletin this content item originates from.",
+            "type": "boolean"
+        },
+        "st": {
+            "type": "string",
+            "description": "Type of media source. Should be a value the impresso-essentials.utils SourceType enum.",
+            "enum": [
+                "newspaper",
+                "radio_broadcast",
+                "radio_magazine",
+                "radio_schedule",
+                "monograph"
+            ]
+        },
+        "sm": {
+            "type": "string",
+            "description": "Source medium, format in which the media was originally produced, here should be image-based.",
+            "enum": [
+                "print",
+                "typescript"
+            ]
+        },
+        "tp": {
+            "description": "content item type (e.g. 'ar' for article, 'ad' for advertisement)",
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "lg": {
+            "description": "two letter language code",
+            "type": "string",
+            "pattern": "^[a-z]{2}$"
+        },
+        "rc": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Radio channel, if applicable (st=='radio_broadcast') and is known."
+        },
+        "rp": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Radio program, if applicable (st=='radio_broadcast') and is known."
+        },
+        "pp": {
+            "description": "array of page numbers over which the CI spans; it's the physical page number issue-based, as we get it from the OCR.",
+            "type": "array",
+            "items": {
+                "type": "number"
+            },
+            "minItems": 1
+        },
+        "ro": {
+            "description": "Reading order index of the content item, for the table of contents view on the interface. If not defined, the CI number (after 'i' in the ID) should be used.",
+            "type": "integer"
+        },
+        "t": {
+            "description": "Content-item title.",
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "ft": {
+            "description": "The rebuilt full text.",
+            "type": "string"
+        },
+        "rb": {
+            "description": "text offsets of page regions (relative to 'ft' field)",
+            "type": "array",
+            "items": {
+                "type": "number"
+            }
+        },
+        "pb": {
+            "description": "text offsets of physical paragraph breaks (relative to 'ft' field)",
+            "type": "array",
+            "items": {
+                "type": "number"
+            }
+        },
+        "lb": {
+            "description": "text offsets of physical line breaks (relative to 'ft' field)",
+            "type": "array",
+            "items": {
+                "type": "number"
+            }
+        },
+        "ppreb": {
+            "description": "List of rebuilt pages",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Page canonical ID",
+                        "type": "string",
+                        "pattern": "^[A-Z_]+-d{4}-d{2}-d{2}-[a-z]{1,2}-p[0-9]{4}$"
+                    },
+                    "n": {
+                        "description": "page number",
+                        "type": "integer"
+                    },
+                    "t": {
+                        "description": "List of tokens",
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "c": {
+                                    "description": "Coordinates of token relative to page.",
+                                    "type": "array",
+                                    "maxItems": 4,
+                                    "minItems": 4,
+                                    "items": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "s": {
+                                    "description": "offset start (relative to ft field)",
+                                    "type": "integer"
+                                },
+                                "l": {
+                                    "description": "token length",
+                                    "type": "integer"
+                                }
+                            }
+                        }
+                    },
+                    "r": {
+                        "description": "List of region coordinates.",
+                        "type": "array",
+                        "items": {
+                            "description": "Coordinates of region relative to page.",
+                            "type": "array",
+                            "maxItems": 4,
+                            "minItems": 4,
+                            "items": {
+                                "type": "integer"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "required": [
+        "id",
+        "tp",
+        "olr",
+        "ts"
+    ],
+    "dependentRequired": {
+        "sm": "st",
+        "st": "sm"
+    },
+    "allOf": [
+        {
+            "if": {
+                "properties": {
+                    "st": {
+                        "const": "radio_broadcast"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "ro": {
+                        "const": 1
+                    }
+                }
+            }
+        }
+    ]
+}

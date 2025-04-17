@@ -7,8 +7,8 @@
     "properties": {
         "id": {
             "type": "string",
-            "description": "Canonical ID of the newspaper or typescript page (e.g. GDL-1900-01-02-a-p0001, or SOC_CJ-1940-07-22-aa-p0001)",
-            "pattern": "^[A-Z_]+-d{4}-d{2}-d{2}-[a-z]{1,3}-p[0-9]{4}$"
+            "description": "Canonical ID of the newspaper or typescript page (e.g. GDL-1900-01-02-a-p0001, or SOC_CJ-1940-07-22-a-p0001)",
+            "pattern": "^[A-Z_]+-d{4}-d{2}-d{2}-[a-z]{1,2}-p[0-9]{4}$"
         },
         "iiif": {
             "type": "string",
@@ -152,6 +152,7 @@
             "type": "array",
             "description": "Coordinates of bounding-box, following IIIF regions schema (x, y, width, height).",
             "minItems": 4,
+            "maxItems": 4,
             "items": {
                 "type": "integer"
             }

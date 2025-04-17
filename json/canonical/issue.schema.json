@@ -8,41 +8,11 @@
         "id": {
             "type": "string",
             "description": "Canonical ID of the newspaper or radio broadcast issue (e.g. GDL-1900-01-02-a, or SOC_CJ-1940-07-22-aa)",
-            "pattern": "^[A-Z_]+-d{4}-d{2}-d{2}-[a-z]{1,3}$"
+            "pattern": "^[A-Z_]+-d{4}-d{2}-d{2}-[a-z]{1,2}$"
         },
         "cdt": {
             "type": "string",
             "description": "Creation date timestamp (of the JSON file)."
-        },
-        "src": {
-            "type": "object",
-            "description": "Source type and medium associated to this issue. This informs the expected format and which properties should be defined.",
-            "properties": {
-                "tp": {
-                    "type": "string",
-                    "description": "Type of media source. Should be a value the impresso-essentials.utils SourceType enum.",
-                    "enum": [
-                        "newspaper",
-                        "radio_broadcast",
-                        "radio_magazine",
-                        "radio_schedule",
-                        "monograph"
-                    ]
-                },
-                "md": {
-                    "type": "string",
-                    "description": "Source medium, format in which the media was originally produced. If `tp == radio_broadcast`, this is typically `typescript` or `audio`.",
-                    "enum": [
-                        "print",
-                        "typescript",
-                        "audio"
-                    ]
-                }
-            },
-            "required": [
-                "tp",
-                "md"
-            ]
         },
         "st": {
             "type": "string",
@@ -66,6 +36,7 @@
         },
         "i": {
             "type": "array",
+            "description": "The content item(s) contained in the newspaper/radio_broadcast issue.",
             "items": {
                 "type": "object",
                 "description": "A content item (e.g. article, advertisement, radio broadcast, etc.)",
@@ -81,13 +52,51 @@
                         "items": {
                             "type": "integer"
                         }
+                    },
+                    "l": {
+                        "type": "object",
+                        "description": "Legacy sections or components of the content item in the original OCR/OLR. They are meant to enable the reassignation of Impresso CIs (and enrichments) to the original OCR/OLR files.",
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "description": "ID of the sections or components used to compose the CI in the original OCR/OLR files."
+                            },
+                            "parts": {
+                                "type": "array",
+                                "description": "List of parts of the given section or components. Exact contents can vary, will typically be composed of the metadata at disposal in the OCR/OLR.",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "comp_role": {
+                                            "type": "string",
+                                            "description": "Role of the component part (eg. heading, body, etc)."
+                                        },
+                                        "comp_id": {
+                                            "type": "string",
+                                            "description": "ID of the part."
+                                        },
+                                        "comp_fileid": {
+                                            "type": "string",
+                                            "description": "ID of the ALTO file the component comes from."
+                                        },
+                                        "comp_page_no": {
+                                            "type": "string",
+                                            "description": "Page number of the component."
+                                        }
+                                    }
+                                }
+                            },
+                            "source": {
+                                "type": "string",
+                                "description": "Source image or OCR/OLR file name."
+                            }
+                        }
                     }
-                },
-                "required": [
-                    "m"
-                ]
+                }
             },
-            "description": "The content items contained in the newspaper issue."
+            "required": [
+                "m"
+            ]
         },
         "s": {
             "description": "The text style as defined in the OCR output. \nEach style consists of:\n - a name (`id`)\n - a type-face (`f`)\n - a font-size (`fs`)\n - a color (`rgb`).",
@@ -142,6 +151,14 @@
         "iiif_manifest_uri": {
             "type": "string",
             "description": "URI for the issue's manifest in the IIIF Presentation API, if the corresponding IIIF server has one."
+        },
+        "rc": {
+            "type": "string",
+            "description": "Radio channel, if applicable (st=='radio_broadcast') and is known."
+        },
+        "rp": {
+            "type": "string",
+            "description": "Radio program, if applicable (st=='radio_broadcast') and is known."
         }
     },
     "definitions": {
@@ -152,9 +169,13 @@
                     "type": "string",
                     "description": "Content item ID (e.g. `GDL-1900-01-02-a-i0001`)."
                 },
-                "l": {
+                "lg": {
                     "type": "string",
                     "description": "Language of the content item."
+                },
+                "l": {
+                    "type": "string",
+                    "description": "Language of the content item (deprecated)."
                 },
                 "pp": {
                     "type": "array",
