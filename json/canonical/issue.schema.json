@@ -1,5 +1,5 @@
 {
-    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json",
     "description": "Logical representation of the contents of a canonical issue (newspaper or broadcast).",
     "title": "Issue",
@@ -7,7 +7,7 @@
     "properties": {
         "id": {
             "type": "string",
-            "description": "Canonical ID of the newspaper or radio broadcast issue (e.g. GDL-1900-01-02-a, or SOC_CJ-1940-07-22-aa)",
+            "description": "Canonical ID of the newspaper or radio broadcast issue (e.g. GDL-1900-01-02-a, or SOC_CJ-1940-07-22-a)",
             "pattern": "^[A-Z_]+-d{4}-d{2}-d{2}-[a-z]{1,2}$"
         },
         "cdt": {
@@ -33,6 +33,10 @@
                 "typescript",
                 "audio"
             ]
+        },
+        "olr": {
+            "description": "True if optical layout recognition was applied to the issue/bulletin this content item originates from.",
+            "type": "boolean"
         },
         "i": {
             "type": "array",
@@ -161,7 +165,7 @@
             "description": "Radio program, if applicable (st=='radio_broadcast') and is known."
         }
     },
-    "definitions": {
+    "$defs": {
         "metadata": {
             "type": "object",
             "properties": {
@@ -199,8 +203,8 @@
                         "death_notice",
                         "weather",
                         "page",
-                        "audo_broadcast",
-                        "radio_bulletin"
+                        "radio_bulletin",
+                        "radio_broadcast_episode"
                     ]
                 },
                 "iiif_link": {
@@ -215,7 +219,10 @@
                     "type": "array",
                     "description": "List of speakers (names or IDs based on availabilities) within boradcast.",
                     "items": {
-                        "type": "string"
+                        "type": [
+                            "object",
+                            "string"
+                        ]
                     }
                 },
                 "var_t": {
@@ -258,8 +265,12 @@
         "i"
     ],
     "dependentRequired": {
-        "sm": "st",
-        "st": "sm"
+        "sm": [
+            "st"
+        ],
+        "st": [
+            "sm"
+        ]
     },
     "allOf": [
         {
@@ -293,6 +304,27 @@
                 "then": {
                     "required": [
                         "rr"
+                    ]
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "sm": {
+                        "oneOf": [
+                            {
+                                "const": "typescript"
+                            },
+                            {
+                                "const": "print"
+                            }
+                        ]
+                    }
+                },
+                "then": {
+                    "required": [
+                        "olr"
                     ]
                 }
             }

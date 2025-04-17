@@ -1,5 +1,5 @@
 {
-    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json",
     "title": "Audio Record Content Item",
     "description": "An audio record content-item (e.g. for a radio boradcast with audio and ASR).",
@@ -8,7 +8,7 @@
         "id": {
             "description": "The unique identifier for the content-item (CI), only 1 CI per radio broadcast audio record",
             "type": "string",
-            "pattern": "^[A-Z_]+-d{4}-d{2}-d{2}-[a-z]{1,2}-i0001$"
+            "pattern": "^[A-Z_]+-d{4}-d{2}-d{2}-[a-z]{1,2}-i[0-9]{4}$"
         },
         "ts": {
             "description": "timestamp of creation of the JSON file (e.g. '2018-09-18T08:00:08Z')",
@@ -23,22 +23,12 @@
         "st": {
             "type": "string",
             "description": "Type of media source. Should be a value the impresso-essentials.utils SourceType enum.",
-            "enum": [
-                "newspaper",
-                "radio_broadcast",
-                "radio_magazine",
-                "radio_schedule",
-                "monograph"
-            ]
+            "const": "radio_broadcast"
         },
         "sm": {
             "type": "string",
             "description": "Source medium, format in which the media was originally produced, here should be image-based.",
-            "enum": [
-                "print",
-                "typescript",
-                "audio"
-            ]
+            "const": "audio"
         },
         "tp": {
             "description": "content-item type (e.g. 'ar' for article, 'ad' for advertisement)",
@@ -51,7 +41,7 @@
         },
         "stt": {
             "type": "string",
-            "description": "Audio record's start time (of day) if exists or is available (00:00 otherwise), in HH:MM:SS format.",
+            "description": "Audio record's start time (of day) if exists or is available (00:00:00 otherwise), in HH:MM:SS format.",
             "pattern": "^([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$"
         },
         "dur": {
@@ -73,12 +63,20 @@
             ],
             "description": "Radio program, if known/defined."
         },
-        "t": {
+        "title": {
             "description": "radio broadcast content-item title.",
             "type": [
                 "string",
                 "null"
             ]
+        },
+        "rr": {
+            "description": "array of audio record numbers over which the CI spans, for now always [1].",
+            "type": "array",
+            "items": {
+                "type": "integer"
+            },
+            "minItems": 1
         },
         "ft": {
             "description": "the rebuilt fulltext",
@@ -88,21 +86,24 @@
             "description": "text offsets of broadcast sections (relative to 'ft' field)",
             "type": "array",
             "items": {
-                "type": "number"
-            }
+                "type": "integer"
+            },
+            "const": [
+                1
+            ]
         },
         "ub": {
             "description": "text offsets of utterances (relative to 'ft' field)",
             "type": "array",
             "items": {
-                "type": "number"
+                "type": "integer"
             }
         },
         "ssb": {
             "description": "text offsets of speech segments (relative to 'ft' field)",
             "type": "array",
             "items": {
-                "type": "number"
+                "type": "integer"
             }
         },
         "rreb": {
@@ -115,6 +116,11 @@
                         "description": "audio record canonical ID",
                         "type": "string",
                         "pattern": "^[A-Z_]+-d{4}-d{2}-d{2}-[a-z]{1,3}-p0001$"
+                    },
+                    "n": {
+                        "description": "audio record number",
+                        "type": "integer",
+                        "const": 1
                     },
                     "t": {
                         "description": "a list of tokens",
@@ -164,7 +170,11 @@
         "ts"
     ],
     "dependentRequired": {
-        "sm": "st",
-        "st": "sm"
+        "sm": [
+            "st"
+        ],
+        "st": [
+            "sm"
+        ]
     }
 }

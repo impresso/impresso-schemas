@@ -1,5 +1,5 @@
 {
-    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json",
     "title": "Printed Page",
     "description": "Physical representation of a newspaper or typescript page as recognized by a given OCR engine.",
@@ -147,7 +147,7 @@
             }
         }
     },
-    "definitions": {
+    "$defs": {
         "coordinates": {
             "type": "array",
             "description": "Coordinates of bounding-box, following IIIF regions schema (x, y, width, height).",
@@ -176,10 +176,18 @@
         }
     ],
     "dependentRequired": {
-        "fw": "fh",
-        "fh": "fw",
-        "sm": "st",
-        "st": "sm"
+        "fw": [
+            "fh"
+        ],
+        "fh": [
+            "fw"
+        ],
+        "sm": [
+            "st"
+        ],
+        "st": [
+            "sm"
+        ]
     },
     "allOf": [
         {
