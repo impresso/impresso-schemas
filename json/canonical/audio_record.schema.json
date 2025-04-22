@@ -8,7 +8,7 @@
         "id": {
             "type": "string",
             "description": "Canonical ID of the radio broadcast's audio record (e.g. [INA alias]-1940-07-22-a-r0001)",
-            "pattern": "^[A-Z_]+-d{4}-d{2}-d{2}-[a-z]{1,3}-r[0-9]{4}$"
+            "pattern": "^[A-Za-z_]+-\\d{4}-\\d{2}-\\d{2}-[a-z]{1,3}-r[0-9]{4}$"
         },
         "iiif_base_uri": {
             "type": "string",
@@ -47,7 +47,7 @@
                 "properties": {
                     "tc": {
                         "description": "Time coordinates of the section.",
-                        "$ref": "#/definitions/time_coordinates"
+                        "$ref": "#/$defs/time_coordinates"
                     },
                     "u": {
                         "type": "array",
@@ -57,7 +57,7 @@
                             "properties": {
                                 "tc": {
                                     "description": "Time coordinates of the utterance.",
-                                    "$ref": "#/definitions/time_coordinates"
+                                    "$ref": "#/$defs/time_coordinates"
                                 },
                                 "speaker": {
                                     "type": "string",
@@ -71,7 +71,7 @@
                                         "properties": {
                                             "tc": {
                                                 "description": "Time coordinates of the speech segment.",
-                                                "$ref": "#/definitions/time_coordinates"
+                                                "$ref": "#/$defs/time_coordinates"
                                             },
                                             "t": {
                                                 "type": "array",
@@ -81,7 +81,7 @@
                                                     "properties": {
                                                         "tc": {
                                                             "description": "Time coordinates of the speech token.",
-                                                            "$ref": "#/definitions/time_coordinates"
+                                                            "$ref": "#/$defs/time_coordinates"
                                                         },
                                                         "tx": {
                                                             "type": "string",

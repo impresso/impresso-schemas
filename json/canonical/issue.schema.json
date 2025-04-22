@@ -8,7 +8,7 @@
         "id": {
             "type": "string",
             "description": "Canonical ID of the newspaper or radio broadcast issue (e.g. GDL-1900-01-02-a, or SOC_CJ-1940-07-22-a)",
-            "pattern": "^[A-Z_]+-d{4}-d{2}-d{2}-[a-z]{1,2}$"
+            "pattern": "^[A-Za-z_]+-\\d{4}-\\d{2}-\\d{2}-[a-z]{1,2}$"
         },
         "cdt": {
             "type": "string",
@@ -47,7 +47,7 @@
                 "properties": {
                     "m": {
                         "description": "Metadata about the content item.",
-                        "$ref": "#/definitions/metadata"
+                        "$ref": "#/$defs/metadata"
                     },
                     "c": {
                         "type": "array",
@@ -62,7 +62,10 @@
                         "description": "Legacy sections or components of the content item in the original OCR/OLR. They are meant to enable the reassignation of Impresso CIs (and enrichments) to the original OCR/OLR files.",
                         "properties": {
                             "id": {
-                                "type": "string",
+                                "type": [
+                                    "string",
+                                    "array"
+                                ],
                                 "description": "ID of the sections or components used to compose the CI in the original OCR/OLR files."
                             },
                             "parts": {
@@ -72,26 +75,41 @@
                                     "type": "object",
                                     "properties": {
                                         "comp_role": {
-                                            "type": "string",
+                                            "type": [
+                                                "null",
+                                                "string"
+                                            ],
                                             "description": "Role of the component part (eg. heading, body, etc)."
                                         },
                                         "comp_id": {
-                                            "type": "string",
+                                            "type": [
+                                                "string",
+                                                "array"
+                                            ],
                                             "description": "ID of the part."
                                         },
                                         "comp_fileid": {
-                                            "type": "string",
+                                            "type": [
+                                                "string",
+                                                "array"
+                                            ],
                                             "description": "ID of the ALTO file the component comes from."
                                         },
                                         "comp_page_no": {
-                                            "type": "string",
+                                            "type": [
+                                                "integer",
+                                                "array"
+                                            ],
                                             "description": "Page number of the component."
                                         }
                                     }
                                 }
                             },
                             "source": {
-                                "type": "string",
+                                "type": [
+                                    "string",
+                                    "array"
+                                ],
                                 "description": "Source image or OCR/OLR file name."
                             }
                         }

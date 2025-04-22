@@ -8,7 +8,7 @@
         "id": {
             "type": "string",
             "description": "Canonical ID of the newspaper or typescript page (e.g. GDL-1900-01-02-a-p0001, or SOC_CJ-1940-07-22-a-p0001)",
-            "pattern": "^[A-Z_]+-d{4}-d{2}-d{2}-[a-z]{1,2}-p[0-9]{4}$"
+            "pattern": "^[A-Za-z_]+-\\d{4}-\\d{2}-\\d{2}-[a-z]{1,2}-p[0-9]{4}$"
         },
         "iiif": {
             "type": "string",
@@ -62,7 +62,7 @@
                 "properties": {
                     "c": {
                         "description": "Coordinates of image-region.",
-                        "$ref": "#/definitions/coordinates"
+                        "$ref": "#/$defs/coordinates"
                     },
                     "p": {
                         "type": "array",
@@ -72,7 +72,7 @@
                             "properties": {
                                 "c": {
                                     "description": "Coordinates of paragraph.",
-                                    "$ref": "#/definitions/coordinates"
+                                    "$ref": "#/$defs/coordinates"
                                 },
                                 "l": {
                                     "type": "array",
@@ -82,7 +82,7 @@
                                         "properties": {
                                             "c": {
                                                 "description": "Coordinates of image-region for the line.",
-                                                "$ref": "#/definitions/coordinates"
+                                                "$ref": "#/$defs/coordinates"
                                             },
                                             "t": {
                                                 "type": "array",
@@ -92,7 +92,7 @@
                                                     "properties": {
                                                         "c": {
                                                             "description": "Coordinates of image-region for the token.",
-                                                            "$ref": "#/definitions/coordinates"
+                                                            "$ref": "#/$defs/coordinates"
                                                         },
                                                         "tx": {
                                                             "type": "string",
@@ -130,7 +130,6 @@
                                 }
                             },
                             "required": [
-                                "c",
                                 "l"
                             ]
                         }

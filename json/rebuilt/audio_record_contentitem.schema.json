@@ -8,7 +8,7 @@
         "id": {
             "description": "The unique identifier for the content-item (CI), only 1 CI per radio broadcast audio record",
             "type": "string",
-            "pattern": "^[A-Z_]+-d{4}-d{2}-d{2}-[a-z]{1,2}-i[0-9]{4}$"
+            "pattern": "^[A-Za-z_]+-\\d{4}-\\d{2}-\\d{2}-[a-z]{1,2}-i[0-9]{4}$"
         },
         "ts": {
             "description": "timestamp of creation of the JSON file (e.g. '2018-09-18T08:00:08Z')",
@@ -115,7 +115,7 @@
                     "id": {
                         "description": "audio record canonical ID",
                         "type": "string",
-                        "pattern": "^[A-Z_]+-d{4}-d{2}-d{2}-[a-z]{1,3}-p0001$"
+                        "pattern": "^[A-Za-z_]+-\\d{4}-\\d{2}-\\d{2}-[a-z]{1,3}-p0001$"
                     },
                     "n": {
                         "description": "audio record number",
