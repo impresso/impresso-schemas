@@ -4,12 +4,12 @@
 
 # items Properties
 
-| Property    | Type      | Required | Nullable       | Defined by                                                                                                                                                                      |
-| :---------- | :-------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [rgb](#rgb) | `array`   | Optional | cannot be null | [Newspaper Issue](issue-properties-s-items-properties-rgb.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/properties/s/items/properties/rgb") |
-| [f](#f)     | `string`  | Optional | cannot be null | [Newspaper Issue](issue-properties-s-items-properties-f.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/properties/s/items/properties/f")     |
-| [fs](#fs)   | `number`  | Optional | cannot be null | [Newspaper Issue](issue-properties-s-items-properties-fs.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/properties/s/items/properties/fs")   |
-| [id](#id)   | `integer` | Required | cannot be null | [Newspaper Issue](issue-properties-s-items-properties-id.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/properties/s/items/properties/id")   |
+| Property    | Type      | Required | Nullable       | Defined by                                                                                                                                                            |
+| :---------- | :-------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [rgb](#rgb) | `array`   | Optional | cannot be null | [Issue](issue-properties-s-items-properties-rgb.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/s/items/properties/rgb") |
+| [f](#f)     | `string`  | Optional | cannot be null | [Issue](issue-properties-s-items-properties-f.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/s/items/properties/f")     |
+| [fs](#fs)   | `number`  | Optional | cannot be null | [Issue](issue-properties-s-items-properties-fs.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/s/items/properties/fs")   |
+| [id](#id)   | `integer` | Required | cannot be null | [Issue](issue-properties-s-items-properties-id.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/s/items/properties/id")   |
 
 ## rgb
 
@@ -23,7 +23,7 @@ Color of the text (in RGB).
 
 *   cannot be null
 
-*   defined in: [Newspaper Issue](issue-properties-s-items-properties-rgb.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/properties/s/items/properties/rgb")
+*   defined in: [Issue](issue-properties-s-items-properties-rgb.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/s/items/properties/rgb")
 
 ### rgb Type
 
@@ -45,7 +45,7 @@ Font name
 
 *   cannot be null
 
-*   defined in: [Newspaper Issue](issue-properties-s-items-properties-f.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/properties/s/items/properties/f")
+*   defined in: [Issue](issue-properties-s-items-properties-f.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/s/items/properties/f")
 
 ### f Type
 
@@ -63,7 +63,7 @@ Font size
 
 *   cannot be null
 
-*   defined in: [Newspaper Issue](issue-properties-s-items-properties-fs.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/properties/s/items/properties/fs")
+*   defined in: [Issue](issue-properties-s-items-properties-fs.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/s/items/properties/fs")
 
 ### fs Type
 
@@ -81,7 +81,7 @@ Local ID of the style
 
 *   cannot be null
 
-*   defined in: [Newspaper Issue](issue-properties-s-items-properties-id.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/properties/s/items/properties/id")
+*   defined in: [Issue](issue-properties-s-items-properties-id.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/s/items/properties/id")
 
 ### id Type
 

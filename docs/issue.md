@@ -1,23 +1,36 @@
-## Newspaper Issue Type
+## Issue Type
 
-`object` ([Newspaper Issue](issue.md))
+`object` ([Issue](issue.md))
 
-# Newspaper Issue Properties
+all of
 
-| Property                                  | Type     | Required | Nullable       | Defined by                                                                                                                                                            |
-| :---------------------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [id](#id)                                 | `string` | Required | cannot be null | [Newspaper Issue](issue-properties-id.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/properties/id")                               |
-| [cdt](#cdt)                               | `string` | Required | cannot be null | [Newspaper Issue](issue-properties-cdt.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/properties/cdt")                             |
-| [i](#i)                                   | `array`  | Required | cannot be null | [Newspaper Issue](issue-properties-i.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/properties/i")                                 |
-| [s](#s)                                   | `array`  | Optional | cannot be null | [Newspaper Issue](issue-properties-s.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/properties/s")                                 |
-| [pp](#pp)                                 | `array`  | Required | cannot be null | [Newspaper Issue](issue-properties-pp.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/properties/pp")                               |
-| [n](#n)                                   | `string` | Optional | cannot be null | [Newspaper Issue](issue-properties-n.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/properties/n")                                 |
-| [ar](#ar)                                 | `string` | Required | cannot be null | [Newspaper Issue](issue-properties-ar.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/properties/ar")                               |
-| [iiif\_manifest\_uri](#iiif_manifest_uri) | `string` | Optional | cannot be null | [Newspaper Issue](issue-properties-iiif_manifest_uri.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/properties/iiif_manifest_uri") |
+*   [Untitled undefined type in Issue](issue-allof-0.md "check type definition")
+
+*   [Untitled undefined type in Issue](issue-allof-1.md "check type definition")
+
+*   [Untitled undefined type in Issue](issue-allof-2.md "check type definition")
+
+# Issue Properties
+
+| Property                                  | Type      | Required | Nullable       | Defined by                                                                                                                                                  |
+| :---------------------------------------- | :-------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [id](#id)                                 | `string`  | Required | cannot be null | [Issue](issue-properties-id.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/id")                               |
+| [cdt](#cdt)                               | `string`  | Required | cannot be null | [Issue](issue-properties-cdt.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/cdt")                             |
+| [st](#st)                                 | `string`  | Optional | cannot be null | [Issue](issue-properties-st.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/st")                               |
+| [sm](#sm)                                 | `string`  | Optional | cannot be null | [Issue](issue-properties-sm.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/sm")                               |
+| [olr](#olr)                               | `boolean` | Optional | cannot be null | [Issue](issue-properties-olr.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/olr")                             |
+| [i](#i)                                   | `array`   | Required | cannot be null | [Issue](issue-properties-i.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i")                                 |
+| [s](#s)                                   | `array`   | Optional | cannot be null | [Issue](issue-properties-s.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/s")                                 |
+| [pp](#pp)                                 | `array`   | Optional | cannot be null | [Issue](issue-properties-pp.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/pp")                               |
+| [rr](#rr)                                 | `array`   | Optional | cannot be null | [Issue](issue-properties-rr.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/rr")                               |
+| [n](#n)                                   | `string`  | Optional | cannot be null | [Issue](issue-properties-n.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/n")                                 |
+| [iiif\_manifest\_uri](#iiif_manifest_uri) | `string`  | Optional | cannot be null | [Issue](issue-properties-iiif_manifest_uri.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/iiif_manifest_uri") |
+| [rc](#rc)                                 | `string`  | Optional | cannot be null | [Issue](issue-properties-rc.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/rc")                               |
+| [rp](#rp)                                 | `string`  | Optional | cannot be null | [Issue](issue-properties-rp.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/rp")                               |
 
 ## id
 
-Canonical ID of the newspaper issue (e.g. GDL-1900-01-02-a)
+Canonical ID of the newspaper or radio broadcast issue (e.g. GDL-1900-01-02-a, or SOC\_CJ-1940-07-22-a)
 
 `id`
 
@@ -27,11 +40,21 @@ Canonical ID of the newspaper issue (e.g. GDL-1900-01-02-a)
 
 *   cannot be null
 
-*   defined in: [Newspaper Issue](issue-properties-id.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/properties/id")
+*   defined in: [Issue](issue-properties-id.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/id")
 
 ### id Type
 
 `string`
+
+### id Constraints
+
+**pattern**: the string must match the following regular expression:&#x20;
+
+```regexp
+^[A-Za-z_]+-\d{4}-\d{2}-\d{2}-[a-z]{1,2}$
+```
+
+[try pattern](https://regexr.com/?expression=%5E%5BA-Za-z_%5D%2B-%5Cd%7B4%7D-%5Cd%7B2%7D-%5Cd%7B2%7D-%5Ba-z%5D%7B1%2C2%7D%24 "try regular expression with regexr.com")
 
 ## cdt
 
@@ -45,15 +68,91 @@ Creation date timestamp (of the JSON file).
 
 *   cannot be null
 
-*   defined in: [Newspaper Issue](issue-properties-cdt.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/properties/cdt")
+*   defined in: [Issue](issue-properties-cdt.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/cdt")
 
 ### cdt Type
 
 `string`
 
+## st
+
+Type of media source. Should be a value the impresso-essentials.utils SourceType enum.
+
+`st`
+
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [Issue](issue-properties-st.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/st")
+
+### st Type
+
+`string`
+
+### st Constraints
+
+**enum**: the value of this property must be equal to one of the following values:
+
+| Value               | Explanation |
+| :------------------ | :---------- |
+| `"newspaper"`       |             |
+| `"radio_broadcast"` |             |
+| `"radio_magazine"`  |             |
+| `"radio_schedule"`  |             |
+| `"monograph"`       |             |
+
+## sm
+
+Source medium, format in which the media was originally produced. If `tp == radio_broadcast`, this is typically `typescript` or `audio`.
+
+`sm`
+
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [Issue](issue-properties-sm.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/sm")
+
+### sm Type
+
+`string`
+
+### sm Constraints
+
+**enum**: the value of this property must be equal to one of the following values:
+
+| Value          | Explanation |
+| :------------- | :---------- |
+| `"print"`      |             |
+| `"typescript"` |             |
+| `"audio"`      |             |
+
+## olr
+
+True if optical layout recognition was applied to the issue/bulletin this content item originates from.
+
+`olr`
+
+*   is optional
+
+*   Type: `boolean`
+
+*   cannot be null
+
+*   defined in: [Issue](issue-properties-olr.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/olr")
+
+### olr Type
+
+`boolean`
+
 ## i
 
-The content items contained in the newspaper issue.
+The content item(s) contained in the newspaper/radio\_broadcast issue.
 
 `i`
 
@@ -63,7 +162,7 @@ The content items contained in the newspaper issue.
 
 *   cannot be null
 
-*   defined in: [Newspaper Issue](issue-properties-i.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/properties/i")
+*   defined in: [Issue](issue-properties-i.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i")
 
 ### i Type
 
@@ -87,7 +186,7 @@ Each style consists of:
 
 *   cannot be null
 
-*   defined in: [Newspaper Issue](issue-properties-s.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/properties/s")
+*   defined in: [Issue](issue-properties-s.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/s")
 
 ### s Type
 
@@ -95,19 +194,37 @@ Each style consists of:
 
 ## pp
 
-Canonical IDs of pages in the issue, without file extension (e.g. GDL-1900-01-02-a-p0004).
+Canonical IDs of pages in the issue, without file extension (e.g. GDL-1900-01-02-a-p0004). In the case `sm` is in \[`print`, `typescript`]
 
 `pp`
 
-*   is required
+*   is optional
 
 *   Type: `string[]`
 
 *   cannot be null
 
-*   defined in: [Newspaper Issue](issue-properties-pp.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/properties/pp")
+*   defined in: [Issue](issue-properties-pp.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/pp")
 
 ### pp Type
+
+`string[]`
+
+## rr
+
+Canonical ID of audio record of the issue (in list for consistency), without file extension (e.g. INA-1900-01-02-a-r0004). In the case `sm`==`audio`
+
+`rr`
+
+*   is optional
+
+*   Type: `string[]`
+
+*   cannot be null
+
+*   defined in: [Issue](issue-properties-rr.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/rr")
+
+### rr Type
 
 `string[]`
 
@@ -123,43 +240,11 @@ Notes.
 
 *   cannot be null
 
-*   defined in: [Newspaper Issue](issue-properties-n.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/properties/n")
+*   defined in: [Issue](issue-properties-n.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/n")
 
 ### n Type
 
 `string`
-
-## ar
-
-Access rights. Three possible situations are defined:
-
-1.  open public: access without NDA, user could redistribute (as defined per Terms of Use)
-2.  open private: access without an NDA, user cannot redistribute (private/academic use only)
-3.  closed : accessible only upon signing an NDA, user cannot redistribute
-
-`ar`
-
-*   is required
-
-*   Type: `string`
-
-*   cannot be null
-
-*   defined in: [Newspaper Issue](issue-properties-ar.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/properties/ar")
-
-### ar Type
-
-`string`
-
-### ar Constraints
-
-**enum**: the value of this property must be equal to one of the following values:
-
-| Value            | Explanation |
-| :--------------- | :---------- |
-| `"open_public"`  |             |
-| `"open_private"` |             |
-| `"closed"`       |             |
 
 ## iiif\_manifest\_uri
 
@@ -173,31 +258,70 @@ URI for the issue's manifest in the IIIF Presentation API, if the corresponding 
 
 *   cannot be null
 
-*   defined in: [Newspaper Issue](issue-properties-iiif_manifest_uri.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/properties/iiif_manifest_uri")
+*   defined in: [Issue](issue-properties-iiif_manifest_uri.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/iiif_manifest_uri")
 
 ### iiif\_manifest\_uri Type
 
 `string`
 
-# Newspaper Issue Definitions
+## rc
+
+Radio channel, if applicable (st=='radio\_broadcast') and is known.
+
+`rc`
+
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [Issue](issue-properties-rc.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/rc")
+
+### rc Type
+
+`string`
+
+## rp
+
+Radio program, if applicable (st=='radio\_broadcast') and is known.
+
+`rp`
+
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [Issue](issue-properties-rp.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/rp")
+
+### rp Type
+
+`string`
+
+# Issue Definitions
 
 ## Definitions group metadata
 
 Reference this group by using
 
 ```json
-{"$ref":"https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/definitions/metadata"}
+{"$ref":"https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata"}
 ```
 
-| Property                 | Type      | Required | Nullable       | Defined by                                                                                                                                                                                      |
-| :----------------------- | :-------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [id](#id-1)              | `string`  | Required | cannot be null | [Newspaper Issue](issue-definitions-metadata-properties-id.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/definitions/metadata/properties/id")               |
-| [l](#l)                  | `string`  | Optional | cannot be null | [Newspaper Issue](issue-definitions-metadata-properties-l.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/definitions/metadata/properties/l")                 |
-| [pp](#pp-1)              | `array`   | Required | cannot be null | [Newspaper Issue](issue-definitions-metadata-properties-pp.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/definitions/metadata/properties/pp")               |
-| [t](#t)                  | `string`  | Optional | cannot be null | [Newspaper Issue](issue-definitions-metadata-properties-t.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/definitions/metadata/properties/t")                 |
-| [tp](#tp)                | `string`  | Required | cannot be null | [Newspaper Issue](issue-definitions-metadata-properties-tp.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/definitions/metadata/properties/tp")               |
-| [iiif\_link](#iiif_link) | `string`  | Optional | cannot be null | [Newspaper Issue](issue-definitions-metadata-properties-iiif_link.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/definitions/metadata/properties/iiif_link") |
-| [ro](#ro)                | `integer` | Optional | cannot be null | [Newspaper Issue](issue-definitions-metadata-properties-ro.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/definitions/metadata/properties/ro")               |
+| Property                 | Type      | Required | Nullable       | Defined by                                                                                                                                                               |
+| :----------------------- | :-------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [id](#id-1)              | `string`  | Required | cannot be null | [Issue](issue-defs-metadata-properties-id.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/id")               |
+| [lg](#lg)                | `string`  | Optional | cannot be null | [Issue](issue-defs-metadata-properties-lg.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/lg")               |
+| [l](#l)                  | `string`  | Optional | cannot be null | [Issue](issue-defs-metadata-properties-l.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/l")                 |
+| [pp](#pp-1)              | `array`   | Optional | cannot be null | [Issue](issue-defs-metadata-properties-pp.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/pp")               |
+| [t](#t)                  | `string`  | Optional | cannot be null | [Issue](issue-defs-metadata-properties-t.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/t")                 |
+| [tp](#tp)                | `string`  | Required | cannot be null | [Issue](issue-defs-metadata-properties-tp.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/tp")               |
+| [iiif\_link](#iiif_link) | `string`  | Optional | cannot be null | [Issue](issue-defs-metadata-properties-iiif_link.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/iiif_link") |
+| [ro](#ro)                | `integer` | Optional | cannot be null | [Issue](issue-defs-metadata-properties-ro.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/ro")               |
+| [speakers](#speakers)    | `array`   | Optional | cannot be null | [Issue](issue-defs-metadata-properties-speakers.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/speakers")   |
+| [var\_t](#var_t)         | `string`  | Optional | cannot be null | [Issue](issue-defs-metadata-properties-var_t.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/var_t")         |
 
 ### id
 
@@ -211,15 +335,33 @@ Content item ID (e.g. `GDL-1900-01-02-a-i0001`).
 
 *   cannot be null
 
-*   defined in: [Newspaper Issue](issue-definitions-metadata-properties-id.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/definitions/metadata/properties/id")
+*   defined in: [Issue](issue-defs-metadata-properties-id.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/id")
 
 #### id Type
 
 `string`
 
-### l
+### lg
 
 Language of the content item.
+
+`lg`
+
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [Issue](issue-defs-metadata-properties-lg.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/lg")
+
+#### lg Type
+
+`string`
+
+### l
+
+Language of the content item (deprecated).
 
 `l`
 
@@ -229,7 +371,7 @@ Language of the content item.
 
 *   cannot be null
 
-*   defined in: [Newspaper Issue](issue-definitions-metadata-properties-l.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/definitions/metadata/properties/l")
+*   defined in: [Issue](issue-defs-metadata-properties-l.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/l")
 
 #### l Type
 
@@ -237,17 +379,17 @@ Language of the content item.
 
 ### pp
 
-Page numbers over which the content item spans.
+Page numbers over which the content item spans, in the case `sm` is in \[`print`, `typescript`].
 
 `pp`
 
-*   is required
+*   is optional
 
 *   Type: `integer[]`
 
 *   cannot be null
 
-*   defined in: [Newspaper Issue](issue-definitions-metadata-properties-pp.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/definitions/metadata/properties/pp")
+*   defined in: [Issue](issue-defs-metadata-properties-pp.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/pp")
 
 #### pp Type
 
@@ -265,7 +407,7 @@ Title of the content item.
 
 *   cannot be null
 
-*   defined in: [Newspaper Issue](issue-definitions-metadata-properties-t.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/definitions/metadata/properties/t")
+*   defined in: [Issue](issue-defs-metadata-properties-t.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/t")
 
 #### t Type
 
@@ -283,7 +425,7 @@ Type of the content item.
 
 *   cannot be null
 
-*   defined in: [Newspaper Issue](issue-definitions-metadata-properties-tp.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/definitions/metadata/properties/tp")
+*   defined in: [Issue](issue-defs-metadata-properties-tp.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/tp")
 
 #### tp Type
 
@@ -293,15 +435,17 @@ Type of the content item.
 
 **enum**: the value of this property must be equal to one of the following values:
 
-| Value            | Explanation |
-| :--------------- | :---------- |
-| `"article"`      |             |
-| `"ad"`           |             |
-| `"image"`        |             |
-| `"table"`        |             |
-| `"death_notice"` |             |
-| `"weather"`      |             |
-| `"page"`         |             |
+| Value                       | Explanation |
+| :-------------------------- | :---------- |
+| `"article"`                 |             |
+| `"ad"`                      |             |
+| `"image"`                   |             |
+| `"table"`                   |             |
+| `"death_notice"`            |             |
+| `"weather"`                 |             |
+| `"page"`                    |             |
+| `"radio_bulletin"`          |             |
+| `"radio_broadcast_episode"` |             |
 
 ### iiif\_link
 
@@ -315,7 +459,7 @@ IIIF image link, depending on content item type (if `tp == image`). Should follo
 
 *   cannot be null
 
-*   defined in: [Newspaper Issue](issue-definitions-metadata-properties-iiif_link.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/definitions/metadata/properties/iiif_link")
+*   defined in: [Issue](issue-defs-metadata-properties-iiif_link.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/iiif_link")
 
 #### iiif\_link Type
 
@@ -333,8 +477,44 @@ Reading order index of the content item, for the table of contents view on the i
 
 *   cannot be null
 
-*   defined in: [Newspaper Issue](issue-definitions-metadata-properties-ro.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/definitions/metadata/properties/ro")
+*   defined in: [Issue](issue-defs-metadata-properties-ro.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/ro")
 
 #### ro Type
 
 `integer`
+
+### speakers
+
+List of speakers (names or IDs based on availabilities) within boradcast.
+
+`speakers`
+
+*   is optional
+
+*   Type: an array of the following:`object` or `string` ([Details](issue-defs-metadata-properties-speakers-items.md))
+
+*   cannot be null
+
+*   defined in: [Issue](issue-defs-metadata-properties-speakers.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/speakers")
+
+#### speakers Type
+
+an array of the following:`object` or `string` ([Details](issue-defs-metadata-properties-speakers-items.md))
+
+### var\_t
+
+Variant title of the media title this CI is from (only in the case of BL newspapers).
+
+`var_t`
+
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [Issue](issue-defs-metadata-properties-var_t.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/var_t")
+
+#### var\_t Type
+
+`string`

@@ -4,10 +4,11 @@
 
 # items Properties
 
-| Property | Type     | Required | Nullable       | Defined by                                                                                                                                                                  |
-| :------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [m](#m)  | `object` | Required | cannot be null | [Newspaper Issue](issue-definitions-metadata.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/properties/i/items/properties/m")            |
-| [c](#c)  | `array`  | Optional | cannot be null | [Newspaper Issue](issue-properties-i-items-properties-c.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/properties/i/items/properties/c") |
+| Property | Type     | Required | Nullable       | Defined by                                                                                                                                                        |
+| :------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [m](#m)  | Merged   | Optional | cannot be null | [Issue](issue-defs-metadata.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/m")                   |
+| [c](#c)  | `array`  | Optional | cannot be null | [Issue](issue-properties-i-items-properties-c.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/c") |
+| [l](#l)  | `object` | Optional | cannot be null | [Issue](issue-properties-i-items-properties-l.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/l") |
 
 ## m
 
@@ -15,17 +16,21 @@ Metadata about the content item.
 
 `m`
 
-*   is required
+*   is optional
 
-*   Type: `object` ([Details](issue-definitions-metadata.md))
+*   Type: `object` ([Details](issue-defs-metadata.md))
 
 *   cannot be null
 
-*   defined in: [Newspaper Issue](issue-definitions-metadata.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/properties/i/items/properties/m")
+*   defined in: [Issue](issue-defs-metadata.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/m")
 
 ### m Type
 
-`object` ([Details](issue-definitions-metadata.md))
+`object` ([Details](issue-defs-metadata.md))
+
+all of
+
+*   [Untitled undefined type in Issue](issue-defs-metadata-allof-0.md "check type definition")
 
 ## c
 
@@ -39,7 +44,7 @@ Coordinates of image-region corresponding to the content-item depending on its t
 
 *   cannot be null
 
-*   defined in: [Newspaper Issue](issue-properties-i-items-properties-c.md "https://impresso.github.io/impresso-schemas/json/newspaper/issue.schema.json#/properties/i/items/properties/c")
+*   defined in: [Issue](issue-properties-i-items-properties-c.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/c")
 
 ### c Type
 
@@ -48,3 +53,21 @@ Coordinates of image-region corresponding to the content-item depending on its t
 ### c Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `4`
+
+## l
+
+Legacy sections or components of the content item in the original OCR/OLR. They are meant to enable the reassignation of Impresso CIs (and enrichments) to the original OCR/OLR files.
+
+`l`
+
+*   is optional
+
+*   Type: `object` ([Details](issue-properties-i-items-properties-l.md))
+
+*   cannot be null
+
+*   defined in: [Issue](issue-properties-i-items-properties-l.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/l")
+
+### l Type
+
+`object` ([Details](issue-properties-i-items-properties-l.md))

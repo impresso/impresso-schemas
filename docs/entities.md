@@ -6,7 +6,7 @@
 
 | Property               | Type     | Required | Nullable       | Defined by                                                                                                                                               |
 | :--------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ci\_id](#ci_id)       | `string` | Optional | cannot be null | [Named Entity JSON Schema](entities-properties-ci_id.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/ci_id")       |
+| [ci\_id](#ci_id)       | `string` | Required | cannot be null | [Named Entity JSON Schema](entities-properties-ci_id.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/ci_id")       |
 | [ci\_type](#ci_type)   | `string` | Optional | cannot be null | [Named Entity JSON Schema](entities-properties-ci_type.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/ci_type")   |
 | [ts](#ts)              | `string` | Required | cannot be null | [Named Entity JSON Schema](entities-properties-ts.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/ts")             |
 | [model\_id](#model_id) | `string` | Required | cannot be null | [Named Entity JSON Schema](entities-properties-model_id.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/model_id") |
@@ -18,7 +18,7 @@ Impresso content item ID.
 
 `ci_id`
 
-*   is optional
+*   is required
 
 *   Type: `string`
 

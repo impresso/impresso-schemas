@@ -1,0 +1,3 @@
+## lb Type
+
+`integer[]`
