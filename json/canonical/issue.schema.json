@@ -222,7 +222,8 @@
                         "weather",
                         "page",
                         "radio_bulletin",
-                        "radio_broadcast_episode"
+                        "radio_broadcast_episode",
+                        "chronicle"
                     ]
                 },
                 "iiif_link": {
