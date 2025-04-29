@@ -167,7 +167,10 @@
             }
         },
         "n": {
-            "type": "string",
+            "type": [
+                "string",
+                "array"
+            ],
             "description": "Notes."
         },
         "iiif_manifest_uri": {
