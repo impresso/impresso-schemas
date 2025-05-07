@@ -157,13 +157,66 @@
                     "type": "string",
                     "description": "Date timestamp of last modification of the media statistics for this specific element."
                 },
-                "nps_stats": {
+                "media_stats": {
                     "type": "object",
-                    "description": "Counts of various elements/enrichments in newspaper data corresponding to above granularity and element. The exact keys used depend on the data stage.",
+                    "description": "Counts of various elements/enrichments in the data corresponding to above granularity and element. The exact keys used depend on the data stage and source type.",
                     "properties": {
                         "titles": {
                             "type": "integer",
-                            "description": "Number of newspaper titles included in the data."
+                            "description": "Number of media titles included in the data."
+                        },
+                        "issues": {
+                            "type": "integer",
+                            "description": "Number of issues present in the data."
+                        },
+                        "pages": {
+                            "type": "integer",
+                            "description": "Number of pages present in the data."
+                        },
+                        "audios": {
+                            "type": "integer",
+                            "description": "Number of audio records present in the data."
+                        },
+                        "content_items_out": {
+                            "type": "integer",
+                            "description": "Number of content-items present in the (output) data."
+                        },
+                        "images": {
+                            "type": "integer",
+                            "description": "Number of images present in the data."
+                        },
+                        "ft_tokens": {
+                            "type": "integer",
+                            "description": "Number of tokens present in the full-text of the data."
+                        },
+                        "ne_entities": {
+                            "type": "integer",
+                            "description": "Number of unique named entities present in the data."
+                        },
+                        "ne_mentions": {
+                            "type": "integer",
+                            "description": "Number of named-entity mentions present in the data."
+                        },
+                        "ne_links": {
+                            "type": "integer",
+                            "description": "Number of named-entity links present in the data."
+                        },
+                        "topics": {
+                            "type": "integer",
+                            "description": "Number of topics extracted from the data."
+                        }
+                    },
+                    "required": [
+                        "content_items_out"
+                    ]
+                },
+                "nps_stats": {
+                    "type": "object",
+                    "description": "Counts of various elements/enrichments in newspaper data. Deprecated.",
+                    "properties": {
+                        "titles": {
+                            "type": "integer",
+                            "description": "Number of media titles included in the data."
                         },
                         "issues": {
                             "type": "integer",
@@ -205,10 +258,6 @@
                     "required": [
                         "content_items_out"
                     ]
-                },
-                "radio_stats": {
-                    "type": "object",
-                    "description": "Counts of various elements/enrichments in radio data corresponding to above granularity and element. The exact keys used depend on the data stage."
                 }
             },
             "required": [
@@ -223,7 +272,7 @@
                 },
                 {
                     "required": [
-                        "radio_stats"
+                        "media_stats"
                     ]
                 }
             ]
