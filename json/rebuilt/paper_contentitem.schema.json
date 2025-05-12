@@ -36,7 +36,8 @@
                 "radio_broadcast",
                 "radio_magazine",
                 "radio_schedule",
-                "monograph"
+                "monograph",
+                "encyclopedia"
             ]
         },
         "sm": {
