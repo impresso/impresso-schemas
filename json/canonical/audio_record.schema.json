@@ -38,6 +38,10 @@
             "type": "string",
             "description": "Creation date timestamp (of the JSON file)."
         },
+        "ts": {
+            "type": "string",
+            "description": "Creation date timestamp (in '%Y-%m-%dT%H:%M:%SZ' format)."
+        },
         "s": {
             "type": "array",
             "description": "List of audio broadcast sections.",
@@ -141,10 +145,21 @@
     },
     "required": [
         "id",
-        "cdt",
         "s",
         "stt",
         "dur",
         "iiif_base_uri"
+    ],
+    "oneOf": [
+        {
+            "required": [
+                "ts"
+            ]
+        },
+        {
+            "required": [
+                "cdt"
+            ]
+        }
     ]
 }

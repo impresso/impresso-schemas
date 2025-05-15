@@ -14,6 +14,10 @@
             "type": "string",
             "description": "Creation date timestamp (of the JSON file)."
         },
+        "ts": {
+            "type": "string",
+            "description": "Creation date timestamp (in '%Y-%m-%dT%H:%M:%SZ' format)."
+        },
         "st": {
             "type": "string",
             "description": "Type of media source. Should be a value the impresso-essentials.utils SourceType enum.",
@@ -284,7 +288,6 @@
     },
     "required": [
         "id",
-        "cdt",
         "i"
     ],
     "dependentRequired": {
@@ -296,6 +299,20 @@
         ]
     },
     "allOf": [
+        {
+            "oneOf": [
+                {
+                    "required": [
+                        "ts"
+                    ]
+                },
+                {
+                    "required": [
+                        "cdt"
+                    ]
+                }
+            ]
+        },
         {
             "if": {
                 "properties": {

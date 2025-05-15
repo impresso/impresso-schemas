@@ -54,6 +54,10 @@
             "type": "string",
             "description": "Creation date timestamp (of the JSON file)."
         },
+        "ts": {
+            "type": "string",
+            "description": "Creation date timestamp (in '%Y-%m-%dT%H:%M:%SZ' format)."
+        },
         "r": {
             "type": "array",
             "description": "Page regions.",
@@ -160,20 +164,7 @@
     },
     "required": [
         "id",
-        "cdt",
         "r"
-    ],
-    "oneOf": [
-        {
-            "required": [
-                "iiif_img_base_uri"
-            ]
-        },
-        {
-            "required": [
-                "iiif"
-            ]
-        }
     ],
     "dependentRequired": {
         "fw": [
@@ -190,6 +181,34 @@
         ]
     },
     "allOf": [
+        {
+            "oneOf": [
+                {
+                    "required": [
+                        "iiif_img_base_uri"
+                    ]
+                },
+                {
+                    "required": [
+                        "iiif"
+                    ]
+                }
+            ]
+        },
+        {
+            "oneOf": [
+                {
+                    "required": [
+                        "ts"
+                    ]
+                },
+                {
+                    "required": [
+                        "cdt"
+                    ]
+                }
+            ]
+        },
         {
             "if": {
                 "properties": {
