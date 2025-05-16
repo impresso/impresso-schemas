@@ -98,7 +98,7 @@
                                                 "string",
                                                 "array"
                                             ],
-                                            "description": "ID of the ALTO file the component comes from."
+                                            "description": "ID or name of the ALTO file or source files the component comes from."
                                         },
                                         "comp_page_no": {
                                             "type": [
