@@ -256,6 +256,10 @@
                 "var_t": {
                     "type": "string",
                     "description": "Variant title of the media title this CI is from (only in the case of BL newspapers)."
+                },
+                "archival_note": {
+                    "type": "string",
+                    "description": "Plain-text archival note or description concerning the content-item (here in the case of INA)."
                 }
             },
             "required": [
