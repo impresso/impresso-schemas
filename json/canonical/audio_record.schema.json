@@ -132,8 +132,7 @@
             "maxItems": 2,
             "items": {
                 "type": [
-                    "float",
-                    "integer"
+                    "float"
                 ]
             }
         }
