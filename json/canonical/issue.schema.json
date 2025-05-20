@@ -273,41 +273,16 @@
                 "id",
                 "tp"
             ],
-            "allOf": [
+            "oneOf": [
                 {
-                    "if": {
-                        "properties": {
-                            "sm": {
-                                "oneOf": [
-                                    {
-                                        "const": "typescript"
-                                    },
-                                    {
-                                        "const": "print"
-                                    }
-                                ]
-                            }
-                        }
-                    },
-                    "then": {
-                        "required": [
-                            "pp"
-                        ]
-                    }
+                    "required": [
+                        "pp"
+                    ]
                 },
                 {
-                    "if": {
-                        "properties": {
-                            "sm": {
-                                "const": "audio"
-                            }
-                        }
-                    },
-                    "then": {
-                        "required": [
-                            "rr"
-                        ]
-                    }
+                    "required": [
+                        "rr"
+                    ]
                 }
             ]
         }
