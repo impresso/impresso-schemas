@@ -215,6 +215,13 @@
                     },
                     "description": "Page numbers over which the content item spans, in the case `sm` is in [`print`, `typescript`]."
                 },
+                "rr": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "Record numbers over which the content item spans, in the case `sm` is `audio`."
+                },
                 "t": {
                     "type": "string",
                     "description": "Title of the content item."
@@ -285,6 +292,20 @@
                     "then": {
                         "required": [
                             "pp"
+                        ]
+                    }
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "sm": {
+                                "const": "audio"
+                            }
+                        }
+                    },
+                    "then": {
+                        "required": [
+                            "rr"
                         ]
                     }
                 }
