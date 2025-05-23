@@ -63,6 +63,13 @@
             ],
             "description": "Radio program, if known/defined."
         },
+        "var_t": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Variant 'full' title of the media in the case it's defined in the CI metadata"
+        },
         "title": {
             "description": "radio broadcast content-item title.",
             "type": [
