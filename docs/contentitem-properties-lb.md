@@ -1,3 +1,0 @@
-## lb Type
-
-`number[]`

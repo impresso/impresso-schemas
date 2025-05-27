@@ -17,3 +17,4 @@
 | `"page"`                    |             |
 | `"radio_bulletin"`          |             |
 | `"radio_broadcast_episode"` |             |
+| `"chronicle"`               |             |

@@ -2,6 +2,12 @@
 
 `object` ([Audio Record](audio_record.md))
 
+one (and only one) of
+
+*   [Untitled undefined type in Audio Record](audio_record-oneof-0.md "check type definition")
+
+*   [Untitled undefined type in Audio Record](audio_record-oneof-1.md "check type definition")
+
 # Audio Record Properties
 
 | Property                          | Type     | Required | Nullable       | Defined by                                                                                                                                                               |
@@ -12,7 +18,8 @@
 | [dur](#dur)                       | `string` | Required | cannot be null | [Audio Record](audio_record-properties-dur.md "https://impresso.github.io/impresso-schemas/json/canonical/audio_record.schema.json#/properties/dur")                     |
 | [st](#st)                         | `string` | Optional | cannot be null | [Audio Record](audio_record-properties-st.md "https://impresso.github.io/impresso-schemas/json/canonical/audio_record.schema.json#/properties/st")                       |
 | [sm](#sm)                         | `string` | Optional | cannot be null | [Audio Record](audio_record-properties-sm.md "https://impresso.github.io/impresso-schemas/json/canonical/audio_record.schema.json#/properties/sm")                       |
-| [cdt](#cdt)                       | `string` | Required | cannot be null | [Audio Record](audio_record-properties-cdt.md "https://impresso.github.io/impresso-schemas/json/canonical/audio_record.schema.json#/properties/cdt")                     |
+| [cdt](#cdt)                       | `string` | Optional | cannot be null | [Audio Record](audio_record-properties-cdt.md "https://impresso.github.io/impresso-schemas/json/canonical/audio_record.schema.json#/properties/cdt")                     |
+| [ts](#ts)                         | `string` | Optional | cannot be null | [Audio Record](audio_record-properties-ts.md "https://impresso.github.io/impresso-schemas/json/canonical/audio_record.schema.json#/properties/ts")                       |
 | [s](#s)                           | `array`  | Required | cannot be null | [Audio Record](audio_record-properties-s.md "https://impresso.github.io/impresso-schemas/json/canonical/audio_record.schema.json#/properties/s")                         |
 
 ## id
@@ -175,7 +182,7 @@ Creation date timestamp (of the JSON file).
 
 `cdt`
 
-*   is required
+*   is optional
 
 *   Type: `string`
 
@@ -184,6 +191,24 @@ Creation date timestamp (of the JSON file).
 *   defined in: [Audio Record](audio_record-properties-cdt.md "https://impresso.github.io/impresso-schemas/json/canonical/audio_record.schema.json#/properties/cdt")
 
 ### cdt Type
+
+`string`
+
+## ts
+
+Creation date timestamp (in '%Y-%m-%dT%H:%M:%SZ' format).
+
+`ts`
+
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [Audio Record](audio_record-properties-ts.md "https://impresso.github.io/impresso-schemas/json/canonical/audio_record.schema.json#/properties/ts")
+
+### ts Type
 
 `string`
 

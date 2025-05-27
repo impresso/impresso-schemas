@@ -4,18 +4,25 @@
 
 all of
 
-*   [Untitled undefined type in Issue](issue-allof-0.md "check type definition")
+*   one (and only one) of
+
+    *   [Untitled undefined type in Issue](issue-allof-0-oneof-0.md "check type definition")
+
+    *   [Untitled undefined type in Issue](issue-allof-0-oneof-1.md "check type definition")
 
 *   [Untitled undefined type in Issue](issue-allof-1.md "check type definition")
 
 *   [Untitled undefined type in Issue](issue-allof-2.md "check type definition")
+
+*   [Untitled undefined type in Issue](issue-allof-3.md "check type definition")
 
 # Issue Properties
 
 | Property                                  | Type      | Required | Nullable       | Defined by                                                                                                                                                  |
 | :---------------------------------------- | :-------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [id](#id)                                 | `string`  | Required | cannot be null | [Issue](issue-properties-id.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/id")                               |
-| [cdt](#cdt)                               | `string`  | Required | cannot be null | [Issue](issue-properties-cdt.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/cdt")                             |
+| [cdt](#cdt)                               | `string`  | Optional | cannot be null | [Issue](issue-properties-cdt.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/cdt")                             |
+| [ts](#ts)                                 | `string`  | Optional | cannot be null | [Issue](issue-properties-ts.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/ts")                               |
 | [st](#st)                                 | `string`  | Optional | cannot be null | [Issue](issue-properties-st.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/st")                               |
 | [sm](#sm)                                 | `string`  | Optional | cannot be null | [Issue](issue-properties-sm.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/sm")                               |
 | [olr](#olr)                               | `boolean` | Optional | cannot be null | [Issue](issue-properties-olr.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/olr")                             |
@@ -23,7 +30,7 @@ all of
 | [s](#s)                                   | `array`   | Optional | cannot be null | [Issue](issue-properties-s.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/s")                                 |
 | [pp](#pp)                                 | `array`   | Optional | cannot be null | [Issue](issue-properties-pp.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/pp")                               |
 | [rr](#rr)                                 | `array`   | Optional | cannot be null | [Issue](issue-properties-rr.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/rr")                               |
-| [n](#n)                                   | `string`  | Optional | cannot be null | [Issue](issue-properties-n.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/n")                                 |
+| [n](#n)                                   | Multiple  | Optional | cannot be null | [Issue](issue-properties-n.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/n")                                 |
 | [iiif\_manifest\_uri](#iiif_manifest_uri) | `string`  | Optional | cannot be null | [Issue](issue-properties-iiif_manifest_uri.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/iiif_manifest_uri") |
 | [rc](#rc)                                 | `string`  | Optional | cannot be null | [Issue](issue-properties-rc.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/rc")                               |
 | [rp](#rp)                                 | `string`  | Optional | cannot be null | [Issue](issue-properties-rp.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/rp")                               |
@@ -62,7 +69,7 @@ Creation date timestamp (of the JSON file).
 
 `cdt`
 
-*   is required
+*   is optional
 
 *   Type: `string`
 
@@ -73,6 +80,34 @@ Creation date timestamp (of the JSON file).
 ### cdt Type
 
 `string`
+
+## ts
+
+Creation date timestamp (in '%Y-%m-%dT%H:%M:%SZ' format).
+
+`ts`
+
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [Issue](issue-properties-ts.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/ts")
+
+### ts Type
+
+`string`
+
+### ts Constraints
+
+**pattern**: the string must match the following regular expression:&#x20;
+
+```regexp
+^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$
+```
+
+[try pattern](https://regexr.com/?expression=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D-%5B0-9%5D%7B2%7DT%5B0-9%5D%7B2%7D%3A%5B0-9%5D%7B2%7D%3A%5B0-9%5D%7B2%7DZ%24 "try regular expression with regexr.com")
 
 ## st
 
@@ -103,6 +138,7 @@ Type of media source. Should be a value the impresso-essentials.utils SourceType
 | `"radio_magazine"`  |             |
 | `"radio_schedule"`  |             |
 | `"monograph"`       |             |
+| `"encyclopedia"`    |             |
 
 ## sm
 
@@ -236,7 +272,7 @@ Notes.
 
 *   is optional
 
-*   Type: `string`
+*   Type: any of the following: `string` or `array` ([Details](issue-properties-n.md))
 
 *   cannot be null
 
@@ -244,7 +280,7 @@ Notes.
 
 ### n Type
 
-`string`
+any of the following: `string` or `array` ([Details](issue-properties-n.md))
 
 ## iiif\_manifest\_uri
 
@@ -310,18 +346,20 @@ Reference this group by using
 {"$ref":"https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata"}
 ```
 
-| Property                 | Type      | Required | Nullable       | Defined by                                                                                                                                                               |
-| :----------------------- | :-------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [id](#id-1)              | `string`  | Required | cannot be null | [Issue](issue-defs-metadata-properties-id.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/id")               |
-| [lg](#lg)                | `string`  | Optional | cannot be null | [Issue](issue-defs-metadata-properties-lg.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/lg")               |
-| [l](#l)                  | `string`  | Optional | cannot be null | [Issue](issue-defs-metadata-properties-l.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/l")                 |
-| [pp](#pp-1)              | `array`   | Optional | cannot be null | [Issue](issue-defs-metadata-properties-pp.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/pp")               |
-| [t](#t)                  | `string`  | Optional | cannot be null | [Issue](issue-defs-metadata-properties-t.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/t")                 |
-| [tp](#tp)                | `string`  | Required | cannot be null | [Issue](issue-defs-metadata-properties-tp.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/tp")               |
-| [iiif\_link](#iiif_link) | `string`  | Optional | cannot be null | [Issue](issue-defs-metadata-properties-iiif_link.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/iiif_link") |
-| [ro](#ro)                | `integer` | Optional | cannot be null | [Issue](issue-defs-metadata-properties-ro.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/ro")               |
-| [speakers](#speakers)    | `array`   | Optional | cannot be null | [Issue](issue-defs-metadata-properties-speakers.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/speakers")   |
-| [var\_t](#var_t)         | `string`  | Optional | cannot be null | [Issue](issue-defs-metadata-properties-var_t.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/var_t")         |
+| Property                         | Type      | Required | Nullable       | Defined by                                                                                                                                                                       |
+| :------------------------------- | :-------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [id](#id-1)                      | `string`  | Required | cannot be null | [Issue](issue-defs-metadata-properties-id.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/id")                       |
+| [lg](#lg)                        | `string`  | Optional | cannot be null | [Issue](issue-defs-metadata-properties-lg.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/lg")                       |
+| [l](#l)                          | `string`  | Optional | cannot be null | [Issue](issue-defs-metadata-properties-l.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/l")                         |
+| [pp](#pp-1)                      | `array`   | Optional | cannot be null | [Issue](issue-defs-metadata-properties-pp.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/pp")                       |
+| [rr](#rr-1)                      | `array`   | Optional | cannot be null | [Issue](issue-defs-metadata-properties-rr.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/rr")                       |
+| [t](#t)                          | `string`  | Optional | cannot be null | [Issue](issue-defs-metadata-properties-t.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/t")                         |
+| [tp](#tp)                        | `string`  | Required | cannot be null | [Issue](issue-defs-metadata-properties-tp.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/tp")                       |
+| [iiif\_link](#iiif_link)         | `string`  | Optional | cannot be null | [Issue](issue-defs-metadata-properties-iiif_link.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/iiif_link")         |
+| [ro](#ro)                        | `integer` | Optional | cannot be null | [Issue](issue-defs-metadata-properties-ro.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/ro")                       |
+| [speakers](#speakers)            | `array`   | Optional | cannot be null | [Issue](issue-defs-metadata-properties-speakers.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/speakers")           |
+| [var\_t](#var_t)                 | `string`  | Optional | cannot be null | [Issue](issue-defs-metadata-properties-var_t.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/var_t")                 |
+| [archival\_note](#archival_note) | `string`  | Optional | cannot be null | [Issue](issue-defs-metadata-properties-archival_note.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/archival_note") |
 
 ### id
 
@@ -395,6 +433,24 @@ Page numbers over which the content item spans, in the case `sm` is in \[`print`
 
 `integer[]`
 
+### rr
+
+Record numbers over which the content item spans, in the case `sm` is `audio`.
+
+`rr`
+
+*   is optional
+
+*   Type: `integer[]`
+
+*   cannot be null
+
+*   defined in: [Issue](issue-defs-metadata-properties-rr.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/rr")
+
+#### rr Type
+
+`integer[]`
+
 ### t
 
 Title of the content item.
@@ -446,6 +502,7 @@ Type of the content item.
 | `"page"`                    |             |
 | `"radio_bulletin"`          |             |
 | `"radio_broadcast_episode"` |             |
+| `"chronicle"`               |             |
 
 ### iiif\_link
 
@@ -516,5 +573,23 @@ Variant title of the media title this CI is from (only in the case of BL newspap
 *   defined in: [Issue](issue-defs-metadata-properties-var_t.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/var_t")
 
 #### var\_t Type
+
+`string`
+
+### archival\_note
+
+Plain-text archival note or description concerning the content-item (here in the case of INA).
+
+`archival_note`
+
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [Issue](issue-defs-metadata-properties-archival_note.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/archival_note")
+
+#### archival\_note Type
 
 `string`

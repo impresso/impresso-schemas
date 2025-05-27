@@ -1,0 +1,3 @@
+## issues Type
+
+`integer`

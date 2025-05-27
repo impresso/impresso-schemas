@@ -1,6 +1,6 @@
 ## time\_coordinates Type
 
-`integer[]`
+`number[]`
 
 ## time\_coordinates Constraints
 

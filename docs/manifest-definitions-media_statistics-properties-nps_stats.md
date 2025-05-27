@@ -19,7 +19,7 @@
 
 ## titles
 
-Number of newspaper titles included in the data.
+Number of media titles included in the data.
 
 `titles`
 

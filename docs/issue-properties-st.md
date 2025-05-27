@@ -13,3 +13,4 @@
 | `"radio_magazine"`  |             |
 | `"radio_schedule"`  |             |
 | `"monograph"`       |             |
+| `"encyclopedia"`    |             |

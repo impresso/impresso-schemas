@@ -1,11 +1,9 @@
 ## sm Type
 
-unknown
+merged type ([Details](issue-allof-1-if-properties-sm.md))
 
-## sm Constraints
+one (and only one) of
 
-**constant**: the value of this property must be equal to:
+*   [Untitled undefined type in Issue](issue-allof-1-if-properties-sm-oneof-0.md "check type definition")
 
-```json
-"audio"
-```
+*   [Untitled undefined type in Issue](issue-allof-1-if-properties-sm-oneof-1.md "check type definition")

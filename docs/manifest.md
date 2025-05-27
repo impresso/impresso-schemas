@@ -208,8 +208,8 @@ Reference this group by using
 | [granularity](#granularity)                         | `string` | Required | cannot be null | [Versioning Manifest](manifest-definitions-media_statistics-properties-granularity.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/granularity")                       |
 | [element](#element)                                 | `string` | Optional | cannot be null | [Versioning Manifest](manifest-definitions-media_statistics-properties-element.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/element")                               |
 | [last\_modification\_date](#last_modification_date) | `string` | Optional | cannot be null | [Versioning Manifest](manifest-definitions-media_statistics-properties-last_modification_date.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/last_modification_date") |
+| [media\_stats](#media_stats)                        | `object` | Optional | cannot be null | [Versioning Manifest](manifest-definitions-media_statistics-properties-media_stats.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/media_stats")                       |
 | [nps\_stats](#nps_stats)                            | `object` | Optional | cannot be null | [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats")                           |
-| [radio\_stats](#radio_stats)                        | `object` | Optional | cannot be null | [Versioning Manifest](manifest-definitions-media_statistics-properties-radio_stats.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/radio_stats")                       |
 
 ### stage
 
@@ -293,9 +293,27 @@ Date timestamp of last modification of the media statistics for this specific el
 
 `string`
 
+### media\_stats
+
+Counts of various elements/enrichments in the data corresponding to above granularity and element. The exact keys used depend on the data stage and source type.
+
+`media_stats`
+
+*   is optional
+
+*   Type: `object` ([Details](manifest-definitions-media_statistics-properties-media_stats.md))
+
+*   cannot be null
+
+*   defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-media_stats.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/media_stats")
+
+#### media\_stats Type
+
+`object` ([Details](manifest-definitions-media_statistics-properties-media_stats.md))
+
 ### nps\_stats
 
-Counts of various elements/enrichments in newspaper data corresponding to above granularity and element. The exact keys used depend on the data stage.
+Counts of various elements/enrichments in newspaper data. Deprecated.
 
 `nps_stats`
 
@@ -310,24 +328,6 @@ Counts of various elements/enrichments in newspaper data corresponding to above 
 #### nps\_stats Type
 
 `object` ([Details](manifest-definitions-media_statistics-properties-nps_stats.md))
-
-### radio\_stats
-
-Counts of various elements/enrichments in radio data corresponding to above granularity and element. The exact keys used depend on the data stage.
-
-`radio_stats`
-
-*   is optional
-
-*   Type: `object` ([Details](manifest-definitions-media_statistics-properties-radio_stats.md))
-
-*   cannot be null
-
-*   defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-radio_stats.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/radio_stats")
-
-#### radio\_stats Type
-
-`object` ([Details](manifest-definitions-media_statistics-properties-radio_stats.md))
 
 ## Definitions group commit\_link
 

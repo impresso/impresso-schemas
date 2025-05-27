@@ -1,3 +1,3 @@
 ## items Type
 
-`integer`
+`number`

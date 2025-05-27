@@ -8,28 +8,29 @@ all of
 
 # Paper Content Item Properties
 
-| Property        | Type      | Required | Nullable       | Defined by                                                                                                                                                             |
-| :-------------- | :-------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [id](#id)       | `string`  | Required | cannot be null | [Paper Content Item](paper_contentitem-properties-id.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/id")       |
-| [ts](#ts)       | `string`  | Required | cannot be null | [Paper Content Item](paper_contentitem-properties-ts.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/ts")       |
-| [d](#d)         | `string`  | Optional | cannot be null | [Paper Content Item](paper_contentitem-properties-d.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/d")         |
-| [cc](#cc)       | `boolean` | Optional | cannot be null | [Paper Content Item](paper_contentitem-properties-cc.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/cc")       |
-| [olr](#olr)     | `boolean` | Required | cannot be null | [Paper Content Item](paper_contentitem-properties-olr.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/olr")     |
-| [st](#st)       | `string`  | Optional | cannot be null | [Paper Content Item](paper_contentitem-properties-st.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/st")       |
-| [sm](#sm)       | `string`  | Optional | cannot be null | [Paper Content Item](paper_contentitem-properties-sm.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/sm")       |
-| [tp](#tp)       | `string`  | Required | can be null    | [Paper Content Item](paper_contentitem-properties-tp.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/tp")       |
-| [lg](#lg)       | `string`  | Optional | cannot be null | [Paper Content Item](paper_contentitem-properties-lg.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/lg")       |
-| [rc](#rc)       | `string`  | Optional | can be null    | [Paper Content Item](paper_contentitem-properties-rc.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/rc")       |
-| [rp](#rp)       | `string`  | Optional | can be null    | [Paper Content Item](paper_contentitem-properties-rp.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/rp")       |
-| [pp](#pp)       | `array`   | Optional | cannot be null | [Paper Content Item](paper_contentitem-properties-pp.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/pp")       |
-| [ro](#ro)       | `integer` | Optional | cannot be null | [Paper Content Item](paper_contentitem-properties-ro.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/ro")       |
-| [t](#t)         | `string`  | Optional | can be null    | [Paper Content Item](paper_contentitem-properties-t.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/t")         |
-| [title](#title) | `string`  | Optional | can be null    | [Paper Content Item](paper_contentitem-properties-title.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/title") |
-| [ft](#ft)       | `string`  | Optional | cannot be null | [Paper Content Item](paper_contentitem-properties-ft.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/ft")       |
-| [rb](#rb)       | `array`   | Optional | cannot be null | [Paper Content Item](paper_contentitem-properties-rb.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/rb")       |
-| [pb](#pb)       | `array`   | Optional | cannot be null | [Paper Content Item](paper_contentitem-properties-pb.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/pb")       |
-| [lb](#lb)       | `array`   | Optional | cannot be null | [Paper Content Item](paper_contentitem-properties-lb.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/lb")       |
-| [ppreb](#ppreb) | `array`   | Optional | cannot be null | [Paper Content Item](paper_contentitem-properties-ppreb.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/ppreb") |
+| Property         | Type      | Required | Nullable       | Defined by                                                                                                                                                             |
+| :--------------- | :-------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [id](#id)        | `string`  | Required | cannot be null | [Paper Content Item](paper_contentitem-properties-id.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/id")       |
+| [ts](#ts)        | `string`  | Required | cannot be null | [Paper Content Item](paper_contentitem-properties-ts.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/ts")       |
+| [d](#d)          | `string`  | Optional | cannot be null | [Paper Content Item](paper_contentitem-properties-d.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/d")         |
+| [cc](#cc)        | `boolean` | Optional | cannot be null | [Paper Content Item](paper_contentitem-properties-cc.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/cc")       |
+| [olr](#olr)      | `boolean` | Required | cannot be null | [Paper Content Item](paper_contentitem-properties-olr.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/olr")     |
+| [st](#st)        | `string`  | Optional | cannot be null | [Paper Content Item](paper_contentitem-properties-st.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/st")       |
+| [sm](#sm)        | `string`  | Optional | cannot be null | [Paper Content Item](paper_contentitem-properties-sm.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/sm")       |
+| [tp](#tp)        | `string`  | Required | can be null    | [Paper Content Item](paper_contentitem-properties-tp.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/tp")       |
+| [lg](#lg)        | `string`  | Optional | cannot be null | [Paper Content Item](paper_contentitem-properties-lg.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/lg")       |
+| [rc](#rc)        | `string`  | Optional | can be null    | [Paper Content Item](paper_contentitem-properties-rc.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/rc")       |
+| [rp](#rp)        | `string`  | Optional | can be null    | [Paper Content Item](paper_contentitem-properties-rp.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/rp")       |
+| [var\_t](#var_t) | `string`  | Optional | can be null    | [Paper Content Item](paper_contentitem-properties-var_t.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/var_t") |
+| [t](#t)          | `string`  | Optional | can be null    | [Paper Content Item](paper_contentitem-properties-t.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/t")         |
+| [title](#title)  | `string`  | Optional | can be null    | [Paper Content Item](paper_contentitem-properties-title.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/title") |
+| [ro](#ro)        | `integer` | Optional | cannot be null | [Paper Content Item](paper_contentitem-properties-ro.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/ro")       |
+| [pp](#pp)        | `array`   | Optional | cannot be null | [Paper Content Item](paper_contentitem-properties-pp.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/pp")       |
+| [ft](#ft)        | `string`  | Optional | cannot be null | [Paper Content Item](paper_contentitem-properties-ft.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/ft")       |
+| [rb](#rb)        | `array`   | Optional | cannot be null | [Paper Content Item](paper_contentitem-properties-rb.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/rb")       |
+| [pb](#pb)        | `array`   | Optional | cannot be null | [Paper Content Item](paper_contentitem-properties-pb.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/pb")       |
+| [lb](#lb)        | `array`   | Optional | cannot be null | [Paper Content Item](paper_contentitem-properties-lb.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/lb")       |
+| [ppreb](#ppreb)  | `array`   | Optional | cannot be null | [Paper Content Item](paper_contentitem-properties-ppreb.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/ppreb") |
 
 ## id
 
@@ -61,7 +62,7 @@ The unique identifier for a content item (CI), (e.g. GDL-1900-01-02-a-i0001, or 
 
 ## ts
 
-timestamp of creation of the JSON file (e.g. '2018-09-18T08:00:08Z')
+timestamp of creation of the JSON file (in '%Y-%m-%dT%H:%M:%SZ' format e.g. '2018-09-18T08:00:08Z')
 
 `ts`
 
@@ -180,6 +181,7 @@ Type of media source. Should be a value the impresso-essentials.utils SourceType
 | `"radio_magazine"`  |             |
 | `"radio_schedule"`  |             |
 | `"monograph"`       |             |
+| `"encyclopedia"`    |             |
 
 ## sm
 
@@ -290,45 +292,23 @@ Radio program, if applicable (st=='radio\_broadcast') and is known.
 
 `string`
 
-## pp
+## var\_t
 
-array of page numbers over which the CI spans; it's the physical page number issue-based, as we get it from the OCR.
+Variant 'full' title of the media in the case it's defined in the CI metadata
 
-`pp`
-
-*   is optional
-
-*   Type: `number[]`
-
-*   cannot be null
-
-*   defined in: [Paper Content Item](paper_contentitem-properties-pp.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/pp")
-
-### pp Type
-
-`number[]`
-
-### pp Constraints
-
-**minimum number of items**: the minimum number of items for this array is: `1`
-
-## ro
-
-Reading order index of the content item, for the table of contents view on the interface. If not defined, the CI number (after 'i' in the ID) should be used.
-
-`ro`
+`var_t`
 
 *   is optional
 
-*   Type: `integer`
+*   Type: `string`
 
-*   cannot be null
+*   can be null
 
-*   defined in: [Paper Content Item](paper_contentitem-properties-ro.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/ro")
+*   defined in: [Paper Content Item](paper_contentitem-properties-var_t.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/var_t")
 
-### ro Type
+### var\_t Type
 
-`integer`
+`string`
 
 ## t
 
@@ -365,6 +345,46 @@ Content-item title.
 ### title Type
 
 `string`
+
+## ro
+
+Reading order index of the content item, for the table of contents view on the interface. If not defined, the CI number (after 'i' in the ID) should be used.
+
+`ro`
+
+*   is optional
+
+*   Type: `integer`
+
+*   cannot be null
+
+*   defined in: [Paper Content Item](paper_contentitem-properties-ro.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/ro")
+
+### ro Type
+
+`integer`
+
+## pp
+
+array of page numbers over which the CI spans; it's the physical page number issue-based, as we get it from the OCR.
+
+`pp`
+
+*   is optional
+
+*   Type: `number[]`
+
+*   cannot be null
+
+*   defined in: [Paper Content Item](paper_contentitem-properties-pp.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/pp")
+
+### pp Type
+
+`number[]`
+
+### pp Constraints
+
+**minimum number of items**: the minimum number of items for this array is: `1`
 
 ## ft
 

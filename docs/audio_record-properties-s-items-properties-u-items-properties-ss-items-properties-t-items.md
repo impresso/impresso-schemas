@@ -17,7 +17,7 @@ Coordinates of audio-segment in the format (start-time, duration), each in secon
 
 *   is required
 
-*   Type: `integer[]`
+*   Type: `number[]`
 
 *   cannot be null
 
@@ -25,7 +25,7 @@ Coordinates of audio-segment in the format (start-time, duration), each in secon
 
 ### tc Type
 
-`integer[]`
+`number[]`
 
 ### tc Constraints
 

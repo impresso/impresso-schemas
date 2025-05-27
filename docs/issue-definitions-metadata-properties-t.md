@@ -1,3 +1,0 @@
-## t Type
-
-`string`

@@ -2,11 +2,23 @@
 
 `object` ([Printed Page](page.md))
 
-one (and only one) of
+all of
 
-*   [Untitled undefined type in Printed Page](page-oneof-0.md "check type definition")
+*   one (and only one) of
 
-*   [Untitled undefined type in Printed Page](page-oneof-1.md "check type definition")
+    *   [Untitled undefined type in Printed Page](page-allof-0-oneof-0.md "check type definition")
+
+    *   [Untitled undefined type in Printed Page](page-allof-0-oneof-1.md "check type definition")
+
+*   one (and only one) of
+
+    *   [Untitled undefined type in Printed Page](page-allof-1-oneof-0.md "check type definition")
+
+    *   [Untitled undefined type in Printed Page](page-allof-1-oneof-1.md "check type definition")
+
+*   [Untitled undefined type in Printed Page](page-allof-2.md "check type definition")
+
+*   [Untitled undefined type in Printed Page](page-allof-3.md "check type definition")
 
 # Printed Page Properties
 
@@ -20,7 +32,8 @@ one (and only one) of
 | [st](#st)                                  | `string`  | Optional | cannot be null | [Printed Page](page-properties-st.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/st")                               |
 | [sm](#sm)                                  | `string`  | Optional | cannot be null | [Printed Page](page-properties-sm.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/sm")                               |
 | [cc](#cc)                                  | `boolean` | Optional | cannot be null | [Printed Page](page-properties-cc.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/cc")                               |
-| [cdt](#cdt)                                | `string`  | Required | cannot be null | [Printed Page](page-properties-cdt.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/cdt")                             |
+| [cdt](#cdt)                                | `string`  | Optional | cannot be null | [Printed Page](page-properties-cdt.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/cdt")                             |
+| [ts](#ts)                                  | `string`  | Optional | cannot be null | [Printed Page](page-properties-ts.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/ts")                               |
 | [r](#r)                                    | `array`   | Required | cannot be null | [Printed Page](page-properties-r.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/r")                                 |
 
 ## id
@@ -152,6 +165,7 @@ Type of media source. Should be a value the impresso-essentials.utils SourceType
 | `"radio_magazine"`  |             |
 | `"radio_schedule"`  |             |
 | `"monograph"`       |             |
+| `"encyclopedia"`    |             |
 
 ## sm
 
@@ -204,7 +218,7 @@ Creation date timestamp (of the JSON file).
 
 `cdt`
 
-*   is required
+*   is optional
 
 *   Type: `string`
 
@@ -213,6 +227,24 @@ Creation date timestamp (of the JSON file).
 *   defined in: [Printed Page](page-properties-cdt.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/cdt")
 
 ### cdt Type
+
+`string`
+
+## ts
+
+Creation date timestamp (in '%Y-%m-%dT%H:%M:%SZ' format).
+
+`ts`
+
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [Printed Page](page-properties-ts.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/ts")
+
+### ts Type
 
 `string`
 

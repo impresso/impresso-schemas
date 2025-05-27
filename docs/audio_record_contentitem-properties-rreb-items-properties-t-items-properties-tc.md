@@ -1,6 +1,6 @@
 ## tc Type
 
-`integer[]`
+`number[]`
 
 ## tc Constraints
 

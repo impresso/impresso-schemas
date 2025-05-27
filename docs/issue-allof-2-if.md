@@ -4,9 +4,9 @@ unknown
 
 # if Properties
 
-| Property  | Type   | Required | Nullable       | Defined by                                                                                                                                          |
-| :-------- | :----- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [sm](#sm) | Merged | Optional | cannot be null | [Issue](issue-allof-2-if-properties-sm.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/allOf/2/if/properties/sm") |
+| Property  | Type          | Required | Nullable       | Defined by                                                                                                                                          |
+| :-------- | :------------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [sm](#sm) | Not specified | Optional | cannot be null | [Issue](issue-allof-2-if-properties-sm.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/allOf/2/if/properties/sm") |
 
 ## sm
 
@@ -16,7 +16,7 @@ unknown
 
 *   is optional
 
-*   Type: merged type ([Details](issue-allof-2-if-properties-sm.md))
+*   Type: unknown
 
 *   cannot be null
 
@@ -24,10 +24,12 @@ unknown
 
 ### sm Type
 
-merged type ([Details](issue-allof-2-if-properties-sm.md))
+unknown
 
-one (and only one) of
+### sm Constraints
 
-*   [Untitled undefined type in Issue](issue-allof-2-if-properties-sm-oneof-0.md "check type definition")
+**constant**: the value of this property must be equal to:
 
-*   [Untitled undefined type in Issue](issue-allof-2-if-properties-sm-oneof-1.md "check type definition")
+```json
+"audio"
+```

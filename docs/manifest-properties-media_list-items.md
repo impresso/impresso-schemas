@@ -7,6 +7,9 @@
 | Property                                            | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                         |
 | :-------------------------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [media\_title](#media_title)                        | `string` | Required | cannot be null | [Versioning Manifest](manifest-properties-media_list-items-properties-media_title.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list/items/properties/media_title")                       |
+| [data\_provider](#data_provider)                    | `string` | Optional | cannot be null | [Versioning Manifest](manifest-properties-media_list-items-properties-data_provider.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list/items/properties/data_provider")                   |
+| [source\_type](#source_type)                        | `string` | Optional | cannot be null | [Versioning Manifest](manifest-properties-media_list-items-properties-source_type.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list/items/properties/source_type")                       |
+| [source\_medium](#source_medium)                    | `string` | Optional | cannot be null | [Versioning Manifest](manifest-properties-media_list-items-properties-source_medium.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list/items/properties/source_medium")                   |
 | [last\_modification\_date](#last_modification_date) | `string` | Required | cannot be null | [Versioning Manifest](manifest-properties-media_list-items-properties-last_modification_date.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list/items/properties/last_modification_date") |
 | [update\_type](#update_type)                        | `string` | Required | can be null    | [Versioning Manifest](manifest-properties-media_list-items-properties-update_type.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list/items/properties/update_type")                       |
 | [update\_level](#update_level)                      | `string` | Required | can be null    | [Versioning Manifest](manifest-properties-media_list-items-properties-update_level.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list/items/properties/update_level")                     |
@@ -32,6 +35,83 @@ Internal alias of newspaper newspaper (or program for radio).
 ### media\_title Type
 
 `string`
+
+## data\_provider
+
+Partner institution providing the data for this media title.
+
+`data_provider`
+
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [Versioning Manifest](manifest-properties-media_list-items-properties-data_provider.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list/items/properties/data_provider")
+
+### data\_provider Type
+
+`string`
+
+## source\_type
+
+Source type of this media title.
+
+`source_type`
+
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [Versioning Manifest](manifest-properties-media_list-items-properties-source_type.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list/items/properties/source_type")
+
+### source\_type Type
+
+`string`
+
+### source\_type Constraints
+
+**enum**: the value of this property must be equal to one of the following values:
+
+| Value               | Explanation |
+| :------------------ | :---------- |
+| `"newspaper"`       |             |
+| `"radio_broadcast"` |             |
+| `"radio_magazine"`  |             |
+| `"radio_schedule"`  |             |
+| `"monograph"`       |             |
+| `"encyclopedia"`    |             |
+
+## source\_medium
+
+Source medium of this media title.
+
+`source_medium`
+
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [Versioning Manifest](manifest-properties-media_list-items-properties-source_medium.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list/items/properties/source_medium")
+
+### source\_medium Type
+
+`string`
+
+### source\_medium Constraints
+
+**enum**: the value of this property must be equal to one of the following values:
+
+| Value          | Explanation |
+| :------------- | :---------- |
+| `"print"`      |             |
+| `"typescript"` |             |
+| `"audio"`      |             |
 
 ## last\_modification\_date
 

@@ -28,9 +28,11 @@ Metadata about the content item.
 
 `object` ([Details](issue-defs-metadata.md))
 
-all of
+one (and only one) of
 
-*   [Untitled undefined type in Issue](issue-defs-metadata-allof-0.md "check type definition")
+*   [Untitled undefined type in Issue](issue-defs-metadata-oneof-0.md "check type definition")
+
+*   [Untitled undefined type in Issue](issue-defs-metadata-oneof-1.md "check type definition")
 
 ## c
 
