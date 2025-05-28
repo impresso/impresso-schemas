@@ -8,7 +8,7 @@
         "id": {
             "type": "string",
             "description": "Canonical ID of the newspaper or radio broadcast issue (e.g. GDL-1900-01-02-a, or SOC_CJ-1940-07-22-a)",
-            "pattern": "^[A-Za-z_]+-\\d{4}-\\d{2}-\\d{2}-[a-z]{1,2}$"
+            "pattern": "^[A-Za-z][A-Za-z0-9_]*-\\d{4}-\\d{2}-\\d{2}-[a-z]{1,2}$"
         },
         "cdt": {
             "type": "string",
@@ -162,14 +162,16 @@
             "type": "array",
             "description": "Canonical IDs of pages in the issue, without file extension (e.g. GDL-1900-01-02-a-p0004). In the case `sm` is in [`print`, `typescript`]",
             "items": {
-                "type": "string"
+                "type": "string",
+                "pattern": "^[A-Za-z][A-Za-z0-9_]*-\\d{4}-\\d{2}-\\d{2}-[a-z]{1,2}-p[0-9]{4}$"
             }
         },
         "rr": {
             "type": "array",
             "description": "Canonical ID of audio record of the issue (in list for consistency), without file extension (e.g. INA-1900-01-02-a-r0004). In the case `sm`==`audio`",
             "items": {
-                "type": "string"
+                "type": "string",
+                "pattern": "^[A-Za-z][A-Za-z0-9_]*-\\d{4}-\\d{2}-\\d{2}-[a-z]{1,3}-r[0-9]{4}$"
             }
         },
         "n": {
@@ -198,7 +200,8 @@
             "properties": {
                 "id": {
                     "type": "string",
-                    "description": "Content item ID (e.g. `GDL-1900-01-02-a-i0001`)."
+                    "description": "Content item ID (e.g. `GDL-1900-01-02-a-i0001`).",
+                    "pattern": "^[A-Za-z][A-Za-z0-9_]*-\\d{4}-\\d{2}-\\d{2}-[a-z]{1,2}-i[0-9]{4}$"
                 },
                 "lg": {
                     "type": "string",

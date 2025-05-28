@@ -8,7 +8,7 @@
         "id": {
             "description": "The unique identifier for the content-item (CI), only 1 CI per radio broadcast audio record",
             "type": "string",
-            "pattern": "^[A-Za-z_]+-\\d{4}-\\d{2}-\\d{2}-[a-z]{1,2}-i[0-9]{4}$"
+            "pattern": "^[A-Za-z][A-Za-z0-9_]*-\\d{4}-\\d{2}-\\d{2}-[a-z]{1,2}-i[0-9]{4}$"
         },
         "ts": {
             "description": "timestamp of creation of the JSON file (in '%Y-%m-%dT%H:%M:%SZ' format e.g. '2018-09-18T08:00:08Z')",
