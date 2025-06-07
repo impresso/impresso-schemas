@@ -1,0 +1,475 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://impresso.github.io/impresso-schemas/json/text_reuse/cluster.schema.json",
+    "title": "Text-Reuse Cluster",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string",
+            "description": "Unique identifier for the content item"
+        },
+        "meta_journal_s": {
+            "type": "string",
+            "description": "Media title alias. Will soon be deprecated in favor of meta_media_s."
+        },
+        "meta_year_i": {
+            "type": "integer",
+            "description": "Year of publication/broadcast"
+        },
+        "meta_month_i": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 12,
+            "description": "Month of publication/broadcast"
+        },
+        "meta_yearmonth_s": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}$",
+            "description": "Year-month in YYYY-MM format"
+        },
+        "meta_day_i": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 31,
+            "description": "Day of publication/broadcast"
+        },
+        "meta_ed_s": {
+            "type": "string",
+            "description": "Edition identifier"
+        },
+        "meta_date_dt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Full date and time in ISO 8601 format"
+        },
+        "meta_issue_id_s": {
+            "type": "string",
+            "description": "Issue identifier"
+        },
+        "meta_source_type_s": {
+            "type": "string",
+            "enum": [
+                "newspaper",
+                "radio_broadcast",
+                "radio_magazine",
+                "radio_schedule",
+                "monograph",
+                "encyclopedia"
+            ],
+            "description": "Type of the media source. Should be a value from impresso-essentials.utils SourceType enum.",
+            "nullable": true
+        },
+        "meta_source_medium_s": {
+            "type": "string",
+            "description": "Medium of the source (audio for audio radio broadcasts, print for newspapers, typescript for digitised radio bulletin typescripts).",
+            "enum": [
+                "audio",
+                "print",
+                "typescript"
+            ],
+            "nullable": true
+        }
+    },
+    "meta_start_time_s": {
+        "type": "string",
+        "pattern": "^\\d{2}:\\d{2}:\\d{2}$",
+        "description": "Start time of media in HH:MM:SS format (relative to the day of broadcast). Applies only to audio radio broadcasts."
+    },
+    "meta_duration_s": {
+        "type": "string",
+        "pattern": "^\\d{2}:\\d{2}:\\d{2}$",
+        "description": "Duration of the radio broadcast in HH:MM:SS format (relative to the start of the broadcast on the given broadcast day).  Applies only to audio radio broadcasts.\""
+    },
+    "meta_country_code_s": {
+        "type": "string",
+        "description": "Country code of the publication.",
+        "nullable": true
+    },
+    "meta_province_code_s": {
+        "type": "string",
+        "description": "Province code of the publication.",
+        "nullable": true
+    },
+    "meta_periodicity_s": {
+        "type": "string",
+        "description": "Periodicity of the publication, e.g., daily, weekly.",
+        "nullable": true
+    },
+    "meta_topics_s": {
+        "type": "string",
+        "description": "Topics associated with the publication.",
+        "nullable": true
+    },
+    "meta_polorient_s": {
+        "type": "string",
+        "description": "Political orientation of the publication.",
+        "nullable": true
+    },
+    "meta_partnerid_s": {
+        "type": "string",
+        "description": "Partner ID associated with the publication.",
+        "nullable": true
+    },
+    "doc_type_s": {
+        "type": "string",
+        "description": "Type of document, e.g., page (p) or content item (ci).",
+        "enum": [
+            "p",
+            "ci"
+        ],
+        "nullable": false
+    },
+    "item_type_s": {
+        "type": "string",
+        "enum": [
+            "ar",
+            "ad",
+            "page",
+            "tb",
+            "ob",
+            "w",
+            "chapter",
+            "chronicle",
+            "unsegmented",
+            "radio_broadcast_episode",
+            "radio_bulletin"
+        ],
+        "description": "Type of content item, e.g., article, section.",
+        "nullable": true
+    },
+    "lg_orig_s": {
+        "type": "string",
+        "description": "Original language of the content item.",
+        "nullable": true
+    },
+    "lg_s": {
+        "type": "string",
+        "description": "Computed language of the content item.",
+        "nullable": true
+    },
+    "patternProperties": {
+        "^title_txt_[a-z]{2}$": {
+            "type": "string",
+            "description": "Title of the article in the specified language (ISO 639-1 two-letter language code)"
+        },
+        "^content_txt_[a-z]{2}$": {
+            "type": "string",
+            "description": "Full text content of the article in the specified language (ISO 639-1 two-letter language code)",
+            "nullable": false
+        }
+    },
+    "content_length_i": {
+        "type": "integer",
+        "description": "Token count of the content item (space split).",
+        "nullable": true
+    },
+    "snippet_plain": {
+        "type": "string",
+        "description": "Snippet of the content item (first 150 characters).",
+        "nullable": true
+    },
+    "page_id_ss": {
+        "type": "array",
+        "description": "List of page IDs associated with the content item.",
+        "items": {
+            "type": "string"
+        },
+        "nullable": true
+    },
+    "page_nb_is": {
+        "type": "array",
+        "description": "List of page numbers the content item appears on.",
+        "items": {
+            "type": "integer"
+        },
+        "nullable": true
+    },
+    "nb_pages_i": {
+        "type": "integer",
+        "description": "Total number of pages the content item is on.",
+        "nullable": true
+    },
+    "front_b": {
+        "type": "boolean",
+        "description": "Indicates if the CI is on the front page.",
+        "nullable": true
+    },
+    "reading_order_i": {
+        "type": "integer",
+        "description": "Reading order index of the content item, for the issue table of content.",
+        "nullable": true
+    },
+    "olr_b": {
+        "type": "boolean",
+        "description": "Indicates if the original digitised document has optical layout recognition (OLR).",
+        "nullable": true
+    },
+    "pp_plain": {
+        "type": "string",
+        "description": "Serialized JSON of page information.",
+        "nullable": true
+    },
+    "rc_plains": {
+        "type": "array",
+        "description": "List of region coordinates in stringified JSON format.",
+        "items": {
+            "type": "string"
+        },
+        "nullable": true
+    },
+    "lb_plain": {
+        "type": "string",
+        "description": "Serialized JSON of line breaks (relative to textual content).",
+        "nullable": true
+    },
+    "pb_plain": {
+        "type": "string",
+        "description": "Serialized JSON of paragraph breaks (relative to textual content).",
+        "nullable": true
+    },
+    "rb_plain": {
+        "type": "string",
+        "description": "Serialized JSON of region breaks (relative to textual content).",
+        "nullable": true
+    },
+    "cc_b": {
+        "type": "boolean",
+        "description": "Indicates whether coordinates were converted.",
+        "nullable": true
+    },
+    "record_id_ss": {
+        "type": "array",
+        "items": {
+            "type": "string"
+        },
+        "description": "Array of record identifiers for radio broadcast segments"
+    },
+    "record_nb_is": {
+        "type": "array",
+        "items": {
+            "type": "integer"
+        },
+        "description": "Array of record numbers corresponding to radio broadcast segments"
+    },
+    "nb_record_i": {
+        "type": "integer",
+        "minimum": 0,
+        "description": "Total number of records/segments in the radio broadcast"
+    },
+    "rreb_plain": {
+        "type": "string",
+        "minimum": 0,
+        "description": "Audio time stamps of the audio record. Serialized JSON of radio broadcast segments as defined in https://github.com/impresso/impresso-schemas/blob/radio-broadcast-schemas/json/rebuilt/audio_record_contentitem.schema.json."
+    },
+    "ocrqa_f": {
+        "type": "number",
+        "description": "OCR quality assessment score between 0,00 and 1,00.",
+        "nullable": true
+    },
+    "nag_mentions": {
+        "type": "array",
+        "description": "List of mentions from news agencies.",
+        "items": {
+            "type": "string"
+        },
+        "nullable": true
+    },
+    "nag_offset_plain": {
+        "type": "array",
+        "description": "Offsets for news agency mentions in plain text.",
+        "items": {
+            "type": "string"
+        },
+        "nullable": true
+    },
+    "nag_mention_conf_dpfs": {
+        "type": "array",
+        "description": "Confidence scores for news agency mentions.",
+        "items": {
+            "type": "number"
+        },
+        "nullable": true
+    },
+    "nag_entities_dpfs": {
+        "type": "array",
+        "description": "Entities of type news agency.",
+        "items": {
+            "type": "string"
+        },
+        "nullable": true
+    },
+    "pers_mentions": {
+        "type": "array",
+        "description": "",
+        "items": {
+            "type": "string"
+        },
+        "nullable": true
+    },
+    "pers_mention_conf_dpfs": {
+        "type": "array",
+        "description": "",
+        "items": {
+            "type": "number"
+        },
+        "nullable": true
+    },
+    "pers_entities_dpfs": {
+        "type": "array",
+        "description": "",
+        "items": {
+            "type": "number"
+        },
+        "nullable": true
+    },
+    "loc_mentions": {
+        "type": "array",
+        "description": "",
+        "items": {
+            "type": "string"
+        },
+        "nullable": true
+    },
+    "loc_mention_conf_dpfs": {
+        "type": "array",
+        "description": "",
+        "items": {
+            "type": "number"
+        },
+        "nullable": true
+    },
+    "loc_entities_dpfs": {
+        "type": "array",
+        "description": "",
+        "items": {
+            "type": "string"
+        },
+        "nullable": true
+    },
+    "org_mentions": {
+        "type": "array",
+        "description": "",
+        "items": {
+            "type": "string"
+        },
+        "nullable": true
+    },
+    "org_mention_conf_dpfs": {
+        "type": "array",
+        "description": "",
+        "items": {
+            "type": "number"
+        },
+        "nullable": true
+    },
+    "org_entities_dpfs": {
+        "type": "array",
+        "description": "",
+        "items": {
+            "type": "number"
+        },
+        "nullable": true
+    },
+    "nem_offset_plain": {
+        "type": "array",
+        "description": "Offsets for named entity mentions in plain text.",
+        "items": {
+            "type": "string"
+        },
+        "nullable": true
+    },
+    "topics_dpfs": {
+        "type": "array",
+        "description": "Topics assigned to the content item.",
+        "items": {
+            "type": "string"
+        },
+        "nullable": true
+    },
+    "cluster_id_ss": {
+        "type": "array",
+        "description": "TR Cluster IDs assigned to the content item.",
+        "items": {
+            "type": "string"
+        },
+        "nullable": true
+    },
+    "gte_multi_v768": {
+        "type": "array",
+        "description": "Content item embedding as a vector of floats.",
+        "items": {
+            "type": "number"
+        },
+        "nullable": true
+    },
+    "rights_data_domain_s": {
+        "type": "string",
+        "description": "Rights data domain.",
+        "nullable": true
+    },
+    "rights_copyright_s": {
+        "type": "string",
+        "description": "Copyright status.",
+        "nullable": true
+    },
+    "rights_perm_use_explore_plain": {
+        "type": "string",
+        "description": "Permission for use in exploration.",
+        "nullable": true
+    },
+    "rights_perm_use_get_tr_plain": {
+        "type": "string",
+        "description": "Permission for use in text retrieval.",
+        "nullable": true
+    },
+    "rights_perm_use_get_img_plain": {
+        "type": "string",
+        "description": "Permission for use in image retrieval.",
+        "nullable": true
+    },
+    "rights_bm_explore_l": {
+        "type": "integer",
+        "description": "Bookmark limit for exploration.",
+        "nullable": true
+    },
+    "rights_bm_get_tr_l": {
+        "type": "integer",
+        "description": "Bookmark limit for text retrieval.",
+        "nullable": true
+    },
+    "rights_bm_get_img_l": {
+        "type": "integer",
+        "description": "Bookmark limit for image retrieval.",
+        "nullable": true
+    },
+    "required": [
+        "id",
+        "meta_journal_s",
+        "meta_year_i",
+        "meta_month_i",
+        "meta_day_i",
+        "meta_date_dt"
+    ],
+    "dependentRequired": {
+        "meta_source_medium_s": [
+            "meta_source_type_s"
+        ],
+        "meta_source_type_s": [
+            "meta_source_medium_s"
+        ]
+    },
+    "if": {
+        "properties": {
+            "meta_source_medium_s": {
+                "const": "audio"
+            }
+        }
+    },
+    "then": {
+        "required": [
+            "meta_start_time_s",
+            "meta_duration_s"
+        ]
+    },
+    "additionalProperties": false
+}
