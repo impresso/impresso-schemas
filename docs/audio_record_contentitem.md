@@ -49,10 +49,10 @@ The unique identifier for the content-item (CI), only 1 CI per radio broadcast a
 **pattern**: the string must match the following regular expression:&#x20;
 
 ```regexp
-^[A-Za-z_]+-\d{4}-\d{2}-\d{2}-[a-z]{1,2}-i[0-9]{4}$
+^[A-Za-z][A-Za-z0-9_]*-\d{4}-\d{2}-\d{2}-[a-z]{1,2}-i[0-9]{4}$
 ```
 
-[try pattern](https://regexr.com/?expression=%5E%5BA-Za-z_%5D%2B-%5Cd%7B4%7D-%5Cd%7B2%7D-%5Cd%7B2%7D-%5Ba-z%5D%7B1%2C2%7D-i%5B0-9%5D%7B4%7D%24 "try regular expression with regexr.com")
+[try pattern](https://regexr.com/?expression=%5E%5BA-Za-z%5D%5BA-Za-z0-9_%5D*-%5Cd%7B4%7D-%5Cd%7B2%7D-%5Cd%7B2%7D-%5Ba-z%5D%7B1%2C2%7D-i%5B0-9%5D%7B4%7D%24 "try regular expression with regexr.com")
 
 ## ts
 
@@ -393,16 +393,6 @@ text offsets of broadcast sections (relative to 'ft' field)
 ### sb Type
 
 `integer[]`
-
-### sb Constraints
-
-**constant**: the value of this property must be equal to:
-
-```json
-[
-  1
-]
-```
 
 ## ub
 

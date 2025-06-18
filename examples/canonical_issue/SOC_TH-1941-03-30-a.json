@@ -1,0 +1,38 @@
+{
+    "id": "SOC_TH-1941-03-30-a",
+    "ts": "2025-05-23T12:11:44Z",
+    "st": "radio_broadcast",
+    "sm": "typescript",
+    "i": [
+        {
+            "m": {
+                "id": "SOC_TH-1941-03-30-a-i0001",
+                "lg": "en",
+                "pp": [
+                    1,
+                    2,
+                    3
+                ],
+                "tp": "chronicle",
+                "ro": 1,
+                "t": "Today at Home and Abroad 30.03.1941",
+                "var_t": "Today at Home and Abroad"
+            },
+            "l": {
+                "source": "WW2-SOC-bulletins/ww2-PDF/SRI_XY_TH_19410330_EN.pdf"
+            }
+        }
+    ],
+    "pp": [
+        "SOC_TH-1941-03-30-a-p0001",
+        "SOC_TH-1941-03-30-a-p0002",
+        "SOC_TH-1941-03-30-a-p0003"
+    ],
+    "rc": "SOC (KWD)",
+    "rp": "Today at Home and Abroad",
+    "n": [
+        "Page 1: page size within OCR before coord rescaling: [603.8400268554688, 842.6400146484375]",
+        "Page 2: page size within OCR before coord rescaling: [607.2000122070312, 846.47998046875]",
+        "Page 3: page size within OCR before coord rescaling: [601.2000122070312, 842.4000244140625]"
+    ]
+}

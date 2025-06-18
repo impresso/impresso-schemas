@@ -1,0 +1,35 @@
+{
+    "id": "SOC_CP-1939-08-02-a",
+    "ts": "2025-05-23T12:10:45Z",
+    "st": "radio_broadcast",
+    "sm": "typescript",
+    "i": [
+        {
+            "m": {
+                "id": "SOC_CP-1939-08-02-a-i0001",
+                "lg": "fr",
+                "pp": [
+                    1,
+                    2
+                ],
+                "tp": "chronicle",
+                "ro": 1,
+                "t": "Chronique suisse",
+                "var_t": "Chroniques politiques du jour"
+            },
+            "l": {
+                "source": "WW2-SOC-bulletins/ww2-PDF/SRI_XY_CP_19390802_FR.pdf"
+            }
+        }
+    ],
+    "pp": [
+        "SOC_CP-1939-08-02-a-p0001",
+        "SOC_CP-1939-08-02-a-p0002"
+    ],
+    "rc": "SOC (KWD)",
+    "rp": "Chroniques politiques du jour - Emissions d' outre-mer",
+    "n": [
+        "Page 1: page size within OCR before coord rescaling: [606.239990234375, 848.1599731445312]",
+        "Page 2: page size within OCR before coord rescaling: [605.52001953125, 846.719970703125]"
+    ]
+}

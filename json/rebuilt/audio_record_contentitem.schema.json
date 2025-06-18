@@ -94,10 +94,7 @@
             "type": "array",
             "items": {
                 "type": "integer"
-            },
-            "const": [
-                1
-            ]
+            }
         },
         "ub": {
             "description": "text offsets of utterances (relative to 'ft' field)",
@@ -122,7 +119,7 @@
                     "id": {
                         "description": "audio record canonical ID",
                         "type": "string",
-                        "pattern": "^[A-Za-z_]+-\\d{4}-\\d{2}-\\d{2}-[a-z]{1,3}-p0001$"
+                        "pattern": "^[A-Za-z][A-Za-z0-9_]*-\\d{4}-\\d{2}-\\d{2}-[a-z]{1,3}-r[0-9]{4}$"
                     },
                     "n": {
                         "description": "audio record number",
