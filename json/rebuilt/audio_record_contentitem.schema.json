@@ -1,0 +1,188 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json",
+    "title": "Audio Record Content Item",
+    "description": "This schema defines the JSON representation of an audio-based content item. A content item corresponds to any logical segmentation unit of a digitised media production.",
+    "type": "object",
+    "properties": {
+        "id": {
+            "description": "The unique identifier for the content-item (CI), only 1 CI per radio broadcast audio record",
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_]*-\\d{4}-\\d{2}-\\d{2}-[a-z]{1,2}-i[0-9]{4}$"
+        },
+        "ts": {
+            "description": "timestamp of creation of the JSON file (in '%Y-%m-%dT%H:%M:%SZ' format e.g. '2018-09-18T08:00:08Z')",
+            "type": "string",
+            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+        },
+        "d": {
+            "description": "Date of publication of radio broadcast (yyyy-mm-dd)",
+            "type": "string",
+            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        },
+        "st": {
+            "type": "string",
+            "description": "The type of media source to which this content item belongs. Must be a value from the impresso-essentials.utils SourceType enum.",
+            "const": "radio_broadcast"
+        },
+        "sm": {
+            "type": "string",
+            "description": "The medium in which the source media this content item belongs to was originally produced.",
+            "const": "audio"
+        },
+        "tp": {
+            "description": "content-item type (e.g. 'ar' for article, 'ad' for advertisement)",
+            "type": "string"
+        },
+        "lg": {
+            "description": "Language of the content item's text, expressed as a two-letter ISO 639-1 language code.",
+            "type": "string",
+            "pattern": "^[a-z]{2}$"
+        },
+        "stt": {
+            "type": "string",
+            "description": "Start time of the audio recording, relative to the broadcasting day date (HH:MM:SS). If not available, defaults to 00:00:00.",
+            "pattern": "^([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$"
+        },
+        "dur": {
+            "type": "string",
+            "description": "Total duration of the audio broadcast, in HH:MM:SS format.",
+            "pattern": "^([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$"
+        },
+        "rc": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Radio channel, if known/defined."
+        },
+        "rp": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Radio program, if known/defined."
+        },
+        "var_t": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Variant 'full' title of the media in the case it's defined in the CI metadata"
+        },
+        "title": {
+            "description": "radio broadcast content-item title.",
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "rr": {
+            "description": "Array of audio record numbers spanned by the content item; currently always [1].",
+            "type": "array",
+            "items": {
+                "type": "integer"
+            },
+            "minItems": 1
+        },
+        "ft": {
+            "description": "the rebuilt fulltext",
+            "type": "string"
+        },
+        "sb": {
+            "description": "text offsets of broadcast sections (relative to 'ft' field)",
+            "type": "array",
+            "items": {
+                "type": "integer"
+            }
+        },
+        "ub": {
+            "description": "text offsets of utterances (relative to 'ft' field)",
+            "type": "array",
+            "items": {
+                "type": "integer"
+            }
+        },
+        "ssb": {
+            "description": "text offsets of speech segments (relative to 'ft' field)",
+            "type": "array",
+            "items": {
+                "type": "integer"
+            }
+        },
+        "rreb": {
+            "description": "a list of rebuilt records",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "audio record canonical ID",
+                        "type": "string",
+                        "pattern": "^[A-Za-z][A-Za-z0-9_]*-\\d{4}-\\d{2}-\\d{2}-[a-z]{1,3}-r[0-9]{4}$"
+                    },
+                    "n": {
+                        "description": "audio record number",
+                        "type": "integer",
+                        "const": 1
+                    },
+                    "t": {
+                        "description": "a list of tokens",
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "tc": {
+                                    "type": "array",
+                                    "description": "Coordinates of audio-segment in the format (start-time, duration), each in seconds.",
+                                    "minItems": 2,
+                                    "maxItems": 2,
+                                    "items": {
+                                        "type": [
+                                            "number"
+                                        ]
+                                    }
+                                },
+                                "s": {
+                                    "description": "offset start (relative to ft field)",
+                                    "type": "integer"
+                                },
+                                "l": {
+                                    "description": "token length",
+                                    "type": "integer"
+                                }
+                            }
+                        }
+                    },
+                    "s": {
+                        "description": "List of sections time coordinates.",
+                        "type": "array",
+                        "items": {
+                            "description": "Time coordinates of section relative to audio record.",
+                            "minItems": 2,
+                            "maxItems": 2,
+                            "items": {
+                                "type": [
+                                    "number"
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "required": [
+        "id",
+        "tp",
+        "ts"
+    ],
+    "dependentRequired": {
+        "sm": [
+            "st"
+        ],
+        "st": [
+            "sm"
+        ]
+    }
+}

@@ -1,0 +1,167 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://impresso.github.io/impresso-schemas/json/canonical/audio_record.schema.json",
+    "title": "Audio Record",
+    "description": "Physical representation of a radio broadcast audio record as recognized by a given ASR engine.",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string",
+            "description": "Canonical ID of the radio broadcast's audio record (e.g. [INA alias]-1940-07-22-a-r0001)",
+            "pattern": "^[A-Za-z][A-Za-z0-9_]*-\\d{4}-\\d{2}-\\d{2}-[a-z]{1,2}-r[0-9]{4}$"
+        },
+        "iiif_base_uri": {
+            "type": "string",
+            "description": "Base of the IIIF manifest URI."
+        },
+        "stt": {
+            "type": "string",
+            "description": "Start time of the audio recording, relative to the broadcasting day date (HH:MM:SS). If not available, defaults to 00:00:00.",
+            "pattern": "^([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$"
+        },
+        "dur": {
+            "type": "string",
+            "description": "Total duration of the audio broadcast, in HH:MM:SS format.",
+            "pattern": "^([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$"
+        },
+        "st": {
+            "type": "string",
+            "description": "The type of media source represented by this audio recording. Must be a value from the impresso_essentials.utils.SourceType enum.",
+            "const": "radio_broadcast"
+        },
+        "sm": {
+            "type": "string",
+            "description": "The medium in which the source media was originally produced.",
+            "const": "audio"
+        },
+        "cdt": {
+            "type": "string",
+            "description": "Creation date timestamp (of the JSON file)."
+        },
+        "ts": {
+            "type": "string",
+            "description": "Creation date timestamp (in '%Y-%m-%dT%H:%M:%SZ' format)."
+        },
+        "s": {
+            "type": "array",
+            "description": "List of audio broadcast sections.",
+            "items": {
+                "type": "object",
+                "description": "A section of the audio broadcast, equivalent to a page region in print media.",
+                "properties": {
+                    "tc": {
+                        "description": "Time coordinates of the section, relative to the audio recording.",
+                        "$ref": "#/$defs/time_coordinates"
+                    },
+                    "u": {
+                        "type": "array",
+                        "description": "List of speech utterances: consecutive same-speaker segments (derived from ASR's diarization of the original file).",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "tc": {
+                                    "description": "Time coordinates of the utterance, relative to the audio recording.",
+                                    "$ref": "#/$defs/time_coordinates"
+                                },
+                                "speaker": {
+                                    "type": "string",
+                                    "description": "Speaker id or name for this utterance."
+                                },
+                                "ss": {
+                                    "type": "array",
+                                    "description": "list of speech segments.",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "tc": {
+                                                "description": "Time coordinates of the speech segment, relative to the audio recording.",
+                                                "$ref": "#/$defs/time_coordinates"
+                                            },
+                                            "t": {
+                                                "type": "array",
+                                                "description": "Speech tokens (as detected by the ASR engine).",
+                                                "items": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "tc": {
+                                                            "description": "Time coordinates of the speech token, relative to the audio recording.",
+                                                            "$ref": "#/$defs/time_coordinates"
+                                                        },
+                                                        "tx": {
+                                                            "type": "string",
+                                                            "description": "Token surface form."
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "tc",
+                                                        "tx"
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        "required": [
+                                            "tc",
+                                            "t"
+                                        ]
+                                    }
+                                }
+                            },
+                            "required": [
+                                "tc",
+                                "ss"
+                            ]
+                        }
+                    },
+                    "pOf": {
+                        "type": "string",
+                        "description": "The canonical ID of the content item to which the utterance belongs."
+                    }
+                },
+                "required": [
+                    "tc",
+                    "u"
+                ]
+            }
+        }
+    },
+    "$defs": {
+        "time_coordinates": {
+            "type": "array",
+            "description": "Coordinates of audio-segment in the format (start-time, duration), each in seconds.",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {
+                "type": [
+                    "number"
+                ]
+            }
+        }
+    },
+    "dependentRequired": {
+        "sm": [
+            "st"
+        ],
+        "st": [
+            "sm"
+        ]
+    },
+    "required": [
+        "id",
+        "s",
+        "stt",
+        "dur",
+        "iiif_base_uri"
+    ],
+    "oneOf": [
+        {
+            "required": [
+                "ts"
+            ]
+        },
+        {
+            "required": [
+                "cdt"
+            ]
+        }
+    ]
+}

@@ -4,14 +4,14 @@
 
 # items Properties
 
-| Property | Type    | Required | Nullable       | Defined by                                                                                                                                                                                                                                           |
-| :------- | :------ | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [c](#c)  | `array` | Required | cannot be null | [Newspaper Page](page-properties-r-items-properties-p-items-properties-l-items-properties-c.md "https://impresso.github.io/impresso-schemas/json/newspaper/page.schema.json#/properties/r/items/properties/p/items/properties/l/items/properties/c") |
-| [t](#t)  | `array` | Required | cannot be null | [Newspaper Page](page-properties-r-items-properties-p-items-properties-l-items-properties-t.md "https://impresso.github.io/impresso-schemas/json/newspaper/page.schema.json#/properties/r/items/properties/p/items/properties/l/items/properties/t") |
+| Property | Type    | Required | Nullable       | Defined by                                                                                                                                                                                                                                         |
+| :------- | :------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [c](#c)  | `array` | Required | cannot be null | [Printed Page](page-defs-coordinates.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/r/items/properties/p/items/properties/l/items/properties/c")                                                      |
+| [t](#t)  | `array` | Required | cannot be null | [Printed Page](page-properties-r-items-properties-p-items-properties-l-items-properties-t.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/r/items/properties/p/items/properties/l/items/properties/t") |
 
 ## c
 
-Coordinates of image-region.
+Coordinates of bounding-box, following IIIF regions schema (x, y, width, height).
 
 `c`
 
@@ -21,13 +21,15 @@ Coordinates of image-region.
 
 *   cannot be null
 
-*   defined in: [Newspaper Page](page-properties-r-items-properties-p-items-properties-l-items-properties-c.md "https://impresso.github.io/impresso-schemas/json/newspaper/page.schema.json#/properties/r/items/properties/p/items/properties/l/items/properties/c")
+*   defined in: [Printed Page](page-defs-coordinates.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/r/items/properties/p/items/properties/l/items/properties/c")
 
 ### c Type
 
 `integer[]`
 
 ### c Constraints
+
+**maximum number of items**: the maximum number of items for this array is: `4`
 
 **minimum number of items**: the minimum number of items for this array is: `4`
 
@@ -43,7 +45,7 @@ Tokens (as detected by the OCR engine).
 
 *   cannot be null
 
-*   defined in: [Newspaper Page](page-properties-r-items-properties-p-items-properties-l-items-properties-t.md "https://impresso.github.io/impresso-schemas/json/newspaper/page.schema.json#/properties/r/items/properties/p/items/properties/l/items/properties/t")
+*   defined in: [Printed Page](page-properties-r-items-properties-p-items-properties-l-items-properties-t.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/r/items/properties/p/items/properties/l/items/properties/t")
 
 ### t Type
 

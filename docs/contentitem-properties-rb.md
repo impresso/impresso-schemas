@@ -1,3 +1,0 @@
-## rb Type
-
-`number[]`

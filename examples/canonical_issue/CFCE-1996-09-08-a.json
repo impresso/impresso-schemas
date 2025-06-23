@@ -1,0 +1,34 @@
+{
+    "id": "CFCE-1996-09-08-a",
+    "ts": "2025-05-28T09:37:29Z",
+    "st": "radio_broadcast",
+    "sm": "audio",
+    "i": [
+        {
+            "m": {
+                "id": "CFCE-1996-09-08-a-i0001",
+                "lg": "fr",
+                "rr": [
+                    1
+                ],
+                "tp": "radio_broadcast_episode",
+                "ro": 1,
+                "t": "Le dimanche des Européens",
+                "archival_note": "Reportages au coeur de la ville de Düsseldorf au moment où elle fête les 50 ans du land ; une allemande parle des règles strictes de fermeture des magasins le soir et le samedi et de la vie le dimanche (randonnée avec les amis, les sorties au théâtre ou au concert, la lecture...) ; des élèves allemand de 15 ans racontent comment ils passent leur dimanche. Comment les suédois passent leur dimanche. Le dimanche d'une famille anglaise. Un dimanche en Grèce (entr. téléphonique de Grèce). - les dimanches au pays Basque espagnol (entr. téléphonique en espagnol trad. déc. par José Manuel Lamarque). un tour d'horizon en Autriche, en Finlande, au Portugal, au Luxembourg par Sandrine Mercier."
+            },
+            "l": {
+                "source": [
+                    "Identifiant de la notice (in metadata): 00165368",
+                    "Noms fichers (in metadata): 96F04705SA0001_01__",
+                    "Noms fichers (in practice): 00165368_96F04705SA0001_01___EXPORT"
+                ]
+            }
+        }
+    ],
+    "rr": [
+        "CFCE-1996-09-08-a-r0001"
+    ],
+    "rp": "C'est en France, c'est en Europe",
+    "rc": "France Inter (RF)",
+    "n": []
+}

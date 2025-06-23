@@ -1,0 +1,3 @@
+## olr Type
+
+`boolean`

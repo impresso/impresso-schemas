@@ -1,0 +1,3 @@
+## cdt Type
+
+`string`

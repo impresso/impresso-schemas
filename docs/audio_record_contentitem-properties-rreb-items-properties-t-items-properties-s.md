@@ -1,0 +1,3 @@
+## s Type
+
+`integer`

@@ -1,0 +1,248 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json",
+    "title": "Printed Page",
+    "description": "Physical representation of a newspaper or typescript page as recognized by a given OCR engine.",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string",
+            "description": "Canonical ID of the newspaper or typescript page (e.g. GDL-1900-01-02-a-p0001, or SOC_CJ-1940-07-22-a-p0001)",
+            "pattern": "^[A-Za-z][A-Za-z0-9_]*-\\d{4}-\\d{2}-\\d{2}-[a-z]{1,2}-p[0-9]{4}$"
+        },
+        "iiif": {
+            "type": "string",
+            "description": "URI of the IIIF Manifest of the newspaper page image. Deprecated in favor of `iiif_img_base_uri` which should be used whenever it's defined, kept for backwards compatibility."
+        },
+        "iiif_img_base_uri": {
+            "type": "string",
+            "description": "Base of the IIIF image URI of the newspaper page image. Should follow format `{scheme}://{server}/{prefix}/{identifier}` and not include any suffix."
+        },
+        "fw": {
+            "type": "integer",
+            "description": "Width in pixels of the facsimile corresponding to this page."
+        },
+        "fh": {
+            "type": "integer",
+            "description": "Height in pixels of the facsimile corresponding to this page."
+        },
+        "st": {
+            "type": "string",
+            "description": "Type of media source. Should be a value the impresso-essentials.utils SourceType enum.",
+            "enum": [
+                "newspaper",
+                "radio_broadcast",
+                "radio_magazine",
+                "radio_schedule",
+                "monograph",
+                "encyclopedia"
+            ]
+        },
+        "sm": {
+            "type": "string",
+            "description": "Source medium, format in which the media was originally produced. If `tp == radio_broadcast`, this is typically `typescript` or `audio`.",
+            "enum": [
+                "print",
+                "typescript"
+            ]
+        },
+        "cc": {
+            "type": "boolean",
+            "description": "Flag indicating whether the legacy coordinates have been converted into IIIF-compliant ones (or rescaled if there was the need)."
+        },
+        "cdt": {
+            "type": "string",
+            "description": "Creation date timestamp (of the JSON file)."
+        },
+        "ts": {
+            "type": "string",
+            "description": "Creation date timestamp (in '%Y-%m-%dT%H:%M:%SZ' format)."
+        },
+        "r": {
+            "type": "array",
+            "description": "Page regions.",
+            "items": {
+                "type": "object",
+                "description": "Page region.",
+                "properties": {
+                    "c": {
+                        "description": "Coordinates of image-region.",
+                        "$ref": "#/$defs/coordinates"
+                    },
+                    "p": {
+                        "type": "array",
+                        "description": "Text paragraphs.",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "c": {
+                                    "description": "Coordinates of paragraph.",
+                                    "$ref": "#/$defs/coordinates"
+                                },
+                                "l": {
+                                    "type": "array",
+                                    "description": "Lines of text (belonging to a given paragraph)",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "c": {
+                                                "description": "Coordinates of image-region for the line.",
+                                                "$ref": "#/$defs/coordinates"
+                                            },
+                                            "t": {
+                                                "type": "array",
+                                                "description": "Tokens (as detected by the OCR engine).",
+                                                "items": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "c": {
+                                                            "description": "Coordinates of image-region for the token.",
+                                                            "$ref": "#/$defs/coordinates"
+                                                        },
+                                                        "tx": {
+                                                            "type": "string",
+                                                            "description": "Token surface form."
+                                                        },
+                                                        "s": {
+                                                            "type": "integer",
+                                                            "description": "A style ID as defined in issue.schema.json/s"
+                                                        },
+                                                        "gn": {
+                                                            "type": "boolean",
+                                                            "description": "Indicates whether the token is/should be followed by a whitespace. `gn==true` means no white space is required (`gn` stands for 'glue next'). When not specified it is assumed to be `false`."
+                                                        },
+                                                        "hy": {
+                                                            "type": "boolean",
+                                                            "description": "Indicates whether the token constitutes the former part of a hyphenated word (including hyphen). When not specified it is assumed to be `false`."
+                                                        },
+                                                        "nf": {
+                                                            "type": "string",
+                                                            "description": "It is specified on the latter part(s) of a hyphenated word, and contains its normalized (dehyphenated) form."
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "c",
+                                                        "tx"
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        "required": [
+                                            "c",
+                                            "t"
+                                        ]
+                                    }
+                                }
+                            },
+                            "required": [
+                                "l"
+                            ]
+                        }
+                    },
+                    "pOf": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "description": "The canonical ID of the content item to which the page region belongs."
+                    }
+                },
+                "required": [
+                    "c",
+                    "p"
+                ]
+            }
+        }
+    },
+    "$defs": {
+        "coordinates": {
+            "type": "array",
+            "description": "Coordinates of bounding-box, following IIIF regions schema (x, y, width, height).",
+            "minItems": 4,
+            "maxItems": 4,
+            "items": {
+                "type": "integer"
+            }
+        }
+    },
+    "required": [
+        "id",
+        "r"
+    ],
+    "dependentRequired": {
+        "fw": [
+            "fh"
+        ],
+        "fh": [
+            "fw"
+        ],
+        "sm": [
+            "st"
+        ],
+        "st": [
+            "sm"
+        ]
+    },
+    "allOf": [
+        {
+            "oneOf": [
+                {
+                    "required": [
+                        "iiif_img_base_uri"
+                    ]
+                },
+                {
+                    "required": [
+                        "iiif"
+                    ]
+                }
+            ]
+        },
+        {
+            "oneOf": [
+                {
+                    "required": [
+                        "ts"
+                    ]
+                },
+                {
+                    "required": [
+                        "cdt"
+                    ]
+                }
+            ]
+        },
+        {
+            "if": {
+                "properties": {
+                    "st": {
+                        "const": "newspaper"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "sm": {
+                        "const": "print"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "st": {
+                        "const": "radio_broadcast"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "sm": {
+                        "const": "typescript"
+                    }
+                }
+            }
+        }
+    ]
+}

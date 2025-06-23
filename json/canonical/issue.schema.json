@@ -1,0 +1,377 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json",
+    "description": "Logical representation of the contents of a canonical issue (newspaper or broadcast).",
+    "title": "Issue",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string",
+            "description": "Canonical ID of the newspaper or radio broadcast issue (e.g. GDL-1900-01-02-a, or SOC_CJ-1940-07-22-a)",
+            "pattern": "^[A-Za-z][A-Za-z0-9_]*-\\d{4}-\\d{2}-\\d{2}-[a-z]{1,2}$"
+        },
+        "cdt": {
+            "type": "string",
+            "description": "Creation date timestamp (of the JSON file)."
+        },
+        "ts": {
+            "type": "string",
+            "description": "Creation date timestamp (in '%Y-%m-%dT%H:%M:%SZ' format).",
+            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+        },
+        "st": {
+            "type": "string",
+            "description": "Type of media source. Should be a value the impresso-essentials.utils SourceType enum.",
+            "enum": [
+                "newspaper",
+                "radio_broadcast",
+                "radio_magazine",
+                "radio_schedule",
+                "monograph",
+                "encyclopedia"
+            ]
+        },
+        "sm": {
+            "type": "string",
+            "description": "Source medium, format in which the media was originally produced. If `tp == radio_broadcast`, this is typically `typescript` or `audio`.",
+            "enum": [
+                "print",
+                "typescript",
+                "audio"
+            ]
+        },
+        "olr": {
+            "description": "True if optical layout recognition was applied to the issue/bulletin this content item originates from.",
+            "type": "boolean"
+        },
+        "i": {
+            "type": "array",
+            "description": "The content item(s) contained in the newspaper/radio_broadcast issue.",
+            "items": {
+                "type": "object",
+                "description": "A content item (e.g. article, advertisement, radio broadcast, etc.)",
+                "properties": {
+                    "m": {
+                        "description": "Metadata about the content item.",
+                        "$ref": "#/$defs/metadata"
+                    },
+                    "c": {
+                        "type": "array",
+                        "description": "Coordinates of image-region corresponding to the content-item depending on its type (if `tp == image`).",
+                        "minItems": 4,
+                        "items": {
+                            "type": "integer"
+                        }
+                    },
+                    "l": {
+                        "type": "object",
+                        "description": "Legacy sections or components of the content item in the original OCR/OLR. They are meant to enable the reassignation of Impresso CIs (and enrichments) to the original OCR/OLR files.",
+                        "properties": {
+                            "id": {
+                                "type": [
+                                    "string",
+                                    "array"
+                                ],
+                                "description": "ID of the sections or components used to compose the CI in the original OCR/OLR files."
+                            },
+                            "parts": {
+                                "type": "array",
+                                "description": "List of parts of the given section or components. Exact contents can vary, will typically be composed of the metadata at disposal in the OCR/OLR.",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "comp_role": {
+                                            "type": [
+                                                "null",
+                                                "string"
+                                            ],
+                                            "description": "Role of the component part (eg. heading, body, etc)."
+                                        },
+                                        "comp_id": {
+                                            "type": [
+                                                "string",
+                                                "array"
+                                            ],
+                                            "description": "ID of the part."
+                                        },
+                                        "comp_fileid": {
+                                            "type": [
+                                                "string",
+                                                "array"
+                                            ],
+                                            "description": "ID of the ALTO file the component comes from."
+                                        },
+                                        "comp_page_no": {
+                                            "type": [
+                                                "integer",
+                                                "array"
+                                            ],
+                                            "description": "Page number of the component."
+                                        }
+                                    }
+                                }
+                            },
+                            "source": {
+                                "type": [
+                                    "string",
+                                    "array"
+                                ],
+                                "description": "Source image or OCR/OLR file name."
+                            }
+                        }
+                    }
+                }
+            },
+            "required": [
+                "m"
+            ]
+        },
+        "s": {
+            "description": "The text style as defined in the OCR output. \nEach style consists of:\n - a name (`id`)\n - a type-face (`f`)\n - a font-size (`fs`)\n - a color (`rgb`).",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "rgb": {
+                        "type": "array",
+                        "description": "Color of the text (in RGB).",
+                        "items": {
+                            "type": "integer"
+                        },
+                        "minItems": 3
+                    },
+                    "f": {
+                        "type": "string",
+                        "description": "Font name"
+                    },
+                    "fs": {
+                        "type": "number",
+                        "description": "Font size"
+                    },
+                    "id": {
+                        "type": "integer",
+                        "description": "Local ID of the style"
+                    }
+                },
+                "required": [
+                    "id"
+                ]
+            }
+        },
+        "pp": {
+            "type": "array",
+            "description": "Canonical IDs of pages in the issue, without file extension (e.g. GDL-1900-01-02-a-p0004). In the case `sm` is in [`print`, `typescript`]",
+            "items": {
+                "type": "string",
+                "pattern": "^[A-Za-z][A-Za-z0-9_]*-\\d{4}-\\d{2}-\\d{2}-[a-z]{1,2}-p[0-9]{4}$"
+            }
+        },
+        "rr": {
+            "type": "array",
+            "description": "Canonical ID of audio record of the issue (in list for consistency), without file extension (e.g. INA-1900-01-02-a-r0004). In the case `sm`==`audio`",
+            "items": {
+                "type": "string",
+                "pattern": "^[A-Za-z][A-Za-z0-9_]*-\\d{4}-\\d{2}-\\d{2}-[a-z]{1,3}-r[0-9]{4}$"
+            }
+        },
+        "n": {
+            "type": [
+                "string",
+                "array"
+            ],
+            "description": "Notes."
+        },
+        "iiif_manifest_uri": {
+            "type": "string",
+            "description": "URI for the issue's manifest in the IIIF Presentation API, if the corresponding IIIF server has one."
+        },
+        "rc": {
+            "type": "string",
+            "description": "Radio channel, if applicable (st=='radio_broadcast') and is known."
+        },
+        "rp": {
+            "type": "string",
+            "description": "Radio program, if applicable (st=='radio_broadcast') and is known."
+        }
+    },
+    "$defs": {
+        "metadata": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Content item ID (e.g. `GDL-1900-01-02-a-i0001`).",
+                    "pattern": "^[A-Za-z][A-Za-z0-9_]*-\\d{4}-\\d{2}-\\d{2}-[a-z]{1,2}-i[0-9]{4}$"
+                },
+                "lg": {
+                    "type": "string",
+                    "description": "Language of the content item."
+                },
+                "l": {
+                    "type": "string",
+                    "description": "Language of the content item (deprecated)."
+                },
+                "pp": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "Page numbers over which the content item spans, in the case `sm` is in [`print`, `typescript`]."
+                },
+                "rr": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "Record numbers over which the content item spans, in the case `sm` is `audio`."
+                },
+                "t": {
+                    "type": "string",
+                    "description": "Title of the content item."
+                },
+                "tp": {
+                    "type": "string",
+                    "description": "Type of the content item.",
+                    "enum": [
+                        "article",
+                        "ad",
+                        "image",
+                        "table",
+                        "death_notice",
+                        "weather",
+                        "page",
+                        "radio_bulletin",
+                        "radio_broadcast_episode",
+                        "chronicle"
+                    ]
+                },
+                "iiif_link": {
+                    "type": "string",
+                    "description": "IIIF image link, depending on content item type (if `tp == image`). Should follow the format: '{scheme}://{server}/{prefix}/{identifier}/info.json'."
+                },
+                "ro": {
+                    "type": "integer",
+                    "description": "Reading order index of the content item, for the table of contents view on the interface. If not defined, the CI number (after 'i' in the ID) should be used."
+                },
+                "speakers": {
+                    "type": "array",
+                    "description": "List of speakers (names or IDs based on availabilities) within boradcast.",
+                    "items": {
+                        "type": [
+                            "object",
+                            "string"
+                        ]
+                    }
+                },
+                "var_t": {
+                    "type": "string",
+                    "description": "Variant title of the media title this CI is from (only in the case of BL newspapers)."
+                },
+                "archival_note": {
+                    "type": "string",
+                    "description": "Plain-text archival note or description concerning the content-item (here in the case of INA)."
+                }
+            },
+            "required": [
+                "id",
+                "tp"
+            ],
+            "oneOf": [
+                {
+                    "required": [
+                        "pp"
+                    ]
+                },
+                {
+                    "required": [
+                        "rr"
+                    ]
+                }
+            ]
+        }
+    },
+    "required": [
+        "id",
+        "i"
+    ],
+    "dependentRequired": {
+        "sm": [
+            "st"
+        ],
+        "st": [
+            "sm"
+        ]
+    },
+    "allOf": [
+        {
+            "oneOf": [
+                {
+                    "required": [
+                        "ts"
+                    ]
+                },
+                {
+                    "required": [
+                        "cdt"
+                    ]
+                }
+            ]
+        },
+        {
+            "if": {
+                "properties": {
+                    "sm": {
+                        "oneOf": [
+                            {
+                                "const": "typescript"
+                            },
+                            {
+                                "const": "print"
+                            }
+                        ]
+                    }
+                }
+            },
+            "then": {
+                "required": [
+                    "pp"
+                ]
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "sm": {
+                        "const": "audio"
+                    }
+                },
+                "then": {
+                    "required": [
+                        "rr"
+                    ]
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "sm": {
+                        "oneOf": [
+                            {
+                                "const": "typescript"
+                            },
+                            {
+                                "const": "print"
+                            }
+                        ]
+                    }
+                },
+                "then": {
+                    "required": [
+                        "olr"
+                    ]
+                }
+            }
+        }
+    ]
+}

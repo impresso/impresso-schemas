@@ -11,9 +11,10 @@ We define schemas for:
   - Canonical format:
       - [Issue](docs/issue.md) (draft 06)
       - [Page](docs/page.md) (draft 06)
-      - [Content Item](docs/contentitem.md) (draft 06)
+      - [Audio Record](docs/audio_record.md) (draft 06)
   - Rebuilt format:
-      - Rebuilt (todo)
+      - [Paper Content Item](docs/paper_contentitem.md) (draft 06)
+      - [Audio Record Content Item](docs/audio_record_contentitem.md) (draft 06)
 #### Semantic enrichments
   - Topic Model
       - [Topic Assignment](docs/topic_assignment.md) (draft 06)

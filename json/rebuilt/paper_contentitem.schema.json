@@ -1,0 +1,225 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json",
+    "title": "Paper Content Item",
+    "description": "This schema defines the JSON representation of a paper-based content item — either printed or typewritten. A content item corresponds to any logical segmentation unit of a digitised media production, at or below the page level for printed documents. In newspapers, for example, an article is a typical type of content item.",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string",
+            "description": "The unique identifier for a content item (CI), (e.g. GDL-1900-01-02-a-i0001, or SOC_CJ-1940-07-22-a-i0001)",
+            "pattern": "^[A-Za-z][A-Za-z0-9_]*-\\d{4}-\\d{2}-\\d{2}-[a-z]{1,2}-i[0-9]{4}$"
+        },
+        "ts": {
+            "description": "timestamp of creation of the JSON file (in '%Y-%m-%dT%H:%M:%SZ' format e.g. '2018-09-18T08:00:08Z')",
+            "type": "string",
+            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+        },
+        "d": {
+            "description": "Date of publication of issue or broadcast to which the content item belongs to in yyyy-mm-dd format.",
+            "type": "string",
+            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        },
+        "cc": {
+            "description": "True if image box coordinates are known to be correct (eg. have been checked, converted or rescaled), False otherwise",
+            "type": "boolean"
+        },
+        "olr": {
+            "description": "True if optical layout recognition was applied to the issue/bulletin this content item originates from.",
+            "type": "boolean"
+        },
+        "st": {
+            "type": "string",
+            "description": "The type of media source to which this content item belongs. Must be a value from the impresso-essentials.utils SourceType enum.",
+            "enum": [
+                "newspaper",
+                "radio_broadcast",
+                "radio_magazine",
+                "radio_schedule",
+                "monograph",
+                "encyclopedia"
+            ]
+        },
+        "sm": {
+            "type": "string",
+            "description": "The medium in which the source media this content item belongs to was originally produced. For printed documents, this relates to the physical paper support.",
+            "enum": [
+                "print",
+                "typescript"
+            ]
+        },
+        "tp": {
+            "description": "content item type (e.g. 'ar' for article, 'ad' for advertisement)",
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "lg": {
+            "description": "Language of the content item's text, expressed as a two-letter ISO 639-1 language code.",
+            "type": "string",
+            "pattern": "^[a-z]{2}$"
+        },
+        "rc": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Radio channel, if applicable (st=='radio_broadcast') and is known."
+        },
+        "rp": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Radio program, if applicable (st=='radio_broadcast') and is known."
+        },
+        "var_t": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Variant 'full' title of the media in the case it's defined in the CI metadata"
+        },
+        "t": {
+            "description": "Content-item title (deprecated).",
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "title": {
+            "description": "Content-item title.",
+            "type": [
+                "string",
+                "null"
+            ]
+        },
+        "ro": {
+            "description": "Reading order index of the content item, for the table of contents view on the interface. If not defined, the CI number (after 'i' in the ID) should be used.",
+            "type": "integer"
+        },
+        "pp": {
+            "description": "Array of physical page numbers spanned by the content item, based on the issue pagination as extracted from the OCR.",
+            "type": "array",
+            "items": {
+                "type": "number"
+            },
+            "minItems": 1
+        },
+        "ft": {
+            "description": "The rebuilt full text.",
+            "type": "string"
+        },
+        "rb": {
+            "description": "text offsets of page regions (relative to 'ft' field)",
+            "type": "array",
+            "items": {
+                "type": "integer"
+            }
+        },
+        "pb": {
+            "description": "text offsets of physical paragraph breaks (relative to 'ft' field)",
+            "type": "array",
+            "items": {
+                "type": "integer"
+            }
+        },
+        "lb": {
+            "description": "text offsets of physical line breaks (relative to 'ft' field)",
+            "type": "array",
+            "items": {
+                "type": "integer"
+            }
+        },
+        "ppreb": {
+            "description": "List of rebuilt pages",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Page canonical ID",
+                        "type": "string",
+                        "pattern": "^[A-Za-z_]+-\\d{4}-\\d{2}-\\d{2}-[a-z]{1,2}-p[0-9]{4}$"
+                    },
+                    "n": {
+                        "description": "page number",
+                        "type": "integer"
+                    },
+                    "t": {
+                        "description": "List of tokens",
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "c": {
+                                    "description": "Coordinates of token relative to page.",
+                                    "type": "array",
+                                    "maxItems": 4,
+                                    "minItems": 4,
+                                    "items": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "s": {
+                                    "description": "offset start (relative to ft field)",
+                                    "type": "integer"
+                                },
+                                "l": {
+                                    "description": "token length",
+                                    "type": "integer"
+                                }
+                            }
+                        }
+                    },
+                    "r": {
+                        "description": "List of region coordinates.",
+                        "type": "array",
+                        "items": {
+                            "description": "Coordinates of region relative to page.",
+                            "type": "array",
+                            "maxItems": 4,
+                            "minItems": 4,
+                            "items": {
+                                "type": "integer"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "required": [
+        "id",
+        "tp",
+        "olr",
+        "ts"
+    ],
+    "dependentRequired": {
+        "sm": [
+            "st"
+        ],
+        "st": [
+            "sm"
+        ]
+    },
+    "allOf": [
+        {
+            "if": {
+                "properties": {
+                    "st": {
+                        "const": "radio_broadcast"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "ro": {
+                        "const": 1
+                    }
+                }
+            }
+        }
+    ]
+}
