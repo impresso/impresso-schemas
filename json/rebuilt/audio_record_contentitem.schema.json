@@ -2,7 +2,7 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json",
     "title": "Audio Record Content Item",
-    "description": "An audio record content-item (e.g. for a radio boradcast with audio and ASR).",
+    "description": "This schema defines the JSON representation of an audio-based content item. A content item corresponds to any logical segmentation unit of a digitised media production.",
     "type": "object",
     "properties": {
         "id": {
@@ -27,7 +27,7 @@
         },
         "sm": {
             "type": "string",
-            "description": "Source medium, format in which the media was originally produced, here should be image-based.",
+            "description": "The medium in which the source media this content item belongs to was originally produced.",
             "const": "audio"
         },
         "tp": {
@@ -35,18 +35,18 @@
             "type": "string"
         },
         "lg": {
-            "description": "two letter language code",
+            "description": "Language of the content item's text, expressed as a two-letter ISO 639-1 language code.",
             "type": "string",
             "pattern": "^[a-z]{2}$"
         },
         "stt": {
             "type": "string",
-            "description": "Audio record's start time (of day) if exists or is available (00:00:00 otherwise), in HH:MM:SS format.",
+            "description": "Start time of the audio recording, relative to the broadcasting day date (HH:MM:SS). If not available, defaults to 00:00:00.",
             "pattern": "^([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$"
         },
         "dur": {
             "type": "string",
-            "description": "Duration of the entire audio boradcast, in HH:MM:SS format.",
+            "description": "Total duration of the audio broadcast, in HH:MM:SS format.",
             "pattern": "^([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$"
         },
         "rc": {
@@ -78,7 +78,7 @@
             ]
         },
         "rr": {
-            "description": "array of audio record numbers over which the CI spans, for now always [1].",
+            "description": "Array of audio record numbers spanned by the content item; currently always [1].",
             "type": "array",
             "items": {
                 "type": "integer"

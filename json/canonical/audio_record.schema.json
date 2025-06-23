@@ -12,26 +12,26 @@
         },
         "iiif_base_uri": {
             "type": "string",
-            "description": "Base of the IIIF URI of the audio record. Exact format to be defined."
+            "description": "Base of the IIIF manifest URI."
         },
         "stt": {
             "type": "string",
-            "description": "Audio recording's start time (of day) if exists or is available (00:00:00 otherwise), in HH:MM:SS format.",
+            "description": "Start time of the audio recording, relative to the broadcasting day date (HH:MM:SS). If not available, defaults to 00:00:00.",
             "pattern": "^([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$"
         },
         "dur": {
             "type": "string",
-            "description": "Duration of the entire audio boradcast, in HH:MM:SS format.",
+            "description": "Total duration of the audio broadcast, in HH:MM:SS format.",
             "pattern": "^([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$"
         },
         "st": {
             "type": "string",
-            "description": "Type of media source. Should be a value the impresso-essentials.utils SourceType enum.",
+            "description": "The type of media source represented by this audio recording. Must be a value from the impresso_essentials.utils.SourceType enum.",
             "const": "radio_broadcast"
         },
         "sm": {
             "type": "string",
-            "description": "Source medium, format in which the media was originally produced.",
+            "description": "The medium in which the source media was originally produced.",
             "const": "audio"
         },
         "cdt": {
@@ -50,17 +50,17 @@
                 "description": "Section of audio broadcast (equivalent of page region).",
                 "properties": {
                     "tc": {
-                        "description": "Time coordinates of the section.",
+                        "description": "Time coordinates of the section, relative to the audio recording.",
                         "$ref": "#/$defs/time_coordinates"
                     },
                     "u": {
                         "type": "array",
-                        "description": "Speech utterances (consecutive same-speaker speech segments).",
+                        "description": "List of speech utterances: consecutive same-speaker segments (derived from ASR's diarization of the original file).",
                         "items": {
                             "type": "object",
                             "properties": {
                                 "tc": {
-                                    "description": "Time coordinates of the utterance.",
+                                    "description": "Time coordinates of the utterance, relative to the audio recording.",
                                     "$ref": "#/$defs/time_coordinates"
                                 },
                                 "speaker": {
@@ -74,7 +74,7 @@
                                         "type": "object",
                                         "properties": {
                                             "tc": {
-                                                "description": "Time coordinates of the speech segment.",
+                                                "description": "Time coordinates of the speech segment, relative to the audio recording.",
                                                 "$ref": "#/$defs/time_coordinates"
                                             },
                                             "t": {
@@ -84,7 +84,7 @@
                                                     "type": "object",
                                                     "properties": {
                                                         "tc": {
-                                                            "description": "Time coordinates of the speech token.",
+                                                            "description": "Time coordinates of the speech token, relative to the audio recording.",
                                                             "$ref": "#/$defs/time_coordinates"
                                                         },
                                                         "tx": {

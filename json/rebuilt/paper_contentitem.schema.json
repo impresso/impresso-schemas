@@ -2,7 +2,7 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json",
     "title": "Paper Content Item",
-    "description": "A paper-based printed or typescripted content item (e.g. radio bulletin or newspaper article, advertisement, etc.).",
+    "description": "This schema defines the JSON representation of a paper-based content item — either printed or typewritten. A content item corresponds to any logical segmentation unit of a digitised media production, at or below the page level for printed documents. In newspapers, for example, an article is a typical type of content item.",
     "type": "object",
     "properties": {
         "id": {
@@ -16,7 +16,7 @@
             "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
         },
         "d": {
-            "description": "Date of publication of issue or broadcast (yyyy-mm-dd)",
+            "description": "Date of publication of issue or broadcast to which the content item belongs to in yyyy-mm-dd format.",
             "type": "string",
             "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
         },
@@ -30,7 +30,7 @@
         },
         "st": {
             "type": "string",
-            "description": "Type of media source. Should be a value the impresso-essentials.utils SourceType enum.",
+            "description": "The type of media source to which this content item belongs. Must be a value from the impresso-essentials.utils SourceType enum.",
             "enum": [
                 "newspaper",
                 "radio_broadcast",
@@ -42,7 +42,7 @@
         },
         "sm": {
             "type": "string",
-            "description": "Source medium, format in which the media was originally produced, here should be image-based.",
+            "description": "The medium in which the source media this content item belongs to was originally produced. For printed documents, this relates to the physical paper support.",
             "enum": [
                 "print",
                 "typescript"
@@ -56,7 +56,7 @@
             ]
         },
         "lg": {
-            "description": "two letter language code",
+            "description": "Language of the content item's text, expressed as a two-letter ISO 639-1 language code.",
             "type": "string",
             "pattern": "^[a-z]{2}$"
         },
@@ -100,7 +100,7 @@
             "type": "integer"
         },
         "pp": {
-            "description": "array of page numbers over which the CI spans; it's the physical page number issue-based, as we get it from the OCR.",
+            "description": "Array of physical page numbers spanned by the content item, based on the issue pagination as extracted from the OCR.",
             "type": "array",
             "items": {
                 "type": "number"
