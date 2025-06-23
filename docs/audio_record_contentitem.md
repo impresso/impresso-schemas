@@ -112,7 +112,7 @@ Date of publication of radio broadcast (yyyy-mm-dd)
 
 ## st
 
-Type of media source. Should be a value the impresso-essentials.utils SourceType enum.
+The type of media source to which this content item belongs. Must be a value from the impresso-essentials.utils SourceType enum.
 
 `st`
 
@@ -138,7 +138,7 @@ Type of media source. Should be a value the impresso-essentials.utils SourceType
 
 ## sm
 
-Source medium, format in which the media was originally produced, here should be image-based.
+The medium in which the source media this content item belongs to was originally produced.
 
 `sm`
 
@@ -182,7 +182,7 @@ content-item type (e.g. 'ar' for article, 'ad' for advertisement)
 
 ## lg
 
-two letter language code
+Language of the content item's text, expressed as a two-letter ISO 639-1 language code.
 
 `lg`
 
@@ -210,7 +210,7 @@ two letter language code
 
 ## stt
 
-Audio record's start time (of day) if exists or is available (00:00:00 otherwise), in HH:MM:SS format.
+Start time of the audio recording, relative to the broadcasting day date (HH:MM:SS). If not available, defaults to 00:00:00.
 
 `stt`
 
@@ -238,7 +238,7 @@ Audio record's start time (of day) if exists or is available (00:00:00 otherwise
 
 ## dur
 
-Duration of the entire audio boradcast, in HH:MM:SS format.
+Total duration of the audio broadcast, in HH:MM:SS format.
 
 `dur`
 
@@ -338,7 +338,7 @@ radio broadcast content-item title.
 
 ## rr
 
-array of audio record numbers over which the CI spans, for now always \[1].
+Array of audio record numbers spanned by the content item; currently always \[1].
 
 `rr`
 

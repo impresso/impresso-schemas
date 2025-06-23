@@ -8,7 +8,7 @@
 | :---------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [c](#c)     | `array`  | Required | cannot be null | [Printed Page](page-properties-r-items-properties-c.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/r/items/properties/c")     |
 | [p](#p)     | `array`  | Required | cannot be null | [Printed Page](page-properties-r-items-properties-p.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/r/items/properties/p")     |
-| [pOf](#pof) | `string` | Optional | cannot be null | [Printed Page](page-properties-r-items-properties-pof.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/r/items/properties/pOf") |
+| [pOf](#pof) | `string` | Optional | can be null    | [Printed Page](page-properties-r-items-properties-pof.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/r/items/properties/pOf") |
 
 ## c
 
@@ -62,7 +62,7 @@ The canonical ID of the content item to which the page region belongs.
 
 *   Type: `string`
 
-*   cannot be null
+*   can be null
 
 *   defined in: [Printed Page](page-properties-r-items-properties-pof.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/r/items/properties/pOf")
 

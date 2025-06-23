@@ -22,7 +22,7 @@
         },
         "st": {
             "type": "string",
-            "description": "Type of media source. Should be a value the impresso-essentials.utils SourceType enum.",
+            "description": "The type of media source to which this content item belongs. Must be a value from the impresso-essentials.utils SourceType enum.",
             "const": "radio_broadcast"
         },
         "sm": {

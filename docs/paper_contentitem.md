@@ -90,7 +90,7 @@ timestamp of creation of the JSON file (in '%Y-%m-%dT%H:%M:%SZ' format e.g. '201
 
 ## d
 
-Date of publication of issue or broadcast (yyyy-mm-dd)
+Date of publication of issue or broadcast to which the content item belongs to in yyyy-mm-dd format.
 
 `d`
 
@@ -154,7 +154,7 @@ True if optical layout recognition was applied to the issue/bulletin this conten
 
 ## st
 
-Type of media source. Should be a value the impresso-essentials.utils SourceType enum.
+The type of media source to which this content item belongs. Must be a value from the impresso-essentials.utils SourceType enum.
 
 `st`
 
@@ -185,7 +185,7 @@ Type of media source. Should be a value the impresso-essentials.utils SourceType
 
 ## sm
 
-Source medium, format in which the media was originally produced, here should be image-based.
+The medium in which the source media this content item belongs to was originally produced. For printed documents, this relates to the physical paper support.
 
 `sm`
 
@@ -230,7 +230,7 @@ content item type (e.g. 'ar' for article, 'ad' for advertisement)
 
 ## lg
 
-two letter language code
+Language of the content item's text, expressed as a two-letter ISO 639-1 language code.
 
 `lg`
 
@@ -366,7 +366,7 @@ Reading order index of the content item, for the table of contents view on the i
 
 ## pp
 
-array of page numbers over which the CI spans; it's the physical page number issue-based, as we get it from the OCR.
+Array of physical page numbers spanned by the content item, based on the issue pagination as extracted from the OCR.
 
 `pp`
 

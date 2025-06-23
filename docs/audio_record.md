@@ -45,14 +45,14 @@ Canonical ID of the radio broadcast's audio record (e.g. \[INA alias]-1940-07-22
 **pattern**: the string must match the following regular expression:&#x20;
 
 ```regexp
-^[A-Za-z][A-Za-z0-9_]*-\d{4}-\d{2}-\d{2}-[a-z]{1,3}-r[0-9]{4}$
+^[A-Za-z][A-Za-z0-9_]*-\d{4}-\d{2}-\d{2}-[a-z]{1,2}-r[0-9]{4}$
 ```
 
-[try pattern](https://regexr.com/?expression=%5E%5BA-Za-z%5D%5BA-Za-z0-9_%5D*-%5Cd%7B4%7D-%5Cd%7B2%7D-%5Cd%7B2%7D-%5Ba-z%5D%7B1%2C3%7D-r%5B0-9%5D%7B4%7D%24 "try regular expression with regexr.com")
+[try pattern](https://regexr.com/?expression=%5E%5BA-Za-z%5D%5BA-Za-z0-9_%5D*-%5Cd%7B4%7D-%5Cd%7B2%7D-%5Cd%7B2%7D-%5Ba-z%5D%7B1%2C2%7D-r%5B0-9%5D%7B4%7D%24 "try regular expression with regexr.com")
 
 ## iiif\_base\_uri
 
-Base of the IIIF URI of the audio record. Exact format to be defined.
+Base of the IIIF manifest URI.
 
 `iiif_base_uri`
 
@@ -70,7 +70,7 @@ Base of the IIIF URI of the audio record. Exact format to be defined.
 
 ## stt
 
-Audio recording's start time (of day) if exists or is available (00:00:00 otherwise), in HH:MM:SS format.
+Start time of the audio recording, relative to the broadcasting day date (HH:MM:SS). If not available, defaults to 00:00:00.
 
 `stt`
 
@@ -98,7 +98,7 @@ Audio recording's start time (of day) if exists or is available (00:00:00 otherw
 
 ## dur
 
-Duration of the entire audio boradcast, in HH:MM:SS format.
+Total duration of the audio broadcast, in HH:MM:SS format.
 
 `dur`
 
@@ -126,7 +126,7 @@ Duration of the entire audio boradcast, in HH:MM:SS format.
 
 ## st
 
-Type of media source. Should be a value the impresso-essentials.utils SourceType enum.
+The type of media source represented by this audio recording. Must be a value from the impresso\_essentials.utils.SourceType enum.
 
 `st`
 
@@ -152,7 +152,7 @@ Type of media source. Should be a value the impresso-essentials.utils SourceType
 
 ## sm
 
-Source medium, format in which the media was originally produced.
+The medium in which the source media was originally produced.
 
 `sm`
 

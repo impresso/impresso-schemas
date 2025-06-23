@@ -47,7 +47,7 @@
             "description": "List of audio broadcast sections.",
             "items": {
                 "type": "object",
-                "description": "Section of audio broadcast (equivalent of page region).",
+                "description": "A section of the audio broadcast, equivalent to a page region in print media.",
                 "properties": {
                     "tc": {
                         "description": "Time coordinates of the section, relative to the audio recording.",

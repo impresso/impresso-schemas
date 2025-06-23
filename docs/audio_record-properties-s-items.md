@@ -36,7 +36,7 @@ Coordinates of audio-segment in the format (start-time, duration), each in secon
 
 ## u
 
-Speech utterances (consecutive same-speaker speech segments).
+List of speech utterances: consecutive same-speaker segments (derived from ASR's diarization of the original file).
 
 `u`
 
