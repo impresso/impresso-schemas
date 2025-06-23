@@ -140,7 +140,10 @@
                         }
                     },
                     "pOf": {
-                        "type": "string",
+                        "type": [
+                            "string",
+                            "null"
+                        ],
                         "description": "The canonical ID of the content item to which the page region belongs."
                     }
                 },
