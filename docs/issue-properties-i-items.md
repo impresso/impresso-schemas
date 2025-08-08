@@ -4,11 +4,12 @@
 
 # items Properties
 
-| Property | Type     | Required | Nullable       | Defined by                                                                                                                                                        |
-| :------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [m](#m)  | Merged   | Optional | cannot be null | [Issue](issue-defs-metadata.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/m")                   |
-| [c](#c)  | `array`  | Optional | cannot be null | [Issue](issue-properties-i-items-properties-c.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/c") |
-| [l](#l)  | `object` | Optional | cannot be null | [Issue](issue-properties-i-items-properties-l.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/l") |
+| Property    | Type     | Required | Nullable       | Defined by                                                                                                                                                            |
+| :---------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [m](#m)     | Merged   | Optional | cannot be null | [Issue](issue-defs-metadata.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/m")                       |
+| [c](#c)     | `array`  | Optional | cannot be null | [Issue](issue-properties-i-items-properties-c.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/c")     |
+| [l](#l)     | `object` | Optional | cannot be null | [Issue](issue-properties-i-items-properties-l.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/l")     |
+| [pOf](#pof) | `string` | Optional | cannot be null | [Issue](issue-properties-i-items-properties-pof.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/pOf") |
 
 ## m
 
@@ -73,3 +74,21 @@ Legacy sections or components of the content item in the original OCR/OLR. They 
 ### l Type
 
 `object` ([Details](issue-properties-i-items-properties-l.md))
+
+## pOf
+
+Article/content-item to which the image is attached (if `tp == image`).
+
+`pOf`
+
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [Issue](issue-properties-i-items-properties-pof.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/pOf")
+
+### pOf Type
+
+`string`

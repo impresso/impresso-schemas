@@ -119,6 +119,10 @@
                                 "description": "Source image or OCR/OLR file name."
                             }
                         }
+                    },
+                    "pOf": {
+                        "type": "string",
+                        "description": "Article/content-item to which the image is attached (if `tp == image`)."
                     }
                 }
             },
