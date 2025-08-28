@@ -1,0 +1,112 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-sentence.schema.json",
+  "type": "object",
+  "description": "Schema for validation of the sentence embeddings as produced by GTE for newspaper data",
+  "required": [
+    "ts",
+    "ci_id",
+    "sents",
+    "tsents"
+  ],
+  "definitions": {
+    "sents": {
+      "type": "array",
+      "title": "The Sents Schema",
+      "description": "container for sentences (boundaries produced by spacy)",
+      "items": {
+        "type": "object",
+        "title": "The Items Schema",
+        "required": [
+          "tokens"
+        ],
+        "properties": {
+          "embedding": {
+            "oneOf": [
+              {
+                "type": "array",
+                "description": "The vector embedding representation of the content item as a single list.",
+                "items": {
+                  "type": "number",
+                  "description": "A single number in the vector embedding of the document.",
+                  "examples": [
+                    -0.11429
+                  ]
+                }
+              },
+              {
+                "type": "array",
+                "description": "The vector embedding representation of the content item as a list of lists (e.g., for chunked embeddings).",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "description": "A single number in a chunk's vector embedding.",
+                    "examples": [
+                      -0.11429
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "size": {
+            "type": "integer",
+            "description": "The size of the embedding vectors."
+          }
+        }
+      }
+    }
+  },
+  "properties": {
+    "ts": {
+      "$id": "#/properties/ts",
+      "type": "string",
+      "title": "The Ts Schema",
+      "description": "timestamp",
+      "examples": [
+        "2024-12-27T16:38:46Z"
+      ],
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+    },
+    "ci_id": {
+      "$id": "#/properties/ci_id",
+      "type": "string",
+      "title": "The content item id",
+      "description": "Canonical impresso id of content item",
+      "examples": [
+        "onsjongen-1951-03-01-a-i0012"
+      ]
+    },
+    "sents": {
+      "$ref": "#/definitions/sents"
+    },
+    "tsents": {
+      "$ref": "#/definitions/sents"
+    },
+    "model_id": {
+      "type": "string",
+      "title": "The Model Id Schema",
+      "description": "Model identifier according to impresso model description schema",
+      "examples": [
+        "spacy@3.6.1:de_core_news_md@3.6.0:sentencizer|tok2vec|tagger|morphologizer|lemmatizer|attribute_ruler|ner"
+      ]
+    },
+    "lid_path": {
+      "type": "string",
+      "title": "The Lid Path Schema",
+      "description": "Path to language identification data",
+      "examples": [
+        "s3://42-processed-data-final/langident/langident_v1-4-4/onsjongen/onsjongen-1951.jsonl.bz2"
+      ]
+    },
+    "git": {
+      "type": "string",
+      "title": "The Sentence Embeddings Git Schema",
+      "description": "Git commit describe of the linguistic processing pipeline",
+      "examples": [
+        "unknown"
+      ]
+    }
+  }
+}
