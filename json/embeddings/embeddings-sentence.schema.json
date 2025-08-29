@@ -90,6 +90,7 @@
       "$ref": "#/definitions/sents"
     },
     "tsents": {
+      "description": "Tokenized sentences: similar to 'sents', but each sentence is further split into tokens. While 'sents' contains raw sentence strings, 'tsents' contains sentences represented as lists of tokens, allowing for more granular linguistic analysis.",
       "$ref": "#/definitions/sents"
     },
     "model_id": {
