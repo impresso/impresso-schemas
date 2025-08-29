@@ -35,7 +35,7 @@
             "oneOf": [
               {
                 "type": "array",
-                "description": "The vector embedding representation of the content item as a single list.",
+                "description": "The vector embedding representation of the sentence as a single list.",
                 "items": {
                   "type": "number",
                   "description": "A single number in the vector embedding of the document.",
