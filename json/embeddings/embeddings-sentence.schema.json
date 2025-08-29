@@ -44,9 +44,7 @@
                   ]
                 }
               },
-              {
-                "type": "array",
-                "description": "The vector embedding representation of the content item as a list of lists (e.g., for chunked embeddings).",
+                "description": "The vector embedding representation of the sentence as a list of lists (e.g., for chunked embeddings).",
                 "items": {
                   "type": "array",
                   "items": {
