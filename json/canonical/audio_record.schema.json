@@ -152,7 +152,7 @@
         "dur",
         "iiif_base_uri"
     ],
-    "oneOf": [
+    "anyOf": [
         {
             "required": [
                 "ts"

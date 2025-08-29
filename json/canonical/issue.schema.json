@@ -308,7 +308,7 @@
     },
     "allOf": [
         {
-            "oneOf": [
+            "anyOf": [
                 {
                     "required": [
                         "ts"

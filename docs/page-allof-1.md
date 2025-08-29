@@ -2,8 +2,8 @@
 
 merged type ([Details](page-allof-1.md))
 
-one (and only one) of
+any of
 
-*   [Untitled undefined type in Printed Page](page-allof-1-oneof-0.md "check type definition")
+*   [Untitled undefined type in Printed Page](page-allof-1-anyof-0.md "check type definition")
 
-*   [Untitled undefined type in Printed Page](page-allof-1-oneof-1.md "check type definition")
+*   [Untitled undefined type in Printed Page](page-allof-1-anyof-1.md "check type definition")

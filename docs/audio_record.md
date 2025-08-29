@@ -2,11 +2,11 @@
 
 `object` ([Audio Record](audio_record.md))
 
-one (and only one) of
+any of
 
-*   [Untitled undefined type in Audio Record](audio_record-oneof-0.md "check type definition")
+*   [Untitled undefined type in Audio Record](audio_record-anyof-0.md "check type definition")
 
-*   [Untitled undefined type in Audio Record](audio_record-oneof-1.md "check type definition")
+*   [Untitled undefined type in Audio Record](audio_record-anyof-1.md "check type definition")
 
 # Audio Record Properties
 
