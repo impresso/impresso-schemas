@@ -18,9 +18,19 @@
         "type": "object",
         "title": "The Items Schema",
         "required": [
-          "tokens"
+          "embedding",
+          "sent_id"
         ],
         "properties": {
+          "sent_id": {
+            "type": "integer",
+            "description": "Unique identifier of the sentence in the content item.",
+            "examples": [
+              0,
+              1,
+              2
+            ]
+          },
           "embedding": {
             "oneOf": [
               {
@@ -97,7 +107,7 @@
       "title": "The Lid Path Schema",
       "description": "Path to language identification data",
       "examples": [
-        "s3://42-processed-data-final/langident/langident_v1-4-4/onsjongen/onsjongen-1951.jsonl.bz2"
+        "s3://142-processed-data-final/embeddings/sentence/embeddings_gte_v1-0-0/BCUL/onsjongen-1951-sentence-embeddings.json.bz2"
       ]
     },
     "git": {
