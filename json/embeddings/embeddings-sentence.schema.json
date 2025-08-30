@@ -6,25 +6,31 @@
   "required": [
     "ts",
     "ci_id",
-    "sents",
-    "tsents"
+    "sents"
   ],
   "definitions": {
     "sents": {
       "type": "array",
-      "title": "The Sents Schema",
-      "description": "container for sentences (boundaries produced by spacy)",
+      "title": "Sentence Embeddings",
+      "description": "Container for sentence-level embeddings derived from lingproc sentence segmentation",
       "items": {
         "type": "object",
-        "title": "The Items Schema",
+        "title": "Sentence Embedding",
         "required": [
           "embedding",
           "sent_id"
         ],
         "properties": {
+          "lg": {
+            "type": "string",
+            "description": "the two-letter ISO language identifier",
+            "examples": [
+              "de"
+            ]
+          },
           "sent_id": {
             "type": "integer",
-            "description": "Unique identifier of the sentence in the content item.",
+            "description": "Index of the sentence in the sentence array produced by lingproc.",
             "examples": [
               0,
               1,
@@ -32,35 +38,23 @@
             ]
           },
           "embedding": {
-            "oneOf": [
-              {
-                "type": "array",
-                "description": "The vector embedding representation of the sentence as a single list.",
-                "items": {
-                  "type": "number",
-                  "description": "A single number in the vector embedding of the document.",
-                  "examples": [
-                    -0.11429
-                  ]
-                }
-              },
-                "description": "The vector embedding representation of the sentence as a list of lists (e.g., for chunked embeddings).",
-                "items": {
-                  "type": "array",
-                  "items": {
-                    "type": "number",
-                    "description": "A single number in a chunk's vector embedding.",
-                    "examples": [
-                      -0.11429
-                    ]
-                  }
-                }
-              }
-            ]
+            "type": "array",
+            "description": "The vector embedding representation of the sentence.",
+            "items": {
+              "type": "number",
+              "description": "A single number in the sentence's vector embedding.",
+              "examples": [
+                -0.11429
+              ]
+            }
           },
           "size": {
             "type": "integer",
-            "description": "The size of the embedding vectors."
+            "description": "The size of the embedding vector."
+          },
+          "o": {
+            "type": "integer",
+            "description": "Character offset where the sentence begins in the original text."
           }
         }
       }
@@ -70,8 +64,8 @@
     "ts": {
       "$id": "#/properties/ts",
       "type": "string",
-      "title": "The Ts Schema",
-      "description": "timestamp",
+      "title": "Timestamp",
+      "description": "Timestamp of when the embeddings were generated.",
       "examples": [
         "2024-12-27T16:38:46Z"
       ],
@@ -80,8 +74,8 @@
     "ci_id": {
       "$id": "#/properties/ci_id",
       "type": "string",
-      "title": "The content item id",
-      "description": "Canonical impresso id of content item",
+      "title": "Content Item ID",
+      "description": "Canonical impresso ID of the content item.",
       "examples": [
         "onsjongen-1951-03-01-a-i0012"
       ]
@@ -89,33 +83,60 @@
     "sents": {
       "$ref": "#/definitions/sents"
     },
-    "tsents": {
-      "description": "Tokenized sentences: similar to 'sents', but each sentence is further split into tokens. While 'sents' contains raw sentence strings, 'tsents' contains sentences represented as lists of tokens, allowing for more granular linguistic analysis.",
-      "$ref": "#/definitions/sents"
-    },
     "model_id": {
       "type": "string",
-      "title": "The Model Id Schema",
-      "description": "Model identifier according to impresso model description schema",
+      "title": "Model ID",
+      "description": "Model identifier according to impresso model description schema.",
       "examples": [
-        "spacy@3.6.1:de_core_news_md@3.6.0:sentencizer|tok2vec|tagger|morphologizer|lemmatizer|attribute_ruler|ner"
+        "gte-multilingual-base_v1.0.0"
       ]
     },
-    "lid_path": {
+    "lingproc_path": {
       "type": "string",
-      "title": "The Lid Path Schema",
-      "description": "Path to language identification data",
+      "title": "Linguistic Processing Path",
+      "description": "S3 path to the lingproc output from which sentence boundaries were derived.",
       "examples": [
-        "s3://142-processed-data-final/embeddings/sentence/embeddings_gte_v1-0-0/BCUL/onsjongen-1951-sentence-embeddings.json.bz2"
+        "s3://42-processed-data-final/lingproc-pos-spacy_v3.6.0-multilingual_v1-0-3/"
       ]
     },
     "git": {
       "type": "string",
-      "title": "The Sentence Embeddings Git Schema",
-      "description": "Git commit describe of the linguistic processing pipeline",
+      "title": "Git Commit",
+      "description": "Git commit or tag of the processing pipeline used to generate the embeddings.",
       "examples": [
-        "unknown"
+        "01fef5"
       ]
     }
-  }
+  },
+  "examples": [
+    {
+      "ts": "2024-12-27T16:38:46Z",
+      "ci_id": "onsjongen-1951-03-01-a-i0012",
+      "model_id": "gte-multilingual-base_v1.0.0",
+      "lingproc_path": "s3://42-processed-data-final/lingproc-pos-spacy_v3.6.0-multilingual_v1-0-3/BCUL/onsjongen-1951.jsonl.bz2",
+      "git": "lingproc-v3.6.0-gte-v1.0.0",
+      "sents": [
+        {
+          "sent_id": 0,
+          "embedding": [
+            -0.0231,
+            0.107
+          ],
+          "size": 768,
+          "offset_start": 0,
+          "offset_end": 85
+        },
+        {
+          "sent_id": 1,
+          "embedding": [
+            -0.0451,
+            0.019
+          ],
+          "size": 768,
+          "offset_start": 86,
+          "offset_end": 192
+        }
+      ]
+    }
+  ]
 }
