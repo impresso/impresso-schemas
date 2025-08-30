@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-sentence.schema.json",
   "type": "object",
-  "description": "Schema for validation of the sentence embeddings as produced by GTE for newspaper data",
+  "description": "Schema for validation of the sentence embeddings as produced by GTE",
   "required": [
     "ts",
     "ci_id",
