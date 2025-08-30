@@ -23,7 +23,7 @@
         "properties": {
           "lg": {
             "type": "string",
-            "description": "the two-letter ISO language identifier",
+            "description": "the two-letter ISO language identifier produced by lingproc",
             "examples": [
               "de"
             ]
