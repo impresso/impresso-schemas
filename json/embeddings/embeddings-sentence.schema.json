@@ -107,36 +107,5 @@
         "01fef5"
       ]
     }
-  },
-  "examples": [
-    {
-      "ts": "2024-12-27T16:38:46Z",
-      "ci_id": "onsjongen-1951-03-01-a-i0012",
-      "model_id": "gte-multilingual-base_v1.0.0",
-      "lingproc_path": "s3://42-processed-data-final/lingproc-pos-spacy_v3.6.0-multilingual_v1-0-3/BCUL/onsjongen-1951.jsonl.bz2",
-      "git": "lingproc-v3.6.0-gte-v1.0.0",
-      "sents": [
-        {
-          "sent_id": 0,
-          "embedding": [
-            -0.0231,
-            0.107
-          ],
-          "size": 768,
-          "offset_start": 0,
-          "offset_end": 85
-        },
-        {
-          "sent_id": 1,
-          "embedding": [
-            -0.0451,
-            0.019
-          ],
-          "size": 768,
-          "offset_start": 86,
-          "offset_end": 192
-        }
-      ]
-    }
-  ]
+  }
 }
