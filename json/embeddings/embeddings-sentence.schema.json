@@ -96,7 +96,7 @@
       "title": "Linguistic Processing Path",
       "description": "S3 path to the lingproc output from which sentence boundaries were derived.",
       "examples": [
-        "s3://42-processed-data-final/lingproc-pos-spacy_v3.6.0-multilingual_v1-0-3/"
+        "s3://142-processed-data-final/embeddings/sentences/embeddings_gte_v1-0-0/onsjongen/onsjongen-1951-sentence-embeddings.jsonl.bz2"
       ]
     },
     "git": {
