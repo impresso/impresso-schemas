@@ -1,0 +1,45 @@
+{
+  "ts": "2024-12-27T16:38:46Z",
+  "ci_id": "onsjongen-1951-03-01-a-i0012",
+  "model_id": "gte-multilingual-base_v1.0.0",
+  "lingproc_path": "s3://142-processed-data-final/embeddings/sentences/embeddings_gte_v1-0-0/onsjongen/onsjongen-1951-sentence-embeddings.jsonl.bz2",
+  "git": "01fef5",
+  "sents": [
+    {
+      "lg": "de",
+      "sent_id": 0,
+      "embedding": [
+        -0.013,
+        0.042,
+        -0.087,
+        0.123,
+        0.056,
+        -0.041,
+        0.005,
+        -0.102,
+        0.031,
+        0.071
+      ],
+      "size": 10,
+      "o": 0
+    },
+    {
+      "lg": "de",
+      "sent_id": 1,
+      "embedding": [
+        0.021,
+        -0.034,
+        0.099,
+        -0.012,
+        -0.065,
+        0.078,
+        -0.043,
+        0.023,
+        -0.004,
+        0.089
+      ],
+      "size": 10,
+      "o": 124
+    }
+  ]
+}

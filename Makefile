@@ -33,7 +33,9 @@ tests:
 	check-jsonschema --schemafile json/visualizer/bbox_visualizer.schema.json  examples/visualizer/actionfem-1927-10-15-a_bbox.json && $(print-test-ok)|| $(print-test-failed)
 	check-jsonschema --schemafile json/visualizer/bbox_visualizer.schema.json  examples/visualizer/actionfem-1927-10-15-a-i0012_bbox.json && $(print-test-ok)|| $(print-test-failed)
 	check-jsonschema --schemafile json/visualizer/bbox_visualizer.schema.json  examples/visualizer/actionfem-1927-10-15-a-p0001_bbox.json && $(print-test-ok)|| $(print-test-failed)
-
+	check-jsonschema \
+	  --schemafile json/embeddings/embeddings-sentence.schema.json \
+	  examples/sentence_embeddings/sentence_embeddings_example.json && $(print-test-ok) || $(print-test-failed)
 
 clean-documentation:
 	rm -fv docs/*
