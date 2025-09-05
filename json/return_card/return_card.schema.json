@@ -1,0 +1,96 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://impresso.github.io/impresso-schemas/json/return_card/return_card.schema.json",
+    "description": "A representation of the semantic enrichments Data Return Card.",
+    "title": "Data Return Card",
+    "type": "object",
+    "properties": {
+        "ci_id": {
+            "type": "string",
+            "description": "Canonical ID of the content-item (e.g. `GDL-1900-01-02-a-i0001`)",
+            "pattern": "^[A-Za-z][A-Za-z0-9_]*-\\d{4}-\\d{2}-\\d{2}-[a-z]{1,2}-i[0-9]{4}$"
+        },
+        "timestamp": {
+            "type": "string",
+            "description": "Creation date timestamp (in '%Y-%m-%dT%H:%M:%SZ' format).",
+            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+        },
+        "partner_institution": {
+            "type": "string",
+            "description": "Internal alias corresponding to the partner institution this CI comes from."
+        },
+        "institution_ids": {
+            "type": "array",
+            "description": "The legacy institution IDs corresponding to this content-item.",
+            "items": {
+                "description": "A content item (e.g. article, advertisement, radio broadcast, etc.)",
+                "$ref": "#/def/institution_identifier"
+            }
+        }
+    },
+    "$defs": {
+        "institution_identifier": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": [
+                        "string",
+                        "integer",
+                        "number"
+                    ],
+                    "description": "Legacy or institution identifier linked to the CI."
+                },
+                "granularity": {
+                    "type": "string",
+                    "description": "Granularity level this identifier corresponds to. At least one ID must be issue-level",
+                    "enum": [
+                        "media_title",
+                        "issue",
+                        "page",
+                        "audio",
+                        "support",
+                        "sub-page",
+                        "article",
+                        "content-item"
+                    ]
+                },
+                "is_anchor": {
+                    "type": "boolean",
+                    "description": "Whether the identifier is used as primary or anchor identifier by the insitution."
+                },
+                "is_permanent": {
+                    "type": "boolean",
+                    "description": "Whether the identifier is stable and/or permanent (eg. ark ID)."
+                },
+                "is_public_facing": {
+                    "type": "boolean",
+                    "description": "Whether the identifier is public facing, ie. if it is present in a insitution URL which could be used."
+                },
+                "is_unique": {
+                    "type": "boolean",
+                    "description": "Whether the identifier is unique or whether it can also relate to other CIs."
+                },
+                "corresp_url": {
+                    "type": "string",
+                    "description": "URL containing or using this identifier linking to the piece of content corresponding to this CI in the institution portal or interface."
+                },
+                "notes": {
+                    "type": "string",
+                    "description": "Notes, description or useful information relating to this identifier."
+                }
+            },
+            "required": [
+                "id",
+                "granularity",
+                "is_permanent",
+                "is_public_facing"
+            ]
+        }
+    },
+    "required": [
+        "ci_id",
+        "timestamp",
+        "partner_institution",
+        "institution_ids"
+    ]
+}
