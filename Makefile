@@ -36,6 +36,9 @@ tests:
 	check-jsonschema \
 	  --schemafile json/embeddings/embeddings-sentence.schema.json \
 	  examples/sentence_embeddings/sentence_embeddings_example.json && $(print-test-ok) || $(print-test-failed)
+	check-jsonschema \
+	  --schemafile json/embeddings/embeddings-chunk.schema.json \
+	  examples/chunk_embeddings/chunk_embeddings_example.json && $(print-test-ok) || $(print-test-failed)
 
 clean-documentation:
 	rm -fv docs/*
