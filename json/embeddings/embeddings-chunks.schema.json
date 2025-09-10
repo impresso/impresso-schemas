@@ -18,7 +18,7 @@
         "title": "Chunk Embedding",
         "required": [
           "embedding",
-          "sent_id"
+          "chunk_id"
         ],
         "properties": {
           "lg": {
@@ -28,7 +28,7 @@
               "de"
             ]
           },
-          "sent_id": {
+          "chunk_id": {
             "type": "integer",
             "description": "Index of the chunk in the chunk array produced by lingproc.",
             "examples": [
