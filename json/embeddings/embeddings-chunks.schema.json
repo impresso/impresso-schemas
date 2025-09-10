@@ -94,7 +94,7 @@
     "lingproc_path": {
       "type": "string",
       "title": "Linguistic Processing Path",
-      "description": "S3 path to the lingproc output from which chunk boundaries were derived.",
+      "description": "S3 path to the lingproc output from which chunk boundaries were derived and subsequently processed through chonkie.",
       "examples": [
         "s3://142-processed-data-final/embeddings/chunks/chunks_gte_v1-0-0/onsjongen/onsjongen-1951-chunk-embeddings.jsonl.bz2"
       ]
