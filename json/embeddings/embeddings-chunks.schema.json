@@ -30,7 +30,7 @@
           },
           "chunk_id": {
             "type": "integer",
-            "description": "Index of the chunk in the chunk array produced by lingproc.",
+            "description": "Index of the chunk in the chunk array produced by chonkie, based on lingproc segmentation.",
             "examples": [
               0,
               1,
