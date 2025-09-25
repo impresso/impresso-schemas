@@ -1,131 +1,167 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json",
-  "title": "Entity Embedding Schema",
-  "description": "Schema for validation of linked entity embeddings produced by GTE",
   "type": "object",
+  "title": "Entity Embeddings Schema",
+  "description": "Schema for validation of entity profiles enriched with embeddings and mention-level contexts.",
   "required": [
-    "ts",
-    "entity_id",
     "wkd_id",
-    "context_2"
+    "entity_ids",
+    "surfaces",
+    "contexts"
   ],
   "properties": {
-    "ts": {
-      "type": "string",
-      "description": "Timestamp of creation (ISO 8601 format)",
-      "format": "date-time"
-    },
-    "entity_id": {
-      "type": "string",
-      "description": "Stable identifier, e.g. <ci_id>-NIL-<pagename> for linked entities"
-    },
     "wkd_id": {
       "type": "string",
-      "description": "Wikidata QID.",
-      "pattern": "^(Q[0-9]+|NIL)$"
+      "description": "Wikidata identifier of the entity"
+    },
+    "entity_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Impresso-specific entity identifiers (can be multiple across languages)"
     },
     "language": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "description": "Language of the encyclopedic metadata, if available"
+      "type": "string",
+      "description": "Language code of the entity's main Wikipedia page"
     },
     "pagename": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "description": "Wikipedia page title, if available"
+      "type": "string",
+      "description": "Wikipedia page title of the entity"
     },
     "url": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "description": "Wikipedia page URL, if available",
-      "format": "uri"
+      "type": "string",
+      "format": "uri",
+      "description": "Wikipedia URL of the entity"
     },
     "date_of_birth": {
       "type": [
         "string",
         "null"
       ],
-      "format": "date-time"
+      "format": "date-time",
+      "description": "Date of birth if available"
     },
     "date_of_death": {
       "type": [
         "string",
         "null"
       ],
-      "format": "date-time"
+      "format": "date-time",
+      "description": "Date of death if available"
     },
     "occupations_titles": {
-      "type": [
-        "array",
-        "null"
-      ],
-      "items": {
-        "type": "string"
-      }
-    },
-    "summaries": {
-      "type": [
-        "object",
-        "null"
-      ],
-      "description": "Multilingual summaries from Wikipedia",
-      "additionalProperties": {
-        "type": "string"
-      }
-    },
-    "instances_titles": {
-      "type": [
-        "array",
-        "null"
-      ],
-      "items": {
-        "type": "string"
-      }
-    },
-    "context": {
       "type": "array",
-      "description": "List of X context sentences from newspapers (X before and X after the sentence with entity mention). The X is defined in the name of the bucket.",
       "items": {
         "type": "string"
       },
-      "minItems": 1
+      "description": "Titles of occupations linked to the entity"
+    },
+    "occupations_qids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Wikidata QIDs for occupations"
+    },
+    "occupations_urls": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "description": "Wikipedia/Wikidata URLs for occupations"
+    },
+    "summaries": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Dictionary of language → summary text"
+    },
+    "instances_titles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Classes or instance types of the entity"
+    },
+    "instances_qids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "QIDs for instance classes"
+    },
+    "instances_urls": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "description": "URLs for instance classes (if any)"
+    },
+    "contexts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Mention contexts extracted from newspapers"
+    },
+    "surfaces": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Mention surfaces (unique forms found in text)"
+    },
+    "ci_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Unique document IDs (ci_id) where the entity appears"
+    },
+    "mention_keys": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Mention-level identifiers linking surface to offsets"
     },
     "encyclopedic_embedding": {
       "type": [
         "array",
         "null"
       ],
-      "description": "Sentence embedding vector for the encyclopedic profile",
       "items": {
         "type": "number"
-      }
+      },
+      "description": "Vector embedding from encyclopedic profile"
     },
     "news_embedding": {
       "type": [
         "array",
         "null"
       ],
-      "description": "Sentence embedding vector for the news profile",
       "items": {
         "type": "number"
-      }
+      },
+      "description": "Vector embedding from news contexts"
     },
     "entity_embedding": {
       "type": [
         "array",
         "null"
       ],
-      "description": "Combined embedding vector (e.g., average of encyclopedic and news)",
       "items": {
         "type": "number"
-      }
+      },
+      "description": "Final combined entity embedding (average of profiles)"
     }
   }
 }
