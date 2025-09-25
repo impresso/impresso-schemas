@@ -1,0 +1,131 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json",
+  "title": "Entity Embedding Schema",
+  "description": "Schema for validation of linked entity embeddings produced by GTE",
+  "type": "object",
+  "required": [
+    "ts",
+    "entity_id",
+    "wkd_id",
+    "context_2"
+  ],
+  "properties": {
+    "ts": {
+      "type": "string",
+      "description": "Timestamp of creation (ISO 8601 format)",
+      "format": "date-time"
+    },
+    "entity_id": {
+      "type": "string",
+      "description": "Stable identifier, e.g. <ci_id>-NIL-<pagename> for linked entities"
+    },
+    "wkd_id": {
+      "type": "string",
+      "description": "Wikidata QID.",
+      "pattern": "^(Q[0-9]+|NIL)$"
+    },
+    "language": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Language of the encyclopedic metadata, if available"
+    },
+    "pagename": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Wikipedia page title, if available"
+    },
+    "url": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Wikipedia page URL, if available",
+      "format": "uri"
+    },
+    "date_of_birth": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "date_of_death": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "occupations_titles": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "summaries": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "Multilingual summaries from Wikipedia",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "instances_titles": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "context": {
+      "type": "array",
+      "description": "List of X context sentences from newspapers (X before and X after the sentence with entity mention). The X is defined in the name of the bucket.",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "encyclopedic_embedding": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "description": "Sentence embedding vector for the encyclopedic profile",
+      "items": {
+        "type": "number"
+      }
+    },
+    "news_embedding": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "description": "Sentence embedding vector for the news profile",
+      "items": {
+        "type": "number"
+      }
+    },
+    "entity_embedding": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "description": "Combined embedding vector (e.g., average of encyclopedic and news)",
+      "items": {
+        "type": "number"
+      }
+    }
+  }
+}
