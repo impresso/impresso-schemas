@@ -40,16 +40,16 @@
         "string",
         "null"
       ],
-      "format": "date-time",
-      "description": "Date of birth if available"
+      "pattern": "^(\\d{4}|\\d{4}-\\d{2}|\\d{4}-\\d{2}-\\d{2})$",
+      "description": "Date of birth if available (YYYY, YYYY-MM, or YYYY-MM-DD)"
     },
     "date_of_death": {
       "type": [
         "string",
         "null"
       ],
-      "format": "date-time",
-      "description": "Date of death if available"
+      "pattern": "^(\\d{4}|\\d{4}-\\d{2}|\\d{4}-\\d{2}-\\d{2})$",
+      "description": "Date of death if available (YYYY, YYYY-MM, or YYYY-MM-DD)"
     },
     "occupations_titles": {
       "type": "array",
