@@ -7,8 +7,13 @@
     "properties": {
         "ci_id": {
             "type": "string",
-            "description": "Canonical ID of the content-item (e.g. `GDL-1900-01-02-a-i0001`)",
+            "description": "Impresso canonical ID of the content-item (e.g. `GDL-1900-01-02-a-i0001`)",
             "pattern": "^[A-Za-z][A-Za-z0-9_]*-\\d{4}-\\d{2}-\\d{2}-[a-z]{1,2}-i[0-9]{4}$"
+        },
+        "issue_id": {
+            "type": "string",
+            "description": "Impresso canonical ID of the issue to which this issue belongs (e.g. `GDL-1900-01-02-a`)",
+            "pattern": "^[A-Za-z][A-Za-z0-9_]*-\\d{4}-\\d{2}-\\d{2}-[a-z]{1,2}$"
         },
         "timestamp": {
             "type": "string",
@@ -19,17 +24,17 @@
             "type": "string",
             "description": "Internal alias corresponding to the partner institution this CI comes from."
         },
-        "institution_ids": {
+        "institution_data_ids": {
             "type": "array",
             "description": "The legacy institution IDs corresponding to this content-item.",
             "items": {
                 "description": "A content item (e.g. article, advertisement, radio broadcast, etc.)",
-                "$ref": "#/def/institution_identifier"
+                "$ref": "#/def/institution_data_id"
             }
         }
     },
     "$defs": {
-        "institution_identifier": {
+        "institution_data_id": {
             "type": "object",
             "properties": {
                 "id": {
@@ -54,7 +59,7 @@
                         "content-item"
                     ]
                 },
-                "is_anchor": {
+                "is_primary": {
                     "type": "boolean",
                     "description": "Whether the identifier is used as primary or anchor identifier by the insitution."
                 },
@@ -64,11 +69,7 @@
                 },
                 "is_public_facing": {
                     "type": "boolean",
-                    "description": "Whether the identifier is public facing, ie. if it is present in a insitution URL which could be used."
-                },
-                "is_unique": {
-                    "type": "boolean",
-                    "description": "Whether the identifier is unique or whether it can also relate to other CIs."
+                    "description": "Whether the identifier is public facing, ie. if it is present in an insitution URL which could be used."
                 },
                 "corresp_url": {
                     "type": "string",
@@ -89,6 +90,7 @@
     },
     "required": [
         "ci_id",
+        "issue_id",
         "timestamp",
         "partner_institution",
         "institution_ids"
