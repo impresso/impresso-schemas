@@ -127,13 +127,16 @@
                         "emb-docs",
                         "emb-entities",
                         "emb-sents",
-                        "emb-images",
+                        "emb-images-clip",
+                        "emb-images-dino",
                         "entities",
                         "newsagencies",
                         "langident",
                         "lingproc",
                         "ocrqa",
-                        "textreuse",
+                        "textreuse-passages",
+                        "textreuse-clusters",
+                        "textreuse-index",
                         "topics"
                     ]
                 },
