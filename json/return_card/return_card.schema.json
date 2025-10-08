@@ -126,7 +126,7 @@
                         "emb-words",
                         "emb-docs",
                         "emb-entities",
-                        "emb-paragraphs",
+                        "emb-sents",
                         "emb-images",
                         "entities",
                         "newsagencies",
