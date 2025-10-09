@@ -1,0 +1,98 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://impresso.github.io/impresso-schemas/json/return_card/return_card.schema.json",
+    "description": "A representation of the semantic enrichments Data Return Card.",
+    "title": "Data Return Card",
+    "type": "object",
+    "properties": {
+        "alias_year_key": {
+            "type": "string",
+            "description": "Impresso alias and year to which these enrichments correspnd (eg. `GDL-1900`)",
+            "pattern": "^[A-Za-z][A-Za-z0-9_]*-\\d{4}$"
+        },
+        "timestamp": {
+            "type": "string",
+            "description": "Creation date timestamp (in '%Y-%m-%dT%H:%M:%SZ' format).",
+            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+        },
+        "partner_institution": {
+            "type": "string",
+            "description": "Internal alias corresponding to the partner institution this CI comes from."
+        },
+        "impresso_data": {
+            "type": "object",
+            "description": "All the S3 paths to the corresponding objects and enrichments in the Impresso data.",
+            "properties": {
+                "prepared_data": {
+                    "type": "array",
+                    "description": "The data stages and S3 paths corresponding to the prepared data for this CI.",
+                    "items": {
+                        "description": "The name and corresponding S3 path of this CI's data representation or enrichment.",
+                        "$ref": "#/def/impresso_s3_paths"
+                    }
+                },
+                "semantic_enrichments": {
+                    "type": "array",
+                    "description": "The semantic enrichments and their s3 paths for this CI.",
+                    "items": {
+                        "description": "A content item (e.g. article, advertisement, radio broadcast, etc.)",
+                        "$ref": "#/def/institution_data_id"
+                    }
+                }
+            },
+            "required": [
+                "prepared_data"
+            ]
+        }
+    },
+    "$defs": {
+        "impresso_s3_paths": {
+            "type": "object",
+            "properties": {
+                "datastage_name": {
+                    "type": "string",
+                    "description": "Name of the data stage or enrichment linked.",
+                    "enum": [
+                        "canonical-issues",
+                        "canonical-pages",
+                        "canonical-audios",
+                        "rebuilt",
+                        "emb-words",
+                        "emb-docs",
+                        "emb-entities",
+                        "emb-sents",
+                        "emb-images-clip",
+                        "emb-images-dino",
+                        "entities",
+                        "newsagencies",
+                        "langident",
+                        "lingproc",
+                        "ocrqa",
+                        "textreuse-passages",
+                        "textreuse-clusters",
+                        "textreuse-index",
+                        "topic-assignments",
+                        "topics"
+                    ]
+                },
+                "datastage_schema_link": {
+                    "type": "string",
+                    "description": "GitHub Link to the datastage's JSON schema."
+                },
+                "s3_path": {
+                    "type": [
+                        "string",
+                        "array"
+                    ],
+                    "description": "S3 URL (or list of urls) to the data or enrichment with this CI (e.g. `s3://112-canonical-final/LeTemps/GDL/issues/GDL-1900-issues.jsonl.bz2` for canonical issues)."
+                }
+            }
+        }
+    },
+    "required": [
+        "alias_year_key",
+        "timestamp",
+        "partner_institution",
+        "impresso_data"
+    ]
+}

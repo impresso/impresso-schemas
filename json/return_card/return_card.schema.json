@@ -31,31 +31,6 @@
                 "description": "A content item (e.g. article, advertisement, radio broadcast, etc.)",
                 "$ref": "#/def/institution_data_id"
             }
-        },
-        "impresso_data": {
-            "type": "object",
-            "description": "All the S3 paths to the corresponding objects and enrichments in the Impresso data.",
-            "properties": {
-                "prepared_data": {
-                    "type": "array",
-                    "description": "The data stages and S3 paths corresponding to the prepared data for this CI.",
-                    "items": {
-                        "description": "The name and corresponding S3 path of this CI's data representation or enrichment.",
-                        "$ref": "#/def/impresso_s3_paths"
-                    }
-                },
-                "semantic_enrichments": {
-                    "type": "array",
-                    "description": "The semantic enrichments and their s3 paths for this CI.",
-                    "items": {
-                        "description": "A content item (e.g. article, advertisement, radio broadcast, etc.)",
-                        "$ref": "#/def/institution_data_id"
-                    }
-                }
-            },
-            "required": [
-                "prepared_data"
-            ]
         }
     },
     "$defs": {
@@ -111,44 +86,6 @@
                 "is_permanent",
                 "is_public_facing"
             ]
-        },
-        "impresso_s3_paths": {
-            "type": "object",
-            "properties": {
-                "datastage_name": {
-                    "type": "string",
-                    "description": "Name of the data stage or enrichment linked.",
-                    "enum": [
-                        "canonical-issues",
-                        "canonical-pages",
-                        "canonical-audios",
-                        "rebuilt",
-                        "emb-words",
-                        "emb-docs",
-                        "emb-entities",
-                        "emb-sents",
-                        "emb-images-clip",
-                        "emb-images-dino",
-                        "entities",
-                        "newsagencies",
-                        "langident",
-                        "lingproc",
-                        "ocrqa",
-                        "textreuse-passages",
-                        "textreuse-clusters",
-                        "textreuse-index",
-                        "topics"
-                    ]
-                },
-                "datastage_schema_link": {
-                    "type": "string",
-                    "description": "GitHub Link to the datastage's JSON schema."
-                },
-                "s3_path": {
-                    "type": "string",
-                    "description": "S3 URL to the data or enrichment with this CI (e.g. `s3://112-canonical-final/LeTemps/GDL/issues/GDL-1900-issues.jsonl.bz2` for canonical issues)."
-                }
-            }
         }
     },
     "required": [
@@ -156,7 +93,6 @@
         "issue_id",
         "timestamp",
         "partner_institution",
-        "institution_data_ids",
-        "impresso_data"
+        "institution_data_ids"
     ]
 }
