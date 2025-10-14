@@ -1,0 +1,100 @@
+{
+    "alias_year_key": "lepji-1889",
+    "timestamp": "2025-10-09T09:50:55Z",
+    "partner_institution": "BNF",
+    "impresso_data": {
+        "prepared_data": [
+            {
+                "datastage_name": "canonical-issues",
+                "datastage_schema_link": "https://github.com/impresso/impresso-schemas/blob/master/json/canonical/issue.schema.json",
+                "s3_path": "s3://112-canonical-final/BNF/lepji/issues/lepji-1889-issues.jsonl.bz2"
+            },
+            {
+                "datastage_name": "canonical-pages",
+                "datastage_schema_link": "https://github.com/impresso/impresso-schemas/blob/master/json/canonical/page.schema.json",
+                "s3_path": "s3://112-canonical-final/BNF/lepji/pages/lepji-1889/lepji-1889-12-13-a-pages.jsonl.bz2"
+            },
+            {
+                "datastage_name": "rebuilt",
+                "datastage_schema_link": "https://github.com/impresso/impresso-schemas/blob/master/json/rebuilt/paper_contentitem.schema.json",
+                "s3_path": "s3://122-rebuilt-final/BNF/lepji/lepji-1889.jsonl.bz2"
+            }
+        ],
+        "semantic_enrichments": [
+            {
+                "datastage_name": "emb-words",
+                "datastage_schema_link": "TODO",
+                "s3_path": "s3://42-processed-data-final/embeddings/words/legacy-wemb002/"
+            },
+            {
+                "datastage_name": "emb-docs",
+                "datastage_schema_link": "https://github.com/impresso/impresso-schemas/blob/master/json/embeddings/embeddings-docs.schema.json",
+                "s3_path": "s3://141-processed-data-staging/embeddings/docs/embeddings_gte_v1-1-0/BNF/lepji/lepji-1889.jsonl.bz2"
+            },
+            {
+                "datastage_name": "emb-images-clip",
+                "datastage_schema_link": "https://github.com/impresso/impresso-schemas/blob/master/json/image_embeddings/image_embeddings.schema.json",
+                "s3_path": "s3://141-processed-data-staging/embeddings/images/embeddings_openclip_v1-0-0/BNF/lepji/lepji-1889-image-embeddings.jsonl.bz2"
+            },
+            {
+                "datastage_name": "emb-images-dino",
+                "datastage_schema_link": "https://github.com/impresso/impresso-schemas/blob/master/json/image_embeddings/image_embeddings.schema.json",
+                "s3_path": "s3://141-processed-data-staging/embeddings/images/embeddings_dinov2_v1-0-0/BNF/lepji/lepji-1889-image-embeddings.jsonl.bz2"
+            },
+            {
+                "datastage_name": "entities",
+                "datastage_schema_link": "https://github.com/impresso/impresso-schemas/blob/master/json/entities/entities.schema.json",
+                "s3_path": "s3://141-processed-data-staging/entities/entities-bert-historic-multilingual_fil-pers-loc-birth-org_v4-0-6/BNF/lepji/lepji-1889.jsonl.bz2"
+            },
+            {
+                "datastage_name": "newsagencies",
+                "datastage_schema_link": "https://github.com/impresso/impresso-schemas/blob/master/json/entities/entities.schema.json",
+                "s3_path": "s3://141-processed-data-staging/newsagencies/newsagencies-bert-base-historic-multilingual_v1-0-0/BNF/lepji/lepji-1889.jsonl.bz2"
+            },
+            {
+                "datastage_name": "langident",
+                "datastage_schema_link": "https://github.com/impresso/impresso-schemas/blob/master/json/language_identification/language_identification.schema.json",
+                "s3_path": "s3://141-processed-data-staging/langident/langident-lid-ensemble_multilingual_v2-0-0/lepji/lepji-1889.jsonl.bz2"
+            },
+            {
+                "datastage_name": "lingproc",
+                "datastage_schema_link": "https://github.com/impresso/impresso-schemas/blob/master/json/linguistic_annotation/lingproc.v2.schema.json",
+                "s3_path": "s3://141-processed-data-staging/lingproc/*/lepji/lepji-1889.jsonl.bz2"
+            },
+            {
+                "datastage_name": "ocrqa",
+                "datastage_schema_link": "https://github.com/impresso/impresso-schemas/blob/master/json/ocr_qa/ocr_qa.schema.json",
+                "s3_path": "s3://42-processed-data-final/ocrqa/ocrqa-ocrqa-wp_v1.0.6_v1-0-1/lepji/lepji-1889.jsonl.bz2"
+            },
+            {
+                "datastage_name": "textreuse-passages",
+                "datastage_schema_link": "https://github.com/impresso/impresso-schemas/blob/master/json/text_reuse/passage.schema.json",
+                "s3_path": "s3://42-processed-data-final/textreuse/textreuse_passim_v1-0-0/results/tr_passages/lepji/tr_passages-lepji-1889.jsonl.bz2"
+            },
+            {
+                "datastage_name": "textreuse-clusters",
+                "datastage_schema_link": "https://github.com/impresso/impresso-schemas/blob/master/json/text_reuse/cluster.schema.json",
+                "s3_path": "s3://42-processed-data-final/textreuse/textreuse_passim_v1-0-0/results/tr_clusters/"
+            },
+            {
+                "datastage_name": "textreuse-index",
+                "datastage_schema_link": "TODO",
+                "s3_path": "s3://42-processed-data-final/textreuse/textreuse_passim_v1-0-0/results/tr_doc_cluster_index/lepji/tr_doc_cluster_index-lepji-1889.jsonl.bz2"
+            },
+            {
+                "datastage_name": "topic-assignments",
+                "datastage_schema_link": "https://github.com/impresso/impresso-schemas/blob/master/json/topic_model/topic_assignment.v2.schema.json",
+                "s3_path": "s3://42-processed-data-final/topics/topics-tm-mallet_infer_seed42_v2.0.1-multilingual_v2-0-1/lepji/lepji-1889.jsonl.bz2"
+            },
+            {
+                "datastage_name": "topics",
+                "datastage_schema_link": "https://github.com/impresso/impresso-schemas/blob/master/json/topic_model/topic_description.schema.json",
+                "s3_path": [
+                    "s3://42-processed-data-final/topics/topics-tm-mallet_infer_seed42_v2.0.1-multilingual_v2-0-1/tm-de-all-v2.0.topic_model_topic_description.jsonl.bz2",
+                    "s3://42-processed-data-final/topics/topics-tm-mallet_infer_seed42_v2.0.1-multilingual_v2-0-1/tm-fr-all-v2.0.topic_model_topic_description.jsonl.bz2",
+                    "s3://42-processed-data-final/topics/topics-tm-mallet_infer_seed42_v2.0.1-multilingual_v2-0-1/tm-lb-all-v2.1.topic_model_topic_description.jsonl.bz2"
+                ]
+            }
+        ]
+    }
+}

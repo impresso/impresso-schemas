@@ -1,0 +1,41 @@
+{
+    "ci_id": "BELL-1855-05-12-a-i0001",
+    "issue_id": "BELL-1855-05-12-a",
+    "timestamp": "2025-10-09T09:53:05Z",
+    "partner_institution": "BL",
+    "institution_data_ids": [
+        {
+            "id": "0002789",
+            "granularity": "media_title",
+            "is_primary": true,
+            "is_permanent": true,
+            "is_public_facing": true,
+            "corresp_url": "https://www.britishnewspaperarchive.co.uk/search/results/?IssueId=BL/0002789",
+            "notes": ""
+        },
+        {
+            "id": "0002789_18550512_mets.xml",
+            "granularity": "issue",
+            "is_primary": false,
+            "is_permanent": true,
+            "is_public_facing": false,
+            "notes": "BL does not use specific issue-level IDs, this is the corresponding issue's original METS file's name."
+        },
+        {
+            "id": "0002789_18550512_0001.xml",
+            "granularity": "page",
+            "is_primary": false,
+            "is_permanent": false,
+            "is_public_facing": false,
+            "notes": "Original filename of the page's ALTO file,"
+        },
+        {
+            "id": "art0001",
+            "granularity": "content-item",
+            "is_primary": false,
+            "is_permanent": false,
+            "is_public_facing": false,
+            "notes": "Div ID corresponding to this CI in the mets file."
+        }
+    ]
+}

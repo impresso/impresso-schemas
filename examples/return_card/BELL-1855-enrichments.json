@@ -1,0 +1,40 @@
+{
+    "alias_year_key": "BELL-1855",
+    "timestamp": "2025-10-09T09:53:17Z",
+    "partner_institution": "BL",
+    "impresso_data": {
+        "prepared_data": [
+            {
+                "datastage_name": "canonical-issues",
+                "datastage_schema_link": "https://github.com/impresso/impresso-schemas/blob/master/json/canonical/issue.schema.json",
+                "s3_path": "s3://112-canonical-final/BL/BELL/issues/BELL-1855-issues.jsonl.bz2"
+            },
+            {
+                "datastage_name": "canonical-pages",
+                "datastage_schema_link": "https://github.com/impresso/impresso-schemas/blob/master/json/canonical/page.schema.json",
+                "s3_path": "s3://112-canonical-final/BL/BELL/pages/BELL-1855/BELL-1855-05-12-a-pages.jsonl.bz2"
+            }
+        ],
+        "semantic_enrichments": [
+            {
+                "datastage_name": "emb-words",
+                "datastage_schema_link": "TODO",
+                "s3_path": "s3://42-processed-data-final/embeddings/words/legacy-wemb002/"
+            },
+            {
+                "datastage_name": "textreuse-clusters",
+                "datastage_schema_link": "https://github.com/impresso/impresso-schemas/blob/master/json/text_reuse/cluster.schema.json",
+                "s3_path": "s3://42-processed-data-final/textreuse/textreuse_passim_v1-0-0/results/tr_clusters/"
+            },
+            {
+                "datastage_name": "topics",
+                "datastage_schema_link": "https://github.com/impresso/impresso-schemas/blob/master/json/topic_model/topic_description.schema.json",
+                "s3_path": [
+                    "s3://42-processed-data-final/topics/topics-tm-mallet_infer_seed42_v2.0.1-multilingual_v2-0-1/tm-de-all-v2.0.topic_model_topic_description.jsonl.bz2",
+                    "s3://42-processed-data-final/topics/topics-tm-mallet_infer_seed42_v2.0.1-multilingual_v2-0-1/tm-fr-all-v2.0.topic_model_topic_description.jsonl.bz2",
+                    "s3://42-processed-data-final/topics/topics-tm-mallet_infer_seed42_v2.0.1-multilingual_v2-0-1/tm-lb-all-v2.1.topic_model_topic_description.jsonl.bz2"
+                ]
+            }
+        ]
+    }
+}

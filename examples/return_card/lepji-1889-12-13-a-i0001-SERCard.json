@@ -1,0 +1,35 @@
+{
+    "ci_id": "lepji-1889-12-13-a-i0001",
+    "issue_id": "lepji-1889-12-13-a",
+    "timestamp": "2025-10-09T09:50:51Z",
+    "partner_institution": "BNF",
+    "institution_data_ids": [
+        {
+            "id": "cb32836564q",
+            "granularity": "media_title",
+            "is_primary": true,
+            "is_permanent": true,
+            "is_public_facing": true,
+            "corresp_url": "https://gallica.bnf.fr/ark:/12148/cb32836564q/date",
+            "notes": ""
+        },
+        {
+            "id": "bpt6k715838k",
+            "granularity": "issue",
+            "is_primary": true,
+            "is_permanent": true,
+            "is_public_facing": true,
+            "corresp_url": "https://gallica.bnf.fr/ark:/12148/bpt6k715838k/date",
+            "notes": ""
+        },
+        {
+            "id": "bpt6k715838k/f1",
+            "granularity": "page",
+            "is_primary": false,
+            "is_permanent": true,
+            "is_public_facing": true,
+            "corresp_url": "https://gallica.bnf.fr/iiif/ark:/12148/bpt6k715838k/f1/info.json",
+            "notes": "IIIF link to the page's manifest"
+        }
+    ]
+}
