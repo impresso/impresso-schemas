@@ -1,8 +1,8 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://impresso.github.io/impresso-schemas/json/return_card/return_card.schema.json",
-    "description": "A representation of the semantic enrichments Data Return Card.",
-    "title": "Data Return Card",
+    "$id": "https://impresso.github.io/impresso-schemas/json/return_card/enrichments.schema.json",
+    "description": "A representation of the semantic enrichments for for a alias-year pair.",
+    "title": "Impesso Semantic Enrichments",
     "type": "object",
     "properties": {
         "alias_year_key": {
@@ -28,7 +28,7 @@
                     "description": "The data stages and S3 paths corresponding to the prepared data for this CI.",
                     "items": {
                         "description": "The name and corresponding S3 path of this CI's data representation or enrichment.",
-                        "$ref": "#/def/impresso_s3_paths"
+                        "$ref": "#/$defs/impresso_s3_paths"
                     }
                 },
                 "semantic_enrichments": {
@@ -36,7 +36,7 @@
                     "description": "The semantic enrichments and their s3 paths for this CI.",
                     "items": {
                         "description": "A content item (e.g. article, advertisement, radio broadcast, etc.)",
-                        "$ref": "#/def/institution_data_id"
+                        "$ref": "#/$defs/impresso_s3_paths"
                     }
                 }
             },

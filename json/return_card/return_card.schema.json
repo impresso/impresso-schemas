@@ -29,7 +29,7 @@
             "description": "The legacy institution IDs corresponding to this content-item.",
             "items": {
                 "description": "A content item (e.g. article, advertisement, radio broadcast, etc.)",
-                "$ref": "#/def/institution_data_id"
+                "$ref": "#/$defs/institution_data_id"
             }
         }
     },
