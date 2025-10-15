@@ -13,14 +13,6 @@
                 "actionfem-1940-01-08-a-i0001"
             ]
         },
-        "title_year": {
-            "type": "string",
-            "description": "Title-year key this image CI corresponds to.",
-            "pattern": "^[a-zA-Z0-9]+-\\d{4}$",
-            "examples": [
-                "actionfem-1940"
-            ]
-        },
         "ts": {
             "type": "string",
             "description": "Timestamp indicating when the embedding was created (e.g., '2024-10-09T09:29:02Z').",
@@ -105,7 +97,7 @@
                     "minimum": 0,
                     "maximum": 1
                 },
-                "pred-number": {
+                "pred_number": {
                     "type": "integer",
                     "description": "'Number' of the prediction in the top-3, ie. if it was the first, second or third most probable value. Not applicable if class is inferred from the typology hierarchy.",
                     "minimum": 1,
