@@ -7,7 +7,7 @@
     "properties": {
         "ci_id": {
             "type": "string",
-            "description": "Unique identifier for the content item.",
+            "description": "Unique identifier for the content-item (only CIs of type image).",
             "pattern": "^[a-zA-Z0-9]+-\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])-[a-z]-i\\d{4}$",
             "examples": [
                 "actionfem-1940-01-08-a-i0001"
@@ -15,7 +15,7 @@
         },
         "title_year": {
             "type": "string",
-            "description": "Title-year key this image emebeddings corresponds to.",
+            "description": "Title-year key this image CI corresponds to.",
             "pattern": "^[a-zA-Z0-9]+-\\d{4}$",
             "examples": [
                 "actionfem-1940"
@@ -30,26 +30,26 @@
             "type": "string",
             "description": "The ID of the model that produced this output, composed as specified in these slides: https://docs.google.com/presentation/d/1wH4LygLcT28rvMA82k5fyEyzdX49inGkqCLnBNZsFaw/edit#slide=id.g30cf04393c4_1_46.",
             "examples": [
-                "emb-images_dinov2-v0.0.1"
+                "classif-images_dinov2-v0.0.1"
             ]
         },
         "level1_predictions": {
             "type": "array",
-            "description": "List of all level 1 predictions for this CI.",
+            "description": "List of top-k predictions for level 1 for this image CI, (we will use k=3).",
             "items": {
                 "$ref": "#/$defs/prediction"
             }
         },
         "level2_predictions": {
             "type": "array",
-            "description": "List of all level 2 predictions for this CI.",
+            "description": "List of top-k predictions for level 2 for this image CI, (we will use k=3).",
             "items": {
                 "$ref": "#/$defs/prediction"
             }
         },
         "level3_predictions": {
             "type": "array",
-            "description": "List of all level 3 predictions for this CI.",
+            "description": "List of top-k predictions for level 3 for this image CI, (we will use k=3).",
             "items": {
                 "$ref": "#/$defs/prediction"
             }
@@ -58,22 +58,22 @@
     "$defs": {
         "prediction": {
             "type": "object",
-            "description": "Individual prediction on this image in the Typology V2",
+            "description": "Individual prediction on this image CI in the Typology V2",
             "properties": {
                 "level": {
                     "type": "integer",
-                    "description": "Level in typilogy V2 to which this prediction corresponds to.",
+                    "description": "Level in typology V2 to which this prediction corresponds to.",
                     "minimum": 1,
                     "maximum": 3
                 },
                 "class": {
                     "type": "string",
-                    "description": "Class from the Typology V2 predicted or inferred fro this Content-item.",
+                    "description": "Class from the Typology V2 predicted or inferred for this image content-item.",
                     "enum": [
                         "photograph",
                         "not photograph",
                         "decorative",
-                        "informative - illustrative",
+                        "informative or illustrative",
                         "advertizing",
                         "entertainment",
                         "caricature - humoristic drawing",
@@ -88,10 +88,10 @@
                         "scenery - landscape",
                         "map - geological",
                         "map - geopolitical",
-                        "map - physical - roadmap",
+                        "map - physical or roadmap",
                         "map - plan",
                         "map - weather",
-                        "weather inforgraphic",
+                        "weather infographic",
                         "non-figurative visual content",
                         "not image",
                         "object",
@@ -107,13 +107,13 @@
                 },
                 "pred-number": {
                     "type": "integer",
-                    "description": "'Number' of the prediction in the top-3, ie. if it was the first, second or third most probable value. Not applicable if class is inferred.",
+                    "description": "'Number' of the prediction in the top-3, ie. if it was the first, second or third most probable value. Not applicable if class is inferred from the typology hierarchy.",
                     "minimum": 1,
                     "maximum": 3
                 },
                 "is_inferred": {
                     "type": "boolean",
-                    "description": "True if the prediction is inferred from another (eg. 'entertainment' inferred for level 2 if level 3 is 'game'). False if the class was predicted by a model, so cannot be true for level-3."
+                    "description": "True if the prediction is inferred from another level in typology (eg. 'entertainment' inferred at level 2 if level 3 is 'game'). False if the class was predicted by a model; this field cannot be true for level-3."
                 }
             },
             "required": [
@@ -161,7 +161,7 @@
                                         "const": "decorative"
                                     },
                                     {
-                                        "const": "informative - illustrative"
+                                        "const": "informative or illustrative"
                                     },
                                     {
                                         "const": "advertizing"
@@ -226,7 +226,7 @@
                                         "const": "map - geopolitical"
                                     },
                                     {
-                                        "const": "map - physical roadmap"
+                                        "const": "map - physical or roadmap"
                                     },
                                     {
                                         "const": "map - plan"
