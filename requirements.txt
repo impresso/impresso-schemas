@@ -3,3 +3,4 @@ jsonschema==4.20.0
 jsonschema-specifications==2023.11.1
 referencing==0.31.0
 rpds-py==0.13.1
+check-jsonschema
