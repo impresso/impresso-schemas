@@ -33,11 +33,12 @@ tests:
 	check-jsonschema --schemafile json/visualizer/bbox_visualizer.schema.json  examples/visualizer/actionfem-1927-10-15-a_bbox.json && $(print-test-ok)|| $(print-test-failed)
 	check-jsonschema --schemafile json/visualizer/bbox_visualizer.schema.json  examples/visualizer/actionfem-1927-10-15-a-i0012_bbox.json && $(print-test-ok)|| $(print-test-failed)
 	check-jsonschema --schemafile json/visualizer/bbox_visualizer.schema.json  examples/visualizer/actionfem-1927-10-15-a-p0001_bbox.json && $(print-test-ok)|| $(print-test-failed)
+	check-jsonschema --schemafile json/linguistic_annotation/lingproc.v2.schema.json  examples/linguistic_annotation/example1.json && $(print-test-ok)|| $(print-test-failed)
 	check-jsonschema \
 	  --schemafile json/embeddings/embeddings-sentence.schema.json \
 	  examples/sentence_embeddings/sentence_embeddings_example.json && $(print-test-ok) || $(print-test-failed)
 	check-jsonschema \
-	  --schemafile json/embeddings/embeddings-chunk.schema.json \
+	  --schemafile json/embeddings/embeddings-chunks.schema.json \
 	  examples/chunk_embeddings/chunk_embeddings_example.json && $(print-test-ok) || $(print-test-failed)
 
 clean-documentation:
@@ -57,6 +58,7 @@ documentation:
 	jsonschema2md -d json/text_reuse/ --header false -n -v 2024-09 -o docs -x -  -s propTable
 	jsonschema2md -d json/image_embeddings/ --header false -n -v 2025-01 -o docs -x -  -s propTable
 	jsonschema2md -d json/visualizer/ --header false -n -v 2025-01 -o docs -x -  -s propTable
+	jsonschema2md -d json/linguistic_annotation/ --header false -n -v 2025-10 -o docs -x -  -s propTable
 
 
 ##########################################################################################
