@@ -1,0 +1,167 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json",
+  "type": "object",
+  "title": "Entity Embeddings Schema",
+  "description": "Schema for validation of entity profiles enriched with embeddings and mention-level contexts.",
+  "required": [
+    "wkd_id",
+    "entity_ids",
+    "surfaces",
+    "contexts"
+  ],
+  "properties": {
+    "wkd_id": {
+      "type": "string",
+      "description": "Wikidata identifier of the entity"
+    },
+    "entity_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Impresso-specific entity identifiers (can be multiple across languages)"
+    },
+    "language": {
+      "type": "string",
+      "description": "Language code of the entity's main Wikipedia page"
+    },
+    "pagename": {
+      "type": "string",
+      "description": "Wikipedia page title of the entity"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Wikipedia URL of the entity"
+    },
+    "date_of_birth": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^(\\d{4}|\\d{4}-\\d{2}|\\d{4}-\\d{2}-\\d{2})$",
+      "description": "Date of birth if available (YYYY, YYYY-MM, or YYYY-MM-DD)"
+    },
+    "date_of_death": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^(\\d{4}|\\d{4}-\\d{2}|\\d{4}-\\d{2}-\\d{2})$",
+      "description": "Date of death if available (YYYY, YYYY-MM, or YYYY-MM-DD)"
+    },
+    "occupations_titles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Titles of occupations linked to the entity"
+    },
+    "occupations_qids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Wikidata QIDs for occupations"
+    },
+    "occupations_urls": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "description": "Wikipedia/Wikidata URLs for occupations"
+    },
+    "summaries": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Dictionary of language → summary text"
+    },
+    "instances_titles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Classes or instance types of the entity"
+    },
+    "instances_qids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "QIDs for instance classes"
+    },
+    "instances_urls": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "description": "URLs for instance classes (if any)"
+    },
+    "contexts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Mention contexts extracted from newspapers"
+    },
+    "surfaces": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Mention surfaces (unique forms found in text)"
+    },
+    "ci_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Unique document IDs (ci_id) where the entity appears"
+    },
+    "mention_keys": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Mention-level identifiers linking surface to offsets"
+    },
+    "encyclopedic_embedding": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "number"
+      },
+      "description": "Vector embedding from encyclopedic profile"
+    },
+    "news_embedding": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "number"
+      },
+      "description": "Vector embedding from news contexts"
+    },
+    "entity_embedding": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "number"
+      },
+      "description": "Final combined entity embedding (average of profiles)"
+    }
+  }
+}
