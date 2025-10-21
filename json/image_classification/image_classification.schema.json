@@ -62,32 +62,33 @@
                     "type": "string",
                     "description": "Class from the Typology V2 predicted or inferred for this image content-item.",
                     "enum": [
+                        "image",
+                        "not_image",
                         "photograph",
-                        "not photograph",
+                        "not_photograph",
                         "decorative",
-                        "informative or illustrative",
-                        "advertizing",
+                        "informative_or_illustrative",
+                        "advertising",
                         "entertainment",
-                        "caricature - humoristic drawing",
-                        "comic strip",
-                        "illustrated story",
+                        "caricature_humoristic_drawing",
+                        "comic_strip",
+                        "illustrated_story",
                         "game",
                         "graph",
-                        "technical drawing",
-                        "human rep - fashion visual",
-                        "human rep - portrait",
-                        "human rep - scene",
-                        "scenery - landscape",
-                        "map - geological",
-                        "map - geopolitical",
-                        "map - physical or roadmap",
-                        "map - plan",
-                        "map - weather",
-                        "weather infographic",
-                        "non-figurative visual content",
-                        "not image",
+                        "technical_drawing",
+                        "human_rep_fashion_visual",
+                        "human_rep_portrait",
+                        "human_rep_scene",
+                        "scenery_landscape",
+                        "map_geological",
+                        "map_geopolitical",
+                        "map_physical_or_roadmap",
+                        "map_plan",
+                        "map_weather",
+                        "weather_infographic",
+                        "non_figurative_visual_content",
                         "object",
-                        "ornament - illustrated title",
+                        "ornament_illustrated_title",
                         "other"
                     ]
                 },
@@ -130,7 +131,7 @@
                                         "const": "photograph"
                                     },
                                     {
-                                        "const": "not photograph"
+                                        "const": "not_photograph"
                                     }
                                 ]
                             }
@@ -153,7 +154,7 @@
                                         "const": "decorative"
                                     },
                                     {
-                                        "const": "informative or illustrative"
+                                        "const": "informative_or_illustrative"
                                     },
                                     {
                                         "const": "advertizing"
@@ -182,13 +183,13 @@
                             "class": {
                                 "oneOf": [
                                     {
-                                        "const": "caricature - humoristic drawing"
+                                        "const": "caricature_humoristic_drawing"
                                     },
                                     {
-                                        "const": "comic strip"
+                                        "const": "comic_strip"
                                     },
                                     {
-                                        "const": "illustrated story"
+                                        "const": "illustrated_story"
                                     },
                                     {
                                         "const": "game"
@@ -197,49 +198,49 @@
                                         "const": "graph"
                                     },
                                     {
-                                        "const": "technical drawing"
+                                        "const": "technical_drawing"
                                     },
                                     {
-                                        "const": "human rep - fashion visual"
+                                        "const": "human_rep_fashion_visual"
                                     },
                                     {
-                                        "const": "human rep - portrait"
+                                        "const": "human_rep_portrait"
                                     },
                                     {
-                                        "const": "human rep - scene"
+                                        "const": "human_rep_scene"
                                     },
                                     {
-                                        "const": "scenery - landscape"
+                                        "const": "scenery_landscape"
                                     },
                                     {
-                                        "const": "map - geological"
+                                        "const": "map_geological"
                                     },
                                     {
-                                        "const": "map - geopolitical"
+                                        "const": "map_geopolitical"
                                     },
                                     {
-                                        "const": "map - physical or roadmap"
+                                        "const": "map_physical_or_roadmap"
                                     },
                                     {
-                                        "const": "map - plan"
+                                        "const": "map_plan"
                                     },
                                     {
-                                        "const": "map - weather"
+                                        "const": "map_weather"
                                     },
                                     {
-                                        "const": "weather inforgraphic"
+                                        "const": "weather_inforgraphic"
                                     },
                                     {
-                                        "const": "non-figurative visual content"
+                                        "const": "non_figurative_visual_content"
                                     },
                                     {
-                                        "const": "not image"
+                                        "const": "not_image"
                                     },
                                     {
                                         "const": "object"
                                     },
                                     {
-                                        "const": "ornament - illustrated title"
+                                        "const": "ornament_illustrated_title"
                                     },
                                     {
                                         "const": "other"
