@@ -40,6 +40,10 @@
                 "audio"
             ]
         },
+        "is_cons": {
+            "description": "True if this issue is consolidated, and contains additional langiden and ocrqa information.",
+            "type": "boolean"
+        },
         "olr": {
             "description": "True if optical layout recognition was applied to the issue/bulletin this content item originates from.",
             "type": "boolean"
@@ -214,6 +218,10 @@
                 "l": {
                     "type": "string",
                     "description": "Language of the content item (deprecated)."
+                },
+                "ocrqa": {
+                    "type": "number",
+                    "description": "The estimated OCR quality, between 0 and 1"
                 },
                 "pp": {
                     "type": "array",
