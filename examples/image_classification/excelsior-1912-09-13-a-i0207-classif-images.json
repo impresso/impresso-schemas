@@ -1,0 +1,42 @@
+{
+    "ci_id": "excelsior-1912-09-13-a-i0207",
+    "ts": "2025-10-17T14:10:17Z",
+    "model_id": "class-images_dinov2_v0.0.1",
+    "level3_predictions": [
+        {
+            "level": 3,
+            "class": "ornament_illustrated_title",
+            "confidence": 0.8242,
+            "pred_number": 1,
+            "is_inferred": false
+        },
+        {
+            "level": 3,
+            "class": "non_figurative_visual_content",
+            "confidence": 0.0791,
+            "pred_number": 2,
+            "is_inferred": false
+        },
+        {
+            "level": 3,
+            "class": "not_image",
+            "confidence": 0.0742,
+            "pred_number": 3,
+            "is_inferred": false
+        }
+    ],
+    "level2_predictions": [
+        {
+            "level": 2,
+            "class": "decorative",
+            "is_inferred": true
+        }
+    ],
+    "level1_predictions": [
+        {
+            "level": 1,
+            "class": "not_photograph",
+            "is_inferred": true
+        }
+    ]
+}

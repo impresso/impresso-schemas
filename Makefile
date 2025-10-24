@@ -33,6 +33,7 @@ tests:
 	check-jsonschema --schemafile json/visualizer/bbox_visualizer.schema.json  examples/visualizer/actionfem-1927-10-15-a_bbox.json && $(print-test-ok)|| $(print-test-failed)
 	check-jsonschema --schemafile json/visualizer/bbox_visualizer.schema.json  examples/visualizer/actionfem-1927-10-15-a-i0012_bbox.json && $(print-test-ok)|| $(print-test-failed)
 	check-jsonschema --schemafile json/visualizer/bbox_visualizer.schema.json  examples/visualizer/actionfem-1927-10-15-a-p0001_bbox.json && $(print-test-ok)|| $(print-test-failed)
+	check-jsonschema --schemafile json/image_classification/image_classification.schema.json  examples/image_classification/excelsior-1912-09-13-a-i0207-classif-images.json && $(print-test-ok)|| $(print-test-failed)
 
 
 clean-documentation:
@@ -52,6 +53,7 @@ documentation:
 	jsonschema2md -d json/text_reuse/ --header false -n -v 2024-09 -o docs -x -  -s propTable
 	jsonschema2md -d json/image_embeddings/ --header false -n -v 2025-01 -o docs -x -  -s propTable
 	jsonschema2md -d json/visualizer/ --header false -n -v 2025-01 -o docs -x -  -s propTable
+	jsonschema2md -d json/image_classification/ --header false -n -v 2025-01 -o docs -x -  -s propTable
 
 
 ##########################################################################################
