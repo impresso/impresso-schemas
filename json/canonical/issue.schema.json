@@ -40,9 +40,14 @@
                 "audio"
             ]
         },
-        "is_cons": {
+        "is_consolidated": {
             "description": "True if this issue is consolidated, and contains additional langiden and ocrqa information.",
             "type": "boolean"
+        },
+        "ts_original": {
+            "type": "string",
+            "description": "Creation date timestamp (in '%Y-%m-%dT%H:%M:%SZ' format) of the original issue which was consolidated into this object. Only defined if `is_consolidated==True`.",
+            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
         },
         "olr": {
             "description": "True if optical layout recognition was applied to the issue/bulletin this content item originates from.",
@@ -212,16 +217,43 @@
                     "pattern": "^[A-Za-z][A-Za-z0-9_]*-\\d{4}-\\d{2}-\\d{2}-[a-z]{1,2}-i[0-9]{4}$"
                 },
                 "lg": {
-                    "type": "string",
+                    "type": [
+                        "string",
+                        "null"
+                    ],
                     "description": "Language of the content item."
                 },
                 "l": {
                     "type": "string",
                     "description": "Language of the content item (deprecated)."
                 },
+                "was_re_ocred": {
+                    "type": "boolean",
+                    "description": "True if the CI's text went through the re-OCRisation process. Only defined if `is_consolidated==True`."
+                },
                 "ocrqa": {
                     "type": "number",
-                    "description": "The estimated OCR quality, between 0 and 1"
+                    "description": "The estimated OCR quality, between 0 and 1. Only defined if `is_consolidated==True`."
+                },
+                "impresso_lg": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "oneOf": [
+                        {
+                            "title": "null",
+                            "type": "null"
+                        },
+                        {
+                            "$ref": "#/$defs/langISO639Type"
+                        }
+                    ],
+                    "description": "Computed language of the content item. Only defined if `is_consolidated==True`."
+                },
+                "impresso_lg_runid": {
+                    "type": "string",
+                    "description": "Run ID corresponding to the lang ID process used to obtain the `impresso_lg` value. Only defined if `is_consolidated==True`."
                 },
                 "pp": {
                     "type": "array",
@@ -300,6 +332,12 @@
                     ]
                 }
             ]
+        },
+        "langISO639Type": {
+            "type": "string",
+            "title": "langISO639Type",
+            "description": "Two- or three-letter ISO language abbreviation, cf. https://en.wikipedia.org/wiki/List_of_ISO_639-2_codes or https://en.wikipedia.org/wiki/List_of_ISO_639-3_codes",
+            "pattern": "^[a-z]{2,3}$"
         }
     },
     "required": [
