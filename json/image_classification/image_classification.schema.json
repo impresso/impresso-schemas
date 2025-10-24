@@ -1,0 +1,262 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema#",
+    "$id": "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json",
+    "title": "",
+    "description": "A representation for the classified the content-items of type image.",
+    "type": "object",
+    "properties": {
+        "ci_id": {
+            "type": "string",
+            "description": "Unique identifier for the content-item (only CIs of type image).",
+            "pattern": "^[a-zA-Z0-9]+-\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])-[a-z]-i\\d{4}$",
+            "examples": [
+                "actionfem-1940-01-08-a-i0001"
+            ]
+        },
+        "ts": {
+            "type": "string",
+            "description": "Timestamp indicating when the embedding was created (e.g., '2024-10-09T09:29:02Z').",
+            "format": "date-time"
+        },
+        "model_id": {
+            "type": "string",
+            "description": "The ID of the model that produced this output, composed as specified in these slides: https://docs.google.com/presentation/d/1wH4LygLcT28rvMA82k5fyEyzdX49inGkqCLnBNZsFaw/edit#slide=id.g30cf04393c4_1_46.",
+            "examples": [
+                "classif-images_dinov2-v0.0.1"
+            ]
+        },
+        "level1_predictions": {
+            "type": "array",
+            "description": "List of top-k predictions for level 1 for this image CI, (we will use k=3).",
+            "items": {
+                "$ref": "#/$defs/prediction"
+            }
+        },
+        "level2_predictions": {
+            "type": "array",
+            "description": "List of top-k predictions for level 2 for this image CI, (we will use k=3).",
+            "items": {
+                "$ref": "#/$defs/prediction"
+            }
+        },
+        "level3_predictions": {
+            "type": "array",
+            "description": "List of top-k predictions for level 3 for this image CI, (we will use k=3).",
+            "items": {
+                "$ref": "#/$defs/prediction"
+            }
+        }
+    },
+    "$defs": {
+        "prediction": {
+            "type": "object",
+            "description": "Individual prediction on this image CI in the Typology V2",
+            "properties": {
+                "level": {
+                    "type": "integer",
+                    "description": "Level in typology V2 to which this prediction corresponds to.",
+                    "minimum": 1,
+                    "maximum": 3
+                },
+                "class": {
+                    "type": "string",
+                    "description": "Class from the Typology V2 predicted or inferred for this image content-item.",
+                    "enum": [
+                        "image",
+                        "not_image",
+                        "photograph",
+                        "not_photograph",
+                        "decorative",
+                        "informative_or_illustrative",
+                        "advertising",
+                        "entertainment",
+                        "caricature_humoristic_drawing",
+                        "comic_strip",
+                        "illustrated_story",
+                        "game",
+                        "graph",
+                        "technical_drawing",
+                        "human_rep_fashion_visual",
+                        "human_rep_portrait",
+                        "human_rep_scene",
+                        "scenery_landscape",
+                        "map_geological",
+                        "map_geopolitical",
+                        "map_physical_or_roadmap",
+                        "map_plan",
+                        "map_weather",
+                        "weather_infographic",
+                        "non_figurative_visual_content",
+                        "object",
+                        "ornament_illustrated_title",
+                        "other"
+                    ]
+                },
+                "confidence": {
+                    "type": "number",
+                    "description": "Confidence score of the prediction - if class was assigned through predictions.",
+                    "minimum": 0,
+                    "maximum": 1
+                },
+                "pred_number": {
+                    "type": "integer",
+                    "description": "'Number' of the prediction in the top-3, ie. if it was the first, second or third most probable value. Not applicable if class is inferred from the typology hierarchy.",
+                    "minimum": 1,
+                    "maximum": 3
+                },
+                "is_inferred": {
+                    "type": "boolean",
+                    "description": "True if the prediction is inferred from another level in typology (eg. 'entertainment' inferred at level 2 if level 3 is 'game'). False if the class was predicted by a model; this field cannot be true for level-3."
+                }
+            },
+            "required": [
+                "level",
+                "class",
+                "is_inferred"
+            ],
+            "allOf": [
+                {
+                    "if": {
+                        "properties": {
+                            "level": {
+                                "const": 1
+                            }
+                        }
+                    },
+                    "then": {
+                        "properties": {
+                            "class": {
+                                "oneOf": [
+                                    {
+                                        "const": "photograph"
+                                    },
+                                    {
+                                        "const": "not_photograph"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "level": {
+                                "const": 2
+                            }
+                        }
+                    },
+                    "then": {
+                        "properties": {
+                            "class": {
+                                "oneOf": [
+                                    {
+                                        "const": "decorative"
+                                    },
+                                    {
+                                        "const": "informative_or_illustrative"
+                                    },
+                                    {
+                                        "const": "advertizing"
+                                    },
+                                    {
+                                        "const": "entertainment"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "level": {
+                                "const": 3
+                            }
+                        }
+                    },
+                    "then": {
+                        "properties": {
+                            "is_inferred": {
+                                "const": false
+                            },
+                            "class": {
+                                "oneOf": [
+                                    {
+                                        "const": "caricature_humoristic_drawing"
+                                    },
+                                    {
+                                        "const": "comic_strip"
+                                    },
+                                    {
+                                        "const": "illustrated_story"
+                                    },
+                                    {
+                                        "const": "game"
+                                    },
+                                    {
+                                        "const": "graph"
+                                    },
+                                    {
+                                        "const": "technical_drawing"
+                                    },
+                                    {
+                                        "const": "human_rep_fashion_visual"
+                                    },
+                                    {
+                                        "const": "human_rep_portrait"
+                                    },
+                                    {
+                                        "const": "human_rep_scene"
+                                    },
+                                    {
+                                        "const": "scenery_landscape"
+                                    },
+                                    {
+                                        "const": "map_geological"
+                                    },
+                                    {
+                                        "const": "map_geopolitical"
+                                    },
+                                    {
+                                        "const": "map_physical_or_roadmap"
+                                    },
+                                    {
+                                        "const": "map_plan"
+                                    },
+                                    {
+                                        "const": "map_weather"
+                                    },
+                                    {
+                                        "const": "weather_inforgraphic"
+                                    },
+                                    {
+                                        "const": "non_figurative_visual_content"
+                                    },
+                                    {
+                                        "const": "not_image"
+                                    },
+                                    {
+                                        "const": "object"
+                                    },
+                                    {
+                                        "const": "ornament_illustrated_title"
+                                    },
+                                    {
+                                        "const": "other"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "required": [
+        "ci_id",
+        "ts",
+        "model_id",
+        "level3_predictions"
+    ]
+}

@@ -1,0 +1,3 @@
+## pagename Type
+
+`string`

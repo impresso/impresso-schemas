@@ -1,15 +1,3 @@
-# The Ts Schema Schema
-
-```txt
-#/properties/ts#/properties/ts
-```
-
-timestamp
-
-| Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                        |
-| :------------------ | :--------- | :------------- | :---------------------- | :---------------- | :-------------------- | :------------------ | :-------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [ling\_spacy.schema.json\*](../out/ling_spacy.schema.json "open original schema") |
-
 ## ts Type
 
 `string` ([The Ts Schema](ling_spacy-properties-the-ts-schema.md))
