@@ -21,6 +21,7 @@
 | [topics\_fd](#topics_fd)                       | `object`  | Optional | cannot be null | [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-topics_fd.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/topics_fd")                     |
 | [lang\_fd](#lang_fd)                           | `object`  | Optional | cannot be null | [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-lang_fd.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/lang_fd")                         |
 | [avg\_ocrqa](#avg_ocrqa)                       | `number`  | Optional | cannot be null | [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-avg_ocrqa.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/avg_ocrqa")                     |
+| [img\_level0\_class\_fd](#img_level0_class_fd) | `object`  | Optional | cannot be null | [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-img_level0_class_fd.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/img_level0_class_fd") |
 | [img\_level1\_class\_fd](#img_level1_class_fd) | `object`  | Optional | cannot be null | [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-img_level1_class_fd.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/img_level1_class_fd") |
 | [img\_level2\_class\_fd](#img_level2_class_fd) | `object`  | Optional | cannot be null | [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-img_level2_class_fd.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/img_level2_class_fd") |
 | [img\_level3\_class\_fd](#img_level3_class_fd) | `object`  | Optional | cannot be null | [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-img_level3_class_fd.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/img_level3_class_fd") |
@@ -294,6 +295,24 @@ Average OCRQA score of the text in the data.
 ### avg\_ocrqa Type
 
 `number`
+
+## img\_level0\_class\_fd
+
+Frequency dict of the classes corresponding to level 0 of the typology (image/not image) present in the images.
+
+`img_level0_class_fd`
+
+*   is optional
+
+*   Type: `object` ([Details](manifest-definitions-media_statistics-properties-nps_stats-properties-img_level0_class_fd.md))
+
+*   cannot be null
+
+*   defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-img_level0_class_fd.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/img_level0_class_fd")
+
+### img\_level0\_class\_fd Type
+
+`object` ([Details](manifest-definitions-media_statistics-properties-nps_stats-properties-img_level0_class_fd.md))
 
 ## img\_level1\_class\_fd
 
