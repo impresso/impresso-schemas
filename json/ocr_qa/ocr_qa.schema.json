@@ -18,7 +18,7 @@
     "ts": {
       "type": "string",
       "title": "Timestamp",
-      "description": "ISO 8601 formatted timestamp indicating when the OCR quality assessment was performed. This field is an alias for 'timestamp'.",
+      "description": "ISO 8601 formatted timestamp indicating when the OCR quality assessment was performed. This is the primary field for recording assessment time.",
       "examples": ["2024-12-27T16:38:46Z"],
       "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
     },
