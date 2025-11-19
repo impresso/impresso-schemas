@@ -49,7 +49,7 @@
       "type": "string",
       "description": "Git commit hash of the OCR quality assessment codebase version used for processing, supporting reproducibility and version tracking.",
       "examples": ["7f70279"],
-      "pattern": "^[0-9a-f]{7,40}$"
+      "pattern": "^[0-9a-fA-F]{7,40}$"
     },
     "subtoken_char_ratio": {
       "type": "number",
