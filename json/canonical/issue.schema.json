@@ -33,7 +33,7 @@
       "description": "True if this issue is consolidated, and contains additional langiden and ocrqa information.",
       "type": "boolean"
     },
-    "consolidated_timestamp_original": {
+    "consolidated_ts_original": {
       "type": "string",
       "description": "Creation date timestamp (in '%Y-%m-%dT%H:%M:%SZ' format) of the original issue which was consolidated into this object. Only defined if `consolidated==True`.",
       "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
@@ -188,19 +188,19 @@
           "type": "string",
           "description": "Language of the content item (deprecated)."
         },
-        "consolidated_re_ocr_applied": {
+        "consolidated_reocr_applied": {
           "type": "boolean",
           "description": "True if the CI's text went through the re-OCRisation process. Only defined if `consolidated==True`."
         },
-        "consolidated_re_ocr_run_id": {
+        "consolidated_reocr_run_id": {
           "type": "string",
           "description": "Run ID corresponding to the re-OCR process. Only defined if `consolidated==True` and `consolidated_re_ocr_applied==True`."
         },
-        "consolidated_ocr_quality": {
+        "consolidated_ocrqa": {
           "type": "number",
           "description": "The estimated OCR quality, between 0 and 1. Only defined if `consolidated==True`."
         },
-        "consolidated_language": {
+        "consolidated_lg": {
           "type": ["string", "null"],
           "oneOf": [
             {
@@ -213,7 +213,7 @@
           ],
           "description": "Computed language of the content item. Only defined if `consolidated==True`."
         },
-        "consolidated_language_run_id": {
+        "consolidated_langident_run_id": {
           "type": "string",
           "description": "Run ID corresponding to the lang ID process used to obtain the `consolidated_language` value. Only defined if `consolidated==True`."
         },
