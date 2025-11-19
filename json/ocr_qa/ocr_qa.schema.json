@@ -59,7 +59,7 @@
     },
     "ocrqa_unk_type_ratio": {
       "type": "number",
-      "description": "Ratio of known unique subtoken types to all unique subtoken types. This is the default method for OCR quality assessment, measuring how many unique words are recognized by the Bloom filter.",
+      "description": "Ratio of recognized unique subtoken types to all unique subtoken types, measuring the proportion of unique words found in the Bloom filter dictionary.",
       "minimum": 0.0,
       "maximum": 1.0,
       "examples": [1.0, 0.96]
