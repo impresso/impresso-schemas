@@ -275,11 +275,11 @@
                 },
                 "t": {
                     "type": "string",
-                    "description": "Title of the content item."
+                    "description": "Title of the content item. If unknown/null or empty, this field should not be defined."
                 },
                 "tp": {
                     "type": "string",
-                    "description": "Type of the content item.",
+                    "description": "Type of the content item. If unknown/null or empty, this field should not be defined.",
                     "enum": [
                         "article",
                         "ad",
