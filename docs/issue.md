@@ -612,7 +612,7 @@ Record numbers over which the content item spans, in the case `sm` is `audio`.
 
 ### t
 
-Title of the content item.
+Title of the content item. If unknown/null or empty, this field should not be defined.
 
 `t`
 
@@ -630,7 +630,7 @@ Title of the content item.
 
 ### tp
 
-Type of the content item.
+Type of the content item. If unknown/null or empty, this field should not be defined.
 
 `tp`
 
