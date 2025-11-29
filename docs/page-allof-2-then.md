@@ -14,13 +14,13 @@ unknown
 
 `sm`
 
-*   is optional
+* is optional
 
-*   Type: unknown
+* Type: unknown
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Printed Page](page-allof-2-then-properties-sm.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/allOf/2/then/properties/sm")
+* defined in: [Printed Page](page-allof-2-then-properties-sm.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/allOf/2/then/properties/sm")
 
 ### sm Type
 

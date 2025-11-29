@@ -49,10 +49,21 @@
             ]
         },
         "tp": {
-            "description": "content item type (e.g. 'ar' for article, 'ad' for advertisement)",
+            "description": "Type of the content item.",
             "type": [
                 "string",
                 "null"
+            ],
+            "enum": [
+                "article",
+                "ad",
+                "image",
+                "table",
+                "death_notice",
+                "weather",
+                "page",
+                "chronicle",
+                null
             ]
         },
         "lg": {

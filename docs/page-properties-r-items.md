@@ -16,13 +16,13 @@ Coordinates of bounding-box, following IIIF regions schema (\[x, y, width, heigh
 
 `c`
 
-*   is required
+* is required
 
-*   Type: `integer[]`
+* Type: `integer[]`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Printed Page](page-properties-r-items-properties-c.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/r/items/properties/c")
+* defined in: [Printed Page](page-properties-r-items-properties-c.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/r/items/properties/c")
 
 ### c Type
 
@@ -40,13 +40,13 @@ Text paragraphs.
 
 `p`
 
-*   is required
+* is required
 
-*   Type: `object[]` ([Details](page-properties-r-items-properties-p-items.md))
+* Type: `object[]` ([Details](page-properties-r-items-properties-p-items.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Printed Page](page-properties-r-items-properties-p.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/r/items/properties/p")
+* defined in: [Printed Page](page-properties-r-items-properties-p.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/r/items/properties/p")
 
 ### p Type
 
@@ -58,13 +58,13 @@ The canonical ID of the content item to which the page region belongs.
 
 `pOf`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   can be null
+* can be null
 
-*   defined in: [Printed Page](page-properties-r-items-properties-pof.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/r/items/properties/pOf")
+* defined in: [Printed Page](page-properties-r-items-properties-pof.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/r/items/properties/pOf")
 
 ### pOf Type
 

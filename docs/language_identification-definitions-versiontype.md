@@ -15,13 +15,13 @@ Version of tool. Either date or output of command 'git describe'
 
 `versionType`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Impresso Language Identification Information](language_identification-definitions-versiontype-properties-versiontype.md "https://impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/definitions/versionType/properties/versionType")
+* defined in: [Impresso Language Identification Information](language_identification-definitions-versiontype-properties-versiontype.md "https://impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/definitions/versionType/properties/versionType")
 
 ### versionType Type
 
@@ -33,13 +33,13 @@ timestamp of creation of the JSON file (e.g. '2018-09-18T08:00:08+00:00')
 
 `ts`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Impresso Language Identification Information](language_identification-definitions-versiontype-properties-ts.md "https://impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/definitions/versionType/properties/ts")
+* defined in: [Impresso Language Identification Information](language_identification-definitions-versiontype-properties-ts.md "https://impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/definitions/versionType/properties/ts")
 
 ### ts Type
 

@@ -18,13 +18,13 @@ the two-letter ISO language identifier produced by lingproc
 
 `lg`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](embeddings-chunks-definitions-chunk-embeddings-chunk-embedding-properties-lg.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-chunks.schema.json#/definitions/chunks/items/properties/lg")
+* defined in: [Untitled schema](embeddings-chunks-definitions-chunk-embeddings-chunk-embedding-properties-lg.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-chunks.schema.json#/definitions/chunks/items/properties/lg")
 
 ### lg Type
 
@@ -42,13 +42,13 @@ Index of the chunk in the chunk array produced by chonkie, based on lingproc seg
 
 `chunk_id`
 
-*   is required
+* is required
 
-*   Type: `integer`
+* Type: `integer`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](embeddings-chunks-definitions-chunk-embeddings-chunk-embedding-properties-chunk_id.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-chunks.schema.json#/definitions/chunks/items/properties/chunk_id")
+* defined in: [Untitled schema](embeddings-chunks-definitions-chunk-embeddings-chunk-embedding-properties-chunk_id.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-chunks.schema.json#/definitions/chunks/items/properties/chunk_id")
 
 ### chunk\_id Type
 
@@ -74,13 +74,13 @@ The vector embedding representation of the chunk.
 
 `embedding`
 
-*   is required
+* is required
 
-*   Type: `number[]`
+* Type: `number[]`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](embeddings-chunks-definitions-chunk-embeddings-chunk-embedding-properties-embedding.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-chunks.schema.json#/definitions/chunks/items/properties/embedding")
+* defined in: [Untitled schema](embeddings-chunks-definitions-chunk-embeddings-chunk-embedding-properties-embedding.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-chunks.schema.json#/definitions/chunks/items/properties/embedding")
 
 ### embedding Type
 
@@ -92,13 +92,13 @@ The size of the embedding vector.
 
 `size`
 
-*   is optional
+* is optional
 
-*   Type: `integer`
+* Type: `integer`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](embeddings-chunks-definitions-chunk-embeddings-chunk-embedding-properties-size.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-chunks.schema.json#/definitions/chunks/items/properties/size")
+* defined in: [Untitled schema](embeddings-chunks-definitions-chunk-embeddings-chunk-embedding-properties-size.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-chunks.schema.json#/definitions/chunks/items/properties/size")
 
 ### size Type
 
@@ -110,13 +110,13 @@ Character offset where the chunk begins in the original text.
 
 `o`
 
-*   is optional
+* is optional
 
-*   Type: `integer`
+* Type: `integer`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](embeddings-chunks-definitions-chunk-embeddings-chunk-embedding-properties-o.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-chunks.schema.json#/definitions/chunks/items/properties/o")
+* defined in: [Untitled schema](embeddings-chunks-definitions-chunk-embeddings-chunk-embedding-properties-o.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-chunks.schema.json#/definitions/chunks/items/properties/o")
 
 ### o Type
 

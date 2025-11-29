@@ -22,13 +22,13 @@ Version of the manifest in format 'vM.m.p'.
 
 `mft_version`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-properties-mft_version.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/mft_version")
+* defined in: [Versioning Manifest](manifest-properties-mft_version.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/mft_version")
 
 ### mft\_version Type
 
@@ -50,13 +50,13 @@ Creation date timestamp of this manifest.
 
 `mft_generation_date`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-properties-mft_generation_date.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/mft_generation_date")
+* defined in: [Versioning Manifest](manifest-properties-mft_generation_date.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/mft_generation_date")
 
 ### mft\_generation\_date Type
 
@@ -68,13 +68,13 @@ S3 path to this manifest ('s3://\[stage bucket]/\[partition]/\[stage]\_vM-m-p.js
 
 `mft_s3_path`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-properties-mft_s3_path.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/mft_s3_path")
+* defined in: [Versioning Manifest](manifest-properties-mft_s3_path.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/mft_s3_path")
 
 ### mft\_s3\_path Type
 
@@ -86,13 +86,13 @@ S3 path to manifest of the input data used for processing.
 
 `input_mft_s3_path`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   can be null
+* can be null
 
-*   defined in: [Versioning Manifest](manifest-properties-input_mft_s3_path.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/input_mft_s3_path")
+* defined in: [Versioning Manifest](manifest-properties-input_mft_s3_path.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/input_mft_s3_path")
 
 ### input\_mft\_s3\_path Type
 
@@ -104,13 +104,13 @@ Path within impresso-data-release Git repo to manifest of input data used for pr
 
 `input_mft_git_path`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   can be null
+* can be null
 
-*   defined in: [Versioning Manifest](manifest-properties-input_mft_git_path.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/input_mft_git_path")
+* defined in: [Versioning Manifest](manifest-properties-input_mft_git_path.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/input_mft_git_path")
 
 ### input\_mft\_git\_path Type
 
@@ -122,13 +122,13 @@ Link to git commit of the code used to generate/modify the output data.
 
 `code_git_commit`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   can be null
+* can be null
 
-*   defined in: [Versioning Manifest](manifest-properties-code_git_commit.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/code_git_commit")
+* defined in: [Versioning Manifest](manifest-properties-code_git_commit.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/code_git_commit")
 
 ### code\_git\_commit Type
 
@@ -140,13 +140,13 @@ List of all media collections (metadata and statistics) present in the s3 bucket
 
 `media_list`
 
-*   is required
+* is required
 
-*   Type: `object[]` ([Details](manifest-properties-media_list-items.md))
+* Type: `object[]` ([Details](manifest-properties-media_list-items.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-properties-media_list.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list")
+* defined in: [Versioning Manifest](manifest-properties-media_list.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list")
 
 ### media\_list Type
 
@@ -158,13 +158,13 @@ List of statistics describing the contents of the data at the corpus level, for 
 
 `overall_statistics`
 
-*   is optional
+* is optional
 
-*   Type: `object[]` ([Details](manifest-properties-overall_statistics-items.md))
+* Type: `object[]` ([Details](manifest-properties-overall_statistics-items.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-properties-overall_statistics.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/overall_statistics")
+* defined in: [Versioning Manifest](manifest-properties-overall_statistics.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/overall_statistics")
 
 ### overall\_statistics Type
 
@@ -180,13 +180,13 @@ Free text notes for any relevant information about processing.
 
 `notes`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-properties-notes.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/notes")
+* defined in: [Versioning Manifest](manifest-properties-notes.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/notes")
 
 ### notes Type
 
@@ -217,13 +217,13 @@ Stage of the data for which the statistics were computed.
 
 `stage`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-stage.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/stage")
+* defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-stage.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/stage")
 
 #### stage Type
 
@@ -235,13 +235,13 @@ Granularity level according to which the statistics were computed.
 
 `granularity`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-granularity.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/granularity")
+* defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-granularity.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/granularity")
 
 #### granularity Type
 
@@ -263,13 +263,13 @@ Element of the data on which they were computed, based on the granularity (title
 
 `element`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-element.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/element")
+* defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-element.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/element")
 
 #### element Type
 
@@ -281,13 +281,13 @@ Date timestamp of last modification of the media statistics for this specific el
 
 `last_modification_date`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-last_modification_date.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/last_modification_date")
+* defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-last_modification_date.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/last_modification_date")
 
 #### last\_modification\_date Type
 
@@ -299,13 +299,13 @@ Counts of various elements/enrichments in the data corresponding to above granul
 
 `media_stats`
 
-*   is optional
+* is optional
 
-*   Type: `object` ([Details](manifest-definitions-media_statistics-properties-media_stats.md))
+* Type: `object` ([Details](manifest-definitions-media_statistics-properties-media_stats.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-media_stats.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/media_stats")
+* defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-media_stats.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/media_stats")
 
 #### media\_stats Type
 
@@ -317,13 +317,13 @@ Counts of various elements/enrichments in newspaper data. Deprecated.
 
 `nps_stats`
 
-*   is optional
+* is optional
 
-*   Type: `object` ([Details](manifest-definitions-media_statistics-properties-nps_stats.md))
+* Type: `object` ([Details](manifest-definitions-media_statistics-properties-nps_stats.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats")
+* defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats")
 
 #### nps\_stats Type
 

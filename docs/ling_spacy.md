@@ -15,13 +15,13 @@ timestamp
 
 `ts`
 
-*   is required
+* is required
 
-*   Type: `string` ([The Ts Schema](ling_spacy-properties-the-ts-schema.md))
+* Type: `string` ([The Ts Schema](ling_spacy-properties-the-ts-schema.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](ling_spacy-properties-the-ts-schema.md "#/properties/ts#/properties/ts")
+* defined in: [Untitled schema](ling_spacy-properties-the-ts-schema.md "#/properties/ts#/properties/ts")
 
 ### ts Type
 
@@ -49,13 +49,13 @@ timestamp
 
 `properties`
 
-*   is optional
+* is optional
 
-*   Type: unknown
+* Type: unknown
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](ling_spacy-properties-properties.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/properties/properties")
+* defined in: [Untitled schema](ling_spacy-properties-properties.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/properties/properties")
 
 ### properties Type
 

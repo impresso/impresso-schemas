@@ -14,13 +14,13 @@ unknown
 
 `sm`
 
-*   is optional
+* is optional
 
-*   Type: merged type ([Details](issue-allof-3-if-properties-sm.md))
+* Type: merged type ([Details](issue-allof-3-if-properties-sm.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Issue](issue-allof-3-if-properties-sm.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/allOf/3/if/properties/sm")
+* defined in: [Issue](issue-allof-3-if-properties-sm.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/allOf/3/if/properties/sm")
 
 ### sm Type
 
@@ -28,6 +28,6 @@ merged type ([Details](issue-allof-3-if-properties-sm.md))
 
 one (and only one) of
 
-*   [Untitled undefined type in Issue](issue-allof-3-if-properties-sm-oneof-0.md "check type definition")
+* [Untitled undefined type in Issue](issue-allof-3-if-properties-sm-oneof-0.md "check type definition")
 
-*   [Untitled undefined type in Issue](issue-allof-3-if-properties-sm-oneof-1.md "check type definition")
+* [Untitled undefined type in Issue](issue-allof-3-if-properties-sm-oneof-1.md "check type definition")

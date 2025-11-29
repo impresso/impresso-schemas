@@ -4,9 +4,9 @@
 
 any of
 
-*   [Untitled undefined type in Audio Record](audio_record-anyof-0.md "check type definition")
+* [Untitled undefined type in Audio Record](audio_record-anyof-0.md "check type definition")
 
-*   [Untitled undefined type in Audio Record](audio_record-anyof-1.md "check type definition")
+* [Untitled undefined type in Audio Record](audio_record-anyof-1.md "check type definition")
 
 # Audio Record Properties
 
@@ -28,13 +28,13 @@ Canonical ID of the radio broadcast's audio record (e.g. \[INA alias]-1940-07-22
 
 `id`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Audio Record](audio_record-properties-id.md "https://impresso.github.io/impresso-schemas/json/canonical/audio_record.schema.json#/properties/id")
+* defined in: [Audio Record](audio_record-properties-id.md "https://impresso.github.io/impresso-schemas/json/canonical/audio_record.schema.json#/properties/id")
 
 ### id Type
 
@@ -56,13 +56,13 @@ Base of the IIIF manifest URI.
 
 `iiif_base_uri`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Audio Record](audio_record-properties-iiif_base_uri.md "https://impresso.github.io/impresso-schemas/json/canonical/audio_record.schema.json#/properties/iiif_base_uri")
+* defined in: [Audio Record](audio_record-properties-iiif_base_uri.md "https://impresso.github.io/impresso-schemas/json/canonical/audio_record.schema.json#/properties/iiif_base_uri")
 
 ### iiif\_base\_uri Type
 
@@ -74,13 +74,13 @@ Start time of the audio recording, relative to the broadcasting day date (HH:MM:
 
 `stt`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Audio Record](audio_record-properties-stt.md "https://impresso.github.io/impresso-schemas/json/canonical/audio_record.schema.json#/properties/stt")
+* defined in: [Audio Record](audio_record-properties-stt.md "https://impresso.github.io/impresso-schemas/json/canonical/audio_record.schema.json#/properties/stt")
 
 ### stt Type
 
@@ -102,13 +102,13 @@ Total duration of the audio broadcast, in HH:MM:SS format.
 
 `dur`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Audio Record](audio_record-properties-dur.md "https://impresso.github.io/impresso-schemas/json/canonical/audio_record.schema.json#/properties/dur")
+* defined in: [Audio Record](audio_record-properties-dur.md "https://impresso.github.io/impresso-schemas/json/canonical/audio_record.schema.json#/properties/dur")
 
 ### dur Type
 
@@ -130,13 +130,13 @@ The type of media source represented by this audio recording. Must be a value fr
 
 `st`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Audio Record](audio_record-properties-st.md "https://impresso.github.io/impresso-schemas/json/canonical/audio_record.schema.json#/properties/st")
+* defined in: [Audio Record](audio_record-properties-st.md "https://impresso.github.io/impresso-schemas/json/canonical/audio_record.schema.json#/properties/st")
 
 ### st Type
 
@@ -156,13 +156,13 @@ The medium in which the source media was originally produced.
 
 `sm`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Audio Record](audio_record-properties-sm.md "https://impresso.github.io/impresso-schemas/json/canonical/audio_record.schema.json#/properties/sm")
+* defined in: [Audio Record](audio_record-properties-sm.md "https://impresso.github.io/impresso-schemas/json/canonical/audio_record.schema.json#/properties/sm")
 
 ### sm Type
 
@@ -182,13 +182,13 @@ Creation date timestamp (of the JSON file).
 
 `cdt`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Audio Record](audio_record-properties-cdt.md "https://impresso.github.io/impresso-schemas/json/canonical/audio_record.schema.json#/properties/cdt")
+* defined in: [Audio Record](audio_record-properties-cdt.md "https://impresso.github.io/impresso-schemas/json/canonical/audio_record.schema.json#/properties/cdt")
 
 ### cdt Type
 
@@ -200,13 +200,13 @@ Creation date timestamp (in '%Y-%m-%dT%H:%M:%SZ' format).
 
 `ts`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Audio Record](audio_record-properties-ts.md "https://impresso.github.io/impresso-schemas/json/canonical/audio_record.schema.json#/properties/ts")
+* defined in: [Audio Record](audio_record-properties-ts.md "https://impresso.github.io/impresso-schemas/json/canonical/audio_record.schema.json#/properties/ts")
 
 ### ts Type
 
@@ -218,13 +218,13 @@ List of audio broadcast sections.
 
 `s`
 
-*   is required
+* is required
 
-*   Type: `object[]` ([Details](audio_record-properties-s-items.md))
+* Type: `object[]` ([Details](audio_record-properties-s-items.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Audio Record](audio_record-properties-s.md "https://impresso.github.io/impresso-schemas/json/canonical/audio_record.schema.json#/properties/s")
+* defined in: [Audio Record](audio_record-properties-s.md "https://impresso.github.io/impresso-schemas/json/canonical/audio_record.schema.json#/properties/s")
 
 ### s Type
 

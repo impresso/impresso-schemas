@@ -16,13 +16,13 @@ the two-letter ISO language identifier
 
 `lg`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([The Lg Schema](lingproc-definitions-the-sents-schema-the-items-schema-properties-the-lg-schema.md))
+* Type: `string` ([The Lg Schema](lingproc-definitions-the-sents-schema-the-items-schema-properties-the-lg-schema.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](lingproc-definitions-the-sents-schema-the-items-schema-properties-the-lg-schema.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/definitions/sents/items/properties/lg")
+* defined in: [Untitled schema](lingproc-definitions-the-sents-schema-the-items-schema-properties-the-lg-schema.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/definitions/sents/items/properties/lg")
 
 ### lg Type
 
@@ -40,13 +40,13 @@ Type of content item, e.g. 'ar' (article), 'img' (image), etc.
 
 `tp`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([The Content Item Type](lingproc-definitions-the-sents-schema-the-items-schema-properties-the-content-item-type.md))
+* Type: `string` ([The Content Item Type](lingproc-definitions-the-sents-schema-the-items-schema-properties-the-content-item-type.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](lingproc-definitions-the-sents-schema-the-items-schema-properties-the-content-item-type.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/definitions/sents/items/properties/tp")
+* defined in: [Untitled schema](lingproc-definitions-the-sents-schema-the-items-schema-properties-the-content-item-type.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/definitions/sents/items/properties/tp")
 
 ### tp Type
 
@@ -64,13 +64,13 @@ Sequence of tokens
 
 `tokens`
 
-*   is required
+* is required
 
-*   Type: `object[]` ([Token](lingproc-definitions-the-sents-schema-the-items-schema-properties-tokens-token.md))
+* Type: `object[]` ([Token](lingproc-definitions-the-sents-schema-the-items-schema-properties-tokens-token.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](lingproc-definitions-the-sents-schema-the-items-schema-properties-tokens.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/definitions/sents/items/properties/tokens")
+* defined in: [Untitled schema](lingproc-definitions-the-sents-schema-the-items-schema-properties-tokens.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/definitions/sents/items/properties/tokens")
 
 ### tokens Type
 

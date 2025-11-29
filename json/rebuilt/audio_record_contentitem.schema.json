@@ -31,8 +31,12 @@
             "const": "audio"
         },
         "tp": {
-            "description": "content-item type (e.g. 'ar' for article, 'ad' for advertisement)",
-            "type": "string"
+            "description": "Type of the content item.",
+            "type": "string",
+            "enum": [
+                "radio_bulletin",
+                "radio_broadcast_episode"
+            ]
         },
         "lg": {
             "description": "Language of the content item's text, expressed as a two-letter ISO 639-1 language code.",

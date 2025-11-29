@@ -19,13 +19,13 @@ Timestamp of when the embeddings were generated.
 
 `ts`
 
-*   is required
+* is required
 
-*   Type: `string` ([Timestamp](embeddings-chunks-properties-timestamp.md))
+* Type: `string` ([Timestamp](embeddings-chunks-properties-timestamp.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](embeddings-chunks-properties-timestamp.md "#/properties/ts#/properties/ts")
+* defined in: [Untitled schema](embeddings-chunks-properties-timestamp.md "#/properties/ts#/properties/ts")
 
 ### ts Type
 
@@ -53,13 +53,13 @@ Canonical impresso ID of the content item.
 
 `ci_id`
 
-*   is required
+* is required
 
-*   Type: `string` ([Content Item ID](embeddings-chunks-properties-content-item-id.md))
+* Type: `string` ([Content Item ID](embeddings-chunks-properties-content-item-id.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](embeddings-chunks-properties-content-item-id.md "#/properties/ci_id#/properties/ci_id")
+* defined in: [Untitled schema](embeddings-chunks-properties-content-item-id.md "#/properties/ci_id#/properties/ci_id")
 
 ### ci\_id Type
 
@@ -77,13 +77,13 @@ Container for chunk-level embeddings derived from lingproc chunk segmentation an
 
 `chunks`
 
-*   is required
+* is required
 
-*   Type: `object[]` ([Chunk Embedding](embeddings-chunks-definitions-chunk-embeddings-chunk-embedding.md))
+* Type: `object[]` ([Chunk Embedding](embeddings-chunks-definitions-chunk-embeddings-chunk-embedding.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](embeddings-chunks-properties-chunk-embeddings.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-chunks.schema.json#/properties/chunks")
+* defined in: [Untitled schema](embeddings-chunks-properties-chunk-embeddings.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-chunks.schema.json#/properties/chunks")
 
 ### chunks Type
 
@@ -95,13 +95,13 @@ Model identifier according to impresso model description schema.
 
 `model_id`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Model ID](embeddings-chunks-properties-model-id.md))
+* Type: `string` ([Model ID](embeddings-chunks-properties-model-id.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](embeddings-chunks-properties-model-id.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-chunks.schema.json#/properties/model_id")
+* defined in: [Untitled schema](embeddings-chunks-properties-model-id.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-chunks.schema.json#/properties/model_id")
 
 ### model\_id Type
 
@@ -119,13 +119,13 @@ S3 path to the lingproc output from which chunk boundaries were derived and subs
 
 `lingproc_path`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Linguistic Processing Path](embeddings-chunks-properties-linguistic-processing-path.md))
+* Type: `string` ([Linguistic Processing Path](embeddings-chunks-properties-linguistic-processing-path.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](embeddings-chunks-properties-linguistic-processing-path.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-chunks.schema.json#/properties/lingproc_path")
+* defined in: [Untitled schema](embeddings-chunks-properties-linguistic-processing-path.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-chunks.schema.json#/properties/lingproc_path")
 
 ### lingproc\_path Type
 
@@ -143,13 +143,13 @@ Git commit or tag of the processing pipeline used to generate the embeddings.
 
 `git`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Git Commit](embeddings-chunks-properties-git-commit.md))
+* Type: `string` ([Git Commit](embeddings-chunks-properties-git-commit.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](embeddings-chunks-properties-git-commit.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-chunks.schema.json#/properties/git")
+* defined in: [Untitled schema](embeddings-chunks-properties-git-commit.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-chunks.schema.json#/properties/git")
 
 ### git Type
 

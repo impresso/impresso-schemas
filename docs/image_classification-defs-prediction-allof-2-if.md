@@ -14,13 +14,13 @@ unknown
 
 `level`
 
-*   is optional
+* is optional
 
-*   Type: unknown
+* Type: unknown
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](image_classification-defs-prediction-allof-2-if-properties-level.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/$defs/prediction/allOf/2/if/properties/level")
+* defined in: [Untitled schema](image_classification-defs-prediction-allof-2-if-properties-level.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/$defs/prediction/allOf/2/if/properties/level")
 
 ### level Type
 

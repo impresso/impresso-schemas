@@ -18,13 +18,13 @@ The unique identifier for a content item, cf. <https://github.com/impresso/impre
 
 `id`
 
-*   is required
+* is required
 
-*   Type: `string` ([The Id Schema](embeddings-docs-backup-properties-the-id-schema.md))
+* Type: `string` ([The Id Schema](embeddings-docs-backup-properties-the-id-schema.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Document Embeddings JSON Schema](embeddings-docs-backup-properties-the-id-schema.md "#/properties/id#/properties/id")
+* defined in: [Document Embeddings JSON Schema](embeddings-docs-backup-properties-the-id-schema.md "#/properties/id#/properties/id")
 
 ### id Type
 
@@ -52,13 +52,13 @@ The timestamp when the embeddings were created
 
 `ts`
 
-*   is required
+* is required
 
-*   Type: `string` ([The Ts Schema](embeddings-docs-backup-properties-the-ts-schema.md))
+* Type: `string` ([The Ts Schema](embeddings-docs-backup-properties-the-ts-schema.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Document Embeddings JSON Schema](embeddings-docs-backup-properties-the-ts-schema.md "#/properties/ts#/properties/ts")
+* defined in: [Document Embeddings JSON Schema](embeddings-docs-backup-properties-the-ts-schema.md "#/properties/ts#/properties/ts")
 
 ### ts Type
 
@@ -86,13 +86,13 @@ The model or tool used to generate the embeddings
 
 `embedder`
 
-*   is required
+* is required
 
-*   Type: `string` ([The Embedder Schema](embeddings-docs-backup-properties-the-embedder-schema.md))
+* Type: `string` ([The Embedder Schema](embeddings-docs-backup-properties-the-embedder-schema.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Document Embeddings JSON Schema](embeddings-docs-backup-properties-the-embedder-schema.md "#/properties/embedder#/properties/embedder")
+* defined in: [Document Embeddings JSON Schema](embeddings-docs-backup-properties-the-embedder-schema.md "#/properties/embedder#/properties/embedder")
 
 ### embedder Type
 
@@ -110,13 +110,13 @@ The length of the document in characters.
 
 `len`
 
-*   is optional
+* is optional
 
-*   Type: `integer` ([The Length Schema](embeddings-docs-backup-properties-the-length-schema.md))
+* Type: `integer` ([The Length Schema](embeddings-docs-backup-properties-the-length-schema.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Document Embeddings JSON Schema](embeddings-docs-backup-properties-the-length-schema.md "#/properties/len#/properties/len")
+* defined in: [Document Embeddings JSON Schema](embeddings-docs-backup-properties-the-length-schema.md "#/properties/len#/properties/len")
 
 ### len Type
 
@@ -134,13 +134,13 @@ The vector embeddings of the document
 
 `embedding`
 
-*   is required
+* is required
 
-*   Type: `number[]` ([The Items Schema](embeddings-docs-backup-properties-the-embedding-schema-the-items-schema.md))
+* Type: `number[]` ([The Items Schema](embeddings-docs-backup-properties-the-embedding-schema-the-items-schema.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Document Embeddings JSON Schema](embeddings-docs-backup-properties-the-embedding-schema.md "#/properties/embedding#/properties/embedding")
+* defined in: [Document Embeddings JSON Schema](embeddings-docs-backup-properties-the-embedding-schema.md "#/properties/embedding#/properties/embedding")
 
 ### embedding Type
 

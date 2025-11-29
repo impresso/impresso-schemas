@@ -15,13 +15,13 @@ Two- or three-letter ISO language abbreviation, cf. <https://en.wikipedia.org/wi
 
 `lang`
 
-*   is required
+* is required
 
-*   Type: `string` ([langISO639Type](language_identification-definitions-lidtype-properties-langiso639type.md))
+* Type: `string` ([langISO639Type](language_identification-definitions-lidtype-properties-langiso639type.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Impresso Language Identification Information](language_identification-definitions-lidtype-properties-langiso639type.md "https://impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/definitions/lidType/properties/lang")
+* defined in: [Impresso Language Identification Information](language_identification-definitions-lidtype-properties-langiso639type.md "https://impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/definitions/lidType/properties/lang")
 
 ### lang Type
 
@@ -43,13 +43,13 @@ Probability of the prediction
 
 `prob`
 
-*   is required
+* is required
 
-*   Type: `number` ([probType](language_identification-definitions-lidtype-properties-probtype.md))
+* Type: `number` ([probType](language_identification-definitions-lidtype-properties-probtype.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Impresso Language Identification Information](language_identification-definitions-lidtype-properties-probtype.md "https://impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/definitions/lidType/properties/prob")
+* defined in: [Impresso Language Identification Information](language_identification-definitions-lidtype-properties-probtype.md "https://impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/definitions/lidType/properties/prob")
 
 ### prob Type
 

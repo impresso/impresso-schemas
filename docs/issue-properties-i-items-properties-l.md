@@ -16,13 +16,13 @@ ID of the sections or components used to compose the CI in the original OCR/OLR 
 
 `id`
 
-*   is optional
+* is optional
 
-*   Type: any of the following: `string` or `array` ([Details](issue-properties-i-items-properties-l-properties-id.md))
+* Type: any of the following: `string` or `array` ([Details](issue-properties-i-items-properties-l-properties-id.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Issue](issue-properties-i-items-properties-l-properties-id.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/l/properties/id")
+* defined in: [Issue](issue-properties-i-items-properties-l-properties-id.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/l/properties/id")
 
 ### id Type
 
@@ -34,13 +34,13 @@ List of parts of the given section or components. Exact contents can vary, will 
 
 `parts`
 
-*   is optional
+* is optional
 
-*   Type: `object[]` ([Details](issue-properties-i-items-properties-l-properties-parts-items.md))
+* Type: `object[]` ([Details](issue-properties-i-items-properties-l-properties-parts-items.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Issue](issue-properties-i-items-properties-l-properties-parts.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/l/properties/parts")
+* defined in: [Issue](issue-properties-i-items-properties-l-properties-parts.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/l/properties/parts")
 
 ### parts Type
 
@@ -52,13 +52,13 @@ Source image or OCR/OLR file name.
 
 `source`
 
-*   is optional
+* is optional
 
-*   Type: any of the following: `string` or `array` ([Details](issue-properties-i-items-properties-l-properties-source.md))
+* Type: any of the following: `string` or `array` ([Details](issue-properties-i-items-properties-l-properties-source.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Issue](issue-properties-i-items-properties-l-properties-source.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/l/properties/source")
+* defined in: [Issue](issue-properties-i-items-properties-l-properties-source.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/l/properties/source")
 
 ### source Type
 

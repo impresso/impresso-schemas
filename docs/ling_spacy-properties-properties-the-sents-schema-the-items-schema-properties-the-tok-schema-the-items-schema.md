@@ -18,13 +18,13 @@ token text
 
 `t`
 
-*   is required
+* is required
 
-*   Type: `string` ([The T Schema](ling_spacy-properties-properties-the-sents-schema-the-items-schema-properties-the-tok-schema-the-items-schema-properties-the-t-schema.md))
+* Type: `string` ([The T Schema](ling_spacy-properties-properties-the-sents-schema-the-items-schema-properties-the-tok-schema-the-items-schema-properties-the-t-schema.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](ling_spacy-properties-properties-the-sents-schema-the-items-schema-properties-the-tok-schema-the-items-schema-properties-the-t-schema.md "#/properties/sents/items/properties/tok/items/properties/t#/properties/properties/sents/items/properties/tok/items/properties/t")
+* defined in: [Untitled schema](ling_spacy-properties-properties-the-sents-schema-the-items-schema-properties-the-tok-schema-the-items-schema-properties-the-t-schema.md "#/properties/sents/items/properties/tok/items/properties/t#/properties/properties/sents/items/properties/tok/items/properties/t")
 
 ### t Type
 
@@ -52,13 +52,13 @@ token lemma
 
 `l`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([The L Schema](ling_spacy-properties-properties-the-sents-schema-the-items-schema-properties-the-tok-schema-the-items-schema-properties-the-l-schema.md))
+* Type: `string` ([The L Schema](ling_spacy-properties-properties-the-sents-schema-the-items-schema-properties-the-tok-schema-the-items-schema-properties-the-l-schema.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](ling_spacy-properties-properties-the-sents-schema-the-items-schema-properties-the-tok-schema-the-items-schema-properties-the-l-schema.md "#/properties/sents/items/properties/tok/items/properties/l#/properties/properties/sents/items/properties/tok/items/properties/l")
+* defined in: [Untitled schema](ling_spacy-properties-properties-the-sents-schema-the-items-schema-properties-the-tok-schema-the-items-schema-properties-the-l-schema.md "#/properties/sents/items/properties/tok/items/properties/l#/properties/properties/sents/items/properties/tok/items/properties/l")
 
 ### l Type
 
@@ -86,13 +86,13 @@ part-of-speech assigned to token from spacy
 
 `p`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([The P Schema](ling_spacy-properties-properties-the-sents-schema-the-items-schema-properties-the-tok-schema-the-items-schema-properties-the-p-schema.md))
+* Type: `string` ([The P Schema](ling_spacy-properties-properties-the-sents-schema-the-items-schema-properties-the-tok-schema-the-items-schema-properties-the-p-schema.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](ling_spacy-properties-properties-the-sents-schema-the-items-schema-properties-the-tok-schema-the-items-schema-properties-the-p-schema.md "#/properties/sents/items/properties/tok/items/properties/p#/properties/properties/sents/items/properties/tok/items/properties/p")
+* defined in: [Untitled schema](ling_spacy-properties-properties-the-sents-schema-the-items-schema-properties-the-tok-schema-the-items-schema-properties-the-p-schema.md "#/properties/sents/items/properties/tok/items/properties/p#/properties/properties/sents/items/properties/tok/items/properties/p")
 
 ### p Type
 
@@ -120,13 +120,13 @@ zero-based character offset corresponding to position in ft element
 
 `o`
 
-*   is required
+* is required
 
-*   Type: `integer` ([The O Schema](ling_spacy-properties-properties-the-sents-schema-the-items-schema-properties-the-tok-schema-the-items-schema-properties-the-o-schema.md))
+* Type: `integer` ([The O Schema](ling_spacy-properties-properties-the-sents-schema-the-items-schema-properties-the-tok-schema-the-items-schema-properties-the-o-schema.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](ling_spacy-properties-properties-the-sents-schema-the-items-schema-properties-the-tok-schema-the-items-schema-properties-the-o-schema.md "#/properties/sents/items/properties/tok/items/properties/idx#/properties/properties/sents/items/properties/tok/items/properties/o")
+* defined in: [Untitled schema](ling_spacy-properties-properties-the-sents-schema-the-items-schema-properties-the-tok-schema-the-items-schema-properties-the-o-schema.md "#/properties/sents/items/properties/tok/items/properties/idx#/properties/properties/sents/items/properties/tok/items/properties/o")
 
 ### o Type
 
@@ -144,13 +144,13 @@ named entity type with information about position according to IOB schema
 
 `e`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([The E Schema](ling_spacy-properties-properties-the-sents-schema-the-items-schema-properties-the-tok-schema-the-items-schema-properties-the-e-schema.md))
+* Type: `string` ([The E Schema](ling_spacy-properties-properties-the-sents-schema-the-items-schema-properties-the-tok-schema-the-items-schema-properties-the-e-schema.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](ling_spacy-properties-properties-the-sents-schema-the-items-schema-properties-the-tok-schema-the-items-schema-properties-the-e-schema.md "#/properties/sents/items/properties/tok/items/properties/ner#/properties/properties/sents/items/properties/tok/items/properties/e")
+* defined in: [Untitled schema](ling_spacy-properties-properties-the-sents-schema-the-items-schema-properties-the-tok-schema-the-items-schema-properties-the-e-schema.md "#/properties/sents/items/properties/tok/items/properties/ner#/properties/properties/sents/items/properties/tok/items/properties/e")
 
 ### e Type
 

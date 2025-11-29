@@ -17,13 +17,13 @@ impresso content item id.
 
 `id`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Named Entity JSON Schema](entities-backup-properties-id.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/id")
+* defined in: [Named Entity JSON Schema](entities-backup-properties-id.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/id")
 
 ### id Type
 
@@ -35,13 +35,13 @@ Timestamp of creation of the JSON file (e.g. '2018-09-18T08:00:08Z')
 
 `ts`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Named Entity JSON Schema](entities-backup-properties-ts.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/ts")
+* defined in: [Named Entity JSON Schema](entities-backup-properties-ts.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/ts")
 
 ### ts Type
 
@@ -53,13 +53,13 @@ An alias for the system or model that produced this output (preferably short, bu
 
 `sys_id`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Named Entity JSON Schema](entities-backup-properties-sys_id.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/sys_id")
+* defined in: [Named Entity JSON Schema](entities-backup-properties-sys_id.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/sys_id")
 
 ### sys\_id Type
 
@@ -71,13 +71,13 @@ The list of named entity mentions identified in the document
 
 `nes`
 
-*   is required
+* is required
 
-*   Type: `object[]` ([Details](entities-backup-properties-nes-items.md))
+* Type: `object[]` ([Details](entities-backup-properties-nes-items.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Named Entity JSON Schema](entities-backup-properties-nes.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes")
+* defined in: [Named Entity JSON Schema](entities-backup-properties-nes.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes")
 
 ### nes Type
 

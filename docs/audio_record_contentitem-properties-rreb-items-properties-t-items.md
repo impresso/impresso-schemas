@@ -16,13 +16,13 @@ Coordinates of audio-segment in the format (start-time, duration), each in secon
 
 `tc`
 
-*   is optional
+* is optional
 
-*   Type: `number[]`
+* Type: `number[]`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Audio Record Content Item](audio_record_contentitem-properties-rreb-items-properties-t-items-properties-tc.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/rreb/items/properties/t/items/properties/tc")
+* defined in: [Audio Record Content Item](audio_record_contentitem-properties-rreb-items-properties-t-items-properties-tc.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/rreb/items/properties/t/items/properties/tc")
 
 ### tc Type
 
@@ -40,13 +40,13 @@ offset start (relative to ft field)
 
 `s`
 
-*   is optional
+* is optional
 
-*   Type: `integer`
+* Type: `integer`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Audio Record Content Item](audio_record_contentitem-properties-rreb-items-properties-t-items-properties-s.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/rreb/items/properties/t/items/properties/s")
+* defined in: [Audio Record Content Item](audio_record_contentitem-properties-rreb-items-properties-t-items-properties-s.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/rreb/items/properties/t/items/properties/s")
 
 ### s Type
 
@@ -58,13 +58,13 @@ token length
 
 `l`
 
-*   is optional
+* is optional
 
-*   Type: `integer`
+* Type: `integer`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Audio Record Content Item](audio_record_contentitem-properties-rreb-items-properties-t-items-properties-l.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/rreb/items/properties/t/items/properties/l")
+* defined in: [Audio Record Content Item](audio_record_contentitem-properties-rreb-items-properties-t-items-properties-l.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/rreb/items/properties/t/items/properties/l")
 
 ### l Type
 

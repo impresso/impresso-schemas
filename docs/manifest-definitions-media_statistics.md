@@ -4,9 +4,9 @@
 
 any of
 
-*   [Untitled undefined type in Versioning Manifest](manifest-definitions-media_statistics-anyof-0.md "check type definition")
+* [Untitled undefined type in Versioning Manifest](manifest-definitions-media_statistics-anyof-0.md "check type definition")
 
-*   [Untitled undefined type in Versioning Manifest](manifest-definitions-media_statistics-anyof-1.md "check type definition")
+* [Untitled undefined type in Versioning Manifest](manifest-definitions-media_statistics-anyof-1.md "check type definition")
 
 # media\_statistics Properties
 
@@ -25,13 +25,13 @@ Stage of the data for which the statistics were computed.
 
 `stage`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-stage.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/stage")
+* defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-stage.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/stage")
 
 ### stage Type
 
@@ -43,13 +43,13 @@ Granularity level according to which the statistics were computed.
 
 `granularity`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-granularity.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/granularity")
+* defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-granularity.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/granularity")
 
 ### granularity Type
 
@@ -71,13 +71,13 @@ Element of the data on which they were computed, based on the granularity (title
 
 `element`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-element.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/element")
+* defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-element.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/element")
 
 ### element Type
 
@@ -89,13 +89,13 @@ Date timestamp of last modification of the media statistics for this specific el
 
 `last_modification_date`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-last_modification_date.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/last_modification_date")
+* defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-last_modification_date.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/last_modification_date")
 
 ### last\_modification\_date Type
 
@@ -107,13 +107,13 @@ Counts of various elements/enrichments in the data corresponding to above granul
 
 `media_stats`
 
-*   is optional
+* is optional
 
-*   Type: `object` ([Details](manifest-definitions-media_statistics-properties-media_stats.md))
+* Type: `object` ([Details](manifest-definitions-media_statistics-properties-media_stats.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-media_stats.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/media_stats")
+* defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-media_stats.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/media_stats")
 
 ### media\_stats Type
 
@@ -125,13 +125,13 @@ Counts of various elements/enrichments in newspaper data. Deprecated.
 
 `nps_stats`
 
-*   is optional
+* is optional
 
-*   Type: `object` ([Details](manifest-definitions-media_statistics-properties-nps_stats.md))
+* Type: `object` ([Details](manifest-definitions-media_statistics-properties-nps_stats.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats")
+* defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats")
 
 ### nps\_stats Type
 

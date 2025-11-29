@@ -4,9 +4,9 @@
 
 one (and only one) of
 
-*   [Untitled undefined type in Issue](issue-defs-metadata-oneof-0.md "check type definition")
+* [Untitled undefined type in Issue](issue-defs-metadata-oneof-0.md "check type definition")
 
-*   [Untitled undefined type in Issue](issue-defs-metadata-oneof-1.md "check type definition")
+* [Untitled undefined type in Issue](issue-defs-metadata-oneof-1.md "check type definition")
 
 # metadata Properties
 
@@ -36,13 +36,13 @@ Content item ID (e.g. `GDL-1900-01-02-a-i0001`).
 
 `id`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Issue](issue-defs-metadata-properties-id.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/id")
+* defined in: [Issue](issue-defs-metadata-properties-id.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/id")
 
 ### id Type
 
@@ -64,13 +64,13 @@ Language of the content item.
 
 `lg`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   can be null
+* can be null
 
-*   defined in: [Issue](issue-defs-metadata-properties-lg.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/lg")
+* defined in: [Issue](issue-defs-metadata-properties-lg.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/lg")
 
 ### lg Type
 
@@ -82,13 +82,13 @@ Language of the content item (deprecated).
 
 `l`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Issue](issue-defs-metadata-properties-l.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/l")
+* defined in: [Issue](issue-defs-metadata-properties-l.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/l")
 
 ### l Type
 
@@ -100,13 +100,13 @@ True if the CI's text went through the re-OCRisation process. Only defined if `c
 
 `consolidated_reocr_applied`
 
-*   is optional
+* is optional
 
-*   Type: `boolean`
+* Type: `boolean`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Issue](issue-defs-metadata-properties-consolidated_reocr_applied.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/consolidated_reocr_applied")
+* defined in: [Issue](issue-defs-metadata-properties-consolidated_reocr_applied.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/consolidated_reocr_applied")
 
 ### consolidated\_reocr\_applied Type
 
@@ -118,13 +118,13 @@ Run ID corresponding to the re-OCR process. Only defined if `consolidated==True`
 
 `consolidated_reocr_run_id`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Issue](issue-defs-metadata-properties-consolidated_reocr_run_id.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/consolidated_reocr_run_id")
+* defined in: [Issue](issue-defs-metadata-properties-consolidated_reocr_run_id.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/consolidated_reocr_run_id")
 
 ### consolidated\_reocr\_run\_id Type
 
@@ -136,13 +136,13 @@ The estimated OCR quality, between 0 and 1. Only defined if `consolidated==True`
 
 `consolidated_ocrqa`
 
-*   is optional
+* is optional
 
-*   Type: `number`
+* Type: `number`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Issue](issue-defs-metadata-properties-consolidated_ocrqa.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/consolidated_ocrqa")
+* defined in: [Issue](issue-defs-metadata-properties-consolidated_ocrqa.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/consolidated_ocrqa")
 
 ### consolidated\_ocrqa Type
 
@@ -154,13 +154,13 @@ Computed language of the content item. Only defined if `consolidated==True`.
 
 `consolidated_lg`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Details](issue-defs-metadata-properties-consolidated_lg.md))
+* Type: `string` ([Details](issue-defs-metadata-properties-consolidated_lg.md))
 
-*   can be null
+* can be null
 
-*   defined in: [Issue](issue-defs-metadata-properties-consolidated_lg.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/consolidated_lg")
+* defined in: [Issue](issue-defs-metadata-properties-consolidated_lg.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/consolidated_lg")
 
 ### consolidated\_lg Type
 
@@ -168,9 +168,9 @@ Computed language of the content item. Only defined if `consolidated==True`.
 
 one (and only one) of
 
-*   [null](issue-defs-metadata-properties-consolidated_lg-oneof-null.md "check type definition")
+* [null](issue-defs-metadata-properties-consolidated_lg-oneof-null.md "check type definition")
 
-*   [langISO639Type](issue-defs-metadata-properties-consolidated_lg-oneof-langiso639type.md "check type definition")
+* [langISO639Type](issue-defs-metadata-properties-consolidated_lg-oneof-langiso639type.md "check type definition")
 
 ## consolidated\_langident\_run\_id
 
@@ -178,13 +178,13 @@ Run ID corresponding to the lang ID process used to obtain the `consolidated_lan
 
 `consolidated_langident_run_id`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Issue](issue-defs-metadata-properties-consolidated_langident_run_id.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/consolidated_langident_run_id")
+* defined in: [Issue](issue-defs-metadata-properties-consolidated_langident_run_id.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/consolidated_langident_run_id")
 
 ### consolidated\_langident\_run\_id Type
 
@@ -196,13 +196,13 @@ Page numbers over which the content item spans, in the case `sm` is in \[`print`
 
 `pp`
 
-*   is optional
+* is optional
 
-*   Type: `integer[]`
+* Type: `integer[]`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Issue](issue-defs-metadata-properties-pp.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/pp")
+* defined in: [Issue](issue-defs-metadata-properties-pp.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/pp")
 
 ### pp Type
 
@@ -214,13 +214,13 @@ Record numbers over which the content item spans, in the case `sm` is `audio`.
 
 `rr`
 
-*   is optional
+* is optional
 
-*   Type: `integer[]`
+* Type: `integer[]`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Issue](issue-defs-metadata-properties-rr.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/rr")
+* defined in: [Issue](issue-defs-metadata-properties-rr.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/rr")
 
 ### rr Type
 
@@ -232,13 +232,13 @@ Title of the content item. If unknown/null or empty, this field should not be de
 
 `t`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Issue](issue-defs-metadata-properties-t.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/t")
+* defined in: [Issue](issue-defs-metadata-properties-t.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/t")
 
 ### t Type
 
@@ -250,13 +250,13 @@ Type of the content item. If unknown/null or empty, this field should not be def
 
 `tp`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Issue](issue-defs-metadata-properties-tp.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/tp")
+* defined in: [Issue](issue-defs-metadata-properties-tp.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/tp")
 
 ### tp Type
 
@@ -285,13 +285,13 @@ IIIF image link, depending on content item type (if `tp == image`). Should follo
 
 `iiif_link`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Issue](issue-defs-metadata-properties-iiif_link.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/iiif_link")
+* defined in: [Issue](issue-defs-metadata-properties-iiif_link.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/iiif_link")
 
 ### iiif\_link Type
 
@@ -303,13 +303,13 @@ Reading order index of the content item, for the table of contents view on the i
 
 `ro`
 
-*   is optional
+* is optional
 
-*   Type: `integer`
+* Type: `integer`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Issue](issue-defs-metadata-properties-ro.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/ro")
+* defined in: [Issue](issue-defs-metadata-properties-ro.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/ro")
 
 ### ro Type
 
@@ -321,13 +321,13 @@ List of speakers (names or IDs based on availabilities) within boradcast.
 
 `speakers`
 
-*   is optional
+* is optional
 
-*   Type: an array of the following:`object` or `string` ([Details](issue-defs-metadata-properties-speakers-items.md))
+* Type: an array of the following:`object` or `string` ([Details](issue-defs-metadata-properties-speakers-items.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Issue](issue-defs-metadata-properties-speakers.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/speakers")
+* defined in: [Issue](issue-defs-metadata-properties-speakers.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/speakers")
 
 ### speakers Type
 
@@ -339,13 +339,13 @@ Variant title of the media title this CI is from (only in the case of BL newspap
 
 `var_t`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Issue](issue-defs-metadata-properties-var_t.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/var_t")
+* defined in: [Issue](issue-defs-metadata-properties-var_t.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/var_t")
 
 ### var\_t Type
 
@@ -357,13 +357,13 @@ Plain-text archival note or description concerning the content-item (here in the
 
 `archival_note`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Issue](issue-defs-metadata-properties-archival_note.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/archival_note")
+* defined in: [Issue](issue-defs-metadata-properties-archival_note.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/archival_note")
 
 ### archival\_note Type
 

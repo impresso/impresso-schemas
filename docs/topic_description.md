@@ -19,13 +19,13 @@
 
 `lg`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](topic_description-properties-lg.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_description.schema.json#/properties/lg")
+* defined in: [Untitled schema](topic_description-properties-lg.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_description.schema.json#/properties/lg")
 
 ### lg Type
 
@@ -37,13 +37,13 @@
 
 `topic`
 
-*   is required
+* is required
 
-*   Type: `integer`
+* Type: `integer`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](topic_description-properties-topic.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_description.schema.json#/properties/topic")
+* defined in: [Untitled schema](topic_description-properties-topic.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_description.schema.json#/properties/topic")
 
 ### topic Type
 
@@ -55,13 +55,13 @@
 
 `topic_model`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](topic_description-properties-topic_model.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_description.schema.json#/properties/topic_model")
+* defined in: [Untitled schema](topic_description-properties-topic_model.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_description.schema.json#/properties/topic_model")
 
 ### topic\_model Type
 
@@ -73,13 +73,13 @@
 
 `topic_description`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](topic_description-properties-topic_description.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_description.schema.json#/properties/topic_description")
+* defined in: [Untitled schema](topic_description-properties-topic_description.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_description.schema.json#/properties/topic_description")
 
 ### topic\_description Type
 
@@ -91,13 +91,13 @@
 
 `meta`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](topic_description-properties-meta.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_description.schema.json#/properties/meta")
+* defined in: [Untitled schema](topic_description-properties-meta.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_description.schema.json#/properties/meta")
 
 ### meta Type
 
@@ -109,13 +109,13 @@
 
 `word_probs`
 
-*   is required
+* is required
 
-*   Type: `object[]` ([Details](topic_description-properties-word_probs-items.md))
+* Type: `object[]` ([Details](topic_description-properties-word_probs-items.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](topic_description-properties-word_probs.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_description.schema.json#/properties/word_probs")
+* defined in: [Untitled schema](topic_description-properties-word_probs.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_description.schema.json#/properties/word_probs")
 
 ### word\_probs Type
 
@@ -142,13 +142,13 @@ Reference this group by using
 
 `word`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](topic_description-definitions-word_prob-properties-word.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_description.schema.json#/definitions/word_prob/properties/word")
+* defined in: [Untitled schema](topic_description-definitions-word_prob-properties-word.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_description.schema.json#/definitions/word_prob/properties/word")
 
 #### word Type
 
@@ -160,13 +160,13 @@ Reference this group by using
 
 `prob`
 
-*   is required
+* is required
 
-*   Type: `number`
+* Type: `number`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](topic_description-definitions-word_prob-properties-prob.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_description.schema.json#/definitions/word_prob/properties/prob")
+* defined in: [Untitled schema](topic_description-definitions-word_prob-properties-prob.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_description.schema.json#/definitions/word_prob/properties/prob")
 
 #### prob Type
 

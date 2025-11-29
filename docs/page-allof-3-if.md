@@ -14,13 +14,13 @@ unknown
 
 `st`
 
-*   is optional
+* is optional
 
-*   Type: unknown
+* Type: unknown
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Printed Page](page-allof-3-if-properties-st.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/allOf/3/if/properties/st")
+* defined in: [Printed Page](page-allof-3-if-properties-st.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/allOf/3/if/properties/st")
 
 ### st Type
 

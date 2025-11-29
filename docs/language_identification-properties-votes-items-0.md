@@ -15,13 +15,13 @@ Two- or three-letter ISO language abbreviation, cf. <https://en.wikipedia.org/wi
 
 `lang`
 
-*   is required
+* is required
 
-*   Type: `string` ([langISO639Type](language_identification-properties-votes-items-0-properties-langiso639type.md))
+* Type: `string` ([langISO639Type](language_identification-properties-votes-items-0-properties-langiso639type.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Impresso Language Identification Information](language_identification-properties-votes-items-0-properties-langiso639type.md "https://impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/votes/items/0/properties/lang")
+* defined in: [Impresso Language Identification Information](language_identification-properties-votes-items-0-properties-langiso639type.md "https://impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/votes/items/0/properties/lang")
 
 ### lang Type
 
@@ -43,13 +43,13 @@ Two- or three-letter ISO language abbreviation, cf. <https://en.wikipedia.org/wi
 
 `vote`
 
-*   is required
+* is required
 
-*   Type: `number`
+* Type: `number`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Impresso Language Identification Information](language_identification-properties-votes-items-0-properties-vote.md "https://impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/votes/items/0/properties/vote")
+* defined in: [Impresso Language Identification Information](language_identification-properties-votes-items-0-properties-vote.md "https://impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json#/properties/votes/items/0/properties/vote")
 
 ### vote Type
 

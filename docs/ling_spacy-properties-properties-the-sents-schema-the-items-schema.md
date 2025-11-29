@@ -16,13 +16,13 @@ Sentence ids
 
 `sid`
 
-*   is optional
+* is optional
 
-*   Type: `integer` ([The Sid Schema](ling_spacy-properties-properties-the-sents-schema-the-items-schema-properties-the-sid-schema.md))
+* Type: `integer` ([The Sid Schema](ling_spacy-properties-properties-the-sents-schema-the-items-schema-properties-the-sid-schema.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](ling_spacy-properties-properties-the-sents-schema-the-items-schema-properties-the-sid-schema.md "#/properties/sents/items/properties/sid#/properties/properties/sents/items/properties/sid")
+* defined in: [Untitled schema](ling_spacy-properties-properties-the-sents-schema-the-items-schema-properties-the-sid-schema.md "#/properties/sents/items/properties/sid#/properties/properties/sents/items/properties/sid")
 
 ### sid Type
 
@@ -40,13 +40,13 @@ ISO language identifier
 
 `lg`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([The Lg Schema](ling_spacy-properties-properties-the-sents-schema-the-items-schema-properties-the-lg-schema.md))
+* Type: `string` ([The Lg Schema](ling_spacy-properties-properties-the-sents-schema-the-items-schema-properties-the-lg-schema.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](ling_spacy-properties-properties-the-sents-schema-the-items-schema-properties-the-lg-schema.md "#/properties/sents/items/properties/sid#/properties/properties/sents/items/properties/lg")
+* defined in: [Untitled schema](ling_spacy-properties-properties-the-sents-schema-the-items-schema-properties-the-lg-schema.md "#/properties/sents/items/properties/sid#/properties/properties/sents/items/properties/lg")
 
 ### lg Type
 
@@ -64,13 +64,13 @@ container for tokens
 
 `tok`
 
-*   is required
+* is required
 
-*   Type: `object[]` ([The Items Schema](ling_spacy-properties-properties-the-sents-schema-the-items-schema-properties-the-tok-schema-the-items-schema.md))
+* Type: `object[]` ([The Items Schema](ling_spacy-properties-properties-the-sents-schema-the-items-schema-properties-the-tok-schema-the-items-schema.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](ling_spacy-properties-properties-the-sents-schema-the-items-schema-properties-the-tok-schema.md "#/properties/sents/items/properties/tok#/properties/properties/sents/items/properties/tok")
+* defined in: [Untitled schema](ling_spacy-properties-properties-the-sents-schema-the-items-schema-properties-the-tok-schema.md "#/properties/sents/items/properties/tok#/properties/properties/sents/items/properties/tok")
 
 ### tok Type
 

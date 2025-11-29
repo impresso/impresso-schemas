@@ -19,13 +19,13 @@ Timestamp of when the embeddings were generated.
 
 `ts`
 
-*   is required
+* is required
 
-*   Type: `string` ([Timestamp](embeddings-sentence-properties-timestamp.md))
+* Type: `string` ([Timestamp](embeddings-sentence-properties-timestamp.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](embeddings-sentence-properties-timestamp.md "#/properties/ts#/properties/ts")
+* defined in: [Untitled schema](embeddings-sentence-properties-timestamp.md "#/properties/ts#/properties/ts")
 
 ### ts Type
 
@@ -53,13 +53,13 @@ Canonical impresso ID of the content item.
 
 `ci_id`
 
-*   is required
+* is required
 
-*   Type: `string` ([Content Item ID](embeddings-sentence-properties-content-item-id.md))
+* Type: `string` ([Content Item ID](embeddings-sentence-properties-content-item-id.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](embeddings-sentence-properties-content-item-id.md "#/properties/ci_id#/properties/ci_id")
+* defined in: [Untitled schema](embeddings-sentence-properties-content-item-id.md "#/properties/ci_id#/properties/ci_id")
 
 ### ci\_id Type
 
@@ -77,13 +77,13 @@ Container for sentence-level embeddings derived from lingproc sentence segmentat
 
 `sents`
 
-*   is required
+* is required
 
-*   Type: `object[]` ([Sentence Embedding](embeddings-sentence-definitions-sentence-embeddings-sentence-embedding.md))
+* Type: `object[]` ([Sentence Embedding](embeddings-sentence-definitions-sentence-embeddings-sentence-embedding.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](embeddings-sentence-properties-sentence-embeddings.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-sentence.schema.json#/properties/sents")
+* defined in: [Untitled schema](embeddings-sentence-properties-sentence-embeddings.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-sentence.schema.json#/properties/sents")
 
 ### sents Type
 
@@ -95,13 +95,13 @@ Model identifier according to impresso model description schema.
 
 `model_id`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Model ID](embeddings-sentence-properties-model-id.md))
+* Type: `string` ([Model ID](embeddings-sentence-properties-model-id.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](embeddings-sentence-properties-model-id.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-sentence.schema.json#/properties/model_id")
+* defined in: [Untitled schema](embeddings-sentence-properties-model-id.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-sentence.schema.json#/properties/model_id")
 
 ### model\_id Type
 
@@ -119,13 +119,13 @@ S3 path to the lingproc output from which sentence boundaries were derived.
 
 `lingproc_path`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Linguistic Processing Path](embeddings-sentence-properties-linguistic-processing-path.md))
+* Type: `string` ([Linguistic Processing Path](embeddings-sentence-properties-linguistic-processing-path.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](embeddings-sentence-properties-linguistic-processing-path.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-sentence.schema.json#/properties/lingproc_path")
+* defined in: [Untitled schema](embeddings-sentence-properties-linguistic-processing-path.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-sentence.schema.json#/properties/lingproc_path")
 
 ### lingproc\_path Type
 
@@ -143,13 +143,13 @@ Git commit or tag of the processing pipeline used to generate the embeddings.
 
 `git`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([Git Commit](embeddings-sentence-properties-git-commit.md))
+* Type: `string` ([Git Commit](embeddings-sentence-properties-git-commit.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](embeddings-sentence-properties-git-commit.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-sentence.schema.json#/properties/git")
+* defined in: [Untitled schema](embeddings-sentence-properties-git-commit.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-sentence.schema.json#/properties/git")
 
 ### git Type
 

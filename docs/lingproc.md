@@ -24,13 +24,13 @@ timestamp
 
 `ts`
 
-*   is required
+* is required
 
-*   Type: `string` ([The Ts Schema](lingproc-properties-the-ts-schema.md))
+* Type: `string` ([The Ts Schema](lingproc-properties-the-ts-schema.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](lingproc-properties-the-ts-schema.md "#/properties/ts#/properties/ts")
+* defined in: [Untitled schema](lingproc-properties-the-ts-schema.md "#/properties/ts#/properties/ts")
 
 ### ts Type
 
@@ -58,13 +58,13 @@ Canonical impresso id of content item
 
 `ci_id`
 
-*   is required
+* is required
 
-*   Type: `string` ([The content item id](lingproc-properties-the-content-item-id.md))
+* Type: `string` ([The content item id](lingproc-properties-the-content-item-id.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](lingproc-properties-the-content-item-id.md "#/properties/ci_id#/properties/ci_id")
+* defined in: [Untitled schema](lingproc-properties-the-content-item-id.md "#/properties/ci_id#/properties/ci_id")
 
 ### ci\_id Type
 
@@ -82,13 +82,13 @@ container for sentences (boundaries produced by spacy)
 
 `sents`
 
-*   is required
+* is required
 
-*   Type: `object[]` ([The Items Schema](lingproc-definitions-the-sents-schema-the-items-schema.md))
+* Type: `object[]` ([The Items Schema](lingproc-definitions-the-sents-schema-the-items-schema.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](lingproc-properties-the-sents-schema.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/properties/sents")
+* defined in: [Untitled schema](lingproc-properties-the-sents-schema.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/properties/sents")
 
 ### sents Type
 
@@ -100,13 +100,13 @@ container for sentences (boundaries produced by spacy)
 
 `tsents`
 
-*   is required
+* is required
 
-*   Type: `object[]` ([The Items Schema](lingproc-definitions-the-sents-schema-the-items-schema.md))
+* Type: `object[]` ([The Items Schema](lingproc-definitions-the-sents-schema-the-items-schema.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](lingproc-properties-the-sents-schema-1.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/properties/tsents")
+* defined in: [Untitled schema](lingproc-properties-the-sents-schema-1.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/properties/tsents")
 
 ### tsents Type
 
@@ -118,13 +118,13 @@ Model identifier according to impresso model description schema
 
 `model_id`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([The Model Id Schema](lingproc-properties-the-model-id-schema.md))
+* Type: `string` ([The Model Id Schema](lingproc-properties-the-model-id-schema.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](lingproc-properties-the-model-id-schema.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/properties/model_id")
+* defined in: [Untitled schema](lingproc-properties-the-model-id-schema.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/properties/model_id")
 
 ### model\_id Type
 
@@ -142,13 +142,13 @@ Path to language identification data
 
 `lid_path`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([The Lid Path Schema](lingproc-properties-the-lid-path-schema.md))
+* Type: `string` ([The Lid Path Schema](lingproc-properties-the-lid-path-schema.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](lingproc-properties-the-lid-path-schema.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/properties/lid_path")
+* defined in: [Untitled schema](lingproc-properties-the-lid-path-schema.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/properties/lid_path")
 
 ### lid\_path Type
 
@@ -166,13 +166,13 @@ Git commit describe of the linguistic processing pipeline
 
 `lingproc_git`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([The Lingproc Git Schema](lingproc-properties-the-lingproc-git-schema.md))
+* Type: `string` ([The Lingproc Git Schema](lingproc-properties-the-lingproc-git-schema.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](lingproc-properties-the-lingproc-git-schema.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/properties/lingproc_git")
+* defined in: [Untitled schema](lingproc-properties-the-lingproc-git-schema.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/properties/lingproc_git")
 
 ### lingproc\_git Type
 
@@ -190,13 +190,13 @@ Character count of the concatenated title and full text
 
 `char_count`
 
-*   is required
+* is required
 
-*   Type: `integer` ([The Char Count Schema](lingproc-properties-the-char-count-schema.md))
+* Type: `integer` ([The Char Count Schema](lingproc-properties-the-char-count-schema.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](lingproc-properties-the-char-count-schema.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/properties/char_count")
+* defined in: [Untitled schema](lingproc-properties-the-char-count-schema.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/properties/char_count")
 
 ### char\_count Type
 
@@ -214,13 +214,13 @@ Minimum number of characters for a valid content item (including title and full 
 
 `min_chars`
 
-*   is required
+* is required
 
-*   Type: `integer` ([The Min Chars Schema](lingproc-properties-the-min-chars-schema.md))
+* Type: `integer` ([The Min Chars Schema](lingproc-properties-the-min-chars-schema.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](lingproc-properties-the-min-chars-schema.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/properties/min_chars")
+* defined in: [Untitled schema](lingproc-properties-the-min-chars-schema.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/properties/min_chars")
 
 ### min\_chars Type
 
@@ -238,13 +238,13 @@ Maximum number of characters for a valid content item (including title and full 
 
 `max_chars`
 
-*   is required
+* is required
 
-*   Type: `integer` ([The Max Chars Schema](lingproc-properties-the-max-chars-schema.md))
+* Type: `integer` ([The Max Chars Schema](lingproc-properties-the-max-chars-schema.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](lingproc-properties-the-max-chars-schema.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/properties/max_chars")
+* defined in: [Untitled schema](lingproc-properties-the-max-chars-schema.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/properties/max_chars")
 
 ### max\_chars Type
 
@@ -262,13 +262,13 @@ Status of the title with respect to full text content based on various criteria
 
 `title_status`
 
-*   is optional
+* is optional
 
-*   Type: `object` ([The Title Status Schema](lingproc-properties-the-title-status-schema.md))
+* Type: `object` ([The Title Status Schema](lingproc-properties-the-title-status-schema.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](lingproc-properties-the-title-status-schema.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/properties/title_status")
+* defined in: [Untitled schema](lingproc-properties-the-title-status-schema.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/properties/title_status")
 
 ### title\_status Type
 

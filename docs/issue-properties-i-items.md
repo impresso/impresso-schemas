@@ -17,13 +17,13 @@ Metadata about the content item.
 
 `m`
 
-*   is optional
+* is optional
 
-*   Type: `object` ([Details](issue-defs-metadata.md))
+* Type: `object` ([Details](issue-defs-metadata.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Issue](issue-defs-metadata.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/m")
+* defined in: [Issue](issue-defs-metadata.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/m")
 
 ### m Type
 
@@ -31,9 +31,9 @@ Metadata about the content item.
 
 one (and only one) of
 
-*   [Untitled undefined type in Issue](issue-defs-metadata-oneof-0.md "check type definition")
+* [Untitled undefined type in Issue](issue-defs-metadata-oneof-0.md "check type definition")
 
-*   [Untitled undefined type in Issue](issue-defs-metadata-oneof-1.md "check type definition")
+* [Untitled undefined type in Issue](issue-defs-metadata-oneof-1.md "check type definition")
 
 ## c
 
@@ -41,13 +41,13 @@ Coordinates (xywh format or \[HPOS, VPOS, WIDTH, HEIGHT]) of image-region corres
 
 `c`
 
-*   is optional
+* is optional
 
-*   Type: `integer[]`
+* Type: `integer[]`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Issue](issue-properties-i-items-properties-c.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/c")
+* defined in: [Issue](issue-properties-i-items-properties-c.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/c")
 
 ### c Type
 
@@ -63,13 +63,13 @@ Legacy sections or components of the content item in the original OCR/OLR. They 
 
 `l`
 
-*   is optional
+* is optional
 
-*   Type: `object` ([Details](issue-properties-i-items-properties-l.md))
+* Type: `object` ([Details](issue-properties-i-items-properties-l.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Issue](issue-properties-i-items-properties-l.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/l")
+* defined in: [Issue](issue-properties-i-items-properties-l.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/l")
 
 ### l Type
 
@@ -81,13 +81,13 @@ Article/content-item to which the image is attached (if `tp == image`).
 
 `pOf`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Issue](issue-properties-i-items-properties-pof.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/pOf")
+* defined in: [Issue](issue-properties-i-items-properties-pof.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/pOf")
 
 ### pOf Type
 

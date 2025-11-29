@@ -14,13 +14,13 @@ unknown
 
 `class`
 
-*   is optional
+* is optional
 
-*   Type: merged type ([Details](image_classification-defs-prediction-allof-1-then-properties-class.md))
+* Type: merged type ([Details](image_classification-defs-prediction-allof-1-then-properties-class.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](image_classification-defs-prediction-allof-1-then-properties-class.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/$defs/prediction/allOf/1/then/properties/class")
+* defined in: [Untitled schema](image_classification-defs-prediction-allof-1-then-properties-class.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/$defs/prediction/allOf/1/then/properties/class")
 
 ### class Type
 
@@ -28,10 +28,10 @@ merged type ([Details](image_classification-defs-prediction-allof-1-then-propert
 
 one (and only one) of
 
-*   [Untitled undefined type in ](image_classification-defs-prediction-allof-1-then-properties-class-oneof-0.md "check type definition")
+* [Untitled undefined type in ](image_classification-defs-prediction-allof-1-then-properties-class-oneof-0.md "check type definition")
 
-*   [Untitled undefined type in ](image_classification-defs-prediction-allof-1-then-properties-class-oneof-1.md "check type definition")
+* [Untitled undefined type in ](image_classification-defs-prediction-allof-1-then-properties-class-oneof-1.md "check type definition")
 
-*   [Untitled undefined type in ](image_classification-defs-prediction-allof-1-then-properties-class-oneof-2.md "check type definition")
+* [Untitled undefined type in ](image_classification-defs-prediction-allof-1-then-properties-class-oneof-2.md "check type definition")
 
-*   [Untitled undefined type in ](image_classification-defs-prediction-allof-1-then-properties-class-oneof-3.md "check type definition")
+* [Untitled undefined type in ](image_classification-defs-prediction-allof-1-then-properties-class-oneof-3.md "check type definition")

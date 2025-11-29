@@ -32,13 +32,13 @@ Number of media titles included in the data.
 
 `titles`
 
-*   is optional
+* is optional
 
-*   Type: `integer`
+* Type: `integer`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-titles.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/titles")
+* defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-titles.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/titles")
 
 ### titles Type
 
@@ -50,13 +50,13 @@ Number of issues present in the data.
 
 `issues`
 
-*   is optional
+* is optional
 
-*   Type: `integer`
+* Type: `integer`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-issues.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/issues")
+* defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-issues.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/issues")
 
 ### issues Type
 
@@ -68,13 +68,13 @@ Number of pages present in the data.
 
 `pages`
 
-*   is optional
+* is optional
 
-*   Type: `integer`
+* Type: `integer`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-pages.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/pages")
+* defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-pages.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/pages")
 
 ### pages Type
 
@@ -86,13 +86,13 @@ Number of content-items present in the (output) data.
 
 `content_items_out`
 
-*   is required
+* is required
 
-*   Type: `integer`
+* Type: `integer`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-content_items_out.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/content_items_out")
+* defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-content_items_out.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/content_items_out")
 
 ### content\_items\_out Type
 
@@ -104,13 +104,13 @@ Number of images present in the data.
 
 `images`
 
-*   is optional
+* is optional
 
-*   Type: `integer`
+* Type: `integer`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-images.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/images")
+* defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-images.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/images")
 
 ### images Type
 
@@ -122,13 +122,13 @@ Number of tokens present in the full-text of the data.
 
 `ft_tokens`
 
-*   is optional
+* is optional
 
-*   Type: `integer`
+* Type: `integer`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-ft_tokens.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/ft_tokens")
+* defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-ft_tokens.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/ft_tokens")
 
 ### ft\_tokens Type
 
@@ -140,13 +140,13 @@ Number of text-reuse passages found in the data.
 
 `text_reuse_passages`
 
-*   is optional
+* is optional
 
-*   Type: `integer`
+* Type: `integer`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-text_reuse_passages.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/text_reuse_passages")
+* defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-text_reuse_passages.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/text_reuse_passages")
 
 ### text\_reuse\_passages Type
 
@@ -158,13 +158,13 @@ Number of unique text-reuse clusters of passages present in the data.
 
 `text_reuse_clusters`
 
-*   is optional
+* is optional
 
-*   Type: `integer`
+* Type: `integer`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-text_reuse_clusters.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/text_reuse_clusters")
+* defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-text_reuse_clusters.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/text_reuse_clusters")
 
 ### text\_reuse\_clusters Type
 
@@ -176,13 +176,13 @@ Number of unique named entities present in the data.
 
 `ne_entities`
 
-*   is optional
+* is optional
 
-*   Type: `integer`
+* Type: `integer`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-ne_entities.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/ne_entities")
+* defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-ne_entities.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/ne_entities")
 
 ### ne\_entities Type
 
@@ -194,13 +194,13 @@ Number of named-entity mentions present in the data.
 
 `ne_mentions`
 
-*   is optional
+* is optional
 
-*   Type: `integer`
+* Type: `integer`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-ne_mentions.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/ne_mentions")
+* defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-ne_mentions.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/ne_mentions")
 
 ### ne\_mentions Type
 
@@ -212,13 +212,13 @@ Number of named-entity links present in the data.
 
 `ne_links`
 
-*   is optional
+* is optional
 
-*   Type: `integer`
+* Type: `integer`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-ne_links.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/ne_links")
+* defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-ne_links.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/ne_links")
 
 ### ne\_links Type
 
@@ -230,13 +230,13 @@ Number of topics extracted from the data.
 
 `topics`
 
-*   is optional
+* is optional
 
-*   Type: `integer`
+* Type: `integer`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-topics.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/topics")
+* defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-topics.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/topics")
 
 ### topics Type
 
@@ -248,13 +248,13 @@ Frequency dict of the topic ids present in the data.
 
 `topics_fd`
 
-*   is optional
+* is optional
 
-*   Type: `object` ([Details](manifest-definitions-media_statistics-properties-nps_stats-properties-topics_fd.md))
+* Type: `object` ([Details](manifest-definitions-media_statistics-properties-nps_stats-properties-topics_fd.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-topics_fd.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/topics_fd")
+* defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-topics_fd.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/topics_fd")
 
 ### topics\_fd Type
 
@@ -266,13 +266,13 @@ Frequency dict of the languages present in the data.
 
 `lang_fd`
 
-*   is optional
+* is optional
 
-*   Type: `object` ([Details](manifest-definitions-media_statistics-properties-nps_stats-properties-lang_fd.md))
+* Type: `object` ([Details](manifest-definitions-media_statistics-properties-nps_stats-properties-lang_fd.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-lang_fd.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/lang_fd")
+* defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-lang_fd.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/lang_fd")
 
 ### lang\_fd Type
 
@@ -284,13 +284,13 @@ Average OCRQA score of the text in the data.
 
 `avg_ocrqa`
 
-*   is optional
+* is optional
 
-*   Type: `number`
+* Type: `number`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-avg_ocrqa.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/avg_ocrqa")
+* defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-avg_ocrqa.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/avg_ocrqa")
 
 ### avg\_ocrqa Type
 
@@ -302,13 +302,13 @@ Frequency dict of the classes corresponding to level 0 of the typology (image/no
 
 `img_level0_class_fd`
 
-*   is optional
+* is optional
 
-*   Type: `object` ([Details](manifest-definitions-media_statistics-properties-nps_stats-properties-img_level0_class_fd.md))
+* Type: `object` ([Details](manifest-definitions-media_statistics-properties-nps_stats-properties-img_level0_class_fd.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-img_level0_class_fd.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/img_level0_class_fd")
+* defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-img_level0_class_fd.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/img_level0_class_fd")
 
 ### img\_level0\_class\_fd Type
 
@@ -320,13 +320,13 @@ Frequency dict of the classes corresponding to level 1 of the typology present i
 
 `img_level1_class_fd`
 
-*   is optional
+* is optional
 
-*   Type: `object` ([Details](manifest-definitions-media_statistics-properties-nps_stats-properties-img_level1_class_fd.md))
+* Type: `object` ([Details](manifest-definitions-media_statistics-properties-nps_stats-properties-img_level1_class_fd.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-img_level1_class_fd.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/img_level1_class_fd")
+* defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-img_level1_class_fd.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/img_level1_class_fd")
 
 ### img\_level1\_class\_fd Type
 
@@ -338,13 +338,13 @@ Frequency dict of the classes corresponding to level 2 of the typology present i
 
 `img_level2_class_fd`
 
-*   is optional
+* is optional
 
-*   Type: `object` ([Details](manifest-definitions-media_statistics-properties-nps_stats-properties-img_level2_class_fd.md))
+* Type: `object` ([Details](manifest-definitions-media_statistics-properties-nps_stats-properties-img_level2_class_fd.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-img_level2_class_fd.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/img_level2_class_fd")
+* defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-img_level2_class_fd.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/img_level2_class_fd")
 
 ### img\_level2\_class\_fd Type
 
@@ -356,13 +356,13 @@ Frequency dict of the classes corresponding to level 3 of the typology present i
 
 `img_level3_class_fd`
 
-*   is optional
+* is optional
 
-*   Type: `object` ([Details](manifest-definitions-media_statistics-properties-nps_stats-properties-img_level3_class_fd.md))
+* Type: `object` ([Details](manifest-definitions-media_statistics-properties-nps_stats-properties-img_level3_class_fd.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-img_level3_class_fd.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/img_level3_class_fd")
+* defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-nps_stats-properties-img_level3_class_fd.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/nps_stats/properties/img_level3_class_fd")
 
 ### img\_level3\_class\_fd Type
 

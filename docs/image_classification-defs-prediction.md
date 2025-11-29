@@ -4,11 +4,11 @@
 
 all of
 
-*   [Untitled undefined type in ](image_classification-defs-prediction-allof-0.md "check type definition")
+* [Untitled undefined type in ](image_classification-defs-prediction-allof-0.md "check type definition")
 
-*   [Untitled undefined type in ](image_classification-defs-prediction-allof-1.md "check type definition")
+* [Untitled undefined type in ](image_classification-defs-prediction-allof-1.md "check type definition")
 
-*   [Untitled undefined type in ](image_classification-defs-prediction-allof-2.md "check type definition")
+* [Untitled undefined type in ](image_classification-defs-prediction-allof-2.md "check type definition")
 
 # prediction Properties
 
@@ -26,13 +26,13 @@ Level in typology V2 to which this prediction corresponds to.
 
 `level`
 
-*   is required
+* is required
 
-*   Type: `integer`
+* Type: `integer`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](image_classification-defs-prediction-properties-level.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/$defs/prediction/properties/level")
+* defined in: [Untitled schema](image_classification-defs-prediction-properties-level.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/$defs/prediction/properties/level")
 
 ### level Type
 
@@ -50,13 +50,13 @@ Class from the Typology V2 predicted or inferred for this image content-item.
 
 `class`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](image_classification-defs-prediction-properties-class.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/$defs/prediction/properties/class")
+* defined in: [Untitled schema](image_classification-defs-prediction-properties-class.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/$defs/prediction/properties/class")
 
 ### class Type
 
@@ -103,13 +103,13 @@ Confidence score of the prediction - if class was assigned through predictions.
 
 `confidence`
 
-*   is optional
+* is optional
 
-*   Type: `number`
+* Type: `number`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](image_classification-defs-prediction-properties-confidence.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/$defs/prediction/properties/confidence")
+* defined in: [Untitled schema](image_classification-defs-prediction-properties-confidence.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/$defs/prediction/properties/confidence")
 
 ### confidence Type
 
@@ -127,13 +127,13 @@ Confidence score of the prediction - if class was assigned through predictions.
 
 `pred_number`
 
-*   is optional
+* is optional
 
-*   Type: `integer`
+* Type: `integer`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](image_classification-defs-prediction-properties-pred_number.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/$defs/prediction/properties/pred_number")
+* defined in: [Untitled schema](image_classification-defs-prediction-properties-pred_number.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/$defs/prediction/properties/pred_number")
 
 ### pred\_number Type
 
@@ -151,13 +151,13 @@ True if the prediction is inferred from another level in typology (eg. 'entertai
 
 `is_inferred`
 
-*   is required
+* is required
 
-*   Type: `boolean`
+* Type: `boolean`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](image_classification-defs-prediction-properties-is_inferred.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/$defs/prediction/properties/is_inferred")
+* defined in: [Untitled schema](image_classification-defs-prediction-properties-is_inferred.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/$defs/prediction/properties/is_inferred")
 
 ### is\_inferred Type
 

@@ -17,13 +17,13 @@ Role of the component part (eg. heading, body, etc).
 
 `comp_role`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   can be null
+* can be null
 
-*   defined in: [Issue](issue-properties-i-items-properties-l-properties-parts-items-properties-comp_role.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/l/properties/parts/items/properties/comp_role")
+* defined in: [Issue](issue-properties-i-items-properties-l-properties-parts-items-properties-comp_role.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/l/properties/parts/items/properties/comp_role")
 
 ### comp\_role Type
 
@@ -35,13 +35,13 @@ ID of the part.
 
 `comp_id`
 
-*   is optional
+* is optional
 
-*   Type: any of the following: `string` or `array` ([Details](issue-properties-i-items-properties-l-properties-parts-items-properties-comp_id.md))
+* Type: any of the following: `string` or `array` ([Details](issue-properties-i-items-properties-l-properties-parts-items-properties-comp_id.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Issue](issue-properties-i-items-properties-l-properties-parts-items-properties-comp_id.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/l/properties/parts/items/properties/comp_id")
+* defined in: [Issue](issue-properties-i-items-properties-l-properties-parts-items-properties-comp_id.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/l/properties/parts/items/properties/comp_id")
 
 ### comp\_id Type
 
@@ -53,13 +53,13 @@ ID of the ALTO file the component comes from.
 
 `comp_fileid`
 
-*   is optional
+* is optional
 
-*   Type: any of the following: `string` or `array` ([Details](issue-properties-i-items-properties-l-properties-parts-items-properties-comp_fileid.md))
+* Type: any of the following: `string` or `array` ([Details](issue-properties-i-items-properties-l-properties-parts-items-properties-comp_fileid.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Issue](issue-properties-i-items-properties-l-properties-parts-items-properties-comp_fileid.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/l/properties/parts/items/properties/comp_fileid")
+* defined in: [Issue](issue-properties-i-items-properties-l-properties-parts-items-properties-comp_fileid.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/l/properties/parts/items/properties/comp_fileid")
 
 ### comp\_fileid Type
 
@@ -71,13 +71,13 @@ Page number of the component.
 
 `comp_page_no`
 
-*   is optional
+* is optional
 
-*   Type: any of the following: `integer` or `array` ([Details](issue-properties-i-items-properties-l-properties-parts-items-properties-comp_page_no.md))
+* Type: any of the following: `integer` or `array` ([Details](issue-properties-i-items-properties-l-properties-parts-items-properties-comp_page_no.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Issue](issue-properties-i-items-properties-l-properties-parts-items-properties-comp_page_no.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/l/properties/parts/items/properties/comp_page_no")
+* defined in: [Issue](issue-properties-i-items-properties-l-properties-parts-items-properties-comp_page_no.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/l/properties/parts/items/properties/comp_page_no")
 
 ### comp\_page\_no Type
 

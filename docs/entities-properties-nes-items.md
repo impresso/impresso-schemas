@@ -25,13 +25,13 @@ NE type (coarse-grained and fine-grained).
 
 `type`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Named Entity JSON Schema](entities-properties-nes-items-properties-type.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/type")
+* defined in: [Named Entity JSON Schema](entities-properties-nes-items-properties-type.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/type")
 
 ### type Type
 
@@ -115,13 +115,13 @@ The surface form of the named entity mention, as it appears in the text.
 
 `surface`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Named Entity JSON Schema](entities-properties-nes-items-properties-surface.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/surface")
+* defined in: [Named Entity JSON Schema](entities-properties-nes-items-properties-surface.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/surface")
 
 ### surface Type
 
@@ -133,13 +133,13 @@ The left character offset of the named entity with respect to the content item.
 
 `lOffset`
 
-*   is required
+* is required
 
-*   Type: `integer`
+* Type: `integer`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Named Entity JSON Schema](entities-properties-nes-items-properties-loffset.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/lOffset")
+* defined in: [Named Entity JSON Schema](entities-properties-nes-items-properties-loffset.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/lOffset")
 
 ### lOffset Type
 
@@ -151,13 +151,13 @@ The right character offset of the named entity with respect to the content item.
 
 `rOffset`
 
-*   is required
+* is required
 
-*   Type: `integer`
+* Type: `integer`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Named Entity JSON Schema](entities-properties-nes-items-properties-roffset.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/rOffset")
+* defined in: [Named Entity JSON Schema](entities-properties-nes-items-properties-roffset.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/rOffset")
 
 ### rOffset Type
 
@@ -169,13 +169,13 @@ Confidence score of the Named Entity Recognition process.
 
 `confidence_ner`
 
-*   is optional
+* is optional
 
-*   Type: `number`
+* Type: `number`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Named Entity JSON Schema](entities-properties-nes-items-properties-confidence_ner.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/confidence_ner")
+* defined in: [Named Entity JSON Schema](entities-properties-nes-items-properties-confidence_ner.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/confidence_ner")
 
 ### confidence\_ner Type
 
@@ -187,13 +187,13 @@ Confidence score of the Named Entity Linking process.
 
 `confidence_nel`
 
-*   is optional
+* is optional
 
-*   Type: `number`
+* Type: `number`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Named Entity JSON Schema](entities-properties-nes-items-properties-confidence_nel.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/confidence_nel")
+* defined in: [Named Entity JSON Schema](entities-properties-nes-items-properties-confidence_nel.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/confidence_nel")
 
 ### confidence\_nel Type
 
@@ -205,13 +205,13 @@ Wikidata QID if available.
 
 `wkd_id`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Named Entity JSON Schema](entities-properties-nes-items-properties-wkd_id.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/wkd_id")
+* defined in: [Named Entity JSON Schema](entities-properties-nes-items-properties-wkd_id.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/wkd_id")
 
 ### wkd\_id Type
 
@@ -223,13 +223,13 @@ Wikipedia page name, i.e. the last part of the wikipedia URL (e.g.  United\_Stat
 
 `wkpedia_pagename`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Named Entity JSON Schema](entities-properties-nes-items-properties-wkpedia_pagename.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/wkpedia_pagename")
+* defined in: [Named Entity JSON Schema](entities-properties-nes-items-properties-wkpedia_pagename.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/wkpedia_pagename")
 
 ### wkpedia\_pagename Type
 
@@ -241,13 +241,13 @@ Wikipedia page URL, e.g. <https://en.wikipedia.org/wiki/United_States>
 
 `wkpedia_url`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Named Entity JSON Schema](entities-properties-nes-items-properties-wkpedia_url.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/wkpedia_url")
+* defined in: [Named Entity JSON Schema](entities-properties-nes-items-properties-wkpedia_url.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/wkpedia_url")
 
 ### wkpedia\_url Type
 
@@ -259,13 +259,13 @@ In case of a person mention, the entity component of type 'name', as defined in 
 
 `name`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Named Entity JSON Schema](entities-properties-nes-items-properties-name.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/name")
+* defined in: [Named Entity JSON Schema](entities-properties-nes-items-properties-name.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/name")
 
 ### name Type
 
@@ -277,13 +277,13 @@ In case of a person mention, the entity component of type 'title', as defined in
 
 `title`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Named Entity JSON Schema](entities-properties-nes-items-properties-title.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/title")
+* defined in: [Named Entity JSON Schema](entities-properties-nes-items-properties-title.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/title")
 
 ### title Type
 
@@ -295,13 +295,13 @@ In case of a person mention, the entity component of type 'function', as defined
 
 `function`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Named Entity JSON Schema](entities-properties-nes-items-properties-function.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/function")
+* defined in: [Named Entity JSON Schema](entities-properties-nes-items-properties-function.md "https://impresso.github.io/impresso-schemas/json/entities.schema.json#/properties/nes/items/properties/function")
 
 ### function Type
 

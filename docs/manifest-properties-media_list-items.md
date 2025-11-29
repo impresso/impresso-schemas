@@ -24,13 +24,13 @@ Internal alias of newspaper newspaper (or program for radio).
 
 `media_title`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-properties-media_list-items-properties-media_title.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list/items/properties/media_title")
+* defined in: [Versioning Manifest](manifest-properties-media_list-items-properties-media_title.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list/items/properties/media_title")
 
 ### media\_title Type
 
@@ -42,13 +42,13 @@ Partner institution providing the data for this media title.
 
 `data_provider`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-properties-media_list-items-properties-data_provider.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list/items/properties/data_provider")
+* defined in: [Versioning Manifest](manifest-properties-media_list-items-properties-data_provider.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list/items/properties/data_provider")
 
 ### data\_provider Type
 
@@ -60,13 +60,13 @@ Source type of this media title.
 
 `source_type`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-properties-media_list-items-properties-source_type.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list/items/properties/source_type")
+* defined in: [Versioning Manifest](manifest-properties-media_list-items-properties-source_type.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list/items/properties/source_type")
 
 ### source\_type Type
 
@@ -91,13 +91,13 @@ Source medium of this media title.
 
 `source_medium`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-properties-media_list-items-properties-source_medium.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list/items/properties/source_medium")
+* defined in: [Versioning Manifest](manifest-properties-media_list-items-properties-source_medium.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list/items/properties/source_medium")
 
 ### source\_medium Type
 
@@ -119,13 +119,13 @@ Date timestamp of last modification of this specific media.
 
 `last_modification_date`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-properties-media_list-items-properties-last_modification_date.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list/items/properties/last_modification_date")
+* defined in: [Versioning Manifest](manifest-properties-media_list-items-properties-last_modification_date.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list/items/properties/last_modification_date")
 
 ### last\_modification\_date Type
 
@@ -137,13 +137,13 @@ Type of update made to the data.
 
 `update_type`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   can be null
+* can be null
 
-*   defined in: [Versioning Manifest](manifest-properties-media_list-items-properties-update_type.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list/items/properties/update_type")
+* defined in: [Versioning Manifest](manifest-properties-media_list-items-properties-update_type.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list/items/properties/update_type")
 
 ### update\_type Type
 
@@ -165,13 +165,13 @@ How much this media was updated (only a few issues, years or entire media title)
 
 `update_level`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   can be null
+* can be null
 
-*   defined in: [Versioning Manifest](manifest-properties-media_list-items-properties-update_level.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list/items/properties/update_level")
+* defined in: [Versioning Manifest](manifest-properties-media_list-items-properties-update_level.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list/items/properties/update_level")
 
 ### update\_level Type
 
@@ -193,13 +193,13 @@ List of years which were updated. Empty if entire media title was re-ingested or
 
 `updated_years`
 
-*   is required
+* is required
 
-*   Type: `string[]`
+* Type: `string[]`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-properties-media_list-items-properties-updated_years.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list/items/properties/updated_years")
+* defined in: [Versioning Manifest](manifest-properties-media_list-items-properties-updated_years.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list/items/properties/updated_years")
 
 ### updated\_years Type
 
@@ -211,13 +211,13 @@ List of (json output) properties which were updated. Empty if all properties wer
 
 `updated_fields`
 
-*   is required
+* is required
 
-*   Type: `string[]`
+* Type: `string[]`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-properties-media_list-items-properties-updated_fields.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list/items/properties/updated_fields")
+* defined in: [Versioning Manifest](manifest-properties-media_list-items-properties-updated_fields.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list/items/properties/updated_fields")
 
 ### updated\_fields Type
 
@@ -229,13 +229,13 @@ Link to git commit of the code used to generate/modify the output data.
 
 `code_git_commit`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   can be null
+* can be null
 
-*   defined in: [Versioning Manifest](manifest-properties-media_list-items-properties-code_git_commit.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list/items/properties/code_git_commit")
+* defined in: [Versioning Manifest](manifest-properties-media_list-items-properties-code_git_commit.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list/items/properties/code_git_commit")
 
 ### code\_git\_commit Type
 
@@ -247,13 +247,13 @@ List of statistics describing the contents of the data. The first element is at 
 
 `media_statistics`
 
-*   is required
+* is required
 
-*   Type: `object[]` ([Details](manifest-definitions-media_statistics.md))
+* Type: `object[]` ([Details](manifest-definitions-media_statistics.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Versioning Manifest](manifest-properties-media_list-items-properties-media_statistics.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list/items/properties/media_statistics")
+* defined in: [Versioning Manifest](manifest-properties-media_list-items-properties-media_statistics.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/properties/media_list/items/properties/media_statistics")
 
 ### media\_statistics Type
 

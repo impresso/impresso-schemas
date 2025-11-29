@@ -15,13 +15,13 @@ Probability or proportion of topic
 
 `p`
 
-*   is required
+* is required
 
-*   Type: `number`
+* Type: `number`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](topic_assignment-definitions-topic-properties-p.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/definitions/topic/properties/p")
+* defined in: [Untitled schema](topic_assignment-definitions-topic-properties-p.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/definitions/topic/properties/p")
 
 ### p Type
 
@@ -39,13 +39,13 @@ Topic id
 
 `t`
 
-*   is required
+* is required
 
-*   Type: any of the following: `integer` or `string` ([Details](topic_assignment-definitions-topic-properties-t.md))
+* Type: any of the following: `integer` or `string` ([Details](topic_assignment-definitions-topic-properties-t.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](topic_assignment-definitions-topic-properties-t.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/definitions/topic/properties/t")
+* defined in: [Untitled schema](topic_assignment-definitions-topic-properties-t.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/definitions/topic/properties/t")
 
 ### t Type
 

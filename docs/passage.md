@@ -28,13 +28,13 @@ Unique identifier for this passage.
 
 `id`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Text-Reuse Passage](passage-properties-id.md "https://impresso.github.io/impresso-schemas/json/text_reuse/passage.schema.json#/properties/id")
+* defined in: [Text-Reuse Passage](passage-properties-id.md "https://impresso.github.io/impresso-schemas/json/text_reuse/passage.schema.json#/properties/id")
 
 ### id Type
 
@@ -62,13 +62,13 @@ Start index of the text-reuse passage within the article
 
 `begin`
 
-*   is required
+* is required
 
-*   Type: `integer`
+* Type: `integer`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Text-Reuse Passage](passage-properties-begin.md "https://impresso.github.io/impresso-schemas/json/text_reuse/passage.schema.json#/properties/begin")
+* defined in: [Text-Reuse Passage](passage-properties-begin.md "https://impresso.github.io/impresso-schemas/json/text_reuse/passage.schema.json#/properties/begin")
 
 ### begin Type
 
@@ -80,13 +80,13 @@ Content-item ID this passage is from.
 
 `ci_id`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Text-Reuse Passage](passage-properties-ci_id.md "https://impresso.github.io/impresso-schemas/json/text_reuse/passage.schema.json#/properties/ci_id")
+* defined in: [Text-Reuse Passage](passage-properties-ci_id.md "https://impresso.github.io/impresso-schemas/json/text_reuse/passage.schema.json#/properties/ci_id")
 
 ### ci\_id Type
 
@@ -114,13 +114,13 @@ Unique identifier for this passage's cluster.
 
 `cluster_id`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Text-Reuse Passage](passage-properties-cluster_id.md "https://impresso.github.io/impresso-schemas/json/text_reuse/passage.schema.json#/properties/cluster_id")
+* defined in: [Text-Reuse Passage](passage-properties-cluster_id.md "https://impresso.github.io/impresso-schemas/json/text_reuse/passage.schema.json#/properties/cluster_id")
 
 ### cluster\_id Type
 
@@ -138,13 +138,13 @@ Date of publication of the issue in which the passage appears.
 
 `date`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Text-Reuse Passage](passage-properties-date.md "https://impresso.github.io/impresso-schemas/json/text_reuse/passage.schema.json#/properties/date")
+* defined in: [Text-Reuse Passage](passage-properties-date.md "https://impresso.github.io/impresso-schemas/json/text_reuse/passage.schema.json#/properties/date")
 
 ### date Type
 
@@ -166,13 +166,13 @@ End index of the text-reuse passage within the article
 
 `end`
 
-*   is required
+* is required
 
-*   Type: `integer`
+* Type: `integer`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Text-Reuse Passage](passage-properties-end.md "https://impresso.github.io/impresso-schemas/json/text_reuse/passage.schema.json#/properties/end")
+* defined in: [Text-Reuse Passage](passage-properties-end.md "https://impresso.github.io/impresso-schemas/json/text_reuse/passage.schema.json#/properties/end")
 
 ### end Type
 
@@ -184,13 +184,13 @@ Pages content, with id, seq and regions it corresponds to.
 
 `pages`
 
-*   is optional
+* is optional
 
-*   Type: `array`
+* Type: `array`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Text-Reuse Passage](passage-properties-pages.md "https://impresso.github.io/impresso-schemas/json/text_reuse/passage.schema.json#/properties/pages")
+* defined in: [Text-Reuse Passage](passage-properties-pages.md "https://impresso.github.io/impresso-schemas/json/text_reuse/passage.schema.json#/properties/pages")
 
 ### pages Type
 
@@ -202,13 +202,13 @@ Number of passages in this passage's cluster.
 
 `cluster_size`
 
-*   is required
+* is required
 
-*   Type: `integer`
+* Type: `integer`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Text-Reuse Passage](passage-properties-cluster_size.md "https://impresso.github.io/impresso-schemas/json/text_reuse/passage.schema.json#/properties/cluster_size")
+* defined in: [Text-Reuse Passage](passage-properties-cluster_size.md "https://impresso.github.io/impresso-schemas/json/text_reuse/passage.schema.json#/properties/cluster_size")
 
 ### cluster\_size Type
 
@@ -220,13 +220,13 @@ Full text of the passage.
 
 `text`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Text-Reuse Passage](passage-properties-text.md "https://impresso.github.io/impresso-schemas/json/text_reuse/passage.schema.json#/properties/text")
+* defined in: [Text-Reuse Passage](passage-properties-text.md "https://impresso.github.io/impresso-schemas/json/text_reuse/passage.schema.json#/properties/text")
 
 ### text Type
 
@@ -238,13 +238,13 @@ Title of the article this passage is from.
 
 `title`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Text-Reuse Passage](passage-properties-title.md "https://impresso.github.io/impresso-schemas/json/text_reuse/passage.schema.json#/properties/title")
+* defined in: [Text-Reuse Passage](passage-properties-title.md "https://impresso.github.io/impresso-schemas/json/text_reuse/passage.schema.json#/properties/title")
 
 ### title Type
 
@@ -256,13 +256,13 @@ Type of the article the passage is from (Not in this release).
 
 `type`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Text-Reuse Passage](passage-properties-type.md "https://impresso.github.io/impresso-schemas/json/text_reuse/passage.schema.json#/properties/type")
+* defined in: [Text-Reuse Passage](passage-properties-type.md "https://impresso.github.io/impresso-schemas/json/text_reuse/passage.schema.json#/properties/type")
 
 ### type Type
 
@@ -274,13 +274,13 @@ Number of days between min\_date and max\_date.
 
 `cluster_time_delta`
 
-*   is required
+* is required
 
-*   Type: `integer`
+* Type: `integer`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Text-Reuse Passage](passage-properties-cluster_time_delta.md "https://impresso.github.io/impresso-schemas/json/text_reuse/passage.schema.json#/properties/cluster_time_delta")
+* defined in: [Text-Reuse Passage](passage-properties-cluster_time_delta.md "https://impresso.github.io/impresso-schemas/json/text_reuse/passage.schema.json#/properties/cluster_time_delta")
 
 ### cluster\_time\_delta Type
 
@@ -292,13 +292,13 @@ Computed average lexical overlap of the passages within the cluster. Note these 
 
 `cluster_lexical_overlap`
 
-*   is required
+* is required
 
-*   Type: `number`
+* Type: `number`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Text-Reuse Passage](passage-properties-cluster_lexical_overlap.md "https://impresso.github.io/impresso-schemas/json/text_reuse/passage.schema.json#/properties/cluster_lexical_overlap")
+* defined in: [Text-Reuse Passage](passage-properties-cluster_lexical_overlap.md "https://impresso.github.io/impresso-schemas/json/text_reuse/passage.schema.json#/properties/cluster_lexical_overlap")
 
 ### cluster\_lexical\_overlap Type
 
@@ -310,13 +310,13 @@ List of clusters also with passages present in this content-item.
 
 `connected_clusters`
 
-*   is required
+* is required
 
-*   Type: `array`
+* Type: `array`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Text-Reuse Passage](passage-properties-connected_clusters.md "https://impresso.github.io/impresso-schemas/json/text_reuse/passage.schema.json#/properties/connected_clusters")
+* defined in: [Text-Reuse Passage](passage-properties-connected_clusters.md "https://impresso.github.io/impresso-schemas/json/text_reuse/passage.schema.json#/properties/connected_clusters")
 
 ### connected\_clusters Type
 
@@ -328,13 +328,13 @@ Number of connected\_clusters for this content-item.
 
 `n_connected_clusters`
 
-*   is required
+* is required
 
-*   Type: `integer`
+* Type: `integer`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Text-Reuse Passage](passage-properties-n_connected_clusters.md "https://impresso.github.io/impresso-schemas/json/text_reuse/passage.schema.json#/properties/n_connected_clusters")
+* defined in: [Text-Reuse Passage](passage-properties-n_connected_clusters.md "https://impresso.github.io/impresso-schemas/json/text_reuse/passage.schema.json#/properties/n_connected_clusters")
 
 ### n\_connected\_clusters Type
 

@@ -18,13 +18,13 @@ token text
 
 `t`
 
-*   is required
+* is required
 
-*   Type: `string` ([The T Schema](lingproc-definitions-the-sents-schema-the-items-schema-properties-tokens-token-properties-the-t-schema.md))
+* Type: `string` ([The T Schema](lingproc-definitions-the-sents-schema-the-items-schema-properties-tokens-token-properties-the-t-schema.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](lingproc-definitions-the-sents-schema-the-items-schema-properties-tokens-token-properties-the-t-schema.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/definitions/sents/items/properties/tokens/items/properties/t")
+* defined in: [Untitled schema](lingproc-definitions-the-sents-schema-the-items-schema-properties-tokens-token-properties-the-t-schema.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/definitions/sents/items/properties/tokens/items/properties/t")
 
 ### t Type
 
@@ -42,13 +42,13 @@ part-of-speech assigned to token from linguistic processing (typically UPOS or X
 
 `p`
 
-*   is required
+* is required
 
-*   Type: `string` ([The P Schema](lingproc-definitions-the-sents-schema-the-items-schema-properties-tokens-token-properties-the-p-schema.md))
+* Type: `string` ([The P Schema](lingproc-definitions-the-sents-schema-the-items-schema-properties-tokens-token-properties-the-p-schema.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](lingproc-definitions-the-sents-schema-the-items-schema-properties-tokens-token-properties-the-p-schema.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/definitions/sents/items/properties/tokens/items/properties/p")
+* defined in: [Untitled schema](lingproc-definitions-the-sents-schema-the-items-schema-properties-tokens-token-properties-the-p-schema.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/definitions/sents/items/properties/tokens/items/properties/p")
 
 ### p Type
 
@@ -66,13 +66,13 @@ zero-based character offset corresponding to position in corresponding text elem
 
 `o`
 
-*   is required
+* is required
 
-*   Type: `integer` ([The O Schema](lingproc-definitions-the-sents-schema-the-items-schema-properties-tokens-token-properties-the-o-schema.md))
+* Type: `integer` ([The O Schema](lingproc-definitions-the-sents-schema-the-items-schema-properties-tokens-token-properties-the-o-schema.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](lingproc-definitions-the-sents-schema-the-items-schema-properties-tokens-token-properties-the-o-schema.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/definitions/sents/items/properties/tokens/items/properties/o")
+* defined in: [Untitled schema](lingproc-definitions-the-sents-schema-the-items-schema-properties-tokens-token-properties-the-o-schema.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/definitions/sents/items/properties/tokens/items/properties/o")
 
 ### o Type
 
@@ -94,13 +94,13 @@ lemma of token
 
 `l`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([The L Schema](lingproc-definitions-the-sents-schema-the-items-schema-properties-tokens-token-properties-the-l-schema.md))
+* Type: `string` ([The L Schema](lingproc-definitions-the-sents-schema-the-items-schema-properties-tokens-token-properties-the-l-schema.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](lingproc-definitions-the-sents-schema-the-items-schema-properties-tokens-token-properties-the-l-schema.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/definitions/sents/items/properties/tokens/items/properties/l")
+* defined in: [Untitled schema](lingproc-definitions-the-sents-schema-the-items-schema-properties-tokens-token-properties-the-l-schema.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/definitions/sents/items/properties/tokens/items/properties/l")
 
 ### l Type
 
@@ -118,13 +118,13 @@ named entity type as IOB tag
 
 `e`
 
-*   is optional
+* is optional
 
-*   Type: `string` ([The E Schema](lingproc-definitions-the-sents-schema-the-items-schema-properties-tokens-token-properties-the-e-schema.md))
+* Type: `string` ([The E Schema](lingproc-definitions-the-sents-schema-the-items-schema-properties-tokens-token-properties-the-e-schema.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](lingproc-definitions-the-sents-schema-the-items-schema-properties-tokens-token-properties-the-e-schema.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/definitions/sents/items/properties/tokens/items/properties/e")
+* defined in: [Untitled schema](lingproc-definitions-the-sents-schema-the-items-schema-properties-tokens-token-properties-the-e-schema.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/definitions/sents/items/properties/tokens/items/properties/e")
 
 ### e Type
 

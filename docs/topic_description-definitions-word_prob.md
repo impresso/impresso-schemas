@@ -15,13 +15,13 @@
 
 `word`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](topic_description-definitions-word_prob-properties-word.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_description.schema.json#/definitions/word_prob/properties/word")
+* defined in: [Untitled schema](topic_description-definitions-word_prob-properties-word.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_description.schema.json#/definitions/word_prob/properties/word")
 
 ### word Type
 
@@ -33,13 +33,13 @@
 
 `prob`
 
-*   is required
+* is required
 
-*   Type: `number`
+* Type: `number`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](topic_description-definitions-word_prob-properties-prob.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_description.schema.json#/definitions/word_prob/properties/prob")
+* defined in: [Untitled schema](topic_description-definitions-word_prob-properties-prob.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_description.schema.json#/definitions/word_prob/properties/prob")
 
 ### prob Type
 
