@@ -38,6 +38,24 @@
       "description": "Creation date timestamp (in '%Y-%m-%dT%H:%M:%SZ' format) of the original issue which was consolidated into this object. Only defined if `consolidated==True`.",
       "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
     },
+    "consolidated_ocrqa": {
+      "anyOf": [
+        {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Estimated OCR quality, between 0 and 1. May be null if there is no text or not enough text to compute an estimate. Only defined if `consolidated==True`."
+    },
+    "consolidated_char_len": {
+      "type": ["integer", "null"],
+      "minimum": 0,
+      "description": "Character count of the consolidated text for the content item. May be null if there is no text. Only defined if `consolidated==True`."
+    },
     "olr": {
       "description": "True if optical layout recognition was applied to the issue/bulletin this content item originates from.",
       "type": "boolean"
@@ -55,7 +73,7 @@
           },
           "c": {
             "type": "array",
-            "description": "Coordinates of image-region corresponding to the content-item depending on its type (if `tp == image`).",
+            "description": "Coordinates (xywh format or [HPOS, VPOS, WIDTH, HEIGHT]) of image-region corresponding to the content-item depending on its type (if `tp == image`).",
             "minItems": 4,
             "items": {
               "type": "integer"
@@ -140,7 +158,7 @@
     },
     "pp": {
       "type": "array",
-      "description": "Canonical IDs of pages in the issue, without file extension (e.g. GDL-1900-01-02-a-p0004). In the case `sm` is in [`print`, `typescript`]",
+      "description": "Canonical IDs of pages in the issue, without file extension (e.g. GDL-1900-01-02-a-p0004). In the case `sm` is in [`print`, `typescript`].",
       "items": {
         "type": "string",
         "pattern": "^[A-Za-z][A-Za-z0-9_]*-\\d{4}-\\d{2}-\\d{2}-[a-z]{1,2}-p[0-9]{4}$"
@@ -148,7 +166,7 @@
     },
     "rr": {
       "type": "array",
-      "description": "Canonical ID of audio record of the issue (in list for consistency), without file extension (e.g. INA-1900-01-02-a-r0004). In the case `sm`==`audio`",
+      "description": "Canonical ID of audio record of the issue (in list for consistency), without file extension (e.g. INA-1900-01-02-a-r0004). In the case `sm`==`audio`.",
       "items": {
         "type": "string",
         "pattern": "^[A-Za-z][A-Za-z0-9_]*-\\d{4}-\\d{2}-\\d{2}-[a-z]{1,3}-r[0-9]{4}$"
@@ -160,15 +178,18 @@
     },
     "iiif_manifest_uri": {
       "type": "string",
-      "description": "URI for the issue's manifest in the IIIF Presentation API, if the corresponding IIIF server has one."
+      "minLength": 1,
+      "description": "URI for the issue's manifest in the IIIF Presentation API. The field is present only when a meaningful URI is available."
     },
     "rc": {
       "type": "string",
-      "description": "Radio channel, if applicable (st=='radio_broadcast') and is known."
+      "minLength": 1,
+      "description": "Radio channel. The field is present only when a meaningful channel value is available."
     },
     "rp": {
       "type": "string",
-      "description": "Radio program, if applicable (st=='radio_broadcast') and is known."
+      "minLength": 1,
+      "description": "Radio program. The field is present only when a meaningful program name is available."
     }
   },
   "$defs": {
@@ -247,11 +268,12 @@
         },
         "t": {
           "type": "string",
-          "description": "Title of the content item."
+          "minLength": 1,
+          "description": "Title of the content item. The field is present only when a meaningful title is available."
         },
         "tp": {
           "type": "string",
-          "description": "Type of the content item.",
+          "description": "Type of the content item. The field is present only when a meaningful type is available.",
           "enum": [
             "article",
             "ad",
@@ -267,7 +289,8 @@
         },
         "iiif_link": {
           "type": "string",
-          "description": "IIIF image link, depending on content item type (if `tp == image`). Should follow the format: '{scheme}://{server}/{prefix}/{identifier}/info.json'."
+          "minLength": 1,
+          "description": "IIIF image link, depending on content item type (if `tp == image`). The field is present only when a meaningful link is available. It should follow the format: '{scheme}://{server}/{prefix}/{identifier}/info.json'."
         },
         "ro": {
           "type": "integer",
@@ -282,11 +305,13 @@
         },
         "var_t": {
           "type": "string",
-          "description": "Variant title of the media title this CI is from (only in the case of BL newspapers)."
+          "minLength": 1,
+          "description": "Variant title of the media title this CI is from (only in the case of BL newspapers). The field is present only when a meaningful variant title is available."
         },
         "archival_note": {
           "type": "string",
-          "description": "Plain-text archival note or description concerning the content-item (here in the case of INA)."
+          "minLength": 1,
+          "description": "Plain-text archival note or description concerning the content-item (here in the case of INA). The field is present only when a meaningful note is available."
         }
       },
       "required": ["id", "tp"],
