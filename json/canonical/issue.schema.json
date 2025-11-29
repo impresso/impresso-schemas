@@ -197,8 +197,13 @@
           "description": "Run ID corresponding to the re-OCR process. Only defined if `consolidated==True` and `consolidated_re_ocr_applied==True`."
         },
         "consolidated_ocrqa": {
-          "type": "number",
-          "description": "The estimated OCR quality, between 0 and 1. Only defined if `consolidated==True`."
+          "type": ["number", "null"],
+          "description": "Estimated OCR quality, between 0 and 1. May be null if there is no text or not enough text to compute an estimate. Only defined if `consolidated==True`."
+        },
+        "consolidated_char_len": {
+          "type": ["integer", "null"],
+          "minimum": 0,
+          "description": "Character count of the consolidated text for the content item. May be null if there is no text. Only defined if `consolidated==True`."
         },
         "consolidated_lg": {
           "type": ["string", "null"],
