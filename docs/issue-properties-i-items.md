@@ -37,7 +37,7 @@ one (and only one) of
 
 ## c
 
-Coordinates of image-region corresponding to the content-item depending on its type (if `tp == image`).
+Coordinates (xywh format or \[HPOS, VPOS, WIDTH, HEIGHT]) of image-region corresponding to the content-item depending on its type (if `tp == image`).
 
 `c`
 

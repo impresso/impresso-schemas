@@ -1,15 +1,3 @@
-# Untitled object in undefined Schema
-
-```txt
-https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json
-```
-
-Schema for validation of linguistic annotation as produced by spacy for newspaper data
-
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                      |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :------------------------------------------------------------------------------ |
-| Can be instantiated | Yes        | Unknown status | No           | Forbidden         | Allowed               | none                | [ling\_spacy.schema.json](../out/ling_spacy.schema.json "open original schema") |
-
 ## Untitled object in undefined Type
 
 `object` ([Details](ling_spacy.md))

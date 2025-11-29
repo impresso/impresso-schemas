@@ -15,7 +15,7 @@
 
 ## c
 
-Coordinates of bounding-box, following IIIF regions schema (x, y, width, height).
+Coordinates of bounding-box, following IIIF regions schema (\[x, y, width, height] or \[HPOS, VPOS, WIDTH, HEIGHT]).
 
 `c`
 

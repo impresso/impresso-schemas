@@ -1,15 +1,3 @@
-# The Title Status Schema Schema
-
-```txt
-https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/properties/title_status
-```
-
-Status of the title with respect to full text content based on various criteria
-
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                         |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Allowed               | none                | [lingproc.v2.schema.json\*](../out/lingproc.v2.schema.json "open original schema") |
-
 ## title\_status Type
 
 `object` ([The Title Status Schema](lingproc-properties-the-title-status-schema.md))

@@ -30,7 +30,7 @@
       "enum": ["print", "typescript", "audio"]
     },
     "consolidated": {
-      "description": "True if this issue is consolidated, and contains additional langiden and ocrqa information.",
+      "description": "True if this issue is consolidated, and contains additional language identification and ocrqa information.",
       "type": "boolean"
     },
     "consolidated_ts_original": {
@@ -184,12 +184,12 @@
     "rc": {
       "type": "string",
       "minLength": 1,
-      "description": "Radio channel. The field is present only when a meaningful channel value is available."
+      "description": "Radio channel, if applicable (st=='radio_broadcast'). The field is present only when a meaningful value is available."
     },
     "rp": {
       "type": "string",
       "minLength": 1,
-      "description": "Radio program. The field is present only when a meaningful program name is available."
+      "description": "Radio program if applicable (st=='radio_broadcast'). The field is present only when a meaningful program name is available."
     }
   },
   "$defs": {
@@ -290,7 +290,7 @@
         "iiif_link": {
           "type": "string",
           "minLength": 1,
-          "description": "IIIF image link, depending on content item type (if `tp == image`). The field is present only when a meaningful link is available. It should follow the format: '{scheme}://{server}/{prefix}/{identifier}/info.json'."
+          "description": "IIIF image link, depending on content item type (if `tp == image`). The field is present only when a meaningful value is available."
         },
         "ro": {
           "type": "integer",
@@ -311,7 +311,7 @@
         "archival_note": {
           "type": "string",
           "minLength": 1,
-          "description": "Plain-text archival note or description concerning the content-item (here in the case of INA). The field is present only when a meaningful note is available."
+          "description": "Plaintext archival note or description concerning the content item. The field is present only when a meaningful note is available."
         }
       },
       "required": ["id", "tp"],
@@ -391,10 +391,10 @@
               }
             ]
           }
-        },
-        "then": {
-          "required": ["olr"]
         }
+      },
+      "then": {
+        "required": ["olr"]
       }
     }
   ]

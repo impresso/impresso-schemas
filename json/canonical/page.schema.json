@@ -157,7 +157,7 @@
     "$defs": {
         "coordinates": {
             "type": "array",
-            "description": "Coordinates of bounding-box, following IIIF regions schema (x, y, width, height).",
+            "description": "Coordinates of bounding-box, following IIIF regions schema ([x, y, width, height] or [HPOS, VPOS, WIDTH, HEIGHT]).",
             "minItems": 4,
             "maxItems": 4,
             "items": {

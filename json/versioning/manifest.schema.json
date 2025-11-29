@@ -214,6 +214,14 @@
                             "type": "integer",
                             "description": "Number of tokens present in the full-text of the data."
                         },
+                        "text_reuse_passages": {
+                            "type": "integer",
+                            "description": "Number of text-reuse passages found in the data."
+                        },
+                        "text_reuse_clusters": {
+                            "type": "integer",
+                            "description": "Number of unique text-reuse clusters of passages present in the data."
+                        },
                         "ne_entities": {
                             "type": "integer",
                             "description": "Number of unique named entities present in the data."
@@ -229,6 +237,34 @@
                         "topics": {
                             "type": "integer",
                             "description": "Number of topics extracted from the data."
+                        },
+                        "topics_fd": {
+                            "type": "object",
+                            "description": "Frequency dict of the topic ids present in the data"
+                        },
+                        "lang_fd": {
+                            "type": "object",
+                            "description": "Frequency dict of the languages present in the data."
+                        },
+                        "avg_ocrqa": {
+                            "type": "number",
+                            "description": "Average OCRQA score of the text in the data."
+                        },
+                        "img_level0_class_fd": {
+                            "type": "object",
+                            "description": "Frequency dict of the classes corresponding to level 0 of the typology (image/not image) present in the images."
+                        },
+                        "img_level1_class_fd": {
+                            "type": "object",
+                            "description": "Frequency dict of the classes corresponding to level 1 of the typology present in the images."
+                        },
+                        "img_level2_class_fd": {
+                            "type": "object",
+                            "description": "Frequency dict of the classes corresponding to level 2 of the typology present in the images."
+                        },
+                        "img_level3_class_fd": {
+                            "type": "object",
+                            "description": "Frequency dict of the classes corresponding to level 3 of the typology present in the images (inferred)."
                         }
                     },
                     "required": [
@@ -263,6 +299,14 @@
                             "type": "integer",
                             "description": "Number of tokens present in the full-text of the data."
                         },
+                        "text_reuse_passages": {
+                            "type": "integer",
+                            "description": "Number of text-reuse passages found in the data."
+                        },
+                        "text_reuse_clusters": {
+                            "type": "integer",
+                            "description": "Number of unique text-reuse clusters of passages present in the data."
+                        },
                         "ne_entities": {
                             "type": "integer",
                             "description": "Number of unique named entities present in the data."
@@ -278,6 +322,34 @@
                         "topics": {
                             "type": "integer",
                             "description": "Number of topics extracted from the data."
+                        },
+                        "topics_fd": {
+                            "type": "object",
+                            "description": "Frequency dict of the topic ids present in the data."
+                        },
+                        "lang_fd": {
+                            "type": "object",
+                            "description": "Frequency dict of the languages present in the data."
+                        },
+                        "avg_ocrqa": {
+                            "type": "number",
+                            "description": "Average OCRQA score of the text in the data."
+                        },
+                        "img_level0_class_fd": {
+                            "type": "object",
+                            "description": "Frequency dict of the classes corresponding to level 0 of the typology (image/not image) present in the images."
+                        },
+                        "img_level1_class_fd": {
+                            "type": "object",
+                            "description": "Frequency dict of the classes corresponding to level 1 of the typology present in the images."
+                        },
+                        "img_level2_class_fd": {
+                            "type": "object",
+                            "description": "Frequency dict of the classes corresponding to level 2 of the typology present in the images."
+                        },
+                        "img_level3_class_fd": {
+                            "type": "object",
+                            "description": "Frequency dict of the classes corresponding to level 3 of the typology present in the images (inferred)."
                         }
                     },
                     "required": [
