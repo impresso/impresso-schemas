@@ -290,7 +290,7 @@
         "iiif_link": {
           "type": "string",
           "minLength": 1,
-          "description": "IIIF image link, depending on content item type (if `tp == image`). The field is present only when a meaningful value is available."
+          "description": "IIIF image link, depending on content item type (if `tp == image`). The field is present only when a meaningful link is available. It should follow the format: '{scheme}://{server}/{prefix}/{identifier}/info.json'."
         },
         "ro": {
           "type": "integer",
