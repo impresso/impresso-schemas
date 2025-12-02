@@ -21,7 +21,7 @@ all of
 | [lg](#lg)                                                   | `string`  | Optional | cannot be null | [Paper Content Item](paper_contentitem-properties-lg.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/lg")                                                 |
 | [rc](#rc)                                                   | `string`  | Optional | can be null    | [Paper Content Item](paper_contentitem-properties-rc.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/rc")                                                 |
 | [rp](#rp)                                                   | `string`  | Optional | can be null    | [Paper Content Item](paper_contentitem-properties-rp.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/rp")                                                 |
-| [var\_alias\_title](#var_alias_title)                       | `string`  | Optional | cannot be null | [Paper Content Item](paper_contentitem-properties-var_alias_title.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/var_alias_title")                       |
+| [media\_title\_variant](#media_title_variant)               | `string`  | Optional | cannot be null | [Paper Content Item](paper_contentitem-properties-media_title_variant.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/media_title_variant")               |
 | [t](#t)                                                     | `string`  | Optional | can be null    | [Paper Content Item](paper_contentitem-properties-t.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/t")                                                   |
 | [title](#title)                                             | `string`  | Optional | can be null    | [Paper Content Item](paper_contentitem-properties-title.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/title")                                           |
 | [ro](#ro)                                                   | `integer` | Optional | cannot be null | [Paper Content Item](paper_contentitem-properties-ro.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/ro")                                                 |
@@ -296,11 +296,11 @@ Radio program, if applicable (st=='radio\_broadcast') and is known.
 
 `string`
 
-## var\_alias\_title
+## media\_title\_variant
 
 Variant title of the media title this CI is from (mainly in the case of BL newspapers). The field is present only when a meaningful variant title is available.
 
-`var_alias_title`
+`media_title_variant`
 
 *   is optional
 
@@ -308,13 +308,13 @@ Variant title of the media title this CI is from (mainly in the case of BL newsp
 
 *   cannot be null
 
-*   defined in: [Paper Content Item](paper_contentitem-properties-var_alias_title.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/var_alias_title")
+*   defined in: [Paper Content Item](paper_contentitem-properties-media_title_variant.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/media_title_variant")
 
-### var\_alias\_title Type
+### media\_title\_variant Type
 
 `string`
 
-### var\_alias\_title Constraints
+### media\_title\_variant Constraints
 
 **minimum length**: the minimum number of characters for this string is: `1`
 

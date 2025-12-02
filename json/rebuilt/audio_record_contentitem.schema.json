@@ -63,7 +63,7 @@
             ],
             "description": "Radio program, if known/defined."
         },
-        "var_alias_title": {
+        "media_title_variant": {
             "type": "string",
             "minLength": 1,
             "description": "Variant title of the media title this CI is from (mainly in the case of BL newspapers). The field is present only when a meaningful variant title is available."
@@ -74,6 +74,10 @@
                 "string",
                 "null"
             ]
+        },
+        "consolidated": {
+            "description": "True if the issue this CI comes from was consolidated, meaning it contains additional language identification and ocrqa information.",
+            "type": "boolean"
         },
         "lg_original": {
             "type": [

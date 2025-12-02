@@ -74,7 +74,7 @@
             ],
             "description": "Radio program, if applicable (st=='radio_broadcast') and is known."
         },
-        "var_alias_title": {
+        "media_title_variant": {
             "type": "string",
             "minLength": 1,
             "description": "Variant title of the media title this CI is from (mainly in the case of BL newspapers). The field is present only when a meaningful variant title is available."

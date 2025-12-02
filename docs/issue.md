@@ -27,7 +27,7 @@ all of
 | [sm](#sm)                                               | `string`  | Optional | cannot be null | [Issue](issue-properties-sm.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/sm")                                             |
 | [consolidated](#consolidated)                           | `boolean` | Optional | cannot be null | [Issue](issue-properties-consolidated.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/consolidated")                         |
 | [consolidated\_ts\_original](#consolidated_ts_original) | `string`  | Optional | cannot be null | [Issue](issue-properties-consolidated_ts_original.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/consolidated_ts_original") |
-| [var\_alias\_title](#var_alias_title)                   | `string`  | Optional | cannot be null | [Issue](issue-properties-var_alias_title.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/var_alias_title")                   |
+| [media\_title\_variant](#media_title_variant)           | `string`  | Optional | cannot be null | [Issue](issue-properties-media_title_variant.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/media_title_variant")           |
 | [olr](#olr)                                             | `boolean` | Optional | cannot be null | [Issue](issue-properties-olr.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/olr")                                           |
 | [i](#i)                                                 | `array`   | Required | cannot be null | [Issue](issue-properties-i.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i")                                               |
 | [s](#s)                                                 | `array`   | Optional | cannot be null | [Issue](issue-properties-s.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/s")                                               |
@@ -217,11 +217,11 @@ Creation date timestamp (in '%Y-%m-%dT%H:%M:%SZ' format) of the original issue w
 
 [try pattern](https://regexr.com/?expression=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D-%5B0-9%5D%7B2%7DT%5B0-9%5D%7B2%7D%3A%5B0-9%5D%7B2%7D%3A%5B0-9%5D%7B2%7DZ%24 "try regular expression with regexr.com")
 
-## var\_alias\_title
+## media\_title\_variant
 
 Variant title of the media title this CI is from (mainly in the case of BL newspapers). The field is present only when a meaningful variant title is available.
 
-`var_alias_title`
+`media_title_variant`
 
 *   is optional
 
@@ -229,13 +229,13 @@ Variant title of the media title this CI is from (mainly in the case of BL newsp
 
 *   cannot be null
 
-*   defined in: [Issue](issue-properties-var_alias_title.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/var_alias_title")
+*   defined in: [Issue](issue-properties-media_title_variant.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/media_title_variant")
 
-### var\_alias\_title Type
+### media\_title\_variant Type
 
 `string`
 
-### var\_alias\_title Constraints
+### media\_title\_variant Constraints
 
 **minimum length**: the minimum number of characters for this string is: `1`
 
