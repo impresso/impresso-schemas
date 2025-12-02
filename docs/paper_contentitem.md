@@ -25,6 +25,7 @@ all of
 | [t](#t)                                                     | `string`  | Optional | can be null    | [Paper Content Item](paper_contentitem-properties-t.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/t")                                                   |
 | [title](#title)                                             | `string`  | Optional | can be null    | [Paper Content Item](paper_contentitem-properties-title.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/title")                                           |
 | [ro](#ro)                                                   | `integer` | Optional | cannot be null | [Paper Content Item](paper_contentitem-properties-ro.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/ro")                                                 |
+| [consolidated](#consolidated)                               | `boolean` | Optional | cannot be null | [Paper Content Item](paper_contentitem-properties-consolidated.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/consolidated")                             |
 | [consolidated\_reocr\_applied](#consolidated_reocr_applied) | `boolean` | Optional | cannot be null | [Paper Content Item](paper_contentitem-properties-consolidated_reocr_applied.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/consolidated_reocr_applied") |
 | [consolidated\_ocrqa](#consolidated_ocrqa)                  | Merged    | Optional | cannot be null | [Paper Content Item](paper_contentitem-properties-consolidated_ocrqa.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/consolidated_ocrqa")                 |
 | [lg\_original](#lg_original)                                | `string`  | Optional | can be null    | [Paper Content Item](paper_contentitem-properties-lg_original.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/lg_original")                               |
@@ -370,6 +371,24 @@ Reading order index of the content item, for the table of contents view on the i
 ### ro Type
 
 `integer`
+
+## consolidated
+
+True if the issue this CI comes from was consolidated, meaning it contains additional language identification and ocrqa information.
+
+`consolidated`
+
+*   is optional
+
+*   Type: `boolean`
+
+*   cannot be null
+
+*   defined in: [Paper Content Item](paper_contentitem-properties-consolidated.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/consolidated")
+
+### consolidated Type
+
+`boolean`
 
 ## consolidated\_reocr\_applied
 

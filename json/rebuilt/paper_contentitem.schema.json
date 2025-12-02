@@ -97,6 +97,10 @@
             "description": "Reading order index of the content item, for the table of contents view on the interface. If not defined, the CI number (after 'i' in the ID) should be used.",
             "type": "integer"
         },
+        "consolidated": {
+            "description": "True if the issue this CI comes from was consolidated, meaning it contains additional language identification and ocrqa information.",
+            "type": "boolean"
+        },
         "consolidated_reocr_applied": {
             "type": "boolean",
             "description": "True if the CI's text went through the re-OCRisation process."
