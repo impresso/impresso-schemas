@@ -37,7 +37,7 @@
         "lg": {
             "description": "Language of the content item's text, expressed as a two-letter ISO 639-1 language code.",
             "type": "string",
-            "pattern": "^[a-z]{2}$"
+            "pattern": "^[a-z]{2,3}$"
         },
         "stt": {
             "type": "string",
@@ -63,12 +63,10 @@
             ],
             "description": "Radio program, if known/defined."
         },
-        "var_t": {
-            "type": [
-                "string",
-                "null"
-            ],
-            "description": "Variant 'full' title of the media in the case it's defined in the CI metadata"
+        "var_alias_title": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Variant title of the media title this CI is from (mainly in the case of BL newspapers). The field is present only when a meaningful variant title is available."
         },
         "title": {
             "description": "radio broadcast content-item title.",
@@ -76,6 +74,13 @@
                 "string",
                 "null"
             ]
+        },
+        "lg_original": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Language of the content item in the original OCR/OLR. Only defined if the content-item was consolidated."
         },
         "rr": {
             "description": "Array of audio record numbers spanned by the content item; currently always [1].",

@@ -17,7 +17,9 @@ one (and only one) of
 | [l](#l)                                                            | `string`  | Optional | cannot be null | [Issue](issue-defs-metadata-properties-l.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/l")                                                         |
 | [consolidated\_reocr\_applied](#consolidated_reocr_applied)        | `boolean` | Optional | cannot be null | [Issue](issue-defs-metadata-properties-consolidated_reocr_applied.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/consolidated_reocr_applied")       |
 | [consolidated\_reocr\_run\_id](#consolidated_reocr_run_id)         | `string`  | Optional | cannot be null | [Issue](issue-defs-metadata-properties-consolidated_reocr_run_id.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/consolidated_reocr_run_id")         |
-| [consolidated\_ocrqa](#consolidated_ocrqa)                         | `number`  | Optional | cannot be null | [Issue](issue-defs-metadata-properties-consolidated_ocrqa.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/consolidated_ocrqa")                       |
+| [consolidated\_ocrqa](#consolidated_ocrqa)                         | Merged    | Optional | cannot be null | [Issue](issue-defs-metadata-properties-consolidated_ocrqa.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/consolidated_ocrqa")                       |
+| [consolidated\_char\_len](#consolidated_char_len)                  | `integer` | Optional | can be null    | [Issue](issue-defs-metadata-properties-consolidated_char_len.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/consolidated_char_len")                 |
+| [lg\_original](#lg_original)                                       | `string`  | Optional | can be null    | [Issue](issue-defs-metadata-properties-lg_original.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/lg_original")                                     |
 | [consolidated\_lg](#consolidated_lg)                               | Merged    | Optional | can be null    | [Issue](issue-defs-metadata-properties-consolidated_lg.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/consolidated_lg")                             |
 | [consolidated\_langident\_run\_id](#consolidated_langident_run_id) | `string`  | Optional | cannot be null | [Issue](issue-defs-metadata-properties-consolidated_langident_run_id.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/consolidated_langident_run_id") |
 | [pp](#pp)                                                          | `array`   | Optional | cannot be null | [Issue](issue-defs-metadata-properties-pp.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/pp")                                                       |
@@ -132,13 +134,13 @@ Run ID corresponding to the re-OCR process. Only defined if `consolidated==True`
 
 ## consolidated\_ocrqa
 
-The estimated OCR quality, between 0 and 1. Only defined if `consolidated==True`.
+Estimated OCR quality, between 0 and 1. May be null if there is no text or not enough text to compute an estimate. Only defined if `consolidated==True`.
 
 `consolidated_ocrqa`
 
 *   is optional
 
-*   Type: `number`
+*   Type: merged type ([Details](issue-defs-metadata-properties-consolidated_ocrqa.md))
 
 *   cannot be null
 
@@ -146,7 +148,53 @@ The estimated OCR quality, between 0 and 1. Only defined if `consolidated==True`
 
 ### consolidated\_ocrqa Type
 
-`number`
+merged type ([Details](issue-defs-metadata-properties-consolidated_ocrqa.md))
+
+any of
+
+*   [Untitled number in Issue](issue-defs-metadata-properties-consolidated_ocrqa-anyof-0.md "check type definition")
+
+*   [Untitled null in Issue](issue-defs-metadata-properties-consolidated_ocrqa-anyof-1.md "check type definition")
+
+## consolidated\_char\_len
+
+Character count of the consolidated text for the content item. May be null if there is no text. Only defined if `consolidated==True`.
+
+`consolidated_char_len`
+
+*   is optional
+
+*   Type: `integer`
+
+*   can be null
+
+*   defined in: [Issue](issue-defs-metadata-properties-consolidated_char_len.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/consolidated_char_len")
+
+### consolidated\_char\_len Type
+
+`integer`
+
+### consolidated\_char\_len Constraints
+
+**minimum**: the value of this number must greater than or equal to: `0`
+
+## lg\_original
+
+Language of the content item in the original OCR/OLR. Only defined if `consolidated==True`.
+
+`lg_original`
+
+*   is optional
+
+*   Type: `string`
+
+*   can be null
+
+*   defined in: [Issue](issue-defs-metadata-properties-lg_original.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/lg_original")
+
+### lg\_original Type
+
+`string`
 
 ## consolidated\_lg
 
@@ -228,7 +276,7 @@ Record numbers over which the content item spans, in the case `sm` is `audio`.
 
 ## t
 
-Title of the content item. If unknown/null or empty, this field should not be defined.
+Title of the content item. The field is present only when a meaningful title is available.
 
 `t`
 
@@ -244,9 +292,13 @@ Title of the content item. If unknown/null or empty, this field should not be de
 
 `string`
 
+### t Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
+
 ## tp
 
-Type of the content item. If unknown/null or empty, this field should not be defined.
+Type of the content item. The field is present only when a meaningful type is available.
 
 `tp`
 
@@ -281,7 +333,7 @@ Type of the content item. If unknown/null or empty, this field should not be def
 
 ## iiif\_link
 
-IIIF image link, depending on content item type (if `tp == image`). Should follow the format: '{scheme}://{server}/{prefix}/{identifier}/info.json'.
+IIIF image link, depending on content item type (if `tp == image`). The field is present only when a meaningful link is available. It should follow the format: '{scheme}://{server}/{prefix}/{identifier}/info.json'.
 
 `iiif_link`
 
@@ -296,6 +348,10 @@ IIIF image link, depending on content item type (if `tp == image`). Should follo
 ### iiif\_link Type
 
 `string`
+
+### iiif\_link Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
 
 ## ro
 
@@ -335,7 +391,7 @@ an array of the following:`object` or `string` ([Details](issue-defs-metadata-pr
 
 ## var\_t
 
-Variant title of the media title this CI is from (only in the case of BL newspapers).
+Deprecated, replaced by `var_alias_title` at issue's top-level. Variant title of the media title this CI is from (only in the case of BL newspapers). The field is present only when a meaningful variant title is available.
 
 `var_t`
 
@@ -351,9 +407,13 @@ Variant title of the media title this CI is from (only in the case of BL newspap
 
 `string`
 
+### var\_t Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
+
 ## archival\_note
 
-Plain-text archival note or description concerning the content-item (here in the case of INA).
+Plaintext archival note or description concerning the content item. The field is present only when a meaningful note is available.
 
 `archival_note`
 
@@ -368,3 +428,7 @@ Plain-text archival note or description concerning the content-item (here in the
 ### archival\_note Type
 
 `string`
+
+### archival\_note Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`

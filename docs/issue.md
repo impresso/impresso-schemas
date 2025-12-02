@@ -27,6 +27,7 @@ all of
 | [sm](#sm)                                               | `string`  | Optional | cannot be null | [Issue](issue-properties-sm.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/sm")                                             |
 | [consolidated](#consolidated)                           | `boolean` | Optional | cannot be null | [Issue](issue-properties-consolidated.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/consolidated")                         |
 | [consolidated\_ts\_original](#consolidated_ts_original) | `string`  | Optional | cannot be null | [Issue](issue-properties-consolidated_ts_original.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/consolidated_ts_original") |
+| [var\_alias\_title](#var_alias_title)                   | `string`  | Optional | cannot be null | [Issue](issue-properties-var_alias_title.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/var_alias_title")                   |
 | [olr](#olr)                                             | `boolean` | Optional | cannot be null | [Issue](issue-properties-olr.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/olr")                                           |
 | [i](#i)                                                 | `array`   | Required | cannot be null | [Issue](issue-properties-i.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i")                                               |
 | [s](#s)                                                 | `array`   | Optional | cannot be null | [Issue](issue-properties-s.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/s")                                               |
@@ -172,7 +173,7 @@ Source medium, format in which the media was originally produced. If `tp == radi
 
 ## consolidated
 
-True if this issue is consolidated, and contains additional langiden and ocrqa information.
+True if this issue is consolidated, and contains additional language identification and ocrqa information.
 
 `consolidated`
 
@@ -215,6 +216,28 @@ Creation date timestamp (in '%Y-%m-%dT%H:%M:%SZ' format) of the original issue w
 ```
 
 [try pattern](https://regexr.com/?expression=%5E%5B0-9%5D%7B4%7D-%5B0-9%5D%7B2%7D-%5B0-9%5D%7B2%7DT%5B0-9%5D%7B2%7D%3A%5B0-9%5D%7B2%7D%3A%5B0-9%5D%7B2%7DZ%24 "try regular expression with regexr.com")
+
+## var\_alias\_title
+
+Variant title of the media title this CI is from (mainly in the case of BL newspapers). The field is present only when a meaningful variant title is available.
+
+`var_alias_title`
+
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [Issue](issue-properties-var_alias_title.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/var_alias_title")
+
+### var\_alias\_title Type
+
+`string`
+
+### var\_alias\_title Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
 
 ## olr
 
@@ -278,7 +301,7 @@ Each style consists of:
 
 ## pp
 
-Canonical IDs of pages in the issue, without file extension (e.g. GDL-1900-01-02-a-p0004). In the case `sm` is in \[`print`, `typescript`]
+Canonical IDs of pages in the issue, without file extension (e.g. GDL-1900-01-02-a-p0004). In the case `sm` is in \[`print`, `typescript`].
 
 `pp`
 
@@ -296,7 +319,7 @@ Canonical IDs of pages in the issue, without file extension (e.g. GDL-1900-01-02
 
 ## rr
 
-Canonical ID of audio record of the issue (in list for consistency), without file extension (e.g. INA-1900-01-02-a-r0004). In the case `sm`==`audio`
+Canonical ID of audio record of the issue (in list for consistency), without file extension (e.g. INA-1900-01-02-a-r0004). In the case `sm`==`audio`.
 
 `rr`
 
@@ -332,7 +355,7 @@ any of the following: `string` or `array` ([Details](issue-properties-n.md))
 
 ## iiif\_manifest\_uri
 
-URI for the issue's manifest in the IIIF Presentation API, if the corresponding IIIF server has one.
+URI for the issue's manifest in the IIIF Presentation API. The field is present only when a meaningful URI is available.
 
 `iiif_manifest_uri`
 
@@ -348,9 +371,13 @@ URI for the issue's manifest in the IIIF Presentation API, if the corresponding 
 
 `string`
 
+### iiif\_manifest\_uri Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
+
 ## rc
 
-Radio channel, if applicable (st=='radio\_broadcast') and is known.
+Radio channel, if applicable (st=='radio\_broadcast'). The field is present only when a meaningful value is available.
 
 `rc`
 
@@ -366,9 +393,13 @@ Radio channel, if applicable (st=='radio\_broadcast') and is known.
 
 `string`
 
+### rc Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
+
 ## rp
 
-Radio program, if applicable (st=='radio\_broadcast') and is known.
+Radio program if applicable (st=='radio\_broadcast'). The field is present only when a meaningful program name is available.
 
 `rp`
 
@@ -383,6 +414,10 @@ Radio program, if applicable (st=='radio\_broadcast') and is known.
 ### rp Type
 
 `string`
+
+### rp Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
 
 # Issue Definitions
 
@@ -401,7 +436,9 @@ Reference this group by using
 | [l](#l)                                                            | `string`  | Optional | cannot be null | [Issue](issue-defs-metadata-properties-l.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/l")                                                         |
 | [consolidated\_reocr\_applied](#consolidated_reocr_applied)        | `boolean` | Optional | cannot be null | [Issue](issue-defs-metadata-properties-consolidated_reocr_applied.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/consolidated_reocr_applied")       |
 | [consolidated\_reocr\_run\_id](#consolidated_reocr_run_id)         | `string`  | Optional | cannot be null | [Issue](issue-defs-metadata-properties-consolidated_reocr_run_id.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/consolidated_reocr_run_id")         |
-| [consolidated\_ocrqa](#consolidated_ocrqa)                         | `number`  | Optional | cannot be null | [Issue](issue-defs-metadata-properties-consolidated_ocrqa.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/consolidated_ocrqa")                       |
+| [consolidated\_ocrqa](#consolidated_ocrqa)                         | Merged    | Optional | cannot be null | [Issue](issue-defs-metadata-properties-consolidated_ocrqa.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/consolidated_ocrqa")                       |
+| [consolidated\_char\_len](#consolidated_char_len)                  | `integer` | Optional | can be null    | [Issue](issue-defs-metadata-properties-consolidated_char_len.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/consolidated_char_len")                 |
+| [lg\_original](#lg_original)                                       | `string`  | Optional | can be null    | [Issue](issue-defs-metadata-properties-lg_original.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/lg_original")                                     |
 | [consolidated\_lg](#consolidated_lg)                               | Merged    | Optional | can be null    | [Issue](issue-defs-metadata-properties-consolidated_lg.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/consolidated_lg")                             |
 | [consolidated\_langident\_run\_id](#consolidated_langident_run_id) | `string`  | Optional | cannot be null | [Issue](issue-defs-metadata-properties-consolidated_langident_run_id.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/consolidated_langident_run_id") |
 | [pp](#pp-1)                                                        | `array`   | Optional | cannot be null | [Issue](issue-defs-metadata-properties-pp.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/pp")                                                       |
@@ -516,13 +553,13 @@ Run ID corresponding to the re-OCR process. Only defined if `consolidated==True`
 
 ### consolidated\_ocrqa
 
-The estimated OCR quality, between 0 and 1. Only defined if `consolidated==True`.
+Estimated OCR quality, between 0 and 1. May be null if there is no text or not enough text to compute an estimate. Only defined if `consolidated==True`.
 
 `consolidated_ocrqa`
 
 *   is optional
 
-*   Type: `number`
+*   Type: merged type ([Details](issue-defs-metadata-properties-consolidated_ocrqa.md))
 
 *   cannot be null
 
@@ -530,7 +567,53 @@ The estimated OCR quality, between 0 and 1. Only defined if `consolidated==True`
 
 #### consolidated\_ocrqa Type
 
-`number`
+merged type ([Details](issue-defs-metadata-properties-consolidated_ocrqa.md))
+
+any of
+
+*   [Untitled number in Issue](issue-defs-metadata-properties-consolidated_ocrqa-anyof-0.md "check type definition")
+
+*   [Untitled null in Issue](issue-defs-metadata-properties-consolidated_ocrqa-anyof-1.md "check type definition")
+
+### consolidated\_char\_len
+
+Character count of the consolidated text for the content item. May be null if there is no text. Only defined if `consolidated==True`.
+
+`consolidated_char_len`
+
+*   is optional
+
+*   Type: `integer`
+
+*   can be null
+
+*   defined in: [Issue](issue-defs-metadata-properties-consolidated_char_len.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/consolidated_char_len")
+
+#### consolidated\_char\_len Type
+
+`integer`
+
+#### consolidated\_char\_len Constraints
+
+**minimum**: the value of this number must greater than or equal to: `0`
+
+### lg\_original
+
+Language of the content item in the original OCR/OLR. Only defined if `consolidated==True`.
+
+`lg_original`
+
+*   is optional
+
+*   Type: `string`
+
+*   can be null
+
+*   defined in: [Issue](issue-defs-metadata-properties-lg_original.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/metadata/properties/lg_original")
+
+#### lg\_original Type
+
+`string`
 
 ### consolidated\_lg
 
@@ -612,7 +695,7 @@ Record numbers over which the content item spans, in the case `sm` is `audio`.
 
 ### t
 
-Title of the content item. If unknown/null or empty, this field should not be defined.
+Title of the content item. The field is present only when a meaningful title is available.
 
 `t`
 
@@ -628,9 +711,13 @@ Title of the content item. If unknown/null or empty, this field should not be de
 
 `string`
 
+#### t Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
+
 ### tp
 
-Type of the content item. If unknown/null or empty, this field should not be defined.
+Type of the content item. The field is present only when a meaningful type is available.
 
 `tp`
 
@@ -665,7 +752,7 @@ Type of the content item. If unknown/null or empty, this field should not be def
 
 ### iiif\_link
 
-IIIF image link, depending on content item type (if `tp == image`). Should follow the format: '{scheme}://{server}/{prefix}/{identifier}/info.json'.
+IIIF image link, depending on content item type (if `tp == image`). The field is present only when a meaningful link is available. It should follow the format: '{scheme}://{server}/{prefix}/{identifier}/info.json'.
 
 `iiif_link`
 
@@ -680,6 +767,10 @@ IIIF image link, depending on content item type (if `tp == image`). Should follo
 #### iiif\_link Type
 
 `string`
+
+#### iiif\_link Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
 
 ### ro
 
@@ -719,7 +810,7 @@ an array of the following:`object` or `string` ([Details](issue-defs-metadata-pr
 
 ### var\_t
 
-Variant title of the media title this CI is from (only in the case of BL newspapers).
+Deprecated, replaced by `var_alias_title` at issue's top-level. Variant title of the media title this CI is from (only in the case of BL newspapers). The field is present only when a meaningful variant title is available.
 
 `var_t`
 
@@ -735,9 +826,13 @@ Variant title of the media title this CI is from (only in the case of BL newspap
 
 `string`
 
+#### var\_t Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
+
 ### archival\_note
 
-Plain-text archival note or description concerning the content-item (here in the case of INA).
+Plaintext archival note or description concerning the content item. The field is present only when a meaningful note is available.
 
 `archival_note`
 
@@ -752,6 +847,10 @@ Plain-text archival note or description concerning the content-item (here in the
 #### archival\_note Type
 
 `string`
+
+#### archival\_note Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
 
 ## Definitions group langISO639Type
 
