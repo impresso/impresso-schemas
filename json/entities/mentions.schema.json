@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://impresso.github.io/impresso-schemas/json/entities.schema.json",
+  "$id": "https://impresso.github.io/impresso-schemas/json/mentions.schema.json",
   "title": "Named Entity JSON Schema",
   "description": "Definition of the output representation of entity processing, before indexing. Named entity mentions are expressed as offline annotations with character offsets relative to content items. Essentially, the NE output is a list of JSON documents (in json line format), where each document corresponds to a content item that has a list of NE mentions (no output for CI with no mentions). The tagset corresponds to impresso-HIPE.",
   "type": "object",
