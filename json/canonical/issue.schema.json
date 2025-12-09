@@ -243,6 +243,10 @@
                     "type": "string",
                     "description": "Run ID corresponding to the re-OCR process. Only defined if `consolidated==True` and `consolidated_re_ocr_applied==True`."
                 },
+                "consolidated_reocr_model_id": {
+                    "type": "string",
+                    "description": "Model ID or name corresponding to the re-OCR process. Only defined if `consolidated==True` and `consolidated_re_ocr_applied==True`."
+                },
                 "consolidated_ocrqa": {
                     "anyOf": [
                         {
