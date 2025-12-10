@@ -247,7 +247,10 @@
                             "description": "Frequency dict of the languages present in the data."
                         },
                         "avg_ocrqa": {
-                            "type": "number",
+                            "type": [
+                                "number",
+                                "null"
+                            ],
                             "description": "Average OCRQA score of the text in the data."
                         },
                         "img_level0_class_fd": {

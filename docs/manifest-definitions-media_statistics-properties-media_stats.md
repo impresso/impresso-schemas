@@ -21,7 +21,7 @@
 | [topics](#topics)                              | `integer` | Optional | cannot be null | [Versioning Manifest](manifest-definitions-media_statistics-properties-media_stats-properties-topics.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/media_stats/properties/topics")                           |
 | [topics\_fd](#topics_fd)                       | `object`  | Optional | cannot be null | [Versioning Manifest](manifest-definitions-media_statistics-properties-media_stats-properties-topics_fd.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/media_stats/properties/topics_fd")                     |
 | [lang\_fd](#lang_fd)                           | `object`  | Optional | cannot be null | [Versioning Manifest](manifest-definitions-media_statistics-properties-media_stats-properties-lang_fd.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/media_stats/properties/lang_fd")                         |
-| [avg\_ocrqa](#avg_ocrqa)                       | `number`  | Optional | cannot be null | [Versioning Manifest](manifest-definitions-media_statistics-properties-media_stats-properties-avg_ocrqa.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/media_stats/properties/avg_ocrqa")                     |
+| [avg\_ocrqa](#avg_ocrqa)                       | `number`  | Optional | can be null    | [Versioning Manifest](manifest-definitions-media_statistics-properties-media_stats-properties-avg_ocrqa.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/media_stats/properties/avg_ocrqa")                     |
 | [img\_level0\_class\_fd](#img_level0_class_fd) | `object`  | Optional | cannot be null | [Versioning Manifest](manifest-definitions-media_statistics-properties-media_stats-properties-img_level0_class_fd.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/media_stats/properties/img_level0_class_fd") |
 | [img\_level1\_class\_fd](#img_level1_class_fd) | `object`  | Optional | cannot be null | [Versioning Manifest](manifest-definitions-media_statistics-properties-media_stats-properties-img_level1_class_fd.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/media_stats/properties/img_level1_class_fd") |
 | [img\_level2\_class\_fd](#img_level2_class_fd) | `object`  | Optional | cannot be null | [Versioning Manifest](manifest-definitions-media_statistics-properties-media_stats-properties-img_level2_class_fd.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/media_stats/properties/img_level2_class_fd") |
@@ -307,7 +307,7 @@ Average OCRQA score of the text in the data.
 
 *   Type: `number`
 
-*   cannot be null
+*   can be null
 
 *   defined in: [Versioning Manifest](manifest-definitions-media_statistics-properties-media_stats-properties-avg_ocrqa.md "https://impresso.github.io/impresso-schemas/json/versioning/manifest.schema.json#/definitions/media_statistics/properties/media_stats/properties/avg_ocrqa")
 
