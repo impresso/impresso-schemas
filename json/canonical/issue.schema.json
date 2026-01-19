@@ -318,7 +318,10 @@
                     "description": "Title of the content item. The field is present only when a meaningful title is available."
                 },
                 "tp": {
-                    "type": "string",
+                    "type": [
+                        "string",
+                        "null"
+                    ],
                     "description": "Type of the content item. The field is present only when a meaningful type is available.",
                     "enum": [
                         "article",
