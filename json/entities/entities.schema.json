@@ -9,8 +9,7 @@
       "type": "string",
       "description": "Impresso content item ID."
     },
-    "ci_type":
-    {
+    "ci_type": {
       "type": "string",
       "description": "Impresso content item type."
     },
@@ -23,84 +22,47 @@
       "description": "An alias for the system or model that produced this output, used for transparency and traceability. It should include distinguishing elements like a base name, version, and language."
     },
     "nes": {
-      "id": {
-        "type": "string",
-        "description": "The unique identifier of the named entity mention: [Document ID]:[Left Offset]:[Right Offset]:[Entity Type]:[NER Model]|[NEL Model]"
-      },
       "type": "array",
       "description": "The list of named entity mentions identified in the document.",
       "minItems": 0,
       "items": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "string",
+            "description": "The unique identifier of the named entity mention: [Document ID]:[Left Offset]:[Right Offset]:[Entity Type]:[NER Model]|[NEL Model]"
+          },
           "type": {
             "type": "string",
             "description": "NE type (coarse-grained and fine-grained).",
             "enum": [
-              "comp.demonym",
-              "comp.function",
-              "comp.name",
-              "comp.qualifier",
-              "comp.title",
               "loc",
-              "loc.add.elec",
-              "loc.add.phys",
-              "loc.adm.nat",
-              "loc.adm.reg",
-              "loc.adm.sup",
-              "loc.adm.town",
-              "loc.fac",
-              "loc.oro",
-              "loc.phys.astro",
-              "loc.phys.geo",
-              "loc.phys.hydro",
-              "loc.unk",
               "org",
-              "org.adm",
-              "org.ent",
-              "org.ent.pressagency",
               "pers",
-              "pers.coll",
-              "pers.ind",
-              "pers.ind.articleauthor",
-              "prod",
-              "prod.doctr",
-              "prod.media",
-              "time",
-              "time.date.abs",
-              "time.hour.abs",
-              "org.ent.pressagency.Reuters",
-              "org.ent.pressagency.Stefani",
-              "org.ent.pressagency.Extel",
-              "org.ent.pressagency.Havas",
-              "org.ent.pressagency.Xinhua",
-              "org.ent.pressagency.Domei",
+              "org.ent.pressagency.AP",
+              "org.ent.pressagency.ANSA",
+              "org.ent.pressagency.APA",
+              "org.ent.pressagency.AFP",
+              "org.ent.pressagency.ATS-SDA",
               "org.ent.pressagency.Belga",
               "org.ent.pressagency.CTK",
-              "org.ent.pressagency.ANSA",
-              "org.ent.pressagency.DNB",
-              "pers.ind.articleauthor",
-              "org.ent.pressagency.Wolff",
-              "org.ent.pressagency.unk",
-              "org.ent.pressagency.UP-UPI",
-              "org.ent.pressagency.ATS-SDA",
-              "org.ent.pressagency.DPA",
-              "org.ent.pressagency.AFP",
-              "pers.ind.articleauthor",
-              "org.ent.pressagency.Kipa",
-              "org.ent.pressagency.ag",
-              "org.ent.pressagency.Extel",
-              "org.ent.pressagency.ATS-SDA",
-              "org.ent.pressagency.Havas",
-              "org.ent.pressagency.Reuters",
-              "org.ent.pressagency.Xinhua",
-              "org.ent.pressagency.AP",
-              "org.ent.pressagency.APA",
-              "org.ent.pressagency.ANSA",
               "org.ent.pressagency.DDP-DAPD",
-              "org.ent.pressagency.TASS",
+              "org.ent.pressagency.DNB",
+              "org.ent.pressagency.Domei",
               "org.ent.pressagency.Europapress",
+              "org.ent.pressagency.Extel",
+              "org.ent.pressagency.Havas",
+              "org.ent.pressagency.Kipa",
+              "org.ent.pressagency.Reuters",
               "org.ent.pressagency.SPK-SMP",
+              "org.ent.pressagency.Stefani",
+              "org.ent.pressagency.TASS",
+              "org.ent.pressagency.UP-UPI",
+              "org.ent.pressagency.Wolff",
+              "org.ent.pressagency.Xinhua",
+              "org.ent.pressagency.ag",
+              "org.ent.pressagency.unk",
+              "pers.ind.articleauthor",
               "unk"
             ]
           },
@@ -130,23 +92,23 @@
           },
           "wkpedia_pagename": {
             "type": "string",
-            "description": "Wikipedia page name, i.e. the last part of the wikipedia URL (e.g.  United_States)"
+            "description": "Wikipedia page name, i.e. the last part of the wikipedia URL (e.g. United_States)."
           },
           "wkpedia_url": {
             "type": "string",
-            "description": "Wikipedia page URL, e.g. https://en.wikipedia.org/wiki/United_States"
+            "description": "Wikipedia page URL, e.g. https://en.wikipedia.org/wiki/United_States."
           },
           "name": {
             "type": "string",
-            "description":"In case of a person mention, the entity component of type 'name', as defined in the Impresso HIPE NE Annotation guidelines (https://zenodo.org/records/3585750)."
+            "description": "In case of a person mention, the entity component of type 'name', as defined in the Impresso HIPE NE Annotation guidelines (https://zenodo.org/records/3585750)."
           },
           "title": {
             "type": "string",
-            "description":"In case of a person mention, the entity component of type 'title', as defined in the Impresso HIPE NE Annotation guidelines (https://zenodo.org/records/3585750). "
+            "description": "In case of a person mention, the entity component of type 'title', as defined in the Impresso HIPE NE Annotation guidelines (https://zenodo.org/records/3585750)."
           },
           "function": {
             "type": "string",
-            "description":"In case of a person mention, the entity component of type 'function', as defined in the Impresso HIPE NE Annotation guidelines (https://zenodo.org/records/3585750). "
+            "description": "In case of a person mention, the entity component of type 'function', as defined in the Impresso HIPE NE Annotation guidelines (https://zenodo.org/records/3585750)."
           }
         },
         "required": [
