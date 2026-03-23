@@ -145,6 +145,19 @@
                             "null"
                         ],
                         "description": "The canonical ID of the content item to which the page region belongs."
+                    },
+                    "section_pOf": {
+                        "type": [
+                            "array",
+                            "null"
+                        ],
+                        "items": {
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "description": "The canonical IDs of the content-item which compose the section to which the page region belongs (only when the region corresponds to the section title)."
                     }
                 },
                 "required": [

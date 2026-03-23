@@ -95,37 +95,7 @@
                                 "type": "array",
                                 "description": "List of parts of the given section or components. Exact contents can vary, will typically be composed of the metadata at disposal in the OCR/OLR.",
                                 "items": {
-                                    "type": "object",
-                                    "properties": {
-                                        "comp_role": {
-                                            "type": [
-                                                "null",
-                                                "string"
-                                            ],
-                                            "description": "Role of the component part (eg. heading, body, etc)."
-                                        },
-                                        "comp_id": {
-                                            "type": [
-                                                "string",
-                                                "array"
-                                            ],
-                                            "description": "ID of the part."
-                                        },
-                                        "comp_fileid": {
-                                            "type": [
-                                                "string",
-                                                "array"
-                                            ],
-                                            "description": "ID of the ALTO file the component comes from."
-                                        },
-                                        "comp_page_no": {
-                                            "type": [
-                                                "integer",
-                                                "array"
-                                            ],
-                                            "description": "Page number of the component."
-                                        }
-                                    }
+                                    "$ref": "#/$defs/legacy_part_item"
                                 }
                             },
                             "source": {
@@ -138,8 +108,40 @@
                         }
                     },
                     "pOf": {
-                        "type": "string",
+                        "type": [
+                            "string",
+                            "null"
+                        ],
                         "description": "Article/content-item to which the image is attached (if `tp == image`)."
+                    },
+                    "section_title": {
+                        "type": "object",
+                        "properties": {
+                            "title_text": {
+                                "type": "string"
+                            },
+                            "composing_ci_ids": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "section_id": {
+                                "type": "string"
+                            },
+                            "heading_legacy_parts": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/$defs/legacy_part_item"
+                                }
+                            }
+                        },
+                        "required": [
+                            "title_text",
+                            "composing_ci_ids",
+                            "section_id",
+                            "heading_legacy_parts"
+                        ]
                     }
                 }
             },
@@ -391,6 +393,39 @@
                 "consolidated_lg": [
                     "consolidated_langident_run_id"
                 ]
+            }
+        },
+        "legacy_part_item": {
+            "type": "object",
+            "properties": {
+                "comp_role": {
+                    "type": [
+                        "null",
+                        "string"
+                    ],
+                    "description": "Role of the component part (eg. heading, body, etc)."
+                },
+                "comp_id": {
+                    "type": [
+                        "string",
+                        "array"
+                    ],
+                    "description": "ID of the part."
+                },
+                "comp_fileid": {
+                    "type": [
+                        "string",
+                        "array"
+                    ],
+                    "description": "ID of the ALTO file the component comes from."
+                },
+                "comp_page_no": {
+                    "type": [
+                        "integer",
+                        "array"
+                    ],
+                    "description": "Page number of the component."
+                }
             }
         },
         "langISO639Type": {
