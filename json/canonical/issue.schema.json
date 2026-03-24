@@ -335,7 +335,8 @@
                         "page",
                         "radio_bulletin",
                         "radio_broadcast_episode",
-                        "chronicle"
+                        "chronicle",
+                        "chapter"
                     ]
                 },
                 "iiif_link": {
