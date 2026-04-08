@@ -125,6 +125,28 @@
             ],
             "description": "Language of the content item in the original OCR/OLR. Only defined if the content-item was consolidated."
         },
+        "section_title": {
+            "type": "object",
+            "properties": {
+                "title_text": {
+                    "type": "string"
+                },
+                "composing_ci_ids": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "section_id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "title_text",
+                "composing_ci_ids",
+                "section_id"
+            ]
+        },
         "pp": {
             "description": "Array of physical page numbers spanned by the content item, based on the issue pagination as extracted from the OCR.",
             "type": "array",
