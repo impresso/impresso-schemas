@@ -209,6 +209,10 @@
             "minLength": 1,
             "description": "URI for the issue's manifest in the IIIF Presentation API. The field is present only when a meaningful URI is available."
         },
+        "is_exact_date": {
+            "description": "False if the date assigned to the issue is known to be inexact or approximated, True or undefined otherwise.",
+            "type": "boolean"
+        },
         "rc": {
             "type": "string",
             "minLength": 1,
