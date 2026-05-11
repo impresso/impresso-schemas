@@ -218,6 +218,10 @@
             "type": "string",
             "minLength": 1,
             "description": "Radio program if applicable (st=='radio_broadcast'). The field is present only when a meaningful program name is available."
+        },
+        "provided_metadata": {
+            "type": "object",
+            "description": "Minimally preprocessed issue-level metadata included by the provider institution, especially useful for radio data (sm=audio)."
         }
     },
     "$defs": {
@@ -336,7 +340,9 @@
                         "radio_bulletin",
                         "radio_broadcast_episode",
                         "chronicle",
-                        "chapter"
+                        "chapter",
+                        "discussion",
+                        "entertainment"
                     ]
                 },
                 "iiif_link": {
@@ -361,7 +367,7 @@
                 "var_t": {
                     "type": "string",
                     "minLength": 1,
-                    "description": "Deprecated, replaced by `var_alias_title` at issue's top-level. Variant title of the media title this CI is from (only in the case of BL newspapers). The field is present only when a meaningful variant title is available."
+                    "description": "Deprecated, replaced by `media_title_variant` at issue's top-level. Variant title of the media title this CI is from (only in the case of BL newspapers). The field is present only when a meaningful variant title is available."
                 },
                 "archival_note": {
                     "type": "string",
