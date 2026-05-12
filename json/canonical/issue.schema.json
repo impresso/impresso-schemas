@@ -346,7 +346,8 @@
                         "chronicle",
                         "chapter",
                         "discussion",
-                        "entertainment"
+                        "entertainment",
+                        null
                     ]
                 },
                 "iiif_link": {
@@ -381,7 +382,8 @@
             },
             "required": [
                 "id",
-                "tp"
+                "tp",
+                "lg"
             ],
             "oneOf": [
                 {
