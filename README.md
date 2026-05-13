@@ -23,11 +23,11 @@ All schemas follow **JSON Schema draft 2020-12**. Schema `$id` URIs are rooted a
 
 ### Topic modelling (`json/topic_model/`)
 
-| Schema                            | Description                            | Docs                                                     |
-| --------------------------------- | -------------------------------------- | -------------------------------------------------------- |
-| `topic_assignment.schema.json`    | Topic assignment per content item (v1) | [docs/topic_assignment.md](docs/topic_assignment.md)     |
-| `topic_assignment.v2.schema.json` | Topic assignment per content item (v2) | [docs/topic_assignment-1.md](docs/topic_assignment-1.md) |
-| `topic_description.schema.json`   | Topic description (words + weights)    | [docs/topic_description.md](docs/topic_description.md)   |
+| Schema                            | Description                            | Docs                                                 |
+| --------------------------------- | -------------------------------------- | ---------------------------------------------------- |
+| `topic_assignment.schema.json`    | Topic assignment per content item (v1) | [docs/topic_assignment.md](docs/topic_assignment.md) |
+| `topic_assignment.v2.schema.json` | Topic assignment per content item (v2) | [docs/topic_assignment.md](docs/topic_assignment.md) |
+| `topic_description.schema.json`   | Topic description (words + weights)    | [docs/topic_description.md](docs/topic_description.md) |
 
 ### Language identification (`json/language_identification/`)
 
