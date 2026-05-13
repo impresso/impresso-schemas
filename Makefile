@@ -1,5 +1,5 @@
 
-.PHONY: help tests check-env clean-documentation documentation
+.PHONY: help tests check-python-env check-node-env clean-documentation documentation
 
 help:
 	@echo "Usage:"
@@ -11,21 +11,23 @@ help:
 	@echo "  python3 -m venv .venv && source .venv/bin/activate && pip install ."
 	@echo "  npm install -g @adobe/jsonschema2md"
 
-check-env:
+check-python-env:
 	@python3 -c "import pytest, jsonschema" 2>/dev/null || \
 	  { echo "ERROR: pytest and/or jsonschema not found."; \
-	    echo "       Activate your virtualenv and run: pip install . (or: pip install -r requirements.txt)"; \
+	    echo "       Activate your virtualenv and run: pip install ."; \
 	    exit 1; }
+
+check-node-env:
 	@jsonschema2md --version 2>/dev/null || \
 	  { echo "ERROR: jsonschema2md not found."; \
 	    echo "       Install it with: npm install -g @adobe/jsonschema2md"; \
 	    exit 1; }
 
-tests: check-env
+tests: check-python-env
 	python3 -m pytest tests/ -v
 
 clean-documentation:
 	rm -fv docs/*
 
-documentation: check-env
+documentation: check-python-env check-node-env
 	jsonschema2md -d json/ --header false -n -v 2020-12 -o docs -x - -s propTable
