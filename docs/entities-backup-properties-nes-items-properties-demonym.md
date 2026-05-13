@@ -1,0 +1,3 @@
+## demonym Type
+
+`string`

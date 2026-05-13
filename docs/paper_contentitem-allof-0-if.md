@@ -14,13 +14,13 @@ unknown
 
 `st`
 
-*   is optional
+* is optional
 
-*   Type: unknown
+* Type: unknown
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Paper Content Item](paper_contentitem-allof-0-if-properties-st.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/allOf/0/if/properties/st")
+* defined in: [Paper Content Item](paper_contentitem-allof-0-if-properties-st.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/allOf/0/if/properties/st")
 
 ### st Type
 

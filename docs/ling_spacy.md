@@ -1,13 +1,14 @@
-## Untitled object in undefined Type
+## Linguistic Annotation (spaCy) Type
 
-`object` ([Details](ling_spacy.md))
+`object` ([Linguistic Annotation (spaCy)](ling_spacy.md))
 
-# Untitled object in undefined Properties
+# Linguistic Annotation (spaCy) Properties
 
-| Property                  | Type          | Required | Nullable       | Defined by                                                                                                                                                        |
-| :------------------------ | :------------ | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ts](#ts)                 | `string`      | Required | cannot be null | [Untitled schema](ling_spacy-properties-the-ts-schema.md "#/properties/ts#/properties/ts")                                                                        |
-| [properties](#properties) | Not specified | Optional | cannot be null | [Untitled schema](ling_spacy-properties-properties.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/properties/properties") |
+| Property        | Type     | Required | Nullable       | Defined by                                                                                                                                                                                   |
+| :-------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [ts](#ts)       | `string` | Required | cannot be null | [Linguistic Annotation (spaCy)](ling_spacy-properties-the-ts-schema.md "https://impresso.github.io/impresso-schemas/json/linguistic_annotation/ling_spacy.schema.json#/properties/ts")       |
+| [id](#id)       | `string` | Required | cannot be null | [Linguistic Annotation (spaCy)](ling_spacy-properties-the-id-schema.md "https://impresso.github.io/impresso-schemas/json/linguistic_annotation/ling_spacy.schema.json#/properties/id")       |
+| [sents](#sents) | `array`  | Required | cannot be null | [Linguistic Annotation (spaCy)](ling_spacy-properties-the-sents-schema.md "https://impresso.github.io/impresso-schemas/json/linguistic_annotation/ling_spacy.schema.json#/properties/sents") |
 
 ## ts
 
@@ -15,13 +16,13 @@ timestamp
 
 `ts`
 
-*   is required
+* is required
 
-*   Type: `string` ([The Ts Schema](ling_spacy-properties-the-ts-schema.md))
+* Type: `string` ([The Ts Schema](ling_spacy-properties-the-ts-schema.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](ling_spacy-properties-the-ts-schema.md "#/properties/ts#/properties/ts")
+* defined in: [Linguistic Annotation (spaCy)](ling_spacy-properties-the-ts-schema.md "https://impresso.github.io/impresso-schemas/json/linguistic_annotation/ling_spacy.schema.json#/properties/ts")
 
 ### ts Type
 
@@ -43,22 +44,54 @@ timestamp
 "2009-06-15T13:45:30"
 ```
 
-## properties
+## id
 
+id of text
 
+`id`
 
-`properties`
+* is required
 
-*   is optional
+* Type: `string` ([The Id Schema](ling_spacy-properties-the-id-schema.md))
 
-*   Type: unknown
+* cannot be null
 
-*   cannot be null
+* defined in: [Linguistic Annotation (spaCy)](ling_spacy-properties-the-id-schema.md "https://impresso.github.io/impresso-schemas/json/linguistic_annotation/ling_spacy.schema.json#/properties/id")
 
-*   defined in: [Untitled schema](ling_spacy-properties-properties.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/properties/properties")
+### id Type
 
-### properties Type
+`string` ([The Id Schema](ling_spacy-properties-the-id-schema.md))
 
-unknown
+### id Constraints
 
-# Untitled object in undefined Definitions
+**pattern**: the string must match the following regular expression:&#x20;
+
+```regexp
+^(.*)$
+```
+
+[try pattern](https://regexr.com/?expression=%5E\(.*\)%24 "try regular expression with regexr.com")
+
+### id Examples
+
+```json
+"NZZ-1794-07-26-a-i0002"
+```
+
+## sents
+
+container for sentences (boundaries produced by spacy)
+
+`sents`
+
+* is required
+
+* Type: `object[]` ([The Items Schema](ling_spacy-properties-the-sents-schema-the-items-schema.md))
+
+* cannot be null
+
+* defined in: [Linguistic Annotation (spaCy)](ling_spacy-properties-the-sents-schema.md "https://impresso.github.io/impresso-schemas/json/linguistic_annotation/ling_spacy.schema.json#/properties/sents")
+
+### sents Type
+
+`object[]` ([The Items Schema](ling_spacy-properties-the-sents-schema-the-items-schema.md))

@@ -16,13 +16,13 @@ Coordinates of audio-segment in the format (start-time, duration), each in secon
 
 `tc`
 
-*   is required
+* is required
 
-*   Type: `number[]`
+* Type: `number[]`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Audio Record](audio_record-properties-s-items-properties-tc.md "https://impresso.github.io/impresso-schemas/json/canonical/audio_record.schema.json#/properties/s/items/properties/tc")
+* defined in: [Audio Record](audio_record-properties-s-items-properties-tc.md "https://impresso.github.io/impresso-schemas/json/canonical/audio_record.schema.json#/properties/s/items/properties/tc")
 
 ### tc Type
 
@@ -40,13 +40,13 @@ List of speech utterances: consecutive same-speaker segments (derived from ASR's
 
 `u`
 
-*   is required
+* is required
 
-*   Type: `object[]` ([Details](audio_record-properties-s-items-properties-u-items.md))
+* Type: `object[]` ([Details](audio_record-properties-s-items-properties-u-items.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Audio Record](audio_record-properties-s-items-properties-u.md "https://impresso.github.io/impresso-schemas/json/canonical/audio_record.schema.json#/properties/s/items/properties/u")
+* defined in: [Audio Record](audio_record-properties-s-items-properties-u.md "https://impresso.github.io/impresso-schemas/json/canonical/audio_record.schema.json#/properties/s/items/properties/u")
 
 ### u Type
 
@@ -58,13 +58,13 @@ The canonical ID of the content item to which the utterance belongs.
 
 `pOf`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Audio Record](audio_record-properties-s-items-properties-pof.md "https://impresso.github.io/impresso-schemas/json/canonical/audio_record.schema.json#/properties/s/items/properties/pOf")
+* defined in: [Audio Record](audio_record-properties-s-items-properties-pof.md "https://impresso.github.io/impresso-schemas/json/canonical/audio_record.schema.json#/properties/s/items/properties/pOf")
 
 ### pOf Type
 

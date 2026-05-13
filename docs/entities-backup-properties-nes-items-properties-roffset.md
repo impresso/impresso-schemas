@@ -1,0 +1,3 @@
+## rOffset Type
+
+`integer`

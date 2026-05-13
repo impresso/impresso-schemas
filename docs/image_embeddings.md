@@ -4,15 +4,15 @@
 
 # Image Embeddings JSON Schema Properties
 
-| Property                   | Type      | Required | Nullable       | Defined by                                                                                                                                                                                  |
-| :------------------------- | :-------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [ci\_id](#ci_id)           | `string`  | Required | cannot be null | [Image Embeddings JSON Schema](image_embeddings-properties-ci_id.md "https://impresso.github.io/impresso-schemas/json/embeddings/image_embeddings.schema.json#/properties/ci_id")           |
-| [ts](#ts)                  | `string`  | Optional | cannot be null | [Image Embeddings JSON Schema](image_embeddings-properties-ts.md "https://impresso.github.io/impresso-schemas/json/embeddings/image_embeddings.schema.json#/properties/ts")                 |
-| [model\_id](#model_id)     | `string`  | Required | cannot be null | [Image Embeddings JSON Schema](image_embeddings-properties-model_id.md "https://impresso.github.io/impresso-schemas/json/embeddings/image_embeddings.schema.json#/properties/model_id")     |
-| [size](#size)              | `integer` | Required | cannot be null | [Image Embeddings JSON Schema](image_embeddings-properties-size.md "https://impresso.github.io/impresso-schemas/json/embeddings/image_embeddings.schema.json#/properties/size")             |
-| [embedding](#embedding)    | Merged    | Required | cannot be null | [Image Embeddings JSON Schema](image_embeddings-properties-embedding.md "https://impresso.github.io/impresso-schemas/json/embeddings/image_embeddings.schema.json#/properties/embedding")   |
-| [seconds](#seconds)        | `number`  | Optional | cannot be null | [Image Embeddings JSON Schema](image_embeddings-properties-seconds.md "https://impresso.github.io/impresso-schemas/json/embeddings/image_embeddings.schema.json#/properties/seconds")       |
-| [title\_year](#title_year) | `string`  | Optional | cannot be null | [Image Embeddings JSON Schema](image_embeddings-properties-title_year.md "https://impresso.github.io/impresso-schemas/json/embeddings/image_embeddings.schema.json#/properties/title_year") |
+| Property                   | Type      | Required | Nullable       | Defined by                                                                                                                                                                                        |
+| :------------------------- | :-------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [ci\_id](#ci_id)           | `string`  | Required | cannot be null | [Image Embeddings JSON Schema](image_embeddings-properties-ci_id.md "https://impresso.github.io/impresso-schemas/json/image_embeddings/image_embeddings.schema.json#/properties/ci_id")           |
+| [ts](#ts)                  | `string`  | Optional | cannot be null | [Image Embeddings JSON Schema](image_embeddings-properties-ts.md "https://impresso.github.io/impresso-schemas/json/image_embeddings/image_embeddings.schema.json#/properties/ts")                 |
+| [model\_id](#model_id)     | `string`  | Required | cannot be null | [Image Embeddings JSON Schema](image_embeddings-properties-model_id.md "https://impresso.github.io/impresso-schemas/json/image_embeddings/image_embeddings.schema.json#/properties/model_id")     |
+| [size](#size)              | `integer` | Required | cannot be null | [Image Embeddings JSON Schema](image_embeddings-properties-size.md "https://impresso.github.io/impresso-schemas/json/image_embeddings/image_embeddings.schema.json#/properties/size")             |
+| [embedding](#embedding)    | Merged    | Required | cannot be null | [Image Embeddings JSON Schema](image_embeddings-properties-embedding.md "https://impresso.github.io/impresso-schemas/json/image_embeddings/image_embeddings.schema.json#/properties/embedding")   |
+| [seconds](#seconds)        | `number`  | Optional | cannot be null | [Image Embeddings JSON Schema](image_embeddings-properties-seconds.md "https://impresso.github.io/impresso-schemas/json/image_embeddings/image_embeddings.schema.json#/properties/seconds")       |
+| [title\_year](#title_year) | `string`  | Optional | cannot be null | [Image Embeddings JSON Schema](image_embeddings-properties-title_year.md "https://impresso.github.io/impresso-schemas/json/image_embeddings/image_embeddings.schema.json#/properties/title_year") |
 
 ## ci\_id
 
@@ -20,13 +20,13 @@ Unique identifier for the content item.
 
 `ci_id`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Image Embeddings JSON Schema](image_embeddings-properties-ci_id.md "https://impresso.github.io/impresso-schemas/json/embeddings/image_embeddings.schema.json#/properties/ci_id")
+* defined in: [Image Embeddings JSON Schema](image_embeddings-properties-ci_id.md "https://impresso.github.io/impresso-schemas/json/image_embeddings/image_embeddings.schema.json#/properties/ci_id")
 
 ### ci\_id Type
 
@@ -54,13 +54,13 @@ Timestamp indicating when the embedding was created (e.g., '2024-10-09T09:29:02Z
 
 `ts`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Image Embeddings JSON Schema](image_embeddings-properties-ts.md "https://impresso.github.io/impresso-schemas/json/embeddings/image_embeddings.schema.json#/properties/ts")
+* defined in: [Image Embeddings JSON Schema](image_embeddings-properties-ts.md "https://impresso.github.io/impresso-schemas/json/image_embeddings/image_embeddings.schema.json#/properties/ts")
 
 ### ts Type
 
@@ -76,13 +76,13 @@ The ID of the model that produced this output, composed as specified in these sl
 
 `model_id`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Image Embeddings JSON Schema](image_embeddings-properties-model_id.md "https://impresso.github.io/impresso-schemas/json/embeddings/image_embeddings.schema.json#/properties/model_id")
+* defined in: [Image Embeddings JSON Schema](image_embeddings-properties-model_id.md "https://impresso.github.io/impresso-schemas/json/image_embeddings/image_embeddings.schema.json#/properties/model_id")
 
 ### model\_id Type
 
@@ -100,13 +100,13 @@ The size of the embedding vector.
 
 `size`
 
-*   is required
+* is required
 
-*   Type: `integer`
+* Type: `integer`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Image Embeddings JSON Schema](image_embeddings-properties-size.md "https://impresso.github.io/impresso-schemas/json/embeddings/image_embeddings.schema.json#/properties/size")
+* defined in: [Image Embeddings JSON Schema](image_embeddings-properties-size.md "https://impresso.github.io/impresso-schemas/json/image_embeddings/image_embeddings.schema.json#/properties/size")
 
 ### size Type
 
@@ -118,13 +118,13 @@ The size of the embedding vector.
 
 `embedding`
 
-*   is required
+* is required
 
-*   Type: merged type ([Details](image_embeddings-properties-embedding.md))
+* Type: merged type ([Details](image_embeddings-properties-embedding.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Image Embeddings JSON Schema](image_embeddings-properties-embedding.md "https://impresso.github.io/impresso-schemas/json/embeddings/image_embeddings.schema.json#/properties/embedding")
+* defined in: [Image Embeddings JSON Schema](image_embeddings-properties-embedding.md "https://impresso.github.io/impresso-schemas/json/image_embeddings/image_embeddings.schema.json#/properties/embedding")
 
 ### embedding Type
 
@@ -132,7 +132,7 @@ merged type ([Details](image_embeddings-properties-embedding.md))
 
 one (and only one) of
 
-*   [Untitled array in Image Embeddings JSON Schema](image_embeddings-properties-embedding-oneof-0.md "check type definition")
+* [Untitled array in Image Embeddings JSON Schema](image_embeddings-properties-embedding-oneof-0.md "check type definition")
 
 ## seconds
 
@@ -140,13 +140,13 @@ Number of seconds it took to generate the embedding for this image.
 
 `seconds`
 
-*   is optional
+* is optional
 
-*   Type: `number`
+* Type: `number`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Image Embeddings JSON Schema](image_embeddings-properties-seconds.md "https://impresso.github.io/impresso-schemas/json/embeddings/image_embeddings.schema.json#/properties/seconds")
+* defined in: [Image Embeddings JSON Schema](image_embeddings-properties-seconds.md "https://impresso.github.io/impresso-schemas/json/image_embeddings/image_embeddings.schema.json#/properties/seconds")
 
 ### seconds Type
 
@@ -164,13 +164,13 @@ Title-year key this image emebeddings corresponds to.
 
 `title_year`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Image Embeddings JSON Schema](image_embeddings-properties-title_year.md "https://impresso.github.io/impresso-schemas/json/embeddings/image_embeddings.schema.json#/properties/title_year")
+* defined in: [Image Embeddings JSON Schema](image_embeddings-properties-title_year.md "https://impresso.github.io/impresso-schemas/json/image_embeddings/image_embeddings.schema.json#/properties/title_year")
 
 ### title\_year Type
 

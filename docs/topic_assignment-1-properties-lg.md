@@ -1,0 +1,3 @@
+## lg Type
+
+`string`

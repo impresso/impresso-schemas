@@ -15,13 +15,13 @@ The base URI of the IIIF image server. There can be multiple images as content i
 
 `iiif_img_base_uri`
 
-*   is optional
+* is optional
 
-*   Type: `string[]`
+* Type: `string[]`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Content Item](bbox_visualizer-properties-iiif_img_base_uri.md "https://impresso.github.io/impresso-schemas/json/visualizer/bbox_visualizer.schema.json#/properties/iiif_img_base_uri")
+* defined in: [Content Item](bbox_visualizer-properties-iiif_img_base_uri.md "https://impresso.github.io/impresso-schemas/json/visualizer/bbox_visualizer.schema.json#/properties/iiif_img_base_uri")
 
 ### iiif\_img\_base\_uri Type
 
@@ -37,13 +37,13 @@ Bounding boxes of the content items or pages in the IIIF image. The bounding box
 
 `bboxes`
 
-*   is optional
+* is optional
 
-*   Type: `object` ([Details](bbox_visualizer-properties-bboxes.md))
+* Type: `object` ([Details](bbox_visualizer-properties-bboxes.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Content Item](bbox_visualizer-properties-bboxes.md "https://impresso.github.io/impresso-schemas/json/visualizer/bbox_visualizer.schema.json#/properties/bboxes")
+* defined in: [Content Item](bbox_visualizer-properties-bboxes.md "https://impresso.github.io/impresso-schemas/json/visualizer/bbox_visualizer.schema.json#/properties/bboxes")
 
 ### bboxes Type
 

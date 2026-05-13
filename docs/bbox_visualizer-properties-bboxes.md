@@ -18,13 +18,13 @@ Additional properties are allowed, as long as they follow this schema:
 
 
 
-*   is optional
+* is optional
 
-*   Type: `object[]` ([Details](bbox_visualizer-properties-bboxes-additionalproperties-items.md))
+* Type: `object[]` ([Details](bbox_visualizer-properties-bboxes-additionalproperties-items.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Content Item](bbox_visualizer-properties-bboxes-additionalproperties.md "https://impresso.github.io/impresso-schemas/json/visualizer/bbox_visualizer.schema.json#/properties/bboxes/additionalProperties")
+* defined in: [Content Item](bbox_visualizer-properties-bboxes-additionalproperties.md "https://impresso.github.io/impresso-schemas/json/visualizer/bbox_visualizer.schema.json#/properties/bboxes/additionalProperties")
 
 ### additionalProperties Type
 

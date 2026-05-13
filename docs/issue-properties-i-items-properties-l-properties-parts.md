@@ -1,3 +1,3 @@
 ## parts Type
 
-`object[]` ([Details](issue-properties-i-items-properties-l-properties-parts-items.md))
+`object[]` ([Details](issue-defs-legacy_part_item.md))
