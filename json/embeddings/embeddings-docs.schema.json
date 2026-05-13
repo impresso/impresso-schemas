@@ -10,8 +10,7 @@
       "description": "Unique identifier for the content item.",
       "examples": ["actionfem-1940-01-08-a-i0001"]
     },
-    "ci_type":
-    {
+    "ci_type": {
       "type": "string",
       "description": "Type of content item as present in the rebuilt"
     },
@@ -54,10 +53,5 @@
       "format": "date-time"
     }
   },
-  "required": [
-    "ci_id",
-    "embedding",
-    "model_id",
-    "size"
-  ]
+  "required": ["ci_id", "embedding", "model_id", "size"]
 }
