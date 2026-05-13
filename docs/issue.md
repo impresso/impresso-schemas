@@ -774,7 +774,7 @@ Title of the content item. The field is present only when a meaningful title is 
 
 ### tp
 
-Type of the content item. The field is present only when a meaningful type is available.
+Type of the content item.
 
 `tp`
 
@@ -809,7 +809,6 @@ Type of the content item. The field is present only when a meaningful type is av
 | `"chapter"`                 |             |
 | `"discussion"`              |             |
 | `"entertainment"`           |             |
-| `null`                      |             |
 
 ### iiif\_link
 

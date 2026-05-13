@@ -160,7 +160,7 @@ Number of seconds it took to generate the embedding for this image.
 
 ## title\_year
 
-Title-year key this image emebeddings corresponds to.
+Title-year key this image embeddings corresponds to.
 
 `title_year`
 

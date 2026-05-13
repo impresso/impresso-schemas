@@ -332,7 +332,7 @@
                         "string",
                         "null"
                     ],
-                    "description": "Type of the content item. The field is present only when a meaningful type is available.",
+                    "description": "Type of the content item.",
                     "enum": [
                         "article",
                         "ad",
@@ -346,8 +346,7 @@
                         "chronicle",
                         "chapter",
                         "discussion",
-                        "entertainment",
-                        null
+                        "entertainment"
                     ]
                 },
                 "iiif_link": {
@@ -502,12 +501,12 @@
                     "sm": {
                         "const": "audio"
                     }
-                },
-                "then": {
-                    "required": [
-                        "rr"
-                    ]
                 }
+            },
+            "then": {
+                "required": [
+                    "rr"
+                ]
             }
         },
         {

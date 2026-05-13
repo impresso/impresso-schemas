@@ -21,4 +21,3 @@
 | `"chapter"`                 |             |
 | `"discussion"`              |             |
 | `"entertainment"`           |             |
-| `null`                      |             |
