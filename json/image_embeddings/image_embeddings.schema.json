@@ -45,7 +45,7 @@
     },
     "title_year": {
       "type": "string",
-      "description": "Title-year key this image emebeddings corresponds to.",
+      "description": "Title-year key this image embeddings corresponds to.",
       "pattern": "^[a-zA-Z0-9]+-\\d{4}$",
       "examples": ["actionfem-1940"]
     }
