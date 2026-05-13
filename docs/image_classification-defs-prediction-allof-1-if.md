@@ -4,9 +4,9 @@ unknown
 
 # if Properties
 
-| Property        | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                    |
-| :-------------- | :------------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [level](#level) | Not specified | Optional | cannot be null | [Untitled schema](image_classification-defs-prediction-allof-1-if-properties-level.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/$defs/prediction/allOf/1/if/properties/level") |
+| Property        | Type          | Required | Nullable       | Defined by                                                                                                                                                                                                                                         |
+| :-------------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [level](#level) | Not specified | Optional | cannot be null | [Image Classification](image_classification-defs-prediction-allof-1-if-properties-level.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/$defs/prediction/allOf/1/if/properties/level") |
 
 ## level
 
@@ -14,13 +14,13 @@ unknown
 
 `level`
 
-*   is optional
+* is optional
 
-*   Type: unknown
+* Type: unknown
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](image_classification-defs-prediction-allof-1-if-properties-level.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/$defs/prediction/allOf/1/if/properties/level")
+* defined in: [Image Classification](image_classification-defs-prediction-allof-1-if-properties-level.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/$defs/prediction/allOf/1/if/properties/level")
 
 ### level Type
 

@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://impresso.github.io/impresso-schemas/json/language_identification/language_identification.schema.json",
   "title": "Impresso Language Identification Information",
   "description": "A representation for information relevant to impresso's content item language recognition. This defines the output of the following impresso NLP component. https://github.com/impresso/impresso-language-identification ",
@@ -21,7 +21,7 @@
           "type": "null"
         },
         {
-          "$ref": "#/definitions/langISO639Type"
+          "$ref": "#/$defs/langISO639Type"
         }
       ],
       "description": "Original language of the content item as provided by the metadata, cf. https://github.com/impresso/impresso-schemas/blob/master/json/newspaper/contentitem.schema.json"
@@ -37,7 +37,7 @@
           "type": "null"
         },
         {
-          "$ref": "#/definitions/langISO639Type"
+          "$ref": "#/$defs/langISO639Type"
         }
       ],
       "description": "Computed language of the content item, cf. https://github.com/impresso/impresso-schemas/blob/master/json/newspaper/contentitem.schema.json"
@@ -63,11 +63,11 @@
       "minimum": 0
     },
     "impresso_language_identifier_version": {
-      "$ref": "#/definitions/versionType",
+      "$ref": "#/$defs/versionType",
       "description": "Version information of used impresso language identifier script and the file creation timestamp"
     },
     "language_identifier_version": {
-      "$ref": "#/definitions/versionType",
+      "$ref": "#/$defs/versionType",
       "description": "Version information of used impresso language identifier script and the timestamp of the file used for the decision"
     },
     "alphabetical_ratio": {
@@ -82,39 +82,39 @@
     "langdetect": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/lidType"
+        "$ref": "#/$defs/lidType"
       },
       "description": "List of predicted languages using Langdetect, sorted by probability"
     },
     "langid": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/lidType"
+        "$ref": "#/$defs/lidType"
       },
       "description": "List of predicted languages using Langid, sorted by probability"
     },
     "impresso_ft": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/lidType"
+        "$ref": "#/$defs/lidType"
       },
       "description": "List of predicted languages using a FastText model trained on Impresso articles, sorted by probability"
     },
     "wp_ft": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/lidType"
+        "$ref": "#/$defs/lidType"
       },
       "description": "List of predicted languages using a FastText model trained on Wikipedia, sorted by probability"
     },
     "votes": {
       "type": "array",
-      "items": [
+      "prefixItems": [
         {
           "type": "object",
           "properties": {
             "lang": {
-              "$ref": "#/definitions/langISO639Type"
+              "$ref": "#/$defs/langISO639Type"
             },
             "vote": {
               "type": "number"
@@ -135,17 +135,17 @@
     "lg",
     "orig_lg"
   ],
-  "definitions": {
+  "$defs": {
     "lidType": {
       "title": "lidType",
       "description": "Predicted language and its probability",
       "type": "object",
       "properties": {
         "lang": {
-          "$ref": "#/definitions/langISO639Type"
+          "$ref": "#/$defs/langISO639Type"
         },
         "prob": {
-          "$ref": "#/definitions/probType"
+          "$ref": "#/$defs/probType"
         }
       },
       "required": [

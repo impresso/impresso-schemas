@@ -1,6 +1,6 @@
 ## overall\_statistics Type
 
-`object[]` ([Details](manifest-definitions-media_statistics.md))
+`object[]` ([Details](manifest-defs-media_statistics.md))
 
 ## overall\_statistics Constraints
 

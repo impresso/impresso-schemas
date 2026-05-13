@@ -1,16 +1,16 @@
-## Untitled object in undefined Type
+## Topic Assignment Type
 
-`object` ([Details](topic_assignment.md))
+`object` ([Topic Assignment](topic_assignment.md))
 
-# Untitled object in undefined Properties
+# Topic Assignment Properties
 
-| Property                     | Type      | Required | Nullable       | Defined by                                                                                                                                                                        |
-| :--------------------------- | :-------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ci\_ref](#ci_ref)           | `string`  | Required | cannot be null | [Untitled schema](topic_assignment-properties-ci_ref.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/properties/ci_ref")           |
-| [lang](#lang)                | `string`  | Required | cannot be null | [Untitled schema](topic_assignment-properties-lang.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/properties/lang")               |
-| [topic\_model](#topic_model) | `string`  | Required | cannot be null | [Untitled schema](topic_assignment-properties-topic_model.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/properties/topic_model") |
-| [topic\_count](#topic_count) | `integer` | Required | cannot be null | [Untitled schema](topic_assignment-properties-topic_count.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/properties/topic_count") |
-| [topics](#topics)            | `array`   | Required | cannot be null | [Untitled schema](topic_assignment-properties-topics.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/properties/topics")           |
+| Property                     | Type      | Required | Nullable       | Defined by                                                                                                                                                                         |
+| :--------------------------- | :-------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [ci\_ref](#ci_ref)           | `string`  | Required | cannot be null | [Topic Assignment](topic_assignment-properties-ci_ref.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/properties/ci_ref")           |
+| [lang](#lang)                | `string`  | Required | cannot be null | [Topic Assignment](topic_assignment-properties-lang.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/properties/lang")               |
+| [topic\_model](#topic_model) | `string`  | Required | cannot be null | [Topic Assignment](topic_assignment-properties-topic_model.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/properties/topic_model") |
+| [topic\_count](#topic_count) | `integer` | Required | cannot be null | [Topic Assignment](topic_assignment-properties-topic_count.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/properties/topic_count") |
+| [topics](#topics)            | `array`   | Required | cannot be null | [Topic Assignment](topic_assignment-properties-topics.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/properties/topics")           |
 
 ## ci\_ref
 
@@ -18,13 +18,13 @@ Reference to canonical content item id, typically an article
 
 `ci_ref`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](topic_assignment-properties-ci_ref.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/properties/ci_ref")
+* defined in: [Topic Assignment](topic_assignment-properties-ci_ref.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/properties/ci_ref")
 
 ### ci\_ref Type
 
@@ -36,13 +36,13 @@ Reference to canonical content item id, typically an article
 
 `lang`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](topic_assignment-properties-lang.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/properties/lang")
+* defined in: [Topic Assignment](topic_assignment-properties-lang.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/properties/lang")
 
 ### lang Type
 
@@ -54,13 +54,13 @@ internal symbolic name of the model, starts with tm
 
 `topic_model`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](topic_assignment-properties-topic_model.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/properties/topic_model")
+* defined in: [Topic Assignment](topic_assignment-properties-topic_model.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/properties/topic_model")
 
 ### topic\_model Type
 
@@ -72,13 +72,13 @@ The number of topics in the topic model
 
 `topic_count`
 
-*   is required
+* is required
 
-*   Type: `integer`
+* Type: `integer`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](topic_assignment-properties-topic_count.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/properties/topic_count")
+* defined in: [Topic Assignment](topic_assignment-properties-topic_count.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/properties/topic_count")
 
 ### topic\_count Type
 
@@ -90,32 +90,32 @@ Sparse representation of topics
 
 `topics`
 
-*   is required
+* is required
 
-*   Type: `object[]` ([Details](topic_assignment-properties-topics-items.md))
+* Type: `object[]` ([Details](topic_assignment-properties-topics-items.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](topic_assignment-properties-topics.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/properties/topics")
+* defined in: [Topic Assignment](topic_assignment-properties-topics.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/properties/topics")
 
 ### topics Type
 
 `object[]` ([Details](topic_assignment-properties-topics-items.md))
 
-# Untitled object in undefined Definitions
+# Topic Assignment Definitions
 
 ## Definitions group topic
 
 Reference this group by using
 
 ```json
-{"$ref":"https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/definitions/topic"}
+{"$ref":"https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/$defs/topic"}
 ```
 
-| Property | Type     | Required | Nullable       | Defined by                                                                                                                                                                                        |
-| :------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [p](#p)  | `number` | Required | cannot be null | [Untitled schema](topic_assignment-definitions-topic-properties-p.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/definitions/topic/properties/p") |
-| [t](#t)  | Multiple | Required | cannot be null | [Untitled schema](topic_assignment-definitions-topic-properties-t.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/definitions/topic/properties/t") |
+| Property | Type     | Required | Nullable       | Defined by                                                                                                                                                                            |
+| :------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [p](#p)  | `number` | Required | cannot be null | [Topic Assignment](topic_assignment-defs-topic-properties-p.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/$defs/topic/properties/p") |
+| [t](#t)  | Multiple | Required | cannot be null | [Topic Assignment](topic_assignment-defs-topic-properties-t.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/$defs/topic/properties/t") |
 
 ### p
 
@@ -123,13 +123,13 @@ Probability or proportion of topic
 
 `p`
 
-*   is required
+* is required
 
-*   Type: `number`
+* Type: `number`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](topic_assignment-definitions-topic-properties-p.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/definitions/topic/properties/p")
+* defined in: [Topic Assignment](topic_assignment-defs-topic-properties-p.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/$defs/topic/properties/p")
 
 #### p Type
 
@@ -147,14 +147,14 @@ Topic id
 
 `t`
 
-*   is required
+* is required
 
-*   Type: any of the following: `integer` or `string` ([Details](topic_assignment-definitions-topic-properties-t.md))
+* Type: any of the following: `integer` or `string` ([Details](topic_assignment-defs-topic-properties-t.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](topic_assignment-definitions-topic-properties-t.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/definitions/topic/properties/t")
+* defined in: [Topic Assignment](topic_assignment-defs-topic-properties-t.md "https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json#/$defs/topic/properties/t")
 
 #### t Type
 
-any of the following: `integer` or `string` ([Details](topic_assignment-definitions-topic-properties-t.md))
+any of the following: `integer` or `string` ([Details](topic_assignment-defs-topic-properties-t.md))

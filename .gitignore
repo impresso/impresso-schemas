@@ -1,1 +1,11 @@
 .DS_Store
+
+# Python virtual environment
+.venv/
+
+# Build artifacts
+build/
+out/
+*.egg-info/
+__pycache__/
+*.pyc

@@ -19,13 +19,13 @@ Coordinates of bounding-box, following IIIF regions schema (\[x, y, width, heigh
 
 `c`
 
-*   is required
+* is required
 
-*   Type: `integer[]`
+* Type: `integer[]`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Printed Page](page-defs-coordinates.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/r/items/properties/p/items/properties/l/items/properties/t/items/properties/c")
+* defined in: [Printed Page](page-defs-coordinates.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/r/items/properties/p/items/properties/l/items/properties/t/items/properties/c")
 
 ### c Type
 
@@ -43,13 +43,13 @@ Token surface form.
 
 `tx`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Printed Page](page-properties-r-items-properties-p-items-properties-l-items-properties-t-items-properties-tx.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/r/items/properties/p/items/properties/l/items/properties/t/items/properties/tx")
+* defined in: [Printed Page](page-properties-r-items-properties-p-items-properties-l-items-properties-t-items-properties-tx.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/r/items/properties/p/items/properties/l/items/properties/t/items/properties/tx")
 
 ### tx Type
 
@@ -61,13 +61,13 @@ A style ID as defined in issue.schema.json/s
 
 `s`
 
-*   is optional
+* is optional
 
-*   Type: `integer`
+* Type: `integer`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Printed Page](page-properties-r-items-properties-p-items-properties-l-items-properties-t-items-properties-s.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/r/items/properties/p/items/properties/l/items/properties/t/items/properties/s")
+* defined in: [Printed Page](page-properties-r-items-properties-p-items-properties-l-items-properties-t-items-properties-s.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/r/items/properties/p/items/properties/l/items/properties/t/items/properties/s")
 
 ### s Type
 
@@ -79,13 +79,13 @@ Indicates whether the token is/should be followed by a whitespace. `gn==true` me
 
 `gn`
 
-*   is optional
+* is optional
 
-*   Type: `boolean`
+* Type: `boolean`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Printed Page](page-properties-r-items-properties-p-items-properties-l-items-properties-t-items-properties-gn.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/r/items/properties/p/items/properties/l/items/properties/t/items/properties/gn")
+* defined in: [Printed Page](page-properties-r-items-properties-p-items-properties-l-items-properties-t-items-properties-gn.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/r/items/properties/p/items/properties/l/items/properties/t/items/properties/gn")
 
 ### gn Type
 
@@ -97,13 +97,13 @@ Indicates whether the token constitutes the former part of a hyphenated word (in
 
 `hy`
 
-*   is optional
+* is optional
 
-*   Type: `boolean`
+* Type: `boolean`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Printed Page](page-properties-r-items-properties-p-items-properties-l-items-properties-t-items-properties-hy.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/r/items/properties/p/items/properties/l/items/properties/t/items/properties/hy")
+* defined in: [Printed Page](page-properties-r-items-properties-p-items-properties-l-items-properties-t-items-properties-hy.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/r/items/properties/p/items/properties/l/items/properties/t/items/properties/hy")
 
 ### hy Type
 
@@ -115,13 +115,13 @@ It is specified on the latter part(s) of a hyphenated word, and contains its nor
 
 `nf`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Printed Page](page-properties-r-items-properties-p-items-properties-l-items-properties-t-items-properties-nf.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/r/items/properties/p/items/properties/l/items/properties/t/items/properties/nf")
+* defined in: [Printed Page](page-properties-r-items-properties-p-items-properties-l-items-properties-t-items-properties-nf.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/r/items/properties/p/items/properties/l/items/properties/t/items/properties/nf")
 
 ### nf Type
 

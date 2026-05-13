@@ -19,13 +19,13 @@ Unique identifier for the content item.
 
 `ci_id`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Document Embeddings JSON Schema](embeddings-docs-properties-ci_id.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-docs.schema.json#/properties/ci_id")
+* defined in: [Document Embeddings JSON Schema](embeddings-docs-properties-ci_id.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-docs.schema.json#/properties/ci_id")
 
 ### ci\_id Type
 
@@ -43,13 +43,13 @@ Type of content item as present in the rebuilt
 
 `ci_type`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Document Embeddings JSON Schema](embeddings-docs-properties-ci_type.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-docs.schema.json#/properties/ci_type")
+* defined in: [Document Embeddings JSON Schema](embeddings-docs-properties-ci_type.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-docs.schema.json#/properties/ci_type")
 
 ### ci\_type Type
 
@@ -61,13 +61,13 @@ The ID of the model that produced this output, composed as specified in these sl
 
 `model_id`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Document Embeddings JSON Schema](embeddings-docs-properties-model_id.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-docs.schema.json#/properties/model_id")
+* defined in: [Document Embeddings JSON Schema](embeddings-docs-properties-model_id.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-docs.schema.json#/properties/model_id")
 
 ### model\_id Type
 
@@ -79,13 +79,13 @@ The ID of the model that produced this output, composed as specified in these sl
 
 `embedding`
 
-*   is required
+* is required
 
-*   Type: merged type ([Details](embeddings-docs-properties-embedding.md))
+* Type: merged type ([Details](embeddings-docs-properties-embedding.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Document Embeddings JSON Schema](embeddings-docs-properties-embedding.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-docs.schema.json#/properties/embedding")
+* defined in: [Document Embeddings JSON Schema](embeddings-docs-properties-embedding.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-docs.schema.json#/properties/embedding")
 
 ### embedding Type
 
@@ -93,9 +93,9 @@ merged type ([Details](embeddings-docs-properties-embedding.md))
 
 one (and only one) of
 
-*   [Untitled array in Document Embeddings JSON Schema](embeddings-docs-properties-embedding-oneof-0.md "check type definition")
+* [Untitled array in Document Embeddings JSON Schema](embeddings-docs-properties-embedding-oneof-0.md "check type definition")
 
-*   [Untitled array in Document Embeddings JSON Schema](embeddings-docs-properties-embedding-oneof-1.md "check type definition")
+* [Untitled array in Document Embeddings JSON Schema](embeddings-docs-properties-embedding-oneof-1.md "check type definition")
 
 ## size
 
@@ -103,13 +103,13 @@ The size of the embedding vectors.
 
 `size`
 
-*   is required
+* is required
 
-*   Type: `integer`
+* Type: `integer`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Document Embeddings JSON Schema](embeddings-docs-properties-size.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-docs.schema.json#/properties/size")
+* defined in: [Document Embeddings JSON Schema](embeddings-docs-properties-size.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-docs.schema.json#/properties/size")
 
 ### size Type
 
@@ -121,13 +121,13 @@ Timestamp indicating when the embedding was created (e.g., '2024-10-09T09:29:02Z
 
 `ts`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Document Embeddings JSON Schema](embeddings-docs-properties-ts.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-docs.schema.json#/properties/ts")
+* defined in: [Document Embeddings JSON Schema](embeddings-docs-properties-ts.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-docs.schema.json#/properties/ts")
 
 ### ts Type
 

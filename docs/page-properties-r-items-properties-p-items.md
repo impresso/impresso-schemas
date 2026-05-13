@@ -15,13 +15,13 @@ Coordinates of bounding-box, following IIIF regions schema (\[x, y, width, heigh
 
 `c`
 
-*   is optional
+* is optional
 
-*   Type: `integer[]`
+* Type: `integer[]`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Printed Page](page-defs-coordinates.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/r/items/properties/p/items/properties/c")
+* defined in: [Printed Page](page-defs-coordinates.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/r/items/properties/p/items/properties/c")
 
 ### c Type
 
@@ -39,13 +39,13 @@ Lines of text (belonging to a given paragraph)
 
 `l`
 
-*   is required
+* is required
 
-*   Type: `object[]` ([Details](page-properties-r-items-properties-p-items-properties-l-items.md))
+* Type: `object[]` ([Details](page-properties-r-items-properties-p-items-properties-l-items.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Printed Page](page-properties-r-items-properties-p-items-properties-l.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/r/items/properties/p/items/properties/l")
+* defined in: [Printed Page](page-properties-r-items-properties-p-items-properties-l.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/r/items/properties/p/items/properties/l")
 
 ### l Type
 

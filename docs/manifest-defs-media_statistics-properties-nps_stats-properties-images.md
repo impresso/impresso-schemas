@@ -1,0 +1,3 @@
+## images Type
+
+`integer`

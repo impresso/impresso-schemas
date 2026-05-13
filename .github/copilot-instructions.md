@@ -65,26 +65,30 @@ Documentation is generated using `@adobe/jsonschema2md` and outputs to the `docs
 1. Create the schema file in the appropriate `json/` subdirectory
 2. Add example files in the corresponding `examples/` subdirectory
 3. Add validation commands to the Makefile `tests` target
-4. Add documentation generation to the Makefile `documentation` target with the correct JSON Schema draft version flag (`-v`). Different schema directories use different versions:
-   - `06` for canonical, rebuilt, topic_model, language_identification, linguistic_annotation
-   - `2020-12` for entities
-   - `2024-02` for versioning
-   - `2024-09` for embeddings, text_reuse
-   - `2025-01` for image_embeddings, visualizer, image_classification
-   - `2025-10` for linguistic_annotation (updated version)
+4. The `documentation` target runs a single `jsonschema2md -d json/ -v 2020-12` invocation covering all directories — no per-directory entry is needed
 5. Run `make tests` to validate examples against the schema
 6. Run `make documentation` to generate updated docs
 
 ### Dependencies
 
-- Python 3.11+ with `jsonschema` and `check-jsonschema` packages
+- Python 3.11+ with `jsonschema`, `check-jsonschema`, and `pytest` (see `requirements.txt`)
 - Node.js with `@adobe/jsonschema2md` for documentation generation
 
-Install Python dependencies:
+Create and activate a virtualenv, then install Python dependencies:
 
 ```bash
-pip install -r requirements.txt
+python3 -m venv .venv
+source .venv/bin/activate   # Windows: .venv\Scripts\activate
+pip install .
 ```
+
+Install the Node.js documentation generator:
+
+```bash
+npm install -g @adobe/jsonschema2md
+```
+
+All `make` commands must be run with the virtualenv activated.
 
 ## Common Tasks
 

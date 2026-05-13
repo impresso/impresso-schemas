@@ -5,12 +5,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0001",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     1
                 ],
-                "t": "La Reine des Fleurs D’où vient la Rose. — La Rose à travers les âges et le monde. — Ses légendes et ses symboles."
+                "t": "La Reine des Fleurs D’où vient la Rose. — La Rose à travers les âges et le monde. — Ses légendes et ses symboles.",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE1",
@@ -39,12 +39,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0002",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     1
                 ],
-                "t": "La commission financière internationale"
+                "t": "La commission financière internationale",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE10",
@@ -79,12 +79,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0003",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     1
                 ],
-                "t": "La conférence de la paix a terminé ses travaux"
+                "t": "La conférence de la paix a terminé ses travaux",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE11",
@@ -119,12 +119,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0004",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     1
                 ],
-                "t": "La conférence des ministres balkaniques"
+                "t": "La conférence des ministres balkaniques",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE12",
@@ -147,12 +147,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0005",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     1
                 ],
-                "t": "M. Novakovitch rappelé à Belgrade"
+                "t": "M. Novakovitch rappelé à Belgrade",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE13",
@@ -175,12 +175,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0006",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     1
                 ],
-                "t": "Le Monténégro et la Serbie"
+                "t": "Le Monténégro et la Serbie",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE14",
@@ -203,12 +203,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0007",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     1
                 ],
-                "t": "La Roumanie et les Etats balkaniques"
+                "t": "La Roumanie et les Etats balkaniques",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE15",
@@ -231,12 +231,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0008",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     1
                 ],
-                "t": "L’intervention des puissances"
+                "t": "L’intervention des puissances",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE16",
@@ -259,12 +259,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0009",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     1
                 ],
-                "t": "L’Italie et les iles"
+                "t": "L’Italie et les iles",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE17",
@@ -287,12 +287,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0010",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     2
                 ],
-                "t": "Discours de M. Veillat"
+                "t": "Discours de M. Veillat",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE18",
@@ -315,12 +315,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0011",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     2
                 ],
-                "t": "Discours de M. Augagneur"
+                "t": "Discours de M. Augagneur",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE19",
@@ -343,12 +343,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0012",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     1
                 ],
-                "t": "Le temps qu’il a fait"
+                "t": "Le temps qu’il a fait",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE2",
@@ -371,12 +371,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0013",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     2
                 ],
-                "t": "M. Messimy"
+                "t": "M. Messimy",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE20",
@@ -399,12 +399,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0014",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     2
                 ],
-                "t": "L’impôt unique"
+                "t": "L’impôt unique",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE21",
@@ -427,12 +427,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0015",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     2
                 ],
-                "t": "Un espion français condamné"
+                "t": "Un espion français condamné",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE22",
@@ -455,12 +455,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0016",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     2
                 ],
-                "t": "MAROC L’Espagne au Maroc"
+                "t": "MAROC L’Espagne au Maroc",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE23",
@@ -495,12 +495,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0017",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     2
                 ],
-                "t": "Sans titre"
+                "t": "Sans titre",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE24",
@@ -523,12 +523,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0018",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     2
                 ],
-                "t": "Sans titre"
+                "t": "Sans titre",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE25",
@@ -551,12 +551,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0019",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     2
                 ],
-                "t": "Intérieur La Grande-Duchesse à Bruxelles"
+                "t": "Intérieur La Grande-Duchesse à Bruxelles",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE26",
@@ -585,12 +585,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0020",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     2
                 ],
-                "t": "Ephémérides luxembourgeoises"
+                "t": "Ephémérides luxembourgeoises",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE27",
@@ -613,12 +613,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0021",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     2
                 ],
-                "t": "Bassin de natation du Grund"
+                "t": "Bassin de natation du Grund",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE28",
@@ -641,12 +641,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0022",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     2
                 ],
-                "t": "Distinctions honorifiques"
+                "t": "Distinctions honorifiques",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE29",
@@ -669,12 +669,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0023",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     1
                 ],
-                "t": "II y a quarante ans"
+                "t": "II y a quarante ans",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE3",
@@ -697,12 +697,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0024",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     2
                 ],
-                "t": "La santé de Steinès et d’Abran"
+                "t": "La santé de Steinès et d’Abran",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE30",
@@ -725,12 +725,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0025",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     2
                 ],
-                "t": "Associations syndicales"
+                "t": "Associations syndicales",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE31",
@@ -753,12 +753,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0026",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     2
                 ],
-                "t": "Sans titre"
+                "t": "Sans titre",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE32",
@@ -775,12 +775,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0027",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     2
                 ],
-                "t": "Sans titre"
+                "t": "Sans titre",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE33",
@@ -797,12 +797,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0028",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     2
                 ],
-                "t": "Sans titre"
+                "t": "Sans titre",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE34",
@@ -819,13 +819,13 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0029",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     2,
                     3
                 ],
-                "t": "Sans titre"
+                "t": "Sans titre",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE35",
@@ -848,12 +848,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0030",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     3
                 ],
-                "t": "Foire au bétail"
+                "t": "Foire au bétail",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE36",
@@ -876,12 +876,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0031",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     3
                 ],
-                "t": "Cours supplémentaires gratuits"
+                "t": "Cours supplémentaires gratuits",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE37",
@@ -904,12 +904,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0032",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     2
                 ],
-                "t": "Tous."
+                "t": "Tous.",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE38",
@@ -944,12 +944,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0033",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     2
                 ],
-                "t": "SCÈNE VI. Le roi, puis Alysette, puis Seslerce."
+                "t": "SCÈNE VI. Le roi, puis Alysette, puis Seslerce.",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE39",
@@ -996,12 +996,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0034",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     1
                 ],
-                "t": "Un roman de Paul Lévy"
+                "t": "Un roman de Paul Lévy",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE4",
@@ -1024,12 +1024,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0035",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     3
                 ],
-                "t": "La situation à Belgrade"
+                "t": "La situation à Belgrade",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE40",
@@ -1052,12 +1052,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0036",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     3
                 ],
-                "t": "Les affaires d’Espagne"
+                "t": "Les affaires d’Espagne",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE41",
@@ -1080,12 +1080,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0037",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     3
                 ],
-                "t": "Un navire belge sombre"
+                "t": "Un navire belge sombre",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE42",
@@ -1108,12 +1108,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0038",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     3
                 ],
-                "t": "La perte du sous-marin E. V."
+                "t": "La perte du sous-marin E. V.",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE43",
@@ -1142,12 +1142,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0039",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     3
                 ],
-                "t": "Une supplique des suffragettes"
+                "t": "Une supplique des suffragettes",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE44",
@@ -1170,12 +1170,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0040",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     3
                 ],
-                "t": "Un naufrage aux régates"
+                "t": "Un naufrage aux régates",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE45",
@@ -1198,12 +1198,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0041",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     3
                 ],
-                "t": "Une explosion de mine"
+                "t": "Une explosion de mine",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE46",
@@ -1238,12 +1238,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0042",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     3
                 ],
-                "t": "Concert militaire"
+                "t": "Concert militaire",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE47",
@@ -1266,12 +1266,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0043",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     3
                 ],
-                "t": "Association pour l’hygiène publique et scolaire"
+                "t": "Association pour l’hygiène publique et scolaire",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE48",
@@ -1300,12 +1300,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0044",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     3
                 ],
-                "t": "Programme des Concerts d’aujourd’hui Direction Bach"
+                "t": "Programme des Concerts d’aujourd’hui Direction Bach",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE49",
@@ -1358,12 +1358,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0045",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     1
                 ],
-                "t": "Billet de Mid"
+                "t": "Billet de Mid",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE5",
@@ -1398,12 +1398,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0046",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     3
                 ],
-                "t": "Liste officielle des Baigneurs du 26 mai au 5 juin 1913"
+                "t": "Liste officielle des Baigneurs du 26 mai au 5 juin 1913",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE50",
@@ -1438,12 +1438,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0047",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     3
                 ],
-                "t": "Faits divers Frontières Bagarre sanglante"
+                "t": "Faits divers Frontières Bagarre sanglante",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE51",
@@ -1478,12 +1478,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0048",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     3
                 ],
-                "t": "CYCLISME Nancy-Luxembourg Course internationale sur Route"
+                "t": "CYCLISME Nancy-Luxembourg Course internationale sur Route",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE52",
@@ -1518,12 +1518,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0049",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     3
                 ],
-                "t": "Prix"
+                "t": "Prix",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE53",
@@ -1546,12 +1546,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0050",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     3
                 ],
-                "t": "Encore une prime"
+                "t": "Encore une prime",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE54",
@@ -1574,12 +1574,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0051",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     3
                 ],
-                "t": "Les premiers engagements"
+                "t": "Les premiers engagements",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE55",
@@ -1608,12 +1608,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0052",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     3
                 ],
-                "t": "Les contrôles de Jœuf et de Longwy"
+                "t": "Les contrôles de Jœuf et de Longwy",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE56",
@@ -1636,12 +1636,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0053",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     3
                 ],
-                "t": "ATHLÉTISME Le meeting international du Sporting"
+                "t": "ATHLÉTISME Le meeting international du Sporting",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE57",
@@ -1670,12 +1670,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0054",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     3
                 ],
-                "t": "CHEMINS DE FER DE L’EST Billets d’aller et retour à prix réduits délivrés aux familles à l’occasion des vacances."
+                "t": "CHEMINS DE FER DE L’EST Billets d’aller et retour à prix réduits délivrés aux familles à l’occasion des vacances.",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE58",
@@ -1704,12 +1704,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0055",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     3
                 ],
-                "t": "Compagnie des Chemins de fer de l’Est français Relations rapides entre la Belgique, Nancy et les Vosges françaises"
+                "t": "Compagnie des Chemins de fer de l’Est français Relations rapides entre la Belgique, Nancy et les Vosges françaises",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE59",
@@ -1744,12 +1744,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0056",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     1
                 ],
-                "t": "Distraction"
+                "t": "Distraction",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE6",
@@ -1772,12 +1772,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0057",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     3
                 ],
-                "t": "Obligations et actions luxembourgeoises"
+                "t": "Obligations et actions luxembourgeoises",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE60",
@@ -1800,12 +1800,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0058",
-                "l": "de",
                 "tp": "article",
                 "pp": [
                     3
                 ],
-                "t": "Paris"
+                "t": "Paris",
+                "lg": "de"
             },
             "l": {
                 "id": "MODSMD_ARTICLE61",
@@ -1828,12 +1828,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0059",
-                "l": "de",
                 "tp": "article",
                 "pp": [
                     3
                 ],
-                "t": "Berlin"
+                "t": "Berlin",
+                "lg": "de"
             },
             "l": {
                 "id": "MODSMD_ARTICLE62",
@@ -1856,12 +1856,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0060",
-                "l": "de",
                 "tp": "article",
                 "pp": [
                     3
                 ],
-                "t": "Francfort-sur-Mein"
+                "t": "Francfort-sur-Mein",
+                "lg": "de"
             },
             "l": {
                 "id": "MODSMD_ARTICLE63",
@@ -1884,12 +1884,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0061",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     1
                 ],
-                "t": "Ils mangent des hannetons"
+                "t": "Ils mangent des hannetons",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE7",
@@ -1912,12 +1912,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0062",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     1
                 ],
-                "t": "Pays chauds"
+                "t": "Pays chauds",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE8",
@@ -1940,12 +1940,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0063",
-                "l": "fr",
                 "tp": "article",
                 "pp": [
                     1
                 ],
-                "t": "Sans titre"
+                "t": "Sans titre",
+                "lg": "fr"
             },
             "l": {
                 "id": "MODSMD_ARTICLE9",
@@ -1967,7 +1967,8 @@
                     3
                 ],
                 "t": "Illustration",
-                "iiif_link": "https://iiif.eluxemburgensia.lu/iiif/2/ark:%2f70795%2fh3zxzn%2fpages%2f3/info.json"
+                "iiif_link": "https://iiif.eluxemburgensia.lu/iiif/2/ark:%2f70795%2fh3zxzn%2fpages%2f3/info.json",
+                "lg": null
             },
             "l": {
                 "id": "MODSMD_PICT1"
@@ -1987,7 +1988,8 @@
                     3
                 ],
                 "t": "Illustration",
-                "iiif_link": "https://iiif.eluxemburgensia.lu/iiif/2/ark:%2f70795%2fh3zxzn%2fpages%2f3/info.json"
+                "iiif_link": "https://iiif.eluxemburgensia.lu/iiif/2/ark:%2f70795%2fh3zxzn%2fpages%2f3/info.json",
+                "lg": null
             },
             "l": {
                 "id": "MODSMD_PICT2"
@@ -2002,12 +2004,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0066",
-                "l": "n/a",
                 "tp": "ad",
                 "pp": [
                     2
                 ],
-                "t": "Publicité 1 Page 2"
+                "t": "Publicité 1 Page 2",
+                "lg": "n/a"
             },
             "l": {
                 "id": "DTL410",
@@ -2024,12 +2026,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0067",
-                "l": "n/a",
                 "tp": "ad",
                 "pp": [
                     2
                 ],
-                "t": "Publicité 2 Page 2"
+                "t": "Publicité 2 Page 2",
+                "lg": "n/a"
             },
             "l": {
                 "id": "DTL411",
@@ -2046,12 +2048,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0068",
-                "l": "n/a",
                 "tp": "ad",
                 "pp": [
                     3
                 ],
-                "t": "Publicité 3 Page 3"
+                "t": "Publicité 3 Page 3",
+                "lg": "n/a"
             },
             "l": {
                 "id": "DTL412",
@@ -2068,12 +2070,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0069",
-                "l": "n/a",
                 "tp": "ad",
                 "pp": [
                     3
                 ],
-                "t": "Publicité 4 Page 3"
+                "t": "Publicité 4 Page 3",
+                "lg": "n/a"
             },
             "l": {
                 "id": "DTL413",
@@ -2090,12 +2092,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0070",
-                "l": "n/a",
                 "tp": "ad",
                 "pp": [
                     3
                 ],
-                "t": "Publicité 5 Page 3"
+                "t": "Publicité 5 Page 3",
+                "lg": "n/a"
             },
             "l": {
                 "id": "DTL414",
@@ -2112,12 +2114,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0071",
-                "l": "n/a",
                 "tp": "ad",
                 "pp": [
                     4
                 ],
-                "t": "Publicité 6 Page 4"
+                "t": "Publicité 6 Page 4",
+                "lg": "n/a"
             },
             "l": {
                 "id": "DTL415",
@@ -2134,12 +2136,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0072",
-                "l": "n/a",
                 "tp": "ad",
                 "pp": [
                     4
                 ],
-                "t": "Publicité 7 Page 4"
+                "t": "Publicité 7 Page 4",
+                "lg": "n/a"
             },
             "l": {
                 "id": "DTL416",
@@ -2156,12 +2158,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0073",
-                "l": "n/a",
                 "tp": "ad",
                 "pp": [
                     4
                 ],
-                "t": "Publicité 8 Page 4"
+                "t": "Publicité 8 Page 4",
+                "lg": "n/a"
             },
             "l": {
                 "id": "DTL417",
@@ -2178,12 +2180,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0074",
-                "l": "n/a",
                 "tp": "ad",
                 "pp": [
                     4
                 ],
-                "t": "Publicité 9 Page 4"
+                "t": "Publicité 9 Page 4",
+                "lg": "n/a"
             },
             "l": {
                 "id": "DTL418",
@@ -2200,12 +2202,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0075",
-                "l": "n/a",
                 "tp": "ad",
                 "pp": [
                     4
                 ],
-                "t": "Publicité 10 Page 4"
+                "t": "Publicité 10 Page 4",
+                "lg": "n/a"
             },
             "l": {
                 "id": "DTL419",
@@ -2222,12 +2224,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0076",
-                "l": "n/a",
                 "tp": "ad",
                 "pp": [
                     4
                 ],
-                "t": "Publicité 11 Page 4"
+                "t": "Publicité 11 Page 4",
+                "lg": "n/a"
             },
             "l": {
                 "id": "DTL420",
@@ -2244,12 +2246,12 @@
         {
             "m": {
                 "id": "indeplux-1913-06-10-a-i0077",
-                "l": "n/a",
                 "tp": "ad",
                 "pp": [
                     4
                 ],
-                "t": "Publicité 12 Page 4"
+                "t": "Publicité 12 Page 4",
+                "lg": "n/a"
             },
             "l": {
                 "id": "DTL421",

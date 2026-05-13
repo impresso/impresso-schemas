@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://impresso.github.io/impresso-schemas/json/entities.schema.json",
+  "$id": "https://impresso.github.io/impresso-schemas/json/entities/entities.schema.json",
   "title": "Named Entity JSON Schema",
   "description": "Definition of the output representation of entity processing, before indexing. Named entity mentions are expressed as offline annotations with character offsets relative to content items. Essentially, the NE output is a list of JSON documents (in json line format), where each document corresponds to a content item that has a list of NE mentions (no output for CI with no mentions). The tagset corresponds to impresso-HIPE.",
   "type": "object",
@@ -9,8 +9,7 @@
       "type": "string",
       "description": "Impresso content item ID."
     },
-    "ci_type":
-    {
+    "ci_type": {
       "type": "string",
       "description": "Impresso content item type."
     },
@@ -138,31 +137,20 @@
           },
           "name": {
             "type": "string",
-            "description":"In case of a person mention, the entity component of type 'name', as defined in the Impresso HIPE NE Annotation guidelines (https://zenodo.org/records/3585750)."
+            "description": "In case of a person mention, the entity component of type 'name', as defined in the Impresso HIPE NE Annotation guidelines (https://zenodo.org/records/3585750)."
           },
           "title": {
             "type": "string",
-            "description":"In case of a person mention, the entity component of type 'title', as defined in the Impresso HIPE NE Annotation guidelines (https://zenodo.org/records/3585750). "
+            "description": "In case of a person mention, the entity component of type 'title', as defined in the Impresso HIPE NE Annotation guidelines (https://zenodo.org/records/3585750). "
           },
           "function": {
             "type": "string",
-            "description":"In case of a person mention, the entity component of type 'function', as defined in the Impresso HIPE NE Annotation guidelines (https://zenodo.org/records/3585750). "
+            "description": "In case of a person mention, the entity component of type 'function', as defined in the Impresso HIPE NE Annotation guidelines (https://zenodo.org/records/3585750). "
           }
         },
-        "required": [
-          "id",
-          "type",
-          "surface",
-          "lOffset",
-          "rOffset"
-        ]
+        "required": ["id", "type", "surface", "lOffset", "rOffset"]
       }
     }
   },
-  "required": [
-    "ci_id",
-    "ts",
-    "model_id",
-    "nes"
-  ]
+  "required": ["ci_id", "ts", "model_id", "nes"]
 }

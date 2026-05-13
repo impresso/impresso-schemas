@@ -1,74 +1,33 @@
 
+.PHONY: help tests check-python-env check-node-env clean-documentation documentation
 
-tests:
-    # see existing validators here: https://python-jsonschema.readthedocs.io/en/stable/api/jsonschema/validators/#
-	check-jsonschema --schemafile json/canonical/issue.schema.json  examples/canonical_issue/example0.json && $(print-test-ok) || $(print-test-failed)
-	check-jsonschema --schemafile json/canonical/issue.schema.json  examples/canonical_issue/example1.json && $(print-test-ok)|| $(print-test-failed)
-	check-jsonschema --schemafile json/canonical/issue.schema.json  examples/canonical_issue/CFCE-1996-09-08-a.json && $(print-test-ok)|| $(print-test-failed)
-	check-jsonschema --schemafile json/canonical/issue.schema.json  examples/canonical_issue/SOC_CP-1939-08-02-a.json && $(print-test-ok)|| $(print-test-failed)
-	check-jsonschema --schemafile json/canonical/issue.schema.json  examples/canonical_issue/SOC_TH-1941-03-30-a.json && $(print-test-ok)|| $(print-test-failed)
-	check-jsonschema --schemafile json/canonical/page.schema.json  examples/canonical_page/example0.json && $(print-test-ok)|| $(print-test-failed)
-	check-jsonschema --schemafile json/canonical/page.schema.json  examples/canonical_page/example1.json && $(print-test-ok)|| $(print-test-failed)
-	check-jsonschema --schemafile json/canonical/page.schema.json  examples/canonical_page/example2.json && $(print-test-ok)|| $(print-test-failed)
-	check-jsonschema --schemafile json/canonical/page.schema.json  examples/canonical_page/SOC_CP-1939-03-18-a-p0001.json && $(print-test-ok)|| $(print-test-failed)
-	check-jsonschema --schemafile json/canonical/page.schema.json  examples/canonical_page/SOC_TH-1941-03-30-a-p0001.json && $(print-test-ok)|| $(print-test-failed)
-	check-jsonschema --schemafile json/canonical/audio_record.schema.json  examples/canonical_audio_record/CFCE-1996-09-08-a-r0001.json && $(print-test-ok)|| $(print-test-failed)
-	check-jsonschema --schemafile json/rebuilt/paper_contentitem.schema.json  examples/paper_contentitem/example0.json && $(print-test-ok)|| $(print-test-failed)
-	check-jsonschema --schemafile json/rebuilt/paper_contentitem.schema.json  examples/paper_contentitem/SOC_VS-1943-04-28-a-i0001.json && $(print-test-ok)|| $(print-test-failed)
-	check-jsonschema --schemafile json/rebuilt/paper_contentitem.schema.json  examples/paper_contentitem/SOC_VS-1943-04-28-a-i0001.json && $(print-test-ok)|| $(print-test-failed)
-	check-jsonschema --schemafile json/rebuilt/audio_record_contentitem.schema.json  examples/audio_record_contentitem/CFCE-1996-09-08-a-i0001.json && $(print-test-ok)|| $(print-test-failed)
-	check-jsonschema --schemafile json/rebuilt/audio_record_contentitem.schema.json  examples/audio_record_contentitem/RDN-1950-01-12-a-i0001.json && $(print-test-ok)|| $(print-test-failed)
-	check-jsonschema --schemafile json/topic_model/topic_description.schema.json  examples/topic_model_topic_description/example0.json && $(print-test-ok)|| $(print-test-failed)
-	check-jsonschema --schemafile json/language_identification/language_identification.schema.json  examples/language_identification/example0.json && $(print-test-ok)|| $(print-test-failed)
-	check-jsonschema --schemafile json/language_identification/language_identification.schema.json  examples/language_identification/example1.json && $(print-test-ok)|| $(print-test-failed)
-	check-jsonschema --schemafile json/language_identification/language_identification.schema.json  examples/language_identification/example2.json && $(print-test-ok)|| $(print-test-failed)
-	check-jsonschema --schemafile json/entities/entities.schema.json  examples/entities/example0.json && $(print-test-ok)|| $(print-test-failed)
-	check-jsonschema --schemafile json/entities/entities.schema.json  examples/entities/example1.json && $(print-test-ok)|| $(print-test-failed)
-	check-jsonschema --schemafile json/entities/entities.schema.json  examples/entities/example2.json && $(print-test-ok)|| $(print-test-failed)
-	check-jsonschema --schemafile json/versioning/manifest.schema.json  examples/versioning_manifest/canonical_v0-0-1.json && $(print-test-ok)|| $(print-test-failed)
-	check-jsonschema --schemafile json/embeddings/embeddings-docs.schema.json  examples/doc_embeddings/example0.json && $(print-test-ok)|| $(print-test-failed)
-	check-jsonschema --schemafile json/text_reuse/cluster.schema.json  examples/text_reuse/tr_cluster_example.json && $(print-test-ok)|| $(print-test-failed)
-	check-jsonschema --schemafile json/text_reuse/passage.schema.json  examples/text_reuse/tr_passage_example.json && $(print-test-ok)|| $(print-test-failed)
-	check-jsonschema --schemafile json/image_embeddings/image_embeddings.schema.json  examples/image_embeddings/image_emendding_example.json && $(print-test-ok)|| $(print-test-failed)
-	check-jsonschema --schemafile json/visualizer/bbox_visualizer.schema.json  examples/visualizer/actionfem-1927-10-15-a_bbox.json && $(print-test-ok)|| $(print-test-failed)
-	check-jsonschema --schemafile json/visualizer/bbox_visualizer.schema.json  examples/visualizer/actionfem-1927-10-15-a-i0012_bbox.json && $(print-test-ok)|| $(print-test-failed)
-	check-jsonschema --schemafile json/visualizer/bbox_visualizer.schema.json  examples/visualizer/actionfem-1927-10-15-a-p0001_bbox.json && $(print-test-ok)|| $(print-test-failed)
-	check-jsonschema --schemafile json/image_classification/image_classification.schema.json  examples/image_classification/excelsior-1912-09-13-a-i0207-classif-images.json && $(print-test-ok)|| $(print-test-failed)
-	check-jsonschema --schemafile json/linguistic_annotation/lingproc.v2.schema.json  examples/linguistic_annotation/example1.json && $(print-test-ok)|| $(print-test-failed)
-	check-jsonschema \
-	  --schemafile json/embeddings/embeddings-sentence.schema.json \
-	  examples/sentence_embeddings/sentence_embeddings_example.json && $(print-test-ok) || $(print-test-failed)
-	check-jsonschema \
-	  --schemafile json/embeddings/embeddings-chunks.schema.json \
-	  examples/chunk_embeddings/chunk_embeddings_example.json && $(print-test-ok) || $(print-test-failed)
+help:
+	@echo "Usage:"
+	@echo "  make tests          Validate all example JSON files against their schemas"
+	@echo "  make documentation  Generate Markdown docs from schemas (overwrites docs/)"
+	@echo "  make clean-documentation  Remove all generated docs"
+	@echo ""
+	@echo "Setup:"
+	@echo "  python3 -m venv .venv && source .venv/bin/activate && pip install ."
+	@echo "  npm install -g @adobe/jsonschema2md"
+
+check-python-env:
+	@python3 -c "import pytest, jsonschema" 2>/dev/null || \
+	  { echo "ERROR: pytest and/or jsonschema not found."; \
+	    echo "       Activate your virtualenv and run: pip install ."; \
+	    exit 1; }
+
+check-node-env:
+	@jsonschema2md --version 2>/dev/null || \
+	  { echo "ERROR: jsonschema2md not found."; \
+	    echo "       Install it with: npm install -g @adobe/jsonschema2md"; \
+	    exit 1; }
+
+tests: check-python-env
+	python3 -m pytest tests/ -v
 
 clean-documentation:
 	rm -fv docs/*
 
-documentation:
-	# make sure to install the correct jsonschema2md tool:
-	# npm install -g @adobe/jsonschema2md. also: https://www.npmjs.com/package/@adobe/jsonschema2md
-	jsonschema2md -d json/canonical/ --header false -n -v 06 -o docs  -x -  -s propTable
-	jsonschema2md -d json/rebuilt/ --header false -n -v 06 -o docs  -x -  -s propTable
-	jsonschema2md -d json/topic_model/ --header false -n -v 06 -o docs  -x -  -s propTable
-	jsonschema2md -d json/language_identification/ --header false -n -v 06 -o docs -x -  -s propTable
-	jsonschema2md -d json/entities/ --header false -n -v 2020-12 -o docs -x -  -s propTable
-	jsonschema2md -d json/embeddings/ --header false -n -v 2024-09 -o docs -x -  -s propTable
-	jsonschema2md -d json/linguistic_annotation/ -n -v 06 -o docs
-	jsonschema2md -d json/versioning/ --header false -n -v 2024-02 -o docs -x -  -s propTable
-	jsonschema2md -d json/text_reuse/ --header false -n -v 2024-09 -o docs -x -  -s propTable
-	jsonschema2md -d json/image_embeddings/ --header false -n -v 2025-01 -o docs -x -  -s propTable
-	jsonschema2md -d json/visualizer/ --header false -n -v 2025-01 -o docs -x -  -s propTable
-	jsonschema2md -d json/image_classification/ --header false -n -v 2025-01 -o docs -x -  -s propTable
-	jsonschema2md -d json/linguistic_annotation/ --header false -n -v 2025-10 -o docs -x -  -s propTable
-
-
-##########################################################################################
-# Simple macros for tests
-define print-test-ok
- printf "\033[92m%s\033[0m\n" "✓ Success!"
-endef
-
-define print-test-failed
- printf "\033[91m%s\033[0m\n" "✗ Failed!"
-endef
+documentation: check-python-env check-node-env
+	jsonschema2md -d json/ --header false -n -v 2020-12 -o docs -x - -s propTable

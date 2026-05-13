@@ -16,13 +16,13 @@ The type of the bounding box (article, image, etc.).
 
 `t`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   can be null
+* can be null
 
-*   defined in: [Content Item](bbox_visualizer-properties-bboxes-additionalproperties-items-properties-t.md "https://impresso.github.io/impresso-schemas/json/visualizer/bbox_visualizer.schema.json#/properties/bboxes/additionalProperties/items/properties/t")
+* defined in: [Content Item](bbox_visualizer-properties-bboxes-additionalproperties-items-properties-t.md "https://impresso.github.io/impresso-schemas/json/visualizer/bbox_visualizer.schema.json#/properties/bboxes/additionalProperties/items/properties/t")
 
 ### t Type
 
@@ -34,13 +34,13 @@ The content item ID that the bounding box belongs to.
 
 `ci`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   can be null
+* can be null
 
-*   defined in: [Content Item](bbox_visualizer-properties-bboxes-additionalproperties-items-properties-ci.md "https://impresso.github.io/impresso-schemas/json/visualizer/bbox_visualizer.schema.json#/properties/bboxes/additionalProperties/items/properties/ci")
+* defined in: [Content Item](bbox_visualizer-properties-bboxes-additionalproperties-items-properties-ci.md "https://impresso.github.io/impresso-schemas/json/visualizer/bbox_visualizer.schema.json#/properties/bboxes/additionalProperties/items/properties/ci")
 
 ### ci Type
 
@@ -52,13 +52,13 @@ The coordinates of the bounding box in the IIIF image. The bounding box is defin
 
 `c`
 
-*   is required
+* is required
 
-*   Type: `number[]`
+* Type: `number[]`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Content Item](bbox_visualizer-properties-bboxes-additionalproperties-items-properties-c.md "https://impresso.github.io/impresso-schemas/json/visualizer/bbox_visualizer.schema.json#/properties/bboxes/additionalProperties/items/properties/c")
+* defined in: [Content Item](bbox_visualizer-properties-bboxes-additionalproperties-items-properties-c.md "https://impresso.github.io/impresso-schemas/json/visualizer/bbox_visualizer.schema.json#/properties/bboxes/additionalProperties/items/properties/c")
 
 ### c Type
 

@@ -18,3 +18,6 @@
 | `"radio_bulletin"`          |             |
 | `"radio_broadcast_episode"` |             |
 | `"chronicle"`               |             |
+| `"chapter"`                 |             |
+| `"discussion"`              |             |
+| `"entertainment"`           |             |
