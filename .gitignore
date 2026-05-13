@@ -5,6 +5,7 @@
 
 # Build artifacts
 build/
+out/
 *.egg-info/
 __pycache__/
 *.pyc

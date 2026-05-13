@@ -1,5 +1,5 @@
 {
-    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://impresso.github.io/impresso-schemas/json/visualizer/bbox_visualizer.schema.json",
     "title": "Content Item",
     "description": "A visualizable IIIF file to observe bounding boxes of content items or pages from canonical or rebuilt",
