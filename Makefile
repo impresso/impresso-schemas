@@ -14,7 +14,7 @@ help:
 check-env:
 	@python3 -c "import pytest, jsonschema" 2>/dev/null || \
 	  { echo "ERROR: pytest and/or jsonschema not found."; \
-	    echo "       Activate your virtualenv and run: pip install -r requirements.txt"; \
+	    echo "       Activate your virtualenv and run: pip install . (or: pip install -r requirements.txt)"; \
 	    exit 1; }
 	@jsonschema2md --version 2>/dev/null || \
 	  { echo "ERROR: jsonschema2md not found."; \
