@@ -4,12 +4,7 @@
   "type": "object",
   "title": "Entity Embeddings Schema",
   "description": "Schema for validation of entity profiles enriched with embeddings and mention-level contexts.",
-  "required": [
-    "wkd_id",
-    "entity_ids",
-    "surfaces",
-    "contexts"
-  ],
+  "required": ["wkd_id", "entity_ids", "surfaces", "contexts"],
   "properties": {
     "wkd_id": {
       "type": "string",
@@ -36,18 +31,12 @@
       "description": "Wikipedia URL of the entity"
     },
     "date_of_birth": {
-      "type": [
-        "string",
-        "null"
-      ],
+      "type": ["string", "null"],
       "pattern": "^(\\d{4}|\\d{4}-\\d{2}|\\d{4}-\\d{2}-\\d{2})$",
       "description": "Date of birth if available (YYYY, YYYY-MM, or YYYY-MM-DD)"
     },
     "date_of_death": {
-      "type": [
-        "string",
-        "null"
-      ],
+      "type": ["string", "null"],
       "pattern": "^(\\d{4}|\\d{4}-\\d{2}|\\d{4}-\\d{2}-\\d{2})$",
       "description": "Date of death if available (YYYY, YYYY-MM, or YYYY-MM-DD)"
     },
@@ -95,10 +84,7 @@
       "description": "QIDs for instance classes"
     },
     "instances_urls": {
-      "type": [
-        "array",
-        "null"
-      ],
+      "type": ["array", "null"],
       "items": {
         "type": "string",
         "format": "uri"
@@ -134,30 +120,21 @@
       "description": "Mention-level identifiers linking surface to offsets"
     },
     "encyclopedic_embedding": {
-      "type": [
-        "array",
-        "null"
-      ],
+      "type": ["array", "null"],
       "items": {
         "type": "number"
       },
       "description": "Vector embedding from encyclopedic profile"
     },
     "news_embedding": {
-      "type": [
-        "array",
-        "null"
-      ],
+      "type": ["array", "null"],
       "items": {
         "type": "number"
       },
       "description": "Vector embedding from news contexts"
     },
     "entity_embedding": {
-      "type": [
-        "array",
-        "null"
-      ],
+      "type": ["array", "null"],
       "items": {
         "type": "number"
       },

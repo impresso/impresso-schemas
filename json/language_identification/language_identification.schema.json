@@ -10,10 +10,7 @@
       "description": "The unique identifier for a content item, cf. https://github.com/impresso/impresso-schemas/blob/master/json/newspaper/contentitem.schema.json"
     },
     "orig_lg": {
-      "type": [
-        "string",
-        "null"
-      ],
+      "type": ["string", "null"],
       "oneOf": [
         {
           "title": "null",
@@ -27,10 +24,7 @@
       "description": "Original language of the content item as provided by the metadata, cf. https://github.com/impresso/impresso-schemas/blob/master/json/newspaper/contentitem.schema.json"
     },
     "lg": {
-      "type": [
-        "string",
-        "null"
-      ],
+      "type": ["string", "null"],
       "oneOf": [
         {
           "title": "null",
@@ -43,13 +37,7 @@
       "description": "Computed language of the content item, cf. https://github.com/impresso/impresso-schemas/blob/master/json/newspaper/contentitem.schema.json"
     },
     "lg_decision": {
-      "enum": [
-        "all",
-        "all-but-impresso_ft",
-        "voting",
-        "dominant-by-len",
-        "dominant-by-lowvote"
-      ],
+      "enum": ["all", "all-but-impresso_ft", "voting", "dominant-by-len", "dominant-by-lowvote"],
       "type": "string",
       "description": "An identifier for the decision strategy applied to the content item: 'all' = all LID systems/info agree; 'all-but-impresso_ft' = all LID except impresso_ft agree on a language other than de/fr; 'dominant-by-len' = the most frequent language of the ensemble decisions is selected because there are too few characters; 'dominant-by-lowvote' = the most frequent language of the ensemble decisions is selected because there are too few votes; 'voting' = the language with the highest vote count is selected "
     },
@@ -71,10 +59,7 @@
       "description": "Version information of used impresso language identifier script and the timestamp of the file used for the decision"
     },
     "alphabetical_ratio": {
-      "type": [
-        "number",
-        "null"
-      ],
+      "type": ["number", "null"],
       "description": "Ratio of alphabetical characters (Unicode letter class matched by \\w) w.r.t. text length of content item",
       "minimum": 0,
       "maximum": 1
@@ -120,21 +105,12 @@
               "type": "number"
             }
           },
-          "required": [
-            "lang",
-            "vote"
-          ]
+          "required": ["lang", "vote"]
         }
       ]
     }
   },
-  "required": [
-    "tp",
-    "id",
-    "len",
-    "lg",
-    "orig_lg"
-  ],
+  "required": ["tp", "id", "len", "lg", "orig_lg"],
   "$defs": {
     "lidType": {
       "title": "lidType",
@@ -148,10 +124,7 @@
           "$ref": "#/$defs/probType"
         }
       },
-      "required": [
-        "lang",
-        "prob"
-      ]
+      "required": ["lang", "prob"]
     },
     "langISO639Type": {
       "type": "string",
@@ -181,10 +154,7 @@
           "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(Z|\\+00:00)$"
         }
       },
-      "required": [
-        "ts",
-        "version"
-      ]
+      "required": ["ts", "version"]
     }
   }
 }
