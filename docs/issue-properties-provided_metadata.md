@@ -1,3 +1,3 @@
 ## provided\_metadata Type
 
-`object` ([Details](issue-properties-provided_metadata.md))
+any of the following: `object` or `array` ([Details](issue-properties-provided_metadata.md))

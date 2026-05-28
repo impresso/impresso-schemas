@@ -189,7 +189,7 @@
       "description": "Radio program if applicable (st=='radio_broadcast'). The field is present only when a meaningful program name is available."
     },
     "provided_metadata": {
-      "type": "object",
+      "type": ["object", "array"],
       "description": "Minimally preprocessed issue-level metadata included by the provider institution, especially useful for radio data (sm=audio)."
     }
   },

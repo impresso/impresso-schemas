@@ -38,7 +38,7 @@ all of
 | [is\_exact\_date](#is_exact_date)                       | `boolean` | Optional | cannot be null | [Issue](issue-properties-is_exact_date.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/is_exact_date")                       |
 | [rc](#rc)                                               | `string`  | Optional | cannot be null | [Issue](issue-properties-rc.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/rc")                                             |
 | [rp](#rp)                                               | `string`  | Optional | cannot be null | [Issue](issue-properties-rp.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/rp")                                             |
-| [provided\_metadata](#provided_metadata)                | `object`  | Optional | cannot be null | [Issue](issue-properties-provided_metadata.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/provided_metadata")               |
+| [provided\_metadata](#provided_metadata)                | Multiple  | Optional | cannot be null | [Issue](issue-properties-provided_metadata.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/provided_metadata")               |
 
 ## id
 
@@ -447,7 +447,7 @@ Minimally preprocessed issue-level metadata included by the provider institution
 
 * is optional
 
-* Type: `object` ([Details](issue-properties-provided_metadata.md))
+* Type: any of the following: `object` or `array` ([Details](issue-properties-provided_metadata.md))
 
 * cannot be null
 
@@ -455,7 +455,7 @@ Minimally preprocessed issue-level metadata included by the provider institution
 
 ### provided\_metadata Type
 
-`object` ([Details](issue-properties-provided_metadata.md))
+any of the following: `object` or `array` ([Details](issue-properties-provided_metadata.md))
 
 # Issue Definitions
 
