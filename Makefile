@@ -53,6 +53,6 @@ tests: check-python-env
 clean-documentation:
 	rm -fv docs/*
 
-documentation: check-python-env check-node-env
+documentation: check-python-env check-node-env check-markdownlint-env
 	jsonschema2md -d json/ --header false -n -v 2020-12 -o docs -x - -s propTable
 	$(MAKE) lint-docs
