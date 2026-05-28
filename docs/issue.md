@@ -892,7 +892,7 @@ Deprecated, replaced by `media_title_variant` at issue's top-level. Variant titl
 
 ### archival\_note
 
-Plaintext archival note or description concerning the content item. The field is present only when a meaningful note is available.
+Plaintext archival note or description concerning the content item. In case of audio radio broadcasts, this corresponds to the content summary provided with the metadata. The field is present only when a meaningful note is available.
 
 `archival_note`
 

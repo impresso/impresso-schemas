@@ -74,6 +74,19 @@
       "type": ["string", "null"],
       "description": "Language of the content item in the original OCR/OLR. Only defined if the content-item was consolidated."
     },
+    "archival_note": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Plaintext archival note or description concerning the content item. In case of audio radio broadcasts, this corresponds to the content summary provided with the metadata. The field is present only when a meaningful note is available."
+    },
+    "is_exact_date": {
+      "description": "False if the date assigned to the issue is known to be inexact or approximated, True or undefined otherwise.",
+      "type": "boolean"
+    },
+    "additional_metadata": {
+      "description": "Optional additional metadata provided for the content item, in particular for cases of audio boradcast content items.",
+      "type": "object"
+    },
     "rr": {
       "description": "Array of audio record numbers spanned by the content item; currently always [1].",
       "type": "array",
@@ -120,8 +133,7 @@
           },
           "n": {
             "description": "audio record number",
-            "type": "integer",
-            "const": 1
+            "type": "integer"
           },
           "t": {
             "description": "a list of tokens",

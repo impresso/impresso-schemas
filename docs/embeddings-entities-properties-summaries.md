@@ -12,8 +12,6 @@
 
 Additional properties are allowed, as long as they follow this schema:
 
-
-
 * is optional
 
 * Type: `string`

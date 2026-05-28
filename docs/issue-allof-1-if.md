@@ -6,15 +6,13 @@ unknown
 
 | Property  | Type   | Required | Nullable       | Defined by                                                                                                                                          |
 | :-------- | :----- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [sm](#sm) | Merged | Optional | cannot be null | [Issue](issue-allof-1-if-properties-sm.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/allOf/1/if/properties/sm") |
+| [sm](#sm) | Merged | Required | cannot be null | [Issue](issue-allof-1-if-properties-sm.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/allOf/1/if/properties/sm") |
 
 ## sm
 
-
-
 `sm`
 
-* is optional
+* is required
 
 * Type: merged type ([Details](issue-allof-1-if-properties-sm.md))
 

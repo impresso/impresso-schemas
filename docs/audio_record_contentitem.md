@@ -21,6 +21,9 @@
 | [title](#title)                               | `string`  | Optional | can be null    | [Audio Record Content Item](audio_record_contentitem-properties-title.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/title")                             |
 | [consolidated](#consolidated)                 | `boolean` | Optional | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-consolidated.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/consolidated")               |
 | [lg\_original](#lg_original)                  | `string`  | Optional | can be null    | [Audio Record Content Item](audio_record_contentitem-properties-lg_original.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/lg_original")                 |
+| [archival\_note](#archival_note)              | `string`  | Optional | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-archival_note.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/archival_note")             |
+| [is\_exact\_date](#is_exact_date)             | `boolean` | Optional | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-is_exact_date.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/is_exact_date")             |
+| [additional\_metadata](#additional_metadata)  | `object`  | Optional | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-additional_metadata.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/additional_metadata") |
 | [rr](#rr)                                     | `array`   | Optional | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-rr.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/rr")                                   |
 | [ft](#ft)                                     | `string`  | Optional | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-ft.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/ft")                                   |
 | [sb](#sb)                                     | `array`   | Optional | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-sb.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/sb")                                   |
@@ -377,6 +380,64 @@ Language of the content item in the original OCR/OLR. Only defined if the conten
 ### lg\_original Type
 
 `string`
+
+## archival\_note
+
+Plaintext archival note or description concerning the content item. In case of audio radio broadcasts, this corresponds to the content summary provided with the metadata. The field is present only when a meaningful note is available.
+
+`archival_note`
+
+* is optional
+
+* Type: `string`
+
+* cannot be null
+
+* defined in: [Audio Record Content Item](audio_record_contentitem-properties-archival_note.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/archival_note")
+
+### archival\_note Type
+
+`string`
+
+### archival\_note Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
+
+## is\_exact\_date
+
+False if the date assigned to the issue is known to be inexact or approximated, True or undefined otherwise.
+
+`is_exact_date`
+
+* is optional
+
+* Type: `boolean`
+
+* cannot be null
+
+* defined in: [Audio Record Content Item](audio_record_contentitem-properties-is_exact_date.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/is_exact_date")
+
+### is\_exact\_date Type
+
+`boolean`
+
+## additional\_metadata
+
+Optional additional metadata provided for the content item, in particular for cases of audio boradcast content items.
+
+`additional_metadata`
+
+* is optional
+
+* Type: `object` ([Details](audio_record_contentitem-properties-additional_metadata.md))
+
+* cannot be null
+
+* defined in: [Audio Record Content Item](audio_record_contentitem-properties-additional_metadata.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/additional_metadata")
+
+### additional\_metadata Type
+
+`object` ([Details](audio_record_contentitem-properties-additional_metadata.md))
 
 ## rr
 

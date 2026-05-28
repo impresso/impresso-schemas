@@ -75,8 +75,6 @@ The ID of the model that produced this output, composed as specified in these sl
 
 ## embedding
 
-
-
 `embedding`
 
 * is required
