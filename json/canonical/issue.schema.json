@@ -189,7 +189,7 @@
       "description": "Radio program if applicable (st=='radio_broadcast'). The field is present only when a meaningful program name is available."
     },
     "provided_metadata": {
-      "type": "object",
+      "type": ["object", "array"],
       "description": "Minimally preprocessed issue-level metadata included by the provider institution, especially useful for radio data (sm=audio)."
     }
   },
@@ -323,7 +323,7 @@
         "archival_note": {
           "type": "string",
           "minLength": 1,
-          "description": "Plaintext archival note or description concerning the content item. The field is present only when a meaningful note is available."
+          "description": "Plaintext archival note or description concerning the content item. In case of audio radio broadcasts, this corresponds to the content summary provided with the metadata. The field is present only when a meaningful note is available."
         }
       },
       "required": ["id", "tp", "lg"],

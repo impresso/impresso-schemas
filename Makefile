@@ -1,5 +1,5 @@
 
-.PHONY: help tests check-python-env check-node-env check-prettier-env clean-documentation documentation format format-check
+.PHONY: help tests check-python-env check-node-env check-prettier-env check-markdownlint-env clean-documentation documentation lint-docs format format-check
 
 help:
 	@echo "Usage:"
@@ -8,10 +8,11 @@ help:
 	@echo "  make clean-documentation  Remove all generated docs"
 	@echo "  make format         Auto-format all JSON files with Prettier"
 	@echo "  make format-check   Check JSON formatting without modifying files (CI)"
+	@echo "  make lint-docs      Auto-fix markdown whitespace in docs/ with markdownlint"
 	@echo ""
 	@echo "Setup:"
 	@echo "  python3 -m venv .venv && source .venv/bin/activate && pip install ."
-	@echo "  npm install -g @adobe/jsonschema2md prettier"
+	@echo "  npm install -g @adobe/jsonschema2md prettier markdownlint-cli"
 
 check-python-env:
 	@python3 -c "import pytest, jsonschema" 2>/dev/null || \
@@ -31,6 +32,15 @@ check-prettier-env:
 	    echo "       Install it with: npm install -g prettier"; \
 	    exit 1; }
 
+check-markdownlint-env:
+	@markdownlint --version 2>/dev/null || \
+	  { echo "ERROR: markdownlint not found."; \
+	    echo "       Install it with: npm install -g markdownlint-cli"; \
+	    exit 1; }
+
+lint-docs: check-markdownlint-env
+	markdownlint --fix "docs/**/*.md"
+
 format: check-prettier-env
 	prettier --write "json/**/*.json" "examples/**/*.json"
 
@@ -43,5 +53,6 @@ tests: check-python-env
 clean-documentation:
 	rm -fv docs/*
 
-documentation: check-python-env check-node-env
+documentation: check-python-env check-node-env check-markdownlint-env
 	jsonschema2md -d json/ --header false -n -v 2020-12 -o docs -x - -s propTable
+	$(MAKE) lint-docs

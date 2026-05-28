@@ -29,6 +29,7 @@ all of
 | [consolidated\_reocr\_applied](#consolidated_reocr_applied) | `boolean` | Optional | cannot be null | [Paper Content Item](paper_contentitem-properties-consolidated_reocr_applied.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/consolidated_reocr_applied") |
 | [consolidated\_ocrqa](#consolidated_ocrqa)                  | Merged    | Optional | cannot be null | [Paper Content Item](paper_contentitem-properties-consolidated_ocrqa.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/consolidated_ocrqa")                 |
 | [lg\_original](#lg_original)                                | `string`  | Optional | can be null    | [Paper Content Item](paper_contentitem-properties-lg_original.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/lg_original")                               |
+| [is\_exact\_date](#is_exact_date)                           | `boolean` | Optional | cannot be null | [Paper Content Item](paper_contentitem-properties-is_exact_date.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/is_exact_date")                           |
 | [section\_title](#section_title)                            | `object`  | Optional | cannot be null | [Paper Content Item](paper_contentitem-properties-section_title.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/section_title")                           |
 | [pp](#pp)                                                   | `array`   | Optional | cannot be null | [Paper Content Item](paper_contentitem-properties-pp.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/pp")                                                 |
 | [ft](#ft)                                                   | `string`  | Optional | cannot be null | [Paper Content Item](paper_contentitem-properties-ft.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/ft")                                                 |
@@ -451,9 +452,25 @@ Language of the content item in the original OCR/OLR. Only defined if the conten
 
 `string`
 
+## is\_exact\_date
+
+False if the date assigned to the issue is known to be inexact or approximated, True or undefined otherwise.
+
+`is_exact_date`
+
+* is optional
+
+* Type: `boolean`
+
+* cannot be null
+
+* defined in: [Paper Content Item](paper_contentitem-properties-is_exact_date.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/is_exact_date")
+
+### is\_exact\_date Type
+
+`boolean`
+
 ## section\_title
-
-
 
 `section_title`
 

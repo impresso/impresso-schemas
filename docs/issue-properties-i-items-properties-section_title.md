@@ -13,8 +13,6 @@
 
 ## title\_text
 
-
-
 `title_text`
 
 * is required
@@ -30,8 +28,6 @@
 `string`
 
 ## composing\_ci\_ids
-
-
 
 `composing_ci_ids`
 
@@ -49,8 +45,6 @@
 
 ## section\_id
 
-
-
 `section_id`
 
 * is required
@@ -66,8 +60,6 @@
 `string`
 
 ## heading\_legacy\_parts
-
-
 
 `heading_legacy_parts`
 

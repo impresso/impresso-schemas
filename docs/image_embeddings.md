@@ -114,8 +114,6 @@ The size of the embedding vector.
 
 ## embedding
 
-
-
 `embedding`
 
 * is required
