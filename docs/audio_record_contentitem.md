@@ -20,6 +20,7 @@
 | [media\_title\_variant](#media_title_variant) | `string`  | Optional | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-media_title_variant.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/media_title_variant") |
 | [title](#title)                               | `string`  | Optional | can be null    | [Audio Record Content Item](audio_record_contentitem-properties-title.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/title")                             |
 | [consolidated](#consolidated)                 | `boolean` | Optional | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-consolidated.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/consolidated")               |
+| [consolidated\_ocrqa](#consolidated_ocrqa)    | Merged    | Optional | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-consolidated_ocrqa.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/consolidated_ocrqa")   |
 | [lg\_original](#lg_original)                  | `string`  | Optional | can be null    | [Audio Record Content Item](audio_record_contentitem-properties-lg_original.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/lg_original")                 |
 | [archival\_note](#archival_note)              | `string`  | Optional | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-archival_note.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/archival_note")             |
 | [is\_exact\_date](#is_exact_date)             | `boolean` | Optional | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-is_exact_date.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/is_exact_date")             |
@@ -362,6 +363,30 @@ True if the issue this CI comes from was consolidated, meaning it contains addit
 ### consolidated Type
 
 `boolean`
+
+## consolidated\_ocrqa
+
+Estimated OCR quality, between 0 and 1. May be null if there is no text or not enough text to compute an estimate.
+
+`consolidated_ocrqa`
+
+* is optional
+
+* Type: merged type ([Details](audio_record_contentitem-properties-consolidated_ocrqa.md))
+
+* cannot be null
+
+* defined in: [Audio Record Content Item](audio_record_contentitem-properties-consolidated_ocrqa.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/consolidated_ocrqa")
+
+### consolidated\_ocrqa Type
+
+merged type ([Details](audio_record_contentitem-properties-consolidated_ocrqa.md))
+
+any of
+
+* [Untitled number in Audio Record Content Item](audio_record_contentitem-properties-consolidated_ocrqa-anyof-0.md "check type definition")
+
+* [Untitled null in Audio Record Content Item](audio_record_contentitem-properties-consolidated_ocrqa-anyof-1.md "check type definition")
 
 ## lg\_original
 
