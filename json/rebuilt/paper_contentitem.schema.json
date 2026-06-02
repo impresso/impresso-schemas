@@ -213,7 +213,8 @@
   "required": ["id", "tp", "olr", "ts"],
   "dependentRequired": {
     "sm": ["st"],
-    "st": ["sm"]
+    "st": ["sm"],
+    "consolidated": ["consolidated_ocrqa", "lg_original"]
   },
   "allOf": [
     {

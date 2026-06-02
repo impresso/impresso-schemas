@@ -70,6 +70,19 @@
       "description": "True if the issue this CI comes from was consolidated, meaning it contains additional language identification and ocrqa information.",
       "type": "boolean"
     },
+    "consolidated_ocrqa": {
+      "anyOf": [
+        {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Estimated OCR quality, between 0 and 1. May be null if there is no text or not enough text to compute an estimate."
+    },
     "lg_original": {
       "type": ["string", "null"],
       "description": "Language of the content item in the original OCR/OLR. Only defined if the content-item was consolidated."
@@ -193,6 +206,7 @@
   "required": ["id", "tp", "ts"],
   "dependentRequired": {
     "sm": ["st"],
-    "st": ["sm"]
+    "st": ["sm"],
+    "consolidated": ["consolidated_ocrqa", "lg_original"]
   }
 }
