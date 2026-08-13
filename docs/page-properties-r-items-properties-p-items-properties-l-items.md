@@ -11,17 +11,17 @@
 
 ## c
 
-Coordinates of bounding-box, following IIIF regions schema (x, y, width, height).
+Coordinates of bounding-box, following IIIF regions schema (\[x, y, width, height] or \[HPOS, VPOS, WIDTH, HEIGHT]).
 
 `c`
 
-*   is required
+* is required
 
-*   Type: `integer[]`
+* Type: `integer[]`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Printed Page](page-defs-coordinates.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/r/items/properties/p/items/properties/l/items/properties/c")
+* defined in: [Printed Page](page-defs-coordinates.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/r/items/properties/p/items/properties/l/items/properties/c")
 
 ### c Type
 
@@ -39,13 +39,13 @@ Tokens (as detected by the OCR engine).
 
 `t`
 
-*   is required
+* is required
 
-*   Type: `object[]` ([Details](page-properties-r-items-properties-p-items-properties-l-items-properties-t-items.md))
+* Type: `object[]` ([Details](page-properties-r-items-properties-p-items-properties-l-items-properties-t-items.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Printed Page](page-properties-r-items-properties-p-items-properties-l-items-properties-t.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/r/items/properties/p/items/properties/l/items/properties/t")
+* defined in: [Printed Page](page-properties-r-items-properties-p-items-properties-l-items-properties-t.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/r/items/properties/p/items/properties/l/items/properties/t")
 
 ### t Type
 

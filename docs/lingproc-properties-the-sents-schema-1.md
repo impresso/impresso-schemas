@@ -1,3 +1,3 @@
 ## tsents Type
 
-`object[]` ([The Items Schema](lingproc-definitions-the-sents-schema-the-items-schema.md))
+`object[]` ([The Items Schema](lingproc-defs-the-sents-schema-the-items-schema.md))

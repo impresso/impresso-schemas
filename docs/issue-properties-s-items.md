@@ -17,13 +17,13 @@ Color of the text (in RGB).
 
 `rgb`
 
-*   is optional
+* is optional
 
-*   Type: `integer[]`
+* Type: `integer[]`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Issue](issue-properties-s-items-properties-rgb.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/s/items/properties/rgb")
+* defined in: [Issue](issue-properties-s-items-properties-rgb.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/s/items/properties/rgb")
 
 ### rgb Type
 
@@ -39,13 +39,13 @@ Font name
 
 `f`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Issue](issue-properties-s-items-properties-f.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/s/items/properties/f")
+* defined in: [Issue](issue-properties-s-items-properties-f.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/s/items/properties/f")
 
 ### f Type
 
@@ -57,13 +57,13 @@ Font size
 
 `fs`
 
-*   is optional
+* is optional
 
-*   Type: `number`
+* Type: `number`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Issue](issue-properties-s-items-properties-fs.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/s/items/properties/fs")
+* defined in: [Issue](issue-properties-s-items-properties-fs.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/s/items/properties/fs")
 
 ### fs Type
 
@@ -75,13 +75,13 @@ Local ID of the style
 
 `id`
 
-*   is required
+* is required
 
-*   Type: `integer`
+* Type: `integer`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Issue](issue-properties-s-items-properties-id.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/s/items/properties/id")
+* defined in: [Issue](issue-properties-s-items-properties-id.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/s/items/properties/id")
 
 ### id Type
 

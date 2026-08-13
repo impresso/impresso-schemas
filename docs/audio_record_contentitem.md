@@ -4,27 +4,33 @@
 
 # Audio Record Content Item Properties
 
-| Property         | Type     | Required | Nullable       | Defined by                                                                                                                                                                                  |
-| :--------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [id](#id)        | `string` | Required | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-id.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/id")       |
-| [ts](#ts)        | `string` | Required | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-ts.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/ts")       |
-| [d](#d)          | `string` | Optional | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-d.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/d")         |
-| [st](#st)        | `string` | Optional | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-st.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/st")       |
-| [sm](#sm)        | `string` | Optional | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-sm.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/sm")       |
-| [tp](#tp)        | `string` | Required | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-tp.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/tp")       |
-| [lg](#lg)        | `string` | Optional | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-lg.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/lg")       |
-| [stt](#stt)      | `string` | Optional | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-stt.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/stt")     |
-| [dur](#dur)      | `string` | Optional | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-dur.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/dur")     |
-| [rc](#rc)        | `string` | Optional | can be null    | [Audio Record Content Item](audio_record_contentitem-properties-rc.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/rc")       |
-| [rp](#rp)        | `string` | Optional | can be null    | [Audio Record Content Item](audio_record_contentitem-properties-rp.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/rp")       |
-| [var\_t](#var_t) | `string` | Optional | can be null    | [Audio Record Content Item](audio_record_contentitem-properties-var_t.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/var_t") |
-| [title](#title)  | `string` | Optional | can be null    | [Audio Record Content Item](audio_record_contentitem-properties-title.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/title") |
-| [rr](#rr)        | `array`  | Optional | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-rr.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/rr")       |
-| [ft](#ft)        | `string` | Optional | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-ft.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/ft")       |
-| [sb](#sb)        | `array`  | Optional | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-sb.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/sb")       |
-| [ub](#ub)        | `array`  | Optional | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-ub.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/ub")       |
-| [ssb](#ssb)      | `array`  | Optional | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-ssb.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/ssb")     |
-| [rreb](#rreb)    | `array`  | Optional | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-rreb.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/rreb")   |
+| Property                                      | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                              |
+| :-------------------------------------------- | :-------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [id](#id)                                     | `string`  | Required | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-id.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/id")                                   |
+| [ts](#ts)                                     | `string`  | Required | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-ts.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/ts")                                   |
+| [d](#d)                                       | `string`  | Optional | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-d.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/d")                                     |
+| [st](#st)                                     | `string`  | Optional | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-st.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/st")                                   |
+| [sm](#sm)                                     | `string`  | Optional | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-sm.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/sm")                                   |
+| [tp](#tp)                                     | `string`  | Required | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-tp.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/tp")                                   |
+| [lg](#lg)                                     | `string`  | Optional | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-lg.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/lg")                                   |
+| [stt](#stt)                                   | `string`  | Optional | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-stt.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/stt")                                 |
+| [dur](#dur)                                   | `string`  | Optional | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-dur.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/dur")                                 |
+| [rc](#rc)                                     | `string`  | Optional | can be null    | [Audio Record Content Item](audio_record_contentitem-properties-rc.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/rc")                                   |
+| [rp](#rp)                                     | `string`  | Optional | can be null    | [Audio Record Content Item](audio_record_contentitem-properties-rp.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/rp")                                   |
+| [media\_title\_variant](#media_title_variant) | `string`  | Optional | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-media_title_variant.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/media_title_variant") |
+| [title](#title)                               | `string`  | Optional | can be null    | [Audio Record Content Item](audio_record_contentitem-properties-title.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/title")                             |
+| [consolidated](#consolidated)                 | `boolean` | Optional | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-consolidated.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/consolidated")               |
+| [consolidated\_ocrqa](#consolidated_ocrqa)    | Merged    | Optional | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-consolidated_ocrqa.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/consolidated_ocrqa")   |
+| [lg\_original](#lg_original)                  | `string`  | Optional | can be null    | [Audio Record Content Item](audio_record_contentitem-properties-lg_original.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/lg_original")                 |
+| [archival\_note](#archival_note)              | `string`  | Optional | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-archival_note.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/archival_note")             |
+| [is\_exact\_date](#is_exact_date)             | `boolean` | Optional | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-is_exact_date.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/is_exact_date")             |
+| [additional\_metadata](#additional_metadata)  | `array`   | Optional | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-additional_metadata.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/additional_metadata") |
+| [rr](#rr)                                     | `array`   | Optional | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-rr.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/rr")                                   |
+| [ft](#ft)                                     | `string`  | Optional | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-ft.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/ft")                                   |
+| [sb](#sb)                                     | `array`   | Optional | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-sb.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/sb")                                   |
+| [ub](#ub)                                     | `array`   | Optional | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-ub.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/ub")                                   |
+| [ssb](#ssb)                                   | `array`   | Optional | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-ssb.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/ssb")                                 |
+| [rreb](#rreb)                                 | `array`   | Optional | cannot be null | [Audio Record Content Item](audio_record_contentitem-properties-rreb.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/rreb")                               |
 
 ## id
 
@@ -32,13 +38,13 @@ The unique identifier for the content-item (CI), only 1 CI per radio broadcast a
 
 `id`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Audio Record Content Item](audio_record_contentitem-properties-id.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/id")
+* defined in: [Audio Record Content Item](audio_record_contentitem-properties-id.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/id")
 
 ### id Type
 
@@ -60,13 +66,13 @@ timestamp of creation of the JSON file (in '%Y-%m-%dT%H:%M:%SZ' format e.g. '201
 
 `ts`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Audio Record Content Item](audio_record_contentitem-properties-ts.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/ts")
+* defined in: [Audio Record Content Item](audio_record_contentitem-properties-ts.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/ts")
 
 ### ts Type
 
@@ -88,13 +94,13 @@ Date of publication of radio broadcast (yyyy-mm-dd)
 
 `d`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Audio Record Content Item](audio_record_contentitem-properties-d.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/d")
+* defined in: [Audio Record Content Item](audio_record_contentitem-properties-d.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/d")
 
 ### d Type
 
@@ -116,13 +122,13 @@ The type of media source to which this content item belongs. Must be a value fro
 
 `st`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Audio Record Content Item](audio_record_contentitem-properties-st.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/st")
+* defined in: [Audio Record Content Item](audio_record_contentitem-properties-st.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/st")
 
 ### st Type
 
@@ -142,13 +148,13 @@ The medium in which the source media this content item belongs to was originally
 
 `sm`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Audio Record Content Item](audio_record_contentitem-properties-sm.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/sm")
+* defined in: [Audio Record Content Item](audio_record_contentitem-properties-sm.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/sm")
 
 ### sm Type
 
@@ -168,13 +174,13 @@ content-item type (e.g. 'ar' for article, 'ad' for advertisement)
 
 `tp`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Audio Record Content Item](audio_record_contentitem-properties-tp.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/tp")
+* defined in: [Audio Record Content Item](audio_record_contentitem-properties-tp.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/tp")
 
 ### tp Type
 
@@ -186,13 +192,13 @@ Language of the content item's text, expressed as a two-letter ISO 639-1 languag
 
 `lg`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Audio Record Content Item](audio_record_contentitem-properties-lg.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/lg")
+* defined in: [Audio Record Content Item](audio_record_contentitem-properties-lg.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/lg")
 
 ### lg Type
 
@@ -203,10 +209,10 @@ Language of the content item's text, expressed as a two-letter ISO 639-1 languag
 **pattern**: the string must match the following regular expression:&#x20;
 
 ```regexp
-^[a-z]{2}$
+^[a-z]{2,3}$
 ```
 
-[try pattern](https://regexr.com/?expression=%5E%5Ba-z%5D%7B2%7D%24 "try regular expression with regexr.com")
+[try pattern](https://regexr.com/?expression=%5E%5Ba-z%5D%7B2%2C3%7D%24 "try regular expression with regexr.com")
 
 ## stt
 
@@ -214,13 +220,13 @@ Start time of the audio recording, relative to the broadcasting day date (HH:MM:
 
 `stt`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Audio Record Content Item](audio_record_contentitem-properties-stt.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/stt")
+* defined in: [Audio Record Content Item](audio_record_contentitem-properties-stt.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/stt")
 
 ### stt Type
 
@@ -242,13 +248,13 @@ Total duration of the audio broadcast, in HH:MM:SS format.
 
 `dur`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Audio Record Content Item](audio_record_contentitem-properties-dur.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/dur")
+* defined in: [Audio Record Content Item](audio_record_contentitem-properties-dur.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/dur")
 
 ### dur Type
 
@@ -270,13 +276,13 @@ Radio channel, if known/defined.
 
 `rc`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   can be null
+* can be null
 
-*   defined in: [Audio Record Content Item](audio_record_contentitem-properties-rc.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/rc")
+* defined in: [Audio Record Content Item](audio_record_contentitem-properties-rc.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/rc")
 
 ### rc Type
 
@@ -288,35 +294,39 @@ Radio program, if known/defined.
 
 `rp`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   can be null
+* can be null
 
-*   defined in: [Audio Record Content Item](audio_record_contentitem-properties-rp.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/rp")
+* defined in: [Audio Record Content Item](audio_record_contentitem-properties-rp.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/rp")
 
 ### rp Type
 
 `string`
 
-## var\_t
+## media\_title\_variant
 
-Variant 'full' title of the media in the case it's defined in the CI metadata
+Variant title of the media title this CI is from (mainly in the case of BL newspapers). The field is present only when a meaningful variant title is available.
 
-`var_t`
+`media_title_variant`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   can be null
+* cannot be null
 
-*   defined in: [Audio Record Content Item](audio_record_contentitem-properties-var_t.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/var_t")
+* defined in: [Audio Record Content Item](audio_record_contentitem-properties-media_title_variant.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/media_title_variant")
 
-### var\_t Type
+### media\_title\_variant Type
 
 `string`
+
+### media\_title\_variant Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
 
 ## title
 
@@ -324,17 +334,135 @@ radio broadcast content-item title.
 
 `title`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   can be null
+* can be null
 
-*   defined in: [Audio Record Content Item](audio_record_contentitem-properties-title.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/title")
+* defined in: [Audio Record Content Item](audio_record_contentitem-properties-title.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/title")
 
 ### title Type
 
 `string`
+
+## consolidated
+
+True if the issue this CI comes from was consolidated, meaning it contains additional language identification and ocrqa information.
+
+`consolidated`
+
+* is optional
+
+* Type: `boolean`
+
+* cannot be null
+
+* defined in: [Audio Record Content Item](audio_record_contentitem-properties-consolidated.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/consolidated")
+
+### consolidated Type
+
+`boolean`
+
+## consolidated\_ocrqa
+
+Estimated OCR quality, between 0 and 1. May be null if there is no text or not enough text to compute an estimate.
+
+`consolidated_ocrqa`
+
+* is optional
+
+* Type: merged type ([Details](audio_record_contentitem-properties-consolidated_ocrqa.md))
+
+* cannot be null
+
+* defined in: [Audio Record Content Item](audio_record_contentitem-properties-consolidated_ocrqa.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/consolidated_ocrqa")
+
+### consolidated\_ocrqa Type
+
+merged type ([Details](audio_record_contentitem-properties-consolidated_ocrqa.md))
+
+any of
+
+* [Untitled number in Audio Record Content Item](audio_record_contentitem-properties-consolidated_ocrqa-anyof-0.md "check type definition")
+
+* [Untitled null in Audio Record Content Item](audio_record_contentitem-properties-consolidated_ocrqa-anyof-1.md "check type definition")
+
+## lg\_original
+
+Language of the content item in the original OCR/OLR. Only defined if the content-item was consolidated.
+
+`lg_original`
+
+* is optional
+
+* Type: `string`
+
+* can be null
+
+* defined in: [Audio Record Content Item](audio_record_contentitem-properties-lg_original.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/lg_original")
+
+### lg\_original Type
+
+`string`
+
+## archival\_note
+
+Plaintext archival note or description concerning the content item. In case of audio radio broadcasts, this corresponds to the content summary provided with the metadata. The field is present only when a meaningful note is available.
+
+`archival_note`
+
+* is optional
+
+* Type: `string`
+
+* cannot be null
+
+* defined in: [Audio Record Content Item](audio_record_contentitem-properties-archival_note.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/archival_note")
+
+### archival\_note Type
+
+`string`
+
+### archival\_note Constraints
+
+**minimum length**: the minimum number of characters for this string is: `1`
+
+## is\_exact\_date
+
+False if the date assigned to the issue is known to be inexact or approximated, True or undefined otherwise.
+
+`is_exact_date`
+
+* is optional
+
+* Type: `boolean`
+
+* cannot be null
+
+* defined in: [Audio Record Content Item](audio_record_contentitem-properties-is_exact_date.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/is_exact_date")
+
+### is\_exact\_date Type
+
+`boolean`
+
+## additional\_metadata
+
+Optional additional metadata provided for the content item, in particular for cases of audio boradcast content items.
+
+`additional_metadata`
+
+* is optional
+
+* Type: `object[]` ([Details](audio_record_contentitem-properties-additional_metadata-items.md))
+
+* cannot be null
+
+* defined in: [Audio Record Content Item](audio_record_contentitem-properties-additional_metadata.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/additional_metadata")
+
+### additional\_metadata Type
+
+`object[]` ([Details](audio_record_contentitem-properties-additional_metadata-items.md))
 
 ## rr
 
@@ -342,13 +470,13 @@ Array of audio record numbers spanned by the content item; currently always \[1]
 
 `rr`
 
-*   is optional
+* is optional
 
-*   Type: `integer[]`
+* Type: `integer[]`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Audio Record Content Item](audio_record_contentitem-properties-rr.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/rr")
+* defined in: [Audio Record Content Item](audio_record_contentitem-properties-rr.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/rr")
 
 ### rr Type
 
@@ -364,13 +492,13 @@ the rebuilt fulltext
 
 `ft`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Audio Record Content Item](audio_record_contentitem-properties-ft.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/ft")
+* defined in: [Audio Record Content Item](audio_record_contentitem-properties-ft.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/ft")
 
 ### ft Type
 
@@ -382,13 +510,13 @@ text offsets of broadcast sections (relative to 'ft' field)
 
 `sb`
 
-*   is optional
+* is optional
 
-*   Type: `integer[]`
+* Type: `integer[]`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Audio Record Content Item](audio_record_contentitem-properties-sb.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/sb")
+* defined in: [Audio Record Content Item](audio_record_contentitem-properties-sb.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/sb")
 
 ### sb Type
 
@@ -400,13 +528,13 @@ text offsets of utterances (relative to 'ft' field)
 
 `ub`
 
-*   is optional
+* is optional
 
-*   Type: `integer[]`
+* Type: `integer[]`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Audio Record Content Item](audio_record_contentitem-properties-ub.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/ub")
+* defined in: [Audio Record Content Item](audio_record_contentitem-properties-ub.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/ub")
 
 ### ub Type
 
@@ -418,13 +546,13 @@ text offsets of speech segments (relative to 'ft' field)
 
 `ssb`
 
-*   is optional
+* is optional
 
-*   Type: `integer[]`
+* Type: `integer[]`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Audio Record Content Item](audio_record_contentitem-properties-ssb.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/ssb")
+* defined in: [Audio Record Content Item](audio_record_contentitem-properties-ssb.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/ssb")
 
 ### ssb Type
 
@@ -436,13 +564,13 @@ a list of rebuilt records
 
 `rreb`
 
-*   is optional
+* is optional
 
-*   Type: `object[]` ([Details](audio_record_contentitem-properties-rreb-items.md))
+* Type: `object[]` ([Details](audio_record_contentitem-properties-rreb-items.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Audio Record Content Item](audio_record_contentitem-properties-rreb.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/rreb")
+* defined in: [Audio Record Content Item](audio_record_contentitem-properties-rreb.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/rreb")
 
 ### rreb Type
 

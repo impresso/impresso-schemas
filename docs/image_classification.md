@@ -1,17 +1,17 @@
-## &#x20;Type
+## Image Classification Type
 
-`object` ([Details](image_classification.md))
+`object` ([Image Classification](image_classification.md))
 
-# &#x20;Properties
+# Image Classification Properties
 
-| Property                                   | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                       |
-| :----------------------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ci\_id](#ci_id)                           | `string` | Required | cannot be null | [Untitled schema](image_classification-properties-ci_id.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/properties/ci_id")                           |
-| [ts](#ts)                                  | `string` | Required | cannot be null | [Untitled schema](image_classification-properties-ts.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/properties/ts")                                 |
-| [model\_id](#model_id)                     | `string` | Required | cannot be null | [Untitled schema](image_classification-properties-model_id.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/properties/model_id")                     |
-| [level1\_predictions](#level1_predictions) | `array`  | Optional | cannot be null | [Untitled schema](image_classification-properties-level1_predictions.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/properties/level1_predictions") |
-| [level2\_predictions](#level2_predictions) | `array`  | Optional | cannot be null | [Untitled schema](image_classification-properties-level2_predictions.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/properties/level2_predictions") |
-| [level3\_predictions](#level3_predictions) | `array`  | Required | cannot be null | [Untitled schema](image_classification-properties-level3_predictions.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/properties/level3_predictions") |
+| Property                                   | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                            |
+| :----------------------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [ci\_id](#ci_id)                           | `string` | Required | cannot be null | [Image Classification](image_classification-properties-ci_id.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/properties/ci_id")                           |
+| [ts](#ts)                                  | `string` | Required | cannot be null | [Image Classification](image_classification-properties-ts.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/properties/ts")                                 |
+| [model\_id](#model_id)                     | `string` | Required | cannot be null | [Image Classification](image_classification-properties-model_id.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/properties/model_id")                     |
+| [level1\_predictions](#level1_predictions) | `array`  | Optional | cannot be null | [Image Classification](image_classification-properties-level1_predictions.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/properties/level1_predictions") |
+| [level2\_predictions](#level2_predictions) | `array`  | Optional | cannot be null | [Image Classification](image_classification-properties-level2_predictions.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/properties/level2_predictions") |
+| [level3\_predictions](#level3_predictions) | `array`  | Required | cannot be null | [Image Classification](image_classification-properties-level3_predictions.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/properties/level3_predictions") |
 
 ## ci\_id
 
@@ -19,13 +19,13 @@ Unique identifier for the content-item (only CIs of type image).
 
 `ci_id`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](image_classification-properties-ci_id.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/properties/ci_id")
+* defined in: [Image Classification](image_classification-properties-ci_id.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/properties/ci_id")
 
 ### ci\_id Type
 
@@ -53,13 +53,13 @@ Timestamp indicating when the embedding was created (e.g., '2024-10-09T09:29:02Z
 
 `ts`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](image_classification-properties-ts.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/properties/ts")
+* defined in: [Image Classification](image_classification-properties-ts.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/properties/ts")
 
 ### ts Type
 
@@ -75,13 +75,13 @@ The ID of the model that produced this output, composed as specified in these sl
 
 `model_id`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](image_classification-properties-model_id.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/properties/model_id")
+* defined in: [Image Classification](image_classification-properties-model_id.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/properties/model_id")
 
 ### model\_id Type
 
@@ -99,13 +99,13 @@ List of top-k predictions for level 1 for this image CI, (we will use k=3).
 
 `level1_predictions`
 
-*   is optional
+* is optional
 
-*   Type: `object[]` ([Details](image_classification-properties-level1_predictions-items.md))
+* Type: `object[]` ([Details](image_classification-properties-level1_predictions-items.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](image_classification-properties-level1_predictions.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/properties/level1_predictions")
+* defined in: [Image Classification](image_classification-properties-level1_predictions.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/properties/level1_predictions")
 
 ### level1\_predictions Type
 
@@ -117,13 +117,13 @@ List of top-k predictions for level 2 for this image CI, (we will use k=3).
 
 `level2_predictions`
 
-*   is optional
+* is optional
 
-*   Type: `object[]` ([Details](image_classification-properties-level2_predictions-items.md))
+* Type: `object[]` ([Details](image_classification-properties-level2_predictions-items.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](image_classification-properties-level2_predictions.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/properties/level2_predictions")
+* defined in: [Image Classification](image_classification-properties-level2_predictions.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/properties/level2_predictions")
 
 ### level2\_predictions Type
 
@@ -135,19 +135,19 @@ List of top-k predictions for level 3 for this image CI, (we will use k=3).
 
 `level3_predictions`
 
-*   is required
+* is required
 
-*   Type: `object[]` ([Details](image_classification-properties-level3_predictions-items.md))
+* Type: `object[]` ([Details](image_classification-properties-level3_predictions-items.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](image_classification-properties-level3_predictions.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/properties/level3_predictions")
+* defined in: [Image Classification](image_classification-properties-level3_predictions.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/properties/level3_predictions")
 
 ### level3\_predictions Type
 
 `object[]` ([Details](image_classification-properties-level3_predictions-items.md))
 
-# &#x20;Definitions
+# Image Classification Definitions
 
 ## Definitions group prediction
 
@@ -157,13 +157,13 @@ Reference this group by using
 {"$ref":"https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/$defs/prediction"}
 ```
 
-| Property                     | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                                          |
-| :--------------------------- | :-------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [level](#level)              | `integer` | Required | cannot be null | [Untitled schema](image_classification-defs-prediction-properties-level.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/$defs/prediction/properties/level")             |
-| [class](#class)              | `string`  | Required | cannot be null | [Untitled schema](image_classification-defs-prediction-properties-class.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/$defs/prediction/properties/class")             |
-| [confidence](#confidence)    | `number`  | Optional | cannot be null | [Untitled schema](image_classification-defs-prediction-properties-confidence.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/$defs/prediction/properties/confidence")   |
-| [pred\_number](#pred_number) | `integer` | Optional | cannot be null | [Untitled schema](image_classification-defs-prediction-properties-pred_number.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/$defs/prediction/properties/pred_number") |
-| [is\_inferred](#is_inferred) | `boolean` | Required | cannot be null | [Untitled schema](image_classification-defs-prediction-properties-is_inferred.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/$defs/prediction/properties/is_inferred") |
+| Property                     | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                                               |
+| :--------------------------- | :-------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [level](#level)              | `integer` | Required | cannot be null | [Image Classification](image_classification-defs-prediction-properties-level.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/$defs/prediction/properties/level")             |
+| [class](#class)              | `string`  | Required | cannot be null | [Image Classification](image_classification-defs-prediction-properties-class.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/$defs/prediction/properties/class")             |
+| [confidence](#confidence)    | `number`  | Optional | cannot be null | [Image Classification](image_classification-defs-prediction-properties-confidence.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/$defs/prediction/properties/confidence")   |
+| [pred\_number](#pred_number) | `integer` | Optional | cannot be null | [Image Classification](image_classification-defs-prediction-properties-pred_number.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/$defs/prediction/properties/pred_number") |
+| [is\_inferred](#is_inferred) | `boolean` | Required | cannot be null | [Image Classification](image_classification-defs-prediction-properties-is_inferred.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/$defs/prediction/properties/is_inferred") |
 
 ### level
 
@@ -171,13 +171,13 @@ Level in typology V2 to which this prediction corresponds to.
 
 `level`
 
-*   is required
+* is required
 
-*   Type: `integer`
+* Type: `integer`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](image_classification-defs-prediction-properties-level.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/$defs/prediction/properties/level")
+* defined in: [Image Classification](image_classification-defs-prediction-properties-level.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/$defs/prediction/properties/level")
 
 #### level Type
 
@@ -195,13 +195,13 @@ Class from the Typology V2 predicted or inferred for this image content-item.
 
 `class`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](image_classification-defs-prediction-properties-class.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/$defs/prediction/properties/class")
+* defined in: [Image Classification](image_classification-defs-prediction-properties-class.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/$defs/prediction/properties/class")
 
 #### class Type
 
@@ -248,13 +248,13 @@ Confidence score of the prediction - if class was assigned through predictions.
 
 `confidence`
 
-*   is optional
+* is optional
 
-*   Type: `number`
+* Type: `number`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](image_classification-defs-prediction-properties-confidence.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/$defs/prediction/properties/confidence")
+* defined in: [Image Classification](image_classification-defs-prediction-properties-confidence.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/$defs/prediction/properties/confidence")
 
 #### confidence Type
 
@@ -272,13 +272,13 @@ Confidence score of the prediction - if class was assigned through predictions.
 
 `pred_number`
 
-*   is optional
+* is optional
 
-*   Type: `integer`
+* Type: `integer`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](image_classification-defs-prediction-properties-pred_number.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/$defs/prediction/properties/pred_number")
+* defined in: [Image Classification](image_classification-defs-prediction-properties-pred_number.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/$defs/prediction/properties/pred_number")
 
 #### pred\_number Type
 
@@ -296,13 +296,13 @@ True if the prediction is inferred from another level in typology (eg. 'entertai
 
 `is_inferred`
 
-*   is required
+* is required
 
-*   Type: `boolean`
+* Type: `boolean`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](image_classification-defs-prediction-properties-is_inferred.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/$defs/prediction/properties/is_inferred")
+* defined in: [Image Classification](image_classification-defs-prediction-properties-is_inferred.md "https://impresso.github.io/impresso-schemas/json/image_classification/image_classification.schema.json#/$defs/prediction/properties/is_inferred")
 
 #### is\_inferred Type
 

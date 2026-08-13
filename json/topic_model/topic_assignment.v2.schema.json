@@ -1,6 +1,7 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.v2.schema.json",
+  "title": "Topic Assignment v2",
   "description": "A representation for the probabilistic assignments of the topics of a topic model to content items. impresso 2 schema version.",
   "type": "object",
   "properties": {
@@ -10,7 +11,6 @@
       "examples": ["actionfem-1940-01-08-a-i0001"]
     },
     "ts": {
-      "$id": "#/properties/ts",
       "type": "string",
       "title": "The Ts Schema",
       "description": "timestamp",
@@ -45,7 +45,7 @@
     "topics": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/topic"
+        "$ref": "#/$defs/topic"
       },
 
       "description": "Sparse representation of topics"
@@ -60,7 +60,7 @@
     }
   },
   "required": ["lg", "topics", "topic_count", "topic_model_id", "ci_id"],
-  "definitions": {
+  "$defs": {
     "topic": {
       "description": "The probability/proportion of a topic in the document",
       "type": "object",

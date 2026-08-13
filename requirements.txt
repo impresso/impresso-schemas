@@ -1,6 +1,7 @@
-attrs==23.1.0
-jsonschema==4.20.0
-jsonschema-specifications==2023.11.1
-referencing==0.31.0
-rpds-py==0.13.1
-check-jsonschema
+# Install via pyproject.toml (recommended):
+#   pip install .
+#
+# Or install dependencies directly:
+jsonschema>=4.20
+pytest>=8
+check-jsonschema>=0.26

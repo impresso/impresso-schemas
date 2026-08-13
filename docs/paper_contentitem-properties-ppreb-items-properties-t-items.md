@@ -16,13 +16,13 @@ Coordinates of token relative to page.
 
 `c`
 
-*   is optional
+* is optional
 
-*   Type: `integer[]`
+* Type: `integer[]`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Paper Content Item](paper_contentitem-properties-ppreb-items-properties-t-items-properties-c.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/ppreb/items/properties/t/items/properties/c")
+* defined in: [Paper Content Item](paper_contentitem-properties-ppreb-items-properties-t-items-properties-c.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/ppreb/items/properties/t/items/properties/c")
 
 ### c Type
 
@@ -40,13 +40,13 @@ offset start (relative to ft field)
 
 `s`
 
-*   is optional
+* is optional
 
-*   Type: `integer`
+* Type: `integer`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Paper Content Item](paper_contentitem-properties-ppreb-items-properties-t-items-properties-s.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/ppreb/items/properties/t/items/properties/s")
+* defined in: [Paper Content Item](paper_contentitem-properties-ppreb-items-properties-t-items-properties-s.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/ppreb/items/properties/t/items/properties/s")
 
 ### s Type
 
@@ -58,13 +58,13 @@ token length
 
 `l`
 
-*   is optional
+* is optional
 
-*   Type: `integer`
+* Type: `integer`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Paper Content Item](paper_contentitem-properties-ppreb-items-properties-t-items-properties-l.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/ppreb/items/properties/t/items/properties/l")
+* defined in: [Paper Content Item](paper_contentitem-properties-ppreb-items-properties-t-items-properties-l.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/ppreb/items/properties/t/items/properties/l")
 
 ### l Type
 

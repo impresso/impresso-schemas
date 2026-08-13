@@ -4,21 +4,21 @@
 
 all of
 
-*   one (and only one) of
+* one (and only one) of
 
-    *   [Untitled undefined type in Printed Page](page-allof-0-oneof-0.md "check type definition")
+  * [Untitled undefined type in Printed Page](page-allof-0-oneof-0.md "check type definition")
 
-    *   [Untitled undefined type in Printed Page](page-allof-0-oneof-1.md "check type definition")
+  * [Untitled undefined type in Printed Page](page-allof-0-oneof-1.md "check type definition")
 
-*   any of
+* any of
 
-    *   [Untitled undefined type in Printed Page](page-allof-1-anyof-0.md "check type definition")
+  * [Untitled undefined type in Printed Page](page-allof-1-anyof-0.md "check type definition")
 
-    *   [Untitled undefined type in Printed Page](page-allof-1-anyof-1.md "check type definition")
+  * [Untitled undefined type in Printed Page](page-allof-1-anyof-1.md "check type definition")
 
-*   [Untitled undefined type in Printed Page](page-allof-2.md "check type definition")
+* [Untitled undefined type in Printed Page](page-allof-2.md "check type definition")
 
-*   [Untitled undefined type in Printed Page](page-allof-3.md "check type definition")
+* [Untitled undefined type in Printed Page](page-allof-3.md "check type definition")
 
 # Printed Page Properties
 
@@ -42,13 +42,13 @@ Canonical ID of the newspaper or typescript page (e.g. GDL-1900-01-02-a-p0001, o
 
 `id`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Printed Page](page-properties-id.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/id")
+* defined in: [Printed Page](page-properties-id.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/id")
 
 ### id Type
 
@@ -70,13 +70,13 @@ URI of the IIIF Manifest of the newspaper page image. Deprecated in favor of `ii
 
 `iiif`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Printed Page](page-properties-iiif.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/iiif")
+* defined in: [Printed Page](page-properties-iiif.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/iiif")
 
 ### iiif Type
 
@@ -88,13 +88,13 @@ Base of the IIIF image URI of the newspaper page image. Should follow format `{s
 
 `iiif_img_base_uri`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Printed Page](page-properties-iiif_img_base_uri.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/iiif_img_base_uri")
+* defined in: [Printed Page](page-properties-iiif_img_base_uri.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/iiif_img_base_uri")
 
 ### iiif\_img\_base\_uri Type
 
@@ -106,13 +106,13 @@ Width in pixels of the facsimile corresponding to this page.
 
 `fw`
 
-*   is optional
+* is optional
 
-*   Type: `integer`
+* Type: `integer`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Printed Page](page-properties-fw.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/fw")
+* defined in: [Printed Page](page-properties-fw.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/fw")
 
 ### fw Type
 
@@ -124,13 +124,13 @@ Height in pixels of the facsimile corresponding to this page.
 
 `fh`
 
-*   is optional
+* is optional
 
-*   Type: `integer`
+* Type: `integer`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Printed Page](page-properties-fh.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/fh")
+* defined in: [Printed Page](page-properties-fh.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/fh")
 
 ### fh Type
 
@@ -142,13 +142,13 @@ Type of media source. Should be a value the impresso-essentials.utils SourceType
 
 `st`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Printed Page](page-properties-st.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/st")
+* defined in: [Printed Page](page-properties-st.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/st")
 
 ### st Type
 
@@ -173,13 +173,13 @@ Source medium, format in which the media was originally produced. If `tp == radi
 
 `sm`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Printed Page](page-properties-sm.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/sm")
+* defined in: [Printed Page](page-properties-sm.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/sm")
 
 ### sm Type
 
@@ -200,13 +200,13 @@ Flag indicating whether the legacy coordinates have been converted into IIIF-com
 
 `cc`
 
-*   is optional
+* is optional
 
-*   Type: `boolean`
+* Type: `boolean`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Printed Page](page-properties-cc.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/cc")
+* defined in: [Printed Page](page-properties-cc.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/cc")
 
 ### cc Type
 
@@ -218,13 +218,13 @@ Creation date timestamp (of the JSON file).
 
 `cdt`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Printed Page](page-properties-cdt.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/cdt")
+* defined in: [Printed Page](page-properties-cdt.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/cdt")
 
 ### cdt Type
 
@@ -236,13 +236,13 @@ Creation date timestamp (in '%Y-%m-%dT%H:%M:%SZ' format).
 
 `ts`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Printed Page](page-properties-ts.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/ts")
+* defined in: [Printed Page](page-properties-ts.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/ts")
 
 ### ts Type
 
@@ -254,13 +254,13 @@ Page regions.
 
 `r`
 
-*   is required
+* is required
 
-*   Type: `object[]` ([Details](page-properties-r-items.md))
+* Type: `object[]` ([Details](page-properties-r-items.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Printed Page](page-properties-r.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/r")
+* defined in: [Printed Page](page-properties-r.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/r")
 
 ### r Type
 

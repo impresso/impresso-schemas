@@ -1,18 +1,11 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/linguistic_annotation/lingproc.v2.schema.json",
+  "title": "Linguistic Annotation v2",
   "type": "object",
   "description": "Schema for validation of linguistic annotation as produced by spacy for newspaper data",
-  "required": [
-    "ts",
-    "ci_id",
-    "sents",
-    "tsents",
-    "char_count",
-    "min_chars",
-    "max_chars"
-  ],
-  "definitions": {
+  "required": ["ts", "ci_id", "sents", "tsents", "char_count", "min_chars", "max_chars"],
+  "$defs": {
     "sents": {
       "type": "array",
       "title": "The Sents Schema",
@@ -20,25 +13,19 @@
       "items": {
         "type": "object",
         "title": "The Items Schema",
-        "required": [
-          "tokens"
-        ],
+        "required": ["tokens"],
         "properties": {
           "lg": {
             "type": "string",
             "title": "The Lg Schema",
             "description": "the two-letter ISO language identifier",
-            "examples": [
-              "de"
-            ]
+            "examples": ["de"]
           },
           "tp": {
             "type": "string",
             "title": "The Content Item Type",
             "description": "Type of content item, e.g. 'ar' (article), 'img' (image), etc.",
-            "examples": [
-              "ar"
-            ]
+            "examples": ["ar"]
           },
           "tokens": {
             "type": "array",
@@ -47,53 +34,39 @@
             "items": {
               "type": "object",
               "title": "Token",
-              "required": [
-                "t",
-                "p",
-                "o"
-              ],
+              "required": ["t", "p", "o"],
               "properties": {
                 "t": {
                   "type": "string",
                   "title": "The T Schema",
                   "description": "token text",
-                  "examples": [
-                    "Nous"
-                  ]
+                  "examples": ["Nous"]
                 },
                 "p": {
                   "type": "string",
                   "title": "The P Schema",
                   "description": "part-of-speech assigned to token from linguistic processing (typically UPOS or XPOS)",
-                  "examples": [
-                    "PROPN"
-                  ]
+                  "examples": ["PROPN"]
                 },
                 "o": {
                   "type": "integer",
                   "title": "The O Schema",
                   "description": "zero-based character offset corresponding to position in corresponding text element (t for title, ft for full text from rebuilt)",
-                  "examples": [
-                    0
-                  ],
+                  "examples": [0],
                   "minimum": 0
                 },
                 "l": {
                   "type": "string",
                   "title": "The L Schema",
                   "description": "lemma of token",
-                  "examples": [
-                    "travailler"
-                  ]
+                  "examples": ["travailler"]
                 },
                 "e": {
                   "type": "string",
                   "title": "The E Schema",
                   "description": "named entity type as IOB tag",
                   "pattern": "^[IOBES]-[A-Za-z_0-9]+$",
-                  "examples": [
-                    "B-LOC"
-                  ]
+                  "examples": ["B-LOC"]
                 }
               }
             }
@@ -104,29 +77,23 @@
   },
   "properties": {
     "ts": {
-      "$id": "#/properties/ts",
       "type": "string",
       "title": "The Ts Schema",
       "description": "timestamp",
-      "examples": [
-        "2024-12-27T16:38:46Z"
-      ],
+      "examples": ["2024-12-27T16:38:46Z"],
       "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
     },
     "ci_id": {
-      "$id": "#/properties/ci_id",
       "type": "string",
       "title": "The content item id",
       "description": "Canonical impresso id of content item",
-      "examples": [
-        "onsjongen-1951-03-01-a-i0012"
-      ]
+      "examples": ["onsjongen-1951-03-01-a-i0012"]
     },
     "sents": {
-      "$ref": "#/definitions/sents"
+      "$ref": "#/$defs/sents"
     },
     "tsents": {
-      "$ref": "#/definitions/sents"
+      "$ref": "#/$defs/sents"
     },
     "model_id": {
       "type": "string",
@@ -140,41 +107,31 @@
       "type": "string",
       "title": "The Lid Path Schema",
       "description": "Path to language identification data",
-      "examples": [
-        "s3://42-processed-data-final/langident/langident_v1-4-4/onsjongen/onsjongen-1951.jsonl.bz2"
-      ]
+      "examples": ["s3://42-processed-data-final/langident/langident_v1-4-4/onsjongen/onsjongen-1951.jsonl.bz2"]
     },
     "lingproc_git": {
       "type": "string",
       "title": "The Lingproc Git Schema",
       "description": "Git commit describe of the linguistic processing pipeline",
-      "examples": [
-        "unknown"
-      ]
+      "examples": ["unknown"]
     },
     "char_count": {
       "type": "integer",
       "title": "The Char Count Schema",
       "description": "Character count of the concatenated title and full text",
-      "examples": [
-        65
-      ]
+      "examples": [65]
     },
     "min_chars": {
       "type": "integer",
       "title": "The Min Chars Schema",
       "description": "Minimum number of characters for a valid content item (including title and full text)",
-      "examples": [
-        50
-      ]
+      "examples": [50]
     },
     "max_chars": {
       "type": "integer",
       "title": "The Max Chars Schema",
       "description": "Maximum number of characters for a valid content item (including title and full text)",
-      "examples": [
-        50000
-      ]
+      "examples": [50000]
     },
     "title_status": {
       "type": "object",

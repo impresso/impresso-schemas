@@ -12,15 +12,13 @@
 
 Additional properties are allowed, as long as they follow this schema:
 
+* is optional
 
+* Type: `string`
 
-*   is optional
+* cannot be null
 
-*   Type: `string`
-
-*   cannot be null
-
-*   defined in: [Entity Embeddings Schema](embeddings-entities-properties-summaries-additionalproperties.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json#/properties/summaries/additionalProperties")
+* defined in: [Entity Embeddings Schema](embeddings-entities-properties-summaries-additionalproperties.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json#/properties/summaries/additionalProperties")
 
 ### additionalProperties Type
 

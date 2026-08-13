@@ -1,3 +1,3 @@
 ## topics Type
 
-`object[]` ([Details](topic_assignment-definitions-topic.md))
+`object[]` ([Details](topic_assignment-defs-topic.md))

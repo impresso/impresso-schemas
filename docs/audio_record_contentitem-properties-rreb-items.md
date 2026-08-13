@@ -17,13 +17,13 @@ audio record canonical ID
 
 `id`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Audio Record Content Item](audio_record_contentitem-properties-rreb-items-properties-id.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/rreb/items/properties/id")
+* defined in: [Audio Record Content Item](audio_record_contentitem-properties-rreb-items-properties-id.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/rreb/items/properties/id")
 
 ### id Type
 
@@ -45,25 +45,17 @@ audio record number
 
 `n`
 
-*   is optional
+* is optional
 
-*   Type: `integer`
+* Type: `integer`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Audio Record Content Item](audio_record_contentitem-properties-rreb-items-properties-n.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/rreb/items/properties/n")
+* defined in: [Audio Record Content Item](audio_record_contentitem-properties-rreb-items-properties-n.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/rreb/items/properties/n")
 
 ### n Type
 
 `integer`
-
-### n Constraints
-
-**constant**: the value of this property must be equal to:
-
-```json
-1
-```
 
 ## t
 
@@ -71,13 +63,13 @@ a list of tokens
 
 `t`
 
-*   is optional
+* is optional
 
-*   Type: `object[]` ([Details](audio_record_contentitem-properties-rreb-items-properties-t-items.md))
+* Type: `object[]` ([Details](audio_record_contentitem-properties-rreb-items-properties-t-items.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Audio Record Content Item](audio_record_contentitem-properties-rreb-items-properties-t.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/rreb/items/properties/t")
+* defined in: [Audio Record Content Item](audio_record_contentitem-properties-rreb-items-properties-t.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/rreb/items/properties/t")
 
 ### t Type
 
@@ -89,13 +81,13 @@ List of sections time coordinates.
 
 `s`
 
-*   is optional
+* is optional
 
-*   Type: unknown\[]
+* Type: unknown\[]
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Audio Record Content Item](audio_record_contentitem-properties-rreb-items-properties-s.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/rreb/items/properties/s")
+* defined in: [Audio Record Content Item](audio_record_contentitem-properties-rreb-items-properties-s.md "https://impresso.github.io/impresso-schemas/json/rebuilt/audio_record_contentitem.schema.json#/properties/rreb/items/properties/s")
 
 ### s Type
 

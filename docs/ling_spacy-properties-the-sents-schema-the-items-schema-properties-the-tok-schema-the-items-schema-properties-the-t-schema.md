@@ -1,0 +1,19 @@
+## t Type
+
+`string` ([The T Schema](ling_spacy-properties-the-sents-schema-the-items-schema-properties-the-tok-schema-the-items-schema-properties-the-t-schema.md))
+
+## t Constraints
+
+**pattern**: the string must match the following regular expression:&#x20;
+
+```regexp
+^(.*)$
+```
+
+[try pattern](https://regexr.com/?expression=%5E\(.*\)%24 "try regular expression with regexr.com")
+
+## t Examples
+
+```json
+"Kumpel"
+```

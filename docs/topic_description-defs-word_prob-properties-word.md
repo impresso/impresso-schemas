@@ -1,0 +1,3 @@
+## word Type
+
+`string`

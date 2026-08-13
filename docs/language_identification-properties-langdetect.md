@@ -1,3 +1,3 @@
 ## langdetect Type
 
-`object[]` ([lidType](language_identification-definitions-lidtype.md))
+`object[]` ([lidType](language_identification-defs-lidtype.md))

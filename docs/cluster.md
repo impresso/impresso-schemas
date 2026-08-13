@@ -22,13 +22,13 @@ Unique identifier for this cluster.
 
 `id`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Text-Reuse Cluster](cluster-properties-id.md "https://impresso.github.io/impresso-schemas/json/text_reuse/cluster.schema.json#/properties/id")
+* defined in: [Text-Reuse Cluster](cluster-properties-id.md "https://impresso.github.io/impresso-schemas/json/text_reuse/cluster.schema.json#/properties/id")
 
 ### id Type
 
@@ -46,13 +46,13 @@ Earliest date represented in the article passages of the cluster
 
 `min_date`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Text-Reuse Cluster](cluster-properties-min_date.md "https://impresso.github.io/impresso-schemas/json/text_reuse/cluster.schema.json#/properties/min_date")
+* defined in: [Text-Reuse Cluster](cluster-properties-min_date.md "https://impresso.github.io/impresso-schemas/json/text_reuse/cluster.schema.json#/properties/min_date")
 
 ### min\_date Type
 
@@ -74,13 +74,13 @@ Latest date represented in the article passages of the cluster
 
 `max_date`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Text-Reuse Cluster](cluster-properties-max_date.md "https://impresso.github.io/impresso-schemas/json/text_reuse/cluster.schema.json#/properties/max_date")
+* defined in: [Text-Reuse Cluster](cluster-properties-max_date.md "https://impresso.github.io/impresso-schemas/json/text_reuse/cluster.schema.json#/properties/max_date")
 
 ### max\_date Type
 
@@ -102,13 +102,13 @@ Number of article passages present in the cluster.
 
 `cluster_size`
 
-*   is required
+* is required
 
-*   Type: `integer`
+* Type: `integer`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Text-Reuse Cluster](cluster-properties-cluster_size.md "https://impresso.github.io/impresso-schemas/json/text_reuse/cluster.schema.json#/properties/cluster_size")
+* defined in: [Text-Reuse Cluster](cluster-properties-cluster_size.md "https://impresso.github.io/impresso-schemas/json/text_reuse/cluster.schema.json#/properties/cluster_size")
 
 ### cluster\_size Type
 
@@ -120,13 +120,13 @@ Number of days between min\_date and max\_date.
 
 `time_delta`
 
-*   is required
+* is required
 
-*   Type: `integer`
+* Type: `integer`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Text-Reuse Cluster](cluster-properties-time_delta.md "https://impresso.github.io/impresso-schemas/json/text_reuse/cluster.schema.json#/properties/time_delta")
+* defined in: [Text-Reuse Cluster](cluster-properties-time_delta.md "https://impresso.github.io/impresso-schemas/json/text_reuse/cluster.schema.json#/properties/time_delta")
 
 ### time\_delta Type
 
@@ -138,13 +138,13 @@ List of all newspapers represented in this cluster with article passages.
 
 `newspapers`
 
-*   is required
+* is required
 
-*   Type: `string[]`
+* Type: `string[]`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Text-Reuse Cluster](cluster-properties-newspapers.md "https://impresso.github.io/impresso-schemas/json/text_reuse/cluster.schema.json#/properties/newspapers")
+* defined in: [Text-Reuse Cluster](cluster-properties-newspapers.md "https://impresso.github.io/impresso-schemas/json/text_reuse/cluster.schema.json#/properties/newspapers")
 
 ### newspapers Type
 
@@ -156,13 +156,13 @@ List of all article passages composing this cluster.
 
 `passages`
 
-*   is required
+* is required
 
-*   Type: `string[]`
+* Type: `string[]`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Text-Reuse Cluster](cluster-properties-passages.md "https://impresso.github.io/impresso-schemas/json/text_reuse/cluster.schema.json#/properties/passages")
+* defined in: [Text-Reuse Cluster](cluster-properties-passages.md "https://impresso.github.io/impresso-schemas/json/text_reuse/cluster.schema.json#/properties/passages")
 
 ### passages Type
 
@@ -174,13 +174,13 @@ List of all article passages composing this cluster.
 
 `doc_ids`
 
-*   is required
+* is required
 
-*   Type: `string[]`
+* Type: `string[]`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Text-Reuse Cluster](cluster-properties-doc_ids.md "https://impresso.github.io/impresso-schemas/json/text_reuse/cluster.schema.json#/properties/doc_ids")
+* defined in: [Text-Reuse Cluster](cluster-properties-doc_ids.md "https://impresso.github.io/impresso-schemas/json/text_reuse/cluster.schema.json#/properties/doc_ids")
 
 ### doc\_ids Type
 
@@ -192,13 +192,13 @@ Computed average lexical overlap of the passages within the cluster.
 
 `lexical_overlap`
 
-*   is required
+* is required
 
-*   Type: `number`
+* Type: `number`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Text-Reuse Cluster](cluster-properties-lexical_overlap.md "https://impresso.github.io/impresso-schemas/json/text_reuse/cluster.schema.json#/properties/lexical_overlap")
+* defined in: [Text-Reuse Cluster](cluster-properties-lexical_overlap.md "https://impresso.github.io/impresso-schemas/json/text_reuse/cluster.schema.json#/properties/lexical_overlap")
 
 ### lexical\_overlap Type
 

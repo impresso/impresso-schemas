@@ -17,13 +17,13 @@ Page canonical ID
 
 `id`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Paper Content Item](paper_contentitem-properties-ppreb-items-properties-id.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/ppreb/items/properties/id")
+* defined in: [Paper Content Item](paper_contentitem-properties-ppreb-items-properties-id.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/ppreb/items/properties/id")
 
 ### id Type
 
@@ -45,13 +45,13 @@ page number
 
 `n`
 
-*   is optional
+* is optional
 
-*   Type: `integer`
+* Type: `integer`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Paper Content Item](paper_contentitem-properties-ppreb-items-properties-n.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/ppreb/items/properties/n")
+* defined in: [Paper Content Item](paper_contentitem-properties-ppreb-items-properties-n.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/ppreb/items/properties/n")
 
 ### n Type
 
@@ -63,13 +63,13 @@ List of tokens
 
 `t`
 
-*   is optional
+* is optional
 
-*   Type: `object[]` ([Details](paper_contentitem-properties-ppreb-items-properties-t-items.md))
+* Type: `object[]` ([Details](paper_contentitem-properties-ppreb-items-properties-t-items.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Paper Content Item](paper_contentitem-properties-ppreb-items-properties-t.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/ppreb/items/properties/t")
+* defined in: [Paper Content Item](paper_contentitem-properties-ppreb-items-properties-t.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/ppreb/items/properties/t")
 
 ### t Type
 
@@ -81,13 +81,13 @@ List of region coordinates.
 
 `r`
 
-*   is optional
+* is optional
 
-*   Type: `integer[][]`
+* Type: `integer[][]`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Paper Content Item](paper_contentitem-properties-ppreb-items-properties-r.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/ppreb/items/properties/r")
+* defined in: [Paper Content Item](paper_contentitem-properties-ppreb-items-properties-r.md "https://impresso.github.io/impresso-schemas/json/rebuilt/paper_contentitem.schema.json#/properties/ppreb/items/properties/r")
 
 ### r Type
 

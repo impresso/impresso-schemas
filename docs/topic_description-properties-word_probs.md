@@ -1,3 +1,3 @@
 ## word\_probs Type
 
-`object[]` ([Details](topic_description-definitions-word_prob.md))
+`object[]` ([Details](topic_description-defs-word_prob.md))

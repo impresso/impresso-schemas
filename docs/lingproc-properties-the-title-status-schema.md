@@ -4,15 +4,15 @@
 
 # title\_status Properties
 
-| Property                        | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                                       |
-| :------------------------------ | :-------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [exact\_prefix](#exact_prefix)  | `boolean` | Optional | cannot be null | [Untitled schema](lingproc-properties-the-title-status-schema-properties-exact_prefix.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/properties/title_status/properties/exact_prefix")   |
-| [ellipsis](#ellipsis)           | `boolean` | Optional | cannot be null | [Untitled schema](lingproc-properties-the-title-status-schema-properties-ellipsis.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/properties/title_status/properties/ellipsis")           |
-| [alnum\_prefix](#alnum_prefix)  | `boolean` | Optional | cannot be null | [Untitled schema](lingproc-properties-the-title-status-schema-properties-alnum_prefix.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/properties/title_status/properties/alnum_prefix")   |
-| [alnum\_infix](#alnum_infix)    | `boolean` | Optional | cannot be null | [Untitled schema](lingproc-properties-the-title-status-schema-properties-alnum_infix.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/properties/title_status/properties/alnum_infix")     |
-| [unknown](#unknown)             | `boolean` | Optional | cannot be null | [Untitled schema](lingproc-properties-the-title-status-schema-properties-unknown.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/properties/title_status/properties/unknown")             |
-| [title\_longer](#title_longer)  | `boolean` | Optional | cannot be null | [Untitled schema](lingproc-properties-the-title-status-schema-properties-title_longer.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/properties/title_status/properties/title_longer")   |
-| [advertisement](#advertisement) | `boolean` | Optional | cannot be null | [Untitled schema](lingproc-properties-the-title-status-schema-properties-advertisement.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/properties/title_status/properties/advertisement") |
+| Property                        | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                                                             |
+| :------------------------------ | :-------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [exact\_prefix](#exact_prefix)  | `boolean` | Optional | cannot be null | [Linguistic Annotation v2](lingproc-properties-the-title-status-schema-properties-exact_prefix.md "https://impresso.github.io/impresso-schemas/json/linguistic_annotation/lingproc.v2.schema.json#/properties/title_status/properties/exact_prefix")   |
+| [ellipsis](#ellipsis)           | `boolean` | Optional | cannot be null | [Linguistic Annotation v2](lingproc-properties-the-title-status-schema-properties-ellipsis.md "https://impresso.github.io/impresso-schemas/json/linguistic_annotation/lingproc.v2.schema.json#/properties/title_status/properties/ellipsis")           |
+| [alnum\_prefix](#alnum_prefix)  | `boolean` | Optional | cannot be null | [Linguistic Annotation v2](lingproc-properties-the-title-status-schema-properties-alnum_prefix.md "https://impresso.github.io/impresso-schemas/json/linguistic_annotation/lingproc.v2.schema.json#/properties/title_status/properties/alnum_prefix")   |
+| [alnum\_infix](#alnum_infix)    | `boolean` | Optional | cannot be null | [Linguistic Annotation v2](lingproc-properties-the-title-status-schema-properties-alnum_infix.md "https://impresso.github.io/impresso-schemas/json/linguistic_annotation/lingproc.v2.schema.json#/properties/title_status/properties/alnum_infix")     |
+| [unknown](#unknown)             | `boolean` | Optional | cannot be null | [Linguistic Annotation v2](lingproc-properties-the-title-status-schema-properties-unknown.md "https://impresso.github.io/impresso-schemas/json/linguistic_annotation/lingproc.v2.schema.json#/properties/title_status/properties/unknown")             |
+| [title\_longer](#title_longer)  | `boolean` | Optional | cannot be null | [Linguistic Annotation v2](lingproc-properties-the-title-status-schema-properties-title_longer.md "https://impresso.github.io/impresso-schemas/json/linguistic_annotation/lingproc.v2.schema.json#/properties/title_status/properties/title_longer")   |
+| [advertisement](#advertisement) | `boolean` | Optional | cannot be null | [Linguistic Annotation v2](lingproc-properties-the-title-status-schema-properties-advertisement.md "https://impresso.github.io/impresso-schemas/json/linguistic_annotation/lingproc.v2.schema.json#/properties/title_status/properties/advertisement") |
 
 ## exact\_prefix
 
@@ -20,13 +20,13 @@ True if title is an exact case-sensitive prefix of full text
 
 `exact_prefix`
 
-*   is optional
+* is optional
 
-*   Type: `boolean`
+* Type: `boolean`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](lingproc-properties-the-title-status-schema-properties-exact_prefix.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/properties/title_status/properties/exact_prefix")
+* defined in: [Linguistic Annotation v2](lingproc-properties-the-title-status-schema-properties-exact_prefix.md "https://impresso.github.io/impresso-schemas/json/linguistic_annotation/lingproc.v2.schema.json#/properties/title_status/properties/exact_prefix")
 
 ### exact\_prefix Type
 
@@ -38,13 +38,13 @@ Is there an ellipsis added to the title (that cannot be found in the text)? ...
 
 `ellipsis`
 
-*   is optional
+* is optional
 
-*   Type: `boolean`
+* Type: `boolean`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](lingproc-properties-the-title-status-schema-properties-ellipsis.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/properties/title_status/properties/ellipsis")
+* defined in: [Linguistic Annotation v2](lingproc-properties-the-title-status-schema-properties-ellipsis.md "https://impresso.github.io/impresso-schemas/json/linguistic_annotation/lingproc.v2.schema.json#/properties/title_status/properties/ellipsis")
 
 ### ellipsis Type
 
@@ -56,13 +56,13 @@ When reducing title and full text to alphanumeric characters, is the title a pre
 
 `alnum_prefix`
 
-*   is optional
+* is optional
 
-*   Type: `boolean`
+* Type: `boolean`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](lingproc-properties-the-title-status-schema-properties-alnum_prefix.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/properties/title_status/properties/alnum_prefix")
+* defined in: [Linguistic Annotation v2](lingproc-properties-the-title-status-schema-properties-alnum_prefix.md "https://impresso.github.io/impresso-schemas/json/linguistic_annotation/lingproc.v2.schema.json#/properties/title_status/properties/alnum_prefix")
 
 ### alnum\_prefix Type
 
@@ -74,13 +74,13 @@ When reducing title and full text to alphanumeric characters, is the title an in
 
 `alnum_infix`
 
-*   is optional
+* is optional
 
-*   Type: `boolean`
+* Type: `boolean`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](lingproc-properties-the-title-status-schema-properties-alnum_infix.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/properties/title_status/properties/alnum_infix")
+* defined in: [Linguistic Annotation v2](lingproc-properties-the-title-status-schema-properties-alnum_infix.md "https://impresso.github.io/impresso-schemas/json/linguistic_annotation/lingproc.v2.schema.json#/properties/title_status/properties/alnum_infix")
 
 ### alnum\_infix Type
 
@@ -92,13 +92,13 @@ Is there an artificial title (UNKWNON, UNTITLED) that indicates that there is no
 
 `unknown`
 
-*   is optional
+* is optional
 
-*   Type: `boolean`
+* Type: `boolean`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](lingproc-properties-the-title-status-schema-properties-unknown.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/properties/title_status/properties/unknown")
+* defined in: [Linguistic Annotation v2](lingproc-properties-the-title-status-schema-properties-unknown.md "https://impresso.github.io/impresso-schemas/json/linguistic_annotation/lingproc.v2.schema.json#/properties/title_status/properties/unknown")
 
 ### unknown Type
 
@@ -110,13 +110,13 @@ True if title is longer than full text which indicates a weird problematic situa
 
 `title_longer`
 
-*   is optional
+* is optional
 
-*   Type: `boolean`
+* Type: `boolean`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](lingproc-properties-the-title-status-schema-properties-title_longer.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/properties/title_status/properties/title_longer")
+* defined in: [Linguistic Annotation v2](lingproc-properties-the-title-status-schema-properties-title_longer.md "https://impresso.github.io/impresso-schemas/json/linguistic_annotation/lingproc.v2.schema.json#/properties/title_status/properties/title_longer")
 
 ### title\_longer Type
 
@@ -128,13 +128,13 @@ For some newspapers, advertisements have an artifical title consisting of a seri
 
 `advertisement`
 
-*   is optional
+* is optional
 
-*   Type: `boolean`
+* Type: `boolean`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Untitled schema](lingproc-properties-the-title-status-schema-properties-advertisement.md "https://impresso.github.io/impresso-schemas/json/newspaper/ling_spacy.schema.json#/properties/title_status/properties/advertisement")
+* defined in: [Linguistic Annotation v2](lingproc-properties-the-title-status-schema-properties-advertisement.md "https://impresso.github.io/impresso-schemas/json/linguistic_annotation/lingproc.v2.schema.json#/properties/title_status/properties/advertisement")
 
 ### advertisement Type
 

@@ -4,30 +4,30 @@ unknown
 
 # if Properties
 
-| Property  | Type   | Required | Nullable       | Defined by                                                                                                                                          |
-| :-------- | :----- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [sm](#sm) | Merged | Optional | cannot be null | [Issue](issue-allof-3-if-properties-sm.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/allOf/3/if/properties/sm") |
+| Property  | Type          | Required | Nullable       | Defined by                                                                                                                                          |
+| :-------- | :------------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [sm](#sm) | Not specified | Required | cannot be null | [Issue](issue-allof-3-if-properties-sm.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/allOf/3/if/properties/sm") |
 
 ## sm
 
-
-
 `sm`
 
-*   is optional
+* is required
 
-*   Type: merged type ([Details](issue-allof-3-if-properties-sm.md))
+* Type: unknown
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [Issue](issue-allof-3-if-properties-sm.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/allOf/3/if/properties/sm")
+* defined in: [Issue](issue-allof-3-if-properties-sm.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/allOf/3/if/properties/sm")
 
 ### sm Type
 
-merged type ([Details](issue-allof-3-if-properties-sm.md))
+unknown
 
-one (and only one) of
+### sm Constraints
 
-*   [Untitled undefined type in Issue](issue-allof-3-if-properties-sm-oneof-0.md "check type definition")
+**constant**: the value of this property must be equal to:
 
-*   [Untitled undefined type in Issue](issue-allof-3-if-properties-sm-oneof-1.md "check type definition")
+```json
+"print"
+```

@@ -1,6 +1,7 @@
 {
-  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://impresso.github.io/impresso-schemas/json/topic_model/topic_assignment.schema.json",
+  "title": "Topic Assignment",
   "description": "A representation for the probabilistic assignments of the topics of a topic model to content items.",
   "type": "object",
   "properties": {
@@ -22,21 +23,15 @@
     },
     "topics": {
       "type": "array",
-            "items": {
-        "$ref": "#/definitions/topic"
+      "items": {
+        "$ref": "#/$defs/topic"
       },
 
       "description": "Sparse representation of topics"
     }
   },
-  "required": [
-    "lang",
-    "topics",
-    "topic_count",
-    "topic_model",
-    "ci_ref"
-  ],
-  "definitions": {
+  "required": ["lang", "topics", "topic_count", "topic_model", "ci_ref"],
+  "$defs": {
     "topic": {
       "description": "The probability/proportion of a topic in the document",
       "type": "object",
@@ -44,18 +39,15 @@
         "p": {
           "type": "number",
           "description": "Probability or proportion of topic",
-           "minimum": 0,
+          "minimum": 0,
           "maximum": 1
         },
         "t": {
           "type": ["integer", "string"],
-         "description": "Topic id "
+          "description": "Topic id "
         }
       },
-      "required": [
-        "p",
-        "t"
-      ]
+      "required": ["p", "t"]
     }
   }
 }
