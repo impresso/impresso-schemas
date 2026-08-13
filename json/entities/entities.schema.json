@@ -2,36 +2,20 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://impresso.github.io/impresso-schemas/json/entities/entities.schema.json",
   "title": "Named Entity JSON Schema",
-  "description": "Definition of the output representation of entity processing, before indexing. Named entity mentions are expressed as offline annotations with character offsets relative to content items. Essentially, the NE output is a list of JSON documents (in json line format), where each document corresponds to a content item that has a list of NE mentions (no output for CI with no mentions). The tagset corresponds to impresso-HIPE.",
+  "description": "Definition of the output representation of entity processing, before indexing. Named entity mentions are expressed as offline annotations with character offsets relative to content items. The output is a list of JSON documents (JSON Lines), one per content item, containing named entities from the article body and title. The tagset corresponds to impresso-HIPE.",
   "type": "object",
-  "properties": {
-    "ci_id": {
-      "type": "string",
-      "description": "Impresso content item ID."
-    },
-    "ci_type": {
-      "type": "string",
-      "description": "Impresso content item type."
-    },
-    "ts": {
-      "type": "string",
-      "description": "Timestamp of creation of the JSON file (e.g. '2024-05-26T09:48:01Z')."
-    },
-    "model_id": {
-      "type": "string",
-      "description": "An alias for the system or model that produced this output, used for transparency and traceability. It should include distinguishing elements like a base name, version, and language."
-    },
-    "nes": {
-      "id": {
-        "type": "string",
-        "description": "The unique identifier of the named entity mention: [Document ID]:[Left Offset]:[Right Offset]:[Entity Type]:[NER Model]|[NEL Model]"
-      },
+  "$defs": {
+    "namedEntityList": {
       "type": "array",
-      "description": "The list of named entity mentions identified in the document.",
+      "description": "A list of entities.",
       "minItems": 0,
       "items": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "string",
+            "description": "The unique identifier of the named entity mention: [Document ID]:[Text Element]:[Left Offset]:[Right Offset]:[Entity Type]:[NER Model]|[NEL Model]"
+          },
           "type": {
             "type": "string",
             "description": "NE type (coarse-grained and fine-grained).",
@@ -109,11 +93,11 @@
           },
           "lOffset": {
             "type": "integer",
-            "description": "The left character offset of the named entity with respect to the content item."
+            "description": "The left character offset of the named entity with respect to the corresponding text element (full text for nes, title for tnes)."
           },
           "rOffset": {
             "type": "integer",
-            "description": "The right character offset of the named entity with respect to the content item."
+            "description": "The right character offset of the named entity with respect to the corresponding text element (full text for nes, title for tnes)."
           },
           "confidence_ner": {
             "type": "number",
@@ -150,6 +134,32 @@
         },
         "required": ["id", "type", "surface", "lOffset", "rOffset"]
       }
+    }
+  },
+  "properties": {
+    "ci_id": {
+      "type": "string",
+      "description": "Impresso content item ID."
+    },
+    "ci_type": {
+      "type": "string",
+      "description": "Impresso content item type."
+    },
+    "ts": {
+      "type": "string",
+      "description": "Timestamp of creation of the JSON file (e.g. '2024-05-26T09:48:01Z')."
+    },
+    "model_id": {
+      "type": "string",
+      "description": "An alias for the system or model that produced this output, used for transparency and traceability. It should include distinguishing elements like a base name, version, and language."
+    },
+    "nes": {
+      "$ref": "#/$defs/namedEntityList",
+      "description": "Named entity mentions extracted from the article body."
+    },
+    "tnes": {
+      "$ref": "#/$defs/namedEntityList",
+      "description": "Named entity mentions extracted from the article title."
     }
   },
   "required": ["ci_id", "ts", "model_id", "nes"]
