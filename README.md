@@ -97,10 +97,43 @@ All schemas follow **JSON Schema draft 2020-12**. Schema `$id` URIs are rooted a
 ## Repository layout
 
 ```
-json/          JSON schema files, organised by data type
+json/          Schema source of truth
+  impresso-2/  Versioned schemas organised by lifecycle area
 examples/      Example JSON files used for validation tests
+  impresso-2/  Mirrors json/impresso-2/ for versioned schemas
 docs/          Generated documentation (Markdown)
 scripts/       Utility scripts
+```
+
+### Schema namespaces
+
+The existing directories directly under `json/` are the **legacy namespace**.
+Their paths and `$id` values are published and remain unchanged for backwards
+compatibility.
+
+New versioned contracts live under `json/impresso-2/`, organised by lifecycle
+area:
+
+```
+json/impresso-2/
+├── data-preparation/
+├── text-preprocessing/
+├── semantic-enrichment/
+├── solr-indexing/
+└── web-app/
+```
+
+Schemas in this namespace use versioned filenames such as
+`issue.v1.schema.json`. Their `$id` must exactly match their repository path
+below `https://impresso.github.io/impresso-schemas/`. The `common/` directory is
+reserved for genuinely cross-lifecycle definitions and is added only when such
+sharing is needed.
+
+Examples for a versioned schema mirror its schema directory. For example:
+
+```
+json/impresso-2/solr-indexing/content-item/content-item.root.paper.v1.schema.json
+examples/impresso-2/solr-indexing/content-item/ci_paper.example.json
 ```
 
 ## Prerequisites
@@ -135,7 +168,8 @@ make format-check
 
 ## Validation
 
-Validate all example files against their schemas:
+`make tests` validates schema correctness, path-to-`$id` consistency, local
+`$ref` resolution, and the registered legacy and Impresso 2 examples:
 
 ```bash
 make tests

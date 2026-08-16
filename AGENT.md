@@ -12,7 +12,9 @@ This repository defines and maintains JSON schemas for the [Impresso project](ht
 
 ```
 json/               JSON schema files (source of truth)
-examples/           Example/test JSON files, one subdirectory per schema group
+  impresso-2/       Versioned schemas organised by lifecycle area
+examples/           Example/test JSON files
+  impresso-2/       Mirrors the Impresso 2 schema hierarchy
 docs/               Auto-generated Markdown documentation (do not edit manually)
 scripts/            Utility scripts (jsonlschema.py)
 Makefile            Validation (tests) and documentation (documentation) targets
@@ -20,6 +22,18 @@ requirements.txt    Python dependencies for validation
 ```
 
 ### Schema Directories under `json/`
+
+The existing top-level directories below are the legacy namespace. Their paths
+and published `$id` values must not change. New versioned contracts belong in
+`json/impresso-2/`, using `<name>.vN.schema.json` filenames.
+
+| Impresso 2 directory | Description |
+| -------------------- | ----------- |
+| `data-preparation/` | Canonical, rebuilt, versioning, and visualizer schemas |
+| `text-preprocessing/` | Language identification, linguistic annotation, and OCR QA |
+| `semantic-enrichment/` | Entities, embeddings, text reuse, topic model, and image enrichment |
+| `solr-indexing/` | Solr document schemas and their shared parts |
+| `web-app/` | Web application consumption schemas, when added |
 
 | Directory                  | Description                                             | JSON Schema Draft |
 | -------------------------- | ------------------------------------------------------- | ----------------- |
@@ -91,7 +105,8 @@ npm install -g @adobe/jsonschema2md
 
 ### Schemas not yet tested in `make tests`
 
-These schemas exist but have no entry in `tests/test_schema_examples.py`:
+These legacy or Impresso 2 schemas exist but have no valid example entry in
+`tests/test_schema_examples.py`:
 
 - `json/topic_model/topic_assignment.schema.json` — example exists: `examples/topic_model_topic_assignment/example0.json`
 - `json/topic_model/topic_assignment.v2.schema.json` — no example yet
@@ -103,9 +118,11 @@ These schemas exist but have no entry in `tests/test_schema_examples.py`:
 
 ## Adding a New Schema
 
-1. Create `json/<category>/<name>.schema.json` following draft 2020-12.
-2. Each schema must include `$schema`, `$id` (rooted at `https://impresso.github.io/impresso-schemas/json/…`), `title`, `description`, and typed property definitions.
-3. Add one or more example files under `examples/<category>/`.
+1. Keep existing published schemas at their legacy paths. Create new versioned
+   contracts at `json/impresso-2/<lifecycle-area>/<group>/<name>.vN.schema.json`.
+2. Each schema must include `$schema`, `$id` matching its complete published
+   repository path, `title`, `description`, and typed property definitions.
+3. Add one or more examples under the matching `examples/` hierarchy.
 4. Add a `(schema_path, example_path)` entry to `CASES` in `tests/test_schema_examples.py`.
 5. Run `make tests` to confirm validation passes.
 6. Run `make documentation` to regenerate `docs/`.
