@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-docs.v1.schema.json",
+  "title": "Document Embeddings JSON Schema",
+  "description": "A representation for the vector embedding representation of content items.",
+  "type": "object",
+  "properties": {
+    "ci_id": {
+      "type": "string",
+      "description": "Unique identifier for the content item.",
+      "examples": ["actionfem-1940-01-08-a-i0001"]
+    },
+    "ci_type": {
+      "type": "string",
+      "description": "Type of content item as present in the rebuilt"
+    },
+    "model_id": {
+      "type": "string",
+      "description": "The ID of the model that produced this output, composed as specified in these slides: https://docs.google.com/presentation/d/1wH4LygLcT28rvMA82k5fyEyzdX49inGkqCLnBNZsFaw/edit#slide=id.g30cf04393c4_1_46."
+    },
+    "embedding": {
+      "oneOf": [
+        {
+          "type": "array",
+          "description": "The vector embedding representation of the content item as a single list.",
+          "items": {
+            "type": "number",
+            "description": "A single number in the vector embedding of the document.",
+            "examples": [-0.11429]
+          }
+        },
+        {
+          "type": "array",
+          "description": "The vector embedding representation of the content item as a list of lists (e.g., for chunked embeddings).",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "description": "A single number in a chunk's vector embedding.",
+              "examples": [-0.11429]
+            }
+          }
+        }
+      ]
+    },
+    "size": {
+      "type": "integer",
+      "description": "The size of the embedding vectors."
+    },
+    "ts": {
+      "type": "string",
+      "description": "Timestamp indicating when the embedding was created (e.g., '2024-10-09T09:29:02Z').",
+      "format": "date-time"
+    }
+  },
+  "required": ["ci_id", "embedding", "model_id", "size"]
+}

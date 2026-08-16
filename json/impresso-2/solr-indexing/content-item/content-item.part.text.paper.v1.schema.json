@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/content-item/content-item.part.text.paper.v1.schema.json",
+  "title": "Content Item – Paper Support (Schema Fragment)",
+  "description": "Reusable schema fragment defining content item fields specific to paper-based physical support (facsimile). Intended to be composed with other content item schema parts.",
+  "type": "object",
+  "properties": {
+    "page_nb_is": {
+      "type": "array",
+      "title": "Page numbers",
+      "description": "Page numbers on which the content item appears.",
+      "items": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "minItems": 1
+    },
+    "page_id_ss": {
+      "type": "array",
+      "title": "Page identifiers",
+      "description": "Identifiers of the pages on which the content item appears.",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "nb_pages_i": {
+      "type": "integer",
+      "title": "Number of pages",
+      "description": "Total number of distinct pages the content item spans.",
+      "minimum": 1
+    },
+    "front_b": {
+      "type": "boolean",
+      "title": "Appears on front page",
+      "description": "Indicates whether the content item appears on the front page of the issue."
+    },
+    "cc_b": {
+      "type": "boolean",
+      "title": "Converted Coordinates (legacy)",
+      "description": "Whether the content item has reliable coordinate information"
+    },
+    "reading_order_i": {
+      "type": "integer",
+      "title": "Reading order",
+      "description": "Reading order position of the content item within the issue.",
+      "minimum": 1
+    },
+    "olr_b": {
+      "type": "boolean",
+      "description": "Whether the page where the CI originates has been processed with OLR or not."
+    },
+    "rc_plains": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Region coordinates (rc) in plain text format with page and coordinate information"
+    },
+    "lb_plain": {
+      "type": "string",
+      "description": "Line boundaries (lb) in plain text format"
+    },
+    "pb_plain": {
+      "type": "string",
+      "description": "Paragraph boundaries (pb) in plain text format"
+    },
+    "rb_plain": {
+      "type": "string",
+      "description": "Region boundaries (rb) in plain text format"
+    },
+    "pp_plain": {
+      "type": "string",
+      "description": "Rebuilt page information."
+    }
+  },
+  "additionalProperties": true,
+  "required": [
+    "page_nb_is",
+    "page_id_ss",
+    "nb_pages_i",
+    "reading_order_i",
+    "rc_plains",
+    "lb_plain",
+    "pb_plain",
+    "rb_plain",
+    "cc_b"
+  ]
+}

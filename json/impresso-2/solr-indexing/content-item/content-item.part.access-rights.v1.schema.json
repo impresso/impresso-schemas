@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/content-item/content-item.part.access-rights.v1.schema.json",
+  "title": "AccessRightFields",
+  "description": "Access right fields of a media content item.",
+  "type": "object",
+  "properties": {
+    "rights_data_domain_s": {
+      "type": "string",
+      "title": "Legal status",
+      "description": "Rights data domain",
+      "oneOf": [
+        {
+          "const": "pbl",
+          "title": "Public domain",
+          "description": "Content in the public domain"
+        },
+        {
+          "const": "prt",
+          "title": "In copyright",
+          "description": "Rights-protected content"
+        }
+      ]
+    },
+    "rights_copyright_s": {
+      "type": "string",
+      "title": "Copyright status",
+      "description": "Copyright status of the content.",
+      "oneOf": [
+        {
+          "const": "pbl",
+          "title": "Public domain",
+          "description": "Public Domain"
+        },
+        {
+          "const": "und",
+          "title": "Copyright undetermined",
+          "description": "Protected Domain: Copyright undetermined"
+        },
+        {
+          "const": "nkn",
+          "title": "No known copyright",
+          "description": "Protected Domain: No Known Copyright"
+        },
+        {
+          "const": "euo",
+          "title": "EU orphan work",
+          "description": "Protected Domain: In copyright – EU Orphan Work"
+        },
+        {
+          "const": "unk",
+          "title": "Unknown rightsholders",
+          "description": "Protected Domain: In copyright – Unknown rightsholders"
+        },
+        {
+          "const": "in_cpy",
+          "title": "In copyright",
+          "description": "Protected Domain: In copyright"
+        }
+      ]
+    },
+    "rights_perm_use_explore_plain": {
+      "$ref": "#/$defs/permittedUse",
+      "title": "Permission for Exploration",
+      "description": "Permission level for exploratory use of the content (e.g. browsing, inspection, discovery)."
+    },
+    "rights_perm_use_get_tr_plain": {
+      "$ref": "#/$defs/permittedUse",
+      "title": "Permission for Transcript Retrieval",
+      "description": "Permission level for retrieving textual representations of the content."
+    },
+    "rights_perm_use_get_img_plain": {
+      "$ref": "#/$defs/permittedUse",
+      "title": "Permission for Image Retrieval",
+      "description": "Permission level for retrieving image representations of the content."
+    },
+    "rights_bm_explore_l": {
+      "type": "integer",
+      "description": "Bookmark limit for exploration."
+    },
+    "rights_bm_get_tr_l": {
+      "type": "integer",
+      "description": "Bookmark limit for text retrieval."
+    },
+    "rights_bm_get_img_l": {
+      "type": "integer",
+      "description": "Bookmark limit for image retrieval."
+    }
+  },
+  "patternProperties": {
+    "^rights_explore_b\\d+_b$": {
+      "type": "boolean",
+      "description": "Individual bitmap position for exploration rights. Field name format: rights_explore_b{position}_b where position is the bit index (0-63). Only positions with value true are stored."
+    },
+    "^rights_get_tr_b\\d+_b$": {
+      "type": "boolean",
+      "description": "Individual bitmap position for text retrieval rights. Field name format: rights_get_tr_b{position}_b where position is the bit index (0-63). Only positions with value true are stored."
+    },
+    "^rights_get_img_b\\d+_b$": {
+      "type": "boolean",
+      "description": "Individual bitmap position for image retrieval rights. Field name format: rights_get_img_b{position}_b where position is the bit index (0-63). Only positions with value true are stored."
+    }
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "permittedUse": {
+      "type": "string",
+      "title": "Permission level indicating how the content may be used.",
+      "oneOf": [
+        {
+          "const": "prs-rsh-edu",
+          "title": "Personal, Research and Educational use",
+          "description": "Use permitted for personal activities, academic research, and educational purposes."
+        },
+        {
+          "const": "rsh-edu",
+          "title": "Research and Educational use",
+          "description": "Use permitted for academic research and educational purposes."
+        },
+        {
+          "const": "rsh",
+          "title": "Research use",
+          "description": "Use permitted strictly for research purposes."
+        },
+        {
+          "const": "nur",
+          "title": "No usage restriction",
+          "description": "No restrictions apply to the use of the content."
+        },
+        {
+          "const": "onp",
+          "title": "Operation not permitted",
+          "description": "Use of the content is not permitted."
+        }
+      ]
+    }
+  },
+  "required": [
+    "rights_data_domain_s",
+    "rights_copyright_s",
+    "rights_perm_use_explore_plain",
+    "rights_perm_use_get_tr_plain",
+    "rights_perm_use_get_img_plain",
+    "rights_bm_explore_l",
+    "rights_bm_get_tr_l",
+    "rights_bm_get_img_l"
+  ]
+}

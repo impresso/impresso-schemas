@@ -1,0 +1,263 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/content-item/content-item.part.image.v1.schema.json",
+  "title": "Image",
+  "description": "Image Solr document in Impresso v2",
+  "type": "object",
+  "properties": {
+    "linked_ci_s": {
+      "type": "string",
+      "title": "Linked Content Item ID",
+      "description": "Identifier of the related content item (CI), as identified by the OLR process."
+    },
+    "reading_order_i": {
+      "type": "integer",
+      "title": "Reading order",
+      "description": "Reading order position of the content item within the issue.",
+      "minimum": 1
+    },
+     "page_nb_is": {
+      "type": "array",
+      "title": "Page numbers",
+      "description": "Page numbers on which the content item appears.",
+      "items": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "minItems": 1
+    },
+    "front_b": {
+      "type": "boolean",
+      "title": "Appears on front page",
+      "description": "Indicates whether the content item appears on the front page of the issue."
+    },
+    "cc_b": {
+      "type": "boolean",
+      "title": "Converted Coordinates (legacy)",
+      "description": "Whether the content item has reliable coordinate information"
+    },
+    "caption_txt": {
+      "type": "string",
+      "minLength": 1,
+      "title": "Image caption",
+      "description": "Original caption associated with the image."
+    },
+    "descriptive_keywords_ss": {
+      "type": "array",
+      "title": "Descriptive keywords",
+      "description": "Automatically generated descriptive keywords associated with the image.",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "item_type_s": {
+      "type": "string",
+      "title": "Item type",
+      "description": "Type of content item.",
+      "const": "img"
+    },
+    "coords_is": {
+      "type": "array",
+      "title": "Image coordinates",
+      "description": "Bounding box of the image on the page, expressed as [x, y, width, height] in pixel coordinates.",
+      "items": [
+        {
+          "type": "integer",
+          "title": "X"
+        },
+        {
+          "type": "integer",
+          "title": "Y"
+        },
+        {
+          "type": "integer",
+          "title": "Width"
+        },
+        {
+          "type": "integer",
+          "title": "Height"
+        }
+      ],
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "iiif_url_s": {
+      "type": "string",
+      "title": "IIIF image URL",
+      "description": "IIIF Image API URL for the image.",
+      "format": "uri"
+    },
+    "type_l0_tp": {
+      "type": "string",
+      "title": "Visual content",
+      "description": "Whether the content is an image or not.",
+      "oneOf": [
+        {
+          "const": "image",
+          "title": "Image"
+        },
+        {
+          "const": "not_image",
+          "title": "Not an image"
+        }
+      ]
+    },
+    "type_l1_tp": {
+      "type": "string",
+      "title": "Technique",
+      "description": "Determines if the image is a photograph.",
+      "oneOf": [
+        {
+          "const": "photograph",
+          "title": "Photograph"
+        },
+        {
+          "const": "not_photograph",
+          "title": "Not a photograph"
+        }
+      ]
+    },
+    "type_l2_tp": {
+      "type": "string",
+      "title": "Communication goal",
+      "description": "Purpose or communicative function of the image.",
+      "oneOf": [
+        {
+          "const": "decorative",
+          "title": "Decorative"
+        },
+        {
+          "const": "informative_or_illustrative",
+          "title": "Informative or illustrative"
+        },
+        {
+          "const": "advertising",
+          "title": "Advertising"
+        },
+        {
+          "const": "entertainment",
+          "title": "Entertainment"
+        }
+      ]
+    },
+    "type_l3_tp": {
+      "type": "string",
+      "title": "Visual content type",
+      "description": "Classification of the visual content.",
+      "oneOf": [
+        {
+          "const": "caricature_humoristic_drawing",
+          "title": "Caricature or humoristic drawing"
+        },
+        {
+          "const": "comic_strip",
+          "title": "Comic strip"
+        },
+        {
+          "const": "illustrated_story",
+          "title": "Illustrated story"
+        },
+        {
+          "const": "game",
+          "title": "Game"
+        },
+        {
+          "const": "graph",
+          "title": "Graph"
+        },
+        {
+          "const": "technical_drawing",
+          "title": "Technical drawing"
+        },
+        {
+          "const": "human_rep_fashion_visual",
+          "title": "Human representation – fashion visual"
+        },
+        {
+          "const": "human_rep_portrait",
+          "title": "Human representation – portrait"
+        },
+        {
+          "const": "human_rep_scene",
+          "title": "Human representation – scene"
+        },
+        {
+          "const": "scenery_landscape",
+          "title": "Scenery or landscape"
+        },
+        {
+          "const": "map_geological",
+          "title": "Map – geological"
+        },
+        {
+          "const": "map_geopolitical",
+          "title": "Map – geopolitical"
+        },
+        {
+          "const": "map_physical_or_roadmap",
+          "title": "Map – physical or roadmap"
+        },
+        {
+          "const": "map_plan",
+          "title": "Map – plan"
+        },
+        {
+          "const": "map_weather",
+          "title": "Map – weather"
+        },
+        {
+          "const": "weather_infographic",
+          "title": "Weather infographic"
+        },
+        {
+          "const": "non_figurative_visual_content",
+          "title": "Non-figurative visual content"
+        },
+        {
+          "const": "object",
+          "title": "Object"
+        },
+        {
+          "const": "ornament_illustrated_title",
+          "title": "Ornament or illustrated title"
+        },
+        {
+          "const": "other",
+          "title": "Other"
+        }
+      ]
+    },
+    "dinov2_emb_v1024": {
+      "type": "array",
+      "title": "DINOv2 image embedding (1024D)",
+      "description": "Dense vector representation of the image computed using the DINOv2 model. The vector has a fixed dimensionality of 1024.",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 1024,
+      "maxItems": 1024
+    },
+    "openclip_emb_v768": {
+      "type": "array",
+      "title": "OpenCLIP image embedding (768D)",
+      "description": "Dense vector representation of the image computed using the OpenCLIP model. The vector has a fixed dimensionality of 768.",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 768,
+      "maxItems": 768
+    }
+  },
+  "required": [
+    "reading_order_i",
+    "page_nb_is",
+    "front_b",
+    "cc_b",
+    "item_type_s",
+    "coords_is",
+    "iiif_url_s",
+    "dinov2_emb_v1024",
+    "openclip_emb_v768"
+  ]
+}

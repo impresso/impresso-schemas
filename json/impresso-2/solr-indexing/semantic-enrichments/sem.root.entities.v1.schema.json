@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/semantic-enrichments/sem.root.entities.v1.schema.json",
+  "title": "Entity Solr Document",
+  "description": "Schema for Solr entity documents containing frequency and identifier fields (Impresso Project).",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier of the entity."
+    },
+    "sqlid_s": {
+      "type": "string",
+      "description": "SQL-compatible identifier for the entity. Same as 'id'. Composed of run-id alias, entity-id, and master label"
+    },
+    "l_s": {
+      "type": "string",
+      "description": "Language code of the entity."
+    },
+    "t_s": {
+      "type": "string",
+      "description": "Entity label or normalized textual form."
+    },
+    "p_s": {
+      "type": "string",
+      "description": "Composite identifier combining entity id and label. Composite path (original_id|type)"
+    },
+    "article_fq_f": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Article frequency for the entity."
+    },
+    "mention_fq_f": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Mention frequency for the entity over the whole corpus."
+    }
+  },
+  "required": [
+    "id",
+    "sqlid_s",
+    "l_s",
+    "t_s",
+    "p_s",
+    "article_fq_f"
+  ],
+  "additionalProperties": true
+}
