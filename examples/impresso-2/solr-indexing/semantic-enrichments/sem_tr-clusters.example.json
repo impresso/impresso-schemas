@@ -1,0 +1,11 @@
+{
+      "id":"tr-all-v1-24-c103079778860",
+      "min_date_dt":"2013-05-14T00:00:00Z",
+      "max_date_dt":"2013-05-14T00:00:00Z",
+      "cluster_size_l":2,
+      "day_delta_i":0,
+      "newspapers_ss":["EXP","IMP"],
+      "passages_ss":["IMP-2013-05-14-a-i0124@0:1203","EXP-2013-05-14-a-i0129@0:1201"],
+      "ci_ids_ss":["EXP-2013-05-14-a-i0129","IMP-2013-05-14-a-i0124"],
+      "lex_overlap_d":100.0
+}
