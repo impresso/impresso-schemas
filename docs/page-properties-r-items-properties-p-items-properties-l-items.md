@@ -4,10 +4,10 @@
 
 # items Properties
 
-| Property | Type    | Required | Nullable       | Defined by                                                                                                                                                                                                                                         |
-| :------- | :------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [c](#c)  | `array` | Required | cannot be null | [Printed Page](page-defs-coordinates.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/r/items/properties/p/items/properties/l/items/properties/c")                                                      |
-| [t](#t)  | `array` | Required | cannot be null | [Printed Page](page-properties-r-items-properties-p-items-properties-l-items-properties-t.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/r/items/properties/p/items/properties/l/items/properties/t") |
+| Property | Type    | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                        |
+| :------- | :------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [c](#c)  | `array` | Required | cannot be null | [Printed Page](page-defs-coordinates.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/r/items/properties/p/items/properties/l/items/properties/c")                                                      |
+| [t](#t)  | `array` | Required | cannot be null | [Printed Page](page-properties-r-items-properties-p-items-properties-l-items-properties-t.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/r/items/properties/p/items/properties/l/items/properties/t") |
 
 ## c
 
@@ -21,7 +21,7 @@ Coordinates of bounding-box, following IIIF regions schema (\[x, y, width, heigh
 
 * cannot be null
 
-* defined in: [Printed Page](page-defs-coordinates.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/r/items/properties/p/items/properties/l/items/properties/c")
+* defined in: [Printed Page](page-defs-coordinates.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/r/items/properties/p/items/properties/l/items/properties/c")
 
 ### c Type
 
@@ -45,7 +45,7 @@ Tokens (as detected by the OCR engine).
 
 * cannot be null
 
-* defined in: [Printed Page](page-properties-r-items-properties-p-items-properties-l-items-properties-t.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/r/items/properties/p/items/properties/l/items/properties/t")
+* defined in: [Printed Page](page-properties-r-items-properties-p-items-properties-l-items-properties-t.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/r/items/properties/p/items/properties/l/items/properties/t")
 
 ### t Type
 

@@ -15,6 +15,8 @@
 
 ## lg
 
+
+
 `lg`
 
 * is optional
@@ -30,6 +32,8 @@
 `string`
 
 ## topic
+
+
 
 `topic`
 
@@ -47,6 +51,8 @@
 
 ## topic\_model
 
+
+
 `topic_model`
 
 * is optional
@@ -62,6 +68,8 @@
 `string`
 
 ## topic\_description
+
+
 
 `topic_description`
 
@@ -79,6 +87,8 @@
 
 ## meta
 
+
+
 `meta`
 
 * is optional
@@ -94,6 +104,8 @@
 `string`
 
 ## word\_probs
+
+
 
 `word_probs`
 
@@ -126,6 +138,8 @@ Reference this group by using
 
 ### word
 
+
+
 `word`
 
 * is required
@@ -141,6 +155,8 @@ Reference this group by using
 `string`
 
 ### prob
+
+
 
 `prob`
 

@@ -4,13 +4,13 @@
 
 # items Properties
 
-| Property                | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                                               |
-| :---------------------- | :-------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [lg](#lg)               | `string`  | Optional | cannot be null | [Chunk Embeddings](embeddings-chunks-defs-chunk-embeddings-chunk-embedding-properties-lg.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-chunks.schema.json#/$defs/chunks/items/properties/lg")               |
-| [chunk\_id](#chunk_id)  | `integer` | Required | cannot be null | [Chunk Embeddings](embeddings-chunks-defs-chunk-embeddings-chunk-embedding-properties-chunk_id.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-chunks.schema.json#/$defs/chunks/items/properties/chunk_id")   |
-| [embedding](#embedding) | `array`   | Required | cannot be null | [Chunk Embeddings](embeddings-chunks-defs-chunk-embeddings-chunk-embedding-properties-embedding.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-chunks.schema.json#/$defs/chunks/items/properties/embedding") |
-| [size](#size)           | `integer` | Optional | cannot be null | [Chunk Embeddings](embeddings-chunks-defs-chunk-embeddings-chunk-embedding-properties-size.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-chunks.schema.json#/$defs/chunks/items/properties/size")           |
-| [o](#o)                 | `integer` | Optional | cannot be null | [Chunk Embeddings](embeddings-chunks-defs-chunk-embeddings-chunk-embedding-properties-o.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-chunks.schema.json#/$defs/chunks/items/properties/o")                 |
+| Property                | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                          |
+| :---------------------- | :-------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [lg](#lg)               | `string`  | Optional | cannot be null | [Chunk Embeddings](embeddings-chunks-defs-chunk-embeddings-chunk-embedding-properties-lg.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-chunks.v1.schema.json#/$defs/chunks/items/properties/lg")               |
+| [chunk\_id](#chunk_id)  | `integer` | Required | cannot be null | [Chunk Embeddings](embeddings-chunks-defs-chunk-embeddings-chunk-embedding-properties-chunk_id.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-chunks.v1.schema.json#/$defs/chunks/items/properties/chunk_id")   |
+| [embedding](#embedding) | `array`   | Required | cannot be null | [Chunk Embeddings](embeddings-chunks-defs-chunk-embeddings-chunk-embedding-properties-embedding.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-chunks.v1.schema.json#/$defs/chunks/items/properties/embedding") |
+| [size](#size)           | `integer` | Optional | cannot be null | [Chunk Embeddings](embeddings-chunks-defs-chunk-embeddings-chunk-embedding-properties-size.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-chunks.v1.schema.json#/$defs/chunks/items/properties/size")           |
+| [o](#o)                 | `integer` | Optional | cannot be null | [Chunk Embeddings](embeddings-chunks-defs-chunk-embeddings-chunk-embedding-properties-o.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-chunks.v1.schema.json#/$defs/chunks/items/properties/o")                 |
 
 ## lg
 
@@ -24,7 +24,7 @@ the two-letter ISO language identifier produced by lingproc
 
 * cannot be null
 
-* defined in: [Chunk Embeddings](embeddings-chunks-defs-chunk-embeddings-chunk-embedding-properties-lg.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-chunks.schema.json#/$defs/chunks/items/properties/lg")
+* defined in: [Chunk Embeddings](embeddings-chunks-defs-chunk-embeddings-chunk-embedding-properties-lg.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-chunks.v1.schema.json#/$defs/chunks/items/properties/lg")
 
 ### lg Type
 
@@ -48,7 +48,7 @@ Index of the chunk in the chunk array produced by chonkie, based on lingproc seg
 
 * cannot be null
 
-* defined in: [Chunk Embeddings](embeddings-chunks-defs-chunk-embeddings-chunk-embedding-properties-chunk_id.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-chunks.schema.json#/$defs/chunks/items/properties/chunk_id")
+* defined in: [Chunk Embeddings](embeddings-chunks-defs-chunk-embeddings-chunk-embedding-properties-chunk_id.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-chunks.v1.schema.json#/$defs/chunks/items/properties/chunk_id")
 
 ### chunk\_id Type
 
@@ -80,7 +80,7 @@ The vector embedding representation of the chunk.
 
 * cannot be null
 
-* defined in: [Chunk Embeddings](embeddings-chunks-defs-chunk-embeddings-chunk-embedding-properties-embedding.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-chunks.schema.json#/$defs/chunks/items/properties/embedding")
+* defined in: [Chunk Embeddings](embeddings-chunks-defs-chunk-embeddings-chunk-embedding-properties-embedding.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-chunks.v1.schema.json#/$defs/chunks/items/properties/embedding")
 
 ### embedding Type
 
@@ -98,7 +98,7 @@ The size of the embedding vector.
 
 * cannot be null
 
-* defined in: [Chunk Embeddings](embeddings-chunks-defs-chunk-embeddings-chunk-embedding-properties-size.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-chunks.schema.json#/$defs/chunks/items/properties/size")
+* defined in: [Chunk Embeddings](embeddings-chunks-defs-chunk-embeddings-chunk-embedding-properties-size.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-chunks.v1.schema.json#/$defs/chunks/items/properties/size")
 
 ### size Type
 
@@ -116,7 +116,7 @@ Character offset where the chunk begins in the original text.
 
 * cannot be null
 
-* defined in: [Chunk Embeddings](embeddings-chunks-defs-chunk-embeddings-chunk-embedding-properties-o.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-chunks.schema.json#/$defs/chunks/items/properties/o")
+* defined in: [Chunk Embeddings](embeddings-chunks-defs-chunk-embeddings-chunk-embedding-properties-o.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-chunks.v1.schema.json#/$defs/chunks/items/properties/o")
 
 ### o Type
 

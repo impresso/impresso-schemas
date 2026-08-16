@@ -22,19 +22,19 @@ all of
 
 # Printed Page Properties
 
-| Property                                   | Type      | Required | Nullable       | Defined by                                                                                                                                                       |
-| :----------------------------------------- | :-------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [id](#id)                                  | `string`  | Required | cannot be null | [Printed Page](page-properties-id.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/id")                               |
-| [iiif](#iiif)                              | `string`  | Optional | cannot be null | [Printed Page](page-properties-iiif.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/iiif")                           |
-| [iiif\_img\_base\_uri](#iiif_img_base_uri) | `string`  | Optional | cannot be null | [Printed Page](page-properties-iiif_img_base_uri.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/iiif_img_base_uri") |
-| [fw](#fw)                                  | `integer` | Optional | cannot be null | [Printed Page](page-properties-fw.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/fw")                               |
-| [fh](#fh)                                  | `integer` | Optional | cannot be null | [Printed Page](page-properties-fh.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/fh")                               |
-| [st](#st)                                  | `string`  | Optional | cannot be null | [Printed Page](page-properties-st.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/st")                               |
-| [sm](#sm)                                  | `string`  | Optional | cannot be null | [Printed Page](page-properties-sm.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/sm")                               |
-| [cc](#cc)                                  | `boolean` | Optional | cannot be null | [Printed Page](page-properties-cc.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/cc")                               |
-| [cdt](#cdt)                                | `string`  | Optional | cannot be null | [Printed Page](page-properties-cdt.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/cdt")                             |
-| [ts](#ts)                                  | `string`  | Optional | cannot be null | [Printed Page](page-properties-ts.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/ts")                               |
-| [r](#r)                                    | `array`   | Required | cannot be null | [Printed Page](page-properties-r.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/r")                                 |
+| Property                                   | Type      | Required | Nullable       | Defined by                                                                                                                                                                                      |
+| :----------------------------------------- | :-------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [id](#id)                                  | `string`  | Required | cannot be null | [Printed Page](page-properties-id.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/id")                               |
+| [iiif](#iiif)                              | `string`  | Optional | cannot be null | [Printed Page](page-properties-iiif.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/iiif")                           |
+| [iiif\_img\_base\_uri](#iiif_img_base_uri) | `string`  | Optional | cannot be null | [Printed Page](page-properties-iiif_img_base_uri.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/iiif_img_base_uri") |
+| [fw](#fw)                                  | `integer` | Optional | cannot be null | [Printed Page](page-properties-fw.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/fw")                               |
+| [fh](#fh)                                  | `integer` | Optional | cannot be null | [Printed Page](page-properties-fh.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/fh")                               |
+| [st](#st)                                  | `string`  | Optional | cannot be null | [Printed Page](page-properties-st.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/st")                               |
+| [sm](#sm)                                  | `string`  | Optional | cannot be null | [Printed Page](page-properties-sm.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/sm")                               |
+| [cc](#cc)                                  | `boolean` | Optional | cannot be null | [Printed Page](page-properties-cc.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/cc")                               |
+| [cdt](#cdt)                                | `string`  | Optional | cannot be null | [Printed Page](page-properties-cdt.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/cdt")                             |
+| [ts](#ts)                                  | `string`  | Optional | cannot be null | [Printed Page](page-properties-ts.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/ts")                               |
+| [r](#r)                                    | `array`   | Required | cannot be null | [Printed Page](page-properties-r.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/r")                                 |
 
 ## id
 
@@ -48,7 +48,7 @@ Canonical ID of the newspaper or typescript page (e.g. GDL-1900-01-02-a-p0001, o
 
 * cannot be null
 
-* defined in: [Printed Page](page-properties-id.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/id")
+* defined in: [Printed Page](page-properties-id.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/id")
 
 ### id Type
 
@@ -76,7 +76,7 @@ URI of the IIIF Manifest of the newspaper page image. Deprecated in favor of `ii
 
 * cannot be null
 
-* defined in: [Printed Page](page-properties-iiif.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/iiif")
+* defined in: [Printed Page](page-properties-iiif.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/iiif")
 
 ### iiif Type
 
@@ -94,7 +94,7 @@ Base of the IIIF image URI of the newspaper page image. Should follow format `{s
 
 * cannot be null
 
-* defined in: [Printed Page](page-properties-iiif_img_base_uri.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/iiif_img_base_uri")
+* defined in: [Printed Page](page-properties-iiif_img_base_uri.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/iiif_img_base_uri")
 
 ### iiif\_img\_base\_uri Type
 
@@ -112,7 +112,7 @@ Width in pixels of the facsimile corresponding to this page.
 
 * cannot be null
 
-* defined in: [Printed Page](page-properties-fw.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/fw")
+* defined in: [Printed Page](page-properties-fw.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/fw")
 
 ### fw Type
 
@@ -130,7 +130,7 @@ Height in pixels of the facsimile corresponding to this page.
 
 * cannot be null
 
-* defined in: [Printed Page](page-properties-fh.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/fh")
+* defined in: [Printed Page](page-properties-fh.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/fh")
 
 ### fh Type
 
@@ -148,7 +148,7 @@ Type of media source. Should be a value the impresso-essentials.utils SourceType
 
 * cannot be null
 
-* defined in: [Printed Page](page-properties-st.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/st")
+* defined in: [Printed Page](page-properties-st.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/st")
 
 ### st Type
 
@@ -179,7 +179,7 @@ Source medium, format in which the media was originally produced. If `tp == radi
 
 * cannot be null
 
-* defined in: [Printed Page](page-properties-sm.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/sm")
+* defined in: [Printed Page](page-properties-sm.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/sm")
 
 ### sm Type
 
@@ -206,7 +206,7 @@ Flag indicating whether the legacy coordinates have been converted into IIIF-com
 
 * cannot be null
 
-* defined in: [Printed Page](page-properties-cc.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/cc")
+* defined in: [Printed Page](page-properties-cc.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/cc")
 
 ### cc Type
 
@@ -224,7 +224,7 @@ Creation date timestamp (of the JSON file).
 
 * cannot be null
 
-* defined in: [Printed Page](page-properties-cdt.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/cdt")
+* defined in: [Printed Page](page-properties-cdt.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/cdt")
 
 ### cdt Type
 
@@ -242,7 +242,7 @@ Creation date timestamp (in '%Y-%m-%dT%H:%M:%SZ' format).
 
 * cannot be null
 
-* defined in: [Printed Page](page-properties-ts.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/ts")
+* defined in: [Printed Page](page-properties-ts.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/ts")
 
 ### ts Type
 
@@ -260,7 +260,7 @@ Page regions.
 
 * cannot be null
 
-* defined in: [Printed Page](page-properties-r.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/properties/r")
+* defined in: [Printed Page](page-properties-r.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/r")
 
 ### r Type
 
@@ -273,7 +273,7 @@ Page regions.
 Reference this group by using
 
 ```json
-{"$ref":"https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/$defs/coordinates"}
+{"$ref":"https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/$defs/coordinates"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |

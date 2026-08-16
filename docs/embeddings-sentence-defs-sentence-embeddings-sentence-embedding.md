@@ -4,13 +4,13 @@
 
 # items Properties
 
-| Property                | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                                                           |
-| :---------------------- | :-------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [lg](#lg)               | `string`  | Optional | cannot be null | [Sentence Embeddings](embeddings-sentence-defs-sentence-embeddings-sentence-embedding-properties-lg.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-sentence.schema.json#/$defs/sents/items/properties/lg")               |
-| [sent\_id](#sent_id)    | `integer` | Required | cannot be null | [Sentence Embeddings](embeddings-sentence-defs-sentence-embeddings-sentence-embedding-properties-sent_id.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-sentence.schema.json#/$defs/sents/items/properties/sent_id")     |
-| [embedding](#embedding) | `array`   | Required | cannot be null | [Sentence Embeddings](embeddings-sentence-defs-sentence-embeddings-sentence-embedding-properties-embedding.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-sentence.schema.json#/$defs/sents/items/properties/embedding") |
-| [size](#size)           | `integer` | Optional | cannot be null | [Sentence Embeddings](embeddings-sentence-defs-sentence-embeddings-sentence-embedding-properties-size.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-sentence.schema.json#/$defs/sents/items/properties/size")           |
-| [o](#o)                 | `integer` | Optional | cannot be null | [Sentence Embeddings](embeddings-sentence-defs-sentence-embeddings-sentence-embedding-properties-o.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-sentence.schema.json#/$defs/sents/items/properties/o")                 |
+| Property                | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                      |
+| :---------------------- | :-------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [lg](#lg)               | `string`  | Optional | cannot be null | [Sentence Embeddings](embeddings-sentence-defs-sentence-embeddings-sentence-embedding-properties-lg.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-sentence.v1.schema.json#/$defs/sents/items/properties/lg")               |
+| [sent\_id](#sent_id)    | `integer` | Required | cannot be null | [Sentence Embeddings](embeddings-sentence-defs-sentence-embeddings-sentence-embedding-properties-sent_id.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-sentence.v1.schema.json#/$defs/sents/items/properties/sent_id")     |
+| [embedding](#embedding) | `array`   | Required | cannot be null | [Sentence Embeddings](embeddings-sentence-defs-sentence-embeddings-sentence-embedding-properties-embedding.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-sentence.v1.schema.json#/$defs/sents/items/properties/embedding") |
+| [size](#size)           | `integer` | Optional | cannot be null | [Sentence Embeddings](embeddings-sentence-defs-sentence-embeddings-sentence-embedding-properties-size.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-sentence.v1.schema.json#/$defs/sents/items/properties/size")           |
+| [o](#o)                 | `integer` | Optional | cannot be null | [Sentence Embeddings](embeddings-sentence-defs-sentence-embeddings-sentence-embedding-properties-o.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-sentence.v1.schema.json#/$defs/sents/items/properties/o")                 |
 
 ## lg
 
@@ -24,7 +24,7 @@ the two-letter ISO language identifier produced by lingproc
 
 * cannot be null
 
-* defined in: [Sentence Embeddings](embeddings-sentence-defs-sentence-embeddings-sentence-embedding-properties-lg.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-sentence.schema.json#/$defs/sents/items/properties/lg")
+* defined in: [Sentence Embeddings](embeddings-sentence-defs-sentence-embeddings-sentence-embedding-properties-lg.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-sentence.v1.schema.json#/$defs/sents/items/properties/lg")
 
 ### lg Type
 
@@ -48,7 +48,7 @@ Index of the sentence in the sentence array produced by lingproc.
 
 * cannot be null
 
-* defined in: [Sentence Embeddings](embeddings-sentence-defs-sentence-embeddings-sentence-embedding-properties-sent_id.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-sentence.schema.json#/$defs/sents/items/properties/sent_id")
+* defined in: [Sentence Embeddings](embeddings-sentence-defs-sentence-embeddings-sentence-embedding-properties-sent_id.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-sentence.v1.schema.json#/$defs/sents/items/properties/sent_id")
 
 ### sent\_id Type
 
@@ -80,7 +80,7 @@ The vector embedding representation of the sentence.
 
 * cannot be null
 
-* defined in: [Sentence Embeddings](embeddings-sentence-defs-sentence-embeddings-sentence-embedding-properties-embedding.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-sentence.schema.json#/$defs/sents/items/properties/embedding")
+* defined in: [Sentence Embeddings](embeddings-sentence-defs-sentence-embeddings-sentence-embedding-properties-embedding.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-sentence.v1.schema.json#/$defs/sents/items/properties/embedding")
 
 ### embedding Type
 
@@ -98,7 +98,7 @@ The size of the embedding vector.
 
 * cannot be null
 
-* defined in: [Sentence Embeddings](embeddings-sentence-defs-sentence-embeddings-sentence-embedding-properties-size.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-sentence.schema.json#/$defs/sents/items/properties/size")
+* defined in: [Sentence Embeddings](embeddings-sentence-defs-sentence-embeddings-sentence-embedding-properties-size.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-sentence.v1.schema.json#/$defs/sents/items/properties/size")
 
 ### size Type
 
@@ -116,7 +116,7 @@ Character offset where the sentence begins in the original text.
 
 * cannot be null
 
-* defined in: [Sentence Embeddings](embeddings-sentence-defs-sentence-embeddings-sentence-embedding-properties-o.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-sentence.schema.json#/$defs/sents/items/properties/o")
+* defined in: [Sentence Embeddings](embeddings-sentence-defs-sentence-embeddings-sentence-embedding-properties-o.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-sentence.v1.schema.json#/$defs/sents/items/properties/o")
 
 ### o Type
 

@@ -4,29 +4,29 @@
 
 # Entity Embeddings Schema Properties
 
-| Property                                           | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                            |
-| :------------------------------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [wkd\_id](#wkd_id)                                 | `string` | Required | cannot be null | [Entity Embeddings Schema](embeddings-entities-properties-wkd_id.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json#/properties/wkd_id")                                 |
-| [entity\_ids](#entity_ids)                         | `array`  | Required | cannot be null | [Entity Embeddings Schema](embeddings-entities-properties-entity_ids.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json#/properties/entity_ids")                         |
-| [language](#language)                              | `string` | Optional | cannot be null | [Entity Embeddings Schema](embeddings-entities-properties-language.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json#/properties/language")                             |
-| [pagename](#pagename)                              | `string` | Optional | cannot be null | [Entity Embeddings Schema](embeddings-entities-properties-pagename.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json#/properties/pagename")                             |
-| [url](#url)                                        | `string` | Optional | cannot be null | [Entity Embeddings Schema](embeddings-entities-properties-url.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json#/properties/url")                                       |
-| [date\_of\_birth](#date_of_birth)                  | `string` | Optional | can be null    | [Entity Embeddings Schema](embeddings-entities-properties-date_of_birth.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json#/properties/date_of_birth")                   |
-| [date\_of\_death](#date_of_death)                  | `string` | Optional | can be null    | [Entity Embeddings Schema](embeddings-entities-properties-date_of_death.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json#/properties/date_of_death")                   |
-| [occupations\_titles](#occupations_titles)         | `array`  | Optional | cannot be null | [Entity Embeddings Schema](embeddings-entities-properties-occupations_titles.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json#/properties/occupations_titles")         |
-| [occupations\_qids](#occupations_qids)             | `array`  | Optional | cannot be null | [Entity Embeddings Schema](embeddings-entities-properties-occupations_qids.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json#/properties/occupations_qids")             |
-| [occupations\_urls](#occupations_urls)             | `array`  | Optional | cannot be null | [Entity Embeddings Schema](embeddings-entities-properties-occupations_urls.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json#/properties/occupations_urls")             |
-| [summaries](#summaries)                            | `object` | Optional | cannot be null | [Entity Embeddings Schema](embeddings-entities-properties-summaries.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json#/properties/summaries")                           |
-| [instances\_titles](#instances_titles)             | `array`  | Optional | cannot be null | [Entity Embeddings Schema](embeddings-entities-properties-instances_titles.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json#/properties/instances_titles")             |
-| [instances\_qids](#instances_qids)                 | `array`  | Optional | cannot be null | [Entity Embeddings Schema](embeddings-entities-properties-instances_qids.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json#/properties/instances_qids")                 |
-| [instances\_urls](#instances_urls)                 | `array`  | Optional | can be null    | [Entity Embeddings Schema](embeddings-entities-properties-instances_urls.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json#/properties/instances_urls")                 |
-| [contexts](#contexts)                              | `array`  | Required | cannot be null | [Entity Embeddings Schema](embeddings-entities-properties-contexts.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json#/properties/contexts")                             |
-| [surfaces](#surfaces)                              | `array`  | Required | cannot be null | [Entity Embeddings Schema](embeddings-entities-properties-surfaces.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json#/properties/surfaces")                             |
-| [ci\_ids](#ci_ids)                                 | `array`  | Optional | cannot be null | [Entity Embeddings Schema](embeddings-entities-properties-ci_ids.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json#/properties/ci_ids")                                 |
-| [mention\_keys](#mention_keys)                     | `array`  | Optional | cannot be null | [Entity Embeddings Schema](embeddings-entities-properties-mention_keys.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json#/properties/mention_keys")                     |
-| [encyclopedic\_embedding](#encyclopedic_embedding) | `array`  | Optional | can be null    | [Entity Embeddings Schema](embeddings-entities-properties-encyclopedic_embedding.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json#/properties/encyclopedic_embedding") |
-| [news\_embedding](#news_embedding)                 | `array`  | Optional | can be null    | [Entity Embeddings Schema](embeddings-entities-properties-news_embedding.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json#/properties/news_embedding")                 |
-| [entity\_embedding](#entity_embedding)             | `array`  | Optional | can be null    | [Entity Embeddings Schema](embeddings-entities-properties-entity_embedding.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json#/properties/entity_embedding")             |
+| Property                                           | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                       |
+| :------------------------------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [wkd\_id](#wkd_id)                                 | `string` | Required | cannot be null | [Entity Embeddings Schema](embeddings-entities-properties-wkd_id.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json#/properties/wkd_id")                                 |
+| [entity\_ids](#entity_ids)                         | `array`  | Required | cannot be null | [Entity Embeddings Schema](embeddings-entities-properties-entity_ids.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json#/properties/entity_ids")                         |
+| [language](#language)                              | `string` | Optional | cannot be null | [Entity Embeddings Schema](embeddings-entities-properties-language.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json#/properties/language")                             |
+| [pagename](#pagename)                              | `string` | Optional | cannot be null | [Entity Embeddings Schema](embeddings-entities-properties-pagename.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json#/properties/pagename")                             |
+| [url](#url)                                        | `string` | Optional | cannot be null | [Entity Embeddings Schema](embeddings-entities-properties-url.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json#/properties/url")                                       |
+| [date\_of\_birth](#date_of_birth)                  | `string` | Optional | can be null    | [Entity Embeddings Schema](embeddings-entities-properties-date_of_birth.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json#/properties/date_of_birth")                   |
+| [date\_of\_death](#date_of_death)                  | `string` | Optional | can be null    | [Entity Embeddings Schema](embeddings-entities-properties-date_of_death.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json#/properties/date_of_death")                   |
+| [occupations\_titles](#occupations_titles)         | `array`  | Optional | cannot be null | [Entity Embeddings Schema](embeddings-entities-properties-occupations_titles.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json#/properties/occupations_titles")         |
+| [occupations\_qids](#occupations_qids)             | `array`  | Optional | cannot be null | [Entity Embeddings Schema](embeddings-entities-properties-occupations_qids.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json#/properties/occupations_qids")             |
+| [occupations\_urls](#occupations_urls)             | `array`  | Optional | cannot be null | [Entity Embeddings Schema](embeddings-entities-properties-occupations_urls.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json#/properties/occupations_urls")             |
+| [summaries](#summaries)                            | `object` | Optional | cannot be null | [Entity Embeddings Schema](embeddings-entities-properties-summaries.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json#/properties/summaries")                           |
+| [instances\_titles](#instances_titles)             | `array`  | Optional | cannot be null | [Entity Embeddings Schema](embeddings-entities-properties-instances_titles.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json#/properties/instances_titles")             |
+| [instances\_qids](#instances_qids)                 | `array`  | Optional | cannot be null | [Entity Embeddings Schema](embeddings-entities-properties-instances_qids.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json#/properties/instances_qids")                 |
+| [instances\_urls](#instances_urls)                 | `array`  | Optional | can be null    | [Entity Embeddings Schema](embeddings-entities-properties-instances_urls.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json#/properties/instances_urls")                 |
+| [contexts](#contexts)                              | `array`  | Required | cannot be null | [Entity Embeddings Schema](embeddings-entities-properties-contexts.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json#/properties/contexts")                             |
+| [surfaces](#surfaces)                              | `array`  | Required | cannot be null | [Entity Embeddings Schema](embeddings-entities-properties-surfaces.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json#/properties/surfaces")                             |
+| [ci\_ids](#ci_ids)                                 | `array`  | Optional | cannot be null | [Entity Embeddings Schema](embeddings-entities-properties-ci_ids.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json#/properties/ci_ids")                                 |
+| [mention\_keys](#mention_keys)                     | `array`  | Optional | cannot be null | [Entity Embeddings Schema](embeddings-entities-properties-mention_keys.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json#/properties/mention_keys")                     |
+| [encyclopedic\_embedding](#encyclopedic_embedding) | `array`  | Optional | can be null    | [Entity Embeddings Schema](embeddings-entities-properties-encyclopedic_embedding.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json#/properties/encyclopedic_embedding") |
+| [news\_embedding](#news_embedding)                 | `array`  | Optional | can be null    | [Entity Embeddings Schema](embeddings-entities-properties-news_embedding.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json#/properties/news_embedding")                 |
+| [entity\_embedding](#entity_embedding)             | `array`  | Optional | can be null    | [Entity Embeddings Schema](embeddings-entities-properties-entity_embedding.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json#/properties/entity_embedding")             |
 
 ## wkd\_id
 
@@ -40,7 +40,7 @@ Wikidata identifier of the entity
 
 * cannot be null
 
-* defined in: [Entity Embeddings Schema](embeddings-entities-properties-wkd_id.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json#/properties/wkd_id")
+* defined in: [Entity Embeddings Schema](embeddings-entities-properties-wkd_id.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json#/properties/wkd_id")
 
 ### wkd\_id Type
 
@@ -58,7 +58,7 @@ Impresso-specific entity identifiers (can be multiple across languages)
 
 * cannot be null
 
-* defined in: [Entity Embeddings Schema](embeddings-entities-properties-entity_ids.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json#/properties/entity_ids")
+* defined in: [Entity Embeddings Schema](embeddings-entities-properties-entity_ids.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json#/properties/entity_ids")
 
 ### entity\_ids Type
 
@@ -76,7 +76,7 @@ Language code of the entity's main Wikipedia page
 
 * cannot be null
 
-* defined in: [Entity Embeddings Schema](embeddings-entities-properties-language.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json#/properties/language")
+* defined in: [Entity Embeddings Schema](embeddings-entities-properties-language.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json#/properties/language")
 
 ### language Type
 
@@ -94,7 +94,7 @@ Wikipedia page title of the entity
 
 * cannot be null
 
-* defined in: [Entity Embeddings Schema](embeddings-entities-properties-pagename.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json#/properties/pagename")
+* defined in: [Entity Embeddings Schema](embeddings-entities-properties-pagename.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json#/properties/pagename")
 
 ### pagename Type
 
@@ -112,7 +112,7 @@ Wikipedia URL of the entity
 
 * cannot be null
 
-* defined in: [Entity Embeddings Schema](embeddings-entities-properties-url.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json#/properties/url")
+* defined in: [Entity Embeddings Schema](embeddings-entities-properties-url.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json#/properties/url")
 
 ### url Type
 
@@ -134,7 +134,7 @@ Date of birth if available (YYYY, YYYY-MM, or YYYY-MM-DD)
 
 * can be null
 
-* defined in: [Entity Embeddings Schema](embeddings-entities-properties-date_of_birth.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json#/properties/date_of_birth")
+* defined in: [Entity Embeddings Schema](embeddings-entities-properties-date_of_birth.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json#/properties/date_of_birth")
 
 ### date\_of\_birth Type
 
@@ -162,7 +162,7 @@ Date of death if available (YYYY, YYYY-MM, or YYYY-MM-DD)
 
 * can be null
 
-* defined in: [Entity Embeddings Schema](embeddings-entities-properties-date_of_death.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json#/properties/date_of_death")
+* defined in: [Entity Embeddings Schema](embeddings-entities-properties-date_of_death.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json#/properties/date_of_death")
 
 ### date\_of\_death Type
 
@@ -190,7 +190,7 @@ Titles of occupations linked to the entity
 
 * cannot be null
 
-* defined in: [Entity Embeddings Schema](embeddings-entities-properties-occupations_titles.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json#/properties/occupations_titles")
+* defined in: [Entity Embeddings Schema](embeddings-entities-properties-occupations_titles.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json#/properties/occupations_titles")
 
 ### occupations\_titles Type
 
@@ -208,7 +208,7 @@ Wikidata QIDs for occupations
 
 * cannot be null
 
-* defined in: [Entity Embeddings Schema](embeddings-entities-properties-occupations_qids.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json#/properties/occupations_qids")
+* defined in: [Entity Embeddings Schema](embeddings-entities-properties-occupations_qids.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json#/properties/occupations_qids")
 
 ### occupations\_qids Type
 
@@ -226,7 +226,7 @@ Wikipedia/Wikidata URLs for occupations
 
 * cannot be null
 
-* defined in: [Entity Embeddings Schema](embeddings-entities-properties-occupations_urls.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json#/properties/occupations_urls")
+* defined in: [Entity Embeddings Schema](embeddings-entities-properties-occupations_urls.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json#/properties/occupations_urls")
 
 ### occupations\_urls Type
 
@@ -244,7 +244,7 @@ Dictionary of language → summary text
 
 * cannot be null
 
-* defined in: [Entity Embeddings Schema](embeddings-entities-properties-summaries.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json#/properties/summaries")
+* defined in: [Entity Embeddings Schema](embeddings-entities-properties-summaries.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json#/properties/summaries")
 
 ### summaries Type
 
@@ -262,7 +262,7 @@ Classes or instance types of the entity
 
 * cannot be null
 
-* defined in: [Entity Embeddings Schema](embeddings-entities-properties-instances_titles.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json#/properties/instances_titles")
+* defined in: [Entity Embeddings Schema](embeddings-entities-properties-instances_titles.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json#/properties/instances_titles")
 
 ### instances\_titles Type
 
@@ -280,7 +280,7 @@ QIDs for instance classes
 
 * cannot be null
 
-* defined in: [Entity Embeddings Schema](embeddings-entities-properties-instances_qids.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json#/properties/instances_qids")
+* defined in: [Entity Embeddings Schema](embeddings-entities-properties-instances_qids.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json#/properties/instances_qids")
 
 ### instances\_qids Type
 
@@ -298,7 +298,7 @@ URLs for instance classes (if any)
 
 * can be null
 
-* defined in: [Entity Embeddings Schema](embeddings-entities-properties-instances_urls.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json#/properties/instances_urls")
+* defined in: [Entity Embeddings Schema](embeddings-entities-properties-instances_urls.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json#/properties/instances_urls")
 
 ### instances\_urls Type
 
@@ -316,7 +316,7 @@ Mention contexts extracted from newspapers
 
 * cannot be null
 
-* defined in: [Entity Embeddings Schema](embeddings-entities-properties-contexts.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json#/properties/contexts")
+* defined in: [Entity Embeddings Schema](embeddings-entities-properties-contexts.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json#/properties/contexts")
 
 ### contexts Type
 
@@ -334,7 +334,7 @@ Mention surfaces (unique forms found in text)
 
 * cannot be null
 
-* defined in: [Entity Embeddings Schema](embeddings-entities-properties-surfaces.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json#/properties/surfaces")
+* defined in: [Entity Embeddings Schema](embeddings-entities-properties-surfaces.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json#/properties/surfaces")
 
 ### surfaces Type
 
@@ -352,7 +352,7 @@ Unique document IDs (ci\_id) where the entity appears
 
 * cannot be null
 
-* defined in: [Entity Embeddings Schema](embeddings-entities-properties-ci_ids.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json#/properties/ci_ids")
+* defined in: [Entity Embeddings Schema](embeddings-entities-properties-ci_ids.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json#/properties/ci_ids")
 
 ### ci\_ids Type
 
@@ -370,7 +370,7 @@ Mention-level identifiers linking surface to offsets
 
 * cannot be null
 
-* defined in: [Entity Embeddings Schema](embeddings-entities-properties-mention_keys.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json#/properties/mention_keys")
+* defined in: [Entity Embeddings Schema](embeddings-entities-properties-mention_keys.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json#/properties/mention_keys")
 
 ### mention\_keys Type
 
@@ -388,7 +388,7 @@ Vector embedding from encyclopedic profile
 
 * can be null
 
-* defined in: [Entity Embeddings Schema](embeddings-entities-properties-encyclopedic_embedding.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json#/properties/encyclopedic_embedding")
+* defined in: [Entity Embeddings Schema](embeddings-entities-properties-encyclopedic_embedding.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json#/properties/encyclopedic_embedding")
 
 ### encyclopedic\_embedding Type
 
@@ -406,7 +406,7 @@ Vector embedding from news contexts
 
 * can be null
 
-* defined in: [Entity Embeddings Schema](embeddings-entities-properties-news_embedding.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json#/properties/news_embedding")
+* defined in: [Entity Embeddings Schema](embeddings-entities-properties-news_embedding.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json#/properties/news_embedding")
 
 ### news\_embedding Type
 
@@ -424,7 +424,7 @@ Final combined entity embedding (average of profiles)
 
 * can be null
 
-* defined in: [Entity Embeddings Schema](embeddings-entities-properties-entity_embedding.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-entities.schema.json#/properties/entity_embedding")
+* defined in: [Entity Embeddings Schema](embeddings-entities-properties-entity_embedding.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json#/properties/entity_embedding")
 
 ### entity\_embedding Type
 

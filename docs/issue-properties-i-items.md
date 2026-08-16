@@ -4,13 +4,13 @@
 
 # items Properties
 
-| Property                         | Type     | Required | Nullable       | Defined by                                                                                                                                                                                |
-| :------------------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [m](#m)                          | Merged   | Optional | cannot be null | [Issue](issue-defs-metadata.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/m")                                           |
-| [c](#c)                          | `array`  | Optional | can be null    | [Issue](issue-properties-i-items-properties-c.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/c")                         |
-| [l](#l)                          | `object` | Optional | cannot be null | [Issue](issue-properties-i-items-properties-l.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/l")                         |
-| [pOf](#pof)                      | `string` | Optional | can be null    | [Issue](issue-properties-i-items-properties-pof.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/pOf")                     |
-| [section\_title](#section_title) | `object` | Optional | cannot be null | [Issue](issue-properties-i-items-properties-section_title.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/section_title") |
+| Property                         | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                               |
+| :------------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [m](#m)                          | Merged   | Optional | cannot be null | [Issue](issue-defs-metadata.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/i/items/properties/m")                                           |
+| [c](#c)                          | `array`  | Optional | can be null    | [Issue](issue-properties-i-items-properties-c.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/i/items/properties/c")                         |
+| [l](#l)                          | `object` | Optional | cannot be null | [Issue](issue-properties-i-items-properties-l.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/i/items/properties/l")                         |
+| [pOf](#pof)                      | `string` | Optional | can be null    | [Issue](issue-properties-i-items-properties-pof.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/i/items/properties/pOf")                     |
+| [section\_title](#section_title) | `object` | Optional | cannot be null | [Issue](issue-properties-i-items-properties-section_title.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/i/items/properties/section_title") |
 
 ## m
 
@@ -24,7 +24,7 @@ Metadata about the content item.
 
 * cannot be null
 
-* defined in: [Issue](issue-defs-metadata.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/m")
+* defined in: [Issue](issue-defs-metadata.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/i/items/properties/m")
 
 ### m Type
 
@@ -48,7 +48,7 @@ Coordinates (xywh format or \[HPOS, VPOS, WIDTH, HEIGHT]) of image-region corres
 
 * can be null
 
-* defined in: [Issue](issue-properties-i-items-properties-c.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/c")
+* defined in: [Issue](issue-properties-i-items-properties-c.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/i/items/properties/c")
 
 ### c Type
 
@@ -70,7 +70,7 @@ Legacy sections or components of the content item in the original OCR/OLR. They 
 
 * cannot be null
 
-* defined in: [Issue](issue-properties-i-items-properties-l.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/l")
+* defined in: [Issue](issue-properties-i-items-properties-l.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/i/items/properties/l")
 
 ### l Type
 
@@ -88,13 +88,15 @@ Article/content-item to which the image is attached (if `tp == image`).
 
 * can be null
 
-* defined in: [Issue](issue-properties-i-items-properties-pof.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/pOf")
+* defined in: [Issue](issue-properties-i-items-properties-pof.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/i/items/properties/pOf")
 
 ### pOf Type
 
 `string`
 
 ## section\_title
+
+
 
 `section_title`
 
@@ -104,7 +106,7 @@ Article/content-item to which the image is attached (if `tp == image`).
 
 * cannot be null
 
-* defined in: [Issue](issue-properties-i-items-properties-section_title.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/section_title")
+* defined in: [Issue](issue-properties-i-items-properties-section_title.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/i/items/properties/section_title")
 
 ### section\_title Type
 

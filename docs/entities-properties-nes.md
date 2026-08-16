@@ -1,6 +1,6 @@
 ## nes Type
 
-`object[]` ([Details](entities-properties-nes-items.md))
+`object[]` ([Details](entities-defs-namedentitylist-items.md))
 
 ## nes Constraints
 

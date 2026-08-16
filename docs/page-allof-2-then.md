@@ -4,11 +4,13 @@ unknown
 
 # then Properties
 
-| Property  | Type          | Required | Nullable       | Defined by                                                                                                                                                   |
-| :-------- | :------------ | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [sm](#sm) | Not specified | Optional | cannot be null | [Printed Page](page-allof-2-then-properties-sm.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/allOf/2/then/properties/sm") |
+| Property  | Type          | Required | Nullable       | Defined by                                                                                                                                                                                  |
+| :-------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [sm](#sm) | Not specified | Optional | cannot be null | [Printed Page](page-allof-2-then-properties-sm.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/allOf/2/then/properties/sm") |
 
 ## sm
+
+
 
 `sm`
 
@@ -18,7 +20,7 @@ unknown
 
 * cannot be null
 
-* defined in: [Printed Page](page-allof-2-then-properties-sm.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/allOf/2/then/properties/sm")
+* defined in: [Printed Page](page-allof-2-then-properties-sm.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/allOf/2/then/properties/sm")
 
 ### sm Type
 

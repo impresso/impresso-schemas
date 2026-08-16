@@ -4,11 +4,13 @@ unknown
 
 # if Properties
 
-| Property  | Type          | Required | Nullable       | Defined by                                                                                                                                               |
-| :-------- | :------------ | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [st](#st) | Not specified | Optional | cannot be null | [Printed Page](page-allof-3-if-properties-st.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/allOf/3/if/properties/st") |
+| Property  | Type          | Required | Nullable       | Defined by                                                                                                                                                                              |
+| :-------- | :------------ | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [st](#st) | Not specified | Optional | cannot be null | [Printed Page](page-allof-3-if-properties-st.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/allOf/3/if/properties/st") |
 
 ## st
+
+
 
 `st`
 
@@ -18,7 +20,7 @@ unknown
 
 * cannot be null
 
-* defined in: [Printed Page](page-allof-3-if-properties-st.md "https://impresso.github.io/impresso-schemas/json/canonical/page.schema.json#/allOf/3/if/properties/st")
+* defined in: [Printed Page](page-allof-3-if-properties-st.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/allOf/3/if/properties/st")
 
 ### st Type
 

@@ -4,12 +4,12 @@
 
 # legacy\_part\_item Properties
 
-| Property                        | Type     | Required | Nullable       | Defined by                                                                                                                                                                                     |
-| :------------------------------ | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [comp\_role](#comp_role)        | `string` | Optional | can be null    | [Issue](issue-defs-legacy_part_item-properties-comp_role.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/legacy_part_item/properties/comp_role")       |
-| [comp\_id](#comp_id)            | Multiple | Optional | cannot be null | [Issue](issue-defs-legacy_part_item-properties-comp_id.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/legacy_part_item/properties/comp_id")           |
-| [comp\_fileid](#comp_fileid)    | Multiple | Optional | cannot be null | [Issue](issue-defs-legacy_part_item-properties-comp_fileid.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/legacy_part_item/properties/comp_fileid")   |
-| [comp\_page\_no](#comp_page_no) | Multiple | Optional | cannot be null | [Issue](issue-defs-legacy_part_item-properties-comp_page_no.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/legacy_part_item/properties/comp_page_no") |
+| Property                        | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                    |
+| :------------------------------ | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [comp\_role](#comp_role)        | `string` | Optional | can be null    | [Issue](issue-defs-legacy_part_item-properties-comp_role.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/$defs/legacy_part_item/properties/comp_role")       |
+| [comp\_id](#comp_id)            | Multiple | Optional | cannot be null | [Issue](issue-defs-legacy_part_item-properties-comp_id.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/$defs/legacy_part_item/properties/comp_id")           |
+| [comp\_fileid](#comp_fileid)    | Multiple | Optional | cannot be null | [Issue](issue-defs-legacy_part_item-properties-comp_fileid.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/$defs/legacy_part_item/properties/comp_fileid")   |
+| [comp\_page\_no](#comp_page_no) | Multiple | Optional | cannot be null | [Issue](issue-defs-legacy_part_item-properties-comp_page_no.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/$defs/legacy_part_item/properties/comp_page_no") |
 
 ## comp\_role
 
@@ -23,7 +23,7 @@ Role of the component part (eg. heading, body, etc).
 
 * can be null
 
-* defined in: [Issue](issue-defs-legacy_part_item-properties-comp_role.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/legacy_part_item/properties/comp_role")
+* defined in: [Issue](issue-defs-legacy_part_item-properties-comp_role.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/$defs/legacy_part_item/properties/comp_role")
 
 ### comp\_role Type
 
@@ -41,7 +41,7 @@ ID of the part.
 
 * cannot be null
 
-* defined in: [Issue](issue-defs-legacy_part_item-properties-comp_id.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/legacy_part_item/properties/comp_id")
+* defined in: [Issue](issue-defs-legacy_part_item-properties-comp_id.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/$defs/legacy_part_item/properties/comp_id")
 
 ### comp\_id Type
 
@@ -59,7 +59,7 @@ ID of the ALTO file the component comes from.
 
 * cannot be null
 
-* defined in: [Issue](issue-defs-legacy_part_item-properties-comp_fileid.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/legacy_part_item/properties/comp_fileid")
+* defined in: [Issue](issue-defs-legacy_part_item-properties-comp_fileid.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/$defs/legacy_part_item/properties/comp_fileid")
 
 ### comp\_fileid Type
 
@@ -77,7 +77,7 @@ Page number of the component.
 
 * cannot be null
 
-* defined in: [Issue](issue-defs-legacy_part_item-properties-comp_page_no.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/$defs/legacy_part_item/properties/comp_page_no")
+* defined in: [Issue](issue-defs-legacy_part_item-properties-comp_page_no.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/$defs/legacy_part_item/properties/comp_page_no")
 
 ### comp\_page\_no Type
 

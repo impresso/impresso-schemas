@@ -4,14 +4,14 @@
 
 # Chunk Embeddings Properties
 
-| Property                         | Type     | Required | Nullable       | Defined by                                                                                                                                                                                           |
-| :------------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ts](#ts)                        | `string` | Required | cannot be null | [Chunk Embeddings](embeddings-chunks-properties-timestamp.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-chunks.schema.json#/properties/ts")                             |
-| [ci\_id](#ci_id)                 | `string` | Required | cannot be null | [Chunk Embeddings](embeddings-chunks-properties-content-item-id.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-chunks.schema.json#/properties/ci_id")                    |
-| [chunks](#chunks)                | `array`  | Required | cannot be null | [Chunk Embeddings](embeddings-chunks-properties-chunk-embeddings.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-chunks.schema.json#/properties/chunks")                  |
-| [model\_id](#model_id)           | `string` | Optional | cannot be null | [Chunk Embeddings](embeddings-chunks-properties-model-id.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-chunks.schema.json#/properties/model_id")                        |
-| [lingproc\_path](#lingproc_path) | `string` | Optional | cannot be null | [Chunk Embeddings](embeddings-chunks-properties-linguistic-processing-path.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-chunks.schema.json#/properties/lingproc_path") |
-| [git](#git)                      | `string` | Optional | cannot be null | [Chunk Embeddings](embeddings-chunks-properties-git-commit.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-chunks.schema.json#/properties/git")                           |
+| Property                         | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                      |
+| :------------------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [ts](#ts)                        | `string` | Required | cannot be null | [Chunk Embeddings](embeddings-chunks-properties-timestamp.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-chunks.v1.schema.json#/properties/ts")                             |
+| [ci\_id](#ci_id)                 | `string` | Required | cannot be null | [Chunk Embeddings](embeddings-chunks-properties-content-item-id.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-chunks.v1.schema.json#/properties/ci_id")                    |
+| [chunks](#chunks)                | `array`  | Required | cannot be null | [Chunk Embeddings](embeddings-chunks-properties-chunk-embeddings.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-chunks.v1.schema.json#/properties/chunks")                  |
+| [model\_id](#model_id)           | `string` | Optional | cannot be null | [Chunk Embeddings](embeddings-chunks-properties-model-id.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-chunks.v1.schema.json#/properties/model_id")                        |
+| [lingproc\_path](#lingproc_path) | `string` | Optional | cannot be null | [Chunk Embeddings](embeddings-chunks-properties-linguistic-processing-path.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-chunks.v1.schema.json#/properties/lingproc_path") |
+| [git](#git)                      | `string` | Optional | cannot be null | [Chunk Embeddings](embeddings-chunks-properties-git-commit.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-chunks.v1.schema.json#/properties/git")                           |
 
 ## ts
 
@@ -25,7 +25,7 @@ Timestamp of when the embeddings were generated.
 
 * cannot be null
 
-* defined in: [Chunk Embeddings](embeddings-chunks-properties-timestamp.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-chunks.schema.json#/properties/ts")
+* defined in: [Chunk Embeddings](embeddings-chunks-properties-timestamp.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-chunks.v1.schema.json#/properties/ts")
 
 ### ts Type
 
@@ -59,7 +59,7 @@ Canonical impresso ID of the content item.
 
 * cannot be null
 
-* defined in: [Chunk Embeddings](embeddings-chunks-properties-content-item-id.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-chunks.schema.json#/properties/ci_id")
+* defined in: [Chunk Embeddings](embeddings-chunks-properties-content-item-id.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-chunks.v1.schema.json#/properties/ci_id")
 
 ### ci\_id Type
 
@@ -83,7 +83,7 @@ Container for chunk-level embeddings derived from lingproc chunk segmentation an
 
 * cannot be null
 
-* defined in: [Chunk Embeddings](embeddings-chunks-properties-chunk-embeddings.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-chunks.schema.json#/properties/chunks")
+* defined in: [Chunk Embeddings](embeddings-chunks-properties-chunk-embeddings.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-chunks.v1.schema.json#/properties/chunks")
 
 ### chunks Type
 
@@ -101,7 +101,7 @@ Model identifier according to impresso model description schema.
 
 * cannot be null
 
-* defined in: [Chunk Embeddings](embeddings-chunks-properties-model-id.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-chunks.schema.json#/properties/model_id")
+* defined in: [Chunk Embeddings](embeddings-chunks-properties-model-id.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-chunks.v1.schema.json#/properties/model_id")
 
 ### model\_id Type
 
@@ -125,7 +125,7 @@ S3 path to the lingproc output from which chunk boundaries were derived and subs
 
 * cannot be null
 
-* defined in: [Chunk Embeddings](embeddings-chunks-properties-linguistic-processing-path.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-chunks.schema.json#/properties/lingproc_path")
+* defined in: [Chunk Embeddings](embeddings-chunks-properties-linguistic-processing-path.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-chunks.v1.schema.json#/properties/lingproc_path")
 
 ### lingproc\_path Type
 
@@ -149,7 +149,7 @@ Git commit or tag of the processing pipeline used to generate the embeddings.
 
 * cannot be null
 
-* defined in: [Chunk Embeddings](embeddings-chunks-properties-git-commit.md "https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-chunks.schema.json#/properties/git")
+* defined in: [Chunk Embeddings](embeddings-chunks-properties-git-commit.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-chunks.v1.schema.json#/properties/git")
 
 ### git Type
 
@@ -168,7 +168,7 @@ Git commit or tag of the processing pipeline used to generate the embeddings.
 Reference this group by using
 
 ```json
-{"$ref":"https://impresso.github.io/impresso-schemas/json/embeddings/embeddings-chunks.schema.json#/$defs/chunks"}
+{"$ref":"https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-chunks.v1.schema.json#/$defs/chunks"}
 ```
 
 | Property | Type | Required | Nullable | Defined by |

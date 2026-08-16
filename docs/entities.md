@@ -4,13 +4,14 @@
 
 # Named Entity JSON Schema Properties
 
-| Property               | Type     | Required | Nullable       | Defined by                                                                                                                                                        |
-| :--------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ci\_id](#ci_id)       | `string` | Required | cannot be null | [Named Entity JSON Schema](entities-properties-ci_id.md "https://impresso.github.io/impresso-schemas/json/entities/entities.schema.json#/properties/ci_id")       |
-| [ci\_type](#ci_type)   | `string` | Optional | cannot be null | [Named Entity JSON Schema](entities-properties-ci_type.md "https://impresso.github.io/impresso-schemas/json/entities/entities.schema.json#/properties/ci_type")   |
-| [ts](#ts)              | `string` | Required | cannot be null | [Named Entity JSON Schema](entities-properties-ts.md "https://impresso.github.io/impresso-schemas/json/entities/entities.schema.json#/properties/ts")             |
-| [model\_id](#model_id) | `string` | Required | cannot be null | [Named Entity JSON Schema](entities-properties-model_id.md "https://impresso.github.io/impresso-schemas/json/entities/entities.schema.json#/properties/model_id") |
-| [nes](#nes)            | `array`  | Required | cannot be null | [Named Entity JSON Schema](entities-properties-nes.md "https://impresso.github.io/impresso-schemas/json/entities/entities.schema.json#/properties/nes")           |
+| Property               | Type     | Required | Nullable       | Defined by                                                                                                                                                                                          |
+| :--------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [ci\_id](#ci_id)       | `string` | Required | cannot be null | [Named Entity JSON Schema](entities-properties-ci_id.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/entities/entities.v1.schema.json#/properties/ci_id")       |
+| [ci\_type](#ci_type)   | `string` | Optional | cannot be null | [Named Entity JSON Schema](entities-properties-ci_type.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/entities/entities.v1.schema.json#/properties/ci_type")   |
+| [ts](#ts)              | `string` | Required | cannot be null | [Named Entity JSON Schema](entities-properties-ts.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/entities/entities.v1.schema.json#/properties/ts")             |
+| [model\_id](#model_id) | `string` | Required | cannot be null | [Named Entity JSON Schema](entities-properties-model_id.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/entities/entities.v1.schema.json#/properties/model_id") |
+| [nes](#nes)            | `array`  | Required | cannot be null | [Named Entity JSON Schema](entities-properties-nes.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/entities/entities.v1.schema.json#/properties/nes")           |
+| [tnes](#tnes)          | `array`  | Optional | cannot be null | [Named Entity JSON Schema](entities-properties-tnes.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/entities/entities.v1.schema.json#/properties/tnes")         |
 
 ## ci\_id
 
@@ -24,7 +25,7 @@ Impresso content item ID.
 
 * cannot be null
 
-* defined in: [Named Entity JSON Schema](entities-properties-ci_id.md "https://impresso.github.io/impresso-schemas/json/entities/entities.schema.json#/properties/ci_id")
+* defined in: [Named Entity JSON Schema](entities-properties-ci_id.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/entities/entities.v1.schema.json#/properties/ci_id")
 
 ### ci\_id Type
 
@@ -42,7 +43,7 @@ Impresso content item type.
 
 * cannot be null
 
-* defined in: [Named Entity JSON Schema](entities-properties-ci_type.md "https://impresso.github.io/impresso-schemas/json/entities/entities.schema.json#/properties/ci_type")
+* defined in: [Named Entity JSON Schema](entities-properties-ci_type.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/entities/entities.v1.schema.json#/properties/ci_type")
 
 ### ci\_type Type
 
@@ -60,7 +61,7 @@ Timestamp of creation of the JSON file (e.g. '2024-05-26T09:48:01Z').
 
 * cannot be null
 
-* defined in: [Named Entity JSON Schema](entities-properties-ts.md "https://impresso.github.io/impresso-schemas/json/entities/entities.schema.json#/properties/ts")
+* defined in: [Named Entity JSON Schema](entities-properties-ts.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/entities/entities.v1.schema.json#/properties/ts")
 
 ### ts Type
 
@@ -78,7 +79,7 @@ An alias for the system or model that produced this output, used for transparenc
 
 * cannot be null
 
-* defined in: [Named Entity JSON Schema](entities-properties-model_id.md "https://impresso.github.io/impresso-schemas/json/entities/entities.schema.json#/properties/model_id")
+* defined in: [Named Entity JSON Schema](entities-properties-model_id.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/entities/entities.v1.schema.json#/properties/model_id")
 
 ### model\_id Type
 
@@ -86,22 +87,57 @@ An alias for the system or model that produced this output, used for transparenc
 
 ## nes
 
-The list of named entity mentions identified in the document.
+A list of entities.
 
 `nes`
 
 * is required
 
-* Type: `object[]` ([Details](entities-properties-nes-items.md))
+* Type: `object[]` ([Details](entities-defs-namedentitylist-items.md))
 
 * cannot be null
 
-* defined in: [Named Entity JSON Schema](entities-properties-nes.md "https://impresso.github.io/impresso-schemas/json/entities/entities.schema.json#/properties/nes")
+* defined in: [Named Entity JSON Schema](entities-properties-nes.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/entities/entities.v1.schema.json#/properties/nes")
 
 ### nes Type
 
-`object[]` ([Details](entities-properties-nes-items.md))
+`object[]` ([Details](entities-defs-namedentitylist-items.md))
 
 ### nes Constraints
 
 **minimum number of items**: the minimum number of items for this array is: `0`
+
+## tnes
+
+A list of entities.
+
+`tnes`
+
+* is optional
+
+* Type: `object[]` ([Details](entities-defs-namedentitylist-items.md))
+
+* cannot be null
+
+* defined in: [Named Entity JSON Schema](entities-properties-tnes.md "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/entities/entities.v1.schema.json#/properties/tnes")
+
+### tnes Type
+
+`object[]` ([Details](entities-defs-namedentitylist-items.md))
+
+### tnes Constraints
+
+**minimum number of items**: the minimum number of items for this array is: `0`
+
+# Named Entity JSON Schema Definitions
+
+## Definitions group namedEntityList
+
+Reference this group by using
+
+```json
+{"$ref":"https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/entities/entities.v1.schema.json#/$defs/namedEntityList"}
+```
+
+| Property | Type | Required | Nullable | Defined by |
+| :------- | :--- | :------- | :------- | :--------- |

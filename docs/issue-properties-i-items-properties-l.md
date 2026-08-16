@@ -4,11 +4,11 @@
 
 # l Properties
 
-| Property          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                            |
-| :---------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [id](#id)         | Multiple | Optional | cannot be null | [Issue](issue-properties-i-items-properties-l-properties-id.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/l/properties/id")         |
-| [parts](#parts)   | `array`  | Optional | cannot be null | [Issue](issue-properties-i-items-properties-l-properties-parts.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/l/properties/parts")   |
-| [source](#source) | Multiple | Optional | cannot be null | [Issue](issue-properties-i-items-properties-l-properties-source.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/l/properties/source") |
+| Property          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                           |
+| :---------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [id](#id)         | Multiple | Optional | cannot be null | [Issue](issue-properties-i-items-properties-l-properties-id.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/i/items/properties/l/properties/id")         |
+| [parts](#parts)   | `array`  | Optional | cannot be null | [Issue](issue-properties-i-items-properties-l-properties-parts.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/i/items/properties/l/properties/parts")   |
+| [source](#source) | Multiple | Optional | cannot be null | [Issue](issue-properties-i-items-properties-l-properties-source.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/i/items/properties/l/properties/source") |
 
 ## id
 
@@ -22,7 +22,7 @@ ID of the sections or components used to compose the CI in the original OCR/OLR 
 
 * cannot be null
 
-* defined in: [Issue](issue-properties-i-items-properties-l-properties-id.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/l/properties/id")
+* defined in: [Issue](issue-properties-i-items-properties-l-properties-id.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/i/items/properties/l/properties/id")
 
 ### id Type
 
@@ -40,7 +40,7 @@ List of parts of the given section or components. Exact contents can vary, will 
 
 * cannot be null
 
-* defined in: [Issue](issue-properties-i-items-properties-l-properties-parts.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/l/properties/parts")
+* defined in: [Issue](issue-properties-i-items-properties-l-properties-parts.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/i/items/properties/l/properties/parts")
 
 ### parts Type
 
@@ -58,7 +58,7 @@ Source image or OCR/OLR file name.
 
 * cannot be null
 
-* defined in: [Issue](issue-properties-i-items-properties-l-properties-source.md "https://impresso.github.io/impresso-schemas/json/canonical/issue.schema.json#/properties/i/items/properties/l/properties/source")
+* defined in: [Issue](issue-properties-i-items-properties-l-properties-source.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/i/items/properties/l/properties/source")
 
 ### source Type
 

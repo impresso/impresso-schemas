@@ -11,6 +11,8 @@ unknown
 
 ## is\_inferred
 
+
+
 `is_inferred`
 
 * is optional
@@ -34,6 +36,8 @@ false
 ```
 
 ## class
+
+
 
 `class`
 

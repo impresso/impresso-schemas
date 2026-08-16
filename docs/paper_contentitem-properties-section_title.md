@@ -12,6 +12,8 @@
 
 ## title\_text
 
+
+
 `title_text`
 
 * is required
@@ -28,6 +30,8 @@
 
 ## composing\_ci\_ids
 
+
+
 `composing_ci_ids`
 
 * is required
@@ -43,6 +47,8 @@
 `string[]`
 
 ## section\_id
+
+
 
 `section_id`
 
