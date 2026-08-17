@@ -36,7 +36,7 @@ flowchart LR
   - [Copyrights](#copyrights)
   - [License](#license)
   - [Impresso](#impresso)
-  - [Publications](#publications)
+  - [Related Publications](#related-publications)
 
 ## Schema management
 
@@ -245,7 +245,7 @@ No. [CRSII5_173719](http://p3.snf.ch/project-173719) and the second project (202
 by the SNSF under grant No. [CRSII5_213585](https://data.snf.ch/grants/grant/213585))
 and the Luxembourg National Research Fund under grant No. 17498891.
 
-### Publications
+### Related Publications
 
 #### Impresso 2
 
@@ -255,11 +255,51 @@ Media](https://infoscience.epfl.ch/handle/20.500.14299/263437). _Proceedings
 of the First Workshop on Creating Interoperable Corpora of Historical
 Newspapers (PressMint 2026)_, 72–81.
 
+<details>
+<summary>BibTeX</summary>
+
+```bibtex
+@inproceedings{conti_interoperable_2026,
+  title = {Toward {{Interoperable}} and {{Scalable Representations}} of {{Complex Heterogeneous Digitized Historical Media}}},
+  booktitle = {Proceedings of the {{First Workshop}} on {{Creating Interoperable Corpora}} of {{Historical Newspapers}}},
+  author = {Conti, Pauline Isabela and Clematide, Simon and Ehrmann, Maud},
+  editor = {Ogrodniczuk, Maciej and Osenova, Petya and Wissik, Tanja},
+  year = 2026,
+  month = may,
+  pages = {72--81},
+  publisher = {ELRA Language Resources Association},
+  address = {Palma de Mallorca},
+  url = {https://infoscience.epfl.ch/handle/20.500.14299/263437},
+  urldate = {2026-05-18},
+  isbn = {978-2-493814-49-4}
+}
+```
+
+</details>
+
 #### Impresso 1
 
 Romanello, M., Ehrmann, M., Clematide, S., & Guido, D. (2020). [The impresso
 system architecture in a nutshell](https://infoscience.epfl.ch/handle/20.500.14299/175573)
 [Research Report]. _EuropeanaTech Insights_.
+
+<details>
+<summary>BibTeX</summary>
+
+```bibtex
+@inproceedings{romanello_impresso_2020,
+  title = {The Impresso System Architecture in a Nutshell},
+  booktitle = {{{EuropeanaTech}} Insights},
+  author = {Romanello, Matteo and Ehrmann, Maud and Clematide, Simon and Guido, Daniele},
+  year = 2020,
+  url = {https://pro.europeana.eu/page/issue-16-newspapers#the-impresso-system-architecture-in-a-nutshell},
+  urldate = {2021-03-05},
+  keywords = {cited},
+  annotation = {https://www.semanticscholar.org/paper/The-impresso-system-architecture-in-a-nutshell-Romanello-Ehrmann/28bfc855527a1cb6dcaade90f7aac50772f00667}
+}
+```
+
+</details>
 
 Ehrmann, M., Romanello, M., Clematide, S., Ströbel, P. B., & Barman, R.
 (2020). [Language Resources for Historical Newspapers: the Impresso
@@ -268,6 +308,31 @@ F. Béchet, P. Blache, K. Choukri, C. Cieri, T. Declerck, S. Goggi,
 H. Isahara, B. Maegaard, J. Mariani, H. Mazo, A. Moreno, J. Odijk, &
 S. Piperidis (Eds.), _Proceedings of the 12th Language Resources and
 Evaluation Conference_.
+
+<details>
+<summary>BibTeX</summary>
+
+```bibtex
+@inproceedings{ehrmann_language_2020,
+  ids = {ehrmann-EtAl:2020:LREC,ehrmann_language_2020a,ehrmann_language_2020c},
+  title = {Language {{Resources}} for {{Historical Newspapers}}: The {{Impresso Collection}}},
+  shorttitle = {Language {{Resources}} for {{Historical Newspapers}}},
+  booktitle = {Proceedings of the {{Twelfth Language Resources}} and {{Evaluation Conference}}},
+  author = {Ehrmann, Maud and Romanello, Matteo and Clematide, Simon and Str{\"o}bel, Phillip Benjamin and Barman, Rapha{\"e}l},
+  editor = {Calzolari, Nicoletta and B{\'e}chet, Fr{\'e}d{\'e}ric and Blache, Philippe and Choukri, Khalid and Cieri, Christopher and Declerck, Thierry and Goggi, Sara and Isahara, Hitoshi and Maegaard, Bente and Mariani, Joseph and Mazo, H{\'e}l{\`e}ne and Moreno, Asuncion and Odijk, Jan and Piperidis, Stelios},
+  year = 2020,
+  month = may,
+  pages = {958--968},
+  publisher = {European Language Resources Association},
+  address = {Marseille, France},
+  url = {https://aclanthology.org/2020.lrec-1.121},
+  urldate = {2024-06-30},
+  isbn = {979-10-95546-34-4},
+  keywords = {cited}
+}
+```
+
+</details>
 
 ___
 
