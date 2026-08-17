@@ -30,7 +30,7 @@ and published `$id` values must not change. New versioned contracts belong in
 | Impresso 2 directory | Description |
 | -------------------- | ----------- |
 | `data-preparation/` | Canonical, rebuilt, versioning, and visualizer schemas |
-| `text-preprocessing/` | Language identification, linguistic annotation, and OCR QA |
+| `text-processing/` | Language identification, linguistic annotation, and OCR QA |
 | `semantic-enrichment/` | Entities, embeddings, text reuse, topic model, and image enrichment |
 | `solr-indexing/` | Solr document schemas and their shared parts |
 | `web-app/` | Web application consumption schemas, when added |

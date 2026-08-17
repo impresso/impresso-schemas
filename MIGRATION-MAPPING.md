@@ -18,10 +18,10 @@ only in the legacy namespace.
 | `json/rebuilt/paper_contentitem.schema.json` | `json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json` |
 | `json/versioning/manifest.schema.json` | `json/impresso-2/data-preparation/versioning/manifest.v1.schema.json` |
 | `json/visualizer/bbox_visualizer.schema.json` | `json/impresso-2/data-preparation/visualizer/bbox-visualizer.v1.schema.json` |
-| `json/language_identification/language_identification.schema.json` | `json/impresso-2/text-preprocessing/language-identification/language-identification.v1.schema.json` |
-| `json/linguistic_annotation/ling_spacy.schema.json` | `json/impresso-2/text-preprocessing/linguistic-annotation/ling-spacy.v1.schema.json` |
-| `json/linguistic_annotation/lingproc.v2.schema.json` | `json/impresso-2/text-preprocessing/linguistic-annotation/lingproc.v1.schema.json` |
-| `json/ocr_qa/ocr_qa.schema.json` | `json/impresso-2/text-preprocessing/ocr-qa/ocr-qa.v1.schema.json` |
+| `json/language_identification/language_identification.schema.json` | `json/impresso-2/text-processing/language-identification/language-identification.v1.schema.json` |
+| `json/linguistic_annotation/ling_spacy.schema.json` | `json/impresso-2/text-processing/linguistic-annotation/ling-spacy.v1.schema.json` |
+| `json/linguistic_annotation/lingproc.v2.schema.json` | `json/impresso-2/text-processing/linguistic-annotation/lingproc.v1.schema.json` |
+| `json/ocr_qa/ocr_qa.schema.json` | `json/impresso-2/text-processing/ocr-qa/ocr-qa.v1.schema.json` |
 | `json/embeddings/embeddings-chunks.schema.json` | `json/impresso-2/semantic-enrichment/document-embeddings/embeddings-chunks.v1.schema.json` |
 | `json/embeddings/embeddings-docs.schema.json` | `json/impresso-2/semantic-enrichment/document-embeddings/embeddings-docs.v1.schema.json` |
 | `json/embeddings/embeddings-entities.schema.json` | `json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json` |

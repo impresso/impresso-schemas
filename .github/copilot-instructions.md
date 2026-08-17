@@ -8,7 +8,7 @@ This repository contains JSON schemas used in the [Impresso project](https://imp
   - Existing top-level schema directories are the legacy namespace. Do not move
     or change their paths or `$id` values.
   - `impresso-2/` - Versioned contracts organised by lifecycle area:
-    `data-preparation/`, `text-preprocessing/`, `semantic-enrichment/`,
+`data-preparation/`, `text-processing/`, `semantic-enrichment/`,
     `solr-indexing/`, and `web-app/`.
     - Use `<name>.vN.schema.json` filenames.
     - The `$id` must exactly match the published URL corresponding to the

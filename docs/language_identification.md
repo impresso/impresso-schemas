@@ -291,8 +291,6 @@ List of predicted languages using a FastText model trained on Wikipedia, sorted 
 
 ## votes
 
-
-
 `votes`
 
 * is optional

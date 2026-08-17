@@ -102,11 +102,11 @@ IMPRESSO_2_CASES = [
     ("json/impresso-2/data-preparation/visualizer/bbox-visualizer.v1.schema.json", "examples/impresso-2/data-preparation/visualizer/bbox-visualizer.actionfem-1927-10-15-a_bbox.json"),
     ("json/impresso-2/data-preparation/visualizer/bbox-visualizer.v1.schema.json", "examples/impresso-2/data-preparation/visualizer/bbox-visualizer.actionfem-1927-10-15-a-i0012_bbox.json"),
     ("json/impresso-2/data-preparation/visualizer/bbox-visualizer.v1.schema.json", "examples/impresso-2/data-preparation/visualizer/bbox-visualizer.actionfem-1927-10-15-a-p0001_bbox.json"),
-    # text-preprocessing
-    ("json/impresso-2/text-preprocessing/language-identification/language-identification.v1.schema.json", "examples/impresso-2/text-preprocessing/language-identification/language-identification.example0.json"),
-    ("json/impresso-2/text-preprocessing/language-identification/language-identification.v1.schema.json", "examples/impresso-2/text-preprocessing/language-identification/language-identification.example1.json"),
-    ("json/impresso-2/text-preprocessing/language-identification/language-identification.v1.schema.json", "examples/impresso-2/text-preprocessing/language-identification/language-identification.example2.json"),
-    ("json/impresso-2/text-preprocessing/linguistic-annotation/lingproc.v1.schema.json", "examples/impresso-2/text-preprocessing/linguistic-annotation/lingproc.example1.json"),
+    # text-processing
+    ("json/impresso-2/text-processing/language-identification/language-identification.v1.schema.json", "examples/impresso-2/text-processing/language-identification/language-identification.example0.json"),
+    ("json/impresso-2/text-processing/language-identification/language-identification.v1.schema.json", "examples/impresso-2/text-processing/language-identification/language-identification.example1.json"),
+    ("json/impresso-2/text-processing/language-identification/language-identification.v1.schema.json", "examples/impresso-2/text-processing/language-identification/language-identification.example2.json"),
+    ("json/impresso-2/text-processing/linguistic-annotation/lingproc.v1.schema.json", "examples/impresso-2/text-processing/linguistic-annotation/lingproc.example1.json"),
     # semantic-enrichment
     ("json/impresso-2/semantic-enrichment/topic-model/topic-description.v1.schema.json", "examples/impresso-2/semantic-enrichment/topic-model/topic-description.example0.json"),
     ("json/impresso-2/semantic-enrichment/entities/entities.v1.schema.json", "examples/impresso-2/semantic-enrichment/entities/entities.example0.json"),

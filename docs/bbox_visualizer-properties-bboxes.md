@@ -16,8 +16,6 @@
 
 Additional properties are allowed, as long as they follow this schema:
 
-
-
 * is optional
 
 * Type: `object[]` ([Details](bbox_visualizer-properties-bboxes-additionalproperties-items.md))

@@ -472,8 +472,6 @@ False if the date assigned to the issue is known to be inexact or approximated, 
 
 ## section\_title
 
-
-
 `section_title`
 
 * is optional

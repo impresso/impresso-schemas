@@ -96,8 +96,6 @@ Article/content-item to which the image is attached (if `tp == image`).
 
 ## section\_title
 
-
-
 `section_title`
 
 * is optional

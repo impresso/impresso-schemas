@@ -39,8 +39,6 @@ Two- or three-letter ISO language abbreviation, cf. <https://en.wikipedia.org/wi
 
 ## vote
 
-
-
 `vote`
 
 * is required
