@@ -7,6 +7,9 @@
   "allOf": [
     {
       "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/content-item-id.part.v1.schema.json"
+    },
+    {
+      "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/model-id.part.v1.schema.json"
     }
   ],
   "$defs": {
@@ -149,10 +152,6 @@
     "ts": {
       "type": "string",
       "description": "Timestamp of creation of the JSON file (e.g. '2024-05-26T09:48:01Z')."
-    },
-    "model_id": {
-      "type": "string",
-      "description": "An alias for the system or model that produced this output, used for transparency and traceability. It should include distinguishing elements like a base name, version, and language."
     },
     "nes": {
       "$ref": "#/$defs/namedEntityList",

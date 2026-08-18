@@ -7,6 +7,9 @@
   "allOf": [
     {
       "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/content-item-id.part.v1.schema.json"
+    },
+    {
+      "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/model-id.part.v1.schema.json"
     }
   ],
   "properties": {
@@ -14,11 +17,6 @@
       "type": "string",
       "description": "Timestamp indicating when the embedding was created (e.g., '2024-10-09T09:29:02Z').",
       "format": "date-time"
-    },
-    "model_id": {
-      "type": "string",
-      "description": "The ID of the model that produced this output, composed as specified in these slides: https://docs.google.com/presentation/d/1wH4LygLcT28rvMA82k5fyEyzdX49inGkqCLnBNZsFaw/edit#slide=id.g30cf04393c4_1_46.",
-      "examples": ["classif-images_dinov2-v0.0.1"]
     },
     "level1_predictions": {
       "type": "array",
