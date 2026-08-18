@@ -1,0 +1,3 @@
+## iiif Type
+
+`string`

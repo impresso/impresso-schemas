@@ -64,6 +64,8 @@ json/                                   Schema source of truth
 examples/                               Validation fixtures
 └── impresso-2/                         Mirrors json/impresso-2/
 docs/                                   Generated Markdown; do not edit manually
+├── legacy/                              Documentation for stable legacy schemas
+└── impresso-2/                          Documentation for versioned schemas
 tests/                                  Schema integrity and example validation
 ```
 
@@ -115,8 +117,10 @@ Before submitting changes, run:
 
 ```bash
 make format-check     # Check JSON formatting
-make tests            # Validate schemas, references, and registered examples
-make documentation    # Regenerate and lint docs/
+make tests-legacy     # Validate legacy schemas, references, and examples
+make tests-imp2       # Validate Impresso 2 schemas, references, and examples
+make tests            # Run both validation suites
+make documentation    # Regenerate docs/legacy/ and docs/impresso-2/
 ```
 
 ## Schemas
@@ -126,105 +130,105 @@ make documentation    # Regenerate and lint docs/
 ### Data preparation
 
 - **Issue**:
-  - legacy: [`json/canonical/issue.schema.json`](json/canonical/issue.schema.json) — [docs](docs/issue-1.md)
-  - imp2: [`json/impresso-2/data-preparation/canonical/issue.v1.schema.json`](json/impresso-2/data-preparation/canonical/issue.v1.schema.json) — [docs](docs/issue.md)
+  - legacy: [`json/canonical/issue.schema.json`](json/canonical/issue.schema.json) — [docs](docs/legacy/canonical/issue.md)
+  - imp2: [`json/impresso-2/data-preparation/canonical/issue.v1.schema.json`](json/impresso-2/data-preparation/canonical/issue.v1.schema.json) — [docs](docs/impresso-2/issue.md)
 - **Page**:
-  - legacy: [`json/canonical/page.schema.json`](json/canonical/page.schema.json) — [docs](docs/page-1.md)
-  - imp2: [`json/impresso-2/data-preparation/canonical/page.v1.schema.json`](json/impresso-2/data-preparation/canonical/page.v1.schema.json) — [docs](docs/page.md)
+  - legacy: [`json/canonical/page.schema.json`](json/canonical/page.schema.json) — [docs](docs/legacy/canonical/page.md)
+  - imp2: [`json/impresso-2/data-preparation/canonical/page.v1.schema.json`](json/impresso-2/data-preparation/canonical/page.v1.schema.json) — [docs](docs/impresso-2/page.md)
 - **Audio record**:
-  - legacy: [`json/canonical/audio_record.schema.json`](json/canonical/audio_record.schema.json) — [docs](docs/audio_record.md)
-  - imp2: [`json/impresso-2/data-preparation/canonical/audio-record.v1.schema.json`](json/impresso-2/data-preparation/canonical/audio-record.v1.schema.json) — [docs](docs/audio-record.md)
+  - legacy: [`json/canonical/audio_record.schema.json`](json/canonical/audio_record.schema.json) — [docs](docs/legacy/canonical/audio_record.md)
+  - imp2: [`json/impresso-2/data-preparation/canonical/audio-record.v1.schema.json`](json/impresso-2/data-preparation/canonical/audio-record.v1.schema.json) — [docs](docs/impresso-2/audio-record.md)
 - **Paper content item**:
-  - legacy: [`json/rebuilt/paper_contentitem.schema.json`](json/rebuilt/paper_contentitem.schema.json) — [docs](docs/paper_contentitem.md)
-  - imp2: [`json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json`](json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json) — [docs](docs/paper-contentitem.md)
+  - legacy: [`json/rebuilt/paper_contentitem.schema.json`](json/rebuilt/paper_contentitem.schema.json) — [docs](docs/legacy/rebuilt/paper_contentitem.md)
+  - imp2: [`json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json`](json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json) — [docs](docs/impresso-2/paper-contentitem.md)
 - **Audio-record content item**:
-  - legacy: [`json/rebuilt/audio_record_contentitem.schema.json`](json/rebuilt/audio_record_contentitem.schema.json) — [docs](docs/audio_record_contentitem.md)
-  - imp2: [`json/impresso-2/data-preparation/rebuilt/audio-record-contentitem.v1.schema.json`](json/impresso-2/data-preparation/rebuilt/audio-record-contentitem.v1.schema.json) — [docs](docs/audio-record-contentitem.md)
+  - legacy: [`json/rebuilt/audio_record_contentitem.schema.json`](json/rebuilt/audio_record_contentitem.schema.json) — [docs](docs/legacy/rebuilt/audio_record_contentitem.md)
+  - imp2: [`json/impresso-2/data-preparation/rebuilt/audio-record-contentitem.v1.schema.json`](json/impresso-2/data-preparation/rebuilt/audio-record-contentitem.v1.schema.json) — [docs](docs/impresso-2/audio-record-contentitem.md)
 - **Manifest**:
-  - legacy: [`json/versioning/manifest.schema.json`](json/versioning/manifest.schema.json) — [docs](docs/manifest.md)
-  - imp2: [`json/impresso-2/data-preparation/versioning/manifest.v1.schema.json`](json/impresso-2/data-preparation/versioning/manifest.v1.schema.json) — [docs](docs/manifest-1.md)
+  - legacy: [`json/versioning/manifest.schema.json`](json/versioning/manifest.schema.json) — [docs](docs/legacy/versioning/manifest.md)
+  - imp2: [`json/impresso-2/data-preparation/versioning/manifest.v1.schema.json`](json/impresso-2/data-preparation/versioning/manifest.v1.schema.json) — [docs](docs/impresso-2/manifest.md)
 - **Bounding-box visualizer**:
-  - legacy: [`json/visualizer/bbox_visualizer.schema.json`](json/visualizer/bbox_visualizer.schema.json) — [docs](docs/bbox_visualizer.md)
-  - imp2: [`json/impresso-2/data-preparation/visualizer/bbox-visualizer.v1.schema.json`](json/impresso-2/data-preparation/visualizer/bbox-visualizer.v1.schema.json) — [docs](docs/bbox-visualizer.md)
+  - legacy: [`json/visualizer/bbox_visualizer.schema.json`](json/visualizer/bbox_visualizer.schema.json) — [docs](docs/legacy/visualizer/bbox_visualizer.md)
+  - imp2: [`json/impresso-2/data-preparation/visualizer/bbox-visualizer.v1.schema.json`](json/impresso-2/data-preparation/visualizer/bbox-visualizer.v1.schema.json) — [docs](docs/impresso-2/bbox-visualizer.md)
 
 ### Text processing
 
 - **Language identification**:
-  - legacy: [`json/language_identification/language_identification.schema.json`](json/language_identification/language_identification.schema.json) — [docs](docs/language_identification.md)
-  - imp2: [`json/impresso-2/text-processing/language-identification/language-identification.v1.schema.json`](json/impresso-2/text-processing/language-identification/language-identification.v1.schema.json) — [docs](docs/language-identification.md)
+  - legacy: [`json/language_identification/language_identification.schema.json`](json/language_identification/language_identification.schema.json) — [docs](docs/legacy/language_identification/language_identification.md)
+  - imp2: [`json/impresso-2/text-processing/language-identification/language-identification.v1.schema.json`](json/impresso-2/text-processing/language-identification/language-identification.v1.schema.json) — [docs](docs/impresso-2/language-identification.md)
 - **Linguistic annotation (spaCy)**:
-  - legacy: [`json/linguistic_annotation/ling_spacy.schema.json`](json/linguistic_annotation/ling_spacy.schema.json) — [docs](docs/ling_spacy.md)
-  - imp2: [`json/impresso-2/text-processing/linguistic-annotation/ling-spacy.v1.schema.json`](json/impresso-2/text-processing/linguistic-annotation/ling-spacy.v1.schema.json) — [docs](docs/ling-spacy.md)
+  - legacy: [`json/linguistic_annotation/ling_spacy.schema.json`](json/linguistic_annotation/ling_spacy.schema.json) — [docs](docs/legacy/linguistic_annotation/ling_spacy.md)
+  - imp2: [`json/impresso-2/text-processing/linguistic-annotation/ling-spacy.v1.schema.json`](json/impresso-2/text-processing/linguistic-annotation/ling-spacy.v1.schema.json) — [docs](docs/impresso-2/ling-spacy.md)
 - **Linguistic processing**:
-  - legacy: [`json/linguistic_annotation/lingproc.v2.schema.json`](json/linguistic_annotation/lingproc.v2.schema.json) — [docs](docs/lingproc.md)
-  - imp2: [`json/impresso-2/text-processing/linguistic-annotation/lingproc.v1.schema.json`](json/impresso-2/text-processing/linguistic-annotation/lingproc.v1.schema.json) — [docs](docs/lingproc-1.md)
+  - legacy: [`json/linguistic_annotation/lingproc.v2.schema.json`](json/linguistic_annotation/lingproc.v2.schema.json) — [docs](docs/legacy/linguistic_annotation/lingproc.md)
+  - imp2: [`json/impresso-2/text-processing/linguistic-annotation/lingproc.v1.schema.json`](json/impresso-2/text-processing/linguistic-annotation/lingproc.v1.schema.json) — [docs](docs/impresso-2/lingproc.md)
 - **OCR QA**:
-  - legacy: [`json/ocr_qa/ocr_qa.schema.json`](json/ocr_qa/ocr_qa.schema.json) — [docs](docs/ocr_qa.md)
-  - imp2: [`json/impresso-2/text-processing/ocr-qa/ocr-qa.v1.schema.json`](json/impresso-2/text-processing/ocr-qa/ocr-qa.v1.schema.json) — [docs](docs/ocr-qa.md)
+  - legacy: [`json/ocr_qa/ocr_qa.schema.json`](json/ocr_qa/ocr_qa.schema.json) — [docs](docs/legacy/ocr_qa/ocr_qa.md)
+  - imp2: [`json/impresso-2/text-processing/ocr-qa/ocr-qa.v1.schema.json`](json/impresso-2/text-processing/ocr-qa/ocr-qa.v1.schema.json) — [docs](docs/impresso-2/ocr-qa.md)
 
 ### Semantic enrichment
 
 - **Topic assignment**:
-  - legacy v1: [`json/topic_model/topic_assignment.schema.json`](json/topic_model/topic_assignment.schema.json) — [docs](docs/topic_assignment.md)
-  - legacy v2: [`json/topic_model/topic_assignment.v2.schema.json`](json/topic_model/topic_assignment.v2.schema.json) — [docs](docs/topic_assignment-1.md)
-  - imp2: [`json/impresso-2/semantic-enrichment/topic-model/topic-assignment.v1.schema.json`](json/impresso-2/semantic-enrichment/topic-model/topic-assignment.v1.schema.json) — [docs](docs/topic-assignment.md)
+  - legacy v1: [`json/topic_model/topic_assignment.schema.json`](json/topic_model/topic_assignment.schema.json) — [docs](docs/legacy/topic_model/topic_assignment.md)
+  - legacy v2: [`json/topic_model/topic_assignment.v2.schema.json`](json/topic_model/topic_assignment.v2.schema.json) — [docs](docs/legacy/topic_model/topic_assignment-1.md)
+  - imp2: [`json/impresso-2/semantic-enrichment/topic-model/topic-assignment.v1.schema.json`](json/impresso-2/semantic-enrichment/topic-model/topic-assignment.v1.schema.json) — [docs](docs/impresso-2/topic-assignment.md)
 - **Topic description**:
-  - legacy: [`json/topic_model/topic_description.schema.json`](json/topic_model/topic_description.schema.json) — [docs](docs/topic_description.md)
-  - imp2: [`json/impresso-2/semantic-enrichment/topic-model/topic-description.v1.schema.json`](json/impresso-2/semantic-enrichment/topic-model/topic-description.v1.schema.json) — [docs](docs/topic-description.md)
+  - legacy: [`json/topic_model/topic_description.schema.json`](json/topic_model/topic_description.schema.json) — [docs](docs/legacy/topic_model/topic_description.md)
+  - imp2: [`json/impresso-2/semantic-enrichment/topic-model/topic-description.v1.schema.json`](json/impresso-2/semantic-enrichment/topic-model/topic-description.v1.schema.json) — [docs](docs/impresso-2/topic-description.md)
 - **Entities**:
-  - legacy: [`json/entities/entities.schema.json`](json/entities/entities.schema.json) — [docs](docs/entities-1.md)
-  - imp2: [`json/impresso-2/semantic-enrichment/entities/entities.v1.schema.json`](json/impresso-2/semantic-enrichment/entities/entities.v1.schema.json) — [docs](docs/entities.md)
+  - legacy: [`json/entities/entities.schema.json`](json/entities/entities.schema.json) — [docs](docs/legacy/entities/entities.md)
+  - imp2: [`json/impresso-2/semantic-enrichment/entities/entities.v1.schema.json`](json/impresso-2/semantic-enrichment/entities/entities.v1.schema.json) — [docs](docs/impresso-2/entities.md)
 - **Document embeddings**:
-  - legacy: [`json/embeddings/embeddings-docs.schema.json`](json/embeddings/embeddings-docs.schema.json) — [docs](docs/embeddings-docs-1.md)
-  - imp2: [`json/impresso-2/semantic-enrichment/document-embeddings/embeddings-docs.v1.schema.json`](json/impresso-2/semantic-enrichment/document-embeddings/embeddings-docs.v1.schema.json) — [docs](docs/embeddings-docs.md)
+  - legacy: [`json/embeddings/embeddings-docs.schema.json`](json/embeddings/embeddings-docs.schema.json) — [docs](docs/legacy/embeddings/embeddings-docs.md)
+  - imp2: [`json/impresso-2/semantic-enrichment/document-embeddings/embeddings-docs.v1.schema.json`](json/impresso-2/semantic-enrichment/document-embeddings/embeddings-docs.v1.schema.json) — [docs](docs/impresso-2/embeddings-docs.md)
 - **Sentence embeddings**:
-  - legacy: [`json/embeddings/embeddings-sentence.schema.json`](json/embeddings/embeddings-sentence.schema.json) — [docs](docs/embeddings-sentence-1.md)
-  - imp2: [`json/impresso-2/semantic-enrichment/document-embeddings/embeddings-sentence.v1.schema.json`](json/impresso-2/semantic-enrichment/document-embeddings/embeddings-sentence.v1.schema.json) — [docs](docs/embeddings-sentence.md)
+  - legacy: [`json/embeddings/embeddings-sentence.schema.json`](json/embeddings/embeddings-sentence.schema.json) — [docs](docs/legacy/embeddings/embeddings-sentence.md)
+  - imp2: [`json/impresso-2/semantic-enrichment/document-embeddings/embeddings-sentence.v1.schema.json`](json/impresso-2/semantic-enrichment/document-embeddings/embeddings-sentence.v1.schema.json) — [docs](docs/impresso-2/embeddings-sentence.md)
 - **Chunk embeddings**:
-  - legacy: [`json/embeddings/embeddings-chunks.schema.json`](json/embeddings/embeddings-chunks.schema.json) — [docs](docs/embeddings-chunks-1.md)
-  - imp2: [`json/impresso-2/semantic-enrichment/document-embeddings/embeddings-chunks.v1.schema.json`](json/impresso-2/semantic-enrichment/document-embeddings/embeddings-chunks.v1.schema.json) — [docs](docs/embeddings-chunks.md)
+  - legacy: [`json/embeddings/embeddings-chunks.schema.json`](json/embeddings/embeddings-chunks.schema.json) — [docs](docs/legacy/embeddings/embeddings-chunks.md)
+  - imp2: [`json/impresso-2/semantic-enrichment/document-embeddings/embeddings-chunks.v1.schema.json`](json/impresso-2/semantic-enrichment/document-embeddings/embeddings-chunks.v1.schema.json) — [docs](docs/impresso-2/embeddings-chunks.md)
 - **Entity embeddings**:
-  - legacy: [`json/embeddings/embeddings-entities.schema.json`](json/embeddings/embeddings-entities.schema.json) — [docs](docs/embeddings-entities-1.md)
-  - imp2: [`json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json`](json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json) — [docs](docs/embeddings-entities.md)
+  - legacy: [`json/embeddings/embeddings-entities.schema.json`](json/embeddings/embeddings-entities.schema.json) — [docs](docs/legacy/embeddings/embeddings-entities.md)
+  - imp2: [`json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json`](json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json) — [docs](docs/impresso-2/embeddings-entities.md)
 - **Text-reuse cluster**:
-  - legacy: [`json/text_reuse/cluster.schema.json`](json/text_reuse/cluster.schema.json) — [docs](docs/cluster.md)
-  - imp2: [`json/impresso-2/semantic-enrichment/text-reuse/cluster.v1.schema.json`](json/impresso-2/semantic-enrichment/text-reuse/cluster.v1.schema.json) — [docs](docs/cluster-1.md)
+  - legacy: [`json/text_reuse/cluster.schema.json`](json/text_reuse/cluster.schema.json) — [docs](docs/legacy/text_reuse/cluster.md)
+  - imp2: [`json/impresso-2/semantic-enrichment/text-reuse/cluster.v1.schema.json`](json/impresso-2/semantic-enrichment/text-reuse/cluster.v1.schema.json) — [docs](docs/impresso-2/cluster.md)
 - **Text-reuse passage**:
-  - legacy: [`json/text_reuse/passage.schema.json`](json/text_reuse/passage.schema.json) — [docs](docs/passage.md)
-  - imp2: [`json/impresso-2/semantic-enrichment/text-reuse/passage.v1.schema.json`](json/impresso-2/semantic-enrichment/text-reuse/passage.v1.schema.json) — [docs](docs/passage-1.md)
+  - legacy: [`json/text_reuse/passage.schema.json`](json/text_reuse/passage.schema.json) — [docs](docs/legacy/text_reuse/passage.md)
+  - imp2: [`json/impresso-2/semantic-enrichment/text-reuse/passage.v1.schema.json`](json/impresso-2/semantic-enrichment/text-reuse/passage.v1.schema.json) — [docs](docs/impresso-2/passage.md)
 - **Image embeddings**:
-  - legacy: [`json/image_embeddings/image_embeddings.schema.json`](json/image_embeddings/image_embeddings.schema.json) — [docs](docs/image_embeddings.md)
-  - imp2: [`json/impresso-2/semantic-enrichment/image-embeddings/image-embeddings.v1.schema.json`](json/impresso-2/semantic-enrichment/image-embeddings/image-embeddings.v1.schema.json) — [docs](docs/image-embeddings.md)
+  - legacy: [`json/image_embeddings/image_embeddings.schema.json`](json/image_embeddings/image_embeddings.schema.json) — [docs](docs/legacy/image_embeddings/image_embeddings.md)
+  - imp2: [`json/impresso-2/semantic-enrichment/image-embeddings/image-embeddings.v1.schema.json`](json/impresso-2/semantic-enrichment/image-embeddings/image-embeddings.v1.schema.json) — [docs](docs/impresso-2/image-embeddings.md)
 - **Image classification**:
-  - legacy: [`json/image_classification/image_classification.schema.json`](json/image_classification/image_classification.schema.json) — [docs](docs/image_classification.md)
-  - imp2: [`json/impresso-2/semantic-enrichment/image-classification/image-classification.v1.schema.json`](json/impresso-2/semantic-enrichment/image-classification/image-classification.v1.schema.json) — [docs](docs/image-classification.md)
+  - legacy: [`json/image_classification/image_classification.schema.json`](json/image_classification/image_classification.schema.json) — [docs](docs/legacy/image_classification/image_classification.md)
+  - imp2: [`json/impresso-2/semantic-enrichment/image-classification/image-classification.v1.schema.json`](json/impresso-2/semantic-enrichment/image-classification/image-classification.v1.schema.json) — [docs](docs/impresso-2/image-classification.md)
 
 ### Solr indexing
 
 Solr schemas are available only in the imp2 namespace.
 
 - **Content items**:
-  - **Access rights**: [`json/impresso-2/solr-indexing/content-item/content-item.part.access-rights.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.part.access-rights.v1.schema.json) — [docs](docs/content-item-3.md)
-  - **Contextual metadata**: [`json/impresso-2/solr-indexing/content-item/content-item.part.contextual-metadata.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.part.contextual-metadata.v1.schema.json) — [docs](docs/content-item-2.md)
-  - **Provider metadata**: [`json/impresso-2/solr-indexing/content-item/content-item.part.contextual-metadata.provider.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.part.contextual-metadata.provider.v1.schema.json) — [docs](docs/content-item-5.md)
-  - **Core fields**: [`json/impresso-2/solr-indexing/content-item/content-item.part.core.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.part.core.v1.schema.json) — [docs](docs/content-item-1.md)
-  - **Image fields**: [`json/impresso-2/solr-indexing/content-item/content-item.part.image.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.part.image.v1.schema.json) — [docs](docs/content-item-6.md)
-  - **Audio fields**: [`json/impresso-2/solr-indexing/content-item/content-item.part.text.audio.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.part.text.audio.v1.schema.json) — [docs](docs/content-item-7.md)
-  - **Paper fields**: [`json/impresso-2/solr-indexing/content-item/content-item.part.text.paper.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.part.text.paper.v1.schema.json) — [docs](docs/content-item-8.md)
-  - **Semantic-enrichment fields**: [`json/impresso-2/solr-indexing/content-item/content-item.part.text.semantic-enrichments.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.part.text.semantic-enrichments.v1.schema.json) — [docs](docs/content-item-4.md)
-  - **Transcript fields**: [`json/impresso-2/solr-indexing/content-item/content-item.part.text.transcript.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.part.text.transcript.v1.schema.json) — [docs](docs/content-item.md)
-  - **Audio root**: [`json/impresso-2/solr-indexing/content-item/content-item.root.audio.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.root.audio.v1.schema.json) — [docs](docs/content-item-9.md)
-  - **Image root**: [`json/impresso-2/solr-indexing/content-item/content-item.root.image.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.root.image.v1.schema.json) — [docs](docs/content-item-10.md)
-  - **Paper root**: [`json/impresso-2/solr-indexing/content-item/content-item.root.paper.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.root.paper.v1.schema.json) — [docs](docs/content-item-11.md)
+  - **Access rights**: [`json/impresso-2/solr-indexing/content-item/content-item.part.access-rights.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.part.access-rights.v1.schema.json) — [docs](docs/impresso-2/content-item-3.md)
+  - **Contextual metadata**: [`json/impresso-2/solr-indexing/content-item/content-item.part.contextual-metadata.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.part.contextual-metadata.v1.schema.json) — [docs](docs/impresso-2/content-item-2.md)
+  - **Provider metadata**: [`json/impresso-2/solr-indexing/content-item/content-item.part.contextual-metadata.provider.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.part.contextual-metadata.provider.v1.schema.json) — [docs](docs/impresso-2/content-item-5.md)
+  - **Core fields**: [`json/impresso-2/solr-indexing/content-item/content-item.part.core.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.part.core.v1.schema.json) — [docs](docs/impresso-2/content-item-1.md)
+  - **Image fields**: [`json/impresso-2/solr-indexing/content-item/content-item.part.image.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.part.image.v1.schema.json) — [docs](docs/impresso-2/content-item-6.md)
+  - **Audio fields**: [`json/impresso-2/solr-indexing/content-item/content-item.part.text.audio.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.part.text.audio.v1.schema.json) — [docs](docs/impresso-2/content-item-7.md)
+  - **Paper fields**: [`json/impresso-2/solr-indexing/content-item/content-item.part.text.paper.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.part.text.paper.v1.schema.json) — [docs](docs/impresso-2/content-item-8.md)
+  - **Semantic-enrichment fields**: [`json/impresso-2/solr-indexing/content-item/content-item.part.text.semantic-enrichments.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.part.text.semantic-enrichments.v1.schema.json) — [docs](docs/impresso-2/content-item-4.md)
+  - **Transcript fields**: [`json/impresso-2/solr-indexing/content-item/content-item.part.text.transcript.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.part.text.transcript.v1.schema.json) — [docs](docs/impresso-2/content-item.md)
+  - **Audio root**: [`json/impresso-2/solr-indexing/content-item/content-item.root.audio.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.root.audio.v1.schema.json) — [docs](docs/impresso-2/content-item-9.md)
+  - **Image root**: [`json/impresso-2/solr-indexing/content-item/content-item.root.image.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.root.image.v1.schema.json) — [docs](docs/impresso-2/content-item-10.md)
+  - **Paper root**: [`json/impresso-2/solr-indexing/content-item/content-item.root.paper.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.root.paper.v1.schema.json) — [docs](docs/impresso-2/content-item-11.md)
 - **Semantic enrichments**:
-  - **Text-reuse passage fields**: [`json/impresso-2/solr-indexing/semantic-enrichments/sem.part.tr-passages.v1.schema.json`](json/impresso-2/solr-indexing/semantic-enrichments/sem.part.tr-passages.v1.schema.json) — [docs](docs/sem.md)
-  - **Entities**: [`json/impresso-2/solr-indexing/semantic-enrichments/sem.root.entities.v1.schema.json`](json/impresso-2/solr-indexing/semantic-enrichments/sem.root.entities.v1.schema.json) — [docs](docs/sem-1.md)
-  - **Entity profiles**: [`json/impresso-2/solr-indexing/semantic-enrichments/sem.root.entity-profiles.v1.schema.json`](json/impresso-2/solr-indexing/semantic-enrichments/sem.root.entity-profiles.v1.schema.json) — [docs](docs/sem-2.md)
-  - **Mentions**: [`json/impresso-2/solr-indexing/semantic-enrichments/sem.root.mentions.v1.schema.json`](json/impresso-2/solr-indexing/semantic-enrichments/sem.root.mentions.v1.schema.json) — [docs](docs/sem-3.md)
-  - **Topics**: [`json/impresso-2/solr-indexing/semantic-enrichments/sem.root.topics.v1.schema.json`](json/impresso-2/solr-indexing/semantic-enrichments/sem.root.topics.v1.schema.json) — [docs](docs/sem-4.md)
-  - **Text-reuse clusters**: [`json/impresso-2/solr-indexing/semantic-enrichments/sem.root.tr-clusters.v1.schema.json`](json/impresso-2/solr-indexing/semantic-enrichments/sem.root.tr-clusters.v1.schema.json) — [docs](docs/sem-5.md)
-  - **Text-reuse passages**: [`json/impresso-2/solr-indexing/semantic-enrichments/sem.root.tr-passages.v1.schema.json`](json/impresso-2/solr-indexing/semantic-enrichments/sem.root.tr-passages.v1.schema.json) — [docs](docs/sem-6.md)
-  - **Word embeddings**: [`json/impresso-2/solr-indexing/semantic-enrichments/sem.root.wemb.v1.schema.json`](json/impresso-2/solr-indexing/semantic-enrichments/sem.root.wemb.v1.schema.json) — [docs](docs/sem-7.md)
+  - **Text-reuse passage fields**: [`json/impresso-2/solr-indexing/semantic-enrichments/sem.part.tr-passages.v1.schema.json`](json/impresso-2/solr-indexing/semantic-enrichments/sem.part.tr-passages.v1.schema.json) — [docs](docs/impresso-2/sem.md)
+  - **Entities**: [`json/impresso-2/solr-indexing/semantic-enrichments/sem.root.entities.v1.schema.json`](json/impresso-2/solr-indexing/semantic-enrichments/sem.root.entities.v1.schema.json) — [docs](docs/impresso-2/sem-1.md)
+  - **Entity profiles**: [`json/impresso-2/solr-indexing/semantic-enrichments/sem.root.entity-profiles.v1.schema.json`](json/impresso-2/solr-indexing/semantic-enrichments/sem.root.entity-profiles.v1.schema.json) — [docs](docs/impresso-2/sem-2.md)
+  - **Mentions**: [`json/impresso-2/solr-indexing/semantic-enrichments/sem.root.mentions.v1.schema.json`](json/impresso-2/solr-indexing/semantic-enrichments/sem.root.mentions.v1.schema.json) — [docs](docs/impresso-2/sem-3.md)
+  - **Topics**: [`json/impresso-2/solr-indexing/semantic-enrichments/sem.root.topics.v1.schema.json`](json/impresso-2/solr-indexing/semantic-enrichments/sem.root.topics.v1.schema.json) — [docs](docs/impresso-2/sem-4.md)
+  - **Text-reuse clusters**: [`json/impresso-2/solr-indexing/semantic-enrichments/sem.root.tr-clusters.v1.schema.json`](json/impresso-2/solr-indexing/semantic-enrichments/sem.root.tr-clusters.v1.schema.json) — [docs](docs/impresso-2/sem-5.md)
+  - **Text-reuse passages**: [`json/impresso-2/solr-indexing/semantic-enrichments/sem.root.tr-passages.v1.schema.json`](json/impresso-2/solr-indexing/semantic-enrichments/sem.root.tr-passages.v1.schema.json) — [docs](docs/impresso-2/sem-6.md)
+  - **Word embeddings**: [`json/impresso-2/solr-indexing/semantic-enrichments/sem.root.wemb.v1.schema.json`](json/impresso-2/solr-indexing/semantic-enrichments/sem.root.wemb.v1.schema.json) — [docs](docs/impresso-2/sem-7.md)
 
 ### Web app
 

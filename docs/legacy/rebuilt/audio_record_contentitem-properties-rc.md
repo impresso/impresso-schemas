@@ -1,0 +1,3 @@
+## rc Type
+
+`string`

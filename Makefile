@@ -1,10 +1,16 @@
 
-.PHONY: help tests check-python-env check-node-env check-prettier-env check-markdownlint-env clean-documentation documentation lint-docs format format-check
+.PHONY: help tests tests-legacy tests-imp2 check-python-env check-node-env check-prettier-env check-markdownlint-env clean-documentation clean-documentation-legacy clean-documentation-imp2 documentation documentation-legacy documentation-imp2 lint-docs lint-docs-legacy lint-docs-imp2 format format-check
+
+LEGACY_SCHEMA_DIRS := canonical rebuilt topic_model language_identification linguistic_annotation entities versioning embeddings text_reuse image_embeddings visualizer image_classification ocr_qa
 
 help:
 	@echo "Usage:"
-	@echo "  make tests          Validate all example JSON files against their schemas"
-	@echo "  make documentation  Generate Markdown docs from schemas (overwrites docs/)"
+	@echo "  make tests-legacy   Validate legacy schemas and examples"
+	@echo "  make tests-imp2     Validate Impresso 2 schemas and examples"
+	@echo "  make tests          Run both validation suites"
+	@echo "  make documentation-legacy  Generate legacy schema docs in docs/legacy/"
+	@echo "  make documentation-imp2    Generate Impresso 2 schema docs in docs/impresso-2/"
+	@echo "  make documentation  Regenerate both documentation trees"
 	@echo "  make clean-documentation  Remove all generated docs"
 	@echo "  make format         Auto-format all JSON files with Prettier"
 	@echo "  make format-check   Check JSON formatting without modifying files (CI)"
@@ -38,8 +44,13 @@ check-markdownlint-env:
 	    echo "       Install it with: npm install -g markdownlint-cli"; \
 	    exit 1; }
 
-lint-docs: check-markdownlint-env
-	markdownlint --fix "docs/**/*.md"
+lint-docs: lint-docs-legacy lint-docs-imp2
+
+lint-docs-legacy: check-markdownlint-env
+	markdownlint --fix --disable MD013 MD024 MD041 -- "docs/legacy/**/*.md"
+
+lint-docs-imp2: check-markdownlint-env
+	markdownlint --fix --disable MD013 MD024 MD041 -- "docs/impresso-2/**/*.md"
 
 format: check-prettier-env
 	prettier --write "json/**/*.json" "examples/**/*.json"
@@ -47,12 +58,33 @@ format: check-prettier-env
 format-check: check-prettier-env
 	prettier --check "json/**/*.json" "examples/**/*.json"
 
-tests: check-python-env
-	python3 -m pytest tests/ -v
+tests: tests-legacy tests-imp2
+
+tests-legacy: check-python-env
+	python3 -m pytest tests/ -v -m legacy
+
+tests-imp2: check-python-env
+	python3 -m pytest tests/ -v -m imp2
 
 clean-documentation:
-	rm -fv docs/*
+	rm -rf docs
 
-documentation: check-python-env check-node-env check-markdownlint-env
-	jsonschema2md -d json/ --header false -n -v 2020-12 -o docs -x - -s propTable
-	$(MAKE) lint-docs
+clean-documentation-legacy:
+	rm -rf docs/legacy
+
+clean-documentation-imp2:
+	rm -rf docs/impresso-2
+
+documentation: check-python-env check-node-env check-markdownlint-env clean-documentation
+	$(MAKE) documentation-legacy
+	$(MAKE) documentation-imp2
+
+documentation-legacy: check-python-env check-node-env check-markdownlint-env clean-documentation-legacy
+	@for schema_dir in $(LEGACY_SCHEMA_DIRS); do \
+		jsonschema2md -d json/$$schema_dir --header false -n -v 2020-12 -o docs/legacy/$$schema_dir -x - -s propTable; \
+	done
+	$(MAKE) lint-docs-legacy
+
+documentation-imp2: check-python-env check-node-env check-markdownlint-env clean-documentation-imp2
+	jsonschema2md -d json/impresso-2/ --header false -n -v 2020-12 -o docs/impresso-2 -x - -s propTable
+	$(MAKE) lint-docs-imp2

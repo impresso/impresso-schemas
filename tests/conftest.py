@@ -13,7 +13,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
-from typing import Any
+from typing import Any, Literal
 
 import pytest
 from referencing import Registry, Resource
@@ -24,9 +24,18 @@ SCHEMA_ROOT = ROOT / "json"
 PUBLISHED_SCHEMA_BASE = "https://impresso.github.io/impresso-schemas/"
 
 
-def schema_paths() -> list[Path]:
-    """Return every repository schema in deterministic order."""
-    return sorted(SCHEMA_ROOT.rglob("*.schema.json"))
+def schema_paths(scope: Literal["all", "legacy", "imp2"] = "all") -> list[Path]:
+    """Return schemas in deterministic order for one repository namespace."""
+    paths = sorted(SCHEMA_ROOT.rglob("*.schema.json"))
+    if scope == "all":
+        return paths
+
+    def is_imp2(path: Path) -> bool:
+        return "impresso-2" in path.relative_to(SCHEMA_ROOT).parts
+
+    if scope == "legacy":
+        return [path for path in paths if not is_imp2(path)]
+    return [path for path in paths if is_imp2(path)]
 
 
 def expected_schema_id(path: Path) -> str:

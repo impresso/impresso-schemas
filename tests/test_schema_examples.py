@@ -1,8 +1,8 @@
 """Validate example JSON files against their schemas using jsonschema + pytest.
 
-Each entry in CASES is a (schema_path, example_path) pair, both relative to
-the repository root. Tests are fully self-contained: no shell, no network, no
-external CLI tools.
+Each entry in LEGACY_CASES or IMPRESSO_2_CASES is a
+``(schema_path, example_path)`` pair, both relative to the repository root.
+Tests are fully self-contained: no shell, no network, no external CLI tools.
 
 Run all tests:
     python -m pytest tests/ -v
@@ -25,7 +25,7 @@ ROOT = pathlib.Path(__file__).parent.parent
 # ---------------------------------------------------------------------------
 # Test cases: (schema_path, example_path), both relative to repo root.
 # ---------------------------------------------------------------------------
-CASES = [
+LEGACY_CASES = [
     # canonical/issue
     ("json/canonical/issue.schema.json", "examples/canonical_issue/example0.json"),
     ("json/canonical/issue.schema.json", "examples/canonical_issue/example1.json"),
@@ -134,9 +134,6 @@ IMPRESSO_2_CASES = [
     ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.wemb.v1.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_wemb.example.json"),
 ]
 
-CASES += IMPRESSO_2_CASES
-
-
 def _test_id(schema_path: str, example_path: str) -> str:
     schema_stem = pathlib.Path(schema_path).stem.replace(".schema", "")
     example_stem = pathlib.Path(example_path).stem
@@ -145,10 +142,27 @@ def _test_id(schema_path: str, example_path: str) -> str:
 
 @pytest.mark.parametrize(
     "schema_path,example_path",
-    CASES,
-    ids=[_test_id(s, e) for s, e in CASES],
+    LEGACY_CASES,
+    ids=[_test_id(s, e) for s, e in LEGACY_CASES],
 )
-def test_validates(schema_path: str, example_path: str, schema_registry) -> None:
+@pytest.mark.legacy
+def test_legacy_validates(schema_path: str, example_path: str, schema_registry) -> None:
+    schema = json.loads((ROOT / schema_path).read_text(encoding="utf-8"))
+    instance = json.loads((ROOT / example_path).read_text(encoding="utf-8"))
+    validator = Draft202012Validator(schema, registry=schema_registry)
+    errors = sorted(validator.iter_errors(instance), key=str)
+    assert not errors, "\n\n".join(
+        f"{e.json_path}: {e.message}" for e in errors
+    )
+
+
+@pytest.mark.parametrize(
+    "schema_path,example_path",
+    IMPRESSO_2_CASES,
+    ids=[_test_id(s, e) for s, e in IMPRESSO_2_CASES],
+)
+@pytest.mark.imp2
+def test_imp2_validates(schema_path: str, example_path: str, schema_registry) -> None:
     schema = json.loads((ROOT / schema_path).read_text(encoding="utf-8"))
     instance = json.loads((ROOT / example_path).read_text(encoding="utf-8"))
     validator = Draft202012Validator(schema, registry=schema_registry)

@@ -1,0 +1,3 @@
+## fh Type
+
+`integer`

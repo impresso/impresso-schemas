@@ -13,7 +13,8 @@ from referencing import Registry
 from conftest import PUBLISHED_SCHEMA_BASE, expected_schema_id, schema_paths
 
 
-SCHEMA_PATHS = schema_paths()
+LEGACY_SCHEMA_PATHS = schema_paths("legacy")
+IMP2_SCHEMA_PATHS = schema_paths("imp2")
 
 
 def _refs(value: Any) -> Iterator[str]:
@@ -29,34 +30,33 @@ def _refs(value: Any) -> Iterator[str]:
             yield from _refs(item)
 
 
-@pytest.mark.parametrize("schema_path", SCHEMA_PATHS, ids=lambda path: path.as_posix())
-def test_schema_is_valid_draft_2020_12(schema_path, schema_documents) -> None:
+def _assert_schema_is_valid(schema_path, schema_documents) -> None:
     """Every schema must conform to the declared JSON Schema draft."""
     Draft202012Validator.check_schema(schema_documents[schema_path])
 
 
-@pytest.mark.parametrize("schema_path", SCHEMA_PATHS, ids=lambda path: path.as_posix())
-def test_schema_id_matches_repository_path(schema_path, schema_documents) -> None:
+def _assert_schema_id_matches_path(schema_path, schema_documents) -> None:
     """Every schema `$id` must be its corresponding published repository URL."""
     assert schema_documents[schema_path].get("$id") == expected_schema_id(schema_path)
 
 
-def test_schema_ids_are_unique(schema_documents) -> None:
+def _assert_schema_ids_are_unique(schema_paths, schema_documents) -> None:
     """A schema `$id` identifies exactly one local schema."""
-    schema_ids = [schema.get("$id") for schema in schema_documents.values()]
+    schema_ids = [schema_documents[path].get("$id") for path in schema_paths]
     duplicates = sorted(
         schema_id for schema_id, count in Counter(schema_ids).items() if count > 1
     )
     assert not duplicates, f"Duplicate schema $id values: {duplicates}"
 
 
-def test_impresso_schema_references_resolve_locally(
-    schema_documents, schema_registry: Registry
+def _assert_impresso_schema_references_resolve_locally(
+    schema_paths, schema_documents, schema_registry: Registry
 ) -> None:
     """Published Impresso `$ref` targets must resolve from the local registry."""
     unresolved: list[str] = []
 
-    for schema_path, schema in schema_documents.items():
+    for schema_path in schema_paths:
+        schema = schema_documents[schema_path]
         schema_id = schema["$id"]
         for ref in _refs(schema):
             if ref.startswith("#"):
@@ -72,3 +72,63 @@ def test_impresso_schema_references_resolve_locally(
                 unresolved.append(f"{schema_path}: {ref} ({error})")
 
     assert not unresolved, "Unresolved local Impresso $ref values:\n" + "\n".join(unresolved)
+
+
+@pytest.mark.parametrize(
+    "schema_path", LEGACY_SCHEMA_PATHS, ids=lambda path: path.as_posix()
+)
+@pytest.mark.legacy
+def test_legacy_schema_is_valid_draft_2020_12(schema_path, schema_documents) -> None:
+    _assert_schema_is_valid(schema_path, schema_documents)
+
+
+@pytest.mark.parametrize(
+    "schema_path", IMP2_SCHEMA_PATHS, ids=lambda path: path.as_posix()
+)
+@pytest.mark.imp2
+def test_imp2_schema_is_valid_draft_2020_12(schema_path, schema_documents) -> None:
+    _assert_schema_is_valid(schema_path, schema_documents)
+
+
+@pytest.mark.parametrize(
+    "schema_path", LEGACY_SCHEMA_PATHS, ids=lambda path: path.as_posix()
+)
+@pytest.mark.legacy
+def test_legacy_schema_id_matches_repository_path(schema_path, schema_documents) -> None:
+    _assert_schema_id_matches_path(schema_path, schema_documents)
+
+
+@pytest.mark.parametrize(
+    "schema_path", IMP2_SCHEMA_PATHS, ids=lambda path: path.as_posix()
+)
+@pytest.mark.imp2
+def test_imp2_schema_id_matches_repository_path(schema_path, schema_documents) -> None:
+    _assert_schema_id_matches_path(schema_path, schema_documents)
+
+
+@pytest.mark.legacy
+def test_legacy_schema_ids_are_unique(schema_documents) -> None:
+    _assert_schema_ids_are_unique(LEGACY_SCHEMA_PATHS, schema_documents)
+
+
+@pytest.mark.imp2
+def test_imp2_schema_ids_are_unique(schema_documents) -> None:
+    _assert_schema_ids_are_unique(IMP2_SCHEMA_PATHS, schema_documents)
+
+
+@pytest.mark.legacy
+def test_legacy_schema_references_resolve_locally(
+    schema_documents, schema_registry: Registry
+) -> None:
+    _assert_impresso_schema_references_resolve_locally(
+        LEGACY_SCHEMA_PATHS, schema_documents, schema_registry
+    )
+
+
+@pytest.mark.imp2
+def test_imp2_schema_references_resolve_locally(
+    schema_documents, schema_registry: Registry
+) -> None:
+    _assert_impresso_schema_references_resolve_locally(
+        IMP2_SCHEMA_PATHS, schema_documents, schema_registry
+    )

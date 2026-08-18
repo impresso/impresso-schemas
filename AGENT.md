@@ -10,12 +10,14 @@ This repository defines and maintains JSON schemas for the [Impresso project](ht
 
 ## Repository Layout
 
-```
+```text
 json/               JSON schema files (source of truth)
   impresso-2/       Versioned schemas organised by lifecycle area
 examples/           Example/test JSON files
   impresso-2/       Mirrors the Impresso 2 schema hierarchy
 docs/               Auto-generated Markdown documentation (do not edit manually)
+  legacy/           Documentation generated from legacy schemas
+  impresso-2/       Documentation generated from Impresso 2 schemas
 scripts/            Utility scripts (jsonlschema.py)
 Makefile            Validation (tests) and documentation (documentation) targets
 requirements.txt    Python dependencies for validation
@@ -73,9 +75,12 @@ and published `$id` values must not change. New versioned contracts belong in
 ## Key Commands
 
 ```bash
-# Validate all examples against their schemas
+# Validate both namespaces (schemas, references, and examples)
 make tests
-# equivalent: python -m pytest tests/ -v
+
+# Validate one namespace only
+make tests-legacy
+make tests-imp2
 
 # Run a single test by keyword
 python -m pytest tests/ -v -k "canonical_issue"
@@ -83,8 +88,12 @@ python -m pytest tests/ -v -k "canonical_issue"
 # Show full detail on first failure
 python -m pytest tests/ -v -x
 
-# Generate Markdown documentation from schemas (overwrites docs/)
+# Generate Markdown documentation for both namespaces (overwrites docs/)
 make documentation
+
+# Generate one documentation tree only
+make documentation-legacy
+make documentation-imp2
 
 # Remove all generated docs
 make clean-documentation
@@ -133,9 +142,12 @@ These legacy or Impresso 2 schemas exist but have no valid example entry in
 2. Each schema must include `$schema`, `$id` matching its complete published
    repository path, `title`, `description`, and typed property definitions.
 3. Add one or more examples under the matching `examples/` hierarchy.
-4. Add a `(schema_path, example_path)` entry to `CASES` in `tests/test_schema_examples.py`.
-5. Run `make tests` to confirm validation passes.
-6. Run `make documentation` to regenerate `docs/`.
+4. Add a `(schema_path, example_path)` entry to `LEGACY_CASES` or
+   `IMPRESSO_2_CASES` in `tests/test_schema_examples.py`.
+5. Run the matching `make tests-legacy` or `make tests-imp2` target, then
+   `make tests` before handoff.
+6. Run the matching documentation target, or `make documentation` to
+   regenerate both trees.
 
 ## Code Style
 
