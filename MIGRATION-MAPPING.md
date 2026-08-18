@@ -3,6 +3,20 @@
 This table records the non-breaking migration into `json/impresso-2/`.
 Legacy schemas remain unchanged and published at their existing URLs.
 
+## Transition status and consumer adoption
+
+The Impresso 2 namespace is still being consolidated. Its schemas are not yet
+asserted to validate every existing production dataset. For example, current
+rebuilt data may still use `id`, whereas the Impresso 2 rebuilt schemas require
+`ci_id`.
+
+Consumers must select the legacy or Impresso 2 namespace explicitly. They must
+not treat the presence of an Impresso 2 schema as evidence that existing data
+or consumer code can switch without changes. Before adoption, validate
+representative producer output against the selected contract and decide whether
+to update the producer, consumer, or a documented adapter. JSON Schema `$ref`
+shares validation rules; it does not transform data between representations.
+
 For each migrated legacy schema family, the Impresso 2 `v1` contract is based
 on the latest stable legacy contract. Earlier legacy versions remain available
 only in the legacy namespace.
@@ -74,6 +88,6 @@ The empty audio example is retained at
 `solr-indexing/content-item/ci_audio.example.json`, but is intentionally
 excluded from the valid-example test matrix until it is populated.
 Language-identification `example0-invalid.json` is retained as an expected-invalid
-fixture. The copied topic-assignment and OCR-QA examples are also retained for
-reference but are not valid against the current Impresso 2 `v1` contracts and
-therefore are not valid-example test cases.
+fixture. The copied topic-assignment example is retained for reference but is
+not yet a valid-example test case. The OCR-QA example is registered and
+validated against the current Impresso 2 contract.
