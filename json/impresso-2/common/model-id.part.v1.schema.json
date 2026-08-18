@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/model-id.part.v1.schema.json",
+  "title": "Model identifier property",
+  "description": "Reusable definition of the `model_id` property shared by schemas that record processing outputs.",
+  "type": "object",
+  "properties": {
+    "model_id": {
+      "type": "string",
+      "description": "Identifier of the model or processing system that produced this output. It should include distinguishing information such as the model name, version, language, and relevant configuration, enabling transparency and traceability across processing runs. (Background: https://docs.google.com/presentation/d/1wH4LygLcT28rvMA82k5fyEyzdX49inGkqCLnBNZsFaw/edit#slide=id.g30cf04393c4_1_46)",
+      "examples": [
+  "spacy@3.6.1:de_core_news_md@3.6.0:sentencizer|tok2vec|tagger|morphologizer|lemmatizer|attribute_ruler|ner"
+]
+    }
+  }
+}
