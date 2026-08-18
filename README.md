@@ -27,6 +27,7 @@ flowchart LR
   - [Namespaces and versioning](#namespaces-and-versioning)
   - [Development workflow](#development-workflow)
 - [Schemas](#schemas)
+  - [Common schemas](#common-schemas)
   - [Data preparation](#data-preparation)
   - [Text processing](#text-processing)
   - [Semantic enrichment](#semantic-enrichment)
@@ -126,6 +127,13 @@ make documentation    # Regenerate docs/legacy/ and docs/impresso-2/
 ## Schemas
 
 **legacy** links point to the stable existing namespace; **imp2** links point to the next official, versioned namespace organised by data stage area.
+
+### Common schemas
+
+These Impresso 2 fragments define concepts shared across lifecycle areas.
+
+- **Content-item identifier**: [`json/impresso-2/common/content-item-id.part.v1.schema.json`](json/impresso-2/common/content-item-id.part.v1.schema.json) — [docs](docs/impresso-2/content-item-id.md)
+- **Model identifier**: [`json/impresso-2/common/model-id.part.v1.schema.json`](json/impresso-2/common/model-id.part.v1.schema.json) — [docs](docs/impresso-2/model-id.md)
 
 ### Data preparation
 
