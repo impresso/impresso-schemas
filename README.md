@@ -79,6 +79,10 @@ the same semantics across lifecycle areas. Reusable fragments that apply only
 within one lifecycle area belong under that area, for example
 `json/impresso-2/data-preparation/common/`.
 
+Impresso 2 is an evolving contract and may not yet validate every existing
+production dataset. Consumers must explicitly choose the legacy or Impresso 2
+namespace and validate their data before switching.
+
 Use `<concept>.vN.schema.json` for a standalone reusable value or object
 definition. Use `<concept>.part.vN.schema.json` for an object fragment composed
 into another schema through `allOf`. Do not add `shared` to filenames: its
