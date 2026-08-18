@@ -102,6 +102,15 @@ npm install -g @adobe/jsonschema2md
 
 ---
 
+## Session summaries
+
+At the end of a work session, append a dated summary to
+`SESSION_SUMMARY.md` at the repository root. Preserve earlier entries; do not
+overwrite the file. Include implemented changes, verification results, and any
+remaining work or environment caveats.
+
+---
+
 ## Known Issues
 
 ### Schemas not yet tested in `make tests`
