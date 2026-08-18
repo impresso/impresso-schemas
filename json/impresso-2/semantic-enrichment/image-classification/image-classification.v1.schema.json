@@ -4,13 +4,12 @@
   "title": "Image Classification",
   "description": "A representation for the classified the content-items of type image.",
   "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/content-item-id.part.v1.schema.json"
+    }
+  ],
   "properties": {
-    "ci_id": {
-      "type": "string",
-      "description": "Unique identifier for the content-item (only CIs of type image).",
-      "pattern": "^[a-zA-Z0-9]+-\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])-[a-z]-i\\d{4}$",
-      "examples": ["actionfem-1940-01-08-a-i0001"]
-    },
     "ts": {
       "type": "string",
       "description": "Timestamp indicating when the embedding was created (e.g., '2024-10-09T09:29:02Z').",

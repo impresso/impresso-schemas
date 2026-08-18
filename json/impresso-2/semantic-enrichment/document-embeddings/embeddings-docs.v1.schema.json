@@ -4,12 +4,12 @@
   "title": "Document Embeddings JSON Schema",
   "description": "A representation for the vector embedding representation of content items.",
   "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/content-item-id.part.v1.schema.json"
+    }
+  ],
   "properties": {
-    "ci_id": {
-      "type": "string",
-      "description": "Unique identifier for the content item.",
-      "examples": ["actionfem-1940-01-08-a-i0001"]
-    },
     "ci_type": {
       "type": "string",
       "description": "Type of content item as present in the rebuilt"

@@ -4,12 +4,12 @@
   "title": "Topic Assignment v2",
   "description": "A representation for the probabilistic assignments of the topics of a topic model to content items. impresso 2 schema version.",
   "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/content-item-id.part.v1.schema.json"
+    }
+  ],
   "properties": {
-    "ci_id": {
-      "type": "string",
-      "description": "Unique identifier for the content item.",
-      "examples": ["actionfem-1940-01-08-a-i0001"]
-    },
     "ts": {
       "type": "string",
       "title": "The Ts Schema",

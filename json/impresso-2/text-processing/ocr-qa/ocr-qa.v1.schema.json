@@ -4,11 +4,12 @@
   "title": "OCR Quality Assessment Schema",
   "description": "This schema defines the structure for representing the quality assessment of Optical Character Recognition (OCR) applied to impresso media content items. It is intended to standardize the reporting and exchange of OCR quality metrics within digital content workflows. The schema returns a quality score between 0.0 (poor) and 1.0 (excellent). Additional properties are allowed to support advanced quality assessment and reproducibility.",
   "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/content-item-id.part.v1.schema.json"
+    }
+  ],
   "properties": {
-    "ci_id": {
-      "type": "string",
-      "description": "Globally unique string identifier referencing the content item, typically corresponding to an article or a full page if no OLR is available."
-    },
     "ocrqa": {
       "type": ["number", "null"],
       "description": "Estimated OCR quality score, expressed as a decimal value between 0.0 (poor) and 1.0 (excellent). Value must be between 0.0 and 1.0, inclusive. May be null if the text is too short to assess.",

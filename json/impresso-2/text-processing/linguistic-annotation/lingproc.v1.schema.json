@@ -5,6 +5,11 @@
   "type": "object",
   "description": "Schema for validation of linguistic annotation as produced by spacy for newspaper data",
   "required": ["ts", "ci_id", "sents", "tsents", "char_count", "min_chars", "max_chars"],
+  "allOf": [
+    {
+      "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/content-item-id.part.v1.schema.json"
+    }
+  ],
   "$defs": {
     "sents": {
       "type": "array",
@@ -82,12 +87,6 @@
       "description": "timestamp",
       "examples": ["2024-12-27T16:38:46Z"],
       "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
-    },
-    "ci_id": {
-      "type": "string",
-      "title": "The content item id",
-      "description": "Canonical impresso id of content item",
-      "examples": ["onsjongen-1951-03-01-a-i0012"]
     },
     "sents": {
       "$ref": "#/$defs/sents"
