@@ -222,6 +222,26 @@ across lifecycle areas. Keep phase-specific fields and serialisations in their
 own lifecycle directory. Solr field names, for example, remain Solr-specific
 even when their values reuse a shared definition.
 
+Reusable fragments shared only within a lifecycle area belong in that area's
+`common/` directory, for example
+`json/impresso-2/data-preparation/common/` or
+`json/impresso-2/semantic-enrichment/common/`. Do not place them in the root
+`json/impresso-2/common/` directory.
+
+Use the following filenames for reusable schemas:
+
+| Form | Filename | Use |
+| ---- | -------- | --- |
+| Standalone definition | `<concept>.vN.schema.json` | A reusable scalar or standalone object definition. |
+| Object fragment | `<concept>.part.vN.schema.json` | An object fragment with named properties, composed by a consumer through `allOf`. |
+
+For example, `common/content-item-id.part.v1.schema.json` defines the shared
+`ci_id` property. A data-preparation-only source-metadata fragment would instead
+live at `data-preparation/common/source-metadata.part.v1.schema.json`.
+
+Do not use `shared` in a filename: the location already states whether a schema
+is shared across lifecycle areas or only within one.
+
 ### 6.2 Arrays of typed objects
 
 For arrays whose items follow a fixed structure, define the item schema inline or

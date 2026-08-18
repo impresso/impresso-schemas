@@ -51,9 +51,13 @@ json/                                   Schema source of truth
 ├── embeddings/, entities/, image_*/,
 │   text_reuse/, topic_model/           Legacy semantic-enrichment schemas
 └── impresso-2/                         Versioned lifecycle-based namespace
+    ├── common/                         Cross-lifecycle shared definitions
     ├── data-preparation/
+    │   └── common/                     Data-preparation-only fragments
     ├── text-processing/
+    │   └── common/                     Text-processing-only fragments
     ├── semantic-enrichment/
+    │   └── common/                     Semantic-enrichment-only fragments
     ├── solr-indexing/
     └── web-app/
 
@@ -71,7 +75,14 @@ Their paths and published `$id` values are stable and must not change.
 New versioned contracts live under `json/impresso-2/`. They use filenames such
 as `issue.v1.schema.json`; the repository path and published `$id` must match
 exactly. Reserve `json/impresso-2/common/` for definitions that genuinely share
-the same semantics across lifecycle areas.
+the same semantics across lifecycle areas. Reusable fragments that apply only
+within one lifecycle area belong under that area, for example
+`json/impresso-2/data-preparation/common/`.
+
+Use `<concept>.vN.schema.json` for a standalone reusable value or object
+definition. Use `<concept>.part.vN.schema.json` for an object fragment composed
+into another schema through `allOf`. Do not add `shared` to filenames: its
+directory already expresses its scope.
 
 Examples for a versioned schema mirror its schema directory. For example:
 
