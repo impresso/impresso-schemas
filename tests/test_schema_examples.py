@@ -107,6 +107,7 @@ IMPRESSO_2_CASES = [
     ("json/impresso-2/text-processing/language-identification/language-identification.v1.schema.json", "examples/impresso-2/text-processing/language-identification/language-identification.example1.json"),
     ("json/impresso-2/text-processing/language-identification/language-identification.v1.schema.json", "examples/impresso-2/text-processing/language-identification/language-identification.example2.json"),
     ("json/impresso-2/text-processing/linguistic-annotation/lingproc.v1.schema.json", "examples/impresso-2/text-processing/linguistic-annotation/lingproc.example1.json"),
+    ("json/impresso-2/text-processing/ocr-qa/ocr-qa.v1.schema.json", "examples/impresso-2/text-processing/ocr-qa/ocr-qa.ocr_qa_example.json"),
     # semantic-enrichment
     ("json/impresso-2/semantic-enrichment/topic-model/topic-description.v1.schema.json", "examples/impresso-2/semantic-enrichment/topic-model/topic-description.example0.json"),
     ("json/impresso-2/semantic-enrichment/entities/entities.v1.schema.json", "examples/impresso-2/semantic-enrichment/entities/entities.example0.json"),
