@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/ci_id.v1.schema.json",
+  "title": "Impresso ci_id property",
+  "description": "Defines `ci_id` as the preferred Impresso property name for a content-item identifier.",
+  "type": "object",
+  "properties": {
+    "ci_id": {
+      "$ref": "content-item-id.v1.schema.json",
+      "description": "Preferred property for an Impresso content-item identifier."
+    }
+  }
+}

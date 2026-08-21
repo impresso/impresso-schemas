@@ -132,8 +132,14 @@ make documentation    # Regenerate docs/legacy/ and docs/impresso-2/
 
 These Impresso 2 fragments define concepts shared across lifecycle areas.
 
-- **Content-item identifier**: [`json/impresso-2/common/content-item-id.part.v1.schema.json`](json/impresso-2/common/content-item-id.part.v1.schema.json) — [docs](docs/impresso-2/content-item-id.md)
-- **Model identifier**: [`json/impresso-2/common/model-id.part.v1.schema.json`](json/impresso-2/common/model-id.part.v1.schema.json) — [docs](docs/impresso-2/model-id.md)
+- **Content-item identifier scalar**: [`json/impresso-2/common/content-item-id.v1.schema.json`](json/impresso-2/common/content-item-id.v1.schema.json) — [docs](docs/impresso-2/content-item-id.md)
+- **`ci_id` property**: [`json/impresso-2/common/ci_id.v1.schema.json`](json/impresso-2/common/ci_id.v1.schema.json) — [docs](docs/impresso-2/ci_id.md)
+- **Model identifier property**: [`json/impresso-2/common/model-id.v1.schema.json`](json/impresso-2/common/model-id.v1.schema.json) — [docs](docs/impresso-2/model-id.md)
+- **Timestamp scalar**: [`json/impresso-2/common/timestamp.v1.schema.json`](json/impresso-2/common/timestamp.v1.schema.json) — [docs](docs/impresso-2/timestamp.md)
+- **`ts` property**: [`json/impresso-2/common/ts.v1.schema.json`](json/impresso-2/common/ts.v1.schema.json) — [docs](docs/impresso-2/ts.md)
+- **Language-code scalar**: [`json/impresso-2/common/language-code.v1.schema.json`](json/impresso-2/common/language-code.v1.schema.json) — [docs](docs/impresso-2/language-code.md)
+- **Probability scalar**: [`json/impresso-2/common/probability.v1.schema.json`](json/impresso-2/common/probability.v1.schema.json) — [docs](docs/impresso-2/probability.md)
+- **Bounding-box scalar**: [`json/impresso-2/common/bounding-box.v1.schema.json`](json/impresso-2/common/bounding-box.v1.schema.json) — [docs](docs/impresso-2/bounding-box.md)
 
 ### Data preparation
 
@@ -361,7 +367,7 @@ Evaluation Conference_.
 
 </details>
 
-___
+---
 
 <p align="center">
   <img src="https://github.com/impresso/impresso.github.io/blob/master/assets/images/3x1--Yellow-Impresso-Black-on-White--transparent.png?raw=true" width="350" alt="Impresso Project Logo"/>
