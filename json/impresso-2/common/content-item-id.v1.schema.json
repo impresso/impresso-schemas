@@ -1,15 +1,9 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/content-item-id.part.v1.schema.json",
-  "title": "Content-item identifier property",
-  "description": "Reusable definition of the `ci_id` property shared by schemas that process Impresso content items.",
-  "type": "object",
-  "properties": {
-    "ci_id": {
-      "type": "string",
-      "description": "Canonical identifier of an Impresso content item. A content item is the processing unit representing a segmented media object, or a whole page when no finer-grained segmentation is available.",
-      "pattern": "^[A-Za-z][A-Za-z0-9_]*-\\d{4}-\\d{2}-\\d{2}-[a-z]{1,2}-i[0-9]{4}$",
-      "examples": ["GDL-1900-01-02-a-i0001", "GDL-1900-01-02-ab-i0001"]
-    }
-  }
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/content-item-id.v1.schema.json",
+  "title": "Impresso content-item identifier",
+  "description": "Canonical identifier of an Impresso content item. The preferred property name for this value in Impresso schemas is `ci_id`, although other property names may be used in specific contexts. The identifier has the normative form `<media-id>-<YYYY>-<MM>-<DD>-<edition>-i<sequence>`, where `<media-id>` identifies the media source, `<YYYY>-<MM>-<DD>` is the publication date, `<edition>` identifies the edition for that date, and `<sequence>` is the four-digit content-item sequence number within the edition. This schema defines the identifier value independently of the property name under which it is stored.",
+  "type": "string",
+  "pattern": "^[A-Za-z][A-Za-z0-9_]*-\\d{4}-\\d{2}-\\d{2}-[a-z]{1,2}-i[0-9]{4}$",
+  "examples": ["GDL-1900-01-02-a-i0001", "GDL-1900-01-02-ab-i0001"]
 }
