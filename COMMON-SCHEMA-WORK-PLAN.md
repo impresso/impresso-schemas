@@ -17,10 +17,10 @@ introduced.
 The Impresso 2 namespace has two cross-lifecycle object fragments under
 `json/impresso-2/common/`:
 
-| Fragment | Shared property | Current consumers |
-| --- | --- | ---: |
-| `content-item-id.part.v1.schema.json` | `ci_id` | 12 |
-| `model-id.part.v1.schema.json` | `model_id` | 6 |
+| Fragment                              | Shared property | Current consumers |
+| ------------------------------------- | --------------- | ----------------: |
+| `content-item-id.part.v1.schema.json` | `ci_id`         |                12 |
+| `model-id.part.v1.schema.json`        | `model_id`      |                 6 |
 
 Both are object fragments composed through `allOf`. Each consuming schema keeps
 its own `required` list, so requiredness remains local to the document contract.
@@ -125,6 +125,87 @@ The inventory must resolve cross-file fragments. A simple scan of root
 `properties` is insufficient after modularisation because `ci_id` and
 `model_id` are now contributed through `allOf`.
 
+### AI agent task prompt: candidate discovery
+
+An AI coding agent may be used to accelerate Workstream 1, but only for
+**candidate discovery**, not for automatic refactoring. The agent must not
+create common schemas, edit existing schemas, or change any `$ref` in this
+step; its output is an inventory for human review. Use the following task
+prompt verbatim when delegating this work to an agent:
+
+> ## Task: identify candidates for shared Impresso 2 schema definitions
+>
+> Analyze all JSON Schema files in the repository and produce a candidate list
+> for reusable definitions under:
+>
+> - `json/impresso-2/common/` for concepts shared across functional areas;
+> - `json/impresso-2/<area>/common/` for concepts shared only within one area.
+>
+> Do **not** modify schemas in this step.
+>
+> ### Method
+>
+> 1. Inventory definitions and properties across all schemas, including:
+>    - property name;
+>    - type and validation constraints;
+>    - description/title;
+>    - `$defs`;
+>    - enums, patterns and formats;
+>    - required/optional status;
+>    - schema and functional area in which they occur.
+> 2. Find potential duplicates or semantically related definitions. Look
+>    beyond identical property names:
+>    - same name + same constraints;
+>    - different names + same constraints/description;
+>    - repeated regexes, enums or object structures;
+>    - definitions that differ only slightly;
+>    - known domain concepts such as language codes, canonical IDs,
+>      probabilities, timestamps, provenance/model IDs, etc.
+> 3. Group occurrences by **concept**, not merely by JSON structure or
+>    property name. For example, canonical `lg` and Solr `lg_s` may both be
+>    occurrences of the same candidate: Impresso language code. Different
+>    field names may represent the same concept. Conversely, identical field
+>    names or JSON structures do not necessarily have identical semantics.
+> 4. For every candidate, record:
+>    - proposed concept name;
+>    - all schemas/properties where it occurs;
+>    - current definitions/constraints;
+>    - similarities and differences;
+>    - functional areas involved;
+>    - likely scope: global `common`, area-local `common`, or not shareable;
+>    - confidence;
+>    - questions requiring human/domain review.
+> 5. Be conservative. Do **not** recommend sharing merely to remove
+>    duplication. A shared schema is appropriate only if the occurrences
+>    appear to represent the same Impresso concept with the same intended
+>    semantics.
+> 6. Flag conflicting definitions explicitly. These are particularly important
+>    candidates for review, but must not be normalized automatically.
+>
+> ### Output
+>
+> Produce a table such as:
+>
+> | Candidate concept | Occurrences                  | Current differences          | Proposed scope | Confidence | Review needed                      |
+> | ----------------- | ---------------------------- | ---------------------------- | -------------- | ---------- | ---------------------------------- |
+> | Language code     | `lg`, `orig_lg`, `lg_s`, ... | 2 vs. 2-3 letter constraints | global         | high       | Agree canonical ISO representation |
+> | Content-item ID   | ...                          | ...                          | global         | high       | ...                                |
+> | Probability       | ...                          | ...                          | global/none    | medium     | Confirm identical semantics        |
+>
+> Also produce a second list of **rejected candidates** where similar-looking
+> structures should probably remain separate, explaining why.
+>
+> The result is an inventory for human review. Do not create common schemas or
+> change `$ref`s until the corresponding concept has been reviewed and
+> approved.
+
+The rejected-candidates list is a required deliverable, not an optional note.
+Without it, an agent tends to optimise for deduplication and produces an
+overly aggressive `common/` namespace. The useful output is not only "these
+concepts could be shared," but also "these apparent duplicates were examined
+and should probably stay separate, because ...". Both lists feed the concept
+cards in Workstream 2 and the register described above.
+
 ## Workstream 2: Define each concept
 
 For each shortlisted definition, prepare a concept card and review it with the
@@ -163,16 +244,16 @@ record the exact consumer schemas it may change.
 This illustrative card is deliberately unresolved. It shows the level of
 decision required before extracting a semantic-enrichment-local fragment.
 
-| Card element | Draft content |
-| --- | --- |
-| Status | Draft for discussion |
-| Scope | `json/impresso-2/semantic-enrichment/common/` |
-| Proposed schema | `embedding-vector.part.v1.schema.json` |
-| Meaning | Numeric vector representation produced for one input unit by an embedding model. The fragment defines only the vector payload and its declared dimensionality. |
-| Proposed properties | `embedding`: numeric vector; `size`: number of dimensions in each vector. |
-| Separate concepts | `ci_id` and `model_id` remain root-common fragments. `ts` remains outside this card until timestamp semantics are agreed. |
-| Candidate consumers | `document-embeddings/embeddings-docs.v1.schema.json` and `image-embeddings/image-embeddings.v1.schema.json` |
-| Compatibility | No field renaming proposed: both consumers already expose `embedding` and `size`. Validate real output before adding constraints such as `minimum: 1` or a vector-length consistency rule. |
+| Card element        | Draft content                                                                                                                                                                              |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Status              | Draft for discussion                                                                                                                                                                       |
+| Scope               | `json/impresso-2/semantic-enrichment/common/`                                                                                                                                              |
+| Proposed schema     | `embedding-vector.part.v1.schema.json`                                                                                                                                                     |
+| Meaning             | Numeric vector representation produced for one input unit by an embedding model. The fragment defines only the vector payload and its declared dimensionality.                             |
+| Proposed properties | `embedding`: numeric vector; `size`: number of dimensions in each vector.                                                                                                                  |
+| Separate concepts   | `ci_id` and `model_id` remain root-common fragments. `ts` remains outside this card until timestamp semantics are agreed.                                                                  |
+| Candidate consumers | `document-embeddings/embeddings-docs.v1.schema.json` and `image-embeddings/image-embeddings.v1.schema.json`                                                                                |
+| Compatibility       | No field renaming proposed: both consumers already expose `embedding` and `size`. Validate real output before adding constraints such as `minimum: 1` or a vector-length consistency rule. |
 
 Current evidence identifies a material difference: document embeddings permit a
 single numeric vector **or** a list of vectors, while image embeddings permit
@@ -187,16 +268,16 @@ examples before implementation.
 The following are discussion candidates, not an instruction to extract them
 now.
 
-| Scope | Candidate | Why it may be reusable | Questions to resolve first |
-| --- | --- | --- | --- |
-| Root `common/` | `ts` / generated timestamp | Present across data preparation, text processing, and semantic enrichment | Does it always mean generation time? Must it be UTC `Z`, any RFC 3339 offset, or an unconstrained date-time? |
-| Root `common/` | Language code | Used in several lifecycle areas | ISO 639-1 vs 639-2/3, nullable values, original vs computed language, and code-list governance differ today. |
-| Root `common/` | Processing provenance | Model, code revision, run path, and generated timestamp recur conceptually | Agree a stable provenance vocabulary before creating a multi-property fragment. |
-| Data preparation | Source metadata | `st`, `sm`, and related media metadata recur in canonical and rebuilt schemas | Agree common source-type and source-medium enumerations, and how radio-specific metadata is grouped. |
-| Data preparation | Rebuilt content-item metadata | Paper and audio rebuilt schemas duplicate several fields | Decide which fields truly apply to both supports and how the `ci_id` transition affects actual data. |
-| Semantic enrichment | Embedding record metadata | Document and image embeddings share `ci_id`, `model_id`, vector size, and timestamp concepts | Decide whether vector shape, dimensionality, and modality are one contract or separate ones. |
-| Text processing | Language-identification and annotation provenance | Tool/version metadata appears in several outputs | Resolve the current mix of version objects, paths, and model identifiers. |
-| Solr indexing | Existing Solr parts | Already modularised | Keep Solr-specific unless an agreed value-level primitive has exactly the same semantics. |
+| Scope               | Candidate                                         | Why it may be reusable                                                                       | Questions to resolve first                                                                                   |
+| ------------------- | ------------------------------------------------- | -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Root `common/`      | `ts` / generated timestamp                        | Present across data preparation, text processing, and semantic enrichment                    | Does it always mean generation time? Must it be UTC `Z`, any RFC 3339 offset, or an unconstrained date-time? |
+| Root `common/`      | Language code                                     | Used in several lifecycle areas                                                              | ISO 639-1 vs 639-2/3, nullable values, original vs computed language, and code-list governance differ today. |
+| Root `common/`      | Processing provenance                             | Model, code revision, run path, and generated timestamp recur conceptually                   | Agree a stable provenance vocabulary before creating a multi-property fragment.                              |
+| Data preparation    | Source metadata                                   | `st`, `sm`, and related media metadata recur in canonical and rebuilt schemas                | Agree common source-type and source-medium enumerations, and how radio-specific metadata is grouped.         |
+| Data preparation    | Rebuilt content-item metadata                     | Paper and audio rebuilt schemas duplicate several fields                                     | Decide which fields truly apply to both supports and how the `ci_id` transition affects actual data.         |
+| Semantic enrichment | Embedding record metadata                         | Document and image embeddings share `ci_id`, `model_id`, vector size, and timestamp concepts | Decide whether vector shape, dimensionality, and modality are one contract or separate ones.                 |
+| Text processing     | Language-identification and annotation provenance | Tool/version metadata appears in several outputs                                             | Resolve the current mix of version objects, paths, and model identifiers.                                    |
+| Solr indexing       | Existing Solr parts                               | Already modularised                                                                          | Keep Solr-specific unless an agreed value-level primitive has exactly the same semantics.                    |
 
 ## Workstream 3: Validate real data and consumer impact
 
@@ -255,14 +336,14 @@ must document semantic choices, aliases, and adoption status.
 
 ## Delivery checkpoints
 
-| Checkpoint | Deliverable | Review question |
-| --- | --- | --- |
-| 1. Inventory | Resolved property matrix and initial register | Which candidates are truly the same concept? |
-| 2. Compatibility | Real-data validation and consumer map | Which Impresso 2 changes are safe, and who must migrate? |
-| 3. Concept approval | Reviewed concept cards | Are name, semantics, validation, examples, and scope agreed? |
-| 4. Pilot | One approved fragment and affected fixtures | Does modularisation preserve the intended contract? |
-| 5. Adoption | Producer/consumer migration decision | Can a consumer safely select the Impresso 2 namespace? |
-| 6. Release | Updated mapping, docs, and test evidence | Is the fragment stable enough for reuse? |
+| Checkpoint          | Deliverable                                   | Review question                                              |
+| ------------------- | --------------------------------------------- | ------------------------------------------------------------ |
+| 1. Inventory        | Resolved property matrix and initial register | Which candidates are truly the same concept?                 |
+| 2. Compatibility    | Real-data validation and consumer map         | Which Impresso 2 changes are safe, and who must migrate?     |
+| 3. Concept approval | Reviewed concept cards                        | Are name, semantics, validation, examples, and scope agreed? |
+| 4. Pilot            | One approved fragment and affected fixtures   | Does modularisation preserve the intended contract?          |
+| 5. Adoption         | Producer/consumer migration decision          | Can a consumer safely select the Impresso 2 namespace?       |
+| 6. Release          | Updated mapping, docs, and test evidence      | Is the fragment stable enough for reuse?                     |
 
 ## Issue planning after review
 

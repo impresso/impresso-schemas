@@ -13,6 +13,7 @@ change a contract.
 - [Text processing](#text-processing)
 - [Semantic enrichment](#semantic-enrichment)
 - [Solr indexing](#solr-indexing)
+- [Legacy namespace evidence](#legacy-namespace-evidence)
 - [Example and test coverage](#example-and-test-coverage)
 - [Next review actions](#next-review-actions)
 
@@ -120,6 +121,35 @@ property and its value rules without making it required everywhere.
 | Status | Scope | Decision |
 | --- | --- | --- |
 | **Do not extract in this inventory** | `solr-indexing/content-item/` and `solr-indexing/semantic-enrichments/` | Solr has its own modular parts and `$ref` structure. Its fields are an indexing serialisation (for example `lg_s`), not a direct common document representation. Keep its parts Solr-local unless a future review establishes an identical value-level primitive and an explicit consumer need. |
+
+## Legacy namespace evidence
+
+**Status:** initial inventory, 2026-08-19. Covers every schema under `json/`
+outside `json/impresso-2/` (canonical, rebuilt, embeddings, entities, image
+classification/embeddings, language identification, linguistic annotation, OCR
+QA, text reuse, topic model, versioning, visualizer). Legacy paths and `$id`
+values remain stable; this section is evidence to inform future impresso-2
+concept cards, not a plan to change legacy schemas.
+
+| Status | Concept / proposed scope | Observed occurrences | Evidence and decision needed |
+| --- | --- | --- | --- |
+| **Candidate** | ISO language code (`langISO639Type`) — `common/` | Byte-identical `$defs.langISO639Type` (`^[a-z]{2,3}$`) in `issue.schema.json` and `language_identification.schema.json`; inline uses in rebuilt paper/audio, embeddings, `ling_spacy`, `lingproc.v2`, topic assignment/description. | `ocr_qa.lg` conflicts with a stricter `^[a-z]{2}$` (2-letter only) — a real conflict to resolve, not just a style choice. |
+| **Candidate** | Processing timestamp (`ts`) — `common/` | Most schemas use pattern `^[0-9]{4}-...Z$`; `embeddings-docs`, `image_classification`, `image_embeddings` use `format: date-time`; `language_identification` `versionType.ts` also allows `+00:00`. | `ling_spacy`'s own example (`2009-06-15T13:45:30`) fails its own pattern — a schema defect to flag independently of any consolidation decision. |
+| **Candidate** | Content-item ID (`ci_id`) — `common/` | `embeddings-chunks/sentence/docs`, `entities`, `lingproc.v2`, `topic_assignment.v2`, `text_reuse/passage` (no pattern); `image_classification`, `image_embeddings` (strict pattern); canonical/rebuilt instead use `id` with a similar but not identical pattern. | Same concept as the already-`Done` impresso-2 `content-item-id.part.v1`; legacy occurrences still need pattern-vs-no-pattern reconciliation before any legacy-side adoption. |
+| **Local candidate** | Canonical ID family (`id` for issue/page/record/content-item) — `data-preparation/common/` | `issue`, `page`, `audio_record`, `paper_contentitem`, `audio_record_contentitem`, text-reuse ids share prefix `^[A-Za-z][A-Za-z0-9_]*-\d{4}-\d{2}-\d{2}-[a-z]{1,2}`, differing only by suffix. | Edition-letter quantifier is inconsistent: most use `{1,2}`, but `issue.rr` and `audio_record_contentitem.rreb[].id` use `{1,3}` — a conflict, not a style variant. |
+| **Candidate** | Probability / score (0-1) — `common/` | `language_identification.probType`, `image_classification` `confidence`, `topic_assignment(.v2)` `p`, `topic_description` `prob`, `ocr_qa.ocrqa`, `consolidated_ocrqa` (×3, via `anyOf number/null` instead of `type:["number","null"]`). | `entities.schema.json` `confidence_ner`/`confidence_nel` have no min/max bounds at all — confirm whether that is intentional before assuming one shared scalar type. |
+| **Candidate** | `model_id` — `common/` | `embeddings-chunks/sentence/docs`, `entities`, `image_classification`, `image_embeddings`, `lingproc.v2`. | `topic_assignment.v2` has both `model_id` and `topic_model_id` as separate fields; two divergent description sources (a slide deck vs. an unnamed "model description schema") need to converge to one canonical description. |
+| **Local candidate** | `media_title_variant`, `archival_note`, `is_exact_date` — `data-preparation/common/` | Byte-identical property and description across `issue.schema.json`, `paper_contentitem.schema.json`, `audio_record_contentitem.schema.json`. | None outstanding; straightforward literal-duplicate extraction once the area's `common/` directory exists. |
+| **Local candidate** | `rc` / `rp` (radio channel/program) — `data-preparation/common/` | `issue`, `paper_contentitem`, `audio_record_contentitem`. | Minor differences in nullability/`minLength` constraints across the three occurrences. |
+| **Local candidate** | `st`/`sm` enums and their `dependentRequired` pairing — `data-preparation/common/` | `issue`, `page`, `paper_contentitem` (enum), `audio_record`, `audio_record_contentitem` (const); identical `dependentRequired: {"sm":["st"],"st":["sm"]}` copy-pasted 3×. | `versioning/manifest.schema.json` renames the same concept to `source_type`/`source_medium` — naming conflict to resolve first. |
+| **Local candidate** | `section_title` object — `data-preparation/common/` | `issue.schema.json` (`title_text`, `composing_ci_ids`, `section_id`, `heading_legacy_parts`) vs. `paper_contentitem.schema.json` (same three, missing `heading_legacy_parts`). | Confirm whether the missing field is an intentional rebuilt-only omission or a gap. |
+| **Local candidate** | Embedding vector + `size` — `semantic-enrichment/common/` | `embeddings-chunks/sentence/docs`, `image_embeddings`. | Same open question already logged for impresso-2: `embeddings-docs` permits a single vector or a list of vectors, `image_embeddings` permits only one. |
+| **Local candidate** | Git/code provenance reference | `embeddings-chunks.git`, `embeddings-sentence.git`, `lingproc.v2.lingproc_git`, `topic_assignment.v2.topics_git`, `ocr_qa.git_version` (hex pattern), `versioning/manifest.code_git_commit` (structured `$ref`, not a plain string). | Five different property names for arguably one concept, but value shapes range from free string to hex-constrained string to a structured object. Matches the already-logged "processing provenance" backlog item. |
+| **Do not extract** | Bounding-box coordinates vs. `audio_record.$defs.time_coordinates` | Spatial `[x,y,w,h]` in `page`, `issue`, `paper_contentitem` vs. temporal `[start,duration]` in `audio_record`. | Same array shape by coincidence, different physical meaning. `bbox_visualizer.c` also uses `number` items where page/rebuilt use `integer` — a further conflict if ever merged. |
+| **Do not extract** | Content-item type discriminator vs. image typology `class` | `issue.metadata.tp`, `paper_contentitem.tp`, `language_identification.tp` vs. `image_classification.prediction.class`. | Different domains (structural content-item type vs. visual-content typology); no shared vocabulary. |
+| **Do not extract** | `title`/`t` fields | `issue.metadata.t`, `paper_contentitem.t`/`title`, `audio_record_contentitem.title`. | Already mid-deprecation within the legacy namespace itself (`t` → `title`); consolidating now would fight an in-flight local migration. |
+| **Do not extract** | `language` in `embeddings-entities.schema.json` | Free-form Wikipedia-page language, not an ISO-639 code. | Do not fold into the language-code candidate despite the name. |
+| **Do not extract** | `versioning/manifest.code_git_commit` vs. simple string git fields | Manifest's field is a structured `$ref` object; other schemas use plain strings. | Do not collapse into a shared scalar "git commit" type. |
 
 ## Example and test coverage
 
