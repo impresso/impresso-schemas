@@ -103,14 +103,6 @@
             "type": "integer",
             "description": "The right character offset of the named entity with respect to the corresponding text element (full text for nes, title for tnes)."
           },
-          "confidence_ner": {
-            "type": "number",
-            "description": "Confidence score of the Named Entity Recognition process."
-          },
-          "confidence_nel": {
-            "type": "number",
-            "description": "Confidence score of the Named Entity Linking process."
-          },
           "wkd_id": {
             "type": "string",
             "description": "Wikidata QID if available."
@@ -134,6 +126,30 @@
           "function": {
             "type": "string",
             "description": "In case of a person mention, the entity component of type 'function', as defined in the Impresso HIPE NE Annotation guidelines (https://zenodo.org/records/3585750). "
+          },
+          "confidence_ner": {
+            "type": "number",
+            "description": "Confidence score of the Named Entity Recognition process."
+          },
+          "confidence_nel": {
+            "type": "number",
+            "description": "Confidence score of the Named Entity Linking process."
+          },
+          "entity_confidence": {
+            "type": "number",
+            "description": "Extension. NER-derived mean_i(1 − P(O)_i) — 'is this span an entity at all'. Flows through from the NER checkpoint; optional."
+          },
+          "type_confidence": {
+            "type": "number",
+            "description": "Extension. NER-derived mean_i(P(predicted_type)_i / (1 − P(O)_i)) — 'given it's an entity, the type is right'. Flows through from the NER checkpoint; optional."
+          },
+          "confidence_nel_normalized": {
+            "type": "number",
+            "description": "Extension. exp(title_logp_sum / title_num_tokens) — length-normalized per-token average likelihood over the mGENRE title tokens. Optional."
+          },
+          "confidence_margin": {
+            "type": "number",
+            "description": "Extension. Top-1 minus top-2 raw sum-log-prob from the NEL beam. Populated only when --num-beams >= 2; omitted otherwise."
           }
         },
         "required": ["type", "surface", "lOffset", "rOffset"]
