@@ -55,7 +55,7 @@
       "type": "string",
       "title": "Item type",
       "description": "Type of content item.",
-      "const": "img"
+      "const": "image"
     },
     "coords_is": {
       "type": "array",
