@@ -14,15 +14,21 @@ introduced.
 
 ## Current state
 
-The Impresso 2 namespace has two cross-lifecycle object fragments under
-`json/impresso-2/common/`:
+The Impresso 2 namespace has cross-lifecycle scalar schemas and property
+fragments under `json/impresso-2/common/`:
 
-| Fragment                              | Shared property | Current consumers |
-| ------------------------------------- | --------------- | ----------------: |
-| `content-item-id.part.v1.schema.json` | `ci_id`         |                12 |
-| `model-id.part.v1.schema.json`        | `model_id`      |                 6 |
+| Schema                           | Kind              | Shared property                      | Current consumers |
+| -------------------------------- | ----------------- | ------------------------------------ | ----------------: |
+| `content-item-id.v1.schema.json` | Scalar            | value used by `ci_id.v1.schema.json` |                12 |
+| `ci_id.v1.schema.json`           | Property fragment | `ci_id`                              |                12 |
+| `model-id.v1.schema.json`        | Property fragment | `model_id`                           |                 6 |
+| `timestamp.v1.schema.json`       | Scalar            | value used by `ts.v1.schema.json`    |                 0 |
+| `ts.v1.schema.json`              | Property fragment | `ts`                                 |                 0 |
+| `language-code.v1.schema.json`   | Scalar            | language code                        |                 0 |
+| `probability.v1.schema.json`     | Scalar            | probability                          |                 0 |
+| `bounding-box.v1.schema.json`    | Scalar            | bounding box                         |                 0 |
 
-Both are object fragments composed through `allOf`. Each consuming schema keeps
+Property fragments are composed through `allOf`. Each consuming schema keeps
 its own `required` list, so requiredness remains local to the document contract.
 
 The content-item fragment has also introduced an intentional Impresso 2 field
@@ -85,8 +91,14 @@ Legacy schemas, paths, and `$id` values remain stable throughout this work.
 ```text
 json/impresso-2/
 ├── common/                                  Cross-lifecycle concepts only
-│   ├── content-item-id.part.v1.schema.json
-│   └── model-id.part.v1.schema.json
+│   ├── content-item-id.v1.schema.json        Content-item identifier scalar
+│   ├── ci_id.v1.schema.json                  ci_id property fragment
+│   ├── model-id.v1.schema.json               model_id property fragment
+│   ├── timestamp.v1.schema.json              Timestamp scalar
+│   ├── ts.v1.schema.json                     ts property fragment
+│   ├── language-code.v1.schema.json          Language-code scalar
+│   ├── probability.v1.schema.json            Probability scalar
+│   └── bounding-box.v1.schema.json           Bounding-box scalar
 ├── data-preparation/
 │   └── common/                              Data-preparation-only fragments
 ├── text-processing/
@@ -100,7 +112,8 @@ json/impresso-2/
 Naming rules:
 
 - `<concept>.vN.schema.json` — standalone reusable scalar or object.
-- `<concept>.part.vN.schema.json` — object fragment composed through `allOf`.
+- Property fragments use the same `<concept>.vN.schema.json` naming rule and
+  may be composed through `allOf`.
 - Do not use `shared` in filenames; directory location states the reuse scope.
 
 ## Workstream 1: Build the evidence base
@@ -248,7 +261,7 @@ decision required before extracting a semantic-enrichment-local fragment.
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Status              | Draft for discussion                                                                                                                                                                       |
 | Scope               | `json/impresso-2/semantic-enrichment/common/`                                                                                                                                              |
-| Proposed schema     | `embedding-vector.part.v1.schema.json`                                                                                                                                                     |
+| Proposed schema     | `embedding-vector.v1.schema.json`                                                                                                                                                          |
 | Meaning             | Numeric vector representation produced for one input unit by an embedding model. The fragment defines only the vector payload and its declared dimensionality.                             |
 | Proposed properties | `embedding`: numeric vector; `size`: number of dimensions in each vector.                                                                                                                  |
 | Separate concepts   | `ci_id` and `model_id` remain root-common fragments. `ts` remains outside this card until timestamp semantics are agreed.                                                                  |
