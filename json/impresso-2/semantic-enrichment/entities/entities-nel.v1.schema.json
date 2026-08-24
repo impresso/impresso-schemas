@@ -143,10 +143,6 @@
             "type": "number",
             "description": "Extension. NER-derived mean_i(P(predicted_type)_i / (1 − P(O)_i)) — 'given it's an entity, the type is right'. Flows through from the NER checkpoint; optional."
           },
-          "confidence_nel_normalized": {
-            "type": "number",
-            "description": "Extension. exp(title_logp_sum / title_num_tokens) — length-normalized per-token average likelihood over the mGENRE title tokens. Optional."
-          },
           "confidence_margin": {
             "type": "number",
             "description": "Extension. Top-1 minus top-2 raw sum-log-prob from the NEL beam. Populated only when --num-beams >= 2; omitted otherwise."
@@ -160,10 +156,6 @@
     "ts": {
       "type": "string",
       "description": "Timestamp of creation of the JSON file (e.g. '2024-05-26T09:48:01Z')."
-    },
-    "model_id": {
-      "type": "string",
-      "description": "Composite model identifier '<NER Model>|<NEL Model>' (each 'name@revision'), e.g. 'impresso-project/ner-hipe2020-mmbert-base-final@8d95f6d|impresso-project/nel-mgenre-multilingual@main'. Order is NER|NEL, matching the entity id's model tail."
     },
     "prompt_unit": {
       "type": "string",

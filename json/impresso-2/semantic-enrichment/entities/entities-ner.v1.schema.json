@@ -125,10 +125,6 @@
       "type": "string",
       "description": "Timestamp of creation of the JSON file (e.g. '2024-05-26T09:48:01Z')."
     },
-    "model_id": {
-      "type": "string",
-      "description": "The NER model identifier as 'name@revision' (e.g. 'impresso-project/ner-hipe2020-mmbert-base-final@8d95f6d')."
-    },
     "lingproc_uri": {
       "type": "string",
       "description": "Extension. Full URI of the source lingproc shard this checkpoint was produced from (which for NER is the task's own input). NEL reads it to locate and reload the exact same lingproc file — no separate --lingproc flag."
