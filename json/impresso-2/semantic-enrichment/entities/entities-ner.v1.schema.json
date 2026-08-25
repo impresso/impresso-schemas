@@ -120,7 +120,7 @@
             "description": "Extension. mean_i(P(predicted_type)_i / (1 − P(O)_i)) — 'given it's an entity, the type is right'. Optional; omitted when not computed."
           }
         },
-        "required": ["type", "surface", "lOffset", "rOffset"]
+        "required": ["type", "surface", "lOffset", "rOffset", "confidence_ner"]
       }
     }
   },

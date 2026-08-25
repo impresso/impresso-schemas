@@ -152,7 +152,7 @@
             "description": "In case of a person mention, the entity component of type 'function', as defined in the Impresso HIPE NE Annotation guidelines (https://zenodo.org/records/3585750). "
           }
         },
-        "required": ["type", "surface", "lOffset", "rOffset"]
+        "required": ["type", "surface", "lOffset", "rOffset", "confidence_ner", "confidence_nel"]
       }
     }
   },
