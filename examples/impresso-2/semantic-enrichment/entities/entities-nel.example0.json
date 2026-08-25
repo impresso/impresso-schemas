@@ -13,8 +13,8 @@
       "wkd_id": "Q683672",
       "wkpedia_pagename": "Société_du_Grütli",
       "wkpedia_url": "https://fr.wikipedia.org/wiki/Soci%C3%A9t%C3%A9_du_Gr%C3%BCtli",
-      "confidence_ner": 50.45,
-      "confidence_nel": 50.45
+      "confidence_ner": 0.45,
+      "confidence_nel": 0.45
     },
     {
       "type": "pers.ind",
@@ -24,8 +24,8 @@
       "wkd_id": "NIL",
       "wkpedia_pagename": "NIL",
       "wkpedia_url": "N/A",
-      "confidence_ner": 50.45,
-      "confidence_nel": 50.45,
+      "confidence_ner": 0.45,
+      "confidence_nel": 0.45,
       "name": "Bovat",
       "title": "Mr.",
       "function": "mécanicien à Echallens"

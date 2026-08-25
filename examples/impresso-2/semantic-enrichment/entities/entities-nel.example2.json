@@ -9,8 +9,8 @@
       "surface": "championne de France de ski nautique, Sylvie Maurial",
       "lOffset": 50,
       "rOffset": 102,
-      "confidence_ner": 50.45,
-      "confidence_nel": 50.45,
+      "confidence_ner": 0.45,
+      "confidence_nel": 0.45,
       "wkd_id": "Q20993704",
       "wkpedia_pagename": "Sylvie_Maurial",
       "wkpedia_url": "https://fr.wikipedia.org/wiki/Sylvie_Maurial",
@@ -26,8 +26,8 @@
       "wkd_id": "Q20993704",
       "wkpedia_pagename": "France",
       "wkpedia_url": "https://fr.wikipedia.org/wiki/France",
-      "confidence_ner": 50.45,
-      "confidence_nel": 50.45,
+      "confidence_ner": 0.45,
+      "confidence_nel": 0.45,
       "id": "EXP-1888-01-09-a-i0035:64:70:loc.adm.nat:bert-fr"
     }
   ]

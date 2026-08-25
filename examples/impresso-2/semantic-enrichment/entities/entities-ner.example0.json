@@ -10,7 +10,7 @@
       "lOffset": 32,
       "rOffset": 56,
       "wkpedia_url": "https://fr.wikipedia.org/wiki/Soci%C3%A9t%C3%A9_du_Gr%C3%BCtli",
-      "confidence_ner": 50.45,
+      "confidence_ner": 0.45,
       "confidence_ner_type": 0.4,
       "confidence_ner_entity": 0.4
     },
@@ -20,7 +20,7 @@
       "lOffset": 156,
       "rOffset": 178,
       "wkpedia_url": "N/A",
-      "confidence_ner": 0.545,
+      "confidence_ner": 0.54,
       "confidence_ner_type": 0.4,
       "confidence_ner_entity": 0.4
     }
