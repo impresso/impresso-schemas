@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/entities/entities.v1.schema.json",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/entities/entities-ner.v1.schema.json",
   "title": "Named Entity JSON Schema",
-  "description": "Definition of the output representation of entity processing, before indexing. Named entity mentions are expressed as offline annotations with character offsets relative to content items. The output is a list of JSON documents (JSON Lines), one per content item, containing named entities from the article body and title. The tagset corresponds to impresso-HIPE.",
+  "description": "Output of the NER checkpoint task (impresso-project/ner-hipe2020-mmbert-base-final). One JSON document per content item (JSON Lines), even when no entity was detected. Conforms to the impresso Named Entity JSON Schema: body entities under 'nes', title entities under 'tnes' (no per-entity 'scope' field — the list encodes body vs title). Offsets are segment-absolute. This is the linking-free artifact and NEL's input, so entity ids carry only the NER model (no '|<NEL Model>' tail) and no NEL/linking columns are present. Extension fields beyond the base impresso schema are allowed (the schema sets no additionalProperties: false): record-level 'lingproc_archive' / 'lingproc_ts' (provenance) and entity-level 'entity_confidence' / 'type_confidence' (additive confidence metrics) and 'sent_start' / 'sent_end' (enclosing-sentence absolute span, read by the NEL loader).",
   "type": "object",
   "allOf": [
     {
@@ -111,47 +111,27 @@
             "type": "number",
             "description": "Confidence score of the Named Entity Recognition process."
           },
-          "confidence_nel": {
+          "confidence_ner_entity": {
             "type": "number",
-            "description": "Confidence score of the Named Entity Linking process."
+            "description": "Extension. mean_i(1 − P(O)_i) over the entity's tokens — 'is this span an entity at all', decoupled from the type. Optional; omitted when not computed."
           },
-          "wkd_id": {
-            "type": "string",
-            "description": "Wikidata QID if available."
-          },
-          "wkpedia_pagename": {
-            "type": "string",
-            "description": "Wikipedia page name, i.e. the last part of the wikipedia URL (e.g.  United_States)"
-          },
-          "wkpedia_url": {
-            "type": "string",
-            "description": "Wikipedia page URL, e.g. https://en.wikipedia.org/wiki/United_States"
-          },
-          "name": {
-            "type": "string",
-            "description": "In case of a person mention, the entity component of type 'name', as defined in the Impresso HIPE NE Annotation guidelines (https://zenodo.org/records/3585750)."
-          },
-          "title": {
-            "type": "string",
-            "description": "In case of a person mention, the entity component of type 'title', as defined in the Impresso HIPE NE Annotation guidelines (https://zenodo.org/records/3585750). "
-          },
-          "function": {
-            "type": "string",
-            "description": "In case of a person mention, the entity component of type 'function', as defined in the Impresso HIPE NE Annotation guidelines (https://zenodo.org/records/3585750). "
+          "confidence_ner_type": {
+            "type": "number",
+            "description": "Extension. mean_i(P(predicted_type)_i / (1 − P(O)_i)) — 'given it's an entity, the type is right'. Optional; omitted when not computed."
           }
         },
-        "required": ["id", "type", "surface", "lOffset", "rOffset"]
+        "required": ["type", "surface", "lOffset", "rOffset"]
       }
     }
   },
   "properties": {
-    "ci_type": {
-      "type": "string",
-      "description": "Impresso content item type."
-    },
     "ts": {
       "type": "string",
       "description": "Timestamp of creation of the JSON file (e.g. '2024-05-26T09:48:01Z')."
+    },
+    "lingproc_uri": {
+      "type": "string",
+      "description": "Extension. Full URI of the source lingproc shard this checkpoint was produced from (which for NER is the task's own input). NEL reads it to locate and reload the exact same lingproc file — no separate --lingproc flag."
     },
     "nes": {
       "$ref": "#/$defs/namedEntityList",
@@ -162,5 +142,5 @@
       "description": "Named entity mentions extracted from the article title."
     }
   },
-  "required": ["ci_id", "ts", "model_id", "nes"]
+  "required": ["ci_id", "ts", "model_id", "nes", "lingproc_uri"]
 }
