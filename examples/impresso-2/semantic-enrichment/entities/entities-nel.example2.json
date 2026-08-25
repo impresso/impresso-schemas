@@ -5,7 +5,7 @@
   "prompt_unit": "window",
   "nes": [
     {
-      "type": "pers.ind",
+      "type": "pers",
       "surface": "championne de France de ski nautique, Sylvie Maurial",
       "lOffset": 50,
       "rOffset": 102,
@@ -19,7 +19,7 @@
       "id": "EXP-1968-02-23-a-i0262:50:102:pers.ind:bert-fr"
     },
     {
-      "type": "loc.adm.nat",
+      "type": "loc",
       "surface": "France",
       "lOffset": 64,
       "rOffset": 70,

@@ -5,7 +5,7 @@
   "prompt_unit": "sentence",
   "nes": [
     {
-      "type": "org.adm",
+      "type": "org",
       "surface": "Société suisse du Grutli",
       "lOffset": 32,
       "rOffset": 56,
@@ -17,7 +17,7 @@
       "confidence_nel": 0.45
     },
     {
-      "type": "pers.ind",
+      "type": "pers",
       "surface": "Mr. Bovat, mécanicien à Echallens",
       "lOffset": 156,
       "rOffset": 178,

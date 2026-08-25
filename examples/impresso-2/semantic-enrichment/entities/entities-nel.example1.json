@@ -6,7 +6,7 @@
   "nes": [
     {
       "id": "EXP-1928-05-15-a-i0009:50:99:pers.ind:bert-fr",
-      "type": "pers.ind",
+      "type": "pers",
       "surface": "M. Wou, ancien ministre du gouvernement cantonais",
       "lOffset": 50,
       "rOffset": 99,
@@ -21,7 +21,7 @@
     },
     {
       "id": "EXP-1888-01-09-a-i0035:32:42:loc.adm.nat:bert-fr",
-      "type": "loc.adm.nat",
+      "type": "loc",
       "surface": "Etats-Unis",
       "lOffset": 32,
       "rOffset": 42,
