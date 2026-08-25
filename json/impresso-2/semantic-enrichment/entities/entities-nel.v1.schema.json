@@ -180,8 +180,7 @@
               }
             },
             "required": ["reason", "removed_wkd_id"]
-          }
-        },
+          },
           "surface": {
             "type": "string",
             "description": "The surface form of the named entity mention, as it appears in the text."
