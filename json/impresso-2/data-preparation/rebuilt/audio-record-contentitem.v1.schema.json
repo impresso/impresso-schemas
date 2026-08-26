@@ -36,7 +36,7 @@
     },
     "lg": {
       "description": "Language of the content item's text, expressed as a two-letter ISO 639-1 language code.",
-      "type": "string",
+      "type": ["string", "null"],
       "pattern": "^[a-z]{2,3}$"
     },
     "stt": {
