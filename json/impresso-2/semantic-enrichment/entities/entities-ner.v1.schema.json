@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/entities/entities-ner.v1.schema.json",
-  "title": "Named Entity JSON Schema",
-  "description": "Output of the NER checkpoint task (impresso-project/ner-hipe2020-mmbert-base-final). One JSON document per content item (JSON Lines), even when no entity was detected. Conforms to the impresso Named Entity JSON Schema: body entities under 'nes', title entities under 'tnes' (no per-entity 'scope' field — the list encodes body vs title). Offsets are segment-absolute. This is the linking-free artifact and NEL's input, so entity ids carry only the NER model (no '|<NEL Model>' tail) and no NEL/linking columns are present. Extension fields beyond the base impresso schema are allowed (the schema sets no additionalProperties: false): record-level 'lingproc_archive' / 'lingproc_ts' (provenance) and entity-level 'entity_confidence' / 'type_confidence' (additive confidence metrics) and 'sent_start' / 'sent_end' (enclosing-sentence absolute span, read by the NEL loader).",
+  "title": "Named entity recognition output record",
+  "description": "Defines one named entity recognition output record for an Impresso content item, produced before named entity linking and indexing. In JSON Lines serialisation, each line represents one content item and its named entity mentions as offline annotations with character offsets relative to the relevant content-item text. Entity types use the coarse-grained Impresso HIPE tagset.",
   "type": "object",
   "allOf": [
     {
@@ -10,6 +10,9 @@
     },
     {
       "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/model-id.v1.schema.json"
+    },
+    {
+      "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/ts.v1.schema.json"
     }
   ],
   "$defs": {
@@ -21,7 +24,7 @@
         "type": "object",
         "properties": {
           "type": {
-            "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/entities/entity-type.v1.schema.json",
+            "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/common/entity-type.v1.schema.json",
             "description": "NE type (coarse-grained)."
           },
           "surface": {
@@ -37,16 +40,16 @@
             "description": "The right character offset of the named entity with respect to the corresponding text element (full text for nes, title for tnes)."
           },
           "confidence_ner": {
-            "type": "number",
-            "description": "Confidence score of the Named Entity Recognition process."
+            "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/probability.v1.schema.json",
+            "description": "Confidence score of the Named Entity Recognition process, from 0 (lowest confidence) to 1 (highest confidence)."
           },
           "confidence_ner_entity": {
-            "type": "number",
-            "description": "Extension. mean_i(1 − P(O)_i) over the entity's tokens — 'is this span an entity at all', decoupled from the type. Optional; omitted when not computed."
+            "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/probability.v1.schema.json",
+            "description": "Confidence that the detected span is an entity, independent of its predicted type, from 0 (lowest confidence) to 1 (highest confidence). Computed as mean_i(1 − P(O)_i) over the entity's tokens. Optional; omitted when not computed."
           },
           "confidence_ner_type": {
-            "type": "number",
-            "description": "Extension. mean_i(P(predicted_type)_i / (1 − P(O)_i)) — 'given it's an entity, the type is right'. Optional; omitted when not computed."
+            "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/probability.v1.schema.json",
+            "description": "Confidence that the predicted entity type is correct, given that the span is an entity, from 0 (lowest confidence) to 1 (highest confidence). Computed as mean_i(P(predicted_type)_i / (1 − P(O)_i)) over the entity's tokens. Optional; omitted when not computed."
           }
         },
         "required": ["type", "surface", "lOffset", "rOffset", "confidence_ner"]
@@ -54,10 +57,6 @@
     }
   },
   "properties": {
-    "ts": {
-      "type": "string",
-      "description": "Timestamp of creation of the JSON file (e.g. '2024-05-26T09:48:01Z')."
-    },
     "lingproc_uri": {
       "type": "string",
       "description": "Extension. Full URI of the source lingproc shard this checkpoint was produced from (which for NER is the task's own input). NEL reads it to locate and reload the exact same lingproc file — no separate --lingproc flag."
