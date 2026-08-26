@@ -15,8 +15,7 @@
       "wkpedia_pagename": "Sylvie_Maurial",
       "wkpedia_url": "https://fr.wikipedia.org/wiki/Sylvie_Maurial",
       "name": "Sylvie Maurial",
-      "function": "championne de France de ski nautique",
-      "id": "EXP-1968-02-23-a-i0262:50:102:pers.ind:bert-fr"
+      "function": "championne de France de ski nautique"
     },
     {
       "type": "loc",
@@ -27,8 +26,7 @@
       "wkpedia_pagename": "France",
       "wkpedia_url": "https://fr.wikipedia.org/wiki/France",
       "confidence_ner": 0.45,
-      "confidence_nel": 0.45,
-      "id": "EXP-1888-01-09-a-i0035:64:70:loc.adm.nat:bert-fr"
+      "confidence_nel": 0.45
     }
   ]
 }
