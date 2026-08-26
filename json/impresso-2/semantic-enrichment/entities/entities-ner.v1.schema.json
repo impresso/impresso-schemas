@@ -26,7 +26,7 @@
           },
           "type": {
             "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/entities/entity-type.v1.schema.json",
-            "description": "NE type (coarse-grained and fine-grained)."
+            "description": "NE type (coarse-grained)."
           },
           "surface": {
             "type": "string",
