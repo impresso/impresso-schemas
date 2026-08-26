@@ -8,8 +8,8 @@
 | :-------------------------------------------------- | :------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [media\_title](#media_title)                        | `string` | Required | cannot be null | [Versioning Manifest](manifest-properties-media_list-items-properties-media_title.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/versioning/manifest.v1.schema.json#/properties/media_list/items/properties/media_title")                       |
 | [data\_provider](#data_provider)                    | `string` | Optional | cannot be null | [Versioning Manifest](manifest-properties-media_list-items-properties-data_provider.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/versioning/manifest.v1.schema.json#/properties/media_list/items/properties/data_provider")                   |
-| [source\_type](#source_type)                        | `string` | Optional | cannot be null | [Versioning Manifest](manifest-properties-media_list-items-properties-source_type.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/versioning/manifest.v1.schema.json#/properties/media_list/items/properties/source_type")                       |
-| [source\_medium](#source_medium)                    | `string` | Optional | cannot be null | [Versioning Manifest](manifest-properties-media_list-items-properties-source_medium.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/versioning/manifest.v1.schema.json#/properties/media_list/items/properties/source_medium")                   |
+| [source\_type](#source_type)                        | `string` | Optional | cannot be null | [Versioning Manifest](manifest-properties-media_list-items-properties-impresso-source-type.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/source-type.v1.schema.json#/properties/media_list/items/properties/source_type")               |
+| [source\_medium](#source_medium)                    | `string` | Optional | cannot be null | [Versioning Manifest](manifest-properties-media_list-items-properties-impresso-source-medium.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/source-medium.v1.schema.json#/properties/media_list/items/properties/source_medium")         |
 | [last\_modification\_date](#last_modification_date) | `string` | Required | cannot be null | [Versioning Manifest](manifest-properties-media_list-items-properties-last_modification_date.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/versioning/manifest.v1.schema.json#/properties/media_list/items/properties/last_modification_date") |
 | [update\_type](#update_type)                        | `string` | Required | can be null    | [Versioning Manifest](manifest-properties-media_list-items-properties-update_type.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/versioning/manifest.v1.schema.json#/properties/media_list/items/properties/update_type")                       |
 | [update\_level](#update_level)                      | `string` | Required | can be null    | [Versioning Manifest](manifest-properties-media_list-items-properties-update_level.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/versioning/manifest.v1.schema.json#/properties/media_list/items/properties/update_level")                     |
@@ -56,23 +56,29 @@ Partner institution providing the data for this media title.
 
 ## source\_type
 
-Source type of this media title.
+Type of media source from which a data-preparation record originates. Value from the `impresso_essentials.utils.SourceType` enum. This schema defines the value independently of the property name that stores it; current data-preparation properties using this value are `st` (canonical, rebuilt) and `source_type` (versioning manifest).
 
 `source_type`
 
 * is optional
 
-* Type: `string`
+* Type: `string` ([Impresso source type](manifest-properties-media_list-items-properties-impresso-source-type.md))
 
 * cannot be null
 
-* defined in: [Versioning Manifest](manifest-properties-media_list-items-properties-source_type.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/versioning/manifest.v1.schema.json#/properties/media_list/items/properties/source_type")
+* defined in: [Versioning Manifest](manifest-properties-media_list-items-properties-impresso-source-type.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/source-type.v1.schema.json#/properties/media_list/items/properties/source_type")
 
 ### source\_type Type
 
-`string`
+`string` ([Impresso source type](manifest-properties-media_list-items-properties-impresso-source-type.md))
 
 ### source\_type Constraints
+
+**constant**: the value of this property must be equal to:
+
+```json
+"radio_broadcast"
+```
 
 **enum**: the value of this property must be equal to one of the following values:
 
@@ -85,25 +91,41 @@ Source type of this media title.
 | `"monograph"`       |             |
 | `"encyclopedia"`    |             |
 
+### source\_type Examples
+
+```json
+"newspaper"
+```
+
+```json
+"radio_broadcast"
+```
+
 ## source\_medium
 
-Source medium of this media title.
+Medium in which the source media of a data-preparation record was originally produced. Value from the `impresso_essentials.utils.SourceMedium` enum. This schema defines the value independently of the property name that stores it; current data-preparation properties using this value are `sm` (canonical, rebuilt) and `source_medium` (versioning manifest).
 
 `source_medium`
 
 * is optional
 
-* Type: `string`
+* Type: `string` ([Impresso source medium](manifest-properties-media_list-items-properties-impresso-source-medium.md))
 
 * cannot be null
 
-* defined in: [Versioning Manifest](manifest-properties-media_list-items-properties-source_medium.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/versioning/manifest.v1.schema.json#/properties/media_list/items/properties/source_medium")
+* defined in: [Versioning Manifest](manifest-properties-media_list-items-properties-impresso-source-medium.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/source-medium.v1.schema.json#/properties/media_list/items/properties/source_medium")
 
 ### source\_medium Type
 
-`string`
+`string` ([Impresso source medium](manifest-properties-media_list-items-properties-impresso-source-medium.md))
 
 ### source\_medium Constraints
+
+**constant**: the value of this property must be equal to:
+
+```json
+"audio"
+```
 
 **enum**: the value of this property must be equal to one of the following values:
 
@@ -112,6 +134,16 @@ Source medium of this media title.
 | `"print"`      |             |
 | `"typescript"` |             |
 | `"audio"`      |             |
+
+### source\_medium Examples
+
+```json
+"print"
+```
+
+```json
+"audio"
+```
 
 ## last\_modification\_date
 

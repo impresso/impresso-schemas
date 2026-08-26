@@ -46,14 +46,12 @@
             "description": "Partner institution providing the data for this media title."
           },
           "source_type": {
-            "type": "string",
-            "description": "Source type of this media title.",
-            "enum": ["newspaper", "radio_broadcast", "radio_magazine", "radio_schedule", "monograph", "encyclopedia"]
+            "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/source-type.v1.schema.json",
+            "description": "Source type of this media title."
           },
           "source_medium": {
-            "type": "string",
-            "description": "Source medium of this media title.",
-            "enum": ["print", "typescript", "audio"]
+            "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/source-medium.v1.schema.json",
+            "description": "Source medium of this media title."
           },
           "last_modification_date": {
             "type": "string",

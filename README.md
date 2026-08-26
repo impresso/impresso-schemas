@@ -143,6 +143,11 @@ These Impresso 2 fragments define concepts shared across lifecycle areas.
 
 ### Data preparation
 
+Area-local common scalars shared by the data-preparation schemas below:
+
+- **Source-type scalar**: [`json/impresso-2/data-preparation/common/source-type.v1.schema.json`](json/impresso-2/data-preparation/common/source-type.v1.schema.json)
+- **Source-medium scalar**: [`json/impresso-2/data-preparation/common/source-medium.v1.schema.json`](json/impresso-2/data-preparation/common/source-medium.v1.schema.json)
+
 - **Issue**:
   - legacy: [`json/canonical/issue.schema.json`](json/canonical/issue.schema.json) — [docs](docs/legacy/canonical/issue.md)
   - imp2: [`json/impresso-2/data-preparation/canonical/issue.v1.schema.json`](json/impresso-2/data-preparation/canonical/issue.v1.schema.json) — [docs](docs/impresso-2/issue.md)

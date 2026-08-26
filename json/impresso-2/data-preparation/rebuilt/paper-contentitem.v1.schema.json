@@ -24,12 +24,11 @@
       "type": "boolean"
     },
     "st": {
-      "type": "string",
-      "description": "The type of media source to which this content item belongs. Must be a value from the impresso-essentials.utils SourceType enum.",
-      "enum": ["newspaper", "radio_broadcast", "radio_magazine", "radio_schedule", "monograph", "encyclopedia"]
+      "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/source-type.v1.schema.json",
+      "description": "The type of media source to which this content item belongs."
     },
     "sm": {
-      "type": "string",
+      "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/source-medium.v1.schema.json",
       "description": "The medium in which the source media this content item belongs to was originally produced. For printed documents, this relates to the physical paper support.",
       "enum": ["print", "typescript"]
     },

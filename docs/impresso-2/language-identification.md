@@ -4,7 +4,7 @@
 
 all of
 
-* [Content-item identifier property](ocr-qa-allof-content-item-identifier-property.md "check type definition")
+* [Impresso ci_id property](ocr-qa-allof-impresso-ci_id-property.md "check type definition")
 
 # Impresso Language Identification Information Properties
 

@@ -4,7 +4,7 @@
 
 all of
 
-* [Content-item identifier property](ocr-qa-allof-content-item-identifier-property.md "check type definition")
+* [Impresso ci_id property](ocr-qa-allof-impresso-ci_id-property.md "check type definition")
 
 * [Untitled undefined type in Paper Content Item](paper-contentitem-allof-1.md "check type definition")
 
@@ -16,8 +16,8 @@ all of
 | [d](#d)                                                     | `string`  | Optional | cannot be null | [Paper Content Item](paper-contentitem-properties-d.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/d")                                                   |
 | [cc](#cc)                                                   | `boolean` | Optional | cannot be null | [Paper Content Item](paper-contentitem-properties-cc.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/cc")                                                 |
 | [olr](#olr)                                                 | `boolean` | Required | cannot be null | [Paper Content Item](paper-contentitem-properties-olr.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/olr")                                               |
-| [st](#st)                                                   | `string`  | Optional | cannot be null | [Paper Content Item](paper-contentitem-properties-st.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/st")                                                 |
-| [sm](#sm)                                                   | `string`  | Optional | cannot be null | [Paper Content Item](paper-contentitem-properties-sm.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/sm")                                                 |
+| [st](#st)                                                   | `string`  | Optional | cannot be null | [Paper Content Item](manifest-properties-media_list-items-properties-impresso-source-type.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/source-type.v1.schema.json#/properties/st")                   |
+| [sm](#sm)                                                   | `string`  | Optional | cannot be null | [Paper Content Item](manifest-properties-media_list-items-properties-impresso-source-medium.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/source-medium.v1.schema.json#/properties/sm")               |
 | [tp](#tp)                                                   | `string`  | Required | can be null    | [Paper Content Item](paper-contentitem-properties-tp.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/tp")                                                 |
 | [lg](#lg)                                                   | `string`  | Optional | cannot be null | [Paper Content Item](paper-contentitem-properties-lg.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/lg")                                                 |
 | [rc](#rc)                                                   | `string`  | Optional | can be null    | [Paper Content Item](paper-contentitem-properties-rc.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/rc")                                                 |
@@ -133,23 +133,29 @@ True if optical layout recognition was applied to the issue/bulletin this conten
 
 ## st
 
-The type of media source to which this content item belongs. Must be a value from the impresso-essentials.utils SourceType enum.
+Type of media source from which a data-preparation record originates. Value from the `impresso_essentials.utils.SourceType` enum. This schema defines the value independently of the property name that stores it; current data-preparation properties using this value are `st` (canonical, rebuilt) and `source_type` (versioning manifest).
 
 `st`
 
 * is optional
 
-* Type: `string`
+* Type: `string` ([Impresso source type](manifest-properties-media_list-items-properties-impresso-source-type.md))
 
 * cannot be null
 
-* defined in: [Paper Content Item](paper-contentitem-properties-st.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/st")
+* defined in: [Paper Content Item](manifest-properties-media_list-items-properties-impresso-source-type.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/source-type.v1.schema.json#/properties/st")
 
 ### st Type
 
-`string`
+`string` ([Impresso source type](manifest-properties-media_list-items-properties-impresso-source-type.md))
 
 ### st Constraints
+
+**constant**: the value of this property must be equal to:
+
+```json
+"radio_broadcast"
+```
 
 **enum**: the value of this property must be equal to one of the following values:
 
@@ -162,25 +168,41 @@ The type of media source to which this content item belongs. Must be a value fro
 | `"monograph"`       |             |
 | `"encyclopedia"`    |             |
 
+### st Examples
+
+```json
+"newspaper"
+```
+
+```json
+"radio_broadcast"
+```
+
 ## sm
 
-The medium in which the source media this content item belongs to was originally produced. For printed documents, this relates to the physical paper support.
+Medium in which the source media of a data-preparation record was originally produced. Value from the `impresso_essentials.utils.SourceMedium` enum. This schema defines the value independently of the property name that stores it; current data-preparation properties using this value are `sm` (canonical, rebuilt) and `source_medium` (versioning manifest).
 
 `sm`
 
 * is optional
 
-* Type: `string`
+* Type: `string` ([Impresso source medium](manifest-properties-media_list-items-properties-impresso-source-medium.md))
 
 * cannot be null
 
-* defined in: [Paper Content Item](paper-contentitem-properties-sm.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/sm")
+* defined in: [Paper Content Item](manifest-properties-media_list-items-properties-impresso-source-medium.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/source-medium.v1.schema.json#/properties/sm")
 
 ### sm Type
 
-`string`
+`string` ([Impresso source medium](manifest-properties-media_list-items-properties-impresso-source-medium.md))
 
 ### sm Constraints
+
+**constant**: the value of this property must be equal to:
+
+```json
+"audio"
+```
 
 **enum**: the value of this property must be equal to one of the following values:
 
@@ -188,6 +210,17 @@ The medium in which the source media this content item belongs to was originally
 | :------------- | :---------- |
 | `"print"`      |             |
 | `"typescript"` |             |
+| `"audio"`      |             |
+
+### sm Examples
+
+```json
+"print"
+```
+
+```json
+"audio"
+```
 
 ## tp
 

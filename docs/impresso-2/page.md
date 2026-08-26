@@ -22,19 +22,19 @@ all of
 
 # Printed Page Properties
 
-| Property                                   | Type      | Required | Nullable       | Defined by                                                                                                                                                                                      |
-| :----------------------------------------- | :-------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [id](#id)                                  | `string`  | Required | cannot be null | [Printed Page](page-properties-id.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/id")                               |
-| [iiif](#iiif)                              | `string`  | Optional | cannot be null | [Printed Page](page-properties-iiif.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/iiif")                           |
-| [iiif\_img\_base\_uri](#iiif_img_base_uri) | `string`  | Optional | cannot be null | [Printed Page](page-properties-iiif_img_base_uri.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/iiif_img_base_uri") |
-| [fw](#fw)                                  | `integer` | Optional | cannot be null | [Printed Page](page-properties-fw.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/fw")                               |
-| [fh](#fh)                                  | `integer` | Optional | cannot be null | [Printed Page](page-properties-fh.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/fh")                               |
-| [st](#st)                                  | `string`  | Optional | cannot be null | [Printed Page](page-properties-st.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/st")                               |
-| [sm](#sm)                                  | `string`  | Optional | cannot be null | [Printed Page](page-properties-sm.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/sm")                               |
-| [cc](#cc)                                  | `boolean` | Optional | cannot be null | [Printed Page](page-properties-cc.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/cc")                               |
-| [cdt](#cdt)                                | `string`  | Optional | cannot be null | [Printed Page](page-properties-cdt.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/cdt")                             |
-| [ts](#ts)                                  | `string`  | Optional | cannot be null | [Printed Page](page-properties-ts.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/ts")                               |
-| [r](#r)                                    | `array`   | Required | cannot be null | [Printed Page](page-properties-r.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/r")                                 |
+| Property                                   | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                                  |
+| :----------------------------------------- | :-------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [id](#id)                                  | `string`  | Required | cannot be null | [Printed Page](page-properties-id.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/id")                                                           |
+| [iiif](#iiif)                              | `string`  | Optional | cannot be null | [Printed Page](page-properties-iiif.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/iiif")                                                       |
+| [iiif\_img\_base\_uri](#iiif_img_base_uri) | `string`  | Optional | cannot be null | [Printed Page](page-properties-iiif_img_base_uri.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/iiif_img_base_uri")                             |
+| [fw](#fw)                                  | `integer` | Optional | cannot be null | [Printed Page](page-properties-fw.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/fw")                                                           |
+| [fh](#fh)                                  | `integer` | Optional | cannot be null | [Printed Page](page-properties-fh.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/fh")                                                           |
+| [st](#st)                                  | `string`  | Optional | cannot be null | [Printed Page](manifest-properties-media_list-items-properties-impresso-source-type.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/source-type.v1.schema.json#/properties/st")     |
+| [sm](#sm)                                  | `string`  | Optional | cannot be null | [Printed Page](manifest-properties-media_list-items-properties-impresso-source-medium.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/source-medium.v1.schema.json#/properties/sm") |
+| [cc](#cc)                                  | `boolean` | Optional | cannot be null | [Printed Page](page-properties-cc.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/cc")                                                           |
+| [cdt](#cdt)                                | `string`  | Optional | cannot be null | [Printed Page](page-properties-cdt.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/cdt")                                                         |
+| [ts](#ts)                                  | `string`  | Optional | cannot be null | [Printed Page](page-properties-ts.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/ts")                                                           |
+| [r](#r)                                    | `array`   | Required | cannot be null | [Printed Page](page-properties-r.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/r")                                                             |
 
 ## id
 
@@ -138,23 +138,29 @@ Height in pixels of the facsimile corresponding to this page.
 
 ## st
 
-Type of media source. Should be a value the impresso-essentials.utils SourceType enum.
+Type of media source from which a data-preparation record originates. Value from the `impresso_essentials.utils.SourceType` enum. This schema defines the value independently of the property name that stores it; current data-preparation properties using this value are `st` (canonical, rebuilt) and `source_type` (versioning manifest).
 
 `st`
 
 * is optional
 
-* Type: `string`
+* Type: `string` ([Impresso source type](manifest-properties-media_list-items-properties-impresso-source-type.md))
 
 * cannot be null
 
-* defined in: [Printed Page](page-properties-st.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/st")
+* defined in: [Printed Page](manifest-properties-media_list-items-properties-impresso-source-type.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/source-type.v1.schema.json#/properties/st")
 
 ### st Type
 
-`string`
+`string` ([Impresso source type](manifest-properties-media_list-items-properties-impresso-source-type.md))
 
 ### st Constraints
+
+**constant**: the value of this property must be equal to:
+
+```json
+"radio_broadcast"
+```
 
 **enum**: the value of this property must be equal to one of the following values:
 
@@ -167,25 +173,41 @@ Type of media source. Should be a value the impresso-essentials.utils SourceType
 | `"monograph"`       |             |
 | `"encyclopedia"`    |             |
 
+### st Examples
+
+```json
+"newspaper"
+```
+
+```json
+"radio_broadcast"
+```
+
 ## sm
 
-Source medium, format in which the media was originally produced. If `tp == radio_broadcast`, this is typically `typescript` or `audio`.
+Medium in which the source media of a data-preparation record was originally produced. Value from the `impresso_essentials.utils.SourceMedium` enum. This schema defines the value independently of the property name that stores it; current data-preparation properties using this value are `sm` (canonical, rebuilt) and `source_medium` (versioning manifest).
 
 `sm`
 
 * is optional
 
-* Type: `string`
+* Type: `string` ([Impresso source medium](manifest-properties-media_list-items-properties-impresso-source-medium.md))
 
 * cannot be null
 
-* defined in: [Printed Page](page-properties-sm.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/page.v1.schema.json#/properties/sm")
+* defined in: [Printed Page](manifest-properties-media_list-items-properties-impresso-source-medium.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/source-medium.v1.schema.json#/properties/sm")
 
 ### sm Type
 
-`string`
+`string` ([Impresso source medium](manifest-properties-media_list-items-properties-impresso-source-medium.md))
 
 ### sm Constraints
+
+**constant**: the value of this property must be equal to:
+
+```json
+"audio"
+```
 
 **enum**: the value of this property must be equal to one of the following values:
 
@@ -193,6 +215,17 @@ Source medium, format in which the media was originally produced. If `tp == radi
 | :------------- | :---------- |
 | `"print"`      |             |
 | `"typescript"` |             |
+| `"audio"`      |             |
+
+### sm Examples
+
+```json
+"print"
+```
+
+```json
+"audio"
+```
 
 ## cc
 

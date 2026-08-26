@@ -1,6 +1,6 @@
 ## ci\_id Type
 
-`string`
+`string` ([Impresso content-item identifier](ci_id-properties-impresso-content-item-identifier.md))
 
 ## ci\_id Constraints
 
