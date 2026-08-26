@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/entities/entities-ner.v1.schema.json",
+  "title": "Named entity recognition output record",
+  "description": "Defines one named entity recognition output record for an Impresso content item, produced before named entity linking and indexing. In JSON Lines serialisation, each line represents one content item and its named entity mentions as offline annotations with character offsets relative to the relevant content-item text. Entity types use the coarse-grained Impresso HIPE tagset.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/ci_id.v1.schema.json"
+    },
+    {
+      "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/model-id.v1.schema.json"
+    },
+    {
+      "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/ts.v1.schema.json"
+    }
+  ],
+  "$defs": {
+    "namedEntityList": {
+      "type": "array",
+      "description": "A list of entities.",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/common/entity-type.v1.schema.json",
+            "description": "NE type (coarse-grained)."
+          },
+          "surface": {
+            "type": "string",
+            "description": "The surface form of the named entity mention, as it appears in the text."
+          },
+          "lOffset": {
+            "type": "integer",
+            "description": "The left character offset of the named entity with respect to the corresponding text element (full text for nes, title for tnes)."
+          },
+          "rOffset": {
+            "type": "integer",
+            "description": "The right character offset of the named entity with respect to the corresponding text element (full text for nes, title for tnes)."
+          },
+          "confidence_ner": {
+            "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/probability.v1.schema.json",
+            "description": "Confidence score of the Named Entity Recognition process, from 0 (lowest confidence) to 1 (highest confidence)."
+          },
+          "confidence_ner_entity": {
+            "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/probability.v1.schema.json",
+            "description": "Confidence that the detected span is an entity, independent of its predicted type, from 0 (lowest confidence) to 1 (highest confidence). Computed as mean_i(1 − P(O)_i) over the entity's tokens. Optional; omitted when not computed."
+          },
+          "confidence_ner_type": {
+            "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/probability.v1.schema.json",
+            "description": "Confidence that the predicted entity type is correct, given that the span is an entity, from 0 (lowest confidence) to 1 (highest confidence). Computed as mean_i(P(predicted_type)_i / (1 − P(O)_i)) over the entity's tokens. Optional; omitted when not computed."
+          }
+        },
+        "required": ["type", "surface", "lOffset", "rOffset", "confidence_ner"]
+      }
+    }
+  },
+  "properties": {
+    "lingproc_uri": {
+      "type": "string",
+      "description": "Extension. Full URI of the source lingproc shard this checkpoint was produced from (which for NER is the task's own input). NEL reads it to locate and reload the exact same lingproc file — no separate --lingproc flag."
+    },
+    "nes": {
+      "$ref": "#/$defs/namedEntityList",
+      "description": "Named entity mentions extracted from the article body."
+    },
+    "tnes": {
+      "$ref": "#/$defs/namedEntityList",
+      "description": "Named entity mentions extracted from the article title."
+    }
+  },
+  "required": ["ci_id", "ts", "model_id", "nes", "lingproc_uri"]
+}

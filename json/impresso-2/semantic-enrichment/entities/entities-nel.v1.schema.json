@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/entities/entities-nel.v1.schema.json",
+  "title": "Named entity recognition and linking output record",
+  "description": "Defines one named entity linking output record for an Impresso content item, produced after named entity recognition and before indexing. In JSON Lines serialisation, each line represents one content item and its recognised named entity mentions enriched with linking results. Entity mentions remain offline annotations with character offsets relative to the relevant content-item text, and entity types use the coarse-grained Impresso-HIPE tagset.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/ci_id.v1.schema.json"
+    },
+    {
+      "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/model-id.v1.schema.json"
+    },
+    {
+      "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/ts.v1.schema.json"
+    }
+  ],
+  "$defs": {
+    "namedEntityList": {
+      "type": "array",
+      "description": "A list of entities.",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/common/entity-type.v1.schema.json",
+            "description": "NE type (coarse-grained)."
+          },
+          "type_ner_original": {
+            "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/common/entity-type.v1.schema.json",
+            "description": "NER type (coarse-grained) in case we overwrite the type in nel process."
+          },
+          "nel_unlink": {
+            "type": "object",
+            "description": "Extension. Provenance for a writer-side link strip: present only when a real Wikidata link was deliberately removed (set to NIL). Its presence distinguishes a filter strip from a model-emitted NIL and preserves the removed QID for audit. Omitted when the link was kept.",
+            "properties": {
+              "reason": {
+                "type": "string",
+                "description": "Dotted counter name of the filter that stripped the link ('nel.disambiguation_page' — linked QID is a disambiguation page; 'nel.birth_after_pub' — linked person's birth date is after the item's publication date)."
+              },
+              "removed_wkd_id": {
+                "type": "string",
+                "description": "The (wrong) Wikidata QID that was removed."
+              }
+            },
+            "required": ["reason", "removed_wkd_id"]
+          },
+          "surface": {
+            "type": "string",
+            "description": "The surface form of the named entity mention, as it appears in the text."
+          },
+          "lOffset": {
+            "type": "integer",
+            "description": "The left character offset of the named entity with respect to the corresponding text element (full text for nes, title for tnes)."
+          },
+          "rOffset": {
+            "type": "integer",
+            "description": "The right character offset of the named entity with respect to the corresponding text element (full text for nes, title for tnes)."
+          },
+          "confidence_ner": {
+            "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/probability.v1.schema.json",
+            "description": "Confidence score of the Named Entity Recognition process, from 0 (lowest confidence) to 1 (highest confidence)."
+          },
+          "confidence_ner_entity": {
+            "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/probability.v1.schema.json",
+            "description": "Confidence that the detected span is an entity, independent of its predicted type, from 0 (lowest confidence) to 1 (highest confidence). Computed as mean_i(1 − P(O)_i) over the entity's tokens. Optional; omitted when not computed."
+          },
+          "confidence_ner_type": {
+            "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/probability.v1.schema.json",
+            "description": "Confidence that the predicted entity type is correct, given that the span is an entity, from 0 (lowest confidence) to 1 (highest confidence). Computed as mean_i(P(predicted_type)_i / (1 − P(O)_i)) over the entity's tokens. Optional; omitted when not computed."
+          },
+          "confidence_nel": {
+            "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/probability.v1.schema.json",
+            "description": "Confidence that the named-entity linking process assigned the correct linked entity, from 0 (lowest confidence) to 1 (highest confidence)."
+          },
+          "confidence_margin": {
+            "type": "number",
+            "description": "If use numb_beams > 1,top-1 minus top-2 raw sum-log-prob from the NEL beam."
+          },
+          "wkd_id": {
+            "type": "string",
+            "description": "Wikidata QID if available."
+          },
+          "wkpedia_pagename": {
+            "type": "string",
+            "description": "Wikipedia page name, i.e. the last part of the wikipedia URL (e.g.  United_States)"
+          },
+          "wkpedia_url": {
+            "type": "string",
+            "description": "Wikipedia page URL, e.g. https://en.wikipedia.org/wiki/United_States"
+          },
+          "name": {
+            "type": "string",
+            "description": "In case of a person mention, the entity component of type 'name', as defined in the Impresso HIPE NE Annotation guidelines (https://zenodo.org/records/3585750)."
+          },
+          "title": {
+            "type": "string",
+            "description": "In case of a person mention, the entity component of type 'title', as defined in the Impresso HIPE NE Annotation guidelines (https://zenodo.org/records/3585750). "
+          },
+          "function": {
+            "type": "string",
+            "description": "In case of a person mention, the entity component of type 'function', as defined in the Impresso HIPE NE Annotation guidelines (https://zenodo.org/records/3585750). "
+          }
+        },
+        "required": ["type", "surface", "lOffset", "rOffset", "confidence_ner", "confidence_nel"]
+      }
+    }
+  },
+  "properties": {
+    "prompt_unit": {
+      "type": "string",
+      "description": "Extension. The text unit fed to mGENRE for every mention in this record: 'sentence' (the lingproc sentence containing the mention) or 'window' (the full body/title segment, mention-centered).",
+      "enum": ["sentence", "window"]
+    },
+    "nes": {
+      "$ref": "#/$defs/namedEntityList",
+      "description": "Named entity mentions extracted from the article body."
+    },
+    "tnes": {
+      "$ref": "#/$defs/namedEntityList",
+      "description": "Named entity mentions extracted from the article title."
+    }
+  },
+  "required": ["ci_id", "ts", "model_id", "nes"]
+}

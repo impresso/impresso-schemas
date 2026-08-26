@@ -110,9 +110,10 @@ IMPRESSO_2_CASES = [
     ("json/impresso-2/text-processing/ocr-qa/ocr-qa.v1.schema.json", "examples/impresso-2/text-processing/ocr-qa/ocr-qa.ocr_qa_example.json"),
     # semantic-enrichment
     ("json/impresso-2/semantic-enrichment/topic-model/topic-description.v1.schema.json", "examples/impresso-2/semantic-enrichment/topic-model/topic-description.example0.json"),
-    ("json/impresso-2/semantic-enrichment/entities/entities.v1.schema.json", "examples/impresso-2/semantic-enrichment/entities/entities.example0.json"),
-    ("json/impresso-2/semantic-enrichment/entities/entities.v1.schema.json", "examples/impresso-2/semantic-enrichment/entities/entities.example1.json"),
-    ("json/impresso-2/semantic-enrichment/entities/entities.v1.schema.json", "examples/impresso-2/semantic-enrichment/entities/entities.example2.json"),
+    ("json/impresso-2/semantic-enrichment/entities/entities-ner.v1.schema.json", "examples/impresso-2/semantic-enrichment/entities/entities-ner.example0.json"),
+    ("json/impresso-2/semantic-enrichment/entities/entities-nel.v1.schema.json", "examples/impresso-2/semantic-enrichment/entities/entities-nel.example0.json"),
+    ("json/impresso-2/semantic-enrichment/entities/entities-nel.v1.schema.json", "examples/impresso-2/semantic-enrichment/entities/entities-nel.example1.json"),
+    ("json/impresso-2/semantic-enrichment/entities/entities-nel.v1.schema.json", "examples/impresso-2/semantic-enrichment/entities/entities-nel.example2.json"),
     ("json/impresso-2/semantic-enrichment/document-embeddings/embeddings-docs.v1.schema.json", "examples/impresso-2/semantic-enrichment/document-embeddings/embeddings-docs.example0.json"),
     ("json/impresso-2/semantic-enrichment/document-embeddings/embeddings-sentence.v1.schema.json", "examples/impresso-2/semantic-enrichment/document-embeddings/embeddings-sentence.sentence_embeddings_example.json"),
     ("json/impresso-2/semantic-enrichment/document-embeddings/embeddings-chunks.v1.schema.json", "examples/impresso-2/semantic-enrichment/document-embeddings/embeddings-chunks.chunk_embeddings_example.json"),
