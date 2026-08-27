@@ -9,7 +9,7 @@
       "meta_issue_id_s":"EXP-2011-01-03-a",
       "meta_date_dt":"2011-01-03T00:00:00Z",
       "reading_order_i":123,
-      "item_type_s":"img",
+      "item_type_s":"image",
       "linked_ci_s":"EXP-2011-01-03-a-i0122",
       "page_nb_is":[16],
       "coords_is":[598,284,560,602],
