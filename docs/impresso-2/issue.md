@@ -126,7 +126,7 @@ Type of media source from which a data-preparation record originates. Value from
 
 * cannot be null
 
-* defined in: [Issue](manifest-properties-media_list-items-properties-impresso-source-type.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/source-type.v1.schema.json#/properties/st")
+* defined in: [Issue](manifest-properties-media_list-items-properties-impresso-source-type.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/source-type.v1.schema.json")
 
 ### st Type
 
@@ -167,7 +167,7 @@ Medium in which the source media of a data-preparation record was originally pro
 
 * cannot be null
 
-* defined in: [Issue](manifest-properties-media_list-items-properties-impresso-source-medium.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/source-medium.v1.schema.json#/properties/sm")
+* defined in: [Issue](manifest-properties-media_list-items-properties-impresso-source-medium.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/source-medium.v1.schema.json")
 
 ### sm Type
 
