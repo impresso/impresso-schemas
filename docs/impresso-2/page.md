@@ -156,12 +156,6 @@ Type of media source from which a data-preparation record originates. Value from
 
 ### st Constraints
 
-**constant**: the value of this property must be equal to:
-
-```json
-"radio_broadcast"
-```
-
 **enum**: the value of this property must be equal to one of the following values:
 
 | Value               | Explanation |
@@ -202,12 +196,6 @@ Medium in which the source media of a data-preparation record was originally pro
 `string` ([Impresso source medium](manifest-properties-media_list-items-properties-impresso-source-medium.md))
 
 ### sm Constraints
-
-**constant**: the value of this property must be equal to:
-
-```json
-"audio"
-```
 
 **enum**: the value of this property must be equal to one of the following values:
 
