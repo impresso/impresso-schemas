@@ -4,9 +4,9 @@
 
 # Model identifier property Properties
 
-| Property               | Type     | Required | Nullable       | Defined by                                                                                                                                                                          |
-| :--------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [model\_id](#model_id) | `string` | Optional | cannot be null | [Model identifier property](model-id-properties-model_id.md "https://impresso.github.io/impresso-schemas/json/impresso-2/common/model-id.part.v1.schema.json#/properties/model_id") |
+| Property               | Type     | Required | Nullable       | Defined by                                                                                                                                                                     |
+| :--------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [model\_id](#model_id) | `string` | Optional | cannot be null | [Model identifier property](model-id-properties-model_id.md "https://impresso.github.io/impresso-schemas/json/impresso-2/common/model-id.v1.schema.json#/properties/model_id") |
 
 ## model\_id
 
@@ -20,7 +20,7 @@ Identifier of the model or processing system that produced this output. It shoul
 
 * cannot be null
 
-* defined in: [Model identifier property](model-id-properties-model_id.md "https://impresso.github.io/impresso-schemas/json/impresso-2/common/model-id.part.v1.schema.json#/properties/model_id")
+* defined in: [Model identifier property](model-id-properties-model_id.md "https://impresso.github.io/impresso-schemas/json/impresso-2/common/model-id.v1.schema.json#/properties/model_id")
 
 ### model\_id Type
 

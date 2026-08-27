@@ -18,27 +18,27 @@ all of
 
 # Issue Properties
 
-| Property                                                | Type      | Required | Nullable       | Defined by                                                                                                                                                                                               |
-| :------------------------------------------------------ | :-------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [id](#id)                                               | `string`  | Required | cannot be null | [Issue](issue-properties-id.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/id")                                             |
-| [cdt](#cdt)                                             | `string`  | Optional | cannot be null | [Issue](issue-properties-cdt.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/cdt")                                           |
-| [ts](#ts)                                               | `string`  | Optional | cannot be null | [Issue](issue-properties-ts.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/ts")                                             |
-| [st](#st)                                               | `string`  | Optional | cannot be null | [Issue](issue-properties-st.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/st")                                             |
-| [sm](#sm)                                               | `string`  | Optional | cannot be null | [Issue](issue-properties-sm.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/sm")                                             |
-| [consolidated](#consolidated)                           | `boolean` | Optional | cannot be null | [Issue](issue-properties-consolidated.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/consolidated")                         |
-| [consolidated\_ts\_original](#consolidated_ts_original) | `string`  | Optional | cannot be null | [Issue](issue-properties-consolidated_ts_original.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/consolidated_ts_original") |
-| [media\_title\_variant](#media_title_variant)           | `string`  | Optional | cannot be null | [Issue](issue-properties-media_title_variant.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/media_title_variant")           |
-| [olr](#olr)                                             | `boolean` | Optional | cannot be null | [Issue](issue-properties-olr.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/olr")                                           |
-| [i](#i)                                                 | `array`   | Required | cannot be null | [Issue](issue-properties-i.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/i")                                               |
-| [s](#s)                                                 | `array`   | Optional | cannot be null | [Issue](issue-properties-s.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/s")                                               |
-| [pp](#pp)                                               | `array`   | Optional | cannot be null | [Issue](issue-properties-pp.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/pp")                                             |
-| [rr](#rr)                                               | `array`   | Optional | cannot be null | [Issue](issue-properties-rr.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/rr")                                             |
-| [n](#n)                                                 | Multiple  | Optional | cannot be null | [Issue](issue-properties-n.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/n")                                               |
-| [iiif\_manifest\_uri](#iiif_manifest_uri)               | `string`  | Optional | cannot be null | [Issue](issue-properties-iiif_manifest_uri.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/iiif_manifest_uri")               |
-| [is\_exact\_date](#is_exact_date)                       | `boolean` | Optional | cannot be null | [Issue](issue-properties-is_exact_date.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/is_exact_date")                       |
-| [rc](#rc)                                               | `string`  | Optional | cannot be null | [Issue](issue-properties-rc.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/rc")                                             |
-| [rp](#rp)                                               | `string`  | Optional | cannot be null | [Issue](issue-properties-rp.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/rp")                                             |
-| [provided\_metadata](#provided_metadata)                | Multiple  | Optional | cannot be null | [Issue](issue-properties-provided_metadata.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/provided_metadata")               |
+| Property                                                | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                           |
+| :------------------------------------------------------ | :-------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [id](#id)                                               | `string`  | Required | cannot be null | [Issue](issue-properties-id.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/id")                                                         |
+| [cdt](#cdt)                                             | `string`  | Optional | cannot be null | [Issue](issue-properties-cdt.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/cdt")                                                       |
+| [ts](#ts)                                               | `string`  | Optional | cannot be null | [Issue](issue-properties-ts.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/ts")                                                         |
+| [st](#st)                                               | `string`  | Optional | cannot be null | [Issue](manifest-properties-media_list-items-properties-impresso-source-type.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/source-type.v1.schema.json#/properties/st")     |
+| [sm](#sm)                                               | `string`  | Optional | cannot be null | [Issue](manifest-properties-media_list-items-properties-impresso-source-medium.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/source-medium.v1.schema.json#/properties/sm") |
+| [consolidated](#consolidated)                           | `boolean` | Optional | cannot be null | [Issue](issue-properties-consolidated.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/consolidated")                                     |
+| [consolidated\_ts\_original](#consolidated_ts_original) | `string`  | Optional | cannot be null | [Issue](issue-properties-consolidated_ts_original.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/consolidated_ts_original")             |
+| [media\_title\_variant](#media_title_variant)           | `string`  | Optional | cannot be null | [Issue](issue-properties-media_title_variant.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/media_title_variant")                       |
+| [olr](#olr)                                             | `boolean` | Optional | cannot be null | [Issue](issue-properties-olr.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/olr")                                                       |
+| [i](#i)                                                 | `array`   | Required | cannot be null | [Issue](issue-properties-i.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/i")                                                           |
+| [s](#s)                                                 | `array`   | Optional | cannot be null | [Issue](issue-properties-s.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/s")                                                           |
+| [pp](#pp)                                               | `array`   | Optional | cannot be null | [Issue](issue-properties-pp.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/pp")                                                         |
+| [rr](#rr)                                               | `array`   | Optional | cannot be null | [Issue](issue-properties-rr.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/rr")                                                         |
+| [n](#n)                                                 | Multiple  | Optional | cannot be null | [Issue](issue-properties-n.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/n")                                                           |
+| [iiif\_manifest\_uri](#iiif_manifest_uri)               | `string`  | Optional | cannot be null | [Issue](issue-properties-iiif_manifest_uri.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/iiif_manifest_uri")                           |
+| [is\_exact\_date](#is_exact_date)                       | `boolean` | Optional | cannot be null | [Issue](issue-properties-is_exact_date.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/is_exact_date")                                   |
+| [rc](#rc)                                               | `string`  | Optional | cannot be null | [Issue](issue-properties-rc.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/rc")                                                         |
+| [rp](#rp)                                               | `string`  | Optional | cannot be null | [Issue](issue-properties-rp.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/rp")                                                         |
+| [provided\_metadata](#provided_metadata)                | Multiple  | Optional | cannot be null | [Issue](issue-properties-provided_metadata.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/provided_metadata")                           |
 
 ## id
 
@@ -116,21 +116,21 @@ Creation date timestamp (in '%Y-%m-%dT%H:%M:%SZ' format). If consolidated==True,
 
 ## st
 
-Type of media source. Should be a value the impresso-essentials.utils SourceType enum.
+Type of media source from which a data-preparation record originates. Value from the `impresso_essentials.utils.SourceType` enum. This schema defines the value independently of the property name that stores it; current data-preparation properties using this value are `st` (canonical, rebuilt) and `source_type` (versioning manifest).
 
 `st`
 
 * is optional
 
-* Type: `string`
+* Type: `string` ([Impresso source type](manifest-properties-media_list-items-properties-impresso-source-type.md))
 
 * cannot be null
 
-* defined in: [Issue](issue-properties-st.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/st")
+* defined in: [Issue](manifest-properties-media_list-items-properties-impresso-source-type.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/source-type.v1.schema.json")
 
 ### st Type
 
-`string`
+`string` ([Impresso source type](manifest-properties-media_list-items-properties-impresso-source-type.md))
 
 ### st Constraints
 
@@ -145,25 +145,41 @@ Type of media source. Should be a value the impresso-essentials.utils SourceType
 | `"monograph"`       |             |
 | `"encyclopedia"`    |             |
 
+### st Examples
+
+```json
+"newspaper"
+```
+
+```json
+"radio_broadcast"
+```
+
 ## sm
 
-Source medium, format in which the media was originally produced. If `tp == radio_broadcast`, this is typically `typescript` or `audio`.
+Medium in which the source media of a data-preparation record was originally produced. Value from the `impresso_essentials.utils.SourceMedium` enum. This schema defines the value independently of the property name that stores it; current data-preparation properties using this value are `sm` (canonical, rebuilt) and `source_medium` (versioning manifest).
 
 `sm`
 
 * is optional
 
-* Type: `string`
+* Type: `string` ([Impresso source medium](manifest-properties-media_list-items-properties-impresso-source-medium.md))
 
 * cannot be null
 
-* defined in: [Issue](issue-properties-sm.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/issue.v1.schema.json#/properties/sm")
+* defined in: [Issue](manifest-properties-media_list-items-properties-impresso-source-medium.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/source-medium.v1.schema.json")
 
 ### sm Type
 
-`string`
+`string` ([Impresso source medium](manifest-properties-media_list-items-properties-impresso-source-medium.md))
 
 ### sm Constraints
+
+**constant**: the value of this property must be equal to:
+
+```json
+"audio"
+```
 
 **enum**: the value of this property must be equal to one of the following values:
 
@@ -172,6 +188,16 @@ Source medium, format in which the media was originally produced. If `tp == radi
 | `"print"`      |             |
 | `"typescript"` |             |
 | `"audio"`      |             |
+
+### sm Examples
+
+```json
+"print"
+```
+
+```json
+"audio"
+```
 
 ## consolidated
 

@@ -1,8 +1,8 @@
-## st Type
+## Impresso source type Type
 
-`string`
+`string` ([Impresso source type](source-type.md))
 
-## st Constraints
+## Impresso source type Constraints
 
 **enum**: the value of this property must be equal to one of the following values:
 
@@ -14,3 +14,13 @@
 | `"radio_schedule"`  |             |
 | `"monograph"`       |             |
 | `"encyclopedia"`    |             |
+
+## Impresso source type Examples
+
+```json
+"newspaper"
+```
+
+```json
+"radio_broadcast"
+```

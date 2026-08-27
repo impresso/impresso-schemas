@@ -20,14 +20,12 @@
       "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
     },
     "st": {
-      "type": "string",
-      "description": "Type of media source. Should be a value the impresso-essentials.utils SourceType enum.",
-      "enum": ["newspaper", "radio_broadcast", "radio_magazine", "radio_schedule", "monograph", "encyclopedia"]
+      "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/source-type.v1.schema.json",
+      "description": "Type of media source."
     },
     "sm": {
-      "type": "string",
-      "description": "Source medium, format in which the media was originally produced. If `tp == radio_broadcast`, this is typically `typescript` or `audio`.",
-      "enum": ["print", "typescript", "audio"]
+      "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/source-medium.v1.schema.json",
+      "description": "Source medium, format in which the media was originally produced. If `tp == radio_broadcast`, this is typically `typescript` or `audio`."
     },
     "consolidated": {
       "description": "True if this issue is consolidated, and contains additional language identification and ocrqa information.",
