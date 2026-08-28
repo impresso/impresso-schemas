@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "title": "Freeform",
+  "description": "Freeform schema - a schema that allows any property to be added to the object.",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {}
+}

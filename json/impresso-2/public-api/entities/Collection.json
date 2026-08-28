@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "title": "Collection",
+  "description": "Collection details.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier of the collection."
+    },
+    "title": {
+      "type": "string",
+      "description": "Title of the collection."
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the collection."
+    },
+    "accessLevel": {
+      "type": "string",
+      "description": "Access level of the collection.",
+      "enum": ["public", "private"]
+    },
+    "createdAt": {
+      "type": "string",
+      "description": "Creation date of the collection.",
+      "format": "date-time"
+    },
+    "updatedAt": {
+      "type": "string",
+      "description": "Last update date of the collection.",
+      "format": "date-time"
+    },
+    "totalItems": {
+      "type": "integer",
+      "description": "Total number of items in the collection."
+    },
+    "creatorId": {
+      "type": "string",
+      "description": "Identifier of the user who created the collection."
+    }
+  },
+  "required": ["id"]
+}

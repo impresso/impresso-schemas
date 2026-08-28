@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "description": "Request to add content items to a collection from content items that match given filters",
+  "title": "Add Collectable Items From Filters",
+  "type": "object",
+  "properties": {
+    "filters": {
+      "type": "array",
+      "items": {
+        "$ref": "../../canonical/Filter.json"
+      },
+      "description": "Filters to apply when selecting items to add to the collection"
+    },
+    "namespace": {
+      "type": "string",
+      "description": "Namespace to use when selecting items to add to the collection",
+      "enum": ["search", "tr_passages"]
+    }
+  },
+  "required": ["filters", "namespace"],
+  "additionalProperties": false
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "title": "FindTextReuseClustersResponse",
+  "description": "Response for GET /text-reuse-clusters",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "clusters": {
+      "type": "array",
+      "items": {
+        "$ref": "../../deprecated/models/TextReuseClusterCompound.json"
+      }
+    },
+    "info": {
+      "limit": {
+        "type": "integer",
+        "description": "The number of items returned in this response"
+      },
+      "offset": {
+        "type": "integer",
+        "description": "Starting index of the items subset returned in this response"
+      },
+      "total": {
+        "type": "integer",
+        "description": "The total number of items matching the query"
+      }
+    }
+  },
+  "required": ["clusters", "info"]
+}

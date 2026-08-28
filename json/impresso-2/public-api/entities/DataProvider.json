@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "title": "DataProvider",
+  "description": "A data provider is a partner institution that provides content to Impresso (e.g., libraries, archives, media organizations).",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "The unique identifier of the data provider."
+    },
+    "name": {
+      "type": "string",
+      "description": "The default name of the data provider."
+    },
+    "names": {
+      "type": "array",
+      "description": "Names of the data provider in different languages.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "langCode": {
+            "type": "string",
+            "description": "ISO 639-1 language code."
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the data provider in this language."
+          }
+        },
+        "required": ["langCode", "name"]
+      }
+    },
+    "bitmapIndex": {
+      "type": "integer",
+      "description": "Bitmap index used for efficient data provider filtering."
+    }
+  },
+  "required": ["id", "name", "names"]
+}

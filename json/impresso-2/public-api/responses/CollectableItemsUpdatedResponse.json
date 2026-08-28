@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "description": "Request to update collectible items in a collection",
+  "title": "Collectable Items Updated Response",
+  "type": "object",
+  "required": ["totalAdded", "totalRemoved"],
+  "properties": {
+    "totalAdded": {
+      "type": "integer",
+      "description": "Total number of items added to the collection"
+    },
+    "totalRemoved": {
+      "type": "integer",
+      "description": "Total number of items removed from the collection"
+    }
+  }
+}

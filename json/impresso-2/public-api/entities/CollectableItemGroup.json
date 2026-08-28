@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "description": "Collectable item group object",
+  "title": "Collectable Item Group",
+  "type": "object",
+  "properties": {
+    "itemId": {
+      "type": "string",
+      "description": "The id of the collectable item group"
+    },
+    "contentType": {
+      "type": "string",
+      "enum": ["A", "E", "P", "I"],
+      "description": "Content type of the collectable item group: (A)rticle, (E)ntities, (P)ages, (I)ssues"
+    },
+    "collectionIds": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Ids of the collections"
+    },
+    "searchQueries": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Search queries"
+    },
+    "collections": {
+      "type": "array",
+      "items": {
+        "$ref": "./Collection.json"
+      },
+      "description": "Collection objects"
+    },
+    "latestDateAdded": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The latest date added to the collectable item group"
+    }
+  }
+}

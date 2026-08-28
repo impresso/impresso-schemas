@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "type": "object",
+  "title": "Text Reuse Passage",
+  "description": "Represents a passage of text that was identified as a part of a text reuse cluster",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique ID of the text reuse passage."
+    },
+    "content": {
+      "type": "string",
+      "description": "Textual content of the passage."
+    },
+    "contentItemId": {
+      "type": "string",
+      "description": "ID of the content item that the text reuse passage belongs to."
+    },
+    "offset": {
+      "type": "object",
+      "description": "Start and end offsets of the passage in the content item.",
+      "properties": {
+        "start": {
+          "type": "integer",
+          "description": "Start offset of the passage in the content item."
+        },
+        "end": {
+          "type": "integer",
+          "description": "End offset of the passage in the content item."
+        }
+      },
+      "required": ["start", "end"]
+    }
+  },
+  "required": ["id"]
+}

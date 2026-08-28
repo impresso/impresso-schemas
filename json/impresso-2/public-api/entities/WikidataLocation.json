@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "title": "Wikidata Location",
+  "description": "Wikidata location schema. Based on https://schema.org/Place",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "The Q Wikidata ID of the location (https://www.wikidata.org/wiki/Wikidata:Identifiers)"
+    },
+    "type": {
+      "type": "string",
+      "description": "The type of the entity",
+      "enum": ["location"]
+    },
+    "labels": {
+      "type": "object",
+      "description": "Labels of the location in different languages",
+      "additionalProperties": {
+        "type": "string",
+        "description": "Description of the location in a specific language",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "descriptions": {
+      "type": "object",
+      "description": "Descriptions of the location in different languages",
+      "additionalProperties": {
+        "type": "string",
+        "description": "Description of the location in a specific language",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "coordinates": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "latitude": {
+          "type": "number",
+          "description": "The latitude of the location"
+        },
+        "longitude": {
+          "type": "number",
+          "description": "The longitude of the location"
+        }
+      }
+    }
+  },
+  "required": ["id", "type"]
+}

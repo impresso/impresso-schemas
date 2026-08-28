@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "title": "MediaSource",
+  "description": "A media source is what a content item belongs to. This can be a newspaper, a TV or a radio station, etc.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "The unique identifier of the media source."
+    },
+    "type": {
+      "type": "string",
+      "description": "The type of the media source.",
+      "enum": ["newspaper", "radio_broadcast", "radio_magazine", "radio_schedule", "monograph", "encyclopedia"]
+    },
+    "medium": {
+      "type": "string",
+      "description": "The medium of the media source.",
+      "enum": ["print", "typescript", "audio"]
+    },
+    "name": {
+      "type": "string",
+      "description": "A display name of the media source."
+    },
+    "languageCodes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "ISO 639-2 language codes this media source has content in."
+    },
+    "publishedPeriodYears": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "integer"
+      },
+      "description": "The range of years this media source has been published for. Impresso may not have data for all this period. Is not defined if there is no information."
+    },
+    "availableDatesRange": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "description": "The range of dates this media source has content items for. This represents the earliest and the latest dates of the contet items.  Is not defined if there are no content items for this source."
+    },
+    "totals": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "articles": {
+          "type": "integer",
+          "description": "The number of articles in the media source."
+        },
+        "issues": {
+          "type": "integer",
+          "description": "The number of issues in the media source."
+        },
+        "pages": {
+          "type": "integer",
+          "description": "The number of pages in the media source."
+        }
+      }
+    },
+    "properties": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "name": "MediaSourceProperty",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The unique identifier of the property."
+          },
+          "label": {
+            "type": "string",
+            "description": "The name of the property."
+          },
+          "value": {
+            "type": "string",
+            "description": "The value of the property."
+          }
+        },
+        "required": ["id", "label", "value"]
+      }
+    }
+  },
+  "required": ["id", "type", "name", "medium", "languageCodes", "totals"]
+}

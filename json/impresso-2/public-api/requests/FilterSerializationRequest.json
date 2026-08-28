@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "description": "Request payload for POST /tools/filters/serialize",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "filters": {
+      "type": "array",
+      "items": {
+        "$ref": "../../canonical/Filter.json"
+      },
+      "description": "A list of Impresso search filters."
+    }
+  },
+  "required": ["filters"]
+}

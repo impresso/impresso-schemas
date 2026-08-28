@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "title": "Filter",
+  "description": "A single search filter criteria",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "context": {
+      "type": "string",
+      "enum": ["include", "exclude"],
+      "default": "include"
+    },
+    "op": {
+      "type": "string",
+      "enum": ["AND", "OR"],
+      "default": "OR"
+    },
+    "type": {
+      "type": "string",
+      "description": "Possible values are in 'impresso-jscomons Filter.type'"
+    },
+    "precision": {
+      "type": "string",
+      "enum": ["fuzzy", "soft", "exact", "partial"],
+      "default": "exact"
+    },
+    "q": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 6000
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 6000
+          }
+        }
+      ]
+    },
+    "daterange": {
+      "type": "string",
+      "pattern": "\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z TO \\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z",
+      "description": "DEPRECATED: Use `q`.",
+      "deprecated": true
+    },
+    "uids": {
+      "type": "string",
+      "description": "DEPRECATED: Use `q`.",
+      "deprecated": true
+    }
+  },
+  "required": ["type"]
+}

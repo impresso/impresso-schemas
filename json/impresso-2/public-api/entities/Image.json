@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "title": "Image",
+  "description": "An image from a content item",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "The unique identifier of the image"
+    },
+    "caption": {
+      "type": "string",
+      "description": "Image caption"
+    },
+    "issueId": {
+      "type": "string",
+      "description": "The unique identifier of the issue that the image belongs to."
+    },
+    "contentItemId": {
+      "type": "string",
+      "description": "The unique identifier of the content item that the image belongs to."
+    },
+    "previewUrl": {
+      "type": "string",
+      "format": "uri",
+      "description": "The URL of the image preview"
+    },
+    "pageNumbers": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      },
+      "description": "The page numbers of the issue that the image belongs to."
+    },
+    "imageTypes": {
+      "type": "object",
+      "properties": {
+        "visualContent": {
+          "type": "string",
+          "description": "Whether the content is an image or not."
+        },
+        "technique": {
+          "type": "string",
+          "description": "Determines if the image is a photograph."
+        },
+        "communicationGoal": {
+          "type": "string",
+          "description": "Purpose or communicative function of the image."
+        },
+        "visualContentType": {
+          "type": "string",
+          "description": "Classification of the visual content."
+        }
+      },
+      "additionalProperties": false
+    },
+    "mediaSourceRef": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The unique identifier of the media source"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the media source"
+        },
+        "type": {
+          "type": "string",
+          "description": "The type of the media source",
+          "enum": ["newspaper"]
+        }
+      },
+      "required": ["id", "name"],
+      "description": "The media source of the image",
+      "additionalProperties": false
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "The date of the image or the date of the issue that the image belongs to."
+    },
+    "embeddings": {
+      "type": "array",
+      "description": "Precomputed embeddings for the image in the format: <model_type>:<base64_embedding_vector>.",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": ["id", "issueId", "previewUrl", "mediaSourceRef", "date"]
+}

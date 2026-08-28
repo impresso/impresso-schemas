@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "type": "object",
+  "description": "Textual content details",
+  "properties": {
+    "documentType": {
+      "type": "string",
+      "description": "Type of document, e.g., page (p) or content item (ci).",
+      "enum": ["p", "ci"]
+    },
+    "itemType": {
+      "type": "string",
+      "oneOf": [
+        {
+          "const": "ar",
+          "title": "Article",
+          "description": "Editorial article forming a coherent textual unit."
+        },
+        {
+          "const": "ad",
+          "title": "Advertisement",
+          "description": "Commercial or classified advertising content."
+        },
+        {
+          "const": "img",
+          "title": "Image",
+          "description": "Standalone visual content such as a photograph, illustration, or graphic."
+        },
+        {
+          "const": "tb",
+          "title": "Table",
+          "description": "Tabular content presenting structured data or listings."
+        },
+        {
+          "const": "ob",
+          "title": "Obituary",
+          "description": "Notice reporting a death, often including biographical information."
+        },
+        {
+          "const": "w",
+          "title": "Weather",
+          "description": "Weather report or meteorological information."
+        },
+        {
+          "const": "ch",
+          "title": "Chronicle",
+          "description": "Broadcast chronicle reporting events in a factual or narrative form."
+        },
+        {
+          "const": "rb",
+          "title": "Radio Broadcast",
+          "description": "Content item originating from a radio broadcast."
+        },
+        {
+          "const": "rbe",
+          "title": "Radio Broadcast Episode",
+          "description": "An individual episode or segment of a radio broadcast."
+        },
+        {
+          "const": "no-type",
+          "title": "No Type Provided",
+          "description": "Content item with no specific type provided."
+        },
+        {
+          "const": "dsc",
+          "title": "Discussion",
+          "description": "Radio Broadcast discussion or talk show content item."
+        },
+        {
+          "const": "ent",
+          "title": "Entretien",
+          "description": "Radio Broadcast interview content item."
+        }
+      ],
+      "description": "Type of content item, e.g., article, section."
+    },
+    "itemTypeLabel": {
+      "type": "string",
+      "description": "Human-readable label for the itemType code."
+    },
+    "originalLangCode": {
+      "type": "string",
+      "description": "Original language of the content item."
+    },
+    "langCode": {
+      "type": "string",
+      "description": "Computed language of the content item."
+    },
+    "contentLength": {
+      "type": "integer",
+      "description": "Token count of the content item (space split)."
+    },
+    "snippet": {
+      "type": "string",
+      "description": "Snippet of the content item (first 150 characters)."
+    },
+    "title": {
+      "type": "string",
+      "description": "Title of the content item"
+    },
+    "content": {
+      "type": "string",
+      "description": "Full text content"
+    },
+    "matches": {
+      "type": "array",
+      "items": {
+        "$ref": "./ContentItemTextMatch.json"
+      }
+    }
+  },
+  "additionalProperties": false
+}

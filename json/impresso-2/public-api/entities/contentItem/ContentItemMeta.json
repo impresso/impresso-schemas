@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "type": "object",
+  "description": "Content Item metadata",
+  "properties": {
+    "sourceType": {
+      "type": "string",
+      "enum": ["newspaper", "radio_broadcast", "radio_magazine", "radio_schedule", "monograph", "encyclopedia"],
+      "description": "Type of the media source."
+    },
+    "sourceMedium": {
+      "type": "string",
+      "description": "Medium of the source (audio for audio radio broadcasts, print for newspapers, typescript for digitised radio bulletin typescripts).",
+      "enum": ["audio", "print", "typescript"]
+    },
+    "mediaId": {
+      "type": "string",
+      "description": "Media title alias. Usually a 3 letter code of the media title (newspaper, radio station, etc.)."
+    },
+    "mediaTitle": {
+      "type": "string",
+      "description": "Human-readable title of the media source identified by mediaId."
+    },
+    "date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Full date and time in ISO 8601 format"
+    },
+    "partnerId": {
+      "type": "string",
+      "description": "Identifier of the partner providing the content item."
+    },
+    "partnerTitle": {
+      "type": "string",
+      "description": "Human-readable title of the partner identified by partnerId."
+    },
+    "countryCode": {
+      "type": "string",
+      "description": "Country code of the content item.",
+      "pattern": "^[A-Za-z]{2}$"
+    },
+    "provinceCode": {
+      "type": "string",
+      "description": "Province code of the content item.",
+      "pattern": "^[A-Za-z]{2}$"
+    }
+  },
+  "required": ["sourceType", "sourceMedium", "mediaTitleAlias", "date", "meta_date_dt"],
+  "additionalProperties": false
+}

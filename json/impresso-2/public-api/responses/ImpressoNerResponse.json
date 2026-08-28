@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "title": "Impresso Named Entity Recognition Response",
+  "description": "Response of the Impresso NER endpoint",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "modelId": {
+      "type": "string",
+      "description": "ID of the model used for the named entity recognition"
+    },
+    "text": {
+      "type": "string",
+      "description": "Text processed for named entity recognition"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp of when named entity recognition was performed"
+    },
+    "entities": {
+      "type": "array",
+      "items": {
+        "$ref": "../../canonical/ImpressoNerEntity.json"
+      }
+    }
+  },
+  "required": ["modelId", "text", "timestamp", "entities"]
+}

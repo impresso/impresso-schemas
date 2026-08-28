@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "title": "WordMatch",
+  "description": "Represents a word match result from word embeddings similarity search",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the word"
+    },
+    "languageCode": {
+      "type": "string",
+      "description": "The language code of the word"
+    },
+    "word": {
+      "type": "string",
+      "description": "The word"
+    }
+  },
+  "required": ["id", "languageCode", "word"],
+  "additionalProperties": false
+}

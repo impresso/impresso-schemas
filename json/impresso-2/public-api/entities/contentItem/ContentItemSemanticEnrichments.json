@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "type": "object",
+  "description": "Semantic enrichments information",
+  "properties": {
+    "ocrQuality": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "OCR quality assessment score between 0,00 and 1,00."
+    },
+    "namedEntities": {
+      "type": "object",
+      "description": "Lists of named entities in the content item by type.",
+      "properties": {
+        "persons": {
+          "type": "array",
+          "items": {
+            "$ref": "./ContentItemNamedEntity.json"
+          }
+        },
+        "locations": {
+          "type": "array",
+          "items": {
+            "$ref": "./ContentItemNamedEntity.json"
+          }
+        },
+        "organisations": {
+          "type": "array",
+          "items": {
+            "$ref": "./ContentItemNamedEntity.json"
+          }
+        },
+        "newsagencies": {
+          "type": "array",
+          "items": {
+            "$ref": "./ContentItemNamedEntity.json"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "mentions": {
+      "type": "object",
+      "description": "List of mentions in the content item per type.",
+      "properties": {
+        "persons": {
+          "type": "array",
+          "items": {
+            "$ref": "./ContentItemMention.json"
+          }
+        },
+        "locations": {
+          "type": "array",
+          "items": {
+            "$ref": "./ContentItemMention.json"
+          }
+        },
+        "organisations": {
+          "type": "array",
+          "items": {
+            "$ref": "./ContentItemMention.json"
+          }
+        },
+        "newsagencies": {
+          "type": "array",
+          "items": {
+            "$ref": "./ContentItemMention.json"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "topics": {
+      "type": "array",
+      "description": "List of topics assigned to the content item.",
+      "items": {
+        "$ref": "./ContentItemTopic.json"
+      }
+    },
+    "collections": {
+      "type": "array",
+      "description": "List of user collections the content item belongs to.",
+      "items": {
+        "$ref": "../Collection.json"
+      }
+    },
+    "embeddings": {
+      "type": "array",
+      "description": "Precomputed embeddings for the content item in the format: <model_type>:<base64_embedding_vector>.",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}

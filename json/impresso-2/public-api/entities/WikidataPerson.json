@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "title": "Wikidata Person",
+  "description": "Wikidata person schema. Based on https://schema.org/Person",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "The Q Wikidata ID of the person (https://www.wikidata.org/wiki/Wikidata:Identifiers)"
+    },
+    "type": {
+      "type": "string",
+      "description": "The type of the entity",
+      "enum": ["human"]
+    },
+    "labels": {
+      "type": "object",
+      "description": "Labels of the person in different languages",
+      "additionalProperties": {
+        "type": "string",
+        "description": "Description of the person in a specific language",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "descriptions": {
+      "type": "object",
+      "description": "Descriptions of the person in different languages",
+      "additionalProperties": {
+        "type": "string",
+        "description": "Description of the person in a specific language",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "birthDate": {
+      "type": "string",
+      "description": "The birth date of the person",
+      "format": "date-time"
+    },
+    "deathDate": {
+      "type": "string",
+      "description": "The death date of the person",
+      "format": "date-time"
+    },
+    "birthPlace": {
+      "$ref": "./WikidataLocation.json",
+      "description": "The birth place of the person"
+    },
+    "deathPlace": {
+      "$ref": "./WikidataLocation.json",
+      "description": "The death place of the person"
+    }
+  },
+  "required": ["id", "type"]
+}
