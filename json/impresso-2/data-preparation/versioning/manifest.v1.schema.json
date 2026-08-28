@@ -124,7 +124,7 @@
       "type": "object",
       "properties": {
         "stage": {
-          "type": "string",
+          "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/data-stage.v1.schema.json",
           "description": "Stage of the data for which the statistics were computed."
         },
         "granularity": {

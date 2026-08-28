@@ -204,7 +204,7 @@ Reference this group by using
 
 | Property                                            | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                             |
 | :-------------------------------------------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [stage](#stage)                                     | `string` | Required | cannot be null | [Versioning Manifest](manifest-defs-media_statistics-properties-stage.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/versioning/manifest.v1.schema.json#/$defs/media_statistics/properties/stage")                                   |
+| [stage](#stage)                                     | `string` | Required | cannot be null | [Versioning Manifest](manifest-defs-media_statistics-properties-data-processing-stage-scalar.md "https://impresso.github.io/impresso-schemas/json/impresso-2/common/data-stage.v1.schema.json#/$defs/media_statistics/properties/stage")                               |
 | [granularity](#granularity)                         | `string` | Required | cannot be null | [Versioning Manifest](manifest-defs-media_statistics-properties-granularity.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/versioning/manifest.v1.schema.json#/$defs/media_statistics/properties/granularity")                       |
 | [element](#element)                                 | `string` | Optional | cannot be null | [Versioning Manifest](manifest-defs-media_statistics-properties-element.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/versioning/manifest.v1.schema.json#/$defs/media_statistics/properties/element")                               |
 | [last\_modification\_date](#last_modification_date) | `string` | Optional | cannot be null | [Versioning Manifest](manifest-defs-media_statistics-properties-last_modification_date.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/versioning/manifest.v1.schema.json#/$defs/media_statistics/properties/last_modification_date") |
@@ -213,21 +213,63 @@ Reference this group by using
 
 ### stage
 
-Stage of the data for which the statistics were computed.
+Identifier of an Impresso pipeline stage that produces or consumes a versioned data release, matching `impresso_essentials.utils.DataStage`.
 
 `stage`
 
 * is required
 
-* Type: `string`
+* Type: `string` ([Data-processing stage scalar](manifest-defs-media_statistics-properties-data-processing-stage-scalar.md))
 
 * cannot be null
 
-* defined in: [Versioning Manifest](manifest-defs-media_statistics-properties-stage.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/versioning/manifest.v1.schema.json#/$defs/media_statistics/properties/stage")
+* defined in: [Versioning Manifest](manifest-defs-media_statistics-properties-data-processing-stage-scalar.md "https://impresso.github.io/impresso-schemas/json/impresso-2/common/data-stage.v1.schema.json#/$defs/media_statistics/properties/stage")
 
 #### stage Type
 
-`string`
+`string` ([Data-processing stage scalar](manifest-defs-media_statistics-properties-data-processing-stage-scalar.md))
+
+#### stage Constraints
+
+**enum**: the value of this property must be equal to one of the following values:
+
+| Value                      | Explanation |
+| :------------------------- | :---------- |
+| `"canonical"`              |             |
+| `"canonical-consolidated"` |             |
+| `"rebuilt"`                |             |
+| `"passim"`                 |             |
+| `"emb-words"`              |             |
+| `"emb-sents"`              |             |
+| `"emb-docs"`               |             |
+| `"emb-entities"`           |             |
+| `"emb-paragraphs"`         |             |
+| `"emb-images"`             |             |
+| `"classif-images"`         |             |
+| `"entities"`               |             |
+| `"newsagencies"`           |             |
+| `"langident"`              |             |
+| `"lingproc"`               |             |
+| `"ocrqa"`                  |             |
+| `"langid-ocrqa"`           |             |
+| `"textreuse"`              |             |
+| `"topics"`                 |             |
+| `"solr-text-ingestion"`    |             |
+| `"mysql-ingestion"`        |             |
+
+#### stage Examples
+
+```json
+"canonical"
+```
+
+```json
+"rebuilt"
+```
+
+```json
+"langident"
+```
 
 ### granularity
 
