@@ -4,9 +4,9 @@
   "type": "object",
   "title": "Entity Embeddings Schema",
   "description": "Schema for validation of entity profiles enriched with embeddings and mention-level contexts.",
-  "required": ["wkd_id", "entity_ids", "surfaces", "contexts"],
+  "required": ["wkdata_qid", "entity_ids", "surfaces", "contexts"],
   "properties": {
-    "wkd_id": {
+    "wkdata_qid": {
       "type": "string",
       "description": "Wikidata identifier of the entity"
     },

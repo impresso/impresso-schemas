@@ -11,9 +11,9 @@
       "rOffset": 102,
       "confidence_ner": 0.45,
       "confidence_nel": 0.45,
-      "wkd_id": "Q20993704",
+      "wkdata_qid": "Q20993704",
+      "wkpedia_lg": "fr",
       "wkpedia_pagename": "Sylvie_Maurial",
-      "wkpedia_url": "https://fr.wikipedia.org/wiki/Sylvie_Maurial",
       "name": "Sylvie Maurial",
       "function": "championne de France de ski nautique"
     },
@@ -22,9 +22,9 @@
       "surface": "France",
       "lOffset": 64,
       "rOffset": 70,
-      "wkd_id": "Q20993704",
+      "wkdata_qid": "Q142",
+      "wkpedia_lg": "fr",
       "wkpedia_pagename": "France",
-      "wkpedia_url": "https://fr.wikipedia.org/wiki/France",
       "confidence_ner": 0.45,
       "confidence_nel": 0.45
     }
