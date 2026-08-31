@@ -113,43 +113,41 @@
             "description": "For a person mention, the entity component of type `function`, as defined in the Impresso HIPE NE annotation guidelines (https://zenodo.org/records/3585750); otherwise null or omitted."
           }
         },
-        "required": ["type", "surface", "lOffset", "rOffset", "confidence_ner", "confidence_nel"],
+        "required": [
+          "type",
+          "surface",
+          "lOffset",
+          "rOffset",
+          "confidence_ner",
+          "confidence_nel",
+          "wkdata_qid",
+          "wkpedia_lg",
+          "wkpedia_pagename"
+        ],
         "allOf": [
           {
-            "if": {
-              "properties": {
-                "wkpedia_lg": {
-                  "type": "string"
+            "oneOf": [
+              {
+                "properties": {
+                  "wkpedia_lg": {
+                    "type": "string"
+                  },
+                  "wkpedia_pagename": {
+                    "type": "string"
+                  }
                 }
               },
-              "required": ["wkpedia_lg"]
-            },
-            "then": {
-              "properties": {
-                "wkpedia_pagename": {
-                  "type": "string"
+              {
+                "properties": {
+                  "wkpedia_lg": {
+                    "type": "null"
+                  },
+                  "wkpedia_pagename": {
+                    "type": "null"
+                  }
                 }
-              },
-              "required": ["wkpedia_pagename"]
-            }
-          },
-          {
-            "if": {
-              "properties": {
-                "wkpedia_pagename": {
-                  "type": "string"
-                }
-              },
-              "required": ["wkpedia_pagename"]
-            },
-            "then": {
-              "properties": {
-                "wkpedia_lg": {
-                  "type": "string"
-                }
-              },
-              "required": ["wkpedia_lg"]
-            }
+              }
+            ]
           },
           {
             "if": {
