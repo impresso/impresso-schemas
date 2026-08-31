@@ -18,92 +18,152 @@
   "$defs": {
     "namedEntityList": {
       "type": "array",
-      "description": "A list of entities.",
+      "description": "A list of named entity mentions occurring in one text element. Multiple mentions may refer to the same real-world entity.",
       "minItems": 0,
       "items": {
         "type": "object",
+        "description": "A named entity mention and its NER/NEL annotations. Character offsets are zero-based and use half-open intervals [lOffset, rOffset) relative to the corresponding text element: the article body for mentions in `nes` and the article title for mentions in `tnes`. `lOffset` is inclusive and `rOffset` is exclusive. Consequently, the covered substring should equal `surface`, and `rOffset` must be greater than `lOffset`.",
         "properties": {
           "type": {
             "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/common/entity-type.v1.schema.json",
-            "description": "NE type (coarse-grained)."
+            "description": "Coarse-grained Impresso-HIPE named entity type after entity linking."
           },
           "type_ner_original": {
             "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/common/entity-type.v1.schema.json",
-            "description": "NER type (coarse-grained) in case we overwrite the type in nel process."
-          },
-          "nel_unlink": {
-            "type": "object",
-            "description": "Extension. Provenance for a writer-side link strip: present only when a real Wikidata link was deliberately removed (set to NIL). Its presence distinguishes a filter strip from a model-emitted NIL and preserves the removed QID for audit. Omitted when the link was kept.",
-            "properties": {
-              "reason": {
-                "type": "string",
-                "description": "Dotted counter name of the filter that stripped the link ('nel.disambiguation_page' — linked QID is a disambiguation page; 'nel.birth_after_pub' — linked person's birth date is after the item's publication date)."
-              },
-              "removed_wkd_id": {
-                "type": "string",
-                "description": "The (wrong) Wikidata QID that was removed."
-              }
-            },
-            "required": ["reason", "removed_wkd_id"]
+            "description": "Original coarse-grained Impresso-HIPE named entity type produced by NER. Present only when the NEL process changed the entity type."
           },
           "surface": {
             "type": "string",
-            "description": "The surface form of the named entity mention, as it appears in the text."
+            "minLength": 1,
+            "description": "Surface form of the named entity mention exactly as it occurs in the corresponding text element."
           },
           "lOffset": {
             "type": "integer",
-            "description": "The left character offset of the named entity with respect to the corresponding text element (full text for nes, title for tnes)."
+            "minimum": 0,
+            "description": "Zero-based character offset of the first character of the named entity mention in the corresponding text element. The offset is inclusive."
           },
           "rOffset": {
             "type": "integer",
-            "description": "The right character offset of the named entity with respect to the corresponding text element (full text for nes, title for tnes)."
+            "minimum": 1,
+            "description": "Zero-based character offset immediately after the last character of the named entity mention in the corresponding text element. The offset is exclusive."
           },
           "confidence_ner": {
             "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/probability.v1.schema.json",
-            "description": "Confidence score of the Named Entity Recognition process, from 0 (lowest confidence) to 1 (highest confidence)."
+            "description": "NER confidence score associated with this mention, from 0 (lowest confidence) to 1 (highest confidence). The precise computation may depend on the NER model or pipeline."
           },
           "confidence_ner_entity": {
             "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/probability.v1.schema.json",
-            "description": "Confidence that the detected span is an entity, independent of its predicted type, from 0 (lowest confidence) to 1 (highest confidence). Computed as mean_i(1 − P(O)_i) over the entity's tokens. Optional; omitted when not computed."
+            "description": "Confidence that the detected span is an entity mention, independent of its predicted type, from 0 (lowest confidence) to 1 (highest confidence). Computed as mean_i(1 - P(O)_i) over the entity mention's tokens. Optional; omitted when not computed."
           },
           "confidence_ner_type": {
             "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/probability.v1.schema.json",
-            "description": "Confidence that the predicted entity type is correct, given that the span is an entity, from 0 (lowest confidence) to 1 (highest confidence). Computed as mean_i(P(predicted_type)_i / (1 − P(O)_i)) over the entity's tokens. Optional; omitted when not computed."
+            "description": "Confidence in the predicted entity type, conditional on the span being an entity mention, from 0 (lowest confidence) to 1 (highest confidence). Computed as mean_i(P(predicted_type)_i / (1 - P(O)_i)) over the entity mention's tokens. Optional; omitted when not computed."
           },
           "confidence_nel": {
             "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/probability.v1.schema.json",
-            "description": "Confidence that the named-entity linking process assigned the correct linked entity, from 0 (lowest confidence) to 1 (highest confidence)."
+            "description": "Confidence score produced by the named-entity linking process for this mention, from 0 (lowest confidence) to 1 (highest confidence). The precise computation depends on the linking model."
           },
           "confidence_margin": {
             "type": "number",
-            "description": "If use numb_beams > 1,top-1 minus top-2 raw sum-log-prob from the NEL beam."
+            "minimum": 0,
+            "description": "Difference between the top-1 and top-2 raw sum-log-probability scores produced by beam-search NEL. Present only when at least two beam candidates were computed; larger values indicate a greater separation between the two best candidates."
           },
-          "wkd_id": {
-            "type": "string",
-            "description": "Wikidata QID if available."
+          "wkdata_qid": {
+            "type": ["string", "null"],
+            "pattern": "^Q[1-9][0-9]*$",
+            "description": "Wikidata item identifier (QID) assigned to the named entity mention, or null when no Wikidata QID is assigned."
+          },
+          "wkpedia_lg": {
+            "type": ["string", "null"],
+            "minLength": 1,
+            "description": "Language or site code of the Wikipedia edition associated with `wkpedia_pagename`, or null when no Wikipedia page is assigned."
           },
           "wkpedia_pagename": {
-            "type": "string",
-            "description": "Wikipedia page name, i.e. the last part of the wikipedia URL (e.g.  United_States)"
+            "type": ["string", "null"],
+            "minLength": 1,
+            "description": "Page name in the Wikipedia edition identified by `wkpedia_lg`, or null when no Wikipedia page is assigned."
           },
-          "wkpedia_url": {
-            "type": "string",
-            "description": "Wikipedia page URL, e.g. https://en.wikipedia.org/wiki/United_States"
+          "nel_unlink": {
+            "type": "object",
+            "description": "Provenance for a Wikidata link that was produced by NEL but deliberately removed by a downstream validation or filtering step. Omitted when no link was removed.",
+            "properties": {
+              "reason": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Identifier of the validation or filtering rule that caused the Wikidata link to be removed. Currently one of: 'nel.disambiguation_page' (the linked QID is a disambiguation page) or 'nel.birth_after_pub' (the linked person's birth date is after the item's publication date). Not restricted to these values."
+              },
+              "removed_wkdata_qid": {
+                "type": "string",
+                "pattern": "^Q[1-9][0-9]*$",
+                "description": "Wikidata QID that was removed by the validation or filtering step."
+              }
+            },
+            "required": ["reason", "removed_wkdata_qid"]
           },
           "name": {
-            "type": "string",
-            "description": "In case of a person mention, the entity component of type 'name', as defined in the Impresso HIPE NE Annotation guidelines (https://zenodo.org/records/3585750)."
+            "type": ["string", "null"],
+            "description": "For a person mention, the entity component of type `name`, as defined in the Impresso HIPE NE annotation guidelines (https://zenodo.org/records/3585750); otherwise null or omitted."
           },
           "title": {
-            "type": "string",
-            "description": "In case of a person mention, the entity component of type 'title', as defined in the Impresso HIPE NE Annotation guidelines (https://zenodo.org/records/3585750). "
+            "type": ["string", "null"],
+            "description": "For a person mention, the entity component of type `title`, as defined in the Impresso HIPE NE annotation guidelines (https://zenodo.org/records/3585750); otherwise null or omitted."
           },
           "function": {
-            "type": "string",
-            "description": "In case of a person mention, the entity component of type 'function', as defined in the Impresso HIPE NE Annotation guidelines (https://zenodo.org/records/3585750). "
+            "type": ["string", "null"],
+            "description": "For a person mention, the entity component of type `function`, as defined in the Impresso HIPE NE annotation guidelines (https://zenodo.org/records/3585750); otherwise null or omitted."
           }
         },
-        "required": ["type", "surface", "lOffset", "rOffset", "confidence_ner", "confidence_nel"]
+        "required": ["type", "surface", "lOffset", "rOffset", "confidence_ner", "confidence_nel"],
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "wkpedia_lg": {
+                  "type": "string"
+                }
+              },
+              "required": ["wkpedia_lg"]
+            },
+            "then": {
+              "properties": {
+                "wkpedia_pagename": {
+                  "type": "string"
+                }
+              },
+              "required": ["wkpedia_pagename"]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "wkpedia_pagename": {
+                  "type": "string"
+                }
+              },
+              "required": ["wkpedia_pagename"]
+            },
+            "then": {
+              "properties": {
+                "wkpedia_lg": {
+                  "type": "string"
+                }
+              },
+              "required": ["wkpedia_lg"]
+            }
+          },
+          {
+            "if": {
+              "required": ["nel_unlink"]
+            },
+            "then": {
+              "properties": {
+                "wkdata_qid": {
+                  "type": "null"
+                }
+              }
+            }
+          }
+        ]
       }
     }
   },
@@ -115,11 +175,11 @@
     },
     "nes": {
       "$ref": "#/$defs/namedEntityList",
-      "description": "Named entity mentions extracted from the article body."
+      "description": "Named entity mentions extracted from the article body. Character offsets are relative to the article-body text."
     },
     "tnes": {
       "$ref": "#/$defs/namedEntityList",
-      "description": "Named entity mentions extracted from the article title."
+      "description": "Named entity mentions extracted from the article title. Character offsets are relative to the title text."
     }
   },
   "required": ["ci_id", "ts", "model_id", "nes"]

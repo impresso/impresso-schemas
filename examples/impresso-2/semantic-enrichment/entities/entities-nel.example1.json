@@ -12,9 +12,11 @@
       "name": "Wou",
       "title": "M.",
       "function": "ancien ministre du gouvernement cantonais",
-      "wkd_id": "NIL",
-      "wkpedia_pagename": "NIL",
-      "wkpedia_url": "N/A",
+      "wkdata_qid": null,
+      "nel_unlink": {
+        "reason": "nel.disambiguation_page",
+        "removed_wkdata_qid": "Q11621"
+      },
       "confidence_ner": 0.45,
       "confidence_nel": 0.45
     },
@@ -23,9 +25,9 @@
       "surface": "Etats-Unis",
       "lOffset": 32,
       "rOffset": 42,
-      "wkd_id": "Q30",
+      "wkdata_qid": "Q30",
+      "wkpedia_lg": "fr",
       "wkpedia_pagename": "États-Unis",
-      "wkpedia_url": "https://fr.wikipedia.org/wiki/%C3%89tats-Unis",
       "confidence_ner": 0.45,
       "confidence_nel": 0.45
     }
