@@ -91,6 +91,11 @@ definition. Use `<concept>.part.vN.schema.json` for an object fragment composed
 into another schema through `allOf`. Do not add `shared` to filenames: its
 directory already expresses its scope.
 
+Mark a deprecated property with the JSON Schema `"deprecated": true` keyword,
+not a `(deprecated)` note folded into its `description`. Keep the description
+itself accurate and current (e.g. what replaces it), so tooling that reads
+`deprecated` and text that reads `description` stay in sync.
+
 Examples for a versioned schema mirror its schema directory. For example:
 
 ```text

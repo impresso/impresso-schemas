@@ -81,7 +81,7 @@ Language of the content item.
 
 ## l
 
-Language of the content item (deprecated).
+Language of the content item.
 
 `l`
 
@@ -413,7 +413,7 @@ an array of the following:`object` or `string` ([Details](issue-defs-metadata-pr
 
 ## var\_t
 
-Deprecated, replaced by `media_title_variant` at issue's top-level. Variant title of the media title this CI is from (only in the case of BL newspapers). The field is present only when a meaningful variant title is available.
+Replaced by `media_title_variant` at issue's top-level. Variant title of the media title this CI is from (only in the case of BL newspapers). The field is present only when a meaningful variant title is available.
 
 `var_t`
 

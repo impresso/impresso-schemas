@@ -15,7 +15,7 @@ all of
 | [st](#st)                                     | `string`  | Optional | cannot be null | [Audio Record Content Item](manifest-properties-media_list-items-properties-impresso-source-type.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/source-type.v1.schema.json#/properties/st")                   |
 | [sm](#sm)                                     | `string`  | Optional | cannot be null | [Audio Record Content Item](manifest-properties-media_list-items-properties-impresso-source-medium.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/source-medium.v1.schema.json#/properties/sm")               |
 | [tp](#tp)                                     | `string`  | Required | cannot be null | [Audio Record Content Item](audio-record-contentitem-properties-tp.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/audio-record-contentitem.v1.schema.json#/properties/tp")                                   |
-| [lg](#lg)                                     | `string`  | Optional | cannot be null | [Audio Record Content Item](audio-record-contentitem-properties-lg.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/audio-record-contentitem.v1.schema.json#/properties/lg")                                   |
+| [lg](#lg)                                     | `string`  | Optional | can be null    | [Audio Record Content Item](audio-record-contentitem-properties-lg.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/audio-record-contentitem.v1.schema.json#/properties/lg")                                   |
 | [stt](#stt)                                   | `string`  | Optional | cannot be null | [Audio Record Content Item](audio-record-contentitem-properties-stt.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/audio-record-contentitem.v1.schema.json#/properties/stt")                                 |
 | [dur](#dur)                                   | `string`  | Optional | cannot be null | [Audio Record Content Item](audio-record-contentitem-properties-dur.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/audio-record-contentitem.v1.schema.json#/properties/dur")                                 |
 | [rc](#rc)                                     | `string`  | Optional | can be null    | [Audio Record Content Item](audio-record-contentitem-properties-rc.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/audio-record-contentitem.v1.schema.json#/properties/rc")                                   |
@@ -210,7 +210,7 @@ Language of the content item's text, expressed as a two-letter ISO 639-1 languag
 
 * Type: `string`
 
-* cannot be null
+* can be null
 
 * defined in: [Audio Record Content Item](audio-record-contentitem-properties-lg.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/audio-record-contentitem.v1.schema.json#/properties/lg")
 
