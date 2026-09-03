@@ -83,7 +83,7 @@ List of sections time coordinates.
 
 * is optional
 
-* Type: unknown\[]
+* Type: `array[]` ([Time-coordinates scalar](audio-record-contentitem-properties-rreb-items-properties-s-time-coordinates-scalar.md))
 
 * cannot be null
 
@@ -91,4 +91,4 @@ List of sections time coordinates.
 
 ### s Type
 
-unknown\[]
+`array[]` ([Time-coordinates scalar](audio-record-contentitem-properties-rreb-items-properties-s-time-coordinates-scalar.md))

@@ -268,16 +268,3 @@ List of audio broadcast sections.
 ### s Type
 
 `object[]` ([Details](audio-record-properties-s-items.md))
-
-# Audio Record Definitions
-
-## Definitions group time\_coordinates
-
-Reference this group by using
-
-```json
-{"$ref":"https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/canonical/audio-record.v1.schema.json#/$defs/time_coordinates"}
-```
-
-| Property | Type | Required | Nullable | Defined by |
-| :------- | :--- | :------- | :------- | :--------- |
