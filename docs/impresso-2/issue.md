@@ -176,12 +176,6 @@ Medium in which the source media of a data-preparation record was originally pro
 
 ### sm Constraints
 
-**constant**: the value of this property must be equal to:
-
-```json
-"audio"
-```
-
 **enum**: the value of this property must be equal to one of the following values:
 
 | Value          | Explanation |
