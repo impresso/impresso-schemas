@@ -206,7 +206,7 @@
         },
         "l": {
           "type": "string",
-          "description": "Language of the content item.",
+          "description": "Language of the content item (deprecated).",
           "deprecated": true
         },
         "consolidated_reocr_applied": {
@@ -317,7 +317,7 @@
         "var_t": {
           "type": "string",
           "minLength": 1,
-          "description": "Replaced by `media_title_variant` at issue's top-level. Variant title of the media title this CI is from (only in the case of BL newspapers). The field is present only when a meaningful variant title is available.",
+          "description": "Deprecated, replaced by `media_title_variant` at issue's top-level. Variant title of the media title this CI is from (only in the case of BL newspapers). The field is present only when a meaningful variant title is available.",
           "deprecated": true
         },
         "archival_note": {

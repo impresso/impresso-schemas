@@ -564,7 +564,7 @@ Language of the content item.
 
 ### l
 
-Language of the content item.
+Language of the content item (deprecated).
 
 `l`
 
