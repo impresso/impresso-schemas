@@ -7,10 +7,12 @@
   "prefixItems": [
     {
       "type": "number",
+      "minimum": 0.0,
       "description": "Start time, in seconds."
     },
     {
       "type": "number",
+      "minimum": 0.0,
       "description": "Duration, in seconds."
     }
   ],
