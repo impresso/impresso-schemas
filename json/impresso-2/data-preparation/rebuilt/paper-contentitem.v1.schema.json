@@ -55,7 +55,7 @@
       "description": "Variant title of the media title this CI is from (mainly in the case of BL newspapers). The field is present only when a meaningful variant title is available."
     },
     "t": {
-      "description": "Content-item title.",
+      "description": "Content-item title (deprecated, `title` should be used instead).",
       "type": ["string", "null"],
       "deprecated": true
     },

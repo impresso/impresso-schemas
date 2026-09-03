@@ -564,7 +564,7 @@ Language of the content item.
 
 ### l
 
-Language of the content item (deprecated).
+Language of the content item (deprecated, `lg` should be used instead).
 
 `l`
 

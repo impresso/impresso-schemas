@@ -206,7 +206,7 @@
         },
         "l": {
           "type": "string",
-          "description": "Language of the content item (deprecated).",
+          "description": "Language of the content item (deprecated, `lg` should be used instead).",
           "deprecated": true
         },
         "consolidated_reocr_applied": {

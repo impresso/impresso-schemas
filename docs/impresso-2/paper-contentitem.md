@@ -328,7 +328,7 @@ Variant title of the media title this CI is from (mainly in the case of BL newsp
 
 ## t
 
-Content-item title.
+Content-item title (deprecated, `title` should be used instead).
 
 `t`
 
