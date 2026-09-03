@@ -160,7 +160,7 @@
       "description": "Canonical ID of audio record of the issue (in list for consistency), without file extension (e.g. INA-1900-01-02-a-r0004). In the case `sm`==`audio`.",
       "items": {
         "type": "string",
-        "pattern": "^[A-Za-z][A-Za-z0-9_]*-\\d{4}-\\d{2}-\\d{2}-[a-z]{1,3}-r[0-9]{4}$"
+        "pattern": "^[A-Za-z][A-Za-z0-9_]*-\\d{4}-\\d{2}-\\d{2}-[a-z]{1,2}-r[0-9]{4}$"
       }
     },
     "n": {
@@ -206,7 +206,8 @@
         },
         "l": {
           "type": "string",
-          "description": "Language of the content item (deprecated)."
+          "description": "Language of the content item.",
+          "deprecated": true
         },
         "consolidated_reocr_applied": {
           "type": "boolean",
@@ -316,7 +317,8 @@
         "var_t": {
           "type": "string",
           "minLength": 1,
-          "description": "Deprecated, replaced by `media_title_variant` at issue's top-level. Variant title of the media title this CI is from (only in the case of BL newspapers). The field is present only when a meaningful variant title is available."
+          "description": "Replaced by `media_title_variant` at issue's top-level. Variant title of the media title this CI is from (only in the case of BL newspapers). The field is present only when a meaningful variant title is available.",
+          "deprecated": true
         },
         "archival_note": {
           "type": "string",
