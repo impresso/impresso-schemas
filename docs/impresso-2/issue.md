@@ -134,11 +134,6 @@ Type of media source from which a data-preparation record originates. Value from
 
 ### st Constraints
 
-**constant**: the value of this property must be equal to:
-
-```json
-"radio_broadcast"
-```
 
 **enum**: the value of this property must be equal to one of the following values:
 
