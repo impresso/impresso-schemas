@@ -148,6 +148,8 @@ Area-local common scalars shared by the data-preparation schemas below:
 
 - **Source-type scalar**: [`json/impresso-2/data-preparation/common/source-type.v1.schema.json`](json/impresso-2/data-preparation/common/source-type.v1.schema.json)
 - **Source-medium scalar**: [`json/impresso-2/data-preparation/common/source-medium.v1.schema.json`](json/impresso-2/data-preparation/common/source-medium.v1.schema.json)
+- **Media-title variant scalar**: [`json/impresso-2/data-preparation/common/media-title-variant.v1.schema.json`](json/impresso-2/data-preparation/common/media-title-variant.v1.schema.json) — [docs](docs/impresso-2/media-title-variant.md)
+- **Exact-date flag scalar**: [`json/impresso-2/data-preparation/common/is-exact-date.v1.schema.json`](json/impresso-2/data-preparation/common/is-exact-date.v1.schema.json) — [docs](docs/impresso-2/is-exact-date.md)
 
 - **Issue**:
   - legacy: [`json/canonical/issue.schema.json`](json/canonical/issue.schema.json) — [docs](docs/legacy/canonical/issue.md)

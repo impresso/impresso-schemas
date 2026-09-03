@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/media-title-variant.v1.schema.json",
+  "title": "Media-title variant scalar",
+  "description": "Variant title of the media title a content item is from (mainly in the case of BL newspapers). Present only when a meaningful variant title is available.",
+  "type": "string",
+  "minLength": 1,
+  "examples": ["The Times of London"]
+}
