@@ -58,9 +58,8 @@
       "description": "Radio program, if known/defined."
     },
     "media_title_variant": {
-      "type": "string",
-      "minLength": 1,
-      "description": "Variant title of the media title this CI is from (mainly in the case of BL newspapers). The field is present only when a meaningful variant title is available."
+      "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/media-title-variant.v1.schema.json",
+      "description": "Variant title of the media title this CI is from (mainly in the case of British Library newspapers). The field is present only when a meaningful variant title is available."
     },
     "title": {
       "description": "radio broadcast content-item title.",
@@ -93,8 +92,8 @@
       "description": "Plaintext archival note or description concerning the content item. In case of audio radio broadcasts, this corresponds to the content summary provided with the metadata. The field is present only when a meaningful note is available."
     },
     "is_exact_date": {
-      "description": "False if the date assigned to the issue is known to be inexact or approximated, True or undefined otherwise.",
-      "type": "boolean"
+      "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/is-exact-date.v1.schema.json",
+      "description": "False if the date assigned to the issue is known to be inexact or approximated, True or undefined otherwise."
     },
     "additional_metadata": {
       "description": "Optional additional metadata provided for the content item, in particular for cases of audio boradcast content items.",
@@ -155,7 +154,7 @@
           "id": {
             "description": "audio record canonical ID",
             "type": "string",
-            "pattern": "^[A-Za-z][A-Za-z0-9_]*-\\d{4}-\\d{2}-\\d{2}-[a-z]{1,3}-r[0-9]{4}$"
+            "pattern": "^[A-Za-z][A-Za-z0-9_]*-\\d{4}-\\d{2}-\\d{2}-[a-z]{1,2}-r[0-9]{4}$"
           },
           "n": {
             "description": "audio record number",

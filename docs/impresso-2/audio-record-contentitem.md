@@ -322,25 +322,31 @@ Radio program, if known/defined.
 
 ## media\_title\_variant
 
-Variant title of the media title this CI is from (mainly in the case of BL newspapers). The field is present only when a meaningful variant title is available.
+Variant title of the media title a content item is from (mainly in the case of BL newspapers). Present only when a meaningful variant title is available.
 
 `media_title_variant`
 
 * is optional
 
-* Type: `string`
+* Type: `string` ([Media-title variant scalar](audio-record-contentitem-properties-media-title-variant-scalar.md))
 
 * cannot be null
 
-* defined in: [Audio Record Content Item](audio-record-contentitem-properties-media_title_variant.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/audio-record-contentitem.v1.schema.json#/properties/media_title_variant")
+* defined in: [Audio Record Content Item](audio-record-contentitem-properties-media-title-variant-scalar.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/media-title-variant.v1.schema.json#/properties/media_title_variant")
 
 ### media\_title\_variant Type
 
-`string`
+`string` ([Media-title variant scalar](audio-record-contentitem-properties-media-title-variant-scalar.md))
 
 ### media\_title\_variant Constraints
 
 **minimum length**: the minimum number of characters for this string is: `1`
+
+### media\_title\_variant Examples
+
+```json
+"The Times of London"
+```
 
 ## title
 
@@ -444,21 +450,31 @@ Plaintext archival note or description concerning the content item. In case of a
 
 ## is\_exact\_date
 
-False if the date assigned to the issue is known to be inexact or approximated, True or undefined otherwise.
+Boolean value used to flag Impresso objects (issue or content item) for which the date assigned is known to be inexact or approximated, due to incomplete archival record metadata. This is typically characterized by only knowing the year or month of publication, in which case the first day of the corresponding year or month will be assigned as date to the Impresso object. It is intended to be defined and set to false whenever it's known that the date was approximated, True or undefined otherwise.
 
 `is_exact_date`
 
 * is optional
 
-* Type: `boolean`
+* Type: `boolean` ([Exact-date flag scalar](audio-record-contentitem-properties-exact-date-flag-scalar.md))
 
 * cannot be null
 
-* defined in: [Audio Record Content Item](audio-record-contentitem-properties-is_exact_date.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/audio-record-contentitem.v1.schema.json#/properties/is_exact_date")
+* defined in: [Audio Record Content Item](audio-record-contentitem-properties-exact-date-flag-scalar.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/is-exact-date.v1.schema.json#/properties/is_exact_date")
 
 ### is\_exact\_date Type
 
-`boolean`
+`boolean` ([Exact-date flag scalar](audio-record-contentitem-properties-exact-date-flag-scalar.md))
+
+### is\_exact\_date Examples
+
+```json
+true
+```
+
+```json
+false
+```
 
 ## additional\_metadata
 
