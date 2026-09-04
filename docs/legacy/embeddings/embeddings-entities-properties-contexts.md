@@ -1,3 +1,0 @@
-## contexts Type
-
-`string[]`

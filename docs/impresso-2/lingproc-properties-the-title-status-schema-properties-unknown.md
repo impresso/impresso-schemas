@@ -1,3 +1,0 @@
-## unknown Type
-
-`boolean`

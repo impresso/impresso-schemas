@@ -1,3 +1,0 @@
-## embedding Type
-
-`number[]`

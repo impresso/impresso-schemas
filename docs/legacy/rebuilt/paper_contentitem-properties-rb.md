@@ -1,3 +1,0 @@
-## rb Type
-
-`integer[]`

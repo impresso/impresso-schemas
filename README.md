@@ -64,11 +64,14 @@ json/                                   Schema source of truth
 
 examples/                               Validation fixtures
 └── impresso-2/                         Mirrors json/impresso-2/
-docs/                                   Generated Markdown; do not edit manually
-├── legacy/                              Documentation for stable legacy schemas
-└── impresso-2/                          Documentation for versioned schemas
 tests/                                  Schema integrity and example validation
 ```
+
+Rendered documentation is generated from `json/` on every push to `master` and
+published to GitHub Pages at
+<https://impresso.github.io/impresso-schemas/docs/>. It is not committed to
+the repository; run `make documentation` to build it locally into a
+gitignored `docs/` directory for preview.
 
 ### Namespaces and versioning
 
@@ -121,8 +124,11 @@ make format-check     # Check JSON formatting
 make tests-legacy     # Validate legacy schemas, references, and examples
 make tests-imp2       # Validate Impresso 2 schemas, references, and examples
 make tests            # Run both validation suites
-make documentation    # Regenerate docs/legacy/ and docs/impresso-2/
+make documentation    # Preview docs/legacy/ and docs/impresso-2/ locally (not committed)
 ```
+
+Documentation is not committed; it is rebuilt and published to GitHub Pages
+by CI on every push to `master`.
 
 ## Schemas
 
@@ -132,15 +138,15 @@ make documentation    # Regenerate docs/legacy/ and docs/impresso-2/
 
 These Impresso 2 fragments define concepts shared across lifecycle areas.
 
-- **Content-item identifier scalar**: [`json/impresso-2/common/content-item-id.v1.schema.json`](json/impresso-2/common/content-item-id.v1.schema.json) — [docs](docs/impresso-2/content-item-id.md)
-- **`ci_id` property**: [`json/impresso-2/common/ci_id.v1.schema.json`](json/impresso-2/common/ci_id.v1.schema.json) — [docs](docs/impresso-2/ci_id.md)
-- **Model identifier property**: [`json/impresso-2/common/model-id.v1.schema.json`](json/impresso-2/common/model-id.v1.schema.json) — [docs](docs/impresso-2/model-id.md)
-- **Timestamp scalar**: [`json/impresso-2/common/timestamp.v1.schema.json`](json/impresso-2/common/timestamp.v1.schema.json) — [docs](docs/impresso-2/timestamp.md)
-- **`ts` property**: [`json/impresso-2/common/ts.v1.schema.json`](json/impresso-2/common/ts.v1.schema.json) — [docs](docs/impresso-2/ts.md)
-- **Language-code scalar**: [`json/impresso-2/common/language-code.v1.schema.json`](json/impresso-2/common/language-code.v1.schema.json) — [docs](docs/impresso-2/language-code.md)
-- **Probability scalar**: [`json/impresso-2/common/probability.v1.schema.json`](json/impresso-2/common/probability.v1.schema.json) — [docs](docs/impresso-2/probability.md)
-- **Bounding-box scalar**: [`json/impresso-2/common/bounding-box.v1.schema.json`](json/impresso-2/common/bounding-box.v1.schema.json) — [docs](docs/impresso-2/bounding-box.md)
-- **Data-processing stage scalar**: [`json/impresso-2/common/data-stage.v1.schema.json`](json/impresso-2/common/data-stage.v1.schema.json) — [docs](docs/impresso-2/data-stage.md)
+- **Content-item identifier scalar**: [`json/impresso-2/common/content-item-id.v1.schema.json`](json/impresso-2/common/content-item-id.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/content-item-id.html)
+- **`ci_id` property**: [`json/impresso-2/common/ci_id.v1.schema.json`](json/impresso-2/common/ci_id.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/ci_id.html)
+- **Model identifier property**: [`json/impresso-2/common/model-id.v1.schema.json`](json/impresso-2/common/model-id.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/model-id.html)
+- **Timestamp scalar**: [`json/impresso-2/common/timestamp.v1.schema.json`](json/impresso-2/common/timestamp.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/timestamp.html)
+- **`ts` property**: [`json/impresso-2/common/ts.v1.schema.json`](json/impresso-2/common/ts.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/ts.html)
+- **Language-code scalar**: [`json/impresso-2/common/language-code.v1.schema.json`](json/impresso-2/common/language-code.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/language-code.html)
+- **Probability scalar**: [`json/impresso-2/common/probability.v1.schema.json`](json/impresso-2/common/probability.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/probability.html)
+- **Bounding-box scalar**: [`json/impresso-2/common/bounding-box.v1.schema.json`](json/impresso-2/common/bounding-box.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/bounding-box.html)
+- **Data-processing stage scalar**: [`json/impresso-2/common/data-stage.v1.schema.json`](json/impresso-2/common/data-stage.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/data-stage.html)
 
 ### Data preparation
 
@@ -150,105 +156,105 @@ Area-local common scalars shared by the data-preparation schemas below:
 - **Source-medium scalar**: [`json/impresso-2/data-preparation/common/source-medium.v1.schema.json`](json/impresso-2/data-preparation/common/source-medium.v1.schema.json)
 
 - **Issue**:
-  - legacy: [`json/canonical/issue.schema.json`](json/canonical/issue.schema.json) — [docs](docs/legacy/canonical/issue.md)
-  - imp2: [`json/impresso-2/data-preparation/canonical/issue.v1.schema.json`](json/impresso-2/data-preparation/canonical/issue.v1.schema.json) — [docs](docs/impresso-2/issue.md)
+  - legacy: [`json/canonical/issue.schema.json`](json/canonical/issue.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/legacy/canonical/issue.html)
+  - imp2: [`json/impresso-2/data-preparation/canonical/issue.v1.schema.json`](json/impresso-2/data-preparation/canonical/issue.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/issue.html)
 - **Page**:
-  - legacy: [`json/canonical/page.schema.json`](json/canonical/page.schema.json) — [docs](docs/legacy/canonical/page.md)
-  - imp2: [`json/impresso-2/data-preparation/canonical/page.v1.schema.json`](json/impresso-2/data-preparation/canonical/page.v1.schema.json) — [docs](docs/impresso-2/page.md)
+  - legacy: [`json/canonical/page.schema.json`](json/canonical/page.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/legacy/canonical/page.html)
+  - imp2: [`json/impresso-2/data-preparation/canonical/page.v1.schema.json`](json/impresso-2/data-preparation/canonical/page.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/page.html)
 - **Audio record**:
-  - legacy: [`json/canonical/audio_record.schema.json`](json/canonical/audio_record.schema.json) — [docs](docs/legacy/canonical/audio_record.md)
-  - imp2: [`json/impresso-2/data-preparation/canonical/audio-record.v1.schema.json`](json/impresso-2/data-preparation/canonical/audio-record.v1.schema.json) — [docs](docs/impresso-2/audio-record.md)
+  - legacy: [`json/canonical/audio_record.schema.json`](json/canonical/audio_record.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/legacy/canonical/audio_record.html)
+  - imp2: [`json/impresso-2/data-preparation/canonical/audio-record.v1.schema.json`](json/impresso-2/data-preparation/canonical/audio-record.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/audio-record.html)
 - **Paper content item**:
-  - legacy: [`json/rebuilt/paper_contentitem.schema.json`](json/rebuilt/paper_contentitem.schema.json) — [docs](docs/legacy/rebuilt/paper_contentitem.md)
-  - imp2: [`json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json`](json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json) — [docs](docs/impresso-2/paper-contentitem.md)
+  - legacy: [`json/rebuilt/paper_contentitem.schema.json`](json/rebuilt/paper_contentitem.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/legacy/rebuilt/paper_contentitem.html)
+  - imp2: [`json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json`](json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/paper-contentitem.html)
 - **Audio-record content item**:
-  - legacy: [`json/rebuilt/audio_record_contentitem.schema.json`](json/rebuilt/audio_record_contentitem.schema.json) — [docs](docs/legacy/rebuilt/audio_record_contentitem.md)
-  - imp2: [`json/impresso-2/data-preparation/rebuilt/audio-record-contentitem.v1.schema.json`](json/impresso-2/data-preparation/rebuilt/audio-record-contentitem.v1.schema.json) — [docs](docs/impresso-2/audio-record-contentitem.md)
+  - legacy: [`json/rebuilt/audio_record_contentitem.schema.json`](json/rebuilt/audio_record_contentitem.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/legacy/rebuilt/audio_record_contentitem.html)
+  - imp2: [`json/impresso-2/data-preparation/rebuilt/audio-record-contentitem.v1.schema.json`](json/impresso-2/data-preparation/rebuilt/audio-record-contentitem.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/audio-record-contentitem.html)
 - **Manifest**:
-  - legacy: [`json/versioning/manifest.schema.json`](json/versioning/manifest.schema.json) — [docs](docs/legacy/versioning/manifest.md)
-  - imp2: [`json/impresso-2/data-preparation/versioning/manifest.v1.schema.json`](json/impresso-2/data-preparation/versioning/manifest.v1.schema.json) — [docs](docs/impresso-2/manifest.md)
+  - legacy: [`json/versioning/manifest.schema.json`](json/versioning/manifest.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/legacy/versioning/manifest.html)
+  - imp2: [`json/impresso-2/data-preparation/versioning/manifest.v1.schema.json`](json/impresso-2/data-preparation/versioning/manifest.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/manifest.html)
 - **Bounding-box visualizer**:
-  - legacy: [`json/visualizer/bbox_visualizer.schema.json`](json/visualizer/bbox_visualizer.schema.json) — [docs](docs/legacy/visualizer/bbox_visualizer.md)
-  - imp2: [`json/impresso-2/data-preparation/visualizer/bbox-visualizer.v1.schema.json`](json/impresso-2/data-preparation/visualizer/bbox-visualizer.v1.schema.json) — [docs](docs/impresso-2/bbox-visualizer.md)
+  - legacy: [`json/visualizer/bbox_visualizer.schema.json`](json/visualizer/bbox_visualizer.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/legacy/visualizer/bbox_visualizer.html)
+  - imp2: [`json/impresso-2/data-preparation/visualizer/bbox-visualizer.v1.schema.json`](json/impresso-2/data-preparation/visualizer/bbox-visualizer.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/bbox-visualizer.html)
 
 ### Text processing
 
 - **Language identification**:
-  - legacy: [`json/language_identification/language_identification.schema.json`](json/language_identification/language_identification.schema.json) — [docs](docs/legacy/language_identification/language_identification.md)
-  - imp2: [`json/impresso-2/text-processing/language-identification/language-identification.v1.schema.json`](json/impresso-2/text-processing/language-identification/language-identification.v1.schema.json) — [docs](docs/impresso-2/language-identification.md)
+  - legacy: [`json/language_identification/language_identification.schema.json`](json/language_identification/language_identification.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/legacy/language_identification/language_identification.html)
+  - imp2: [`json/impresso-2/text-processing/language-identification/language-identification.v1.schema.json`](json/impresso-2/text-processing/language-identification/language-identification.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/language-identification.html)
 - **Linguistic annotation (spaCy)**:
-  - legacy: [`json/linguistic_annotation/ling_spacy.schema.json`](json/linguistic_annotation/ling_spacy.schema.json) — [docs](docs/legacy/linguistic_annotation/ling_spacy.md)
-  - imp2: [`json/impresso-2/text-processing/linguistic-annotation/ling-spacy.v1.schema.json`](json/impresso-2/text-processing/linguistic-annotation/ling-spacy.v1.schema.json) — [docs](docs/impresso-2/ling-spacy.md)
+  - legacy: [`json/linguistic_annotation/ling_spacy.schema.json`](json/linguistic_annotation/ling_spacy.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/legacy/linguistic_annotation/ling_spacy.html)
+  - imp2: [`json/impresso-2/text-processing/linguistic-annotation/ling-spacy.v1.schema.json`](json/impresso-2/text-processing/linguistic-annotation/ling-spacy.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/ling-spacy.html)
 - **Linguistic processing**:
-  - legacy: [`json/linguistic_annotation/lingproc.v2.schema.json`](json/linguistic_annotation/lingproc.v2.schema.json) — [docs](docs/legacy/linguistic_annotation/lingproc.md)
-  - imp2: [`json/impresso-2/text-processing/linguistic-annotation/lingproc.v1.schema.json`](json/impresso-2/text-processing/linguistic-annotation/lingproc.v1.schema.json) — [docs](docs/impresso-2/lingproc.md)
+  - legacy: [`json/linguistic_annotation/lingproc.v2.schema.json`](json/linguistic_annotation/lingproc.v2.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/legacy/linguistic_annotation/lingproc.html)
+  - imp2: [`json/impresso-2/text-processing/linguistic-annotation/lingproc.v1.schema.json`](json/impresso-2/text-processing/linguistic-annotation/lingproc.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/lingproc.html)
 - **OCR QA**:
-  - legacy: [`json/ocr_qa/ocr_qa.schema.json`](json/ocr_qa/ocr_qa.schema.json) — [docs](docs/legacy/ocr_qa/ocr_qa.md)
-  - imp2: [`json/impresso-2/text-processing/ocr-qa/ocr-qa.v1.schema.json`](json/impresso-2/text-processing/ocr-qa/ocr-qa.v1.schema.json) — [docs](docs/impresso-2/ocr-qa.md)
+  - legacy: [`json/ocr_qa/ocr_qa.schema.json`](json/ocr_qa/ocr_qa.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/legacy/ocr_qa/ocr_qa.html)
+  - imp2: [`json/impresso-2/text-processing/ocr-qa/ocr-qa.v1.schema.json`](json/impresso-2/text-processing/ocr-qa/ocr-qa.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/ocr-qa.html)
 
 ### Semantic enrichment
 
 - **Topic assignment**:
-  - legacy v1: [`json/topic_model/topic_assignment.schema.json`](json/topic_model/topic_assignment.schema.json) — [docs](docs/legacy/topic_model/topic_assignment.md)
-  - legacy v2: [`json/topic_model/topic_assignment.v2.schema.json`](json/topic_model/topic_assignment.v2.schema.json) — [docs](docs/legacy/topic_model/topic_assignment-1.md)
-  - imp2: [`json/impresso-2/semantic-enrichment/topic-model/topic-assignment.v1.schema.json`](json/impresso-2/semantic-enrichment/topic-model/topic-assignment.v1.schema.json) — [docs](docs/impresso-2/topic-assignment.md)
+  - legacy v1: [`json/topic_model/topic_assignment.schema.json`](json/topic_model/topic_assignment.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/legacy/topic_model/topic_assignment.html)
+  - legacy v2: [`json/topic_model/topic_assignment.v2.schema.json`](json/topic_model/topic_assignment.v2.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/legacy/topic_model/topic_assignment-1.html)
+  - imp2: [`json/impresso-2/semantic-enrichment/topic-model/topic-assignment.v1.schema.json`](json/impresso-2/semantic-enrichment/topic-model/topic-assignment.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/topic-assignment.html)
 - **Topic description**:
-  - legacy: [`json/topic_model/topic_description.schema.json`](json/topic_model/topic_description.schema.json) — [docs](docs/legacy/topic_model/topic_description.md)
-  - imp2: [`json/impresso-2/semantic-enrichment/topic-model/topic-description.v1.schema.json`](json/impresso-2/semantic-enrichment/topic-model/topic-description.v1.schema.json) — [docs](docs/impresso-2/topic-description.md)
+  - legacy: [`json/topic_model/topic_description.schema.json`](json/topic_model/topic_description.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/legacy/topic_model/topic_description.html)
+  - imp2: [`json/impresso-2/semantic-enrichment/topic-model/topic-description.v1.schema.json`](json/impresso-2/semantic-enrichment/topic-model/topic-description.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/topic-description.html)
 - **Entities**:
-  - legacy: [`json/entities/entities.schema.json`](json/entities/entities.schema.json) — [docs](docs/legacy/entities/entities.md)
-  - imp2: [`json/impresso-2/semantic-enrichment/entities/entities.v1.schema.json`](json/impresso-2/semantic-enrichment/entities/entities.v1.schema.json) — [docs](docs/impresso-2/entities.md)
+  - legacy: [`json/entities/entities.schema.json`](json/entities/entities.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/legacy/entities/entities.html)
+  - imp2: [`json/impresso-2/semantic-enrichment/entities/entities.v1.schema.json`](json/impresso-2/semantic-enrichment/entities/entities.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/entities.html)
 - **Document embeddings**:
-  - legacy: [`json/embeddings/embeddings-docs.schema.json`](json/embeddings/embeddings-docs.schema.json) — [docs](docs/legacy/embeddings/embeddings-docs.md)
-  - imp2: [`json/impresso-2/semantic-enrichment/document-embeddings/embeddings-docs.v1.schema.json`](json/impresso-2/semantic-enrichment/document-embeddings/embeddings-docs.v1.schema.json) — [docs](docs/impresso-2/embeddings-docs.md)
+  - legacy: [`json/embeddings/embeddings-docs.schema.json`](json/embeddings/embeddings-docs.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/legacy/embeddings/embeddings-docs.html)
+  - imp2: [`json/impresso-2/semantic-enrichment/document-embeddings/embeddings-docs.v1.schema.json`](json/impresso-2/semantic-enrichment/document-embeddings/embeddings-docs.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/embeddings-docs.html)
 - **Sentence embeddings**:
-  - legacy: [`json/embeddings/embeddings-sentence.schema.json`](json/embeddings/embeddings-sentence.schema.json) — [docs](docs/legacy/embeddings/embeddings-sentence.md)
-  - imp2: [`json/impresso-2/semantic-enrichment/document-embeddings/embeddings-sentence.v1.schema.json`](json/impresso-2/semantic-enrichment/document-embeddings/embeddings-sentence.v1.schema.json) — [docs](docs/impresso-2/embeddings-sentence.md)
+  - legacy: [`json/embeddings/embeddings-sentence.schema.json`](json/embeddings/embeddings-sentence.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/legacy/embeddings/embeddings-sentence.html)
+  - imp2: [`json/impresso-2/semantic-enrichment/document-embeddings/embeddings-sentence.v1.schema.json`](json/impresso-2/semantic-enrichment/document-embeddings/embeddings-sentence.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/embeddings-sentence.html)
 - **Chunk embeddings**:
-  - legacy: [`json/embeddings/embeddings-chunks.schema.json`](json/embeddings/embeddings-chunks.schema.json) — [docs](docs/legacy/embeddings/embeddings-chunks.md)
-  - imp2: [`json/impresso-2/semantic-enrichment/document-embeddings/embeddings-chunks.v1.schema.json`](json/impresso-2/semantic-enrichment/document-embeddings/embeddings-chunks.v1.schema.json) — [docs](docs/impresso-2/embeddings-chunks.md)
+  - legacy: [`json/embeddings/embeddings-chunks.schema.json`](json/embeddings/embeddings-chunks.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/legacy/embeddings/embeddings-chunks.html)
+  - imp2: [`json/impresso-2/semantic-enrichment/document-embeddings/embeddings-chunks.v1.schema.json`](json/impresso-2/semantic-enrichment/document-embeddings/embeddings-chunks.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/embeddings-chunks.html)
 - **Entity embeddings**:
-  - legacy: [`json/embeddings/embeddings-entities.schema.json`](json/embeddings/embeddings-entities.schema.json) — [docs](docs/legacy/embeddings/embeddings-entities.md)
-  - imp2: [`json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json`](json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json) — [docs](docs/impresso-2/embeddings-entities.md)
+  - legacy: [`json/embeddings/embeddings-entities.schema.json`](json/embeddings/embeddings-entities.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/legacy/embeddings/embeddings-entities.html)
+  - imp2: [`json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json`](json/impresso-2/semantic-enrichment/document-embeddings/embeddings-entities.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/embeddings-entities.html)
 - **Text-reuse cluster**:
-  - legacy: [`json/text_reuse/cluster.schema.json`](json/text_reuse/cluster.schema.json) — [docs](docs/legacy/text_reuse/cluster.md)
-  - imp2: [`json/impresso-2/semantic-enrichment/text-reuse/cluster.v1.schema.json`](json/impresso-2/semantic-enrichment/text-reuse/cluster.v1.schema.json) — [docs](docs/impresso-2/cluster.md)
+  - legacy: [`json/text_reuse/cluster.schema.json`](json/text_reuse/cluster.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/legacy/text_reuse/cluster.html)
+  - imp2: [`json/impresso-2/semantic-enrichment/text-reuse/cluster.v1.schema.json`](json/impresso-2/semantic-enrichment/text-reuse/cluster.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/cluster.html)
 - **Text-reuse passage**:
-  - legacy: [`json/text_reuse/passage.schema.json`](json/text_reuse/passage.schema.json) — [docs](docs/legacy/text_reuse/passage.md)
-  - imp2: [`json/impresso-2/semantic-enrichment/text-reuse/passage.v1.schema.json`](json/impresso-2/semantic-enrichment/text-reuse/passage.v1.schema.json) — [docs](docs/impresso-2/passage.md)
+  - legacy: [`json/text_reuse/passage.schema.json`](json/text_reuse/passage.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/legacy/text_reuse/passage.html)
+  - imp2: [`json/impresso-2/semantic-enrichment/text-reuse/passage.v1.schema.json`](json/impresso-2/semantic-enrichment/text-reuse/passage.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/passage.html)
 - **Image embeddings**:
-  - legacy: [`json/image_embeddings/image_embeddings.schema.json`](json/image_embeddings/image_embeddings.schema.json) — [docs](docs/legacy/image_embeddings/image_embeddings.md)
-  - imp2: [`json/impresso-2/semantic-enrichment/image-embeddings/image-embeddings.v1.schema.json`](json/impresso-2/semantic-enrichment/image-embeddings/image-embeddings.v1.schema.json) — [docs](docs/impresso-2/image-embeddings.md)
+  - legacy: [`json/image_embeddings/image_embeddings.schema.json`](json/image_embeddings/image_embeddings.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/legacy/image_embeddings/image_embeddings.html)
+  - imp2: [`json/impresso-2/semantic-enrichment/image-embeddings/image-embeddings.v1.schema.json`](json/impresso-2/semantic-enrichment/image-embeddings/image-embeddings.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/image-embeddings.html)
 - **Image classification**:
-  - legacy: [`json/image_classification/image_classification.schema.json`](json/image_classification/image_classification.schema.json) — [docs](docs/legacy/image_classification/image_classification.md)
-  - imp2: [`json/impresso-2/semantic-enrichment/image-classification/image-classification.v1.schema.json`](json/impresso-2/semantic-enrichment/image-classification/image-classification.v1.schema.json) — [docs](docs/impresso-2/image-classification.md)
+  - legacy: [`json/image_classification/image_classification.schema.json`](json/image_classification/image_classification.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/legacy/image_classification/image_classification.html)
+  - imp2: [`json/impresso-2/semantic-enrichment/image-classification/image-classification.v1.schema.json`](json/impresso-2/semantic-enrichment/image-classification/image-classification.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/image-classification.html)
 
 ### Solr indexing
 
 Solr schemas are available only in the imp2 namespace.
 
 - **Content items**:
-  - **Access rights**: [`json/impresso-2/solr-indexing/content-item/content-item.part.access-rights.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.part.access-rights.v1.schema.json) — [docs](docs/impresso-2/content-item-3.md)
-  - **Contextual metadata**: [`json/impresso-2/solr-indexing/content-item/content-item.part.contextual-metadata.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.part.contextual-metadata.v1.schema.json) — [docs](docs/impresso-2/content-item-2.md)
-  - **Provider metadata**: [`json/impresso-2/solr-indexing/content-item/content-item.part.contextual-metadata.provider.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.part.contextual-metadata.provider.v1.schema.json) — [docs](docs/impresso-2/content-item-5.md)
-  - **Core fields**: [`json/impresso-2/solr-indexing/content-item/content-item.part.core.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.part.core.v1.schema.json) — [docs](docs/impresso-2/content-item-1.md)
-  - **Image fields**: [`json/impresso-2/solr-indexing/content-item/content-item.part.image.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.part.image.v1.schema.json) — [docs](docs/impresso-2/content-item-6.md)
-  - **Audio fields**: [`json/impresso-2/solr-indexing/content-item/content-item.part.text.audio.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.part.text.audio.v1.schema.json) — [docs](docs/impresso-2/content-item-7.md)
-  - **Paper fields**: [`json/impresso-2/solr-indexing/content-item/content-item.part.text.paper.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.part.text.paper.v1.schema.json) — [docs](docs/impresso-2/content-item-8.md)
-  - **Semantic-enrichment fields**: [`json/impresso-2/solr-indexing/content-item/content-item.part.text.semantic-enrichments.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.part.text.semantic-enrichments.v1.schema.json) — [docs](docs/impresso-2/content-item-4.md)
-  - **Transcript fields**: [`json/impresso-2/solr-indexing/content-item/content-item.part.text.transcript.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.part.text.transcript.v1.schema.json) — [docs](docs/impresso-2/content-item.md)
-  - **Audio root**: [`json/impresso-2/solr-indexing/content-item/content-item.root.audio.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.root.audio.v1.schema.json) — [docs](docs/impresso-2/content-item-9.md)
-  - **Image root**: [`json/impresso-2/solr-indexing/content-item/content-item.root.image.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.root.image.v1.schema.json) — [docs](docs/impresso-2/content-item-10.md)
-  - **Paper root**: [`json/impresso-2/solr-indexing/content-item/content-item.root.paper.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.root.paper.v1.schema.json) — [docs](docs/impresso-2/content-item-11.md)
+  - **Access rights**: [`json/impresso-2/solr-indexing/content-item/content-item.part.access-rights.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.part.access-rights.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/content-item-3.html)
+  - **Contextual metadata**: [`json/impresso-2/solr-indexing/content-item/content-item.part.contextual-metadata.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.part.contextual-metadata.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/content-item-2.html)
+  - **Provider metadata**: [`json/impresso-2/solr-indexing/content-item/content-item.part.contextual-metadata.provider.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.part.contextual-metadata.provider.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/content-item-5.html)
+  - **Core fields**: [`json/impresso-2/solr-indexing/content-item/content-item.part.core.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.part.core.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/content-item-1.html)
+  - **Image fields**: [`json/impresso-2/solr-indexing/content-item/content-item.part.image.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.part.image.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/content-item-6.html)
+  - **Audio fields**: [`json/impresso-2/solr-indexing/content-item/content-item.part.text.audio.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.part.text.audio.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/content-item-7.html)
+  - **Paper fields**: [`json/impresso-2/solr-indexing/content-item/content-item.part.text.paper.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.part.text.paper.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/content-item-8.html)
+  - **Semantic-enrichment fields**: [`json/impresso-2/solr-indexing/content-item/content-item.part.text.semantic-enrichments.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.part.text.semantic-enrichments.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/content-item-4.html)
+  - **Transcript fields**: [`json/impresso-2/solr-indexing/content-item/content-item.part.text.transcript.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.part.text.transcript.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/content-item.html)
+  - **Audio root**: [`json/impresso-2/solr-indexing/content-item/content-item.root.audio.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.root.audio.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/content-item-9.html)
+  - **Image root**: [`json/impresso-2/solr-indexing/content-item/content-item.root.image.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.root.image.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/content-item-10.html)
+  - **Paper root**: [`json/impresso-2/solr-indexing/content-item/content-item.root.paper.v1.schema.json`](json/impresso-2/solr-indexing/content-item/content-item.root.paper.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/content-item-11.html)
 - **Semantic enrichments**:
-  - **Text-reuse passage fields**: [`json/impresso-2/solr-indexing/semantic-enrichments/sem.part.tr-passages.v1.schema.json`](json/impresso-2/solr-indexing/semantic-enrichments/sem.part.tr-passages.v1.schema.json) — [docs](docs/impresso-2/sem.md)
-  - **Entities**: [`json/impresso-2/solr-indexing/semantic-enrichments/sem.root.entities.v1.schema.json`](json/impresso-2/solr-indexing/semantic-enrichments/sem.root.entities.v1.schema.json) — [docs](docs/impresso-2/sem-1.md)
-  - **Entity profiles**: [`json/impresso-2/solr-indexing/semantic-enrichments/sem.root.entity-profiles.v1.schema.json`](json/impresso-2/solr-indexing/semantic-enrichments/sem.root.entity-profiles.v1.schema.json) — [docs](docs/impresso-2/sem-2.md)
-  - **Mentions**: [`json/impresso-2/solr-indexing/semantic-enrichments/sem.root.mentions.v1.schema.json`](json/impresso-2/solr-indexing/semantic-enrichments/sem.root.mentions.v1.schema.json) — [docs](docs/impresso-2/sem-3.md)
-  - **Topics**: [`json/impresso-2/solr-indexing/semantic-enrichments/sem.root.topics.v1.schema.json`](json/impresso-2/solr-indexing/semantic-enrichments/sem.root.topics.v1.schema.json) — [docs](docs/impresso-2/sem-4.md)
-  - **Text-reuse clusters**: [`json/impresso-2/solr-indexing/semantic-enrichments/sem.root.tr-clusters.v1.schema.json`](json/impresso-2/solr-indexing/semantic-enrichments/sem.root.tr-clusters.v1.schema.json) — [docs](docs/impresso-2/sem-5.md)
-  - **Text-reuse passages**: [`json/impresso-2/solr-indexing/semantic-enrichments/sem.root.tr-passages.v1.schema.json`](json/impresso-2/solr-indexing/semantic-enrichments/sem.root.tr-passages.v1.schema.json) — [docs](docs/impresso-2/sem-6.md)
-  - **Word embeddings**: [`json/impresso-2/solr-indexing/semantic-enrichments/sem.root.wemb.v1.schema.json`](json/impresso-2/solr-indexing/semantic-enrichments/sem.root.wemb.v1.schema.json) — [docs](docs/impresso-2/sem-7.md)
+  - **Text-reuse passage fields**: [`json/impresso-2/solr-indexing/semantic-enrichments/sem.part.tr-passages.v1.schema.json`](json/impresso-2/solr-indexing/semantic-enrichments/sem.part.tr-passages.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/sem.html)
+  - **Entities**: [`json/impresso-2/solr-indexing/semantic-enrichments/sem.root.entities.v1.schema.json`](json/impresso-2/solr-indexing/semantic-enrichments/sem.root.entities.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/sem-1.html)
+  - **Entity profiles**: [`json/impresso-2/solr-indexing/semantic-enrichments/sem.root.entity-profiles.v1.schema.json`](json/impresso-2/solr-indexing/semantic-enrichments/sem.root.entity-profiles.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/sem-2.html)
+  - **Mentions**: [`json/impresso-2/solr-indexing/semantic-enrichments/sem.root.mentions.v1.schema.json`](json/impresso-2/solr-indexing/semantic-enrichments/sem.root.mentions.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/sem-3.html)
+  - **Topics**: [`json/impresso-2/solr-indexing/semantic-enrichments/sem.root.topics.v1.schema.json`](json/impresso-2/solr-indexing/semantic-enrichments/sem.root.topics.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/sem-4.html)
+  - **Text-reuse clusters**: [`json/impresso-2/solr-indexing/semantic-enrichments/sem.root.tr-clusters.v1.schema.json`](json/impresso-2/solr-indexing/semantic-enrichments/sem.root.tr-clusters.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/sem-5.html)
+  - **Text-reuse passages**: [`json/impresso-2/solr-indexing/semantic-enrichments/sem.root.tr-passages.v1.schema.json`](json/impresso-2/solr-indexing/semantic-enrichments/sem.root.tr-passages.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/sem-6.html)
+  - **Word embeddings**: [`json/impresso-2/solr-indexing/semantic-enrichments/sem.root.wemb.v1.schema.json`](json/impresso-2/solr-indexing/semantic-enrichments/sem.root.wemb.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/docs/impresso-2/sem-7.html)
 
 ### Web app
 

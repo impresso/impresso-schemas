@@ -1,3 +1,0 @@
-## fh Type
-
-`integer`

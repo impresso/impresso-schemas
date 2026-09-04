@@ -1,3 +1,0 @@
-## ci Type
-
-`string`

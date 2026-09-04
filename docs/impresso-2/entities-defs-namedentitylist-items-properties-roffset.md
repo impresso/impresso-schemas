@@ -1,3 +1,0 @@
-## rOffset Type
-
-`integer`
