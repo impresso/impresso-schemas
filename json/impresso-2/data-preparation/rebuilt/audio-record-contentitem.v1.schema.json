@@ -167,13 +167,8 @@
               "type": "object",
               "properties": {
                 "tc": {
-                  "type": "array",
-                  "description": "Coordinates of audio-segment in the format (start-time, duration), each in seconds.",
-                  "minItems": 2,
-                  "maxItems": 2,
-                  "items": {
-                    "type": ["number"]
-                  }
+                  "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/time-coordinates.v1.schema.json",
+                  "description": "Coordinates of audio-segment in the format (start-time, duration), each in seconds."
                 },
                 "s": {
                   "description": "offset start (relative to ft field)",
@@ -190,12 +185,8 @@
             "description": "List of sections time coordinates.",
             "type": "array",
             "items": {
-              "description": "Time coordinates of section relative to audio record.",
-              "minItems": 2,
-              "maxItems": 2,
-              "items": {
-                "type": ["number"]
-              }
+              "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/time-coordinates.v1.schema.json",
+              "description": "Time coordinates of section relative to audio record."
             }
           }
         }

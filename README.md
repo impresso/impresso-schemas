@@ -146,6 +146,7 @@ These Impresso 2 fragments define concepts shared across lifecycle areas.
 - **Probability scalar**: [`json/impresso-2/common/probability.v1.schema.json`](json/impresso-2/common/probability.v1.schema.json) — [docs](docs/impresso-2/probability.md)
 - **Bounding-box scalar**: [`json/impresso-2/common/bounding-box.v1.schema.json`](json/impresso-2/common/bounding-box.v1.schema.json) — [docs](docs/impresso-2/bounding-box.md)
 - **Data-processing stage scalar**: [`json/impresso-2/common/data-stage.v1.schema.json`](json/impresso-2/common/data-stage.v1.schema.json) — [docs](docs/impresso-2/data-stage.md)
+- **Time-coordinates scalar**: [`json/impresso-2/common/time-coordinates.v1.schema.json`](json/impresso-2/common/time-coordinates.v1.schema.json) — [docs](docs/impresso-2/time-coordinates.md)
 
 ### Data preparation
 
