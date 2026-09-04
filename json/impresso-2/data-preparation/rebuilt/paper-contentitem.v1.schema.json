@@ -50,9 +50,8 @@
       "description": "Radio program, if applicable (st=='radio_broadcast') and is known."
     },
     "media_title_variant": {
-      "type": "string",
-      "minLength": 1,
-      "description": "Variant title of the media title this CI is from (mainly in the case of BL newspapers). The field is present only when a meaningful variant title is available."
+      "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/media-title-variant.v1.schema.json",
+      "description": "Variant title of the media title this CI is from (mainly in the case of British Library newspapers). The field is present only when a meaningful variant title is available."
     },
     "t": {
       "description": "Content-item title (deprecated, `title` should be used instead).",
@@ -93,8 +92,8 @@
       "description": "Language of the content item in the original OCR/OLR. Only defined if the content-item was consolidated."
     },
     "is_exact_date": {
-      "description": "False if the date assigned to the issue is known to be inexact or approximated, True or undefined otherwise.",
-      "type": "boolean"
+      "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/is-exact-date.v1.schema.json",
+      "description": "False if the date assigned to the issue is known to be inexact or approximated, True or undefined otherwise."
     },
     "section_title": {
       "type": "object",

@@ -10,34 +10,34 @@ all of
 
 # Paper Content Item Properties
 
-| Property                                                    | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                                                      |
-| :---------------------------------------------------------- | :-------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ts](#ts)                                                   | `string`  | Required | cannot be null | [Paper Content Item](paper-contentitem-properties-ts.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/ts")                                                 |
-| [d](#d)                                                     | `string`  | Optional | cannot be null | [Paper Content Item](paper-contentitem-properties-d.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/d")                                                   |
-| [cc](#cc)                                                   | `boolean` | Optional | cannot be null | [Paper Content Item](paper-contentitem-properties-cc.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/cc")                                                 |
-| [olr](#olr)                                                 | `boolean` | Required | cannot be null | [Paper Content Item](paper-contentitem-properties-olr.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/olr")                                               |
-| [st](#st)                                                   | `string`  | Optional | cannot be null | [Paper Content Item](manifest-properties-media_list-items-properties-impresso-source-type.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/source-type.v1.schema.json#/properties/st")                   |
-| [sm](#sm)                                                   | `string`  | Optional | cannot be null | [Paper Content Item](manifest-properties-media_list-items-properties-impresso-source-medium.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/source-medium.v1.schema.json#/properties/sm")               |
-| [tp](#tp)                                                   | `string`  | Required | can be null    | [Paper Content Item](paper-contentitem-properties-tp.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/tp")                                                 |
-| [lg](#lg)                                                   | `string`  | Optional | can be null    | [Paper Content Item](paper-contentitem-properties-lg.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/lg")                                                 |
-| [rc](#rc)                                                   | `string`  | Optional | can be null    | [Paper Content Item](paper-contentitem-properties-rc.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/rc")                                                 |
-| [rp](#rp)                                                   | `string`  | Optional | can be null    | [Paper Content Item](paper-contentitem-properties-rp.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/rp")                                                 |
-| [media\_title\_variant](#media_title_variant)               | `string`  | Optional | cannot be null | [Paper Content Item](paper-contentitem-properties-media_title_variant.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/media_title_variant")               |
-| [t](#t)                                                     | `string`  | Optional | can be null    | [Paper Content Item](paper-contentitem-properties-t.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/t")                                                   |
-| [title](#title)                                             | `string`  | Optional | can be null    | [Paper Content Item](paper-contentitem-properties-title.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/title")                                           |
-| [ro](#ro)                                                   | `integer` | Optional | cannot be null | [Paper Content Item](paper-contentitem-properties-ro.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/ro")                                                 |
-| [consolidated](#consolidated)                               | `boolean` | Optional | cannot be null | [Paper Content Item](paper-contentitem-properties-consolidated.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/consolidated")                             |
-| [consolidated\_reocr\_applied](#consolidated_reocr_applied) | `boolean` | Optional | cannot be null | [Paper Content Item](paper-contentitem-properties-consolidated_reocr_applied.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/consolidated_reocr_applied") |
-| [consolidated\_ocrqa](#consolidated_ocrqa)                  | Merged    | Optional | cannot be null | [Paper Content Item](paper-contentitem-properties-consolidated_ocrqa.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/consolidated_ocrqa")                 |
-| [lg\_original](#lg_original)                                | `string`  | Optional | can be null    | [Paper Content Item](paper-contentitem-properties-lg_original.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/lg_original")                               |
-| [is\_exact\_date](#is_exact_date)                           | `boolean` | Optional | cannot be null | [Paper Content Item](paper-contentitem-properties-is_exact_date.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/is_exact_date")                           |
-| [section\_title](#section_title)                            | `object`  | Optional | cannot be null | [Paper Content Item](paper-contentitem-properties-section_title.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/section_title")                           |
-| [pp](#pp)                                                   | `array`   | Optional | cannot be null | [Paper Content Item](paper-contentitem-properties-pp.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/pp")                                                 |
-| [ft](#ft)                                                   | `string`  | Optional | cannot be null | [Paper Content Item](paper-contentitem-properties-ft.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/ft")                                                 |
-| [rb](#rb)                                                   | `array`   | Optional | cannot be null | [Paper Content Item](paper-contentitem-properties-rb.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/rb")                                                 |
-| [pb](#pb)                                                   | `array`   | Optional | cannot be null | [Paper Content Item](paper-contentitem-properties-pb.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/pb")                                                 |
-| [lb](#lb)                                                   | `array`   | Optional | cannot be null | [Paper Content Item](paper-contentitem-properties-lb.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/lb")                                                 |
-| [ppreb](#ppreb)                                             | `array`   | Optional | cannot be null | [Paper Content Item](paper-contentitem-properties-ppreb.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/ppreb")                                           |
+| Property                                                    | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                                                       |
+| :---------------------------------------------------------- | :-------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [ts](#ts)                                                   | `string`  | Required | cannot be null | [Paper Content Item](paper-contentitem-properties-ts.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/ts")                                                  |
+| [d](#d)                                                     | `string`  | Optional | cannot be null | [Paper Content Item](paper-contentitem-properties-d.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/d")                                                    |
+| [cc](#cc)                                                   | `boolean` | Optional | cannot be null | [Paper Content Item](paper-contentitem-properties-cc.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/cc")                                                  |
+| [olr](#olr)                                                 | `boolean` | Required | cannot be null | [Paper Content Item](paper-contentitem-properties-olr.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/olr")                                                |
+| [st](#st)                                                   | `string`  | Optional | cannot be null | [Paper Content Item](manifest-properties-media_list-items-properties-impresso-source-type.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/source-type.v1.schema.json#/properties/st")                    |
+| [sm](#sm)                                                   | `string`  | Optional | cannot be null | [Paper Content Item](manifest-properties-media_list-items-properties-impresso-source-medium.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/source-medium.v1.schema.json#/properties/sm")                |
+| [tp](#tp)                                                   | `string`  | Required | can be null    | [Paper Content Item](paper-contentitem-properties-tp.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/tp")                                                  |
+| [lg](#lg)                                                   | `string`  | Optional | can be null    | [Paper Content Item](paper-contentitem-properties-lg.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/lg")                                                  |
+| [rc](#rc)                                                   | `string`  | Optional | can be null    | [Paper Content Item](paper-contentitem-properties-rc.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/rc")                                                  |
+| [rp](#rp)                                                   | `string`  | Optional | can be null    | [Paper Content Item](paper-contentitem-properties-rp.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/rp")                                                  |
+| [media\_title\_variant](#media_title_variant)               | `string`  | Optional | cannot be null | [Paper Content Item](audio-record-contentitem-properties-media-title-variant-scalar.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/media-title-variant.v1.schema.json#/properties/media_title_variant") |
+| [t](#t)                                                     | `string`  | Optional | can be null    | [Paper Content Item](paper-contentitem-properties-t.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/t")                                                    |
+| [title](#title)                                             | `string`  | Optional | can be null    | [Paper Content Item](paper-contentitem-properties-title.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/title")                                            |
+| [ro](#ro)                                                   | `integer` | Optional | cannot be null | [Paper Content Item](paper-contentitem-properties-ro.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/ro")                                                  |
+| [consolidated](#consolidated)                               | `boolean` | Optional | cannot be null | [Paper Content Item](paper-contentitem-properties-consolidated.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/consolidated")                              |
+| [consolidated\_reocr\_applied](#consolidated_reocr_applied) | `boolean` | Optional | cannot be null | [Paper Content Item](paper-contentitem-properties-consolidated_reocr_applied.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/consolidated_reocr_applied")  |
+| [consolidated\_ocrqa](#consolidated_ocrqa)                  | Merged    | Optional | cannot be null | [Paper Content Item](paper-contentitem-properties-consolidated_ocrqa.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/consolidated_ocrqa")                  |
+| [lg\_original](#lg_original)                                | `string`  | Optional | can be null    | [Paper Content Item](paper-contentitem-properties-lg_original.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/lg_original")                                |
+| [is\_exact\_date](#is_exact_date)                           | `boolean` | Optional | cannot be null | [Paper Content Item](audio-record-contentitem-properties-exact-date-flag-scalar.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/is-exact-date.v1.schema.json#/properties/is_exact_date")                 |
+| [section\_title](#section_title)                            | `object`  | Optional | cannot be null | [Paper Content Item](paper-contentitem-properties-section_title.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/section_title")                            |
+| [pp](#pp)                                                   | `array`   | Optional | cannot be null | [Paper Content Item](paper-contentitem-properties-pp.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/pp")                                                  |
+| [ft](#ft)                                                   | `string`  | Optional | cannot be null | [Paper Content Item](paper-contentitem-properties-ft.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/ft")                                                  |
+| [rb](#rb)                                                   | `array`   | Optional | cannot be null | [Paper Content Item](paper-contentitem-properties-rb.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/rb")                                                  |
+| [pb](#pb)                                                   | `array`   | Optional | cannot be null | [Paper Content Item](paper-contentitem-properties-pb.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/pb")                                                  |
+| [lb](#lb)                                                   | `array`   | Optional | cannot be null | [Paper Content Item](paper-contentitem-properties-lb.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/lb")                                                  |
+| [ppreb](#ppreb)                                             | `array`   | Optional | cannot be null | [Paper Content Item](paper-contentitem-properties-ppreb.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/ppreb")                                            |
 
 ## ts
 
@@ -306,25 +306,31 @@ Radio program, if applicable (st=='radio\_broadcast') and is known.
 
 ## media\_title\_variant
 
-Variant title of the media title this CI is from (mainly in the case of BL newspapers). The field is present only when a meaningful variant title is available.
+Variant title of the media title a content item is from (mainly in the case of BL newspapers). Present only when a meaningful variant title is available.
 
 `media_title_variant`
 
 * is optional
 
-* Type: `string`
+* Type: `string` ([Media-title variant scalar](audio-record-contentitem-properties-media-title-variant-scalar.md))
 
 * cannot be null
 
-* defined in: [Paper Content Item](paper-contentitem-properties-media_title_variant.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/media_title_variant")
+* defined in: [Paper Content Item](audio-record-contentitem-properties-media-title-variant-scalar.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/media-title-variant.v1.schema.json#/properties/media_title_variant")
 
 ### media\_title\_variant Type
 
-`string`
+`string` ([Media-title variant scalar](audio-record-contentitem-properties-media-title-variant-scalar.md))
 
 ### media\_title\_variant Constraints
 
 **minimum length**: the minimum number of characters for this string is: `1`
+
+### media\_title\_variant Examples
+
+```json
+"The Times of London"
+```
 
 ## t
 
@@ -460,21 +466,31 @@ Language of the content item in the original OCR/OLR. Only defined if the conten
 
 ## is\_exact\_date
 
-False if the date assigned to the issue is known to be inexact or approximated, True or undefined otherwise.
+Boolean value used to flag Impresso objects (issue or content item) for which the date assigned is known to be inexact or approximated, due to incomplete archival record metadata. This is typically characterized by only knowing the year or month of publication, in which case the first day of the corresponding year or month will be assigned as date to the Impresso object. It is intended to be defined and set to false whenever it's known that the date was approximated, True or undefined otherwise.
 
 `is_exact_date`
 
 * is optional
 
-* Type: `boolean`
+* Type: `boolean` ([Exact-date flag scalar](audio-record-contentitem-properties-exact-date-flag-scalar.md))
 
 * cannot be null
 
-* defined in: [Paper Content Item](paper-contentitem-properties-is_exact_date.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json#/properties/is_exact_date")
+* defined in: [Paper Content Item](audio-record-contentitem-properties-exact-date-flag-scalar.md "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/is-exact-date.v1.schema.json#/properties/is_exact_date")
 
 ### is\_exact\_date Type
 
-`boolean`
+`boolean` ([Exact-date flag scalar](audio-record-contentitem-properties-exact-date-flag-scalar.md))
+
+### is\_exact\_date Examples
+
+```json
+true
+```
+
+```json
+false
+```
 
 ## section\_title
 
