@@ -1,3 +1,0 @@
-## fw Type
-
-`integer`

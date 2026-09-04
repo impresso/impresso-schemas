@@ -1,3 +1,0 @@
-## iiif Type
-
-`string`

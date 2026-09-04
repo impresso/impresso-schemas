@@ -1,3 +1,0 @@
-## n Type
-
-`integer`
