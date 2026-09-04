@@ -334,7 +334,7 @@ Variant title of the media title a content item is from (mainly in the case of B
 
 ## t
 
-Content-item title (deprecated).
+Content-item title (deprecated, `title` should be used instead).
 
 `t`
 
