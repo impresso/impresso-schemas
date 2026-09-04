@@ -38,7 +38,7 @@
     },
     "media_title_variant": {
       "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/media-title-variant.v1.schema.json",
-      "description": "Variant title of the media title this CI is from (mainly in the case of BL newspapers). The field is present only when a meaningful variant title is available."
+      "description": "Variant title of the media title this CI is from (mainly in the case of British Library newspapers). The field is present only when a meaningful variant title is available."
     },
     "olr": {
       "description": "True if optical layout recognition was applied to the issue/bulletin this content item originates from.",
@@ -315,7 +315,7 @@
         "var_t": {
           "type": "string",
           "minLength": 1,
-          "description": "Deprecated, replaced by `media_title_variant` at issue's top-level. Variant title of the media title this CI is from (only in the case of BL newspapers). The field is present only when a meaningful variant title is available."
+          "description": "Deprecated, replaced by `media_title_variant` at issue's top-level. Variant title of the media title this CI is from (only in the case of British Library newspapers). The field is present only when a meaningful variant title is available."
         },
         "archival_note": {
           "type": "string",

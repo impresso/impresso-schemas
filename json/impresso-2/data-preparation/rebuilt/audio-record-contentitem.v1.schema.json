@@ -59,7 +59,7 @@
     },
     "media_title_variant": {
       "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/media-title-variant.v1.schema.json",
-      "description": "Variant title of the media title this CI is from (mainly in the case of BL newspapers). The field is present only when a meaningful variant title is available."
+      "description": "Variant title of the media title this CI is from (mainly in the case of British Library newspapers). The field is present only when a meaningful variant title is available."
     },
     "title": {
       "description": "radio broadcast content-item title.",
