@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/common/entity-type.v1.schema.json",
+  "title": "Coarse-grained named-entity type scalar",
+  "description": "A coarse-grained named-entity type from the Impresso-HIPE tagset.",
+  "type": "string",
+  "enum": [
+    "loc",
+    "org",
+    "pers",
+    "time",
+    "prod"
+  ]
+}

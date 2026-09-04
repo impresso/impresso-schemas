@@ -1,0 +1,3 @@
+## fw Type
+
+`integer`

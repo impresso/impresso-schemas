@@ -1,0 +1,3 @@
+## newspapers Type
+
+`string[]`

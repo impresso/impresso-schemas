@@ -1,0 +1,32 @@
+{
+  "ci_id": "EXP-1968-02-23-a-i0262",
+  "ts": "2019-10-17T11:49:50Z",
+  "model_id": "bert-fr",
+  "prompt_unit": "window",
+  "nes": [
+    {
+      "type": "pers",
+      "surface": "championne de France de ski nautique, Sylvie Maurial",
+      "lOffset": 50,
+      "rOffset": 102,
+      "confidence_ner": 0.45,
+      "confidence_nel": 0.45,
+      "wkdata_qid": "Q20993704",
+      "wkpedia_lg": "fr",
+      "wkpedia_pagename": "Sylvie_Maurial",
+      "name": "Sylvie Maurial",
+      "function": "championne de France de ski nautique"
+    },
+    {
+      "type": "loc",
+      "surface": "France",
+      "lOffset": 64,
+      "rOffset": 70,
+      "wkdata_qid": "Q142",
+      "wkpedia_lg": "fr",
+      "wkpedia_pagename": "France",
+      "confidence_ner": 0.45,
+      "confidence_nel": 0.45
+    }
+  ]
+}

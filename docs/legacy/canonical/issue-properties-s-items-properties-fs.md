@@ -1,0 +1,3 @@
+## fs Type
+
+`number`

@@ -1,0 +1,31 @@
+{
+  "ci_id": "EXP-1888-01-09-a-i0035",
+  "ts": "2019-10-17T11:49:50Z",
+  "model_id": "bert-fr",
+  "prompt_unit": "sentence",
+  "nes": [
+    {
+      "type": "org",
+      "surface": "Société suisse du Grutli",
+      "lOffset": 32,
+      "rOffset": 56,
+      "name": "Société suisse du Grutli",
+      "wkdata_qid": "Q683672",
+      "wkpedia_lg": "fr",
+      "wkpedia_pagename": "Société_du_Grütli",
+      "confidence_ner": 0.45,
+      "confidence_nel": 0.45
+    },
+    {
+      "type": "pers",
+      "surface": "Mr. Bovat, mécanicien à Echallens",
+      "lOffset": 156,
+      "rOffset": 178,
+      "confidence_ner": 0.45,
+      "confidence_nel": 0.45,
+      "name": "Bovat",
+      "title": "Mr.",
+      "function": "mécanicien à Echallens"
+    }
+  ]
+}

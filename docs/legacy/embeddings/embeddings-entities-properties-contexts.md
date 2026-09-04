@@ -1,0 +1,3 @@
+## contexts Type
+
+`string[]`

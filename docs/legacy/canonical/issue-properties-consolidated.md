@@ -1,0 +1,3 @@
+## consolidated Type
+
+`boolean`

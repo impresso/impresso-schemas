@@ -1,0 +1,3 @@
+## rb Type
+
+`integer[]`

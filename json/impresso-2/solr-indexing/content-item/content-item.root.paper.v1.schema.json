@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/content-item/content-item.root.paper.v1.schema.json",
+  "title": "Paper Content Item (Composed Schema)",
+  "description": "Top-level composed schema for content items originating from printed or typescripted paper sources. This schema aggregates multiple modular content-item schema fragments.",
+  "type": "object",
+
+  "allOf": [
+    { "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/content-item/content-item.part.core.v1.schema.json" },
+    { "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/content-item/content-item.part.contextual-metadata.v1.schema.json" },
+    { "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/content-item/content-item.part.access-rights.v1.schema.json" },
+    { "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/content-item/content-item.part.text.transcript.v1.schema.json" },
+    { "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/content-item/content-item.part.text.semantic-enrichments.v1.schema.json" },
+    { "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/content-item/content-item.part.text.paper.v1.schema.json" }
+  ],
+
+  "unevaluatedProperties": false
+}

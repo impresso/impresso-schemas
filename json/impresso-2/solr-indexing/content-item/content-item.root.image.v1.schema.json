@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/content-item/content-item.root.image.v1.schema.json",
+  "title": "Image Content Item (Composed Schema)",
+  "description": "Top-level composed schema for image (illustration) content items. Aggregates modular content-item schema fragments specific to visual content.",
+  "type": "object",
+
+  "allOf": [
+    { "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/content-item/content-item.part.core.v1.schema.json" },
+    { "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/content-item/content-item.part.access-rights.v1.schema.json" },
+    { "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/content-item/content-item.part.image.v1.schema.json" }
+  ],
+
+  "unevaluatedProperties": false
+}
+
+

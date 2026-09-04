@@ -1,0 +1,3 @@
+## meta Type
+
+`string`
