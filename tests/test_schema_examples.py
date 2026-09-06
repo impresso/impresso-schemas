@@ -16,6 +16,7 @@ Show the first failure in detail:
 
 import json
 import pathlib
+from copy import deepcopy
 
 import pytest
 from jsonschema import Draft202012Validator
@@ -171,3 +172,36 @@ def test_imp2_validates(schema_path: str, example_path: str, schema_registry) ->
     assert not errors, "\n\n".join(
         f"{e.json_path}: {e.message}" for e in errors
     )
+
+
+@pytest.mark.parametrize(
+    ("schema_path", "example_path", "setter"),
+    [
+        (
+            "json/impresso-2/data-preparation/rebuilt/audio-record-contentitem.v1.schema.json",
+            "examples/impresso-2/data-preparation/rebuilt/audio-record-contentitem.CFCE-1996-09-08-a-i0001.json",
+            lambda instance, value: instance["rreb"][0].__setitem__("id", value),
+        ),
+        (
+            "json/impresso-2/data-preparation/canonical/issue.v1.schema.json",
+            "examples/impresso-2/data-preparation/canonical/issue.CFCE-1996-09-08-a.json",
+            lambda instance, value: instance["rr"].__setitem__(0, value),
+        ),
+    ],
+    ids=["audio-record-contentitem-rreb-id", "issue-rr-id"],
+)
+@pytest.mark.imp2
+def test_imp2_audio_record_ids_allow_up_to_two_edition_letters(
+    schema_path: str, example_path: str, setter, schema_registry
+) -> None:
+    schema = json.loads((ROOT / schema_path).read_text(encoding="utf-8"))
+    instance = json.loads((ROOT / example_path).read_text(encoding="utf-8"))
+    validator = Draft202012Validator(schema, registry=schema_registry)
+
+    valid_instance = deepcopy(instance)
+    setter(valid_instance, "CFCE-1996-09-08-ab-r0001")
+    assert validator.is_valid(valid_instance)
+
+    invalid_instance = deepcopy(instance)
+    setter(invalid_instance, "CFCE-1996-09-08-abc-r0001")
+    assert not validator.is_valid(invalid_instance)

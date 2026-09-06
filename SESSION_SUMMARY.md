@@ -119,6 +119,11 @@ fragment:
 
 - Merged `86-organize-json-schemas-by-data-phase` into `agents/remove-md-docs-materialization`.
 - Resolved all merge conflicts by keeping this branch's side for the conflicted generated-doc files under `docs/impresso-2/`, preserving the unmaterialized-docs approach.
-- Validation after the merge:
-    - `make tests` fails in `tests/test_schema_examples.py` for `entities-nel.example0` and `entities-nel.example1`, which no longer satisfy `json/impresso-2/semantic-enrichment/entities/entities-nel.v1.schema.json` from the merged base branch.
-    - `make format-check` fails on 23 pre-existing JSON/example files brought in by the merged base branch that Prettier reports as needing formatting.
+- Follow-up fixes after validation:
+    - Updated two README doc links to the published GitHub Pages URLs for the new data-preparation common schemas.
+    - Added missing null-valued NEL link fields to `entities-nel.example0.json` and `entities-nel.example1.json` to match the merged schema requirements.
+    - Added regression coverage for the tightened `{1,2}` edition-letter constraint on audio-record IDs in Impresso 2 issue and rebuilt audio-record-contentitem examples.
+- Final verification:
+    - `make tests` — passed (`165 passed, 82 deselected`).
+    - `prettier --check` on the edited NEL example JSON files — passed.
+    - `make format-check` still reports 23 pre-existing formatting issues in other merged base-branch JSON/example files outside the scope of this conflict-resolution task.
