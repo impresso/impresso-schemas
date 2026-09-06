@@ -120,9 +120,16 @@ fragment:
 - Merged `86-organize-json-schemas-by-data-phase` into `agents/remove-md-docs-materialization`.
 - Resolved all merge conflicts by keeping this branch's side for the conflicted generated-doc files under `docs/impresso-2/`, preserving the unmaterialized-docs approach.
 - Validation after the merge:
-    - `make tests` fails in `tests/test_schema_examples.py` for `entities-nel.example0` and `entities-nel.example1`, which no longer satisfy `json/impresso-2/semantic-enrichment/entities/entities-nel.v1.schema.json` from the merged base branch.
-    - `make format-check` fails on 23 pre-existing JSON/example files brought in by the merged base branch that Prettier reports as needing formatting.
+  - `make tests` fails in `tests/test_schema_examples.py` for `entities-nel.example0` and `entities-nel.example1`, which no longer satisfy `json/impresso-2/semantic-enrichment/entities/entities-nel.v1.schema.json` from the merged base branch.
+  - `make format-check` fails on 23 pre-existing JSON/example files brought in by the merged base branch that Prettier reports as needing formatting.
 
 ### Session closeout
 
 - Kept only the merge-conflict resolution work after follow-up user guidance; later review-driven schema, example, README, and test edits were reverted.
+
+### Generated documentation cleanup
+
+- Removed the seven tracked Markdown artifacts from `docs/impresso-2/`.
+- Removed the two README links that referred directly to generated Markdown.
+- Confirmed `docs/` contains no Markdown files and no specific deleted-doc references remain.
+- `make tests` could not run because `pytest` and `jsonschema` are not installed in the active shell environment.
