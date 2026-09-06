@@ -3,6 +3,8 @@ name: Documentation
 on:
   push:
     branches: [master]
+  pull_request:
+    branches: [master]
   workflow_dispatch: {}
 
 permissions:
@@ -43,11 +45,14 @@ jobs:
       - name: Build static documentation site (HTML)
         run: scripts/build_docs_site.sh site
 
-      - uses: actions/upload-pages-artifact@v3
+      - name: Upload Pages artifact
+        if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
         with:
           path: site
 
   deploy:
+    if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request'
     needs: build
     runs-on: ubuntu-latest
     environment:

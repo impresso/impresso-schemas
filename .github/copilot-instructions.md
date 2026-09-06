@@ -57,13 +57,13 @@ local registry of repository schemas, so they do not download `$ref` targets.
 
 ### Documentation
 
-Generate documentation from schemas with:
+Preview documentation locally with:
 
 ```bash
 make documentation
 ```
 
-Documentation is generated using `@adobe/jsonschema2md` and outputs to the `docs/` directory.
+Documentation is generated using `@adobe/jsonschema2md` and outputs to the gitignored `docs/` directory for local preview. It is automatically built and published as a static site to GitHub Pages (<https://impresso.github.io/impresso-schemas/>) via CI on every push to `master`.
 
 ### Code Style
 
@@ -77,9 +77,9 @@ Documentation is generated using `@adobe/jsonschema2md` and outputs to the `docs
    schemas in the appropriate `json/impresso-2/` lifecycle directory.
 2. Add examples under the matching `examples/impresso-2/` hierarchy.
 3. Add `(schema_path, example_path)` cases to `tests/test_schema_examples.py`.
-4. The `documentation` target runs a single `jsonschema2md -d json/ -v 2020-12` invocation covering all directories — no per-directory entry is needed
-5. Run `make tests` to validate examples against the schema
-6. Run `make documentation` to generate updated docs
+4. Run `make tests` to validate examples against the schema.
+5. Run `make format-check` to verify JSON formatting.
+6. Run `make documentation` if you want to preview the generated docs locally (do not commit `docs/`).
 
 ### Dependencies
 

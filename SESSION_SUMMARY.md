@@ -100,3 +100,18 @@ fragment:
 - The documentation generator runs, but Markdown lint has pre-existing
   generator-related issues (heading, long-line, and older convention-file lint
   findings).
+
+## 2026-09-06
+
+### Documentation pipeline refactoring (unmaterialized docs & GitHub Pages site)
+
+- Refactored the documentation build and publishing pipeline to stop checking generated Markdown (`docs/`) into git:
+  - Updated `.github/workflows/docs.yml` to trigger on PRs targeting `master` (for build validation) while restricting deployment and GitHub Pages artifact uploads to pushes on `master`.
+  - Updated `Makefile` doc targets to generate full indices needed for mapping schema IDs.
+  - Rewrote `scripts/build_docs_site.sh`:
+    - Parallelized pandoc conversion with `xargs -0 -n 1 -P "$NUM_PROCS"`, drastically reducing build times (~18s down from ~1m40s).
+    - Replaced stem-based filename matching with an exact lookup map parsed directly from `@adobe/jsonschema2md`'s index table, eliminating collisions across similarly named schemas (e.g. `content-item.root.*`, `sem.root.*`).
+    - Redesigned `index.html` with a clean, structured portal featuring schemas organized by lifecycle area (Impresso 2 Data Preparation, Text Processing, Semantic Enrichment, Solr Indexing, Common, and Legacy schemas) and collapsible detailed fragment links.
+  - Cleaned up `README.md` to remove 74 individual per-property HTML links in favor of pointing directly to the documentation portal (<https://impresso.github.io/impresso-schemas/>) while keeping schema links pointing to repository JSON files.
+  - Renamed `AGENT.md` to `AGENTS.md` and updated guidance and copilot instructions to document that `docs/` is gitignored and published by CI.
+

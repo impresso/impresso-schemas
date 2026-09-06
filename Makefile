@@ -81,10 +81,10 @@ documentation: check-python-env check-node-env check-markdownlint-env clean-docu
 
 documentation-legacy: check-python-env check-node-env check-markdownlint-env clean-documentation-legacy
 	@for schema_dir in $(LEGACY_SCHEMA_DIRS); do \
-		jsonschema2md -d json/$$schema_dir --header false -n -v 2020-12 -o docs/legacy/$$schema_dir -x - -s propTable; \
+		jsonschema2md -d json/$$schema_dir --header false -v 2020-12 -o docs/legacy/$$schema_dir -x - -s propTable; \
 	done
 	$(MAKE) lint-docs-legacy
 
 documentation-imp2: check-python-env check-node-env check-markdownlint-env clean-documentation-imp2
-	jsonschema2md -d json/impresso-2/ --header false -n -v 2020-12 -o docs/impresso-2 -x - -s propTable
+	jsonschema2md -d json/impresso-2/ --header false -v 2020-12 -o docs/impresso-2 -x - -s propTable
 	$(MAKE) lint-docs-imp2

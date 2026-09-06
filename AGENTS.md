@@ -1,4 +1,4 @@
-# AGENT.md — Impresso Schemas
+# AGENTS.md — Impresso Schemas
 
 This file provides accurate, up-to-date guidance for AI agents working in this repository.
 
@@ -15,11 +15,11 @@ json/               JSON schema files (source of truth)
   impresso-2/       Versioned schemas organised by lifecycle area
 examples/           Example/test JSON files
   impresso-2/       Mirrors the Impresso 2 schema hierarchy
-docs/               Auto-generated Markdown documentation (do not edit manually)
+docs/               Local Markdown preview (gitignored; built and published by CI)
   legacy/           Documentation generated from legacy schemas
   impresso-2/       Documentation generated from Impresso 2 schemas
-scripts/            Utility scripts (jsonlschema.py)
-Makefile            Validation (tests) and documentation (documentation) targets
+scripts/            Utility scripts (build_docs_site.sh, jsonlschema.py)
+Makefile            Validation (tests), formatting, and documentation targets
 requirements.txt    Python dependencies for validation
 ```
 
@@ -88,26 +88,35 @@ python -m pytest tests/ -v -k "canonical_issue"
 # Show full detail on first failure
 python -m pytest tests/ -v -x
 
-# Generate Markdown documentation for both namespaces (overwrites docs/)
+# Preview Markdown documentation locally (docs/ is gitignored, published by CI)
 make documentation
 
-# Generate one documentation tree only
+# Preview one documentation tree only
 make documentation-legacy
 make documentation-imp2
 
-# Remove all generated docs
+# Remove all locally generated docs
 make clean-documentation
+
+# Format JSON files with Prettier
+make format
+
+# Check JSON formatting without modifying files (CI)
+make format-check
 
 # Create and activate a virtualenv, then install Python dependencies
 python3 -m venv .venv
 source .venv/bin/activate   # Windows: .venv\Scripts\activate
 pip install .
 
-# Install Node.js doc generator
-npm install -g @adobe/jsonschema2md
+# Install Node.js doc generator and linters
+npm install -g @adobe/jsonschema2md prettier markdownlint-cli
 
 # All make commands must be run with the virtualenv activated
 ```
+
+Documentation is generated and published automatically to GitHub Pages at
+<https://impresso.github.io/impresso-schemas/> on every push to `master`.
 
 ---
 
@@ -145,9 +154,10 @@ These legacy or Impresso 2 schemas exist but have no valid example entry in
 4. Add a `(schema_path, example_path)` entry to `LEGACY_CASES` or
    `IMPRESSO_2_CASES` in `tests/test_schema_examples.py`.
 5. Run the matching `make tests-legacy` or `make tests-imp2` target, then
-   `make tests` before handoff.
-6. Run the matching documentation target, or `make documentation` to
-   regenerate both trees.
+6. Run `make format-check` (or `make format`) to ensure JSON files meet formatting rules.
+7. Run the matching documentation target, or `make documentation` to
+   preview the generated Markdown trees locally (note: docs are gitignored and published by CI).
+8. Append a summary of changes and test outcomes to `SESSION_SUMMARY.md`.
 
 ## Code Style
 
