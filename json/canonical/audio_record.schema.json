@@ -105,7 +105,7 @@
           },
           "pOf": {
             "type": "string",
-            "description": "Canonical ID of the content item to which the section belongs."
+            "description": "The canonical ID of the content item to which the section belongs."
           }
         },
         "required": ["tc", "u"]
