@@ -119,14 +119,16 @@ fragment:
 
 - Merged `86-organize-json-schemas-by-data-phase` into `agents/remove-md-docs-materialization`.
 - Resolved all merge conflicts by keeping this branch's side for the conflicted generated-doc files under `docs/impresso-2/`, preserving the unmaterialized-docs approach.
+- Removed seven additional generated `docs/impresso-2/*.md` files that the stacked-branch merge had reintroduced without conflicts, so the branch consistently keeps generated docs out of git.
 - Follow-up fixes after validation:
-    - Updated two README doc links to the published GitHub Pages URLs for the new data-preparation common schemas.
+    - Updated two README doc links to the published GitHub Pages URLs for the new `data-preparation/common` schema pages.
     - Added missing null-valued NEL link fields to `entities-nel.example0.json` and `entities-nel.example1.json` to match the merged schema requirements.
     - Restored the published `v1` audio-record ID patterns in Impresso 2 issue and rebuilt audio-record-contentitem schemas to preserve 3-letter edition compatibility, and added regression coverage for 2-letter and 3-letter IDs while rejecting 4-letter suffixes.
     - Added regression coverage for the shared `time-coordinates.v1` non-negative constraint across section, utterance, segment, and token coordinates in the Impresso 2 canonical audio-record schema.
     - Added regression coverage for the shared `time-coordinates.v1` non-negative constraint on rebuilt audio-record-contentitem section coordinates.
     - Aligned the `pOf` description in the legacy and Impresso 2 canonical audio-record schemas to describe the containing section accurately.
     - Updated `AGENTS.md` to record the dedicated Impresso 2 regression coverage now exercised by `make tests`.
+    - Renamed the shared audio-record ID regression test so its scope clearly matches both the issue and rebuilt schema cases it covers.
 - Final verification:
     - `make tests` — passed (`169 passed, 82 deselected`).
     - `prettier --check` on the edited NEL example JSON files — passed.

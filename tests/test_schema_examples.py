@@ -191,7 +191,7 @@ def test_imp2_validates(schema_path: str, example_path: str, schema_registry) ->
     ids=["audio-record-contentitem-rreb-id", "issue-rr-id"],
 )
 @pytest.mark.imp2
-def test_imp2_audio_record_ids_allow_up_to_three_edition_letters(
+def test_imp2_issue_and_rebuilt_audio_record_ids_allow_up_to_three_edition_letters(
     schema_path: str, example_path: str, setter, schema_registry
 ) -> None:
     schema = json.loads((ROOT / schema_path).read_text(encoding="utf-8"))
