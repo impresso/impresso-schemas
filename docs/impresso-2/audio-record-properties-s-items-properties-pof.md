@@ -1,3 +1,0 @@
-## pOf Type
-
-`string`

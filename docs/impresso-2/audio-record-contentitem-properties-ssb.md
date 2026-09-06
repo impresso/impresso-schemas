@@ -1,3 +1,0 @@
-## ssb Type
-
-`integer[]`

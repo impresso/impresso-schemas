@@ -1,3 +1,0 @@
-## passages Type
-
-`string[]`

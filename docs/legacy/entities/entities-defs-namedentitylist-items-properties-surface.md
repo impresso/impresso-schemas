@@ -1,3 +1,0 @@
-## surface Type
-
-`string`

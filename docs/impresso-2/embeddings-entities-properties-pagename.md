@@ -1,3 +1,0 @@
-## pagename Type
-
-`string`

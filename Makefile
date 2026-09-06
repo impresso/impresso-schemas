@@ -8,9 +8,9 @@ help:
 	@echo "  make tests-legacy   Validate legacy schemas and examples"
 	@echo "  make tests-imp2     Validate Impresso 2 schemas and examples"
 	@echo "  make tests          Run both validation suites"
-	@echo "  make documentation-legacy  Generate legacy schema docs in docs/legacy/"
-	@echo "  make documentation-imp2    Generate Impresso 2 schema docs in docs/impresso-2/"
-	@echo "  make documentation  Regenerate both documentation trees"
+	@echo "  make documentation-legacy  Generate legacy schema docs in docs/legacy/ (gitignored, published via CI)"
+	@echo "  make documentation-imp2    Generate Impresso 2 schema docs in docs/impresso-2/ (gitignored, published via CI)"
+	@echo "  make documentation  Regenerate both documentation trees locally for preview"
 	@echo "  make clean-documentation  Remove all generated docs"
 	@echo "  make format         Auto-format all JSON files with Prettier"
 	@echo "  make format-check   Check JSON formatting without modifying files (CI)"
@@ -81,10 +81,10 @@ documentation: check-python-env check-node-env check-markdownlint-env clean-docu
 
 documentation-legacy: check-python-env check-node-env check-markdownlint-env clean-documentation-legacy
 	@for schema_dir in $(LEGACY_SCHEMA_DIRS); do \
-		jsonschema2md -d json/$$schema_dir --header false -n -v 2020-12 -o docs/legacy/$$schema_dir -x - -s propTable; \
+		jsonschema2md -d json/$$schema_dir --header false -v 2020-12 -o docs/legacy/$$schema_dir -x - -s propTable; \
 	done
 	$(MAKE) lint-docs-legacy
 
 documentation-imp2: check-python-env check-node-env check-markdownlint-env clean-documentation-imp2
-	jsonschema2md -d json/impresso-2/ --header false -n -v 2020-12 -o docs/impresso-2 -x - -s propTable
+	jsonschema2md -d json/impresso-2/ --header false -v 2020-12 -o docs/impresso-2 -x - -s propTable
 	$(MAKE) lint-docs-imp2

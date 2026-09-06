@@ -1,3 +1,0 @@
-## topic Type
-
-`integer`

@@ -1,3 +1,0 @@
-## gn Type
-
-`boolean`

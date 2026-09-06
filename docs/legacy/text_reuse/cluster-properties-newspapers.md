@@ -1,3 +1,0 @@
-## newspapers Type
-
-`string[]`
