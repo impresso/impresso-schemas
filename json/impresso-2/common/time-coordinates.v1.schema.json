@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/time-coordinates.v1.schema.json",
+  "title": "Time-coordinates scalar",
+  "description": "Temporal span within an audio recording, in the format [start-time, duration], each expressed in seconds.",
+  "type": "array",
+  "prefixItems": [
+    {
+      "type": "number",
+      "minimum": 0.0,
+      "description": "Start time, in seconds."
+    },
+    {
+      "type": "number",
+      "minimum": 0.0,
+      "description": "Duration, in seconds."
+    }
+  ],
+  "minItems": 2,
+  "maxItems": 2,
+  "examples": [[12.5, 3.2]]
+}

@@ -1,3 +1,0 @@
-## audios Type
-
-`integer`

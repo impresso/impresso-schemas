@@ -1,0 +1,135 @@
+# Session Summaries
+
+## 2026-08-18
+
+### Repository structure and validation groundwork
+
+- Established the versioned `json/impresso-2/` namespace while preserving all
+  legacy schema paths and `$id` URIs.
+- Organised Impresso 2 schemas by lifecycle area:
+  - `data-preparation/`
+  - `text-processing/` — renamed from `text-preprocessing/`
+  - `semantic-enrichment/`
+  - `solr-indexing/`
+  - `web-app/`
+  - `common/` for cross-lifecycle reusable definitions.
+- Examples mirror the Impresso 2 schema hierarchy.
+- Validation covers schema meta-validation, `$id`/path consistency, local
+  `$ref` resolution, and registered examples for legacy and Impresso 2 schemas.
+
+### Documentation
+
+- Updated the README with:
+  - lifecycle-oriented repository layout and schema catalogue;
+  - data-phase Mermaid diagram;
+  - revised project introduction;
+  - related Impresso publications with linked titles and expandable BibTeX;
+  - common-schema placement and naming rules.
+- Updated `AGENT.md`, `.github/copilot-instructions.md`,
+  `SCHEMA_CONVENTIONS.md`, migration mapping, and refactor guidance.
+- Documented the conventions:
+  - `json/impresso-2/common/` is only for definitions shared across lifecycle
+    areas;
+  - `<lifecycle-area>/common/` is for fragments reused only within one
+    lifecycle area;
+  - `<concept>.vN.schema.json` for standalone definitions;
+  - `<concept>.part.vN.schema.json` for object fragments composed using
+    `allOf`;
+  - no `shared` filename prefix.
+
+### Shared content-item ID fragment
+
+- Replaced the initial scalar approach with the object fragment:
+
+  `json/impresso-2/common/content-item-id.part.v1.schema.json`
+
+- It centrally defines the `ci_id` property name, description, canonical CI
+  pattern, and examples, including a two-letter edition identifier:
+  - `GDL-1900-01-02-a-i0001`
+  - `GDL-1900-01-02-ab-i0001`
+- Updated 12 schemas to reference the fragment through `allOf`.
+- Standardised relevant copied Impresso 2 fields from `id` to `ci_id`:
+  - rebuilt paper and audio content items;
+  - language identification;
+  - spaCy linguistic annotation.
+- Preserved `ci_id` as a local required field in every consumer.
+- Corrected the OCR QA example from `ci_ref` to `ci_id` and registered it in
+  example validation.
+- Did not modify the chunk or sentence embedding schemas, as they are expected
+  to disappear.
+
+### Shared model ID fragment
+
+- Added:
+
+  `json/impresso-2/common/model-id.part.v1.schema.json`
+
+- Updated six consumers to compose it through `allOf`:
+  - linguistic processing;
+  - document embeddings;
+  - named entities;
+  - image classification;
+  - image embeddings;
+  - topic assignment.
+- Removed their local `model_id` definitions.
+- Preserved requirement status:
+  - required: document embeddings, entities, image classification, image
+    embeddings;
+  - optional: linguistic processing and topic assignment.
+- Left chunk and sentence embedding schemas untouched.
+
+A fuller `model_id` description was proposed but not yet copied into the
+fragment:
+
+```json
+"description": "Identifier of the model or processing system that produced this output. It should include distinguishing information such as the model name, version, language, and relevant configuration, enabling transparency and traceability across processing runs.",
+"examples": [
+  "spacy@3.6.1:de_core_news_md@3.6.0:sentencizer|tok2vec|tagger|morphologizer|lemmatizer|attribute_ruler|ner"
+]
+```
+
+### Verification and caveats
+
+- After the content-item ID work: `make tests` — 212 passed.
+- After adding the model-ID fragment: `make tests` — 214 passed.
+- `git diff --check` passes.
+- No commits or pushes were performed by the assistant; commits are managed by
+  the user.
+- `make format-check` could not run in this shell because `prettier` was
+  unavailable.
+- The documentation generator runs, but Markdown lint has pre-existing
+  generator-related issues (heading, long-line, and older convention-file lint
+  findings).
+
+## 2026-09-06
+
+### Documentation pipeline refactoring (unmaterialized docs & GitHub Pages site)
+
+- Refactored the documentation build and publishing pipeline to stop checking generated Markdown (`docs/`) into git:
+  - Updated `.github/workflows/docs.yml` to trigger on PRs targeting `master` (for build validation) while restricting deployment and GitHub Pages artifact uploads to pushes on `master`.
+  - Updated `Makefile` doc targets to generate full indices needed for mapping schema IDs.
+  - Rewrote `scripts/build_docs_site.sh`:
+    - Parallelized pandoc conversion with `xargs -0 -n 1 -P "$NUM_PROCS"`, drastically reducing build times (~18s down from ~1m40s).
+    - Replaced stem-based filename matching with an exact lookup map parsed directly from `@adobe/jsonschema2md`'s index table, eliminating collisions across similarly named schemas (e.g. `content-item.root.*`, `sem.root.*`).
+    - Redesigned `index.html` with a clean, structured portal featuring schemas organized by lifecycle area (Impresso 2 Data Preparation, Text Processing, Semantic Enrichment, Solr Indexing, Common, and Legacy schemas) and collapsible detailed fragment links.
+  - Cleaned up `README.md` to remove 74 individual per-property HTML links in favor of pointing directly to the documentation portal (<https://impresso.github.io/impresso-schemas/>) while keeping schema links pointing to repository JSON files.
+  - Renamed `AGENT.md` to `AGENTS.md` and updated guidance and copilot instructions to document that `docs/` is gitignored and published by CI.
+
+### Stacked-branch merge conflict resolution
+
+- Merged `86-organize-json-schemas-by-data-phase` into `agents/remove-md-docs-materialization`.
+- Resolved all merge conflicts by keeping this branch's side for the conflicted generated-doc files under `docs/impresso-2/`, preserving the unmaterialized-docs approach.
+- Validation after the merge:
+  - `make tests` fails in `tests/test_schema_examples.py` for `entities-nel.example0` and `entities-nel.example1`, which no longer satisfy `json/impresso-2/semantic-enrichment/entities/entities-nel.v1.schema.json` from the merged base branch.
+  - `make format-check` fails on 23 pre-existing JSON/example files brought in by the merged base branch that Prettier reports as needing formatting.
+
+### Session closeout
+
+- Kept only the merge-conflict resolution work after follow-up user guidance; later review-driven schema, example, README, and test edits were reverted.
+
+### Generated documentation cleanup
+
+- Removed the seven tracked Markdown artifacts from `docs/impresso-2/`.
+- Removed the two README links that referred directly to generated Markdown.
+- Confirmed `docs/` contains no Markdown files and no specific deleted-doc references remain.
+- `make tests` could not run because `pytest` and `jsonschema` are not installed in the active shell environment.

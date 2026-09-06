@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/source-medium.v1.schema.json",
+  "title": "Impresso source medium",
+  "description": "Original production medium of the source represented by a data-preparation record. Value from the `impresso_essentials.utils.SourceMedium` enum. This schema defines the value independently of the property name that stores it; current data-preparation properties using this value are `sm` (canonical, rebuilt) and `source_medium` (versioning manifest).",
+  "type": "string",
+  "enum": ["print", "typescript", "audio"],
+  "examples": ["print", "audio"]
+}

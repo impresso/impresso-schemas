@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/bounding-box.v1.schema.json",
+  "title": "Impresso bounding box",
+  "description": "Rectangular region in a two-dimensional media coordinate space. The bounding box is represented as `[x, y, width, height]`, where `x` and `y` are the coordinates of the upper-left corner and `width` and `height` are the dimensions of the rectangle. Coordinates and dimensions are expressed in pixels.",
+  "type": "array",
+  "prefixItems": [
+    {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Horizontal coordinate of the upper-left corner."
+    },
+    {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Vertical coordinate of the upper-left corner."
+    },
+    {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Width of the bounding box."
+    },
+    {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Height of the bounding box."
+    }
+  ],
+  "minItems": 4,
+  "maxItems": 4,
+  "examples": [[120, 340, 450, 80]]
+}

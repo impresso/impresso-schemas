@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/probability.v1.schema.json",
+  "title": "Probability",
+  "description": "Probability value expressed as a number between 0 and 1 inclusive. This schema defines the representation of a probability independently of what event, prediction, or classification the probability refers to.",
+  "type": "number",
+  "minimum": 0,
+  "maximum": 1,
+  "examples": [0, 0.5, 0.95, 1]
+}

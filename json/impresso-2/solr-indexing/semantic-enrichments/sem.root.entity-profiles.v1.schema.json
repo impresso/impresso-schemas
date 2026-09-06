@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/semantic-enrichments/sem.root.entity-profiles.v1.schema.json",
+  "title": "Entity Profile Embedding Document",
+  "description": "Schema for Solr entity embedding document derived from entity_emb object (Impresso Project).",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Wikidata ID (e.g. 'Q12345')."
+    },
+    "imp_ids_ss": {
+      "type": "array",
+      "description": "List of Impresso internal entity identifiers.",
+      "items": { "type": "string" }
+    },
+    "surfaces_ss": {
+      "type": "array",
+      "description": "All surface forms associated with this entity (coming from mentions).",
+      "items": { "type": "string" }
+    },
+    "ci_ids_ss": {
+      "type": "array",
+      "description": "List of content item (article) IDs in which this entity is mentioned.",
+      "items": { "type": "string" }
+    },
+    "mention_keys_ss": {
+      "type": "array",
+      "description": "List of Impresso entity mention keys (as extracted by NER).",
+      "items": { "type": "string" }
+    },
+    "ci_lg_s": {
+      "type": ["string", "null"],
+      "description": "Language code of the content items in which this entity was found (would deserve more explanation here)."
+    },
+    "wiki_masterlabel_s": {
+      "type": ["string", "null"],
+      "description": "Wikipedia page name, taken as canonical Wikipedia label for the entity."
+    },
+    "wiki_url_s": {
+      "type": ["string", "null"],
+      "format": "uri",
+      "description": "Wikipedia URL (language dependent) for the entity."
+    },
+    "date_of_birth_dt": {
+      "type": ["string", "null"],
+      "format": "date-time",
+      "description": "Date of birth (ISO 8601 format)."
+    },
+    "date_of_death_dt": {
+      "type": ["string", "null"],
+      "format": "date-time",
+      "description": "Date of death (ISO 8601 format)."
+    },
+    "wkd_occupations_ss": {
+      "type": "array",
+      "description": "List of Wikidata human-readable occupation labels for the entity",
+      "items": { "type": "string" }
+    },
+    "wkd_occupation_qids_ss": {
+      "type": "array",
+      "description": "List of Wikidata QIDs corresponding to occupations.",
+      "items": { "type": "string" }
+    },
+    "wkd_entity_types_ss": {
+      "type": "array",
+      "description": "List of Wikidata classes / types of which the entity is an instance of (expressed via https://www.wikidata.org/wiki/Property:P31).",
+      "items": { "type": "string" }
+    },
+    "wiki_summaries_t": {
+      "type": ["string", "null"],
+      "description": "Serialized JSON text blob of Wikipedia summaries in multiple languages for the entity."
+    },
+    "contexts_ss": {
+      "type": "array",
+      "description": "List of media-related contexts where the entity appears, in the same order as content item id list.",
+      "items": { "type": "string" }
+    },
+    "entity_mixed_emb_v768": {
+      "type": "array",
+      "description": "Entiy embedding vector (combined signal from encyclopedic and media-related context).",
+      "items": { "type": "number" },
+      "minItems": 768,
+      "maxItems": 768
+    },
+    "entity_encyc_emb_v768": {
+      "type": "array",
+      "description": "Entity embedding vector computed from encyclopedic text components (Wikidata/Wikipedia-based).",
+      "items": { "type": "number" },
+      "minItems": 768,
+      "maxItems": 768
+    },
+    "entity_media_emb_v768": {
+      "type": "array",
+      "description": "Entity embedding vector computed from entity's mention text components (mention context windows).",
+      "items": { "type": "number" },
+      "minItems": 768,
+      "maxItems": 768
+    }
+  },
+  "required": ["id"],
+  "additionalProperties": false
+}

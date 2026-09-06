@@ -1,3 +1,0 @@
-## olr Type
-
-`boolean`

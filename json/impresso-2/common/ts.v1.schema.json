@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/ts.v1.schema.json",
+  "title": "Impresso ts property",
+  "description": "Defines `ts` as the preferred Impresso property name for a timestamp.",
+  "type": "object",
+  "properties": {
+    "ts": {
+      "$ref": "timestamp.v1.schema.json",
+      "description": "Preferred property for an Impresso timestamp."
+    }
+  }
+}

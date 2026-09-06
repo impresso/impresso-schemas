@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/semantic-enrichments/sem.root.mentions.v1.schema.json",
+  "title": "Entity Mention Solr Document",
+  "description": "Schema for entity mention documents in Solr (Impresso Project)",
+  "type": "object",
+  "properties": {
+    "l_s": {
+      "type": "string",
+      "description": "The label/surface form of the entity mention",
+      "minLength": 1
+    },
+    "t_s": {
+      "type": "string",
+      "description": "Type of the entity (e.g., 'pers' for person, 'loc' for location, 'org' for organization)",
+      "enum": [
+        "pers",
+        "loc",
+        "org"
+      ]
+    },
+    "fq_f": {
+      "type": "number",
+      "description": "Frequency of the mention (as float)",
+      "minimum": 0
+    }
+  },
+  "required": [
+    "l_s",
+    "t_s",
+    "fq_f"
+  ],
+  "additionalProperties": true
+}

@@ -1,0 +1,165 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/content-item/content-item.part.text.semantic-enrichments.v1.schema.json",
+  "title": "Semantic Enrichments Fields (part of composed schema)",
+  "description": "Semantic enrichments fields of media content items in the Impresso project.",
+  "type": "object",
+  "properties": {
+    "ocrqa_f": {
+      "description": "OCR quality assessment score between 0.00 and 1.00, or null if unavailable.",
+      "oneOf": [
+        {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "title": "OCR QA score"
+        },
+        {
+          "type": "null",
+          "title": "Unavailable"
+        }
+      ]
+  },
+    "nag_mentions": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "List of mentions from news agencies."
+    },
+    "nag_offset_plain": {
+      "type": "string",
+      "description": "Offsets for news agency mentions in plain text.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "nag_mention_conf_dpfs": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Confidence scores for news agency mentions."
+    },
+    "nag_entities_dpfs": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Entities of type news agency."
+    },
+    "pers_mentions": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "List of detected person mention surface strings extracted from the content (may contain duplicates)."
+    },
+    "pers_mention_conf_dpfs": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "List of person mention confidence annotations; each entry is typically a string combining mention and confidence in the pipeline format (for example: 'Mention text|95.2')."
+    },
+    "pers_entities_dpfs": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Serialized person entity annotations (for example qid/identifier or JSON fragment) produced by the entity recognition pipeline."
+    },
+    "pers_entities_conf_dpfs": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Confidence scores for person entities."
+    },
+    "loc_mentions": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "List of detected location mention surface strings extracted from the content."
+    },
+    "loc_mention_conf_dpfs": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "List of location mention confidence annotations; entries typically encode mention and confidence (e.g. 'Location|87.3')."
+    },
+    "loc_entities_dpfs": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Serialized location entity annotations (identifier or JSON) assigned to the detected location mentions."
+    },
+    "loc_entities_conf_dpfs": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Confidence scores for location entities."
+    },
+    "org_mentions": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "List of detected organization mention surface strings extracted from the content."
+    },
+    "org_mention_conf_dpfs": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "List of organization mention confidence annotations; strings typically combine mention and confidence (e.g. 'Org name|75.4')."
+    },
+    "org_entities_dpfs": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Serialized organization entity annotations (identifier or JSON) assigned to the detected organization mentions."
+    },
+    "org_entities_conf_dpfs": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Confidence scores for organization entities."
+    },
+    "nem_offset_plain": {
+      "type": "string",
+      "description": "Offsets for named entity mentions in plain text.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "topics_dpfs": {
+      "type": "string",
+      "description": "Topics assigned to the content item."
+    },
+    "cluster_id_ss": {
+      "type": "array",
+      "description": "TR Cluster IDs assigned to the content item.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "gte_multi_v768": {
+      "type": "array",
+      "description": "Content item embedding as a vector of floats.",
+      "items": {
+        "type": "number"
+      }
+    }
+  },
+  "additionalProperties": true,
+  "required": [
+    "ocrqa_f"
+  ]
+}

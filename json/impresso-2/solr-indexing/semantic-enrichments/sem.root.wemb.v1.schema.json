@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/semantic-enrichments/sem.root.wemb.v1.schema.json",
+  "title": "Word Embedding Solr Document",
+  "description": "Schema for word embedding documents in Solr (Impresso Project)",
+  "type": "object",
+  "properties": {
+    "word_s": {
+      "type": "string",
+      "description": "The word token",
+      "minLength": 1
+    },
+    "fastText_emb_v100": {
+      "type": "array",
+      "description": "FastText embedding vector with 100 dimensions",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 100,
+      "maxItems": 100
+    },
+    "lg_s": {
+      "type": "string",
+      "description": "Language code (ISO lowercase)",
+      "minLength": 2,
+      "maxLength": 3
+    }
+  },
+  "required": ["word_s", "fastText_emb_v100", "lg_s"],
+  "additionalProperties": true
+}

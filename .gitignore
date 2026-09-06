@@ -9,3 +9,6 @@ out/
 *.egg-info/
 __pycache__/
 *.pyc
+
+# Generated documentation (published via GitHub Pages, not committed)
+/docs/

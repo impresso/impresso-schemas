@@ -4,7 +4,16 @@ This repository contains JSON schemas used in the [Impresso project](https://imp
 
 ## Repository Structure
 
-- `json/` - JSON schema files organized by data type
+- `json/` - JSON schema source of truth
+  - Existing top-level schema directories are the legacy namespace. Do not move
+    or change their paths or `$id` values.
+  - `impresso-2/` - Versioned contracts organised by lifecycle area:
+`data-preparation/`, `text-processing/`, `semantic-enrichment/`,
+    `solr-indexing/`, and `web-app/`.
+    - Use `<name>.vN.schema.json` filenames.
+    - The `$id` must exactly match the published URL corresponding to the
+      repository path.
+    - `common/` is reserved for definitions shared across lifecycle areas.
   - `canonical/` - Schemas for canonical formats (issue, page, audio_record)
   - `rebuilt/` - Schemas for rebuilt formats (paper_contentitem, audio_record_contentitem)
   - `topic_model/` - Topic modeling schemas
@@ -42,17 +51,19 @@ Run schema validation tests with:
 make tests
 ```
 
-This validates all example JSON files against their corresponding schemas using `check-jsonschema`.
+This validates all registered legacy and Impresso 2 examples, schema syntax,
+path-to-`$id` consistency, and locally resolvable `$ref` values. Tests use a
+local registry of repository schemas, so they do not download `$ref` targets.
 
 ### Documentation
 
-Generate documentation from schemas with:
+Preview documentation locally with:
 
 ```bash
 make documentation
 ```
 
-Documentation is generated using `@adobe/jsonschema2md` and outputs to the `docs/` directory.
+Documentation is generated using `@adobe/jsonschema2md` and outputs to the gitignored `docs/` directory for local preview. It is automatically built and published as a static site to GitHub Pages (<https://impresso.github.io/impresso-schemas/>) via CI on every push to `master`.
 
 ### Code Style
 
@@ -62,12 +73,13 @@ Documentation is generated using `@adobe/jsonschema2md` and outputs to the `docs
 
 ### Adding New Schemas
 
-1. Create the schema file in the appropriate `json/` subdirectory
-2. Add example files in the corresponding `examples/` subdirectory
-3. Add validation commands to the Makefile `tests` target
-4. The `documentation` target runs a single `jsonschema2md -d json/ -v 2020-12` invocation covering all directories — no per-directory entry is needed
-5. Run `make tests` to validate examples against the schema
-6. Run `make documentation` to generate updated docs
+1. Keep changes to existing schemas in their legacy paths; create new versioned
+   schemas in the appropriate `json/impresso-2/` lifecycle directory.
+2. Add examples under the matching `examples/impresso-2/` hierarchy.
+3. Add `(schema_path, example_path)` cases to `tests/test_schema_examples.py`.
+4. Run `make tests` to validate examples against the schema.
+5. Run `make format-check` to verify JSON formatting.
+6. Run `make documentation` if you want to preview the generated docs locally (do not commit `docs/`).
 
 ### Dependencies
 

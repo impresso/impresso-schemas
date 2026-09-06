@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/image-embeddings/image-embeddings.v1.schema.json",
+  "title": "Image Embeddings JSON Schema",
+  "description": "A representation for the vector embedding representation of the content-items of type image.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/ci_id.v1.schema.json"
+    },
+    {
+      "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/model-id.v1.schema.json"
+    }
+  ],
+  "properties": {
+    "ts": {
+      "type": "string",
+      "description": "Timestamp indicating when the embedding was created (e.g., '2024-10-09T09:29:02Z').",
+      "format": "date-time"
+    },
+    "size": {
+      "type": "integer",
+      "description": "The size of the embedding vector."
+    },
+    "embedding": {
+      "oneOf": [
+        {
+          "type": "array",
+          "description": "The vector embedding representation of the content item as a single list.",
+          "items": {
+            "type": "number",
+            "description": "A single number in the vector embedding of the document.",
+            "examples": [-0.732441]
+          }
+        }
+      ]
+    },
+    "seconds": {
+      "type": "number",
+      "description": "Number of seconds it took to generate the embedding for this image.",
+      "examples": [0.973115]
+    },
+    "title_year": {
+      "type": "string",
+      "description": "Title-year key this image embeddings corresponds to.",
+      "pattern": "^[a-zA-Z0-9]+-\\d{4}$",
+      "examples": ["actionfem-1940"]
+    }
+  },
+  "required": ["ci_id", "embedding", "model_id", "size"]
+}

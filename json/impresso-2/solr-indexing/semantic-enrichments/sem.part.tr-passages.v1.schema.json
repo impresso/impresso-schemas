@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/semantic-enrichments/sem.part.tr-passages.v1.schema.json",
+  "title": "Text Reuse Passage Schema",
+  "description": "Schema for text reuse passage properties within a content item",
+  "type": "object",
+  "$defs": {
+    "clusterIdPattern": {
+      "type": "string",
+      "pattern": "^tr-[a-z]+-v[0-9]+-[0-9]+-c[0-9]+$",
+      "description": "Text reuse cluster identifier pattern"
+    }
+  },
+  "properties": {
+    "beg_offset_i": {
+      "type": "integer",
+      "title": "Start offset of TR passage",
+      "description": "Start character offset (index) of the TR passage, relative to the content item transcript.",
+      "minimum": 0
+    },
+    "end_offset_i": {
+      "type": "integer",
+      "title": "End offset of TR passage",
+      "description": "End character offset (index) of the TR passage, relative to the content item transcript.",
+      "minimum": 0
+    },
+    "cluster_id_s": {
+      "$ref": "#/$defs/clusterIdPattern",
+      "title": "Cluster ID",
+      "description": "Unique identifier for the text reuse cluster this passage belongs to"
+    },
+    "cluster_size_l": {
+      "type": "integer",
+      "title": "Cluster size",
+      "description": "Number of passages in this text reuse cluster",
+      "minimum": 1
+    },
+    "cluster_lex_overlap_d": {
+      "type": "number",
+      "title": "Cluster lexical overlap",
+      "description": "Lexical overlap percentage for the cluster",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "cluster_day_delta_i": {
+      "type": "integer",
+      "title": "Cluster day delta",
+      "description": "Number of days between the earliest and latest documents in the cluster",
+      "minimum": 0
+    },
+    "connected_clusters_ss": {
+      "type": "array",
+      "title": "Connected clusters",
+      "description": "List of cluster IDs that are connected to this cluster",
+      "items": {
+        "$ref": "#/$defs/clusterIdPattern"
+      }
+    },
+    "n_connected_clusters_i": {
+      "type": "integer",
+      "title": "Number of connected clusters",
+      "description": "Count of clusters connected to this cluster",
+      "minimum": 0
+    }
+  },
+  "required": ["beg_offset_i", "end_offset_i", "cluster_id_s"],
+  "additionalProperties": true
+}

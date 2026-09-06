@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/content-item/content-item.part.contextual-metadata.provider.v1.schema.json",
+  "title": "Provider Contextual Metadata Fields",
+  "description": "Provider-supplied contextual metadata fields for content items. These fields are passed through verbatim from the data provider's 'additional_metadata' key-value pairs and are NOT harmonised or curated by Impresso. Field availability depends on the provider. The 'meta_prv_' prefix signals that no cross-provider consistency is guaranteed.",
+  "type": "object",
+  "properties": {
+    "meta_prv_production_type_s": {
+      "type": "string",
+      "title": "Production Type",
+      "description": "Production type of the broadcast (e.g. 'Production propre'). Sourced from 'production_type' key in additional_metadata. Provider: RTS."
+    },
+    "meta_prv_recording_place_s": {
+      "type": "string",
+      "title": "Recording Place",
+      "description": "Place where the broadcast was recorded. Sourced from 'recording_place' key in additional_metadata. Provider: RTS."
+    },
+    "meta_prv_live_b": {
+      "type": "boolean",
+      "title": "Live Broadcast",
+      "description": "Whether the broadcast was live. Derived from 'live' key in additional_metadata. Provider: RTS."
+    },
+    "meta_prv_geo_descriptors_ss": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "title": "Geographical Descriptors",
+      "description": "Geographical descriptors associated with the broadcast content (e.g. countries, cities). Sourced from 'geographical_descriptors' key in additional_metadata. Provider: RTS."
+    },
+    "meta_prv_thematic_descriptors_ss": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "title": "Thematic Descriptors",
+      "description": "Thematic descriptors categorising the broadcast content (e.g. topics, themes). Sourced from 'thematical_descriptors' key in additional_metadata. Provider: RTS."
+    },
+    "meta_prv_participants_ss": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "title": "Participants",
+      "description": "Participants in the broadcast, including role and affiliation where available. Sourced from 'participants' key in additional_metadata. Provider: RTS."
+    }
+  },
+  "additionalProperties": true
+}
+

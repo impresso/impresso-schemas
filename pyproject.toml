@@ -21,3 +21,9 @@ build-backend = "setuptools.build_meta"
 packages = []
 py-modules = ["jsonlschema"]
 package-dir = {"" = "scripts"}
+
+[tool.pytest.ini_options]
+markers = [
+  "legacy: validates schemas and examples in the stable legacy namespace",
+  "imp2: validates schemas and examples in the Impresso 2 namespace",
+]

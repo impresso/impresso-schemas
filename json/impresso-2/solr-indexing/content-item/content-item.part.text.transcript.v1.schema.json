@@ -1,0 +1,165 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/content-item/content-item.part.text.transcript.v1.schema.json",
+  "title": "Content Item Text Content Fields",
+  "description": "Textual content and content types fields of media content items in the Impresso project.",
+  "type": "object",
+  "properties": {
+    "doc_type_s": {
+      "type": "string",
+      "description": "Type of document, e.g., page (p) or content item (ci).",
+      "enum": ["p", "ci"],
+      "deprecated": true
+    },
+    "segmentation_level_s": {
+      "type": "string",
+      "title": "Segmentation level",
+      "description": "Level of segmentation applied to the source facsimile from which the content item is derived.",
+      "oneOf": [
+        {
+          "const": "none",
+          "title": "No Segmentation (Page or Broadcast)",
+          "description": "No optical layout segmentation applied; the content item corresponds to a full page or broadcast unit."
+        },
+        {
+          "const": "physical",
+          "title": "Physical Segmentation (Layout regions)",
+          "description": "Physical layout segmentation into regions such as images, columns, or paragraphs."
+        },
+        {
+          "const": "logical",
+          "title": "Logical Segmentation (Articles and editorial units)",
+          "description": "Logical segmentation into articles and other editorial or structural units."
+        },
+        {
+          "const": "semantic",
+          "title": "Semantic Segmentation (Thematic units)",
+          "description": "Semantic segmentation into thematically or conceptually coherent units."
+        }
+      ]
+    },
+    "item_type_s": {
+      "type": ["string"],
+      "title": "Item type",
+      "description": "Type of content item.",
+      "oneOf": [
+        {
+          "const": "ar",
+          "title": "Article",
+          "description": "Editorial article forming a coherent textual unit."
+        },
+        {
+          "const": "ad",
+          "title": "Advertisement",
+          "description": "Commercial or classified advertising content."
+        },
+        {
+          "const": "img",
+          "title": "Image",
+          "description": "Standalone visual content such as a photograph, illustration, or graphic."
+        },
+        {
+          "const": "tb",
+          "title": "Table",
+          "description": "Tabular content presenting structured data or listings."
+        },
+        {
+          "const": "ob",
+          "title": "Obituary",
+          "description": "Notice reporting a death, often including biographical information."
+        },
+        {
+          "const": "w",
+          "title": "Weather",
+          "description": "Weather report or meteorological information."
+        },
+        {
+          "const": "ch",
+          "title": "Chronicle",
+          "description": "Broadcast chronicle reporting events in a factual or narrative form."
+        },
+        {
+          "const": "rb",
+          "title": "Radio Broadcast",
+          "description": "Content item originating from a radio broadcast."
+        },
+        {
+          "const": "rbe",
+          "title": "Radio Broadcast Episode",
+          "description": "An individual episode or segment of a radio broadcast."
+        },
+         {
+          "const": "no-type",
+          "title": "No Type Provided",
+          "description": "Content item with no specific type provided."
+        },
+        {
+          "const": "dsc",
+          "title": "Discussion",
+          "description": "Radio Broadcast discussion or talk show content item."
+        },
+        {
+          "const": "ent",
+          "title": "Entretien",
+          "description": "Radio Broadcast interview content item."
+        }
+      ]
+    },
+    "lg_orig_s": {
+      "type": "string",
+      "description": "Original language of the content item."
+    },
+    "lg_s": {
+      "type": "string",
+      "description": "Computed language of the content item."
+    },
+    "content_length_i": {
+      "type": "integer",
+      "description": "Token count of the content item (space split)."
+    },
+    "snippet_plain": {
+      "type": "string",
+      "description": "Snippet of the content item (first 150 characters)."
+    },
+    "title_txt": {
+      "type": "string",
+      "description": "Fallback title field when no language-specific title field is available."
+    },
+    "content_txt": {
+      "type": "string",
+      "description": "Fallback content field when no language-specific content field is available."
+    },
+    "title_year":{
+      "type": "string",
+      "description": "String composed of title + year, e.g. 'Fronde-1872' ."
+    }
+  },
+  "patternProperties": {
+    "^title_txt_[a-z]{2}$": {
+      "type": "string",
+      "description": "Title of the article in the specified language (ISO 639-1 two-letter language code)"
+    },
+    "^content_txt_[a-z]{2}$": {
+      "type": "string",
+      "description": "Full text content of the article in the specified language (ISO 639-1 two-letter language code)"
+    }
+  },
+  "required": [
+    "segmentation_level_s",
+    "item_type_s",
+    "lg_s",
+    "content_length_i",
+    "snippet_plain"
+  ],
+  "oneOf": [
+        { "required": ["content_txt_en"] },
+        { "required": ["content_txt_lb"] },
+        { "required": ["content_txt_fr"] },
+        { "required": ["content_txt_de"] },
+        { "required": ["content_txt_it"] },
+        { "required": ["content_txt_es"] },
+        { "required": ["content_txt_nl"] },
+        { "required": ["content_txt"] }
+      ],
+  "additionalProperties": true
+}

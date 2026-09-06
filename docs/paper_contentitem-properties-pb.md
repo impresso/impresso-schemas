@@ -1,3 +1,0 @@
-## pb Type
-
-`integer[]`

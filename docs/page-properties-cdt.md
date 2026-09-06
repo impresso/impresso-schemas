@@ -1,3 +1,0 @@
-## cdt Type
-
-`string`
