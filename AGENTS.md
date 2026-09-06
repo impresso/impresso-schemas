@@ -142,6 +142,11 @@ These legacy or Impresso 2 schemas exist but have no valid example entry in
 - `json/linguistic_annotation/ling_spacy.schema.json` — no example yet
 - `json/ocr_qa/ocr_qa.schema.json` — example exists: `examples/ocr_qa/ocr_qa_example.json`
 
+Additional Impresso 2 regression coverage in `make tests`:
+
+- `json/impresso-2/data-preparation/canonical/issue.v1.schema.json` includes a dedicated test for the `{1,2}` edition-letter constraint on `rr` audio-record IDs.
+- `json/impresso-2/data-preparation/rebuilt/audio-record-contentitem.v1.schema.json` includes a dedicated test for the `{1,2}` edition-letter constraint on `rreb[].id` audio-record IDs.
+
 ---
 
 ## Adding a New Schema
