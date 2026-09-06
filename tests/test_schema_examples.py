@@ -254,3 +254,40 @@ def test_imp2_audio_record_time_coordinates_must_be_non_negative(
     invalid_instance = deepcopy(instance)
     setter(invalid_instance)
     assert not validator.is_valid(invalid_instance)
+
+
+@pytest.mark.parametrize(
+    ("setter", "_id"),
+    [
+        (
+            lambda instance: instance["rreb"][0]["s"][0].__setitem__(0, -0.1),
+            "section-start",
+        ),
+        (
+            lambda instance: instance["rreb"][0]["s"][0].__setitem__(1, -0.1),
+            "section-duration",
+        ),
+    ],
+    ids=["section-start", "section-duration"],
+)
+@pytest.mark.imp2
+def test_imp2_audio_record_contentitem_sections_use_non_negative_time_coordinates(
+    setter, _id, schema_registry
+) -> None:
+    schema = json.loads(
+        (
+            ROOT
+            / "json/impresso-2/data-preparation/rebuilt/audio-record-contentitem.v1.schema.json"
+        ).read_text(encoding="utf-8")
+    )
+    instance = json.loads(
+        (
+            ROOT
+            / "examples/impresso-2/data-preparation/rebuilt/audio-record-contentitem.CFCE-1996-09-08-a-i0001.json"
+        ).read_text(encoding="utf-8")
+    )
+    validator = Draft202012Validator(schema, registry=schema_registry)
+
+    invalid_instance = deepcopy(instance)
+    setter(invalid_instance)
+    assert not validator.is_valid(invalid_instance)
