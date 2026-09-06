@@ -7,7 +7,7 @@
     "filters": {
       "type": "array",
       "items": {
-        "$ref": "../../canonical/Filter.json"
+        "$ref": "../entitiess/Filter.json"
       },
       "description": "Filters to apply when selecting items to add to the collection"
     },
