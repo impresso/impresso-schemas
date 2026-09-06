@@ -122,7 +122,7 @@ fragment:
 - Follow-up fixes after validation:
     - Updated two README doc links to the published GitHub Pages URLs for the new data-preparation common schemas.
     - Added missing null-valued NEL link fields to `entities-nel.example0.json` and `entities-nel.example1.json` to match the merged schema requirements.
-    - Added regression coverage for the tightened `{1,2}` edition-letter constraint on audio-record IDs in Impresso 2 issue and rebuilt audio-record-contentitem examples.
+    - Restored the published `v1` audio-record ID patterns in Impresso 2 issue and rebuilt audio-record-contentitem schemas to preserve 3-letter edition compatibility, and added regression coverage for 2-letter and 3-letter IDs while rejecting 4-letter suffixes.
     - Added regression coverage for the shared `time-coordinates.v1` non-negative constraint across section, utterance, segment, and token coordinates in the Impresso 2 canonical audio-record schema.
     - Updated `AGENTS.md` to record the dedicated Impresso 2 regression coverage now exercised by `make tests`.
 - Final verification:

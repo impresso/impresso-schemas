@@ -191,7 +191,7 @@ def test_imp2_validates(schema_path: str, example_path: str, schema_registry) ->
     ids=["audio-record-contentitem-rreb-id", "issue-rr-id"],
 )
 @pytest.mark.imp2
-def test_imp2_audio_record_ids_allow_up_to_two_edition_letters(
+def test_imp2_audio_record_ids_allow_up_to_three_edition_letters(
     schema_path: str, example_path: str, setter, schema_registry
 ) -> None:
     schema = json.loads((ROOT / schema_path).read_text(encoding="utf-8"))
@@ -202,8 +202,12 @@ def test_imp2_audio_record_ids_allow_up_to_two_edition_letters(
     setter(valid_instance, "CFCE-1996-09-08-ab-r0001")
     assert validator.is_valid(valid_instance)
 
+    compatibility_instance = deepcopy(instance)
+    setter(compatibility_instance, "CFCE-1996-09-08-abc-r0001")
+    assert validator.is_valid(compatibility_instance)
+
     invalid_instance = deepcopy(instance)
-    setter(invalid_instance, "CFCE-1996-09-08-abc-r0001")
+    setter(invalid_instance, "CFCE-1996-09-08-abcd-r0001")
     assert not validator.is_valid(invalid_instance)
 
 

@@ -144,9 +144,9 @@ These legacy or Impresso 2 schemas exist but have no valid example entry in
 
 Additional Impresso 2 regression coverage in `make tests`:
 
-- `json/impresso-2/data-preparation/canonical/issue.v1.schema.json` includes a dedicated test for the `{1,2}` edition-letter constraint on `rr` audio-record IDs.
+- `json/impresso-2/data-preparation/canonical/issue.v1.schema.json` includes a dedicated compatibility test for `rr` audio-record IDs covering 2-letter and 3-letter edition suffixes, while rejecting 4-letter suffixes.
 - `json/impresso-2/data-preparation/canonical/audio-record.v1.schema.json` includes dedicated tests ensuring shared `time-coordinates.v1` references reject negative section, utterance, segment, and token coordinates.
-- `json/impresso-2/data-preparation/rebuilt/audio-record-contentitem.v1.schema.json` includes a dedicated test for the `{1,2}` edition-letter constraint on `rreb[].id` audio-record IDs.
+- `json/impresso-2/data-preparation/rebuilt/audio-record-contentitem.v1.schema.json` includes a dedicated compatibility test for `rreb[].id` audio-record IDs covering 2-letter and 3-letter edition suffixes, while rejecting 4-letter suffixes.
 
 ---
 
