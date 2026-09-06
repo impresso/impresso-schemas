@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/source-type.v1.schema.json",
   "title": "Impresso source type",
-  "description": "Type of media source from which a data-preparation record originates. Value from the `impresso_essentials.utils.SourceType` enum. This schema defines the value independently of the property name that stores it; current data-preparation properties using this value are `st` (canonical, rebuilt) and `source_type` (versioning manifest).",
+  "description": "Type of source represented by a data-preparation record. Value from the `impresso_essentials.utils.SourceType` enum. This schema defines the value independently of the property name that stores it; current data-preparation properties using this value are `st` (canonical, rebuilt) and `source_type` (versioning manifest).",
   "type": "string",
   "enum": ["newspaper", "radio_broadcast", "radio_magazine", "radio_schedule", "monograph", "encyclopedia"],
   "examples": ["newspaper", "radio_broadcast"]

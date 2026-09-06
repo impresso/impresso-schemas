@@ -115,3 +115,10 @@ fragment:
   - Cleaned up `README.md` to remove 74 individual per-property HTML links in favor of pointing directly to the documentation portal (<https://impresso.github.io/impresso-schemas/>) while keeping schema links pointing to repository JSON files.
   - Renamed `AGENT.md` to `AGENTS.md` and updated guidance and copilot instructions to document that `docs/` is gitignored and published by CI.
 
+### Stacked-branch merge conflict resolution
+
+- Merged `86-organize-json-schemas-by-data-phase` into `agents/remove-md-docs-materialization`.
+- Resolved all merge conflicts by keeping this branch's side for the conflicted generated-doc files under `docs/impresso-2/`, preserving the unmaterialized-docs approach.
+- Validation after the merge:
+    - `make tests` fails in `tests/test_schema_examples.py` for `entities-nel.example0` and `entities-nel.example1`, which no longer satisfy `json/impresso-2/semantic-enrichment/entities/entities-nel.v1.schema.json` from the merged base branch.
+    - `make format-check` fails on 23 pre-existing JSON/example files brought in by the merged base branch that Prettier reports as needing formatting.
