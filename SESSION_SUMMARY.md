@@ -126,6 +126,7 @@ fragment:
     - Restored the published `v1` audio-record ID patterns in Impresso 2 issue and rebuilt audio-record-contentitem schemas to preserve 3-letter edition compatibility, and added regression coverage for 2-letter and 3-letter IDs while rejecting 4-letter suffixes.
     - Added regression coverage for the shared `time-coordinates.v1` non-negative constraint across section, utterance, segment, and token coordinates in the Impresso 2 canonical audio-record schema.
     - Added regression coverage for the shared `time-coordinates.v1` non-negative constraint on rebuilt audio-record-contentitem section coordinates.
+    - Updated the registered rebuilt audio-record-contentitem example to show multiple valid non-negative section time-coordinate pairs under `rreb[].s`.
     - Aligned the `pOf` description in the legacy and Impresso 2 canonical audio-record schemas to describe the containing section accurately.
     - Updated `AGENTS.md` to record the dedicated Impresso 2 regression coverage now exercised by `make tests`.
     - Renamed the shared audio-record ID regression test so its scope clearly matches both the issue and rebuilt schema cases it covers.
