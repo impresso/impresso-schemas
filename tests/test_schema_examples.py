@@ -212,30 +212,18 @@ def test_imp2_audio_record_ids_allow_up_to_three_edition_letters(
 
 
 @pytest.mark.parametrize(
-    ("setter", "_id"),
+    "setter",
     [
-        (
-            lambda instance: instance["s"][0]["tc"].__setitem__(0, -0.1),
-            "section-tc",
-        ),
-        (
-            lambda instance: instance["s"][0]["u"][0]["tc"].__setitem__(1, -0.1),
-            "utterance-tc",
-        ),
-        (
-            lambda instance: instance["s"][0]["u"][0]["ss"][0]["tc"].__setitem__(0, -0.1),
-            "segment-tc",
-        ),
-        (
-            lambda instance: instance["s"][0]["u"][0]["ss"][0]["t"][0]["tc"].__setitem__(1, -0.1),
-            "token-tc",
-        ),
+        lambda instance: instance["s"][0]["tc"].__setitem__(0, -0.1),
+        lambda instance: instance["s"][0]["u"][0]["tc"].__setitem__(1, -0.1),
+        lambda instance: instance["s"][0]["u"][0]["ss"][0]["tc"].__setitem__(0, -0.1),
+        lambda instance: instance["s"][0]["u"][0]["ss"][0]["t"][0]["tc"].__setitem__(1, -0.1),
     ],
     ids=["section-tc", "utterance-tc", "segment-tc", "token-tc"],
 )
 @pytest.mark.imp2
 def test_imp2_audio_record_time_coordinates_must_be_non_negative(
-    setter, _id, schema_registry
+    setter, schema_registry
 ) -> None:
     schema = json.loads(
         (
@@ -257,22 +245,16 @@ def test_imp2_audio_record_time_coordinates_must_be_non_negative(
 
 
 @pytest.mark.parametrize(
-    ("setter", "_id"),
+    "setter",
     [
-        (
-            lambda instance: instance["rreb"][0]["s"][0].__setitem__(0, -0.1),
-            "section-start",
-        ),
-        (
-            lambda instance: instance["rreb"][0]["s"][0].__setitem__(1, -0.1),
-            "section-duration",
-        ),
+        lambda instance: instance["rreb"][0]["s"][0].__setitem__(0, -0.1),
+        lambda instance: instance["rreb"][0]["s"][0].__setitem__(1, -0.1),
     ],
     ids=["section-start", "section-duration"],
 )
 @pytest.mark.imp2
 def test_imp2_audio_record_contentitem_sections_use_non_negative_time_coordinates(
-    setter, _id, schema_registry
+    setter, schema_registry
 ) -> None:
     schema = json.loads(
         (
