@@ -119,18 +119,10 @@ fragment:
 
 - Merged `86-organize-json-schemas-by-data-phase` into `agents/remove-md-docs-materialization`.
 - Resolved all merge conflicts by keeping this branch's side for the conflicted generated-doc files under `docs/impresso-2/`, preserving the unmaterialized-docs approach.
-- Removed seven additional generated `docs/impresso-2/*.md` files that the stacked-branch merge had reintroduced without conflicts, so the branch consistently keeps generated docs out of git.
-- Follow-up fixes after validation:
-    - Updated two README doc links to the published GitHub Pages URLs for the new `data-preparation/common` schema pages.
-    - Added missing null-valued NEL link fields to `entities-nel.example0.json` and `entities-nel.example1.json` to match the merged schema requirements.
-    - Restored the published `v1` audio-record ID patterns in Impresso 2 issue and rebuilt audio-record-contentitem schemas to preserve 3-letter edition compatibility, and added regression coverage for 2-letter and 3-letter IDs while rejecting 4-letter suffixes.
-    - Added regression coverage for the shared `time-coordinates.v1` non-negative constraint across section, utterance, segment, and token coordinates in the Impresso 2 canonical audio-record schema.
-    - Added regression coverage for the shared `time-coordinates.v1` non-negative constraint on rebuilt audio-record-contentitem section coordinates.
-    - Updated the registered rebuilt audio-record-contentitem example to show multiple valid non-negative section time-coordinate pairs under `rreb[].s`.
-    - Aligned the `pOf` description in the legacy and Impresso 2 canonical audio-record schemas to describe the containing section accurately.
-    - Updated `AGENTS.md` to record the dedicated Impresso 2 regression coverage now exercised by `make tests`.
-    - Renamed the shared audio-record ID regression test so its scope clearly matches both the issue and rebuilt schema cases it covers.
-- Final verification:
-    - `make tests` — passed (`169 passed, 82 deselected`).
-    - `prettier --check` on the edited NEL example JSON files — passed.
-    - `make format-check` still reports 23 pre-existing formatting issues in other merged base-branch JSON/example files outside the scope of this conflict-resolution task.
+- Validation after the merge:
+    - `make tests` fails in `tests/test_schema_examples.py` for `entities-nel.example0` and `entities-nel.example1`, which no longer satisfy `json/impresso-2/semantic-enrichment/entities/entities-nel.v1.schema.json` from the merged base branch.
+    - `make format-check` fails on 23 pre-existing JSON/example files brought in by the merged base branch that Prettier reports as needing formatting.
+
+### Session closeout
+
+- Kept only the merge-conflict resolution work after follow-up user guidance; later review-driven schema, example, README, and test edits were reverted.

@@ -142,13 +142,6 @@ These legacy or Impresso 2 schemas exist but have no valid example entry in
 - `json/linguistic_annotation/ling_spacy.schema.json` — no example yet
 - `json/ocr_qa/ocr_qa.schema.json` — example exists: `examples/ocr_qa/ocr_qa_example.json`
 
-Additional Impresso 2 regression coverage in `make tests`:
-
-- `json/impresso-2/data-preparation/canonical/issue.v1.schema.json` includes a dedicated compatibility test for `rr` audio-record IDs covering 2-letter and 3-letter edition suffixes, while rejecting 4-letter suffixes.
-- `json/impresso-2/data-preparation/canonical/audio-record.v1.schema.json` includes dedicated tests ensuring shared `time-coordinates.v1` references reject negative section, utterance, segment, and token coordinates.
-- `json/impresso-2/data-preparation/rebuilt/audio-record-contentitem.v1.schema.json` includes dedicated tests ensuring shared `time-coordinates.v1` references reject negative rebuilt-section coordinates.
-- `json/impresso-2/data-preparation/rebuilt/audio-record-contentitem.v1.schema.json` includes a dedicated compatibility test for `rreb[].id` audio-record IDs covering 2-letter and 3-letter edition suffixes, while rejecting 4-letter suffixes.
-
 ---
 
 ## Adding a New Schema
