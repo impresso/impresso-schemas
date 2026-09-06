@@ -205,3 +205,48 @@ def test_imp2_audio_record_ids_allow_up_to_two_edition_letters(
     invalid_instance = deepcopy(instance)
     setter(invalid_instance, "CFCE-1996-09-08-abc-r0001")
     assert not validator.is_valid(invalid_instance)
+
+
+@pytest.mark.parametrize(
+    ("setter", "_id"),
+    [
+        (
+            lambda instance: instance["s"][0]["tc"].__setitem__(0, -0.1),
+            "section-tc",
+        ),
+        (
+            lambda instance: instance["s"][0]["u"][0]["tc"].__setitem__(1, -0.1),
+            "utterance-tc",
+        ),
+        (
+            lambda instance: instance["s"][0]["u"][0]["ss"][0]["tc"].__setitem__(0, -0.1),
+            "segment-tc",
+        ),
+        (
+            lambda instance: instance["s"][0]["u"][0]["ss"][0]["t"][0]["tc"].__setitem__(1, -0.1),
+            "token-tc",
+        ),
+    ],
+    ids=["section-tc", "utterance-tc", "segment-tc", "token-tc"],
+)
+@pytest.mark.imp2
+def test_imp2_audio_record_time_coordinates_must_be_non_negative(
+    setter, _id, schema_registry
+) -> None:
+    schema = json.loads(
+        (
+            ROOT
+            / "json/impresso-2/data-preparation/canonical/audio-record.v1.schema.json"
+        ).read_text(encoding="utf-8")
+    )
+    instance = json.loads(
+        (
+            ROOT
+            / "examples/impresso-2/data-preparation/canonical/audio-record.CFCE-1996-09-08-a-r0001.json"
+        ).read_text(encoding="utf-8")
+    )
+    validator = Draft202012Validator(schema, registry=schema_registry)
+
+    invalid_instance = deepcopy(instance)
+    setter(invalid_instance)
+    assert not validator.is_valid(invalid_instance)
