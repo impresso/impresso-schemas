@@ -47,7 +47,7 @@
         "type": "string",
         "format": "date-time"
       },
-      "description": "The range of dates this media source has content items for. This represents the earliest and the latest dates of the contet items.  Is not defined if there are no content items for this source."
+      "description": "The range of dates this media source has content items for. This represents the earliest and the latest dates of the content items.  Is not defined if there are no content items for this source."
     },
     "totals": {
       "type": "object",
