@@ -36,6 +36,6 @@
       "$ref": "./ContentItemAccessRights.json"
     }
   },
-  "required": ["id", "core"],
+  "required": ["id"],
   "additionalProperties": false
 }
