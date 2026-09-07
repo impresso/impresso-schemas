@@ -1,14 +1,14 @@
 {
   "$schema": "https://json-schema.org/draft/2019-09/schema",
   "type": "object",
-  "description": "Content item audio locator. Links location of a segement in text with location in audio.",
+  "description": "Content item audio locator. Links location of a segment in text with location in audio.",
   "title": "Content Item Audio Locator",
   "additionalProperties": false,
   "properties": {
     "timeCode": {
       "type": "array",
-      "minLength": 2,
-      "maxLength": 2,
+      "minItems": 2,
+      "maxItems": 2,
       "description": "Represents the start offset and the length of the audio segment in seconds.",
       "items": {
         "type": "number",
@@ -17,8 +17,8 @@
     },
     "textLocation": {
       "type": "array",
-      "minLength": 2,
-      "maxLength": 2,
+      "minItems": 2,
+      "maxItems": 2,
       "description": "Represents the character offset and length of the audio segment in the content item text.",
       "items": {
         "type": "integer",
