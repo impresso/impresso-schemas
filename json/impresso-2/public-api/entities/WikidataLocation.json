@@ -19,10 +19,7 @@
       "description": "Labels of the location in different languages",
       "additionalProperties": {
         "type": "string",
-        "description": "Description of the location in a specific language",
-        "items": {
-          "type": "string"
-        }
+        "description": "Label of the location in a specific language"
       }
     },
     "descriptions": {
