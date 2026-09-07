@@ -21,7 +21,7 @@
     "entities": {
       "type": "array",
       "items": {
-        "$ref": "../entitiess/ImpressoNerEntity.json"
+        "$ref": "../entities/ImpressoNerEntity.json"
       }
     }
   },
