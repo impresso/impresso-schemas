@@ -17,7 +17,7 @@
     },
     "type": {
       "type": "string",
-      "description": "Possible values are in 'impresso-jscomons Filter.type'"
+      "description": "Possible values are in 'impresso-jscommons Filter.type'"
     },
     "precision": {
       "type": "string",
