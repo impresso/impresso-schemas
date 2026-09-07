@@ -7,8 +7,8 @@
     "filters": {
       "type": "array",
       "items": {
-        "$ref": "../entitiess/Filter.json"
-      },
+        "$ref": "../entities/Filter.json"
+      }
       "description": "A list of Impresso search filters."
     }
   },
