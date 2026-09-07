@@ -45,6 +45,6 @@
       "pattern": "^[A-Za-z]{2}$"
     }
   },
-  "required": ["sourceType", "sourceMedium", "mediaTitleAlias", "date", "meta_date_dt"],
+  "required": ["sourceType", "sourceMedium", "mediaId", "date"],
   "additionalProperties": false
 }
