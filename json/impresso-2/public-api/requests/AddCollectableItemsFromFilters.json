@@ -10,7 +10,6 @@
         "$ref": "../entities/Filter.json"
       },
       "description": "Filters to apply when selecting items to add to the collection"
-    }
     },
     "namespace": {
       "type": "string",
