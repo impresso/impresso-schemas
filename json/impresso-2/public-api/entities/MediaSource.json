@@ -71,7 +71,7 @@
       "type": "array",
       "items": {
         "type": "object",
-        "name": "MediaSourceProperty",
+        "title": "MediaSourceProperty",
         "additionalProperties": false,
         "properties": {
           "id": {
