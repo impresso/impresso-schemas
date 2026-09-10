@@ -87,7 +87,10 @@
       "items": {
         "type": "string"
       }
+    },
+    "access": {
+      "$ref": "./contentItem/ContentItemAccessRights.json"
     }
   },
-  "required": ["id", "issueId", "previewUrl", "mediaSourceRef", "date"]
+  "required": ["id", "issueId", "previewUrl", "mediaSourceRef", "date", "access"]
 }
