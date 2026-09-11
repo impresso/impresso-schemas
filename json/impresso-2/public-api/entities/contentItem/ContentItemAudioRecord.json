@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "type": "object",
+  "description": "Content item audio record",
+  "title": "Content Item Audio Record",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier of the audio record."
+    },
+    "number": {
+      "type": "integer",
+      "description": "The number of the audio record."
+    },
+    "audioSegmentsLocators": {
+      "type": "array",
+      "description": "A list of audio segments locators.",
+      "items": {
+        "$ref": "./ContentItemAudioLocator.json"
+      }
+    },
+    "audioFileUrl": {
+      "type": "string",
+      "description": "The URL of the audio file."
+    }
+  }
+}

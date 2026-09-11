@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "title": "Admin GET Response",
+  "description": "Admin service GET response.",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "contentItemsPermissionsDetails": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "imagesPermissionsDetails": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "userAccounts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "cacheCounts": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "db": {
+          "type": "integer"
+        },
+        "solr": {
+          "type": "integer"
+        },
+        "wikidata": {
+          "type": "integer"
+        }
+      },
+      "required": ["db", "solr", "wikidata"]
+    },
+    "wellKnownComputedAt": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "mediaSources": {
+          "type": ["string", "null"]
+        },
+        "topics": {
+          "type": ["string", "null"]
+        },
+        "years": {
+          "type": ["string", "null"]
+        }
+      },
+      "required": ["mediaSources", "topics", "years"]
+    },
+    "patchResult": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "action": {
+          "type": "string"
+        },
+        "cleared": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "count": {
+              "type": "integer"
+            }
+          },
+          "required": ["count"]
+        },
+        "jobId": {
+          "type": "string"
+        }
+      },
+      "required": ["action"]
+    }
+  }
+}

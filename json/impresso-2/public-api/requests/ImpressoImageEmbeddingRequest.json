@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "title": "Impresso Image Embedding Request",
+  "description": "Body of a request to the Impresso Image Embedding endpoint",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "searchTarget": {
+      "type": "string",
+      "description": "Which embedding space the embedding is going to be used in",
+      "enum": ["image", "multimodal"]
+    },
+    "bytes": {
+      "type": "string",
+      "description": "Base64-encoded image bytes. JPG and PNG formats are supported."
+    }
+  },
+  "required": ["searchTarget", "bytes"]
+}

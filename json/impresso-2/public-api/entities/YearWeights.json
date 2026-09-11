@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "type": "object",
+  "title": "Year Weights",
+  "description": "Total items counts within a year",
+  "additionalProperties": false,
+  "properties": {
+    "c": {
+      "type": "number",
+      "description": "Number of content items"
+    },
+    "a": {
+      "type": "number",
+      "description": "Number of articles"
+    },
+    "p": {
+      "type": "number",
+      "description": "Number of pages"
+    },
+    "i": {
+      "type": "number",
+      "description": "Number of issues"
+    },
+    "m": {
+      "type": "number",
+      "description": "Number of images (with or without vectors)"
+    }
+  }
+}

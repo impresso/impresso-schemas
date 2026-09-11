@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "description": "An facet that has a value and a label",
+  "type": "object",
+  "title": "Facet with label",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier of the facet"
+    },
+    "label": {
+      "type": "string",
+      "description": "Label of the facet"
+    }
+  },
+  "required": ["id", "label"]
+}

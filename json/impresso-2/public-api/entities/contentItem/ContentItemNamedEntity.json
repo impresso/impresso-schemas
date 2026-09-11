@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "type": "object",
+  "description": "Content item named entity",
+  "title": "Content Item Named Entity",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier of the named entity"
+    },
+    "count": {
+      "type": "integer",
+      "description": "Number of times this entity is mentioned in the content item"
+    },
+    "label": {
+      "type": "string",
+      "description": "The label of the named entity, e.g., a person's name or an organization"
+    }
+  }
+}

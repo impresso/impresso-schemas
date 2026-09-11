@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "title": "Impresso Embedding Response",
+  "description": "Body of a response from the Impresso Embedding endpoint",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "embedding": {
+      "type": "string",
+      "description": "Embedding vector, base64-encoded with the model prefix. E.g. <model>:<base64-encoded vector>"
+    }
+  },
+  "required": ["embedding"]
+}

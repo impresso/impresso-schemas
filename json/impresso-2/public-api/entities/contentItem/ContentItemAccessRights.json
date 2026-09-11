@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "type": "object",
+  "description": "Access rights information",
+  "properties": {
+    "dataDomain": {
+      "type": "string",
+      "description": "Rights data domain. (e.g., 'pbl' for public, 'prt' for private)",
+      "enum": ["pbl", "prt"]
+    },
+    "dataDomainLabel": {
+      "type": "string",
+      "description": "Human-readable label for the dataDomain code."
+    },
+    "copyright": {
+      "type": "string",
+      "description": "Copyright status.",
+      "enum": ["pbl", "und", "nkn", "euo", "unk", "in_cpy"]
+    },
+    "copyrightLabel": {
+      "type": "string",
+      "description": "Human-readable label for the copyright code."
+    },
+    "accessBitmaps": {
+      "$ref": "./ContentItemAccessBitmaps.json",
+      "description": "Access bitmaps for different functionalities."
+    }
+  },
+  "required": ["dataDomain", "copyright"]
+}

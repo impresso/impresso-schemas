@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "title": "Authentication Response",
+  "description": "Authentication Response",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "accessToken": {
+      "type": "string"
+    },
+    "authentication": {
+      "type": "object",
+      "properties": {
+        "strategy": {
+          "type": "string"
+        },
+        "payload": {
+          "type": "object"
+        }
+      }
+    },
+    "user": {
+      "$schema": "https://json-schema.org/draft/2019-09/schema",
+      "title": "User",
+      "description": "User details",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "username": {
+          "type": "string"
+        },
+        "firstname": {
+          "type": "string"
+        },
+        "lastname": {
+          "type": "string"
+        },
+        "isStaff": {
+          "type": "boolean"
+        },
+        "isActive": {
+          "type": "boolean"
+        },
+        "isSuperuser": {
+          "type": "boolean"
+        },
+        "uid": {
+          "type": "string"
+        }
+      },
+      "required": ["id", "username", "firstname", "lastname", "isStaff", "isActive", "isSuperuser", "uid"]
+    }
+  },
+  "required": ["accessToken", "authentication", "user"]
+}
