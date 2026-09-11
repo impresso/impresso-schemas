@@ -92,5 +92,5 @@
       "$ref": "./contentItem/ContentItemAccessRights.json"
     }
   },
-  "required": ["id", "issueId", "previewUrl", "mediaSourceRef", "date", "access"]
+  "required": ["id", "issueId", "previewUrl", "mediaSourceRef", "date"]
 }
