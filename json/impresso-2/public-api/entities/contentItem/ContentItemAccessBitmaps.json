@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "type": "object",
+  "description": "Content item access bitmaps",
+  "title": "Content Item Access Bitmaps",
+  "additionalProperties": false,
+  "properties": {
+    "explore": {
+      "type": "string",
+      "contentEncoding": "base64",
+      "description": "Bitmap for explore access. As bytes."
+    },
+    "getTranscript": {
+      "type": "string",
+      "contentEncoding": "base64",
+      "description": "Bitmap for get transcript access. As bytes."
+    },
+    "getImages": {
+      "type": "string",
+      "contentEncoding": "base64",
+      "description": "Bitmap for get images access. As bytes."
+    },
+    "getAudio": {
+      "type": "string",
+      "contentEncoding": "base64",
+      "description": "Bitmap for get audio access. As bytes."
+    }
+  }
+}

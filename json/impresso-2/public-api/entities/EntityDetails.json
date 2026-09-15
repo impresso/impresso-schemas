@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "description": "An entity: location or person.",
+  "type": "object",
+  "title": "Entity Details",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier of the entity"
+    },
+    "label": {
+      "type": "string",
+      "description": "Entity label"
+    },
+    "type": {
+      "type": "string",
+      "enum": ["person", "location", "organisation", "newsagency"]
+    },
+    "wikidataId": {
+      "type": "string",
+      "description": "Wikidata identifier of the entity."
+    },
+    "totalMentions": {
+      "type": "integer",
+      "description": "Total number of mentions of the entity."
+    },
+    "totalContentItems": {
+      "type": "integer",
+      "description": "Total number of content items the entity is mentioned in."
+    },
+    "wikidataDetails": {
+      "anyOf": [
+        {
+          "$ref": "./WikidataPerson.json"
+        },
+        {
+          "$ref": "./WikidataLocation.json"
+        }
+      ]
+    }
+  },
+  "required": ["id"]
+}

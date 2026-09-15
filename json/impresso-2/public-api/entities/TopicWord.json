@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "title": "TopicWord",
+  "description": "A word included in a topic",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "w": {
+      "type": "string",
+      "description": "Word surface form"
+    },
+    "p": {
+      "type": "number",
+      "description": "Probability of the word in topic"
+    },
+    "h": {
+      "type": "boolean",
+      "description": "If word is highlighted"
+    }
+  },
+  "required": ["w", "p"]
+}

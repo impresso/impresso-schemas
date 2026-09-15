@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "title": "Text Reuse Cluster Compound",
+  "description": "Text reuse cluster with details and a sample",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "cluster": {
+      "$ref": "./TextReuseCluster.json"
+    },
+    "textSample": {
+      "type": "string"
+    },
+    "details": {
+      "$ref": "./TextReuseClusterDetails.json"
+    },
+    "bitmapExplore": {
+      "type": "integer",
+      "description": "Access rights bitmap for the UI"
+    },
+    "bitmapGetTranscript": {
+      "type": "integer",
+      "description": "Access rights bitmap for downloading the transcript"
+    }
+  },
+  "required": ["textSample"]
+}

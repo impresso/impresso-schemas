@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "title": "Impresso Text Embedding Request",
+  "description": "Body of a request to the Impresso Text Embedding endpoint",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "searchTarget": {
+      "type": "string",
+      "description": "Which embedding space the embedding is going to be used in",
+      "enum": ["multimodal", "text"]
+    },
+    "text": {
+      "type": "string",
+      "description": "Text to be embedded",
+      "maxLength": 8000
+    }
+  },
+  "required": ["searchTarget", "text"]
+}

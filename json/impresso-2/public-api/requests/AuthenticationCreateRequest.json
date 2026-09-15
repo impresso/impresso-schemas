@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "title": "Authentication Create Request",
+  "description": "Request body for the authentication endpoint",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "strategy": {
+      "type": "string",
+      "enum": ["local", "jwt-app", "jwt", "magic-link"]
+    },
+    "email": {
+      "type": "string"
+    },
+    "password": {
+      "type": "string"
+    },
+    "accessToken": {
+      "type": "string"
+    }
+  },
+  "required": ["strategy"]
+}

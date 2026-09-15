@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "title": "Impresso Named Entity Recognition Entity",
+  "description": "Impresso NER entity",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "ID of the entity"
+    },
+    "type": {
+      "type": "string",
+      "description": "Type of the entity",
+      "enum": [
+        "comp.demonym",
+        "comp.function",
+        "comp.name",
+        "comp.qualifier",
+        "comp.title",
+        "loc",
+        "loc.add.elec",
+        "loc.add.phys",
+        "loc.adm.nat",
+        "loc.adm.reg",
+        "loc.adm.sup",
+        "loc.adm.town",
+        "loc.fac",
+        "loc.oro",
+        "loc.phys.astro",
+        "loc.phys.geo",
+        "loc.phys.hydro",
+        "loc.unk",
+        "org",
+        "org.adm",
+        "org.ent",
+        "org.ent.pressagency",
+        "org.ent.pressagency.AFP",
+        "org.ent.pressagency.ANSA",
+        "org.ent.pressagency.AP",
+        "org.ent.pressagency.APA",
+        "org.ent.pressagency.ATS-SDA",
+        "org.ent.pressagency.Belga",
+        "org.ent.pressagency.CTK",
+        "org.ent.pressagency.DDP-DAPD",
+        "org.ent.pressagency.DNB",
+        "org.ent.pressagency.DPA",
+        "org.ent.pressagency.Domei",
+        "org.ent.pressagency.Europapress",
+        "org.ent.pressagency.Extel",
+        "org.ent.pressagency.Havas",
+        "org.ent.pressagency.Kipa",
+        "org.ent.pressagency.Reuters",
+        "org.ent.pressagency.SPK-SMP",
+        "org.ent.pressagency.Stefani",
+        "org.ent.pressagency.TASS",
+        "org.ent.pressagency.UP-UPI",
+        "org.ent.pressagency.Wolff",
+        "org.ent.pressagency.Xinhua",
+        "org.ent.pressagency.ag",
+        "org.ent.pressagency.unk",
+        "pers",
+        "pers.coll",
+        "pers.ind",
+        "pers.ind.articleauthor",
+        "prod",
+        "prod.doctr",
+        "prod.media",
+        "time",
+        "time.date.abs",
+        "time.hour.abs",
+        "unk"
+      ]
+    },
+    "surfaceForm": {
+      "type": "string",
+      "description": "Surface form of the entity"
+    },
+    "offset": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "start": {
+          "type": "integer",
+          "description": "Start offset of the entity in the text"
+        },
+        "end": {
+          "type": "integer",
+          "description": "End offset of the entity in the text"
+        }
+      },
+      "required": ["start", "end"]
+    },
+    "isTypeNested": {
+      "type": "boolean",
+      "description": "Whether the entity type is nested"
+    },
+    "confidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ner": {
+          "type": "number",
+          "description": "Confidence score for the named entity recognition"
+        },
+        "nel": {
+          "type": "number",
+          "description": "Confidence score for the named entity linking"
+        }
+      }
+    },
+    "wikidata": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Wikidata ID of the entity"
+        },
+        "wikipediaPageName": {
+          "type": "string",
+          "description": "Wikipedia page name of the entity"
+        },
+        "wikipediaPageUrl": {
+          "type": "string",
+          "description": "Wikipedia page URL of the entity"
+        }
+      },
+      "required": ["id"]
+    },
+    "function": {
+      "type": "string",
+      "description": "Function of the entity"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the entity"
+    }
+  },
+  "required": ["id", "type", "confidence"]
+}

@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "type": "object",
+  "title": "Text Reuse Cluster",
+  "description": "Represents a cluster of text reuse passages",
+  "additionalProperties": false,
+  "required": ["id"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "title": "Passage ID",
+      "description": "ID of the text reuse passage",
+      "examples": ["abc123"],
+      "pattern": "^[a-zA-Z0-9-_]+$"
+    },
+    "lexicalOverlap": {
+      "type": "number",
+      "description": "Percentage of overlap between passages in the cluster",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "clusterSize": {
+      "type": "number",
+      "description": "Number of passages in cluster",
+      "minimum": 0
+    },
+    "connectedClustersCount": {
+      "type": "number",
+      "description": "Number of connected clusters",
+      "minimum": 0
+    },
+    "timeCoverage": {
+      "type": "object",
+      "description": "Time window covered by documents in the cluster",
+      "additionalProperties": false,
+      "properties": {
+        "from": {
+          "type": "string",
+          "format": "date"
+        },
+        "to": {
+          "type": "string",
+          "format": "date"
+        }
+      }
+    }
+  }
+}

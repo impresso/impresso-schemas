@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "type": "object",
+  "description": "Content item page",
+  "title": "Content Item Page",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier of the page."
+    },
+    "number": {
+      "type": "integer",
+      "description": "The number of the page."
+    },
+    "regionCoordinates": {
+      "type": "array",
+      "description": "List of region coordinates.",
+      "items": {
+        "type": "array",
+        "description": "Region coordinates as an array: [x, y, w, h].",
+        "minItems": 4,
+        "maxItems": 4,
+        "items": {
+          "type": "integer"
+        }
+      }
+    },
+    "iiif": {
+      "$ref": "./ContentItemPageIIIF.json"
+    }
+  }
+}

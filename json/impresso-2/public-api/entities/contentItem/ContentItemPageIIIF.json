@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "type": "object",
+  "description": "IIIF details for a content item page",
+  "title": "IIIF Content Item Page Details",
+  "additionalProperties": false,
+  "properties": {
+    "manifestUrl": {
+      "type": "string",
+      "description": "The URL of the IIIF manifest for the page.",
+      "format": "uri"
+    },
+    "thumbnailUrl": {
+      "type": "string",
+      "description": "The URL of the thumbnail image for the page.",
+      "format": "uri"
+    }
+  },
+  "required": ["manifestUrl", "thumbnailUrl"]
+}

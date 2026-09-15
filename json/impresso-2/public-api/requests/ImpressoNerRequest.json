@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "title": "Impresso Named Entity Recognition Request",
+  "description": "Request body for the Impresso NER endpoint",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "text": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 3999,
+      "description": "Text to be processed for named entity recognition"
+    },
+    "method": {
+      "type": "string",
+      "enum": ["ner", "ner-nel", "nel"],
+      "default": "ner",
+      "description": "NER method to be used: `ner` (default), `ner-nel` (named entity recognition with named entity linking) and `nel` (linking only - enclose entities in [START] [END] tags)."
+    }
+  },
+  "required": ["text"]
+}

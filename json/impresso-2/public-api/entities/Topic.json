@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "type": "object",
+  "title": "Topic",
+  "description": "A topic",
+  "additionalProperties": false,
+  "required": ["id", "language"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "The unique identifier of the topic"
+    },
+    "language": {
+      "type": "string",
+      "description": "The language code of the topic"
+    },
+    "contentItemsCount": {
+      "type": "number",
+      "description": "Number of content items with this topic"
+    },
+    "words": {
+      "type": "array",
+      "items": {
+        "$ref": "./TopicWord.json"
+      },
+      "description": "Top N words associated with the topic"
+    },
+    "model": {
+      "type": "string",
+      "description": "ID of the model used to generate the topic"
+    }
+  }
+}

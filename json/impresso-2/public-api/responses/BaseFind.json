@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "type": "object",
+  "title": "Base Find Response",
+  "properties": {
+    "data": {
+      "type": "array",
+      "items": {}
+    },
+    "pagination": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "total": {
+          "type": "integer",
+          "description": "The total number of items matching the query"
+        },
+        "limit": {
+          "type": "integer",
+          "description": "The number of items returned in this response"
+        },
+        "offset": {
+          "type": "integer",
+          "description": "Starting index of the items subset returned in this response"
+        }
+      },
+      "required": ["total", "limit", "offset"]
+    }
+  },
+  "required": ["data", "pagination"],
+  "additionalProperties": false
+}

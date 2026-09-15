@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "description": "Response for POST /tools/filters/serialize",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "filters": {
+      "type": "string",
+      "contentEncoding": "base64",
+      "description": "The protobuf base64 serialized filters string."
+    }
+  },
+  "required": ["filters"]
+}
