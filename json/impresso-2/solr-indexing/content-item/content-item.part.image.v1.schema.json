@@ -81,12 +81,12 @@
     }
   },
   "required": [
-      "reading_order_i",
-      "page_nb_is",
-      "front_b",
-      "cc_b",
-      "item_type_s",
-      "coords_is",
-      "iiif_url_s"
-    ]
+    "reading_order_i",
+    "page_nb_is",
+    "front_b",
+    "cc_b",
+    "item_type_s",
+    "coords_is",
+    "iiif_url_s"
+  ]
 }
