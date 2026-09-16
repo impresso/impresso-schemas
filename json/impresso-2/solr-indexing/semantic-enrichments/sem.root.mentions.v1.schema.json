@@ -2,9 +2,14 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/semantic-enrichments/sem.root.mentions.v1.schema.json",
   "title": "Entity Mention Solr Document",
-  "description": "Schema for entity mention documents in Solr (Impresso Project)",
+  "description": "Base schema for entity mention documents in Solr (Impresso Project). A mention document aggregates every occurrence sharing an exact surface and type. This base contract accepts documents without an 'id', which is the shape indexed before the v2 importers; documents built by a v2 importer must additionally satisfy sem.root.mentions.v2.schema.json, which requires a deterministic 'id'.",
   "type": "object",
   "properties": {
+    "id": {
+      "type": "string",
+      "description": "Deterministic identifier of the aggregate, derived from (t_s, exact l_s). Declared but not required here: documents indexed before the v2 importers have no 'id' and Solr assigned one. See sem.root.mentions.v2.schema.json.",
+      "minLength": 1
+    },
     "l_s": {
       "type": "string",
       "description": "The label/surface form of the entity mention",
@@ -12,11 +17,12 @@
     },
     "t_s": {
       "type": "string",
-      "description": "Type of the entity (e.g., 'pers' for person, 'loc' for location, 'org' for organization)",
+      "description": "Type of the entity (e.g., 'pers' for person, 'loc' for location, 'org' for organization, 'nag' for news agency)",
       "enum": [
         "pers",
         "loc",
-        "org"
+        "org",
+        "nag"
       ]
     },
     "fq_f": {

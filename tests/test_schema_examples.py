@@ -128,7 +128,11 @@ IMPRESSO_2_CASES = [
     # ci_audio.example.json is intentionally empty and excluded for now.
     # solr-indexing/semantic-enrichments
     ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.entities.v1.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_entities.example.json"),
+    ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.entities.v2.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_entities.v2.example.json"),
     ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.mentions.v1.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_mentions.example.json"),
+    ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.mentions.v2.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_mentions.v2.example.json"),
+    ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.mentions.ordinary.v2.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_mentions.ordinary.v2.example.json"),
+    ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.mentions.ordinary.v2.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_mentions.ordinary.v2.titled.example.json"),
     ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.topics.v1.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_topics.example.json"),
     ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.tr-clusters.v1.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_tr-clusters.example.json"),
     ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.tr-passages.v1.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_tr-passages.example.json"),

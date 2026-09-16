@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/semantic-enrichments/sem.root.mentions.v2.schema.json",
+  "title": "Aggregate Entity Mention Solr Document (v2)",
+  "description": "Schema for aggregate entity mention documents produced by the v2 importers (Impresso Project). It is the base mention contract plus the requirement that every document carries a deterministic identifier derived from its aggregation key (t_s, exact l_s). Expressing the requirement here rather than as an importer convention is deliberate: the base schema must keep accepting the id-less documents indexed before v2, so the two contracts are versioned side by side rather than merged.",
+  "allOf": [
+    {
+      "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/semantic-enrichments/sem.root.mentions.v1.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Deterministic aggregate identifier: 'mention-v1-' followed by the SHA-256 of the canonical JSON encoding of [t_s, exact l_s]. The version prefix is bumped only when that encoding changes, so a re-identification of every document is always explicit. Built by impresso_solr.utils.mention_ids.build_aggregate_mention_id().",
+          "pattern": "^mention-v1-[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "id"
+      ]
+    }
+  ]
+}

@@ -15,11 +15,11 @@
     },
     "l_s": {
       "type": "string",
-      "description": "Language code of the entity."
+      "description": "Human-readable entity label: the master label with underscores replaced by spaces (e.g. 'ATS SDA' for the agency master label 'ATS_SDA')."
     },
     "t_s": {
       "type": "string",
-      "description": "Entity label or normalized textual form."
+      "description": "Entity type, e.g. 'pers' (person), 'loc' (location), 'org' (organisation), 'nag' (news agency)."
     },
     "p_s": {
       "type": "string",
