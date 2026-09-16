@@ -87,8 +87,6 @@
       "cc_b",
       "item_type_s",
       "coords_is",
-      "iiif_url_s",
-      "dinov2_emb_v1024",
-      "openclip_emb_v768"
+      "iiif_url_s"
     ]
 }
