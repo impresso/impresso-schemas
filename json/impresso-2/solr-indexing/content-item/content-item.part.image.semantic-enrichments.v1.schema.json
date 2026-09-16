@@ -1,0 +1,214 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/content-item/content-item.part.image.semantic-enrichments.v1.schema.json",
+  "title": "Image semantic-enrichment fields (fragment)",
+  "description": "Solr fields containing semantic-enrichment results for an image content item, including classification labels, descriptive keywords, and image embeddings. This fragment is composed into the complete image Solr document.",
+  "type": "object",
+  "properties": {
+    "descriptive_keywords_ss": {
+      "type": "array",
+      "title": "Descriptive keywords",
+      "description": "Automatically generated descriptive keywords associated with the image.",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "type_l0_tp": {
+      "type": ["string", "null"],
+      "title": "Visual content",
+      "description": "Classifies whether the detected page region is a visual content or a non-visual region incorrectly identified as an image during layout recognition.",
+      "oneOf": [
+        {
+          "const": "image",
+          "title": "Image",
+          "description": "A visual content intended to be classified."
+        },
+        {
+          "const": "not_image",
+          "title": "Not an image",
+          "description": "A non-visual page region, such as enlarged lettering, incorrectly identified as an image."
+        },
+        {
+          "const": null,
+          "title": "Undetermined",
+          "description": "The classification could not be determined."
+        }
+      ]
+    },
+    "type_l1_tp": {
+      "type": ["string", "null"],
+      "title": "Technique",
+      "description": "Classifies the technique of the original visual content, distinguishing photographs from all other techniques.",
+      "oneOf": [
+        {
+          "const": "photograph",
+          "title": "Photograph",
+          "description": "A visual content reproduced from a photograph."
+        },
+        {
+          "const": "not_photograph",
+          "title": "Not a photograph",
+          "description": "A visual content reproduced using a technique other than photography."
+        },
+        {
+          "const": null,
+          "title": "Undetermined or not applicable",
+          "description": "The technique could not be determined or does not apply to the detected region."
+        }
+      ]
+    },
+    "type_l2_tp": {
+      "type": ["string", "null"],
+      "title": "Communication goal",
+      "description": "Classifies the broad communicative purpose for which the visual content was included in the newspaper, independently of its depicted subject.",
+      "oneOf": [
+        {
+          "const": "decorative",
+          "title": "Decorative",
+          "description": "A visual element included primarily for aesthetic purposes rather than to convey direct information."
+        },
+        {
+          "const": "informative_or_illustrative",
+          "title": "Informative or illustrative",
+          "description": "A visual content intended to convey factual information, clarify, illustrate, or support an article."
+        },
+        {
+          "const": "advertising",
+          "title": "Advertising",
+          "description": "A visual content promoting a product, service, business, event, place, or other concept."
+        },
+        {
+          "const": "entertainment",
+          "title": "Entertainment",
+          "description": "A visual content intended to amuse, engage, or provide leisure to readers."
+        },
+        {
+          "const": null,
+          "title": "Undetermined or not applicable",
+          "description": "The communication goal could not be determined or does not apply to the detected region."
+        }
+      ]
+    },
+    "type_l3_tp": {
+      "type": ["string", "null"],
+      "title": "Visual content type",
+      "description": "Classifies the form, structure, and representational characteristics of the visual content.",
+      "oneOf": [
+        {
+          "const": "caricature_humoristic_drawing",
+          "description": "A single humorous, satirical, or exaggerated drawing, including editorial cartoons and caricatures."
+        },
+        {
+          "const": "comic_strip",
+          "description": "A sequence of two or more illustrated panels, typically with dialogue inside speech bubbles."
+        },
+        {
+          "const": "illustrated_story",
+          "description": "A narrative illustration accompanying a serialized story, usually with prose narration rather than dialogue bubbles."
+        },
+        {
+          "const": "game",
+          "description": "A printed puzzle, riddle, crossword, board-game layout, or other recreational game-related illustration."
+        },
+        {
+          "const": "graph",
+          "description": "A visual representation of data, such as a bar chart, line graph, pie chart, or statistical plot."
+        },
+        {
+          "const": "technical_drawing",
+          "description": "A precise technical diagram, such as an architectural blueprint, engineering schematic, or mechanical drawing."
+        },
+        {
+          "const": "human_rep_fashion_visual",
+          "description": "A depiction focused on clothing, accessories, or fashion trends, including fashion sketches and photographs of models."
+        },
+        {
+          "const": "human_rep_portrait",
+          "description": "A close-up depiction centred on an individual person, including formal portraits, profiles, and artistic renderings."
+        },
+        {
+          "const": "human_rep_scene",
+          "description": "A depiction of people interacting, undertaking activities, or forming part of a larger scene or crowd."
+        },
+        {
+          "const": "scenery_landscape",
+          "description": "A depiction of a natural landscape, cityscape, or environmental scene in which people are not the main subject."
+        },
+        {
+          "const": "map_geological",
+          "description": "A map showing rock formations or geological features, such as faults, folds, and geological units."
+        },
+        {
+          "const": "map_geopolitical",
+          "description": "A map emphasizing territorial boundaries, political divisions, and place names."
+        },
+        {
+          "const": "map_physical_or_roadmap",
+          "description": "A physical map showing natural features or a roadmap showing transport routes and networks."
+        },
+        {
+          "const": "map_plan",
+          "description": "A detailed, scaled plan of a specific place, building, district, or infrastructure layout."
+        },
+        {
+          "const": "map_weather",
+          "description": "A map depicting meteorological conditions, such as temperature, precipitation, cloud cover, wind, or atmospheric pressure."
+        },
+        {
+          "const": "weather_infographic",
+          "description": "A non-geographical infographic representing weather conditions through charts, symbols, or meteorological indicators."
+        },
+        {
+          "const": "non_figurative_visual_content",
+          "description": "A visual content composed primarily of stylised text, often used in advertisements."
+        },
+        {
+          "const": "object",
+          "description": "A depiction centred on a discrete object rather than a person, scene, map, or other defined visual type."
+        },
+        {
+          "const": "ornament_illustrated_title",
+          "description": "An ornamental or illustrated section title, potentially combining decorative lettering, figurative elements, or abstract embellishment."
+        },
+        {
+          "const": "other",
+          "description": "A visual content that cannot be assigned to any other available class."
+        },
+        {
+          "const": null,
+          "title": "Undetermined or not applicable",
+          "description": "The visual content type could not be determined or does not apply to the detected region."
+        }
+      ]
+    },
+    "dinov2_emb_v1024": {
+      "type": "array",
+      "title": "DINOv2 image embedding (1024D)",
+      "description": "Dense vector representation of the image computed using the DINOv2 model. The vector has a fixed dimensionality of 1024.",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 1024,
+      "maxItems": 1024
+    },
+    "openclip_emb_v768": {
+      "type": "array",
+      "title": "OpenCLIP image embedding (768D)",
+      "description": "Dense vector representation of the image computed using the OpenCLIP model. The vector has a fixed dimensionality of 768.",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 768,
+      "maxItems": 768
+    }
+  },
+  "required": [
+    "type_l0_tp",
+    "type_l1_tp",
+    "type_l2_tp",
+    "type_l3_tp",
+    "dinov2_emb_v1024",
+    "openclip_emb_v768"
+  ]
+}

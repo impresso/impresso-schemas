@@ -8,7 +8,8 @@
   "allOf": [
     { "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/content-item/content-item.part.core.v1.schema.json" },
     { "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/content-item/content-item.part.access-rights.v1.schema.json" },
-    { "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/content-item/content-item.part.image.v1.schema.json" }
+    { "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/content-item/content-item.part.image.v1.schema.json" },
+    { "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/content-item/content-item.part.image.semantic-enrichments.v1.schema.json" }
   ],
 
   "unevaluatedProperties": false
