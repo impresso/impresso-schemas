@@ -78,6 +78,19 @@
       "title": "IIIF image URL",
       "description": "IIIF Image API URL for the image.",
       "format": "uri"
+    },
+    "page_id_ss": {
+      "type": "array",
+      "title": "Page identifiers",
+      "description": "Identifiers of the pages on which the content item appears.",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "lg_orig_s": {
+      "type": "string",
+      "description": "Original language of the content item."
     }
   },
   "required": [
@@ -87,6 +100,15 @@
     "cc_b",
     "item_type_s",
     "coords_is",
-    "iiif_url_s"
-  ]
+    "iiif_url_s",
+    "page_id_ss"
+  ],
+  "patternProperties": {
+    "^caption_txt_[a-z]{2}$": {
+      "type": "string",
+      "minLength": 1,
+      "title": "Image caption, language-analysed",
+      "description": "Original caption, in the field for the language of the caption."
+    }
+  }
 }
