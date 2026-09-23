@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/image-embeddings/image-embeddings.v1.schema.json",
-  "title": "Image Embeddings JSON Schema",
-  "description": "A representation for the vector embedding representation of the content-items of type image.",
+  "title": "Image Embedding",
+  "description": "A vector embedding associated with an image content item.",
   "type": "object",
   "allOf": [
     {
@@ -15,34 +15,30 @@
   "properties": {
     "ts": {
       "type": "string",
-      "description": "Timestamp indicating when the embedding was created (e.g., '2024-10-09T09:29:02Z').",
+      "description": "Timestamp indicating when the embedding was generated (e.g., '2024-10-09T09:29:02Z').",
       "format": "date-time"
+    },
+    "embedding": {
+      "type": "array",
+      "description": "Vector representation of the image as a one-dimensional array of numbers.",
+      "items": {
+        "type": "number",
+        "description": "One component of the image embedding vector.",
+        "examples": [-0.732441]
+      }
     },
     "size": {
       "type": "integer",
-      "description": "The size of the embedding vector."
-    },
-    "embedding": {
-      "oneOf": [
-        {
-          "type": "array",
-          "description": "The vector embedding representation of the content item as a single list.",
-          "items": {
-            "type": "number",
-            "description": "A single number in the vector embedding of the document.",
-            "examples": [-0.732441]
-          }
-        }
-      ]
+      "description": "Dimensionality of the embedding vector. This value must equal the number of values in `embedding`."
     },
     "seconds": {
       "type": "number",
-      "description": "Number of seconds it took to generate the embedding for this image.",
+      "description": "Elapsed time, in seconds, required to generate the image embedding.",
       "examples": [0.973115]
     },
     "title_year": {
       "type": "string",
-      "description": "Title-year key this image embeddings corresponds to.",
+      "description": "Title-year key associated with this image embedding.",
       "pattern": "^[a-zA-Z0-9]+-\\d{4}$",
       "examples": ["actionfem-1940"]
     }
