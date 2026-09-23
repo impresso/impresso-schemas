@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-docs.v1.schema.json",
-  "title": "Document Embeddings JSON Schema",
-  "description": "A representation for the vector embedding representation of content items.",
+  "title": "Document Embedding",
+  "description": "A document-level vector embedding associated with an Impresso content item.",
   "type": "object",
   "allOf": [
     {
@@ -15,40 +15,24 @@
   "properties": {
     "ci_type": {
       "type": "string",
-      "description": "Type of content item as present in the rebuilt"
+      "description": "Type of the content item in the rebuilt representation."
     },
     "embedding": {
-      "oneOf": [
-        {
-          "type": "array",
-          "description": "The vector embedding representation of the content item as a single list.",
-          "items": {
-            "type": "number",
-            "description": "A single number in the vector embedding of the document.",
-            "examples": [-0.11429]
-          }
-        },
-        {
-          "type": "array",
-          "description": "The vector embedding representation of the content item as a list of lists (e.g., for chunked embeddings).",
-          "items": {
-            "type": "array",
-            "items": {
-              "type": "number",
-              "description": "A single number in a chunk's vector embedding.",
-              "examples": [-0.11429]
-            }
-          }
-        }
-      ]
+      "type": "array",
+      "description": "Vector representation of the content item as a one-dimensional array of numbers.",
+      "items": {
+        "type": "number",
+        "description": "One component of the document embedding vector.",
+        "examples": [-0.11429]
+      }
     },
     "size": {
       "type": "integer",
-      "description": "The size of the embedding vectors."
+      "description": "Dimensionality of the embedding vector. This value must equal the number of values in `embedding`."
     },
     "ts": {
       "type": "string",
-      "description": "Timestamp indicating when the embedding was created (e.g., '2024-10-09T09:29:02Z').",
+      "description": "Timestamp indicating when the embedding was generated (e.g., '2024-10-09T09:29:02Z').",
       "format": "date-time"
     }
   },
