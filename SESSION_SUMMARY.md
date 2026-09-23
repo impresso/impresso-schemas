@@ -133,3 +133,21 @@ fragment:
 - Removed the two README links that referred directly to generated Markdown.
 - Confirmed `docs/` contains no Markdown files and no specific deleted-doc references remain.
 - `make tests` could not run because `pytest` and `jsonschema` are not installed in the active shell environment.
+
+## 2026-09-23
+
+### Document embedding schema description review
+
+- Updated `json/impresso-2/semantic-enrichment/document-embeddings/embeddings-docs.v1.schema.json`.
+- Renamed the schema title to `Document Embedding` and clarified the root and property descriptions.
+- Removed the redundant `oneOf` branches and restricted `embedding` to a one-dimensional numeric array.
+- Documented that `size` must equal the number of values in `embedding`; this cross-property equality cannot be enforced dynamically by JSON Schema.
+- JSON syntax validation and `git diff --check` passed.
+
+### Image embedding schema description review
+
+- Updated `json/impresso-2/semantic-enrichment/image-embeddings/image-embeddings.v1.schema.json`.
+- Renamed the schema title to `Image Embedding` and clarified the root and property descriptions.
+- Removed the redundant `oneOf` wrapper and restricted `embedding` to a one-dimensional numeric array.
+- Documented that `size` must equal the number of values in `embedding`; this cross-property equality cannot be enforced dynamically by JSON Schema.
+- JSON syntax validation and `git diff --check` passed.
