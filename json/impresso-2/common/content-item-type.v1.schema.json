@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/content-item-id.v1.schema.json",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/content-item-type.v1.schema.json",
   "title": "Item type",
   "description": "Type of content item.",
   "type": ["string"],

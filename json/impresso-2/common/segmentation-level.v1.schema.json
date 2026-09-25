@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/content-item-id.v1.schema.json",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/segmentation-level.v1.schema.json",
   "title": "Segmentation level",
   "description": "Level of segmentation applied to the source facsimile from which the content item is derived.",
   "type": "string",
