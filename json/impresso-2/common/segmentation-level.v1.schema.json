@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/content-item-id.v1.schema.json",
+  "title": "Segmentation level",
+  "description": "Level of segmentation applied to the source facsimile from which the content item is derived.",
+  "type": "string",
+  "oneOf": [
+    {
+      "const": "none",
+      "title": "No Segmentation (Page or Broadcast)",
+      "description": "No optical layout segmentation applied; the content item corresponds to a full page or broadcast unit."
+    },
+    {
+      "const": "physical",
+      "title": "Physical Segmentation (Layout regions)",
+      "description": "Physical layout segmentation into regions such as images, columns, or paragraphs."
+    },
+    {
+      "const": "logical",
+      "title": "Logical Segmentation (Articles and editorial units)",
+      "description": "Logical segmentation into articles and other editorial or structural units."
+    },
+    {
+      "const": "semantic",
+      "title": "Semantic Segmentation (Thematic units)",
+      "description": "Semantic segmentation into thematically or conceptually coherent units."
+    }
+  ]
+}

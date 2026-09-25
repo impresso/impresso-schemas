@@ -33,8 +33,15 @@
       "enum": ["print", "typescript"]
     },
     "tp": {
-      "description": "content item type (e.g. 'ar' for article, 'ad' for advertisement)",
-      "type": ["string", "null"]
+      "oneOf": [
+        {
+          "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/content-item-type.v1.schema.json"
+        },
+        {
+          "description": "No-type content-item.",
+          "type": "null"
+        }
+      ]
     },
     "lg": {
       "description": "Language of the content item's text, expressed as a two-letter ISO 639-1 language code.",
@@ -99,16 +106,19 @@
       "type": "object",
       "properties": {
         "title_text": {
-          "type": "string"
+          "type": "string",
+          "description": "Plain text of the section title."
         },
         "composing_ci_ids": {
           "type": "array",
+          "description": "List of IDs of the content items composing the section.",
           "items": {
             "type": "string"
           }
         },
         "section_id": {
-          "type": "string"
+          "type": "string",
+          "description": "Legacy (METS/ALTO inherited) ID of the section."
         }
       },
       "required": ["title_text", "composing_ci_ids", "section_id"]

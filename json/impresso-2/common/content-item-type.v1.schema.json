@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/content-item-id.v1.schema.json",
+  "title": "Item type",
+  "description": "Type of content item.",
+  "type": ["string"],
+  "oneOf": [
+    {
+      "const": "page",
+      "title": "Page",
+      "description": "Full page of content, in the case of OCR-only data. Later becomes 'None' or 'No-type'."
+    },
+    {
+      "const": "ar",
+      "title": "Article",
+      "description": "Editorial article forming a coherent textual unit (short version)."
+    },
+    {
+      "const": "article",
+      "title": "Article",
+      "description": "Editorial article forming a coherent textual unit."
+    },
+    {
+      "const": "ad",
+      "title": "Advertisement",
+      "description": "Commercial or classified advertising content."
+    },
+    {
+      "const": "img",
+      "title": "Image",
+      "description": "Standalone visual content such as a photograph, illustration, or graphic (short version)."
+    },
+    {
+      "const": "image",
+      "title": "Image",
+      "description": "Standalone visual content such as a photograph, illustration, or graphic."
+    },
+    {
+      "const": "tb",
+      "title": "Table",
+      "description": "Tabular content presenting structured data or listings (short version)."
+    },
+    {
+      "const": "table",
+      "title": "Table",
+      "description": "Tabular content presenting structured data or listings."
+    },
+    {
+      "const": "ob",
+      "title": "Obituary",
+      "description": "Notice reporting a death, often including biographical information (short version)."
+    },
+    {
+      "const": "death_notice",
+      "title": "Obituary",
+      "description": "Notice reporting a death, often including biographical information."
+    },
+    {
+      "const": "w",
+      "title": "Weather",
+      "description": "Weather report or meteorological information (short version)."
+    },
+    {
+      "const": "weather",
+      "title": "Weather",
+      "description": "Weather report or meteorological information."
+    },
+    {
+      "const": "ch",
+      "title": "Chronicle",
+      "description": "Broadcast chronicle reporting events in a factual or narrative form (short version)."
+    },
+    {
+      "const": "chronicle",
+      "title": "Chronicle",
+      "description": "Broadcast chronicle reporting events in a factual or narrative form."
+    },
+    {
+      "const": "rb",
+      "title": "Radio Bulletin",
+      "description": "Content item originating from a radio bulletin (short version)."
+    },
+    {
+      "const": "radio_bulletin",
+      "title": "Radio Bulletin",
+      "description": "Content item originating from a radio bulletin."
+    },
+    {
+      "const": "rbe",
+      "title": "Radio Broadcast Episode",
+      "description": "An individual episode or segment of a radio broadcast (short version)."
+    },
+    {
+      "const": "radio_broadcast_episode",
+      "title": "Radio Broadcast Episode",
+      "description": "An individual episode or segment of a radio broadcast."
+    },
+    {
+      "const": "no-type",
+      "title": "No Type Provided",
+      "description": "Content item with no specific type provided (short version)."
+    },
+    {
+      "const": "dsc",
+      "title": "Discussion",
+      "description": "Radio Broadcast discussion or talk show content item (short version)."
+    },
+    {
+      "const": "discussion",
+      "title": "Discussion",
+      "description": "Radio Broadcast discussion or talk show content item."
+    },
+    {
+      "const": "ent",
+      "title": "Entertainment",
+      "description": "Radio Broadcast entertainment content item (short version)."
+    },
+    {
+      "const": "entertainment",
+      "title": "Entertainment",
+      "description": "Radio Broadcast entertainment content item."
+    }
+  ]
+}

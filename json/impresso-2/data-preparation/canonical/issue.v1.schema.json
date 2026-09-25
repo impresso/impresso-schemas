@@ -92,16 +92,19 @@
             "type": "object",
             "properties": {
               "title_text": {
-                "type": "string"
+                "type": "string",
+                "description": "Plain text of the section title."
               },
               "composing_ci_ids": {
                 "type": "array",
+                "description": "List of IDs of the content items composing the section.",
                 "items": {
                   "type": "string"
                 }
               },
               "section_id": {
-                "type": "string"
+                "type": "string",
+                "description": "Legacy (METS/ALTO inherited) ID of the section."
               },
               "heading_legacy_parts": {
                 "type": "array",
@@ -279,22 +282,14 @@
           "description": "Title of the content item. The field is present only when a meaningful title is available."
         },
         "tp": {
-          "type": ["string", "null"],
-          "description": "Type of the content item.",
-          "enum": [
-            "article",
-            "ad",
-            "image",
-            "table",
-            "death_notice",
-            "weather",
-            "page",
-            "radio_bulletin",
-            "radio_broadcast_episode",
-            "chronicle",
-            "chapter",
-            "discussion",
-            "entertainment"
+          "oneOf": [
+            {
+              "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/is-exact-date.v1.schema.json"
+            },
+            {
+              "description": "Unknown or new type content-item.",
+              "type": ["string", "null"]
+            }
           ]
         },
         "iiif_link": {
