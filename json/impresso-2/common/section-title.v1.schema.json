@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/section-title.v1.schema.json",
+  "title": "Impresso content-item identifier",
+  "description": "Section title object for a given content item. Some OLR formats also include 'section' elements which contain several pieces of content which correspond to content items. This section title object is used to track which content items belong to the same section and keep track of it's title.",
+  "type": "object",
+  "properties": {
+    "title_text": {
+      "type": "string",
+      "description": "Plain text of the section title."
+    },
+    "composing_ci_ids": {
+      "type": "array",
+      "description": "List of IDs of the content items composing the section.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "section_id": {
+      "type": "string",
+      "description": "Legacy (METS/ALTO inherited) ID of the section."
+    },
+    "heading_legacy_parts": {
+      "type": "array",
+      "description": "Legacy parts of the section div in the METS/ALTO xml files. Only relevant for canonical data.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "comp_role": {
+            "type": ["null", "string"],
+            "description": "Role of the component part (eg. heading, body, etc)."
+          },
+          "comp_id": {
+            "type": ["string", "array"],
+            "description": "ID of the part."
+          },
+          "comp_fileid": {
+            "type": ["string", "array"],
+            "description": "ID of the ALTO file the component comes from."
+          },
+          "comp_page_no": {
+            "type": ["integer", "array"],
+            "description": "Page number of the component."
+          }
+        }
+      }
+    }
+  },
+  "required": ["title_text", "composing_ci_ids", "section_id"]
+}
