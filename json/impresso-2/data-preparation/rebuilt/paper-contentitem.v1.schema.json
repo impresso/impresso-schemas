@@ -35,7 +35,7 @@
     "tp": {
       "oneOf": [
         {
-          "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/content-item-type.v1.schema.json"
+          "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/content-item-type.v1.schema.json"
         },
         {
           "description": "No-type content-item.",
@@ -47,6 +47,9 @@
       "description": "Language of the content item's text, expressed as a two-letter ISO 639-1 language code.",
       "type": ["string", "null"],
       "pattern": "^[a-z]{2,3}$"
+    },
+    "segmentation_level": {
+      "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/segmentation-level.v1.schema.json"
     },
     "rc": {
       "type": ["string", "null"],

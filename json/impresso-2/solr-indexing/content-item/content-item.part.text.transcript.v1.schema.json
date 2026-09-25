@@ -12,10 +12,10 @@
       "deprecated": true
     },
     "segmentation_level_s": {
-      "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/segmentation-level.v1.schema.json"
+      "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/segmentation-level.v1.schema.json"
     },
     "item_type_s": {
-      "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/content-item-type.v1.schema.json"
+      "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/content-item-type.v1.schema.json"
     },
     "lg_orig_s": {
       "type": "string",

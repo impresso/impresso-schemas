@@ -284,7 +284,7 @@
         "tp": {
           "oneOf": [
             {
-              "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/is-exact-date.v1.schema.json"
+              "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/is-exact-date.v1.schema.json"
             },
             {
               "description": "Unknown or new type content-item.",
