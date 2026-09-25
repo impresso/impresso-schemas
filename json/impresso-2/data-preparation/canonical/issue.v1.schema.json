@@ -288,7 +288,8 @@
             },
             {
               "description": "Unknown or new type content-item.",
-              "type": ["string", "null"]
+              "type": ["string", "null"],
+              "not": {"$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/content-item-type.v1.schema.json"}
             }
           ]
         },
