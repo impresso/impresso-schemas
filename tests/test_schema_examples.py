@@ -126,6 +126,7 @@ IMPRESSO_2_CASES = [
     ("json/impresso-2/solr-indexing/content-item/content-item.root.paper.v1.schema.json", "examples/impresso-2/solr-indexing/content-item/ci_paper.example.json"),
     ("json/impresso-2/solr-indexing/content-item/content-item.root.paper.v1.schema.json", "examples/impresso-2/solr-indexing/content-item/ci_typescript.example.json"),
     ("json/impresso-2/solr-indexing/content-item/content-item.root.image.v1.schema.json", "examples/impresso-2/solr-indexing/content-item/ci_image.example.json"),
+    ("json/impresso-2/solr-indexing/content-item/content-item.root.image.v1.schema.json", "examples/impresso-2/solr-indexing/content-item/ci_image.example1.json"),
     # ci_audio.example.json is intentionally empty and excluded for now.
     # solr-indexing/semantic-enrichments
     ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.entities.v1.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_entities.example.json"),
