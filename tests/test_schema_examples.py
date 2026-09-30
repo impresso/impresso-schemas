@@ -94,6 +94,7 @@ IMPRESSO_2_CASES = [
     ("json/impresso-2/data-preparation/canonical/audio-record.v1.schema.json", "examples/impresso-2/data-preparation/canonical/audio-record.CFCE-1996-09-08-a-r0001.json"),
     # data-preparation/rebuilt
     ("json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json", "examples/impresso-2/data-preparation/rebuilt/paper-contentitem.example0.json"),
+    ("json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json", "examples/impresso-2/data-preparation/rebuilt/paper-contentitem.example1.json"),
     ("json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json", "examples/impresso-2/data-preparation/rebuilt/paper-contentitem.SOC_VS-1943-04-28-a-i0001.json"),
     ("json/impresso-2/data-preparation/rebuilt/audio-record-contentitem.v1.schema.json", "examples/impresso-2/data-preparation/rebuilt/audio-record-contentitem.CFCE-1996-09-08-a-i0001.json"),
     ("json/impresso-2/data-preparation/rebuilt/audio-record-contentitem.v1.schema.json", "examples/impresso-2/data-preparation/rebuilt/audio-record-contentitem.RDN-1950-01-12-a-i0001.json"),
