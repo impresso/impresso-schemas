@@ -11,14 +11,9 @@
       "description": "Full page of content, in the case of OCR-only data. Later becomes 'None' or 'No-type'."
     },
     {
-      "const": "ar",
+      "enum": ["ar", "article"],
       "title": "Article",
-      "description": "Editorial article forming a coherent textual unit (short version)."
-    },
-    {
-      "const": "article",
-      "title": "Article",
-      "description": "Editorial article forming a coherent textual unit."
+      "description": "Textual unit(s) corresponding to a journalistic editorial unit."
     },
     {
       "const": "ad",
@@ -26,72 +21,37 @@
       "description": "Commercial or classified advertising content."
     },
     {
-      "const": "img",
+      "enum": ["img", "image"],
       "title": "Image",
-      "description": "Standalone visual content such as a photograph, illustration, or graphic (short version)."
+      "description": "Standalone visual content."
     },
     {
-      "const": "image",
-      "title": "Image",
-      "description": "Standalone visual content such as a photograph, illustration, or graphic."
-    },
-    {
-      "const": "tb",
-      "title": "Table",
-      "description": "Tabular content presenting structured data or listings (short version)."
-    },
-    {
-      "const": "table",
+      "enum": ["tb", "table"],
       "title": "Table",
       "description": "Tabular content presenting structured data or listings."
     },
     {
-      "const": "ob",
-      "title": "Obituary",
-      "description": "Notice reporting a death, often including biographical information (short version)."
-    },
-    {
-      "const": "death_notice",
+      "enum": ["ob", "death_notice"],
       "title": "Obituary",
       "description": "Notice reporting a death, often including biographical information."
     },
     {
-      "const": "w",
-      "title": "Weather",
-      "description": "Weather report or meteorological information (short version)."
-    },
-    {
-      "const": "weather",
+      "enum": ["w", "weather"],
       "title": "Weather",
       "description": "Weather report or meteorological information."
     },
     {
-      "const": "ch",
-      "title": "Chronicle",
-      "description": "Broadcast chronicle reporting events in a factual or narrative form (short version)."
-    },
-    {
-      "const": "chronicle",
+      "enum": ["ch", "chronicle"],
       "title": "Chronicle",
       "description": "Broadcast chronicle reporting events in a factual or narrative form."
     },
     {
-      "const": "rb",
-      "title": "Radio Bulletin",
-      "description": "Content item originating from a radio bulletin (short version)."
-    },
-    {
-      "const": "radio_bulletin",
+      "enum": ["radio_bulletin", "rb"],
       "title": "Radio Bulletin",
       "description": "Content item originating from a radio bulletin."
     },
     {
-      "const": "rbe",
-      "title": "Radio Broadcast Episode",
-      "description": "An individual episode or segment of a radio broadcast (short version)."
-    },
-    {
-      "const": "radio_broadcast_episode",
+      "enum": ["rbe", "radio_broadcast_episode"],
       "title": "Radio Broadcast Episode",
       "description": "An individual episode or segment of a radio broadcast."
     },
@@ -101,22 +61,12 @@
       "description": "Content item with no specific type provided (short version)."
     },
     {
-      "const": "dsc",
-      "title": "Discussion",
-      "description": "Radio Broadcast discussion or talk show content item (short version)."
-    },
-    {
-      "const": "discussion",
+      "enum": ["dsc","discussion"],
       "title": "Discussion",
       "description": "Radio Broadcast discussion or talk show content item."
     },
     {
-      "const": "ent",
-      "title": "Entertainment",
-      "description": "Radio Broadcast entertainment content item (short version)."
-    },
-    {
-      "const": "entertainment",
+      "enum": ["ent","entertainment"],
       "title": "Entertainment",
       "description": "Radio Broadcast entertainment content item."
     }
