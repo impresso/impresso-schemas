@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/segment-extraction/image-segment.v1.schema.json",
+  "title": "Image Segment",
+  "description": "An image segment (e.g. a photograph or illustration) extracted from the facsimile of a content item, together with its encoded image bytes.",
+  "type": "object",
+  "allOf": [
+    { "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/ci_id.v1.schema.json" },
+    { "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/ts.v1.schema.json" }
+  ],
+  "properties": {
+    "bytes_b64": {
+      "type": "string",
+      "contentEncoding": "base64",
+      "contentMediaType": "image/jpeg",
+      "description": "Base64-encoded JPEG image bytes of the extracted image segment."
+    }
+  },
+  "required": ["ci_id", "ts", "bytes_b64"]
+}

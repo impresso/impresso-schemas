@@ -103,6 +103,8 @@ IMPRESSO_2_CASES = [
     ("json/impresso-2/data-preparation/visualizer/bbox-visualizer.v1.schema.json", "examples/impresso-2/data-preparation/visualizer/bbox-visualizer.actionfem-1927-10-15-a_bbox.json"),
     ("json/impresso-2/data-preparation/visualizer/bbox-visualizer.v1.schema.json", "examples/impresso-2/data-preparation/visualizer/bbox-visualizer.actionfem-1927-10-15-a-i0012_bbox.json"),
     ("json/impresso-2/data-preparation/visualizer/bbox-visualizer.v1.schema.json", "examples/impresso-2/data-preparation/visualizer/bbox-visualizer.actionfem-1927-10-15-a-p0001_bbox.json"),
+    # data-preparation/segment-extraction
+    ("json/impresso-2/data-preparation/segment-extraction/image-segment.v1.schema.json", "examples/impresso-2/data-preparation/segment-extraction/image-segment.AGE52-1852-08-21-a-i0037.json"),
     # text-processing
     ("json/impresso-2/text-processing/language-identification/language-identification.v1.schema.json", "examples/impresso-2/text-processing/language-identification/language-identification.example0.json"),
     ("json/impresso-2/text-processing/language-identification/language-identification.v1.schema.json", "examples/impresso-2/text-processing/language-identification/language-identification.example1.json"),

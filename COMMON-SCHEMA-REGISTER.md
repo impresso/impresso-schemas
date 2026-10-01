@@ -60,6 +60,7 @@ property and its value rules without making it required everywhere.
 | Rebuilt    | `rebuilt/paper-contentitem.v1`, `rebuilt/audio-record-contentitem.v1`  | 2 paper, 2 audio                | Both consume the done `ci_id` fragment and have substantial source, publication, consolidation, and text metadata overlap.                                       |
 | Versioning | `versioning/manifest.v1`                                               | 1 manifest                      | Manifest release metadata is not a content-item representation. Keep local until a broader release/provenance vocabulary is defined.                             |
 | Visualizer | `visualizer/bbox-visualizer.v1`                                        | 3 bounding-box files            | IIIF image bases and bounding boxes are visual-quality inputs. Keep local; their shape differs from canonical page regions.                                      |
+| Segment extraction (new) | `segment-extraction/image-segment.v1`                   | 1 image segment                 | New area. Consumes the done `ci_id.v1` and `ts.v1` fragments via `allOf`; its base64 JPEG `bytes_b64` property has no existing cross-schema precedent (two differing conventions exist only in the separate `public-api/` area) and stays local — single consumer, nothing to extract yet.                                      |
 
 ### Local candidates: `data-preparation/common/`
 
