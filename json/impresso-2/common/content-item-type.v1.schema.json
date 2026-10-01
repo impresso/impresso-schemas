@@ -69,6 +69,11 @@
       "enum": ["ent","entertainment"],
       "title": "Entertainment",
       "description": "Radio Broadcast entertainment content item."
+    },
+    {
+      "const": "chapter",
+      "title": "Chapter",
+      "description": "TO BE REFINED."
     }
   ]
 }
