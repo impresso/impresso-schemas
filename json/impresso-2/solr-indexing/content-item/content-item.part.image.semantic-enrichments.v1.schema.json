@@ -47,5 +47,10 @@
       "maxItems": 768
     }
   },
-  "required": ["type_l0_tp", "type_l1_tp", "type_l2_tp", "type_l3_tp", "dinov2_emb_v1024", "openclip_emb_v768"]
+  "required": [
+    "type_l0_tp",
+    "type_l1_tp",
+    "type_l2_tp",
+    "type_l3_tp"
+  ]
 }

@@ -70,10 +70,10 @@
       "title": "Entertainment",
       "description": "Radio Broadcast entertainment content item."
     },
-    {
-      "const": "chapter",
-      "title": "Chapter",
-      "description": "TO BE REFINED."
-    }
+     {
+       "const": "chapter",
+       "title": "Chapter",
+       "description": "TO BE REFINED."
+      }
   ]
 }
