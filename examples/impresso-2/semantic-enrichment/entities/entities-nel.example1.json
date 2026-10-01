@@ -13,6 +13,11 @@
       "title": "M.",
       "function": "ancien ministre du gouvernement cantonais",
       "wkdata_qid": null,
+      "wkpedia_lg": null,
+      "wkpedia_pagename": null,
+      "label_fr": null,
+      "label_en": null,
+      "label_de": null,
       "nel_unlink": {
         "reason": "nel.disambiguation_page",
         "removed_wkdata_qid": "Q11621"
@@ -28,6 +33,9 @@
       "wkdata_qid": "Q30",
       "wkpedia_lg": "fr",
       "wkpedia_pagename": "États-Unis",
+      "label_fr": "États-Unis",
+      "label_en": "United States",
+      "label_de": "Vereinigte Staaten",
       "confidence_ner": 0.45,
       "confidence_nel": 0.45
     }

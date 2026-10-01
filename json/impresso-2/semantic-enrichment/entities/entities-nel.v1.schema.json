@@ -83,6 +83,31 @@
             "minLength": 1,
             "description": "Page name in the Wikipedia edition identified by `wkpedia_lg`, or null when no Wikipedia page is assigned."
           },
+          "label_fr": {
+            "type": ["string", "null"],
+            "minLength": 1,
+            "description": "French Wikidata label of `wkdata_qid`, otherwise its `mul` label (Wikidata's default for all languages), or null when neither exists or no Wikidata QID is assigned. Never a label from another language."
+          },
+          "label_en": {
+            "type": ["string", "null"],
+            "minLength": 1,
+            "description": "English Wikidata label of `wkdata_qid`, otherwise its `mul` label (Wikidata's default for all languages), or null when neither exists or no Wikidata QID is assigned. Never a label from another language."
+          },
+          "label_de": {
+            "type": ["string", "null"],
+            "minLength": 1,
+            "description": "German Wikidata label of `wkdata_qid`, otherwise its `mul` label (Wikidata's default for all languages), or null when neither exists or no Wikidata QID is assigned. Never a label from another language."
+          },
+          "label_other": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Fallback Wikidata label of `wkdata_qid` in another language, preferring the language of the item's Wikipedia titles. Present only when a Wikidata QID is assigned, `label_fr`, `label_en` and `label_de` are all null, and such a label exists."
+          },
+          "label_other_lg": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Wikidata language code of `label_other`. Present only together with `label_other`."
+          },
           "nel_unlink": {
             "type": "object",
             "description": "Provenance for a Wikidata link that was produced by NEL but deliberately removed by a downstream validation or filtering step. Omitted when no link was removed.",
@@ -122,8 +147,15 @@
           "confidence_nel",
           "wkdata_qid",
           "wkpedia_lg",
-          "wkpedia_pagename"
+          "wkpedia_pagename",
+          "label_fr",
+          "label_en",
+          "label_de"
         ],
+        "dependentRequired": {
+          "label_other": ["label_other_lg"],
+          "label_other_lg": ["label_other"]
+        },
         "allOf": [
           {
             "oneOf": [
@@ -156,6 +188,50 @@
             "then": {
               "properties": {
                 "wkdata_qid": {
+                  "type": "null"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "wkdata_qid": {
+                  "type": "null"
+                }
+              },
+              "required": ["wkdata_qid"]
+            },
+            "then": {
+              "properties": {
+                "label_fr": {
+                  "type": "null"
+                },
+                "label_en": {
+                  "type": "null"
+                },
+                "label_de": {
+                  "type": "null"
+                }
+              },
+              "not": {
+                "required": ["label_other"]
+              }
+            }
+          },
+          {
+            "if": {
+              "required": ["label_other"]
+            },
+            "then": {
+              "properties": {
+                "label_fr": {
+                  "type": "null"
+                },
+                "label_en": {
+                  "type": "null"
+                },
+                "label_de": {
                   "type": "null"
                 }
               }

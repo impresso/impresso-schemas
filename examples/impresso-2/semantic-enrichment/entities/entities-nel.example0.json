@@ -13,6 +13,9 @@
       "wkdata_qid": "Q683672",
       "wkpedia_lg": "fr",
       "wkpedia_pagename": "Société_du_Grütli",
+      "label_fr": "Société du Grütli",
+      "label_en": "Grütliverein",
+      "label_de": "Grütliverein",
       "confidence_ner": 0.45,
       "confidence_nel": 0.45
     },
@@ -23,6 +26,12 @@
       "rOffset": 178,
       "confidence_ner": 0.45,
       "confidence_nel": 0.45,
+      "wkdata_qid": null,
+      "wkpedia_lg": null,
+      "wkpedia_pagename": null,
+      "label_fr": null,
+      "label_en": null,
+      "label_de": null,
       "name": "Bovat",
       "title": "Mr.",
       "function": "mécanicien à Echallens"
