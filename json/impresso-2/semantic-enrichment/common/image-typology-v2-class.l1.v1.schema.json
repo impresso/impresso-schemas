@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/image-typology-v2-class.l1.v1.schema.json",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/common/image-typology-v2-class.l1.v1.schema.json",
   "title": "Image Typology V2 Level 1 class - Technique",
   "description": "Classification value from from Level 1 of the Image Typology V2 taxonomy. Classifies the technique of the original visual content, distinguishing photographs from all other techniques.",
   "type": ["string", "null"],

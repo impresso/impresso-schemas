@@ -205,6 +205,13 @@ Area-local common scalars shared by the data-preparation schemas below:
 
 ### Semantic enrichment
 
+Area-local common scalars shared by the semantic-enrichment schemas below:
+
+- **Image Typology V2 class — level 0**: [`json/impresso-2/semantic-enrichment/common/image-typology-v2-class.l0.v1.schema.json`](json/impresso-2/semantic-enrichment/common/image-typology-v2-class.l0.v1.schema.json)
+- **Image Typology V2 class — level 1**: [`json/impresso-2/semantic-enrichment/common/image-typology-v2-class.l1.v1.schema.json`](json/impresso-2/semantic-enrichment/common/image-typology-v2-class.l1.v1.schema.json)
+- **Image Typology V2 class — level 2**: [`json/impresso-2/semantic-enrichment/common/image-typology-v2-class.l2.v1.schema.json`](json/impresso-2/semantic-enrichment/common/image-typology-v2-class.l2.v1.schema.json)
+- **Image Typology V2 class — level 3**: [`json/impresso-2/semantic-enrichment/common/image-typology-v2-class.l3.v1.schema.json`](json/impresso-2/semantic-enrichment/common/image-typology-v2-class.l3.v1.schema.json)
+
 - **Topic assignment**:
   - legacy v1: [`json/topic_model/topic_assignment.schema.json`](json/topic_model/topic_assignment.schema.json)
   - legacy v2: [`json/topic_model/topic_assignment.v2.schema.json`](json/topic_model/topic_assignment.v2.schema.json)

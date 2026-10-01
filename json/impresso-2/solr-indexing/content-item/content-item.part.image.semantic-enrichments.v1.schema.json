@@ -26,7 +26,6 @@
     "type_l3_tp": {
       "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/common/image-typology-v2-class.l3.v1.schema.json"
     },
-    "confidence": {},
     "dinov2_emb_v1024": {
       "type": "array",
       "title": "DINOv2 image embedding (1024D)",
