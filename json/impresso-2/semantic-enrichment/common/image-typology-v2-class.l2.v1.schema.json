@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/common/image-typology-v2-class.l2.v1.schema.json",
+  "title": "Image Typology V2 Level 2 class - Communication goal",
+  "description": "Classification value from Level 2 of the Image Typology V2 taxonomy. Classifies the broad communicative purpose for which the visual content was included in the newspaper, independently of its depicted subject.",
+  "type": ["string", "null"],
+  "oneOf": [
+    {
+      "const": "decorative",
+      "title": "Decorative",
+      "description": "A visual element included primarily for aesthetic purposes rather than to convey direct information."
+    },
+    {
+      "const": "informative_or_illustrative",
+      "title": "Informative or illustrative",
+      "description": "A visual content intended to convey factual information, clarify, illustrate, or support an article."
+    },
+    {
+      "const": "advertising",
+      "title": "Advertising",
+      "description": "A visual content promoting a product, service, business, event, place, or other concept."
+    },
+    {
+      "const": "entertainment",
+      "title": "Entertainment",
+      "description": "A visual content intended to amuse, engage, or provide leisure to readers."
+    },
+    {
+      "const": null,
+      "title": "Undetermined",
+      "description": "The classification could not be determined, or does not apply at this level."
+    }
+  ]
+}

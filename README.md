@@ -185,6 +185,8 @@ Area-local common scalars shared by the data-preparation schemas below:
 - **Bounding-box visualizer**:
   - legacy: [`json/visualizer/bbox_visualizer.schema.json`](json/visualizer/bbox_visualizer.schema.json)
   - imp2: [`json/impresso-2/data-preparation/visualizer/bbox-visualizer.v1.schema.json`](json/impresso-2/data-preparation/visualizer/bbox-visualizer.v1.schema.json)
+- **Image segment**:
+  - imp2: [`json/impresso-2/data-preparation/segment-extraction/image-segment.v1.schema.json`](json/impresso-2/data-preparation/segment-extraction/image-segment.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/impresso-2/image-segment.html)
 
 ### Text processing
 
@@ -202,6 +204,13 @@ Area-local common scalars shared by the data-preparation schemas below:
   - imp2: [`json/impresso-2/text-processing/ocr-qa/ocr-qa.v1.schema.json`](json/impresso-2/text-processing/ocr-qa/ocr-qa.v1.schema.json)
 
 ### Semantic enrichment
+
+Area-local common scalars shared by the semantic-enrichment schemas below:
+
+- **Image Typology V2 class — level 0**: [`json/impresso-2/semantic-enrichment/common/image-typology-v2-class.l0.v1.schema.json`](json/impresso-2/semantic-enrichment/common/image-typology-v2-class.l0.v1.schema.json)
+- **Image Typology V2 class — level 1**: [`json/impresso-2/semantic-enrichment/common/image-typology-v2-class.l1.v1.schema.json`](json/impresso-2/semantic-enrichment/common/image-typology-v2-class.l1.v1.schema.json)
+- **Image Typology V2 class — level 2**: [`json/impresso-2/semantic-enrichment/common/image-typology-v2-class.l2.v1.schema.json`](json/impresso-2/semantic-enrichment/common/image-typology-v2-class.l2.v1.schema.json)
+- **Image Typology V2 class — level 3**: [`json/impresso-2/semantic-enrichment/common/image-typology-v2-class.l3.v1.schema.json`](json/impresso-2/semantic-enrichment/common/image-typology-v2-class.l3.v1.schema.json)
 
 - **Topic assignment**:
   - legacy v1: [`json/topic_model/topic_assignment.schema.json`](json/topic_model/topic_assignment.schema.json)

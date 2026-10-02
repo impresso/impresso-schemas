@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/common/image-typology-v2-class.l0.v1.schema.json",
+  "title": "Image Typology V2 Level 0 class - Visual content",
+  "description": "Classification value from Level 0 of the Image Typology V2 taxonomy. Classifies whether the detected page region is a visual content or a non-visual region incorrectly identified as an image during layout recognition.",
+  "type": ["string", "null"],
+  "oneOf": [
+    {
+      "const": "image",
+      "title": "Image",
+      "description": "A visual content intended to be classified."
+    },
+    {
+      "const": "not_image",
+      "title": "Not an image",
+      "description": "A non-visual page region, such as enlarged lettering, incorrectly identified as an image."
+    },
+    {
+      "const": null,
+      "title": "Undetermined",
+      "description": "The classification could not be determined, or does not apply at this level."
+    }
+  ]
+}
