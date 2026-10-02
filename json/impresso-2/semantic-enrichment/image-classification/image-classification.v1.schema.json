@@ -47,7 +47,8 @@
             "minimum": 0,
             "maximum": 3
           }
-        }
+        },
+        "required": ["class"]
       }
     },
     "level3_predictions": {
