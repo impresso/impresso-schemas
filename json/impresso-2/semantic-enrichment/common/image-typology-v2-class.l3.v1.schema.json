@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/common/image-typology-v2-class.l3.v1.schema.json",
   "title": "Image Typology V2 Level 3 class - Visual content type",
-  "description": "Classification value from Level 3 of the Image Typology V2 taxonomy. Classifies the form, structure, and representational characteristics of the visual content."
+  "description": "Classification value from Level 3 of the Image Typology V2 taxonomy. Classifies the form, structure, and representational characteristics of the visual content.",
   "type": ["string", "null"],
   "oneOf": [
     {

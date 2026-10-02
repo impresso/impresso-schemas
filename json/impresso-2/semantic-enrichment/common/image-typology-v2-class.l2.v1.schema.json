@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/common/image-typology-v2-class.l2.v1.schema.json",
   "title": "Image Typology V2 Level 2 class - Communication goal",
-  "description": "Classification value from Level 2 of the Image Typology V2 taxonomy. Classifies the broad communicative purpose for which the visual content was included in the newspaper, independently of its depicted subject."
+  "description": "Classification value from Level 2 of the Image Typology V2 taxonomy. Classifies the broad communicative purpose for which the visual content was included in the newspaper, independently of its depicted subject.",
   "type": ["string", "null"],
   "oneOf": [
     {
