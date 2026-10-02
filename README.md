@@ -186,7 +186,7 @@ Area-local common scalars shared by the data-preparation schemas below:
   - legacy: [`json/visualizer/bbox_visualizer.schema.json`](json/visualizer/bbox_visualizer.schema.json)
   - imp2: [`json/impresso-2/data-preparation/visualizer/bbox-visualizer.v1.schema.json`](json/impresso-2/data-preparation/visualizer/bbox-visualizer.v1.schema.json)
 - **Image segment**:
-  - imp2: [`json/impresso-2/data-preparation/segment-extraction/image-segment.v1.schema.json`](json/impresso-2/data-preparation/segment-extraction/image-segment.v1.schema.json) — [docs](docs/impresso-2/image-segment.md)
+  - imp2: [`json/impresso-2/data-preparation/segment-extraction/image-segment.v1.schema.json`](json/impresso-2/data-preparation/segment-extraction/image-segment.v1.schema.json) — [docs](https://impresso.github.io/impresso-schemas/impresso-2/image-segment.html)
 
 ### Text processing
 
