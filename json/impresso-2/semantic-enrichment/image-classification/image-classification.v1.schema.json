@@ -44,7 +44,7 @@
           "pred_number": {
             "type": "integer",
             "description": "'Number' of the prediction in the top-3, ie. if it was the first, second or third most probable value. Not applicable if class is inferred from the typology hierarchy.",
-            "minimum": 0,
+            "minimum": 1,
             "maximum": 3
           }
         },
