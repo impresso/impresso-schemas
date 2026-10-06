@@ -1,0 +1,156 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/content-item/content-item.part.text.semantic-enrichments-entity-mentions.v1.schema.json",
+  "title": "Entity and Mention Enrichment Fields",
+  "description": "Entity and aggregate-mention fields embedded in main content-item documents. Occurrence lists describe accepted mentions in the article body; title mentions are not included in this contract.",
+  "type": "object",
+  "properties": {
+    "pers_mention_offsets_json_plain": {
+      "$ref": "#/$defs/ordered-json-string",
+      "description": "JSON-encoded ordered array of [start, length] pairs for accepted person mentions in the article body."
+    },
+    "pers_mention_surfaces_json_plain": {
+      "$ref": "#/$defs/ordered-json-string",
+      "description": "JSON-encoded ordered array of exact person mention surfaces corresponding positionally to the offsets (former pers_mentions)."
+    },
+    "pers_mention_qids_json_plain": {
+      "$ref": "#/$defs/ordered-json-string",
+      "description": "JSON-encoded ordered array of linked entity QIDs or null for each corresponding person mention."
+    },
+    "pers_aggregate_mention_ids_ss": {
+      "$ref": "#/$defs/aggregate-mention-ids",
+      "description": "Aggregate mention IDs for person surface/type groups present in this content item, including groups containing NIL occurrences."
+    },
+    "pers_mention_ner_conf_dpfs": {
+      "$ref": "#/$defs/confidence-payload",
+      "description": "Existing payload serialization of person mention surfaces and NER confidence values on the 0-1 scale."
+    },
+    "pers_entity_ids_dpfs": {
+      "$ref": "#/$defs/entity-payload",
+      "description": "Entity QIDs with counts of linked person occurrences in this content item; NIL occurrences contribute no entry."
+    },
+    "loc_mention_offsets_json_plain": {
+      "$ref": "#/$defs/ordered-json-string",
+      "description": "JSON-encoded ordered array of [start, length] pairs for accepted location mentions in the article body."
+    },
+    "loc_mention_surfaces_json_plain": {
+      "$ref": "#/$defs/ordered-json-string",
+      "description": "JSON-encoded ordered array of exact location mention surfaces corresponding positionally to the offsets (former loc_mentions)."
+    },
+    "loc_mention_qids_json_plain": {
+      "$ref": "#/$defs/ordered-json-string",
+      "description": "JSON-encoded ordered array of linked entity QIDs or null for each corresponding location mention."
+    },
+    "loc_aggregate_mention_ids_ss": {
+      "$ref": "#/$defs/aggregate-mention-ids",
+      "description": "Aggregate mention IDs for location surface/type groups present in this content item, including groups containing NIL occurrences."
+    },
+    "loc_mention_ner_conf_dpfs": {
+      "$ref": "#/$defs/confidence-payload",
+      "description": "Existing payload serialization of location mention surfaces and NER confidence values on the 0-1 scale."
+    },
+    "loc_entity_ids_dpfs": {
+      "$ref": "#/$defs/entity-payload",
+      "description": "Entity QIDs with counts of linked location occurrences in this content item; NIL occurrences contribute no entry."
+    },
+    "org_mention_offsets_json_plain": {
+      "$ref": "#/$defs/ordered-json-string",
+      "description": "JSON-encoded ordered array of [start, length] pairs for accepted organisation mentions in the article body."
+    },
+    "org_mention_surfaces_json_plain": {
+      "$ref": "#/$defs/ordered-json-string",
+      "description": "JSON-encoded ordered array of exact organisation mention surfaces corresponding positionally to the offsets (former org_mentions)."
+    },
+    "org_mention_qids_json_plain": {
+      "$ref": "#/$defs/ordered-json-string",
+      "description": "JSON-encoded ordered array of linked entity QIDs or null for each corresponding organisation mention."
+    },
+    "org_aggregate_mention_ids_ss": {
+      "$ref": "#/$defs/aggregate-mention-ids",
+      "description": "Aggregate mention IDs for organisation surface/type groups present in this content item, including groups containing NIL occurrences."
+    },
+    "org_mention_ner_conf_dpfs": {
+      "$ref": "#/$defs/confidence-payload",
+      "description": "Existing payload serialization of organisation mention surfaces and NER confidence values on the 0-1 scale."
+    },
+    "org_entity_ids_dpfs": {
+      "$ref": "#/$defs/entity-payload",
+      "description": "Entity QIDs with counts of linked organisation occurrences in this content item; NIL occurrences contribute no entry."
+    },
+    "pressagency_mention_offsets_json_plain": {
+      "$ref": "#/$defs/ordered-json-string",
+      "description": "JSON-encoded ordered array of [start, length] pairs for accepted press-agency mentions in the article body."
+    },
+    "pressagency_mention_surfaces_json_plain": {
+      "$ref": "#/$defs/ordered-json-string",
+      "description": "JSON-encoded ordered array of exact press-agency mention surfaces corresponding positionally to the offsets (former nag_mentions)."
+    },
+    "pressagency_mention_qids_json_plain": {
+      "$ref": "#/$defs/ordered-json-string",
+      "description": "JSON-encoded ordered array of linked entity QIDs or null for each corresponding press-agency mention."
+    },
+    "pressagency_aggregate_mention_ids_ss": {
+      "$ref": "#/$defs/aggregate-mention-ids",
+      "description": "Aggregate mention IDs for press-agency surface/type groups present in this content item, including groups containing NIL occurrences."
+    },
+    "pressagency_mention_ner_conf_dpfs": {
+      "$ref": "#/$defs/confidence-payload",
+      "description": "Existing payload serialization of press-agency mention surfaces and NER confidence values on the 0-1 scale."
+    },
+    "pressagency_entity_ids_dpfs": {
+      "$ref": "#/$defs/entity-payload",
+      "description": "Entity QIDs with counts of linked press-agency occurrences in this content item; NIL occurrences contribute no entry."
+    },
+    "radiostation_mention_offsets_json_plain": {
+      "$ref": "#/$defs/ordered-json-string",
+      "description": "JSON-encoded ordered array of [start, length] pairs for accepted radio-station mentions in the article body."
+    },
+    "radiostation_mention_surfaces_json_plain": {
+      "$ref": "#/$defs/ordered-json-string",
+      "description": "JSON-encoded ordered array of exact radio-station mention surfaces corresponding positionally to the offsets."
+    },
+    "radiostation_mention_qids_json_plain": {
+      "$ref": "#/$defs/ordered-json-string",
+      "description": "JSON-encoded ordered array of linked entity QIDs or null for each corresponding radio-station mention."
+    },
+    "radiostation_aggregate_mention_ids_ss": {
+      "$ref": "#/$defs/aggregate-mention-ids",
+      "description": "Aggregate mention IDs for radio-station surface/type groups present in this content item, including groups containing NIL occurrences."
+    },
+    "radiostation_mention_ner_conf_dpfs": {
+      "$ref": "#/$defs/confidence-payload",
+      "description": "Existing payload serialization of radio-station mention surfaces and NER confidence values on the 0-1 scale."
+    },
+    "radiostation_entity_ids_dpfs": {
+      "$ref": "#/$defs/entity-payload",
+      "description": "Entity QIDs with counts of linked radio-station occurrences in this content item; NIL occurrences contribute no entry."
+    }
+  },
+  "$defs": {
+    "ordered-json-string": {
+      "type": "string",
+      "description": "A stored JSON string. Its decoded value is an ordered occurrence array; parsing and positional alignment are checked outside standard JSON Schema."
+    },
+    "aggregate-mention-ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^a1_[A-Za-z0-9_-]{21}[AQgw]$"
+      },
+      "uniqueItems": true
+    },
+    "confidence-payload": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "entity-payload": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}
