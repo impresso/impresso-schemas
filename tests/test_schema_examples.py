@@ -125,6 +125,7 @@ IMPRESSO_2_CASES = [
     ("json/impresso-2/semantic-enrichment/image-classification/image-classification.v1.schema.json", "examples/impresso-2/semantic-enrichment/image-classification/image-classification.excelsior-1912-09-13-a-i0207-classif-images.json"),
     # solr-indexing/content-item
     ("json/impresso-2/solr-indexing/content-item/content-item.root.paper.v1.schema.json", "examples/impresso-2/solr-indexing/content-item/ci_paper.example.json"),
+    ("json/impresso-2/solr-indexing/content-item/content-item.root.paper.v2.schema.json", "examples/impresso-2/solr-indexing/content-item/ci_paper.v2.example.json"),
     ("json/impresso-2/solr-indexing/content-item/content-item.root.paper.v1.schema.json", "examples/impresso-2/solr-indexing/content-item/ci_typescript.example.json"),
     ("json/impresso-2/solr-indexing/content-item/content-item.root.image.v1.schema.json", "examples/impresso-2/solr-indexing/content-item/ci_image.example.json"),
     ("json/impresso-2/solr-indexing/content-item/content-item.root.image.v1.schema.json", "examples/impresso-2/solr-indexing/content-item/ci_image.example1.json"),
@@ -132,8 +133,11 @@ IMPRESSO_2_CASES = [
     # solr-indexing/semantic-enrichments
     ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.entities.v1.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_entities.example.json"),
     ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.entities.v2.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_entities.v2.example.json"),
+    ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.entities.v3.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_entities.v3.example.json"),
     ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.mentions.v1.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_mentions.example.json"),
     ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.mentions.v2.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_mentions.v2.example.json"),
+    ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.mentions.v3.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_mentions.v3.example.json"),
+    ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.mentions-mediasources.v1.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_mentions-mediasources.example.json"),
     ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.mentions.ordinary.v2.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_mentions.ordinary.v2.example.json"),
     ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.mentions.ordinary.v2.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_mentions.ordinary.v2.titled.example.json"),
     ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.topics.v1.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_topics.example.json"),
