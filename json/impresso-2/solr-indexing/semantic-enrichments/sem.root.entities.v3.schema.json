@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/semantic-enrichments/sem.root.entities.v3.schema.json",
+  "title": "Entity Solr Document (v3)",
+  "description": "Schema for entity documents produced by the v3 importers and according to the new representation  (Impresso Project). The entity document is a Solr document containing frequency and identifier fields, and it is the canonical representation of an entity in the Impresso Project. [CODEX please complete]",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique Wikidata identifier of the entity.",
+      "pattern": "^Q[0-9]+$"
+    },
+    "default_label_s": {
+      "type": "string",
+      "description": "TODO",
+      "minLength": 1
+    },
+     "label_fr_s": {
+      "type": "string",
+      "description": "TODO",
+      "minLength": 1
+    },
+     "label_de_s": {
+      "type": "string",
+      "description": "TODO",
+      "minLength": 1
+    },
+     "label_en_s": {
+      "type": "string",
+      "description": "TODO",
+      "minLength": 1
+    },
+    "label_other_s": {
+      "type": "string",
+      "description": "TODO",
+      "minLength": 1
+    },
+    "entitySuggest": {
+      "type": "array",
+      "description": "Optional Solr suggester field documenting the labels exposed for entity auto-completion. It is populated by Solr configuration and may be absent from submitted documents.",
+      "items": { "type": "string" }
+    },
+    "ner_entity_type_s": {
+      "type": "string",
+      "description": "One NER type selected by the importer as the most frequent predicted type among accepted occurrences linked to this QID. Tie resolution is importer-defined; this field records one selected type and does not use a mixed value.",
+      "enum": [
+        "pers",
+        "loc",
+        "org",
+        "pressagency",
+        "radiostation"
+      ]
+    },
+    "content_item_count_l": {
+      "type": "integer",
+      "description": "Number of distinct content items containing at least one accepted occurrence linked to this QID. Former field name was article_fq_f.",
+      "minimum": 0
+    },
+    "mention_count_l": {
+      "type": "integer",
+      "description": "Number of accepted mention occurrences linked to this QID across the indexed population. Former field name was mention_fq_f.",
+      "minimum": 0
+    },
+    "ner_type_pers_count_l": {
+      "type": "integer",
+      "description": "number of accepted mention occurrences linked to this QID across the indexed population, with NER type `pers`",
+      "minimum": 0
+    },
+    "ner_type_loc_count_l": {
+      "type": "integer",
+      "description": "number of accepted mention occurrences linked to this QID across the indexed population, with NER type `loc`",
+      "minimum": 0
+    },
+    "ner_type_org_count_l": {
+      "type": "integer",
+      "description": "number of accepted mention occurrences linked to this QID across the indexed population, with NER type `org`",
+      "minimum": 0
+    },
+    "ner_type_pressagency_count_l": {
+      "type": "integer",
+      "description": "number of accepted mention occurrences linked to this QID across the indexed population, with NER type `pressagency`",
+      "minimum": 0
+    },
+    "ner_type_radiostation_count_l": {
+      "type": "integer",
+      "description": "number of accepted mention occurrences linked to this QID across the indexed population, with NER type `radiostation`",
+      "minimum": 0
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "default_label_s",
+    "label_fr_s",
+    "label_de_s",
+    "label_en_s",
+    "label_other_s",
+    "ner_entity_type_s",
+    "content_item_count_l"
+  ]
+}
