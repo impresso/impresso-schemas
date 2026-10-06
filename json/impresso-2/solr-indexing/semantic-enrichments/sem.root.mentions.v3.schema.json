@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/semantic-enrichments/sem.root.mentions.v3.schema.json",
+  "title": "Aggregate Entity Mention Solr Document (v3) - Classic entity types",
+  "description": "Schema for aggregate entity mention documents produced by the v2 importers and according to the new representation (Impresso Project). A mention document aggregates every occurrence sharing an exact surface and type. [CODEX please complete]",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Deterministic aggregate identifier: 'a1_' ('a' for aggregate and '1' for the version of the id pattern) followed by the unpadded base64url encoding of the first 16 bytes of the SHA-256 digest of the compact JSON encoding of [surface, predicted type]. The identifier is based only on the exact aggregate surface and predicted type; title, entity QID, confidence and counts do not participate.",
+      "pattern": "^a1_[A-Za-z0-9_-]{21}[AQgw]$"
+    },
+    "surface_s": {
+      "type": "string",
+      "description": "The surface form of the aggregate entity mention. Previous field name: l_s.",
+      "minLength": 1
+    },
+    "ner_predicted_type_s": {
+      "type": "string",
+      "enum": ["pers", "loc", "org"],
+      "description": "The predicted NER type of the aggregate entity mention. The aggregate identity is the exact surface and this type. Media-source types are validated by the dedicated media-source schema."
+    },
+    "occurrence_count_l": {
+      "type": "integer",
+      "description": "Number of accepted occurrences in this exact surface/type aggregate, including linked and NIL occurrences (as float in Solr).",
+      "minimum": 0
+    },
+    "content_item_count_l": {
+      "type": "integer",
+      "description": "Number of distinct content items containing this exact surface/type aggregate (as float in Solr).",
+      "minimum": 0
+    },
+    "linked_occurrence_count_l": {
+      "type": "integer",
+      "description": "Number of occurrences in this aggregate linked to an entity QID(as float in Solr). It may be zero for an all-NIL aggregate.",
+      "minimum": 0
+    },
+    "linked_content_item_count_l": {
+      "type": "integer",
+      "description": "Number of distinct content items containing at least one linked occurrence in this aggregate (as float in Solr). It may be zero for an all-NIL aggregate.",
+      "minimum": 0
+    },
+    "nil_occurrence_count_l": {
+      "type": "integer",
+      "description": "Number of occurrences in this aggregate with no linked entity QID (as float in Solr). It may be zero for an all-linked aggregate.",
+      "minimum": 0
+    }
+  },
+  "required": [
+    "id",
+    "surface_s",
+    "ner_predicted_type_s",
+    "occurrence_count_l"
+  ],
+  "additionalProperties": false
+}
