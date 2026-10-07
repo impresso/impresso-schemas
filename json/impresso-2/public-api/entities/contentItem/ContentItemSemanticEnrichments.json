@@ -36,6 +36,12 @@
           "items": {
             "$ref": "./ContentItemNamedEntity.json"
           }
+        },
+        "radiostations": {
+          "type": "array",
+          "items": {
+            "$ref": "./ContentItemNamedEntity.json"
+          }
         }
       },
       "additionalProperties": false
@@ -63,6 +69,12 @@
           }
         },
         "newsagencies": {
+          "type": "array",
+          "items": {
+            "$ref": "./ContentItemMention.json"
+          }
+        },
+        "radiostations": {
           "type": "array",
           "items": {
             "$ref": "./ContentItemMention.json"
