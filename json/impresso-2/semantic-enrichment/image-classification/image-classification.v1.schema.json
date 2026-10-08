@@ -18,13 +18,59 @@
       "description": "Timestamp indicating when the embedding was created (e.g., '2024-10-09T09:29:02Z').",
       "format": "date-time"
     },
-    "level0_prediction": {
-      "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/common/image-typology-v2-class.l0.v1.schema.json",
-      "description": "Prediction for level 0 for this image CI."
+    "level0_predictions": {
+      "type": "array",
+      "description": "Predictions for level 0 for this image CI. Both classes are always listed with their confidence, so a threshold other than 0.5 can be applied (e.g. keep CIs whose 'image' confidence is at least 0.8).",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "properties": {
+          "class": {
+            "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/common/image-typology-v2-class.l0.v1.schema.json"
+          },
+          "confidence": {
+            "type": "number",
+            "description": "Confidence score of the class. The two confidences sum to 1.",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "pred_number": {
+            "type": "integer",
+            "description": "Rank of the class: 1 for the class predicted by the model (0.5 threshold), 2 for the other.",
+            "minimum": 1,
+            "maximum": 2
+          }
+        },
+        "required": ["class", "confidence", "pred_number"]
+      }
     },
-    "level1_prediction": {
-      "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/common/image-typology-v2-class.l1.v1.schema.json",
-      "description": "Prediction for level 1 for this image CI."
+    "level1_predictions": {
+      "type": "array",
+      "description": "Predictions for level 1 for this image CI. Both classes are always listed with their confidence, so a threshold other than 0.5 can be applied. Scores assume the CI is an image and should be read together with level 0.",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "properties": {
+          "class": {
+            "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/common/image-typology-v2-class.l1.v1.schema.json"
+          },
+          "confidence": {
+            "type": "number",
+            "description": "Confidence score of the class. The two confidences sum to 1.",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "pred_number": {
+            "type": "integer",
+            "description": "Rank of the class: 1 for the class predicted by the model (0.5 threshold), 2 for the other.",
+            "minimum": 1,
+            "maximum": 2
+          }
+        },
+        "required": ["class", "confidence", "pred_number"]
+      }
     },
     "level2_predictions": {
       "type": "array",
@@ -80,8 +126,8 @@
     "ci_id",
     "ts",
     "model_id",
-    "level0_prediction",
-    "level1_prediction",
+    "level0_predictions",
+    "level1_predictions",
     "level2_predictions",
     "level3_predictions"
   ]

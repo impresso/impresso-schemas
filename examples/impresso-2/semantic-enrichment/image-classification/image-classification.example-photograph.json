@@ -1,0 +1,35 @@
+{
+  "ci_id": "example-1925-03-14-a-i0012",
+  "ts": "2025-10-17T14:10:17Z",
+  "model_id": "class-images_dinov2_v0.0.1",
+  "level0_predictions": [
+    { "class": "image", "confidence": 0.9911, "pred_number": 1 },
+    { "class": "not_image", "confidence": 0.0089, "pred_number": 2 }
+  ],
+  "level1_predictions": [
+    { "class": "photograph", "confidence": 0.9704, "pred_number": 1 },
+    { "class": "not_photograph", "confidence": 0.0296, "pred_number": 2 }
+  ],
+  "level2_predictions": [
+    {
+      "class": "informative_or_illustrative"
+    }
+  ],
+  "level3_predictions": [
+    {
+      "class": "human_rep_portrait",
+      "confidence": 0.7618,
+      "pred_number": 1
+    },
+    {
+      "class": "human_rep_scene",
+      "confidence": 0.1835,
+      "pred_number": 2
+    },
+    {
+      "class": "human_rep_fashion_visual",
+      "confidence": 0.0311,
+      "pred_number": 3
+    }
+  ]
+}
