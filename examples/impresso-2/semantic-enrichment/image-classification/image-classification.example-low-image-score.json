@@ -1,0 +1,35 @@
+{
+  "ci_id": "example-1925-03-14-a-i0014",
+  "ts": "2025-10-17T14:10:17Z",
+  "model_id": "class-images_dinov2_v0.0.1",
+  "level0_predictions": [
+    { "class": "not_image", "confidence": 0.65, "pred_number": 1 },
+    { "class": "image", "confidence": 0.35, "pred_number": 2 }
+  ],
+  "level1_predictions": [
+    { "class": "photograph", "confidence": 0.8126, "pred_number": 1 },
+    { "class": "not_photograph", "confidence": 0.1874, "pred_number": 2 }
+  ],
+  "level2_predictions": [
+    {
+      "class": "informative_or_illustrative"
+    }
+  ],
+  "level3_predictions": [
+    {
+      "class": "scenery_landscape",
+      "confidence": 0.6893,
+      "pred_number": 1
+    },
+    {
+      "class": "human_rep_scene",
+      "confidence": 0.2142,
+      "pred_number": 2
+    },
+    {
+      "class": "other",
+      "confidence": 0.0521,
+      "pred_number": 3
+    }
+  ]
+}

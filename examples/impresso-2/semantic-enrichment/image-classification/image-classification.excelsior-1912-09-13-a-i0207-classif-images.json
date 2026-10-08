@@ -2,8 +2,14 @@
   "ci_id": "excelsior-1912-09-13-a-i0207",
   "ts": "2025-10-17T14:10:17Z",
   "model_id": "class-images_dinov2_v0.0.1",
-  "level0_prediction": "image",
-  "level1_prediction": "not_photograph",
+  "level0_predictions": [
+    { "class": "image", "confidence": 0.9873, "pred_number": 1 },
+    { "class": "not_image", "confidence": 0.0127, "pred_number": 2 }
+  ],
+  "level1_predictions": [
+    { "class": "not_photograph", "confidence": 0.9412, "pred_number": 1 },
+    { "class": "photograph", "confidence": 0.0588, "pred_number": 2 }
+  ],
   "level2_predictions": [
     {
       "class": "decorative"

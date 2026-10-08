@@ -123,6 +123,9 @@ IMPRESSO_2_CASES = [
     ("json/impresso-2/semantic-enrichment/text-reuse/passage.v1.schema.json", "examples/impresso-2/semantic-enrichment/text-reuse/passage.tr_passage_example.json"),
     ("json/impresso-2/semantic-enrichment/image-embeddings/image-embeddings.v1.schema.json", "examples/impresso-2/semantic-enrichment/image-embeddings/image-embeddings.image_embedding_example.json"),
     ("json/impresso-2/semantic-enrichment/image-classification/image-classification.v1.schema.json", "examples/impresso-2/semantic-enrichment/image-classification/image-classification.excelsior-1912-09-13-a-i0207-classif-images.json"),
+    ("json/impresso-2/semantic-enrichment/image-classification/image-classification.v1.schema.json", "examples/impresso-2/semantic-enrichment/image-classification/image-classification.example-photograph.json"),
+    ("json/impresso-2/semantic-enrichment/image-classification/image-classification.v1.schema.json", "examples/impresso-2/semantic-enrichment/image-classification/image-classification.example-not-image.json"),
+    ("json/impresso-2/semantic-enrichment/image-classification/image-classification.v1.schema.json", "examples/impresso-2/semantic-enrichment/image-classification/image-classification.example-low-image-score.json"),
     # solr-indexing/content-item
     ("json/impresso-2/solr-indexing/content-item/content-item.root.paper.v1.schema.json", "examples/impresso-2/solr-indexing/content-item/ci_paper.example.json"),
     ("json/impresso-2/solr-indexing/content-item/content-item.root.paper.v1.schema.json", "examples/impresso-2/solr-indexing/content-item/ci_typescript.example.json"),
