@@ -25,6 +25,25 @@
         }
       },
       "required": ["total", "limit", "offset"]
+    },
+    "meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "provenance": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "token": {
+              "type": "string"
+            },
+            "kid": {
+              "type": "string"
+            }
+          },
+          "required": ["token", "kid"]
+        }
+      }
     }
   },
   "required": ["data", "pagination"],
