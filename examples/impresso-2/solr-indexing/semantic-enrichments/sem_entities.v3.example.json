@@ -13,5 +13,6 @@
   "ner_type_loc_count_l": 2,
   "ner_type_org_count_l": 1,
   "ner_type_pressagency_count_l": 0,
-  "ner_type_radiostation_count_l": 0
+  "ner_type_radiostation_count_l": 0,
+  "scopes_ss": ["body"]
 }

@@ -8,5 +8,6 @@
   "content_item_count_l": 2,
   "linked_occurrence_count_l": 1,
   "linked_content_item_count_l": 1,
-  "nil_occurrence_count_l": 1
+  "nil_occurrence_count_l": 1,
+  "scopes_ss": ["body"]
 }
