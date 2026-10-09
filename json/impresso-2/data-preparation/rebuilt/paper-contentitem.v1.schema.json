@@ -110,7 +110,7 @@
       "properties": {
         "title_text": {
           "type": "string",
-          "description": "Plain text of the section title."
+          "description": "Plain text of the section title. In a newspaper issue, a section groups content items under a shared title."
         },
         "composing_ci_ids": {
           "type": "array",
