@@ -2,12 +2,12 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/semantic-enrichments/sem.root.mentions.v3.schema.json",
   "title": "Aggregate Entity Mention Solr Document (v3) - Classic entity types",
-  "description": "Schema for aggregate entity mention documents produced by the v2 importers and according to the new representation (Impresso Project). A mention document aggregates every occurrence sharing an exact surface and type.",
+  "description": "Ordinary aggregate-mention Solr document in the v3 representation. One document aggregates accepted body and title occurrences with the same exact surface and predicted NER type across content items. QID, NIL status and text part do not split its identity; media-source types use their dedicated schema.",
   "type": "object",
   "properties": {
     "id": {
       "type": "string",
-      "description": "Deterministic aggregate identifier: 'a1_' ('a' for aggregate and '1' for the version of the id pattern) followed by the unpadded base64url encoding of the first 16 bytes of the SHA-256 digest of the compact JSON encoding of [surface, predicted type]. The identifier is based only on the exact aggregate surface and predicted type; title, entity QID, confidence and counts do not participate.",
+      "description": "Deterministic aggregate identifier: a1_ followed by unpadded base64url encoding of the first 16 bytes of SHA-256 of compact JSON [surface, predicted type], encoded as UTF-8 without ASCII escaping, extra whitespace or Unicode normalization. Only exact surface and predicted type participate; person-title metadata, body/title text part, entity QID, confidence and counts do not.",
       "pattern": "^a1_[A-Za-z0-9_-]{21}[AQgw]$"
     },
     "surface_s": {
@@ -17,12 +17,12 @@
     },
     "mentionSuggest": {
       "type": "array",
-      "description": "Solr suggester field documenting the surfaces exposed for mention auto-completion. It is populated by Solr configuration and is absent from generated documents. In other words: present only once indexed.",
+      "description": "Optional Solr-generated array of surfaces exposed for mention auto-completion. It is absent from submitted disk documents and may be present in indexed readback.",
       "items": { "type": "string" }
     },
     "suggest_payload_s": {
     "type": "string",
-    "description": "Optional Solr suggester payload field containing `a1_...-ID|type`. Built by the importer; used by Solr configuration for mention auto-completion response."
+    "description": "Schema-optional importer-built Solr suggester payload containing the document id followed by a literal pipe and ner_predicted_type_s: a1_<digest>|type. The revised importer populates it for every ordinary aggregate document."
   },
     "ner_predicted_type_s": {
       "type": "string",
@@ -31,32 +31,32 @@
     },
     "occurrence_count_l": {
       "type": "integer",
-      "description": "Number of accepted occurrences in this exact surface/type aggregate, including linked and NIL occurrences (as float in Solr).",
+      "description": "Integer number of accepted body and title occurrences in this exact surface/type aggregate, including linked and NIL occurrences.",
       "minimum": 0
     },
     "content_item_count_l": {
       "type": "integer",
-      "description": "Number of distinct content items containing this exact surface/type aggregate (as float in Solr).",
+      "description": "Integer number of distinct content items containing an accepted body or title occurrence of this aggregate. Count each content item once across both text parts.",
       "minimum": 0
     },
     "linked_occurrence_count_l": {
       "type": "integer",
-      "description": "Number of occurrences in this aggregate linked to an entity QID(as float in Solr). It may be zero for an all-NIL aggregate.",
+      "description": "Integer number of accepted body and title occurrences in this aggregate linked to an entity QID. It may be zero for an all-NIL aggregate.",
       "minimum": 0
     },
     "linked_content_item_count_l": {
       "type": "integer",
-      "description": "Number of distinct content items containing at least one linked occurrence in this aggregate (as float in Solr). It may be zero for an all-NIL aggregate.",
+      "description": "Integer number of distinct content items containing at least one linked body or title occurrence in this aggregate. Count each content item once across both parts; zero is permitted for an all-NIL aggregate.",
       "minimum": 0
     },
     "nil_occurrence_count_l": {
       "type": "integer",
-      "description": "Number of occurrences in this aggregate with no linked entity QID (as float in Solr). It may be zero for an all-linked aggregate.",
+      "description": "Integer number of accepted body and title occurrences in this aggregate without a linked entity QID. It may be zero for an all-linked aggregate.",
       "minimum": 0
     },
     "scopes_ss": {
       "type": "array",
-      "description": "The scopes of the aggregate entity mention. The scopes are the content-item fields in which the surface was found. The importer populates this field with the union of all scopes of all occurrences in the aggregate.",
+      "description": "Optional presence scopes for this aggregate: the union of body/title text parts containing its accepted occurrences, whether linked or NIL. Emit body before title when both are present. Scopes do not split aggregate identity or counts; occurrence counts combine both parts and distinct-content-item counts use their union.",
       "items": {
         "type": "string",
         "enum": ["body", "title"]
