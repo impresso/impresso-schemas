@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/semantic-enrichments/sem.root.entities.v3.schema.json",
   "title": "Entity Solr Document (v3)",
-  "description": "Schema for entity documents produced by the v3 importers and according to the new representation  (Impresso Project). The entity document is a Solr document containing frequency and identifier fields, and it is the canonical representation of an entity in the Impresso Project.",
+  "description": "Entity Solr document in the v3 representation: one document per non-null Wikidata QID across accepted body and title occurrences in the indexed population. It preserves supplied language-specific labels and a display default, records a selected NER type, and distinguishes linked-occurrence counts from distinct-content-item counts.",
   "type": "object",
   "properties": {
     "id": {
@@ -12,7 +12,7 @@
     },
     "default_label_s": {
       "type": "string",
-      "description": "The default label of the entity, chosen from the available labels. Default selection is English label → accepted language-specific label matching `wkpedia_lg` → accepted other-language label → Wikipedia page name.",
+      "description": "Required display label. Prefer the English label, then an accepted label matching the selected Wikipedia reference language, then an accepted other or remaining available label, and finally the Wikipedia page name. Across multiple references for a QID, prefer en, fr, de, then remaining language codes alphabetically, with exact page name as tie-break. The importer uses a versioned deterministic policy for any remaining label choice; absent labels do not create empty language-specific fields.",
       "minLength": 1
     },
     "entitySuggest": {
@@ -22,7 +22,7 @@
     },
     "ner_entity_type_s": {
       "type": "string",
-      "description": "One NER type selected by the importer as the most frequent predicted type among accepted occurrences linked to this QID. Tie resolution is importer-defined; this field records one selected type and does not use a mixed value.",
+      "description": "One NER type selected by maximum accepted linked-occurrence count across body and title. Among tied ordinary types (very unlikely), prefer loc, then pers, then org. Precedence involving media-source types belongs to the separately reviewed media contract. This field records one type and does not use a mixed value.",
       "enum": [
         "pers",
         "loc",
@@ -33,46 +33,46 @@
     },
     "content_item_count_l": {
       "type": "integer",
-      "description": "Number of distinct content items containing at least one accepted occurrence linked to this QID. Former field name was article_fq_f.",
+      "description": "Integer number of distinct content items containing at least one accepted body or title occurrence linked to this QID. Count each content item once across text parts and NER types. Former field name: article_fq_f.",
       "minimum": 0
     },
     "mention_count_l": {
       "type": "integer",
-      "description": "Number of accepted mention occurrences linked to this QID across the indexed population. Former field name was mention_fq_f.",
+      "description": "Integer number of accepted body and title mention occurrences linked to this QID across the indexed population. Former field name: mention_fq_f.",
       "minimum": 0
     },
     "ner_type_pers_count_l": {
       "type": "integer",
-      "description": "number of accepted mention occurrences linked to this QID across the indexed population, with NER type `pers`",
+      "description": "Integer number of accepted body and title occurrences linked to this QID with NER type pers.",
       "minimum": 0
     },
     "ner_type_loc_count_l": {
       "type": "integer",
-      "description": "number of accepted mention occurrences linked to this QID across the indexed population, with NER type `loc`",
+      "description": "Integer number of accepted body and title occurrences linked to this QID with NER type loc.",
       "minimum": 0
     },
     "ner_type_org_count_l": {
       "type": "integer",
-      "description": "number of accepted mention occurrences linked to this QID across the indexed population, with NER type `org`",
+      "description": "Integer number of accepted body and title occurrences linked to this QID with NER type org.",
       "minimum": 0
     },
     "ner_type_pressagency_count_l": {
       "type": "integer",
-      "description": "number of accepted mention occurrences linked to this QID across the indexed population, with NER type `pressagency`",
+      "description": "Integer number of accepted body and title occurrences linked to this QID with NER type pressagency.",
       "minimum": 0
     },
     "ner_type_radiostation_count_l": {
       "type": "integer",
-      "description": "number of accepted mention occurrences linked to this QID across the indexed population, with NER type `radiostation`",
+      "description": "Integer number of accepted body and title occurrences linked to this QID with NER type radiostation.",
       "minimum": 0
     },
      "suggest_payload_s": {
        "type": "string",
-       "description": "Solr suggester payload field containing `QID|type`. Built by the importer; used by Solr configuration for entity auto-completion response."
+       "description": "Required importer-built Solr suggester payload containing the document id followed by a literal pipe and ner_entity_type_s: QID|type."
      },
     "scopes_ss": {
       "type": "array",
-      "description": "The scopes of the aggregate entity mention. The scopes are the content-item fields in which the entity was mentioned. The importer populates this field with the union of all scopes of all its linked mentions.",
+      "description": "Optional presence scopes for this entity: the union of body/title text parts containing accepted occurrences linked to this QID. Emit body before title when both are present. Scopes do not split entity identity or counts; occurrence counts combine both parts and distinct-content-item counts use their union.",
       "items": {
         "type": "string",
         "enum": ["body", "title"]
