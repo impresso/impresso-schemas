@@ -1,0 +1,12 @@
+{
+  "id": "a1_5L8y5pneCOE1BbWzpF6sYA",
+  "surface_s": "Pékin",
+  "ner_predicted_type_s": "loc",
+  "mentionSuggest": ["Pékin"],
+  "suggest_payload_s": "a1_5L8y5pneCOE1BbWzpF6sYA|loc",
+  "occurrence_count_l": 2,
+  "content_item_count_l": 2,
+  "linked_occurrence_count_l": 1,
+  "linked_content_item_count_l": 1,
+  "nil_occurrence_count_l": 1
+}

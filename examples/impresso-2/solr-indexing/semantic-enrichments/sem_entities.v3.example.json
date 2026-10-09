@@ -1,0 +1,17 @@
+{
+  "id": "Q956",
+  "default_label_s": "Beijing",
+  "label_fr_s": "Pékin",
+  "label_de_s": "Peking",
+  "label_en_s": "Beijing",
+  "entitySuggest": ["Beijing", "Pékin", "Peking", "Pekin"],
+  "suggest_payload_s": "Q956|loc",
+  "ner_entity_type_s": "loc",
+  "content_item_count_l": 2,
+  "mention_count_l": 3,
+  "ner_type_pers_count_l": 0,
+  "ner_type_loc_count_l": 2,
+  "ner_type_org_count_l": 1,
+  "ner_type_pressagency_count_l": 0,
+  "ner_type_radiostation_count_l": 0
+}
