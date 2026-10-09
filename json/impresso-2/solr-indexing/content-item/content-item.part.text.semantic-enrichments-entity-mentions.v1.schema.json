@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/content-item/content-item.part.text.semantic-enrichments-entity-mentions.v1.schema.json",
   "title": "Entity and Mention Enrichment Fields",
-  "description": "Entity and aggregate-mention fields embedded in main content-item documents. Occurrence lists describe accepted mentions in the article body; title mentions are not included in this contract.",
+  "description": "Entity and aggregate-mention fields embedded in main content-item documents. Occurrence lists describe accepted mentions in the article body and title; title offsets are relative to the title text used for the annotation, not the article body.",
   "type": "object",
   "properties": {
     "pers_mention_offsets_json_plain": {
@@ -29,6 +29,30 @@
       "$ref": "#/$defs/entity-payload",
       "description": "Entity QIDs with counts of linked person occurrences in this content item; NIL occurrences contribute no entry."
     },
+    "pers_title_mention_offsets_json_plain": {
+      "$ref": "#/$defs/ordered-json-string",
+      "description": "JSON-encoded ordered array of [start, length] pairs for accepted person mentions in the title text used for this annotation."
+    },
+    "pers_title_mention_surfaces_json_plain": {
+      "$ref": "#/$defs/ordered-json-string",
+      "description": "JSON-encoded ordered array of exact person title-mention surfaces corresponding positionally to the offsets."
+    },
+    "pers_title_mention_qids_json_plain": {
+      "$ref": "#/$defs/ordered-json-string",
+      "description": "JSON-encoded ordered array of linked entity QIDs or null for each corresponding person title mention."
+    },
+    "pers_title_aggregate_mention_ids_ss": {
+      "$ref": "#/$defs/aggregate-mention-ids",
+      "description": "Aggregate mention IDs for person surface/type groups present in this content item's title."
+    },
+    "pers_title_mention_ner_conf_dpfs": {
+      "$ref": "#/$defs/confidence-payload",
+      "description": "Existing payload serialization of person title-mention surfaces and NER confidence values on the 0-1 scale."
+    },
+    "pers_title_entity_ids_dpfs": {
+      "$ref": "#/$defs/entity-payload",
+      "description": "Entity QIDs with counts of linked person occurrences in this content item's title; NIL occurrences contribute no entry."
+    },
     "loc_mention_offsets_json_plain": {
       "$ref": "#/$defs/ordered-json-string",
       "description": "JSON-encoded ordered array of [start, length] pairs for accepted location mentions in the article body."
@@ -52,6 +76,30 @@
     "loc_entity_ids_dpfs": {
       "$ref": "#/$defs/entity-payload",
       "description": "Entity QIDs with counts of linked location occurrences in this content item; NIL occurrences contribute no entry."
+    },
+    "loc_title_mention_offsets_json_plain": {
+      "$ref": "#/$defs/ordered-json-string",
+      "description": "JSON-encoded ordered array of [start, length] pairs for accepted location mentions in the title text used for this annotation."
+    },
+    "loc_title_mention_surfaces_json_plain": {
+      "$ref": "#/$defs/ordered-json-string",
+      "description": "JSON-encoded ordered array of exact location title-mention surfaces corresponding positionally to the offsets."
+    },
+    "loc_title_mention_qids_json_plain": {
+      "$ref": "#/$defs/ordered-json-string",
+      "description": "JSON-encoded ordered array of linked entity QIDs or null for each corresponding location title mention."
+    },
+    "loc_title_aggregate_mention_ids_ss": {
+      "$ref": "#/$defs/aggregate-mention-ids",
+      "description": "Aggregate mention IDs for location surface/type groups present in this content item's title."
+    },
+    "loc_title_mention_ner_conf_dpfs": {
+      "$ref": "#/$defs/confidence-payload",
+      "description": "Existing payload serialization of location title-mention surfaces and NER confidence values on the 0-1 scale."
+    },
+    "loc_title_entity_ids_dpfs": {
+      "$ref": "#/$defs/entity-payload",
+      "description": "Entity QIDs with counts of linked location occurrences in this content item's title; NIL occurrences contribute no entry."
     },
     "org_mention_offsets_json_plain": {
       "$ref": "#/$defs/ordered-json-string",
@@ -77,6 +125,30 @@
       "$ref": "#/$defs/entity-payload",
       "description": "Entity QIDs with counts of linked organisation occurrences in this content item; NIL occurrences contribute no entry."
     },
+    "org_title_mention_offsets_json_plain": {
+      "$ref": "#/$defs/ordered-json-string",
+      "description": "JSON-encoded ordered array of [start, length] pairs for accepted organisation mentions in the title text used for this annotation."
+    },
+    "org_title_mention_surfaces_json_plain": {
+      "$ref": "#/$defs/ordered-json-string",
+      "description": "JSON-encoded ordered array of exact organisation title-mention surfaces corresponding positionally to the offsets."
+    },
+    "org_title_mention_qids_json_plain": {
+      "$ref": "#/$defs/ordered-json-string",
+      "description": "JSON-encoded ordered array of linked entity QIDs or null for each corresponding organisation title mention."
+    },
+    "org_title_aggregate_mention_ids_ss": {
+      "$ref": "#/$defs/aggregate-mention-ids",
+      "description": "Aggregate mention IDs for organisation surface/type groups present in this content item's title."
+    },
+    "org_title_mention_ner_conf_dpfs": {
+      "$ref": "#/$defs/confidence-payload",
+      "description": "Existing payload serialization of organisation title-mention surfaces and NER confidence values on the 0-1 scale."
+    },
+    "org_title_entity_ids_dpfs": {
+      "$ref": "#/$defs/entity-payload",
+      "description": "Entity QIDs with counts of linked organisation occurrences in this content item's title; NIL occurrences contribute no entry."
+    },
     "pressagency_mention_offsets_json_plain": {
       "$ref": "#/$defs/ordered-json-string",
       "description": "JSON-encoded ordered array of [start, length] pairs for accepted press-agency mentions in the article body."
@@ -101,6 +173,30 @@
       "$ref": "#/$defs/entity-payload",
       "description": "Entity QIDs with counts of linked press-agency occurrences in this content item; NIL occurrences contribute no entry."
     },
+    "pressagency_title_mention_offsets_json_plain": {
+      "$ref": "#/$defs/ordered-json-string",
+      "description": "JSON-encoded ordered array of [start, length] pairs for accepted press-agency mentions in the title text used for this annotation."
+    },
+    "pressagency_title_mention_surfaces_json_plain": {
+      "$ref": "#/$defs/ordered-json-string",
+      "description": "JSON-encoded ordered array of exact press-agency title-mention surfaces corresponding positionally to the offsets."
+    },
+    "pressagency_title_mention_qids_json_plain": {
+      "$ref": "#/$defs/ordered-json-string",
+      "description": "JSON-encoded ordered array of linked entity QIDs or null for each corresponding press-agency title mention."
+    },
+    "pressagency_title_aggregate_mention_ids_ss": {
+      "$ref": "#/$defs/aggregate-mention-ids",
+      "description": "Aggregate mention IDs for press-agency surface/type groups present in this content item's title."
+    },
+    "pressagency_title_mention_ner_conf_dpfs": {
+      "$ref": "#/$defs/confidence-payload",
+      "description": "Existing payload serialization of press-agency title-mention surfaces and NER confidence values on the 0-1 scale."
+    },
+    "pressagency_title_entity_ids_dpfs": {
+      "$ref": "#/$defs/entity-payload",
+      "description": "Entity QIDs with counts of linked press-agency occurrences in this content item's title; NIL occurrences contribute no entry."
+    },
     "radiostation_mention_offsets_json_plain": {
       "$ref": "#/$defs/ordered-json-string",
       "description": "JSON-encoded ordered array of [start, length] pairs for accepted radio-station mentions in the article body."
@@ -124,6 +220,30 @@
     "radiostation_entity_ids_dpfs": {
       "$ref": "#/$defs/entity-payload",
       "description": "Entity QIDs with counts of linked radio-station occurrences in this content item; NIL occurrences contribute no entry."
+    },
+    "radiostation_title_mention_offsets_json_plain": {
+      "$ref": "#/$defs/ordered-json-string",
+      "description": "JSON-encoded ordered array of [start, length] pairs for accepted radio-station mentions in the title text used for this annotation."
+    },
+    "radiostation_title_mention_surfaces_json_plain": {
+      "$ref": "#/$defs/ordered-json-string",
+      "description": "JSON-encoded ordered array of exact radio-station title-mention surfaces corresponding positionally to the offsets."
+    },
+    "radiostation_title_mention_qids_json_plain": {
+      "$ref": "#/$defs/ordered-json-string",
+      "description": "JSON-encoded ordered array of linked entity QIDs or null for each corresponding radio-station title mention."
+    },
+    "radiostation_title_aggregate_mention_ids_ss": {
+      "$ref": "#/$defs/aggregate-mention-ids",
+      "description": "Aggregate mention IDs for radio-station surface/type groups present in this content item's title."
+    },
+    "radiostation_title_mention_ner_conf_dpfs": {
+      "$ref": "#/$defs/confidence-payload",
+      "description": "Existing payload serialization of radio-station title-mention surfaces and NER confidence values on the 0-1 scale."
+    },
+    "radiostation_title_entity_ids_dpfs": {
+      "$ref": "#/$defs/entity-payload",
+      "description": "Entity QIDs with counts of linked radio-station occurrences in this content item's title; NIL occurrences contribute no entry."
     }
   },
   "$defs": {
