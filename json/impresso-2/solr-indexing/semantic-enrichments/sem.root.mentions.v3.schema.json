@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/semantic-enrichments/sem.root.mentions.v3.schema.json",
-  "title": "Aggregate Entity Mention Solr Document (v3) - Classic entity types",
-  "description": "Ordinary aggregate-mention Solr document in the v3 representation. One document aggregates accepted body and title occurrences with the same exact surface and predicted NER type across content items. QID, NIL status and text part do not split its identity; media-source types use their dedicated schema.",
+  "title": "Aggregate Entity Mention Solr Document (v3)",
+  "description": "Shared aggregate-mention Solr document in the v3 representation for pers, loc, org, pressagency and radiostation. One document aggregates accepted body and title occurrences with the same exact surface and predicted type across content items and annotation sources. QID, NIL status and text part do not split its identity. The same surface with different types produces separate aggregates; their typed occurrence counts may overlap and must not be summed to infer unique entity-span totals.",
   "type": "object",
   "properties": {
     "id": {
@@ -22,12 +22,12 @@
     },
     "suggest_payload_s": {
     "type": "string",
-    "description": "Schema importer-built Solr suggester payload containing the document id followed by a literal pipe and ner_predicted_type_s: a1_<digest>|type. The revised importer populates it for every ordinary aggregate document."
+    "description": "Required importer-built Solr suggester payload containing the document id followed by a literal pipe and ner_predicted_type_s: a1_<digest>|type. The importer populates it for every aggregate document, including pressagency and radiostation."
   },
     "ner_predicted_type_s": {
       "type": "string",
       "enum": ["pers", "loc", "org", "pressagency", "radiostation"],
-      "description": "The predicted NER type of the aggregate entity mention. The aggregate identity is the exact surface and this type. Media-source types are validated by the dedicated media-source schema."
+      "description": "Predicted ordinary or media-source type of the aggregate entity mention. All five types use this shared schema. Aggregate identity is the exact surface and this type; the same surface classified as org and pressagency produces two aggregates."
     },
     "occurrence_count_l": {
       "type": "integer",

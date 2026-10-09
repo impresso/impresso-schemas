@@ -138,7 +138,7 @@ IMPRESSO_2_CASES = [
     ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.mentions.v2.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_mentions.v2.example.json"),
     ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.mentions.v3.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_mentions.v3.example.json"),
     ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.mentions.ordinary.v2.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_mentions.ordinary.v2.example.json"),
-    ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.mentions.v3.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_mentions.v3.example.json"),
+    ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.mentions.v3.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_mentions2.v3.example.json"),
     ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.mentions.ordinary.v2.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_mentions.ordinary.v2.titled.example.json"),
     ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.topics.v1.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_topics.example.json"),
     ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.tr-clusters.v1.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_tr-clusters.example.json"),

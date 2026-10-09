@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/semantic-enrichments/sem.root.entities.v3.schema.json",
   "title": "Entity Solr Document (v3)",
-  "description": "Entity Solr document in the v3 representation: one document per non-null Wikidata QID across accepted body and title occurrences in the indexed population. It preserves supplied language-specific labels and a display default, records a selected NER type, and distinguishes linked-occurrence counts from distinct-content-item counts.",
+  "description": "Entity Solr document in the v3 representation: one document per non-null Wikidata QID across accepted body and title annotations from ordinary and media-source deliveries. It preserves supplied language-specific labels and a display default, selects a NER type with media-source precedence, and distinguishes unique linked-span counts, overlapping per-type evidence counts and distinct-content-item counts.",
   "type": "object",
   "properties": {
     "id": {
@@ -22,7 +22,7 @@
     },
     "ner_entity_type_s": {
       "type": "string",
-      "description": "One NER type selected by maximum accepted linked-occurrence count across body and title. Among tied ordinary types (very unlikely), prefer loc, then pers, then org. Precedence involving media-source types belongs to the separately reviewed media contract. This field records one type and does not use a mixed value.",
+      "description": "One type selected from accepted linked evidence for this QID across body and title and all annotation sources. Any pressagency or radiostation evidence takes precedence over ordinary types, even if less frequent. If both media-source types occur, select the one with the larger distinct linked-span count; equal media counts prefer pressagency over radiostation. With no media-source evidence, select the ordinary type with the largest distinct linked-span count; ties prefer loc, then pers, then org. Rejected annotations do not contribute. This field records one type and does not use a mixed value.",
       "enum": [
         "pers",
         "loc",
@@ -33,37 +33,37 @@
     },
     "content_item_count_l": {
       "type": "integer",
-      "description": "Integer number of distinct content items containing at least one accepted body or title occurrence linked to this QID. Count each content item once across text parts and NER types. Former field name: article_fq_f.",
+      "description": "Integer number of distinct content items containing at least one accepted body or title annotation linked to this QID. Count each content item once across text parts, types and annotation sources. Former field name: article_fq_f.",
       "minimum": 0
     },
     "mention_count_l": {
       "type": "integer",
-      "description": "Integer number of accepted body and title mention occurrences linked to this QID across the indexed population. Former field name: mention_fq_f.",
+      "description": "Integer number of unique accepted linked spans for this QID across body and title and all annotation sources. Span identity is (content-item id, text part, start offset, end offset, QID); type, source and surface spelling do not split it. Count an identical span once across types and sources. Different spans, content items or body/title parts remain distinct. Per-type evidence counts may overlap and their sum can exceed this total: one identical span classified as org and pressagency gives mention_count_l=1 and each corresponding per-type count=1. Former field name: mention_fq_f.",
       "minimum": 0
     },
     "ner_type_pers_count_l": {
       "type": "integer",
-      "description": "Integer number of accepted body and title occurrences linked to this QID with NER type pers.",
+      "description": "Integer number of distinct accepted body or title spans linked to this QID with type pers. Deduplicate identical (content-item id, text part, start offset, end offset, QID) evidence within this type across annotation sources. A span may contribute to multiple type counts while contributing once to mention_count_l; per-type counts are overlapping evidence and must not be summed as a unique-span total.",
       "minimum": 0
     },
     "ner_type_loc_count_l": {
       "type": "integer",
-      "description": "Integer number of accepted body and title occurrences linked to this QID with NER type loc.",
+      "description": "Integer number of distinct accepted body or title spans linked to this QID with type loc. Deduplicate identical (content-item id, text part, start offset, end offset, QID) evidence within this type across annotation sources. A span may contribute to multiple type counts while contributing once to mention_count_l; per-type counts are overlapping evidence and must not be summed as a unique-span total.",
       "minimum": 0
     },
     "ner_type_org_count_l": {
       "type": "integer",
-      "description": "Integer number of accepted body and title occurrences linked to this QID with NER type org.",
+      "description": "Integer number of distinct accepted body or title spans linked to this QID with type org. Deduplicate identical (content-item id, text part, start offset, end offset, QID) evidence within this type across annotation sources. A span may contribute to multiple type counts while contributing once to mention_count_l; per-type counts are overlapping evidence and must not be summed as a unique-span total.",
       "minimum": 0
     },
     "ner_type_pressagency_count_l": {
       "type": "integer",
-      "description": "Integer number of accepted body and title occurrences linked to this QID with NER type pressagency.",
+      "description": "Integer number of distinct accepted body or title spans linked to this QID with type pressagency. Deduplicate identical (content-item id, text part, start offset, end offset, QID) evidence within this type across annotation sources. A span may contribute to multiple type counts while contributing once to mention_count_l; per-type counts are overlapping evidence and must not be summed as a unique-span total.",
       "minimum": 0
     },
     "ner_type_radiostation_count_l": {
       "type": "integer",
-      "description": "Integer number of accepted body and title occurrences linked to this QID with NER type radiostation.",
+      "description": "Integer number of distinct accepted body or title spans linked to this QID with type radiostation. Deduplicate identical (content-item id, text part, start offset, end offset, QID) evidence within this type across annotation sources. A span may contribute to multiple type counts while contributing once to mention_count_l; per-type counts are overlapping evidence and must not be summed as a unique-span total.",
       "minimum": 0
     },
      "suggest_payload_s": {
@@ -72,7 +72,7 @@
      },
     "scopes_ss": {
       "type": "array",
-      "description": "Optional presence scopes for this entity: the union of body/title text parts containing accepted occurrences linked to this QID. Emit body before title when both are present. Scopes do not split entity identity or counts; occurrence counts combine both parts and distinct-content-item counts use their union.",
+      "description": "Optional presence scopes for this entity: the union of body/title text parts containing accepted annotations linked to this QID. Emit body before title when both are present. Scopes do not split entity identity; unique-span counts preserve text part in span identity, and distinct-content-item counts use the union across parts, types and annotation sources.",
       "items": {
         "type": "string",
         "enum": ["body", "title"]

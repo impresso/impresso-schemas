@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/common/entity-type.v2.schema.json",
-  "title": "Coarse-grained named-entity type scalar",
-  "description": "A coarse-grained named-entity type from the Impresso-HIPE tagset.",
+  "title": "Named-entity type scalar including media sources (v2)",
+  "description": "A coarse-grained named-entity type from the Impresso-HIPE tagset or a fine-grained media-source type: org.ent.pressagency or org.ent.radiostation. The indexer maps the two media-source values to pressagency and radiostation respectively.",
   "type": "string",
   "enum": [
     "loc",

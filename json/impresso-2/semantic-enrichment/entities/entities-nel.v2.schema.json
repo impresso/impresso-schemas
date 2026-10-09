@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/entities/entities-nel.v2.schema.json",
-  "title": "Named entity recognition and linking output record",
-  "description": "Defines one named entity linking output record for an Impresso content item, produced after named entity recognition and before indexing. In JSON Lines serialisation, each line represents one content item and its recognised named entity mentions enriched with linking results. Entity mentions remain offline annotations with character offsets relative to the relevant content-item text, and entity types use the coarse-grained Impresso-HIPE tagset.",
+  "title": "Named entity recognition and linking output record including media sources (v2)",
+  "description": "Defines one named entity linking output record for an Impresso content item, produced after named entity recognition and before indexing. In JSON Lines serialisation, each line represents one content item and its recognised named entity mentions enriched with linking results. The same record shape is used for ordinary and media-source annotation deliveries. Mentions remain offline annotations with character offsets relative to the relevant content-item text. The type field permits coarse-grained Impresso-HIPE types and the fine-grained media-source types org.ent.pressagency and org.ent.radiostation; type_ner_original, when present, retains its coarse-grained meaning.",
   "type": "object",
   "allOf": [
     {
@@ -26,7 +26,7 @@
         "properties": {
           "type": {
             "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/common/entity-type.v2.schema.json",
-            "description": "Coarse-grained Impresso-HIPE named entity type after entity linking."
+            "description": "Named entity type after entity linking: a coarse-grained Impresso-HIPE type or the fine-grained media-source type org.ent.pressagency or org.ent.radiostation."
           },
           "type_ner_original": {
             "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/common/entity-type.v1.schema.json",
