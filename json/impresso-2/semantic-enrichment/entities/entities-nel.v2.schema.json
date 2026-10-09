@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/entities/entities-nel.v1.schema.json",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/entities/entities-nel.v2.schema.json",
   "title": "Named entity recognition and linking output record",
   "description": "Defines one named entity linking output record for an Impresso content item, produced after named entity recognition and before indexing. In JSON Lines serialisation, each line represents one content item and its recognised named entity mentions enriched with linking results. Entity mentions remain offline annotations with character offsets relative to the relevant content-item text, and entity types use the coarse-grained Impresso-HIPE tagset.",
   "type": "object",
