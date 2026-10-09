@@ -118,6 +118,14 @@ IMPRESSO_2_CASES = [
     ("json/impresso-2/semantic-enrichment/entities/entities-nel.v1.schema.json", "examples/impresso-2/semantic-enrichment/entities/entities-nel.example1.json"),
     ("json/impresso-2/semantic-enrichment/entities/entities-nel.v1.schema.json", "examples/impresso-2/semantic-enrichment/entities/entities-nel.example2.json"),
     ("json/impresso-2/semantic-enrichment/entities/entities-nel.v1.schema.json", "examples/impresso-2/semantic-enrichment/entities/entities-nel.example3.json"),
+
+    ("json/impresso-2/semantic-enrichment/entities/entities-ner.v2.schema.json", "examples/impresso-2/semantic-enrichment/entities/entities-ner.example0.json"),
+    ("json/impresso-2/semantic-enrichment/entities/entities-nel.v2.schema.json", "examples/impresso-2/semantic-enrichment/entities/entities-nel.example0.json"),
+    ("json/impresso-2/semantic-enrichment/entities/entities-nel.v2.schema.json", "examples/impresso-2/semantic-enrichment/entities/entities-nel.example1.json"),
+    ("json/impresso-2/semantic-enrichment/entities/entities-nel.v2.schema.json", "examples/impresso-2/semantic-enrichment/entities/entities-nel.example2.json"),
+    ("json/impresso-2/semantic-enrichment/entities/entities-nel.v2.schema.json", "examples/impresso-2/semantic-enrichment/entities/entities-nel.example3.json"),
+    ("json/impresso-2/semantic-enrichment/entities/entities-nel.v2.schema.json", "examples/impresso-2/semantic-enrichment/entities/entities-nel.example4.json"),
+
     ("json/impresso-2/semantic-enrichment/document-embeddings/embeddings-docs.v1.schema.json", "examples/impresso-2/semantic-enrichment/document-embeddings/embeddings-docs.example0.json"),
     ("json/impresso-2/semantic-enrichment/text-reuse/cluster.v1.schema.json", "examples/impresso-2/semantic-enrichment/text-reuse/cluster.tr_cluster_example.json"),
     ("json/impresso-2/semantic-enrichment/text-reuse/passage.v1.schema.json", "examples/impresso-2/semantic-enrichment/text-reuse/passage.tr_passage_example.json"),
