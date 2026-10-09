@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/content-item/content-item.part.text.semantic-enrichments-entity-mentions.v1.schema.json",
   "title": "Entity and Mention Enrichment Fields",
-  "description": "Entity and aggregate-mention fields embedded in main content-item documents. Occurrence lists describe accepted mentions in the article body and title; title offsets are relative to the title text used for the annotation, not the article body.",
+  "description": "Entity and aggregate-mention fields embedded in content-item documents. Body occurrence offsets target the indexed content item ft; title occurrence offsets target its indexed title, never the body. Supplied spans are preserved by default. Known source-text spacing mismatches require diagnostics and upstream recomputation or a separately qualified removable mapping; schema validation alone does not establish highlighting accuracy.",
   "type": "object",
   "properties": {
     "pers_mention_offsets_json_plain": {
@@ -27,11 +27,11 @@
     },
     "pers_entity_ids_dpfs": {
       "$ref": "#/$defs/entity-payload",
-      "description": "Entity QIDs with counts of linked person occurrences in this content item; NIL occurrences contribute no entry."
+      "description": "Entity QIDs with counts of linked person occurrences in this content item's body; NIL occurrences contribute no entry."
     },
     "pers_title_mention_offsets_json_plain": {
       "$ref": "#/$defs/ordered-json-string",
-      "description": "JSON-encoded ordered array of [start, length] pairs for accepted person mentions in the title text used for this annotation."
+      "description": "JSON-encoded ordered array of [start, length] pairs for accepted pers mentions, with intended coordinates relative to the indexed content-item title. Coordinate units must agree with the producer and consumer; known source-text mismatches are diagnosed separately."
     },
     "pers_title_mention_surfaces_json_plain": {
       "$ref": "#/$defs/ordered-json-string",
@@ -75,11 +75,11 @@
     },
     "loc_entity_ids_dpfs": {
       "$ref": "#/$defs/entity-payload",
-      "description": "Entity QIDs with counts of linked location occurrences in this content item; NIL occurrences contribute no entry."
+      "description": "Entity QIDs with counts of linked location occurrences in this content item's body; NIL occurrences contribute no entry."
     },
     "loc_title_mention_offsets_json_plain": {
       "$ref": "#/$defs/ordered-json-string",
-      "description": "JSON-encoded ordered array of [start, length] pairs for accepted location mentions in the title text used for this annotation."
+      "description": "JSON-encoded ordered array of [start, length] pairs for accepted loc mentions, with intended coordinates relative to the indexed content-item title. Coordinate units must agree with the producer and consumer; known source-text mismatches are diagnosed separately."
     },
     "loc_title_mention_surfaces_json_plain": {
       "$ref": "#/$defs/ordered-json-string",
@@ -123,11 +123,11 @@
     },
     "org_entity_ids_dpfs": {
       "$ref": "#/$defs/entity-payload",
-      "description": "Entity QIDs with counts of linked organisation occurrences in this content item; NIL occurrences contribute no entry."
+      "description": "Entity QIDs with counts of linked organisation occurrences in this content item's body; NIL occurrences contribute no entry."
     },
     "org_title_mention_offsets_json_plain": {
       "$ref": "#/$defs/ordered-json-string",
-      "description": "JSON-encoded ordered array of [start, length] pairs for accepted organisation mentions in the title text used for this annotation."
+      "description": "JSON-encoded ordered array of [start, length] pairs for accepted org mentions, with intended coordinates relative to the indexed content-item title. Coordinate units must agree with the producer and consumer; known source-text mismatches are diagnosed separately."
     },
     "org_title_mention_surfaces_json_plain": {
       "$ref": "#/$defs/ordered-json-string",
@@ -171,11 +171,11 @@
     },
     "pressagency_entity_ids_dpfs": {
       "$ref": "#/$defs/entity-payload",
-      "description": "Entity QIDs with counts of linked press-agency occurrences in this content item; NIL occurrences contribute no entry."
+      "description": "Entity QIDs with counts of linked press-agency occurrences in this content item's body; NIL occurrences contribute no entry."
     },
     "pressagency_title_mention_offsets_json_plain": {
       "$ref": "#/$defs/ordered-json-string",
-      "description": "JSON-encoded ordered array of [start, length] pairs for accepted press-agency mentions in the title text used for this annotation."
+      "description": "JSON-encoded ordered array of [start, length] pairs for accepted pressagency mentions, with intended coordinates relative to the indexed content-item title. Coordinate units must agree with the producer and consumer; known source-text mismatches are diagnosed separately."
     },
     "pressagency_title_mention_surfaces_json_plain": {
       "$ref": "#/$defs/ordered-json-string",
@@ -219,11 +219,11 @@
     },
     "radiostation_entity_ids_dpfs": {
       "$ref": "#/$defs/entity-payload",
-      "description": "Entity QIDs with counts of linked radio-station occurrences in this content item; NIL occurrences contribute no entry."
+      "description": "Entity QIDs with counts of linked radio-station occurrences in this content item's body; NIL occurrences contribute no entry."
     },
     "radiostation_title_mention_offsets_json_plain": {
       "$ref": "#/$defs/ordered-json-string",
-      "description": "JSON-encoded ordered array of [start, length] pairs for accepted radio-station mentions in the title text used for this annotation."
+      "description": "JSON-encoded ordered array of [start, length] pairs for accepted radiostation mentions, with intended coordinates relative to the indexed content-item title. Coordinate units must agree with the producer and consumer; known source-text mismatches are diagnosed separately."
     },
     "radiostation_title_mention_surfaces_json_plain": {
       "$ref": "#/$defs/ordered-json-string",
