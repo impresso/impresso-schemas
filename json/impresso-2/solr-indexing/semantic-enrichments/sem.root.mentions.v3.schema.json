@@ -20,6 +20,10 @@
       "description": "Optional Solr suggester field documenting the surfaces exposed for mention auto-completion. It is populated by Solr configuration and is absent from generated documents. In other words: present only once indexed.",
       "items": { "type": "string" }
     },
+    "suggest_payload_s": {
+    "type": "string",
+    "description": "Optional Solr suggester payload field containing `a1-...-ID|type`. Built by the importer; used by Solr configuration for mention auto-completion response."
+  },
     "ner_predicted_type_s": {
       "type": "string",
       "enum": ["pers", "loc", "org"],

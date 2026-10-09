@@ -67,6 +67,10 @@
       "minimum": 0
     }
   },
+  "suggest_payload_s": {
+    "type": "string",
+    "description": "Optional Solr suggester payload field containing `QID|type`. Built by the importer; used by Solr configuration for entity auto-completion response."
+  },
   "patternProperties": {
     "^label_(?:en|fr|de|it|es|pt|nl|lb|rm|ca)_s$": {
       "type": "string",
@@ -79,6 +83,7 @@
     "id",
     "default_label_s",
     "ner_entity_type_s",
-    "content_item_count_l"
+    "content_item_count_l",
+    "suggest_payload_s"
   ]
 }
