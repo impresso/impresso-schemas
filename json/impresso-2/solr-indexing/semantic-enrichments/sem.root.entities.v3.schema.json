@@ -65,11 +65,11 @@
       "type": "integer",
       "description": "number of accepted mention occurrences linked to this QID across the indexed population, with NER type `radiostation`",
       "minimum": 0
-    }
-  },
-  "suggest_payload_s": {
-    "type": "string",
-    "description": "Optional Solr suggester payload field containing `QID|type`. Built by the importer; used by Solr configuration for entity auto-completion response."
+    },
+     "suggest_payload_s": {
+       "type": "string",
+       "description": "Optional Solr suggester payload field containing `QID|type`. Built by the importer; used by Solr configuration for entity auto-completion response."
+     }
   },
   "patternProperties": {
     "^label_(?:en|fr|de|it|es|pt|nl|lb|rm|ca)_s$": {
