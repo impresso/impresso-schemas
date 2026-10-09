@@ -72,7 +72,7 @@
      }
   },
   "patternProperties": {
-    "^label_(?:en|fr|de|it|es|pt|nl|lb|rm|ca)_s$": {
+    "^label_(?:en|fr|de|it|es|pt|nl|lb|rm|ca|da|sv|no|nb|nn|is|fo|fi|se|pl|cs|sk|sl|hr|bs|sr|bg|mk|ru|uk|be)_s$": {
       "type": "string",
       "description": "Entity label in the specified supported language (ISO 639-1 code).",
       "minLength": 1
