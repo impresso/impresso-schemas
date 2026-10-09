@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/semantic-enrichments/sem.root.entities.v3.schema.json",
   "title": "Entity Solr Document (v3)",
-  "description": "Schema for entity documents produced by the v3 importers and according to the new representation  (Impresso Project). The entity document is a Solr document containing frequency and identifier fields, and it is the canonical representation of an entity in the Impresso Project. [CODEX please complete]",
+  "description": "Schema for entity documents produced by the v3 importers and according to the new representation  (Impresso Project). The entity document is a Solr document containing frequency and identifier fields, and it is the canonical representation of an entity in the Impresso Project.",
   "type": "object",
   "properties": {
     "id": {
@@ -68,8 +68,18 @@
     },
      "suggest_payload_s": {
        "type": "string",
-       "description": "Optional Solr suggester payload field containing `QID|type`. Built by the importer; used by Solr configuration for entity auto-completion response."
-     }
+       "description": "Solr suggester payload field containing `QID|type`. Built by the importer; used by Solr configuration for entity auto-completion response."
+     },
+    "scopes_ss": {
+      "type": "array",
+      "description": "The scopes of the aggregate entity mention. The scopes are the content-item fields in which the entity was mentioned. The importer populates this field with the union of all scopes of all its linked mentions.",
+      "items": {
+        "type": "string",
+        "enum": ["body", "title"]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    }
   },
   "patternProperties": {
     "^label_(?:en|fr|de|it|es|pt|nl|lb|rm|ca|da|sv|no|nb|nn|is|fo|fi|se|pl|cs|sk|sl|hr|bs|sr|bg|mk|ru|uk|be)_s$": {
