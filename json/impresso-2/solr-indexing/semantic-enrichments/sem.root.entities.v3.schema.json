@@ -12,7 +12,7 @@
     },
     "default_label_s": {
       "type": "string",
-      "description": "Required display label. Prefer the English label, then an accepted label matching the selected Wikipedia reference language, then an accepted other or remaining available label, and finally the Wikipedia page name. Across multiple Wikipedia references for a QID, prefer en, fr, de, then remaining language codes alphabetically (French → German → remaining accepted languages alphabetically), with exact page name as tie-break. The importer uses a versioned deterministic policy for any remaining label choice; absent labels do not create empty language-specific fields.",
+      "description": "Required display label. Prefer the English label, then an accepted label matching the selected Wikipedia reference language, then an accepted other-language label. If still unresolved, choose a remaining accepted label in this order: French, German, then remaining language codes alphabetically. Finally, use the Wikipedia page name. Select the Wikipedia reference independently: prefer en, fr, de, then other language codes alphabetically; break same-language ties by exact page name.",
       "minLength": 1
     },
     "entitySuggest": {
