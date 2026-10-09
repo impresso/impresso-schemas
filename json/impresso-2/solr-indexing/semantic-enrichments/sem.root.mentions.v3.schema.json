@@ -26,7 +26,7 @@
   },
     "ner_predicted_type_s": {
       "type": "string",
-      "enum": ["pers", "loc", "org"],
+      "enum": ["pers", "loc", "org", "pressagency", "radiostation"],
       "description": "The predicted NER type of the aggregate entity mention. The aggregate identity is the exact surface and this type. Media-source types are validated by the dedicated media-source schema."
     },
     "occurrence_count_l": {
