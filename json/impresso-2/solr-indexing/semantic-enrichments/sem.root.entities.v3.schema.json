@@ -12,32 +12,12 @@
     },
     "default_label_s": {
       "type": "string",
-      "description": "TODO",
-      "minLength": 1
-    },
-     "label_fr_s": {
-      "type": "string",
-      "description": "TODO",
-      "minLength": 1
-    },
-     "label_de_s": {
-      "type": "string",
-      "description": "TODO",
-      "minLength": 1
-    },
-     "label_en_s": {
-      "type": "string",
-      "description": "TODO",
-      "minLength": 1
-    },
-    "label_other_s": {
-      "type": "string",
-      "description": "TODO",
+      "description": "The default label of the entity, chosen from the available labels. Default selection is English label → accepted language-specific label matching `wkpedia_lg` → accepted other-language label → Wikipedia page name.",
       "minLength": 1
     },
     "entitySuggest": {
       "type": "array",
-      "description": "Optional Solr suggester field documenting the labels exposed for entity auto-completion. It is populated by Solr configuration and may be absent from submitted documents.",
+      "description": "Optional Solr suggester field documenting the labels exposed for entity auto-completion. It is populated by Solr configuration and is absent from generated documents. In other words: present only once indexed.",
       "items": { "type": "string" }
     },
     "ner_entity_type_s": {
@@ -87,14 +67,17 @@
       "minimum": 0
     }
   },
+  "patternProperties": {
+    "^label_(?:en|fr|de|it|es|pt|nl|lb|rm|ca)_s$": {
+      "type": "string",
+      "description": "Entity label in the specified supported language (ISO 639-1 code).",
+      "minLength": 1
+    }
+  },
   "additionalProperties": false,
   "required": [
     "id",
     "default_label_s",
-    "label_fr_s",
-    "label_de_s",
-    "label_en_s",
-    "label_other_s",
     "ner_entity_type_s",
     "content_item_count_l"
   ]
