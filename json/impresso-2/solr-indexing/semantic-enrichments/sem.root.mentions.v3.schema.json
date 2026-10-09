@@ -22,7 +22,7 @@
     },
     "suggest_payload_s": {
     "type": "string",
-    "description": "Schema-optional importer-built Solr suggester payload containing the document id followed by a literal pipe and ner_predicted_type_s: a1_<digest>|type. The revised importer populates it for every ordinary aggregate document."
+    "description": "Schema importer-built Solr suggester payload containing the document id followed by a literal pipe and ner_predicted_type_s: a1_<digest>|type. The revised importer populates it for every ordinary aggregate document."
   },
     "ner_predicted_type_s": {
       "type": "string",
@@ -69,7 +69,8 @@
     "id",
     "surface_s",
     "ner_predicted_type_s",
-    "occurrence_count_l"
+    "occurrence_count_l",
+    "suggest_payload_s"
   ],
   "additionalProperties": false
 }
