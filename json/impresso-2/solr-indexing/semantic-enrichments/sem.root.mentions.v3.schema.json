@@ -15,6 +15,11 @@
       "description": "The surface form of the aggregate entity mention. Previous field name: l_s.",
       "minLength": 1
     },
+    "mentionSuggest": {
+      "type": "array",
+      "description": "Optional Solr suggester field documenting the surfaces exposed for mention auto-completion. It is populated by Solr configuration and is absent from generated documents. In other words: present only once indexed.",
+      "items": { "type": "string" }
+    },
     "ner_predicted_type_s": {
       "type": "string",
       "enum": ["pers", "loc", "org"],
