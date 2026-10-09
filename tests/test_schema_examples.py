@@ -119,7 +119,7 @@ IMPRESSO_2_CASES = [
     ("json/impresso-2/semantic-enrichment/entities/entities-nel.v1.schema.json", "examples/impresso-2/semantic-enrichment/entities/entities-nel.example2.json"),
     ("json/impresso-2/semantic-enrichment/entities/entities-nel.v1.schema.json", "examples/impresso-2/semantic-enrichment/entities/entities-nel.example3.json"),
 
-    ("json/impresso-2/semantic-enrichment/entities/entities-ner.v2.schema.json", "examples/impresso-2/semantic-enrichment/entities/entities-ner.example0.json"),
+
     ("json/impresso-2/semantic-enrichment/entities/entities-nel.v2.schema.json", "examples/impresso-2/semantic-enrichment/entities/entities-nel.example0.json"),
     ("json/impresso-2/semantic-enrichment/entities/entities-nel.v2.schema.json", "examples/impresso-2/semantic-enrichment/entities/entities-nel.example1.json"),
     ("json/impresso-2/semantic-enrichment/entities/entities-nel.v2.schema.json", "examples/impresso-2/semantic-enrichment/entities/entities-nel.example2.json"),
