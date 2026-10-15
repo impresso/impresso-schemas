@@ -32,6 +32,7 @@ flowchart LR
   - [Text processing](#text-processing)
   - [Semantic enrichment](#semantic-enrichment)
   - [Solr indexing](#solr-indexing)
+  - [Annotation API](#annotation-api)
   - [Web app](#web-app)
 - [About](#about)
   - [Copyrights](#copyrights)
@@ -60,6 +61,7 @@ json/                                   Schema source of truth
     ├── semantic-enrichment/
     │   └── common/                     Semantic-enrichment-only fragments
     ├── solr-indexing/
+    ├── annotation-api/                 impresso-annotation.epfl.ch API bodies
     └── web-app/
 
 examples/                               Validation fixtures
@@ -273,6 +275,13 @@ Solr schemas are available only in the imp2 namespace.
   - **Text-reuse clusters**: [`json/impresso-2/solr-indexing/semantic-enrichments/sem.root.tr-clusters.v1.schema.json`](json/impresso-2/solr-indexing/semantic-enrichments/sem.root.tr-clusters.v1.schema.json)
   - **Text-reuse passages**: [`json/impresso-2/solr-indexing/semantic-enrichments/sem.root.tr-passages.v1.schema.json`](json/impresso-2/solr-indexing/semantic-enrichments/sem.root.tr-passages.v1.schema.json)
   - **Word embeddings**: [`json/impresso-2/solr-indexing/semantic-enrichments/sem.root.wemb.v1.schema.json`](json/impresso-2/solr-indexing/semantic-enrichments/sem.root.wemb.v1.schema.json)
+
+### Annotation API
+
+Request and response bodies of the annotation API (`impresso-annotation.epfl.ch`),
+used by the Impresso middle layer. See
+[`json/impresso-2/annotation-api/README.md`](json/impresso-2/annotation-api/README.md)
+for the endpoint-to-schema table, input forms and status codes.
 
 ### Web app
 

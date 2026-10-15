@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/annotation-api/entities/ner-request.v1.schema.json",
+  "title": "Annotation API NER request",
+  "description": "JSON body of POST /api/ner/ and POST /api/ner-nel/.",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "string",
+      "description": "Text to process."
+    }
+  },
+  "required": ["data"]
+}

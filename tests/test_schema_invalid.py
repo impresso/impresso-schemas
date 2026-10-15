@@ -1,7 +1,8 @@
-"""Check that invalid NEL entities are rejected for the expected reason.
+"""Check that invalid instances are rejected for the expected reason.
 
-Each case mutates the Q30 entity of a valid example and names the JSON Schema
-keyword that must report the error.
+Each NEL case mutates the Q30 entity of a valid example; each annotation-api
+case is a small inline response. Every case names the JSON Schema keyword that
+must report the error.
 """
 
 import json
@@ -50,6 +51,29 @@ def test_nel_invalid_entity_is_rejected(mutate, keyword, schema_registry) -> Non
     instance = json.loads((ROOT / NEL_EXAMPLE).read_text(encoding="utf-8"))
     entity = next(e for e in instance["nes"] if e["wkdata_qid"] == "Q30")
     mutate(entity)
+    validator = Draft202012Validator(schema, registry=schema_registry)
+    keywords = {e.validator for e in validator.iter_errors(instance)}
+    assert keyword in keywords, f"expected {keyword!r}, got {keywords or 'no errors'}"
+
+
+ANNOTATION_API = "json/impresso-2/annotation-api/entities/"
+LINKED = {"ts": "2026-10-15T10:00:00Z", "sys_id": "nel", "NEL seconds": 0.1, "NER seconds": 0.0}
+
+ANNOTATION_API_INVALID_CASES = [
+    ("ner_nel_nes_object", "ner-nel-response.v1.schema.json", {**LINKED, "nes": {}}, "type"),
+    ("nel_nes_string", "nel-response.v1.schema.json", {**LINKED, "nes": "Berlin"}, "anyOf"),
+    ("ner_seconds_not_number", "ner-response.v1.schema.json", {**LINKED, "nes": [], "NER seconds": "0.1"}, "type"),
+]
+
+
+@pytest.mark.parametrize(
+    "schema_name,instance,keyword",
+    [(s, i, k) for _, s, i, k in ANNOTATION_API_INVALID_CASES],
+    ids=[name for name, _, _, _ in ANNOTATION_API_INVALID_CASES],
+)
+@pytest.mark.imp2
+def test_annotation_api_invalid_response_is_rejected(schema_name, instance, keyword, schema_registry) -> None:
+    schema = json.loads((ROOT / ANNOTATION_API / schema_name).read_text(encoding="utf-8"))
     validator = Draft202012Validator(schema, registry=schema_registry)
     keywords = {e.validator for e in validator.iter_errors(instance)}
     assert keyword in keywords, f"expected {keyword!r}, got {keywords or 'no errors'}"

@@ -36,6 +36,7 @@ and published `$id` values must not change. New versioned contracts belong in
 | `semantic-enrichment/` | Entities, embeddings, text reuse, topic model, and image enrichment |
 | `common/` | Definitions with the same semantics across lifecycle areas |
 | `solr-indexing/` | Solr document schemas and their shared parts |
+| `annotation-api/` | Request and response bodies of the annotation API (impresso-serve) |
 | `web-app/` | Web application consumption schemas, when added |
 
 | Directory                  | Description                                             | JSON Schema Draft |

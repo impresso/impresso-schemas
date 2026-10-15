@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/annotation-api/image-classification/image-classification-request.v1.schema.json",
+  "title": "Annotation API image classification request",
+  "description": "JSON body of POST /api/image-classification/. The endpoint also accepts the image as a multipart `file` field or as the raw request body. Only image bytes are accepted (no path or URL).",
+  "type": "object",
+  "anyOf": [
+    {
+      "required": ["bytes_b64"]
+    },
+    {
+      "required": ["bytes"]
+    }
+  ],
+  "properties": {
+    "bytes_b64": {
+      "type": "string",
+      "description": "Base64-encoded image bytes."
+    },
+    "bytes": {
+      "type": "string",
+      "description": "Base64-encoded image bytes (legacy key)."
+    },
+    "ci_id": {
+      "type": "string",
+      "description": "Client identifier, echoed back as `ci_id`."
+    },
+    "id": {
+      "type": "string",
+      "description": "Client identifier, read when `ci_id` is absent."
+    }
+  },
+  "required": []
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/annotation-api/entities/nel-request.v1.schema.json",
+  "title": "Annotation API NEL request",
+  "description": "JSON body of POST /api/nel/. Either `data` with the NER `entities` to link, or, with no entities, a `data` string where one mention is marked as `[START] mention [END]` (marker form).",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": ["string", "object"],
+      "description": "Text to link, or a legacy object holding the text under `sentence`, `text` or `data`.",
+      "examples": ["[START] Berlin [END] is a city."]
+    },
+    "entities": {
+      "type": ["array", "null"],
+      "description": "NER mentions to link, as returned by /api/ner/. Mentions without integer `lOffset` and `rOffset` are skipped.",
+      "items": {}
+    },
+    "NER seconds": {
+      "type": "number",
+      "description": "Upstream NER time in seconds, echoed back in the response. Frozen wire name containing a space."
+    }
+  },
+  "required": ["data"]
+}

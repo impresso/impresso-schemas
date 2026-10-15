@@ -151,3 +151,22 @@ fragment:
 - Removed the redundant `oneOf` wrapper and restricted `embedding` to a one-dimensional numeric array.
 - Documented that `size` must equal the number of values in `embedding`; this cross-property equality cannot be enforced dynamically by JSON Schema.
 - JSON syntax validation and `git diff --check` passed.
+
+## 2026-10-15
+
+### Annotation API schemas (branch `feat/annotation-api-schemas`)
+
+- Added `json/impresso-2/annotation-api/` with a README and 15 schemas for the 8 endpoints of
+  `impresso-annotation.epfl.ch`, grouped in `entities/`, `embeddings/` and `image-classification/`.
+  Names are hyphenated (`ner-request.v1`) so jsonschema2md gives each one its own page.
+- Reused `common/timestamp.v1`, `common/model-id.v1#/properties/model_id`, `common/probability.v1`
+  (nullable via `anyOf`) and the batch `image-classification.v1` level predictions (JSON-pointer refs).
+- Entity `type` is a plain string; `nel-response` accepts a list, a single entity or `{}`.
+- Added three annotation-api cases to `tests/test_schema_invalid.py`, the `Annotation API` group to
+  `scripts/build_docs_site.sh`, and entries in `README.md` and `AGENTS.md`.
+- `make tests` passed (227). `make format-check` reports 28 files that already failed before this
+  change; none are in `annotation-api/`. `make documentation-imp2` passed; all existing top-level doc
+  pages keep their names. IML's type generator (json-schema-to-typescript 16.0.0) renders all 15 schemas.
+- Remaining: add examples from the real old-prod and dev fixtures (not yet in
+  `impresso-serve/tests/data/contract/`) with their `IMPRESSO_2_CASES` entries, and set each `required`
+  list to the keys present on both old prod and dev. The current lists are provisional and minimal.

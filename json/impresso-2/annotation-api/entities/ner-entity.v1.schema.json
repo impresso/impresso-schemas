@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/annotation-api/entities/ner-entity.v1.schema.json",
+  "title": "Annotation API NER entity",
+  "description": "One named entity mention returned in `nes` by the /api/ner/ endpoint. Offsets are absolute in the submitted text.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Entity type. A coarse-grained Impresso-HIPE type (`pers`, `loc`, `org`, `time`, `prod`) for entities found by NER. It is an empty string when the type is unknown: in the NEL marker form, or when a /nel/ request entity has no type. /nel/ echoes the type sent by the client, so other values are possible.",
+      "examples": ["pers", "loc", "org", "time", "prod", ""]
+    },
+    "surface": {
+      "type": "string",
+      "description": "Surface form of the mention as it occurs in the submitted text."
+    },
+    "lOffset": {
+      "type": "integer",
+      "description": "Zero-based offset of the first character of the mention in the submitted text (inclusive). Frozen wire name."
+    },
+    "rOffset": {
+      "type": "integer",
+      "description": "Zero-based offset just after the last character of the mention in the submitted text (exclusive). Frozen wire name."
+    },
+    "index": {
+      "type": ["array", "null"],
+      "description": "Token span of the mention as a [start, end) pair of token indices, or null.",
+      "prefixItems": [
+        {
+          "type": "integer",
+          "description": "Index of the first token (inclusive)."
+        },
+        {
+          "type": "integer",
+          "description": "Index after the last token (exclusive)."
+        }
+      ],
+      "items": {
+        "type": "integer"
+      },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "confidence_ner": {
+      "anyOf": [
+        {
+          "$ref": "../../common/probability.v1.schema.json"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Overall NER confidence of the mention, or null when not available."
+    },
+    "confidence_ner_entity": {
+      "anyOf": [
+        {
+          "$ref": "../../common/probability.v1.schema.json"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Confidence that the span is an entity mention, independent of its type, or null when not computed."
+    },
+    "confidence_ner_type": {
+      "anyOf": [
+        {
+          "$ref": "../../common/probability.v1.schema.json"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Confidence in the predicted type, given that the span is a mention, or null when not computed."
+    },
+    "entity_confidence": {
+      "anyOf": [
+        {
+          "$ref": "../../common/probability.v1.schema.json"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Same value as `confidence_ner_entity`. Use `confidence_ner_entity` instead.",
+      "deprecated": true
+    },
+    "type_confidence": {
+      "anyOf": [
+        {
+          "$ref": "../../common/probability.v1.schema.json"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Same value as `confidence_ner_type`. Use `confidence_ner_type` instead.",
+      "deprecated": true
+    },
+    "name": {
+      "type": ["string", "null"],
+      "description": "For a person mention, its `name` component (Impresso HIPE guidelines), otherwise null."
+    },
+    "title": {
+      "type": ["string", "null"],
+      "description": "For a person mention, its `title` component (Impresso HIPE guidelines), otherwise null."
+    },
+    "function": {
+      "type": ["string", "null"],
+      "description": "For a person mention, its `function` component (Impresso HIPE guidelines), otherwise null."
+    }
+  },
+  "required": ["type", "surface", "lOffset", "rOffset"]
+}
