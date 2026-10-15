@@ -36,6 +36,9 @@
         },
         {
           "$ref": "./WikidataLocation.json"
+        },
+        {
+          "$ref": "./WikidataItem.json"
         }
       ]
     }

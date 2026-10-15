@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "title": "Wikidata Item",
+  "description": "Generic Wikidata item schema, for entities that are not a person or a location. Based on https://www.wikidata.org/wiki/Wikidata:Glossary",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "The Q Wikidata ID of the item (https://www.wikidata.org/wiki/Wikidata:Identifiers)"
+    },
+    "type": {
+      "type": "string",
+      "description": "The type of the entity",
+      "enum": ["item"]
+    },
+    "labels": {
+      "type": "object",
+      "description": "Labels of the item in different languages",
+      "additionalProperties": {
+        "type": "string",
+        "description": "Label of the item in a specific language"
+      }
+    },
+    "descriptions": {
+      "type": "object",
+      "description": "Descriptions of the item in different languages",
+      "additionalProperties": {
+        "type": "string",
+        "description": "Description of the item in a specific language"
+      }
+    }
+  },
+  "required": ["id", "type"]
+}
