@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/annotation-api/entities/nel-response.v1.schema.json",
+  "title": "Annotation API NEL response",
+  "description": "Response body of POST /api/nel/. The server sends every key listed here, with null when there is no value.",
+  "type": "object",
+  "properties": {
+    "ts": {
+      "$ref": "../../common/timestamp.v1.schema.json",
+      "description": "UTC time at which the response was produced, as YYYY-MM-DDTHH:MM:SSZ."
+    },
+    "sys_id": {
+      "type": "string",
+      "description": "Identifier of the system (model) that served the request."
+    },
+    "NEL seconds": {
+      "type": "number",
+      "description": "NEL processing time in seconds. Frozen wire name containing a space."
+    },
+    "NER seconds": {
+      "type": "number",
+      "description": "NER time in seconds: the `NER seconds` of the request (0 when absent), or the NER step of /api/ner-nel/. Frozen wire name containing a space."
+    },
+    "nes": {
+      "description": "Linked mentions. A list when the request has entities or no marker. In the marker form, a single entity object, or an empty object when the marker is malformed or nothing is linked.",
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "$ref": "nel-entity.v1.schema.json"
+          }
+        },
+        {
+          "$ref": "nel-entity.v1.schema.json"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "maxProperties": 0
+        }
+      ]
+    }
+  },
+  "required": ["ts", "sys_id", "nes", "NEL seconds", "NER seconds"]
+}

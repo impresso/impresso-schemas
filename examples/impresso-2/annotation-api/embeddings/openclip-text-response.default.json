@@ -1,0 +1,8 @@
+{
+  "ts": "2026-10-15T10:00:00Z",
+  "text": "Drawing of a woman",
+  "embedding": [0.0142, -0.0387, 0.0219, 0.0065],
+  "size": 768,
+  "model_id": "openclip",
+  "seconds": 0.0318
+}

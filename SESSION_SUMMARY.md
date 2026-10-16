@@ -151,3 +151,43 @@ fragment:
 - Removed the redundant `oneOf` wrapper and restricted `embedding` to a one-dimensional numeric array.
 - Documented that `size` must equal the number of values in `embedding`; this cross-property equality cannot be enforced dynamically by JSON Schema.
 - JSON syntax validation and `git diff --check` passed.
+
+## 2026-10-15
+
+### Annotation API schemas (branch `feat/annotation-api-schemas`)
+
+- Added `json/impresso-2/annotation-api/` with a README and 15 schemas for the 8 endpoints of
+  `impresso-annotation.epfl.ch`, grouped in `entities/`, `embeddings/` and `image-classification/`.
+  Names are hyphenated (`ner-request.v1`) so jsonschema2md gives each one its own page.
+- Reused `common/timestamp.v1`, `common/model-id.v1#/properties/model_id`, `common/probability.v1`
+  (nullable via `anyOf`) and the batch `image-classification.v1` level predictions (JSON-pointer refs).
+- Entity `type` is a plain string; `nel-response` accepts a list, a single entity or `{}`.
+- Added three annotation-api cases to `tests/test_schema_invalid.py`, the `Annotation API` group to
+  `scripts/build_docs_site.sh`, and entries in `README.md` and `AGENTS.md`.
+- `make tests` passed (227). `make format-check` reports 28 files that already failed before this
+  change; none are in `annotation-api/`. `make documentation-imp2` passed; all existing top-level doc
+  pages keep their names. IML's type generator (json-schema-to-typescript 16.0.0) renders all 15 schemas.
+- Remaining: add examples from the real old-prod and dev fixtures (not yet in
+  `impresso-serve/tests/data/contract/`) with their `IMPRESSO_2_CASES` entries, and set each `required`
+  list to the keys present on both old prod and dev. The current lists are provisional and minimal.
+
+## 2026-10-16
+
+### Annotation API schemas: required keys, examples (branch `feat/annotation-api-schemas`)
+
+- The schemas now describe impresso-serve (dev), not old prod; no fixtures are used. Each response
+  schema's `required` is every field its pydantic `response_model` declares in
+  `impresso-serve/src/impresso_serve/schema.py`: FastAPI sends them all, null-filled (checked with
+  FastAPI 0.138.2 / pydantic 2.13.4). Request schemas are unchanged.
+- `nel-response.nes` empty branch: `additionalProperties: false` plus `maxProperties: 0`
+  (`maxProperties` alone would render as an index signature in IML's TypeScript).
+- `wkd_pred` stays optional: it is sent on every linked entity but is not a declared model field.
+- Added 23 hand-written examples under `examples/impresso-2/annotation-api/` and appended them to the
+  end of `IMPRESSO_2_CASES`. Invalid cases: "NER seconds" missing, text embedding without `seconds`,
+  image embedding without `ci_id`.
+- `make tests` passed (252 Impresso 2, 82 legacy). Prettier is clean on the new files; `make format-check`
+  still reports only the 28 pre-existing files. `make documentation-imp2` passed. IML's generator
+  renders required keys as non-optional and nullable ones as `T | null`. Responses serialized through
+  impresso-serve's own models validate.
+- Caveat: `confidence_ner_type` uses the 0–1 probability ref; the NER code computes it as a ratio that
+  is at most 1 in theory, but a label/P(O) desync could exceed 1.

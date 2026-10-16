@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/annotation-api/entities/ner-nel-response.v1.schema.json",
+  "title": "Annotation API NER-NEL response",
+  "description": "Response body of POST /api/ner-nel/: NER then NEL on the detected mentions. Same keys as the /api/nel/ response, but `nes` is always a list. The server sends every key listed here, with null when there is no value.",
+  "type": "object",
+  "properties": {
+    "ts": {
+      "$ref": "../../common/timestamp.v1.schema.json",
+      "description": "UTC time at which the response was produced, as YYYY-MM-DDTHH:MM:SSZ."
+    },
+    "sys_id": {
+      "type": "string",
+      "description": "Identifier of the system (model) that served the request."
+    },
+    "NEL seconds": {
+      "type": "number",
+      "description": "NEL processing time in seconds. Frozen wire name containing a space."
+    },
+    "NER seconds": {
+      "type": "number",
+      "description": "NER time in seconds: the `NER seconds` of the request (0 when absent), or the NER step of /api/ner-nel/. Frozen wire name containing a space."
+    },
+    "nes": {
+      "type": "array",
+      "description": "Linked mentions found in the text. Always a list; `[]` when nothing is found.",
+      "items": {
+        "$ref": "nel-entity.v1.schema.json"
+      }
+    }
+  },
+  "required": ["ts", "sys_id", "nes", "NEL seconds", "NER seconds"]
+}

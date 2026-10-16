@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/annotation-api/embeddings/image-embedding-response.v1.schema.json",
+  "title": "Annotation API image embedding response",
+  "description": "Response body of POST /api/dinov2/ and POST /api/openclip-image/. The server sends every key listed here, with null when there is no value.",
+  "type": "object",
+  "properties": {
+    "ts": {
+      "$ref": "../../common/timestamp.v1.schema.json",
+      "description": "UTC time at which the response was produced, as YYYY-MM-DDTHH:MM:SSZ."
+    },
+    "ci_id": {
+      "type": ["string", "null"],
+      "description": "The request `id`; otherwise `auto-0` for raw, multipart or base64 `bytes` input, and null for `bytes_b64`, `path` or `url` input. Not an Impresso content-item id.",
+      "examples": ["auto-0"]
+    },
+    "embedding": {
+      "type": "array",
+      "description": "Image embedding.",
+      "items": {
+        "type": "number"
+      }
+    },
+    "size": {
+      "type": "integer",
+      "description": "Number of values in `embedding`."
+    },
+    "model_id": {
+      "$ref": "../../common/model-id.v1.schema.json#/properties/model_id",
+      "description": "Identifier of the model that produced the response."
+    },
+    "seconds": {
+      "type": "number",
+      "description": "Processing time of the request, in seconds."
+    }
+  },
+  "required": ["ts", "ci_id", "embedding", "size", "model_id", "seconds"]
+}

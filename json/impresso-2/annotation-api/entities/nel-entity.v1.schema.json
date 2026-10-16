@@ -1,0 +1,225 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/annotation-api/entities/nel-entity.v1.schema.json",
+  "title": "Annotation API NEL entity",
+  "description": "One linked named entity mention returned in `nes` by the /api/nel/ and /api/ner-nel/ endpoints. Offsets are absolute in the submitted text. When the mention does not resolve to a Wikidata item (NIL link), `wkdata_qid` and `wkd_id` are null while the Wikipedia fields may still be set. The server sends every key listed here, with null when there is no value.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Entity type. A coarse-grained Impresso-HIPE type (`pers`, `loc`, `org`, `time`, `prod`) for entities found by NER. It is an empty string when the type is unknown: in the NEL marker form, or when a /nel/ request entity has no type. /nel/ echoes the type sent by the client, so other values are possible.",
+      "examples": ["pers", "loc", "org", "time", "prod", ""]
+    },
+    "surface": {
+      "type": "string",
+      "description": "Surface form of the mention as it occurs in the submitted text."
+    },
+    "lOffset": {
+      "type": "integer",
+      "description": "Zero-based offset of the first character of the mention in the submitted text (inclusive). Frozen wire name."
+    },
+    "rOffset": {
+      "type": "integer",
+      "description": "Zero-based offset just after the last character of the mention in the submitted text (exclusive). Frozen wire name."
+    },
+    "confidence_ner": {
+      "anyOf": [
+        {
+          "$ref": "../../common/probability.v1.schema.json"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Overall NER confidence of the mention, or null when not available."
+    },
+    "confidence_ner_entity": {
+      "anyOf": [
+        {
+          "$ref": "../../common/probability.v1.schema.json"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Confidence that the span is an entity mention, independent of its type, or null when not computed."
+    },
+    "confidence_ner_type": {
+      "anyOf": [
+        {
+          "$ref": "../../common/probability.v1.schema.json"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Confidence in the predicted type, given that the span is a mention, or null when not computed."
+    },
+    "entity_confidence": {
+      "anyOf": [
+        {
+          "$ref": "../../common/probability.v1.schema.json"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Same value as `confidence_ner_entity`. Use `confidence_ner_entity` instead.",
+      "deprecated": true
+    },
+    "type_confidence": {
+      "anyOf": [
+        {
+          "$ref": "../../common/probability.v1.schema.json"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Same value as `confidence_ner_type`. Use `confidence_ner_type` instead.",
+      "deprecated": true
+    },
+    "confidence_nel": {
+      "anyOf": [
+        {
+          "$ref": "../../common/probability.v1.schema.json"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Confidence of the link, or null when not available."
+    },
+    "confidence_nel_normalized": {
+      "anyOf": [
+        {
+          "$ref": "../../common/probability.v1.schema.json"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Same value as `confidence_nel`. Use `confidence_nel` instead.",
+      "deprecated": true
+    },
+    "confidence_margin": {
+      "type": ["number", "null"],
+      "description": "Difference between the top-1 and top-2 beam-search scores, or null when only one candidate was computed."
+    },
+    "wkdata_qid": {
+      "type": ["string", "null"],
+      "description": "Wikidata QID of the linked entity, or null when the mention did not resolve.",
+      "examples": ["Q64"]
+    },
+    "wkd_id": {
+      "type": ["string", "null"],
+      "description": "Same value as `wkdata_qid`. Use `wkdata_qid` instead.",
+      "deprecated": true
+    },
+    "wkpedia_lg": {
+      "type": ["string", "null"],
+      "description": "Language code of the Wikipedia edition of `wkpedia_pagename`, or null.",
+      "examples": ["de"]
+    },
+    "wkpedia_pagename": {
+      "type": ["string", "null"],
+      "description": "Wikipedia page name of the linked entity, or null.",
+      "examples": ["Berlin"]
+    },
+    "wkpedia_url": {
+      "type": ["string", "null"],
+      "description": "Wikipedia URL built from `wkpedia_lg` and `wkpedia_pagename`, or null. It is not URL-encoded and can contain spaces. Use `wkpedia_lg` and `wkpedia_pagename` instead.",
+      "deprecated": true
+    },
+    "wkd_pred": {
+      "type": ["string", "null"],
+      "description": "Raw prediction of the linking model, as `title >> lang`. Use `wkpedia_pagename` and `wkpedia_lg` instead. Sent on every linked entity, but not part of the declared response model, so not required.",
+      "deprecated": true
+    },
+    "label_fr": {
+      "type": ["string", "null"],
+      "description": "French Wikidata label of `wkdata_qid` (else its `mul` label), or null."
+    },
+    "label_en": {
+      "type": ["string", "null"],
+      "description": "English Wikidata label of `wkdata_qid` (else its `mul` label), or null."
+    },
+    "label_de": {
+      "type": ["string", "null"],
+      "description": "German Wikidata label of `wkdata_qid` (else its `mul` label), or null."
+    },
+    "label_other": {
+      "type": ["string", "null"],
+      "description": "Wikidata label in another language when `label_fr`, `label_en` and `label_de` are all null, otherwise null."
+    },
+    "label_other_lg": {
+      "type": ["string", "null"],
+      "description": "Language code of `label_other`, or null."
+    },
+    "type_ner_original": {
+      "type": ["string", "null"],
+      "description": "Type given by NER when linking changed `type`, otherwise null."
+    },
+    "nel_unlink": {
+      "type": ["object", "null"],
+      "description": "Set when a link was removed by a validation rule, otherwise null.",
+      "properties": {
+        "reason": {
+          "type": "string",
+          "description": "Identifier of the rule that removed the link."
+        },
+        "removed_wkdata_qid": {
+          "type": "string",
+          "description": "Wikidata QID that was removed."
+        }
+      }
+    },
+    "scope": {
+      "type": ["string", "null"],
+      "description": "Part of the text the mention belongs to, or null. Legacy field kept for compatibility.",
+      "deprecated": true
+    },
+    "name": {
+      "type": ["string", "null"],
+      "description": "For a person mention, its `name` component (Impresso HIPE guidelines), otherwise null."
+    },
+    "title": {
+      "type": ["string", "null"],
+      "description": "For a person mention, its `title` component (Impresso HIPE guidelines), otherwise null."
+    },
+    "function": {
+      "type": ["string", "null"],
+      "description": "For a person mention, its `function` component (Impresso HIPE guidelines), otherwise null."
+    }
+  },
+  "required": [
+    "type",
+    "surface",
+    "lOffset",
+    "rOffset",
+    "scope",
+    "wkd_id",
+    "wkdata_qid",
+    "wkpedia_lg",
+    "wkpedia_pagename",
+    "wkpedia_url",
+    "label_fr",
+    "label_en",
+    "label_de",
+    "label_other",
+    "label_other_lg",
+    "confidence_ner",
+    "confidence_nel",
+    "confidence_nel_normalized",
+    "confidence_margin",
+    "confidence_ner_entity",
+    "confidence_ner_type",
+    "entity_confidence",
+    "type_confidence",
+    "type_ner_original",
+    "nel_unlink",
+    "function",
+    "name",
+    "title"
+  ]
+}
