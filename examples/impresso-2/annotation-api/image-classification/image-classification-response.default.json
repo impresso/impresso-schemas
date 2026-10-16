@@ -1,0 +1,64 @@
+{
+  "ci_id": "EXP-1937-03-19-a-i0012",
+  "ts": "2026-10-15T10:00:00Z",
+  "model_id": "impresso-project/image-classification-siglip2@main",
+  "level0_predictions": [
+    {
+      "class": "image",
+      "confidence": 0.9876,
+      "pred_number": 1
+    },
+    {
+      "class": "not_image",
+      "confidence": 0.0124,
+      "pred_number": 2
+    }
+  ],
+  "level1_predictions": [
+    {
+      "class": "photograph",
+      "confidence": 0.9312,
+      "pred_number": 1
+    },
+    {
+      "class": "not_photograph",
+      "confidence": 0.0688,
+      "pred_number": 2
+    }
+  ],
+  "level2_predictions": [
+    {
+      "class": "informative_or_illustrative",
+      "confidence": 0.8421,
+      "pred_number": 1
+    },
+    {
+      "class": "advertising",
+      "confidence": 0.1023,
+      "pred_number": 2
+    },
+    {
+      "class": "entertainment",
+      "confidence": 0.0412,
+      "pred_number": 3
+    }
+  ],
+  "level3_predictions": [
+    {
+      "class": "human_rep_portrait",
+      "confidence": 0.7134,
+      "pred_number": 1
+    },
+    {
+      "class": "human_rep_scene",
+      "confidence": 0.1587,
+      "pred_number": 2
+    },
+    {
+      "class": "object",
+      "confidence": 0.0521,
+      "pred_number": 3
+    }
+  ],
+  "seconds": 0.0947
+}

@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/annotation-api/entities/ner-entity.v1.schema.json",
   "title": "Annotation API NER entity",
-  "description": "One named entity mention returned in `nes` by the /api/ner/ endpoint. Offsets are absolute in the submitted text.",
+  "description": "One named entity mention returned in `nes` by the /api/ner/ endpoint. Offsets are absolute in the submitted text. The server sends every key listed here, with null when there is no value.",
   "type": "object",
   "properties": {
     "type": {
@@ -111,5 +111,19 @@
       "description": "For a person mention, its `function` component (Impresso HIPE guidelines), otherwise null."
     }
   },
-  "required": ["type", "surface", "lOffset", "rOffset"]
+  "required": [
+    "type",
+    "surface",
+    "lOffset",
+    "rOffset",
+    "index",
+    "confidence_ner",
+    "confidence_ner_entity",
+    "confidence_ner_type",
+    "entity_confidence",
+    "type_confidence",
+    "function",
+    "name",
+    "title"
+  ]
 }

@@ -1,0 +1,38 @@
+{
+  "ts": "2026-10-15T10:00:00Z",
+  "sys_id": "ner-hipe2020-mmbert-base-final",
+  "nes": [
+    {
+      "type": "pers",
+      "surface": "Albert Einstein",
+      "lOffset": 0,
+      "rOffset": 15,
+      "index": [0, 2],
+      "confidence_ner": 0.9871,
+      "confidence_ner_entity": 0.9952,
+      "confidence_ner_type": 0.9918,
+      "entity_confidence": 0.9952,
+      "type_confidence": 0.9918,
+      "function": null,
+      "name": "Albert Einstein",
+      "title": null
+    },
+    {
+      "type": "loc",
+      "surface": "Berlin",
+      "lOffset": 25,
+      "rOffset": 31,
+      "index": [4, 5],
+      "confidence_ner": 0.9934,
+      "confidence_ner_entity": 0.9978,
+      "confidence_ner_type": 0.9956,
+      "entity_confidence": 0.9978,
+      "type_confidence": 0.9956,
+      "function": null,
+      "name": null,
+      "title": null
+    }
+  ],
+  "NER seconds": 0.0412,
+  "NEL seconds": 0.0
+}

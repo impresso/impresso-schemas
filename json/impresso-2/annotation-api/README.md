@@ -2,9 +2,11 @@
 
 Request and response bodies of the public annotation API at
 `https://impresso-annotation.epfl.ch`, served by impresso-serve. The schemas
-describe the API as it behaves: the same keys and types as the previous
-TorchServe and Django backend. Their only client is the Impresso middle layer
-(IML), which generates its types from them.
+describe impresso-serve's response models. The server sends every key a
+response schema declares, with `null` when there is no value, so all of them
+are required. Parity with the previous TorchServe and Django backend is
+checked by impresso-serve's `test-parity` job, not here. The client is the
+Impresso middle layer (IML), which generates its types from these schemas.
 
 This is not `../public-api/`, which describes the IML's own public API.
 
@@ -53,7 +55,7 @@ a string (`auto-0` when no id is given). It is not an Impresso content-item id.
 - an empty object `{}`, in the marker form when the marker is malformed or
   nothing is linked.
 
-`ner-nel` always returns a list.
+`ner` and `ner-nel` always return a list, `[]` when nothing is found.
 
 ## Status codes
 

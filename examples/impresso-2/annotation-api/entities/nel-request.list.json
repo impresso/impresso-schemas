@@ -1,0 +1,20 @@
+{
+  "data": "Hans Müller lived in Berlin.",
+  "entities": [
+    {
+      "type": "pers",
+      "surface": "Hans Müller",
+      "lOffset": 0,
+      "rOffset": 11,
+      "confidence_ner": 0.9712
+    },
+    {
+      "type": "loc",
+      "surface": "Berlin",
+      "lOffset": 21,
+      "rOffset": 27,
+      "confidence_ner": 0.9934
+    }
+  ],
+  "NER seconds": 0.0398
+}

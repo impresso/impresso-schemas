@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/annotation-api/embeddings/text-embedder-response.v1.schema.json",
   "title": "Annotation API text embedder response",
-  "description": "Response body of POST /api/text-embedder/.",
+  "description": "Response body of POST /api/text-embedder/. The server sends every key listed here, with null when there is no value.",
   "type": "object",
   "properties": {
     "ts": {
@@ -33,5 +33,5 @@
       "description": "The submitted text."
     }
   },
-  "required": ["embedding"]
+  "required": ["ts", "sys_id", "embedding", "vector_dimensions", "seconds", "text"]
 }

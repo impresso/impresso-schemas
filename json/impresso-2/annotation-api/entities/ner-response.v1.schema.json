@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/annotation-api/entities/ner-response.v1.schema.json",
   "title": "Annotation API NER response",
-  "description": "Response body of POST /api/ner/.",
+  "description": "Response body of POST /api/ner/. The server sends every key listed here, with null when there is no value.",
   "type": "object",
   "properties": {
     "ts": {
@@ -15,7 +15,7 @@
     },
     "nes": {
       "type": "array",
-      "description": "Named entity mentions found in the text.",
+      "description": "Named entity mentions found in the text; `[]` when nothing is found.",
       "items": {
         "$ref": "ner-entity.v1.schema.json"
       }
@@ -29,5 +29,5 @@
       "description": "Always 0 for this endpoint, which does no linking. Frozen wire name containing a space."
     }
   },
-  "required": ["ts", "sys_id", "nes"]
+  "required": ["ts", "sys_id", "nes", "NER seconds", "NEL seconds"]
 }

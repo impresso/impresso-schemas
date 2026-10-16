@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/annotation-api/entities/ner-nel-response.v1.schema.json",
   "title": "Annotation API NER-NEL response",
-  "description": "Response body of POST /api/ner-nel/: NER then NEL on the detected mentions. Same keys as the /api/nel/ response, but `nes` is always a list.",
+  "description": "Response body of POST /api/ner-nel/: NER then NEL on the detected mentions. Same keys as the /api/nel/ response, but `nes` is always a list. The server sends every key listed here, with null when there is no value.",
   "type": "object",
   "properties": {
     "ts": {
@@ -23,11 +23,11 @@
     },
     "nes": {
       "type": "array",
-      "description": "Linked mentions found in the text.",
+      "description": "Linked mentions found in the text. Always a list; `[]` when nothing is found.",
       "items": {
         "$ref": "nel-entity.v1.schema.json"
       }
     }
   },
-  "required": ["ts", "sys_id", "nes"]
+  "required": ["ts", "sys_id", "nes", "NEL seconds", "NER seconds"]
 }

@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/annotation-api/entities/nel-entity.v1.schema.json",
   "title": "Annotation API NEL entity",
-  "description": "One linked named entity mention returned in `nes` by the /api/nel/ and /api/ner-nel/ endpoints. Offsets are absolute in the submitted text. When the mention does not resolve to a Wikidata item (NIL link), `wkdata_qid` and `wkd_id` are null while the Wikipedia fields may still be set.",
+  "description": "One linked named entity mention returned in `nes` by the /api/nel/ and /api/ner-nel/ endpoints. Offsets are absolute in the submitted text. When the mention does not resolve to a Wikidata item (NIL link), `wkdata_qid` and `wkd_id` are null while the Wikipedia fields may still be set. The server sends every key listed here, with null when there is no value.",
   "type": "object",
   "properties": {
     "type": {
@@ -133,7 +133,7 @@
     },
     "wkd_pred": {
       "type": ["string", "null"],
-      "description": "Raw prediction of the linking model, as `title >> lang`. Use `wkpedia_pagename` and `wkpedia_lg` instead.",
+      "description": "Raw prediction of the linking model, as `title >> lang`. Use `wkpedia_pagename` and `wkpedia_lg` instead. Sent on every linked entity, but not part of the declared response model, so not required.",
       "deprecated": true
     },
     "label_fr": {
@@ -176,7 +176,7 @@
     },
     "scope": {
       "type": ["string", "null"],
-      "description": "Part of the text the mention belongs to. Legacy field kept for compatibility.",
+      "description": "Part of the text the mention belongs to, or null. Legacy field kept for compatibility.",
       "deprecated": true
     },
     "name": {
@@ -192,5 +192,34 @@
       "description": "For a person mention, its `function` component (Impresso HIPE guidelines), otherwise null."
     }
   },
-  "required": ["type", "surface", "lOffset", "rOffset"]
+  "required": [
+    "type",
+    "surface",
+    "lOffset",
+    "rOffset",
+    "scope",
+    "wkd_id",
+    "wkdata_qid",
+    "wkpedia_lg",
+    "wkpedia_pagename",
+    "wkpedia_url",
+    "label_fr",
+    "label_en",
+    "label_de",
+    "label_other",
+    "label_other_lg",
+    "confidence_ner",
+    "confidence_nel",
+    "confidence_nel_normalized",
+    "confidence_margin",
+    "confidence_ner_entity",
+    "confidence_ner_type",
+    "entity_confidence",
+    "type_confidence",
+    "type_ner_original",
+    "nel_unlink",
+    "function",
+    "name",
+    "title"
+  ]
 }

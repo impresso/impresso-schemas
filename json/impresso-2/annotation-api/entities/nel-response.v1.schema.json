@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/annotation-api/entities/nel-response.v1.schema.json",
   "title": "Annotation API NEL response",
-  "description": "Response body of POST /api/nel/.",
+  "description": "Response body of POST /api/nel/. The server sends every key listed here, with null when there is no value.",
   "type": "object",
   "properties": {
     "ts": {
@@ -35,10 +35,11 @@
         },
         {
           "type": "object",
-          "additionalProperties": false
+          "additionalProperties": false,
+          "maxProperties": 0
         }
       ]
     }
   },
-  "required": ["ts", "sys_id", "nes"]
+  "required": ["ts", "sys_id", "nes", "NEL seconds", "NER seconds"]
 }
