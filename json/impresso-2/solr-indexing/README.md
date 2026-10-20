@@ -63,11 +63,15 @@ naming and documentation rules.
 The roots compose the following fragments. Names in this table omit the
 `content-item.part.` prefix and version suffix for readability.
 
-| Root | Composed field groups |
-| --- | --- |
-| Paper [v1](content-item/content-item.root.paper.v1.schema.json), [v2](content-item/content-item.root.paper.v2.schema.json) | Core, contextual metadata, access rights, text transcript, text semantic enrichments, paper support |
-| Audio [v1](content-item/content-item.root.audio.v1.schema.json), [v2](content-item/content-item.root.audio.v2.schema.json) | Core, contextual metadata, provider metadata, access rights, text transcript, text semantic enrichments, audio support |
-| Image [v1](content-item/content-item.root.image.v1.schema.json) | Core, contextual metadata, access rights, image fields, image semantic enrichments |
+| Family | Current entry point | Historical entry points | Composed field groups |
+| --- | --- | --- | --- |
+| Paper | [v3](content-item/content-item.root.paper.v3.schema.json) | [v1](content-item/content-item.root.paper.v1.schema.json), [v2](content-item/content-item.root.paper.v2.schema.json) | Core, contextual metadata, access rights, text transcript, text semantic enrichments, paper support |
+| Audio | [v3](content-item/content-item.root.audio.v3.schema.json) | [v1](content-item/content-item.root.audio.v1.schema.json), [v2](content-item/content-item.root.audio.v2.schema.json) | Core, contextual metadata, provider metadata, access rights, text transcript, text semantic enrichments, audio support |
+| Image | [v1](content-item/content-item.root.image.v1.schema.json) | — | Core, contextual metadata, access rights, image fields, image semantic enrichments |
+
+“Current” identifies the contract for new generation; existing deployments may
+still use a historical version. Deployment requires the corresponding committed
+schema revision to be pinned by the indexing application.
 
 Paper roots cover printed and typescripted sources. Their paper-support
 fragment carries page references, layout and text-region information; they
@@ -79,13 +83,16 @@ and embeddings.
 
 Paper/audio v1 roots use
 [text semantic enrichments v1](content-item/content-item.part.text.semantic-enrichments.v1.schema.json),
-including the older entity/mention fields. Their v2 counterparts use
+including the older entity/mention fields. Their v2 and v3 counterparts use
 [text semantic enrichments v2](content-item/content-item.part.text.semantic-enrichments.v2.schema.json),
 which retains OCR QA, topics, text-reuse cluster IDs and document embeddings,
 and composes the dedicated
 [entity/mention fragment](content-item/content-item.part.text.semantic-enrichments-entity-mentions.v1.schema.json).
+Paper/audio v3 select [transcript v2](content-item/content-item.part.text.transcript.v2.schema.json),
+adding Portuguese body acceptance and string validation for generic section
+titles. Paper/audio v1/v2 retain transcript v1.
 
-### Entity and mention fields on v2 content items
+### Entity and mention fields on v2/v3 content items
 
 The type prefixes are `pers`, `loc`, `org`, `pressagency`, and
 `radiostation`. In this representation `pressagency` replaces `nag`;
@@ -178,8 +185,13 @@ hierarchy. The explicit mappings in
 determine which examples validate against which versions. Examples are
 fixtures and may contain illustrative data.
 
-- `ci_paper.example.json` and `ci_typescript.example.json` exercise paper v1.
-- `ci_paper.v2.example.json` exercises paper v2 and its new mention fields.
+- `ci_paper.v3.example.json` and `ci_audio.v3.example.json` exercise the current
+  paper/audio v3 entry points, including the Portuguese body field and generic section
+  titles.
+- Historical `ci_paper.example.json` and `ci_typescript.example.json` exercise
+  paper v1.
+- Historical `ci_paper.v2.example.json` exercises paper v2 and its mention fields,
+  which are retained in v3.
 - The two image examples exercise image v1.
 - `ci_audio.example.json` is currently empty and excluded from example tests.
 - Separate entity and mention examples cover the available registered versions.
@@ -214,3 +226,12 @@ Documentation is generated from the JSON schemas into the gitignored
 Browse the [published schema documentation](https://impresso.github.io/impresso-schemas/).
 The old importer-local `validate_schemas.py` and Avro-generation workflow
 are not this repository's validation interface.
+
+### Primary CI text contract v3 (2026-10-20)
+
+Paper/audio v3 reuse v2 enrichment contracts and select transcript v2. It adds
+Portuguese to the required-body alternatives and types optional generic
+`section_title_txt` as a string. Legacy `content_txt_lb` and unrestricted two-letter
+language patterns remain accepted. Earlier roots/fragments remain unchanged.
+Native indexing selects v3 after the schema publication and parent pin; a local
+uncommitted schema checkout is not a deployable pin.

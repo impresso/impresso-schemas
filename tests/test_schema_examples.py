@@ -80,6 +80,9 @@ LEGACY_CASES = [
 # Impresso 2 copies of the valid legacy fixtures. These use the same data as
 # their legacy counterparts but exercise the versioned Impresso 2 contracts.
 IMPRESSO_2_CASES = [
+    ("json/impresso-2/solr-indexing/content-item/content-item.root.paper.v3.schema.json", "examples/impresso-2/solr-indexing/content-item/ci_paper.v3.example.json"),
+    ("json/impresso-2/solr-indexing/content-item/content-item.root.audio.v3.schema.json", "examples/impresso-2/solr-indexing/content-item/ci_audio.v3.example.json"),
+
     # data-preparation/canonical
     ("json/impresso-2/data-preparation/canonical/issue.v1.schema.json", "examples/impresso-2/data-preparation/canonical/issue.example0.json"),
     ("json/impresso-2/data-preparation/canonical/issue.v1.schema.json", "examples/impresso-2/data-preparation/canonical/issue.example1.json"),
