@@ -17,7 +17,7 @@
     },
     "entitySuggest": {
       "type": "array",
-      "description": "Optional Solr suggester field documenting the labels exposed for entity auto-completion. It is populated by Solr configuration and is absent from generated documents. In other words: present only once indexed.",
+      "description": "Labels supplied directly by the importer in complete entity documents for Solr auto-completion. The default label comes first, followed by accepted language labels in sorted field-name order, retaining the first occurrence of each exact string without trimming, case folding or Unicode normalization. Solr stores this array; copy rules must not append default_label_s or label_* values into entitySuggest. The field remains optional at schema level for compatibility with historical documents. Distinct matching labels can still return the same QID|type payload; clients group those matches by payload and display default_label_s.",
       "items": { "type": "string" }
     },
     "ner_entity_type_s": {
