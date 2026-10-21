@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "title": "ProvenanceVerificationRequest",
+  "properties": {
+    "token": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 16384
+    },
+    "ids": {
+      "type": "array",
+      "maxItems": 100000,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 4096,
+        "pattern": "^[^\\r\\n]+$"
+      }
+    },
+    "csv": {
+      "type": "string",
+      "maxLength": 1048576
+    },
+    "idsHash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "idsCount": {
+      "type": "integer",
+      "minimum": 0
+    }
+  },
+  "required": ["token"],
+  "oneOf": [
+    {
+      "not": {
+        "anyOf": [
+          {
+            "required": ["ids"]
+          },
+          {
+            "required": ["csv"]
+          },
+          {
+            "required": ["idsHash"]
+          },
+          {
+            "required": ["idsCount"]
+          }
+        ]
+      }
+    },
+    {
+      "required": ["ids"],
+      "not": {
+        "anyOf": [
+          {
+            "required": ["csv"]
+          },
+          {
+            "required": ["idsHash"]
+          },
+          {
+            "required": ["idsCount"]
+          }
+        ]
+      }
+    },
+    {
+      "required": ["csv"],
+      "not": {
+        "anyOf": [
+          {
+            "required": ["ids"]
+          },
+          {
+            "required": ["idsHash"]
+          },
+          {
+            "required": ["idsCount"]
+          }
+        ]
+      }
+    },
+    {
+      "required": ["idsHash", "idsCount"],
+      "not": {
+        "anyOf": [
+          {
+            "required": ["ids"]
+          },
+          {
+            "required": ["csv"]
+          }
+        ]
+      }
+    }
+  ],
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/public-api/requests/ProvenanceVerificationRequest.json",
+  "description": "Signed delivery receipts identify receiving accounts and ordered item IDs only. They do not attest item content or identify a publisher."
+}

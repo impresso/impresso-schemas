@@ -309,3 +309,10 @@ fragment:
 - Restored EntityDetails.json, ContentItemSemanticEnrichments.json and ContentItemText.json from 86-organize-json-schemas-by-data-phase in the working tree. Public API edits are deferred to IML ownership.
 - Prepared an inline IML request for radio-station support and review of item-type aliases, including the ambiguous ent meaning.
 - Verification: all three files match the integration branch exactly; git diff --check passed. Restorations and this log addition remain unstaged; no commit or push.
+
+## 2026-10-21 — Restore IML changes and resolve integration merge
+
+- Merged integration commit 71649a9 locally with --no-commit. Resolved the sole conflict in test_schema_examples.py by preserving both integration image-classification cases and feature v3 baseline cases.
+- Restored the three API entity/content-item files byte-for-byte from before removal commit 867f8e1, following clarification that these edits were made by IML colleagues. Integration's other API changes are preserved.
+- Verification: 82 legacy and 265 Impresso 2 tests passed; the three restored API schemas also passed schema validation and exact-source comparison. No unresolved conflicts; staged diff whitespace check passed.
+- HTTPS fetch used because SSH authentication was unavailable. Merge and resolutions are staged for review, with no commit or push. Earlier notes deferring these API changes are superseded by this decision.

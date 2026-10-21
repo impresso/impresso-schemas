@@ -7,83 +7,103 @@
   "oneOf": [
     {
       "const": "caricature_humoristic_drawing",
+      "title": "Caricature or Editorial cartoon or Humoristic drawing",
       "description": "A single humorous, satirical, or exaggerated drawing, including editorial cartoons and caricatures."
     },
     {
       "const": "comic_strip",
+      "title": "Comic strip",
       "description": "A sequence of two or more illustrated panels, typically with dialogue inside speech bubbles."
     },
     {
-      "const": "illustrated_story",
-      "description": "A narrative illustration accompanying a serialized story, usually with prose narration rather than dialogue bubbles."
-    },
-    {
       "const": "game",
+      "title": "Game",
       "description": "A printed puzzle, riddle, crossword, board-game layout, or other recreational game-related illustration."
     },
     {
       "const": "graph",
+      "title": "Graph",
       "description": "A visual representation of data, such as a bar chart, line graph, pie chart, or statistical plot."
     },
     {
-      "const": "technical_drawing",
-      "description": "A precise technical diagram, such as an architectural blueprint, engineering schematic, or mechanical drawing."
-    },
-    {
       "const": "human_rep_fashion_visual",
+      "title": "Human representations - Fashion visual",
       "description": "A depiction focused on clothing, accessories, or fashion trends, including fashion sketches and photographs of models."
     },
     {
       "const": "human_rep_portrait",
+      "title": "Human representations - Portrait",
       "description": "A close-up depiction centred on an individual person, including formal portraits, profiles, and artistic renderings."
     },
     {
       "const": "human_rep_scene",
+      "title": "Human representations - Scene",
       "description": "A depiction of people interacting, undertaking activities, or forming part of a larger scene or crowd."
     },
     {
-      "const": "scenery_landscape",
-      "description": "A depiction of a natural landscape, cityscape, or environmental scene in which people are not the main subject."
+      "const": "illustrated_story",
+      "title": "Illustrated story",
+      "description": "A narrative illustration accompanying a serialized story, usually with prose narration rather than dialogue bubbles."
     },
     {
       "const": "map_geological",
+      "title": "Map - Geological map",
       "description": "A map showing rock formations or geological features, such as faults, folds, and geological units."
     },
     {
       "const": "map_geopolitical",
+      "title": "Map - Geopolitical map",
       "description": "A map emphasizing territorial boundaries, political divisions, and place names."
     },
     {
       "const": "map_physical_or_roadmap",
+      "title": "Map - Physical map or Roadmap",
       "description": "A physical map showing natural features or a roadmap showing transport routes and networks."
     },
     {
       "const": "map_plan",
+      "title": "Map - Plan",
       "description": "A detailed, scaled plan of a specific place, building, district, or infrastructure layout."
     },
     {
       "const": "map_weather",
+      "title": "Map - Weather map",
       "description": "A map depicting meteorological conditions, such as temperature, precipitation, cloud cover, wind, or atmospheric pressure."
     },
     {
-      "const": "weather_infographic",
-      "description": "A non-geographical infographic representing weather conditions through charts, symbols, or meteorological indicators."
-    },
-    {
       "const": "non_figurative_visual_content",
+      "title": "Non-figurative visual content",
       "description": "A visual content composed primarily of stylised text, often used in advertisements."
     },
     {
       "const": "object",
+      "title": "Object",
       "description": "A depiction centred on a discrete object rather than a person, scene, map, or other defined visual type."
     },
     {
       "const": "ornament_illustrated_title",
+      "title": "Ornament or Illustrated Title",
       "description": "An ornamental or illustrated section title, potentially combining decorative lettering, figurative elements, or abstract embellishment."
     },
     {
       "const": "other",
+      "title": "Other",
       "description": "A visual content that cannot be assigned to any other available class."
+    },
+    {
+      "const": "scenery_landscape",
+      "title": "Scenery or Landscape",
+      "description": "A depiction of a natural landscape, cityscape, or environmental scene in which people are not the main subject."
+    },
+    {
+      "const": "technical_drawing",
+      "title": "Technical drawing",
+      "description": "A precise technical diagram, such as an architectural blueprint, engineering schematic, or mechanical drawing."
+    },
+    {
+      "const": "weather_infographic",
+      "title": "Weather infographic",
+      "description": "A non-geographical infographic representing weather conditions through charts, symbols, or meteorological indicators."
     },
     {
       "const": null,
