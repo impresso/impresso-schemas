@@ -44,6 +44,10 @@
     "title_year": {
       "type": "string",
       "description": "String composed of title + year, e.g. 'Fronde-1872' ."
+    },
+    "section_id_s": {
+      "type": "string",
+      "description": "Identifier of the section this content item belongs to, if any. The id is a string composed of the issue id and of the legacy (METS/ALTO inherited) ID of the section."
     }
   },
   "patternProperties": {
@@ -54,6 +58,10 @@
     "^content_txt_[a-z]{2}$": {
       "type": "string",
       "description": "Full text content of the article in the specified language (ISO 639-1 two-letter language code)"
+    },
+    "^section_title_txt_[a-z]{2}$": {
+      "type": "string",
+      "description": "Title of the section in the specified language (ISO 639-1 two-letter language code). In a newspaper issue, a section groups content items under a shared title."
     }
   },
   "required": ["segmentation_level_s", "item_type_s", "lg_s", "content_length_i", "snippet_plain"],

@@ -1,371 +1,303 @@
-# Impresso Solr JSON Schemas
+# Solr indexing JSON schemas
 
-This directory contains JSON Schema definitions for all data types indexed in the Impresso Solr collections. The schemas ensure data consistency, enable validation, and serve as documentation for the data model.
+This directory defines the JSON documents used for Solr indexing in the
+[Impresso schema repository](../../../README.md). It covers content items and
+separate documents for entities, aggregate mentions, topics, text reuse, and
+embeddings.
 
-## 📁 Directory Structure
+Solr indexing is one stage of the wider Impresso data lifecycle:
 
-```
-schemas/
-├── json/                           # JSON Schema definitions
-│   ├── content-item/              # Content item schemas (articles, audio, images)
-│   └── semantic-enrichments/      # Semantic enrichment schemas (entities, topics, etc.)
-├── examples/                       # Example documents matching each schema
-├── scripts/                        # Validation and generation tools
-│   └── validate_schemas.py        # Schema validation script
-├── avro/                          # Avro schemas (future)
-└── README.md                      # This file
+```text
+Data preparation → Text processing → Semantic enrichment → Solr indexing → Application
 ```
 
-## 🎯 Overview
+The upstream [semantic-enrichment schemas](../semantic-enrichment/) describe
+processing outputs such as NER and entity-linking annotations. The schemas here
+describe their Solr-facing representations, including denormalized fields on
+content items. Importer code remains in `impresso-pyindexing`; this repository
+provides the versioned contracts, examples, validation, and documentation.
 
-The schemas are organized into two main categories:
+These are **JSON Schemas**, not Solr managed schemas or `solrconfig.xml`.
+They do not configure analyzers, dynamic fields, indexing, storage, copy fields,
+or suggesters. Some optional properties document fields populated by Solr,
+such as `entitySuggest` and `mentionSuggest`; a submitted document and a Solr
+query response need not have identical shapes.
 
-### 1. Content Items (`json/content-item/`)
-Schemas for the primary content indexed in Solr - newspaper articles, audio transcripts, and images.
+## Layout and versioning
 
-### 2. Semantic Enrichments (`json/semantic-enrichments/`)
-Schemas for annotations and enrichments applied to content items - entities, topics, text reuse, etc.
+Paths below are relative to the repository root:
 
----
+```text
+json/impresso-2/solr-indexing/
+├── content-item/          Complete CI schemas and reusable field fragments
+└── semantic-enrichments/  Entity, mention, topic, text-reuse and embedding schemas
 
-## 📋 Content Item Schemas
+examples/impresso-2/solr-indexing/
+├── content-item/
+└── semantic-enrichments/
 
-Content item schemas use a **modular design** - they are split into multiple parts that are composed into root schemas for different media types.
-
-### Modular Schema Parts
-
-| Schema File | Description |
-|------------|-------------|
-| `content-item.part.core.schema.json` | Core fields present in all content items (id, title, date, newspaper) |
-| `content-item.part.access-rights.schema.json` | Access rights and licensing information |
-| `content-item.part.contextual-metadata.schema.json` | Metadata about context (issue, page numbers) |
-| `content-item.part.image.schema.json` | Image-specific fields (IIIF manifests, coordinates, OCR quality) |
-| `content-item.part.text.paper.schema.json` | Text fields for newspaper articles |
-| `content-item.part.text.audio.schema.json` | Audio stream-structural fields (timing, records, utterance breaks) |
-| `content-item.part.text.transcript.schema.json` | Transcript structure for audio/video |
-| `content-item.part.text.semantic-enrichments.schema.json` | Links to semantic annotations (entities, topics, etc.) |
-| `content-item.part.contextual-metadata.provider.schema.json` | Provider-verbatim metadata fields (`meta_prv_` prefix) — not harmonised by Impresso |
-
-### Root Schemas (Composite)
-
-These schemas compose the modular parts into complete schemas for each media type:
-
-| Root Schema | Composes | Description |
-|------------|----------|-------------|
-| `content-item.root.paper.schema.json` | core + access-rights + contextual-metadata + text.paper + image + semantic-enrichments | Complete schema for newspaper articles |
-| `content-item.root.audio.schema.json` | core + access-rights + contextual-metadata + text.audio + text.transcript + semantic-enrichments + **contextual-metadata.provider** | Complete schema for audio content |
-| `content-item.root.image.schema.json` | core + access-rights + image | Complete schema for standalone images |
-
-### How Schema Composition Works
-
-The root schemas reference the part schemas using `$ref`:
-
-```json
-{
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://impresso-project.ch/schemas/json/content-item/content-item.root.paper.schema.json",
-  "allOf": [
-    { "$ref": "content-item.part.core.schema.json" },
-    { "$ref": "content-item.part.access-rights.schema.json" },
-    { "$ref": "content-item.part.text.paper.schema.json" },
-    ...
-  ]
-}
+tests/                    Schema integrity, reference and example validation
 ```
 
-**Benefits of Modular Design:**
-- ✅ Reuse common schemas across media types
-- ✅ Easier maintenance (change once, applies everywhere)
-- ✅ Clear separation of concerns
-- ✅ Can validate individual parts independently
+All schemas use JSON Schema draft 2020-12. Their published `$id` must match
+their complete repository path under
+`https://impresso.github.io/impresso-schemas/`.
 
----
+- `*.root.*.vN.schema.json` defines a complete document.
+- `*.part.*.vN.schema.json` defines fields composed into a document using
+  `allOf` and `$ref`.
+- Versions apply to individual contracts. A v2 root can reuse unchanged v1
+  fragments; it does not require every dependency to have a v2 filename.
 
-## 🏷️ Semantic Enrichment Schemas
+Older versions remain available for their existing consumers. Solr schemas
+live in the Impresso 2 namespace, including their v1 files; this is distinct
+from the repository's top-level legacy namespace. Select the root version
+that matches the producer and consumer rather than assuming the highest
+number describes every deployed index.
 
-These schemas define standalone documents for various semantic annotations that enrich the content items.
+See [schema conventions](../../../SCHEMA_CONVENTIONS.md) for repository-wide
+naming and documentation rules.
 
-### Root Schemas (Standalone)
+### New-representation baseline (v3)
 
-| Schema File | Solr Collection | Description |
-|------------|-----------------|-------------|
-| `sem.root.entities.schema.json` | `12_impresso_entity_profiles` | Entity profile documents (persons, locations, organizations) |
-| `sem.root.mentions.schema.json` | `13_impresso_entity_mentions` | Entity mention documents linking entities to content items |
-| `sem.root.topics.schema.json` | `02_impresso_topics` | Topic classification documents |
-| `sem.root.tr-clusters.schema.json` | `04_impresso_tr_clusters` | Text reuse cluster documents |
-| `sem.root.tr-passages.schema.json` | `05_impresso_tr_passages` | Text reuse passage documents |
-| `sem.root.wemb.schema.json` | `06_impresso_word_embeddings` | Word embedding documents |
-| `sem.root.entity-profiles.schema.json` | `12_impresso_entity_profiles` | Extended entity profile schema |
+The v3 baseline identifies Solr contracts ready for the QID-based entity and
+surface/type mention representation. This is a one-time alignment: roots and
+their Solr fragments start together at v3, then evolve independently. It is
+not a permanent marker for whichever version is active in a deployment.
 
-### Modular Parts
+The baseline entry points are paper, audio, image, entities, mentions, topics,
+text-reuse clusters, and word embeddings. All their dependencies within
+`solr-indexing` use v3. Shared enums and image typology definitions outside
+this directory retain their independent versions.
 
-| Schema File | Description |
-|------------|-------------|
-| `sem.part.tr-passages.schema.json` | Shared text reuse passage properties |
+Text-reuse passages and entity profiles are **pending**, not part of this
+baseline. Passage root/part schemas remain v1 until revised; entity profiles
+need clarification of internal entity IDs and mention keys before promotion.
+Earlier contracts remain available with their existing paths and identifiers.
 
----
+These source schemas still use `$ref`. Self-contained exports for consumers
+that cannot resolve references are generated artifacts, not separate source
+contracts; v3 filenames alone do not make a schema self-contained.
 
-## 📝 Example Documents
+### Entity/mention representation compatibility
 
-The `examples/` directory contains real-world example documents that validate against each schema:
+Two representation families coexist. **Previous representation** refers to
+the earlier entity/mention contracts. **QID-based entity and surface/type
+mention representation** refers to the new contracts. These names identify
+the data model, not a deployed environment or a repository-wide version.
 
-### Content Item Examples
+| Contract | Previous representation | QID-based entity and surface/type mention representation |
+| --- | --- | --- |
+| Entity documents | Entities v1/v2 | Entities v3 |
+| Aggregate mention documents | Mentions v1/v2 and ordinary mentions v2 | Mentions v3, shared by all five types |
+| Paper/audio content-item roots | CI v1 | CI v2 and v3 |
+| CI text semantic-enrichment fragment | Text semantic enrichments v1 | Baseline: text semantic enrichments v3 → entity/mention fragment v3. Earlier new-representation chain: v2 → v1. |
 
-| Example File | Schema | Description |
-|-------------|--------|-------------|
-| `ci_paper.example.json` | `content-item.root.paper` | Sample newspaper article |
-| `ci_audio.example.json` | `content-item.root.audio` | Sample audio transcript |
-| `ci_image.example.json` | `content-item.root.image` | Sample image document |
-| `ci_typescript.example.json` | `content-item.root.audio` | Sample typescript document |
+CI v2 already uses the new representation. CI v3 adds transcript changes and
+now selects v3 fragments throughout the Solr dependency chain. The baseline
+copies preserve the validation rules of their source fragments; the version
+alignment itself introduces no new fields or constraints. CI roots compose
+field fragments, not the separate entity or aggregate-mention document schemas.
 
-### Semantic Enrichment Examples
+The previous representation retains fields such as `pers_mentions`,
+`pers_entities_dpfs`, and `nag_mentions`. The new representation uses QIDs,
+`a1_…` surface/type aggregate IDs, and ordered occurrence fields described
+below. Existing schema paths and `$id` values remain available for consumers
+of either representation. “Previous” does not denote an exact snapshot of all
+files before this change: shared fragments can include independent additions,
+such as section metadata in transcript v1.
 
-| Example File | Schema | Description |
-|-------------|--------|-------------|
-| `sem_entities.example.json` | `sem.root.entities` | Sample entity document |
-| `sem_mentions.example.json` | `sem.root.mentions` | Sample mention document |
-| `sem_topics.example.json` | `sem.root.topics` | Sample topic document |
-| `sem_tr-clusters.example.json` | `sem.root.tr-clusters` | Sample text reuse cluster |
-| `sem_tr-passages.example.json` | `sem.root.tr-passages` | Sample text reuse passage |
-| `sem_wemb.example.json` | `sem.root.wemb` | Sample word embedding |
+## Content-item schemas
 
----
+The roots compose the following fragments. Names in this table omit the
+`content-item.part.` prefix and version suffix for readability.
 
-## 🔧 Validation Script
+| Family | Latest entry point | Earlier entry points | Composed field groups |
+| --- | --- | --- | --- |
+| Paper | [v3](content-item/content-item.root.paper.v3.schema.json) | [v1](content-item/content-item.root.paper.v1.schema.json), [v2](content-item/content-item.root.paper.v2.schema.json) | Core, contextual metadata, access rights, text transcript, text semantic enrichments, paper support |
+| Audio | [v3](content-item/content-item.root.audio.v3.schema.json) | [v1](content-item/content-item.root.audio.v1.schema.json), [v2](content-item/content-item.root.audio.v2.schema.json) | Core, contextual metadata, provider metadata, access rights, text transcript, text semantic enrichments, audio support |
+| Image | [v3](content-item/content-item.root.image.v3.schema.json) | [v1](content-item/content-item.root.image.v1.schema.json) | Core, contextual metadata, access rights, image fields, image semantic enrichments |
 
-The `validate_schemas.py` script provides comprehensive validation capabilities.
+“Latest” identifies the highest available root version, not deployment status.
+Select the representation using the compatibility table above, and pin the
+corresponding committed schema revision in the indexing application.
 
-### Features
+Paper roots cover printed and typescripted sources. Their paper-support
+fragment carries page references, layout and text-region information; they
+do not compose the standalone image-content fragment. Audio support carries
+record references and timing/utterance structure. Provider metadata uses the
+`meta_prv_` prefix for values passed through without cross-provider
+harmonization. Image-specific enrichments include classification, keywords,
+and embeddings.
 
-1. **Schema Validation**: Validates that JSON schemas themselves are well-formed
-2. **Example Validation**: Validates example documents against their schemas
-3. **Cross-Reference Resolution**: Resolves `$ref` references between modular schemas
-4. **Avro Generation**: Converts JSON schemas to Avro format (experimental)
+Paper/audio v1 roots use
+[text semantic enrichments v1](content-item/content-item.part.text.semantic-enrichments.v1.schema.json),
+including the older entity/mention fields. Paper/audio v2 retain
+[text semantic enrichments v2](content-item/content-item.part.text.semantic-enrichments.v2.schema.json)
+and entity/mention fragment v1. Paper/audio v3 use
+[text semantic enrichments v3](content-item/content-item.part.text.semantic-enrichments.v3.schema.json),
+which retains OCR QA, topics, text-reuse cluster IDs and document embeddings,
+and composes the dedicated
+[entity/mention fragment v3](content-item/content-item.part.text.semantic-enrichments-entity-mentions.v3.schema.json).
+Paper/audio v3 select [transcript v3](content-item/content-item.part.text.transcript.v3.schema.json),
+a baseline copy of transcript v2, including Portuguese body acceptance and
+string validation for generic section titles. Paper/audio v1/v2 retain
+transcript v1.
 
-### Usage
+### Entity and mention fields on v2/v3 content items
+
+The type prefixes are `pers`, `loc`, `org`, `pressagency`, and
+`radiostation`. In this representation `pressagency` replaces `nag`;
+`time` and `prod` are excluded.
+
+| Field family | Representation and meaning |
+| --- | --- |
+| `[type]_mention_surfaces_json_plain` | A JSON string encoding ordered exact occurrence surfaces |
+| `[type]_mention_offsets_json_plain` | A JSON string encoding ordered body-relative `[start,length]` pairs |
+| `[type]_mention_qids_json_plain` | A JSON string encoding ordered QIDs or `null` for NIL occurrences |
+| `[type]_aggregate_mention_ids_ss` | Unique aggregate mention IDs present in the CI, including NIL forms |
+| `[type]_mention_ner_conf_dpfs` | String-array payload representation of occurrence surfaces and NER confidence on the 0–1 scale |
+| `[type]_entity_ids_dpfs` | String-array payload representation of QIDs and linked-occurrence counts within the CI/type |
+
+The table lists body-scoped fields. Each also has a title-scoped counterpart
+with `_title_` after the type, for example
+`pers_title_mention_offsets_json_plain` and `pers_title_entity_ids_dpfs`.
+Body offsets refer to the body text; title offsets are intended to refer to
+the indexed CI title. Coordinate units and the source text must agree between
+producer and consumer.
+
+The first three fields hold serialized JSON, not native arrays in the outer
+document. Decode them once. They describe the same occurrence sequence:
+preserve repetitions and null positions, and omit all three together when a
+type has no occurrences in that scope. Body and title sequences are separate.
+Aggregate membership and entity-count payloads are not
+positionally aligned occurrence lists, and confidence payload order must not
+be assumed to align either.
+
+The JSON Schema checks the outer string type; parsing, matching lengths,
+validating decoded elements and checking spans against the served text
+require supplemental producer/consumer checks. Individual occurrence IDs and
+a separate mention-occurrence collection are outside this representation.
+
+## Separate semantic-enrichment documents
+
+These are distinct from enrichment fields embedded in a CI.
+
+| Schema | Purpose |
+| --- | --- |
+| Entities [v1](semantic-enrichments/sem.root.entities.v1.schema.json), [v2](semantic-enrichments/sem.root.entities.v2.schema.json) | Earlier composite entity identifiers, labels, types and frequencies |
+| Entities [v3](semantic-enrichments/sem.root.entities.v3.schema.json) | QID-based entity documents for `09_impresso_entities`, with labels, NER-derived type and integer counts |
+| Mentions [v1](semantic-enrichments/sem.root.mentions.v1.schema.json), [v2](semantic-enrichments/sem.root.mentions.v2.schema.json), [ordinary v2](semantic-enrichments/sem.root.mentions.ordinary.v2.schema.json) | Earlier aggregate contracts, including their respective identifier rules |
+| Mentions [v3](semantic-enrichments/sem.root.mentions.v3.schema.json) | Shared exact surface/type aggregates for `pers`, `loc`, `org`, `pressagency`, and `radiostation` in `08_impresso_mentions` |
+| Entity profiles (pending) [v1](semantic-enrichments/sem.root.entity-profiles.v1.schema.json) | Separate entity-profile documents with encyclopedic/contextual information and embeddings |
+| Topics [v3](semantic-enrichments/sem.root.topics.v3.schema.json), earlier [v1](semantic-enrichments/sem.root.topics.v1.schema.json) | Topic descriptions, model information and word probabilities |
+| Text-reuse clusters [v3](semantic-enrichments/sem.root.tr-clusters.v3.schema.json), earlier [v1](semantic-enrichments/sem.root.tr-clusters.v1.schema.json) | Cluster membership and summary statistics |
+| Text-reuse passages (pending) [v1](semantic-enrichments/sem.root.tr-passages.v1.schema.json) | Passage fields composed with selected CI metadata, rights, transcript and v1 text-enrichment fragments |
+| Word embeddings [v3](semantic-enrichments/sem.root.wemb.v3.schema.json), earlier [v1](semantic-enrichments/sem.root.wemb.v1.schema.json) | Words, language codes and embedding vectors |
+
+An **entity** in v3 is a Wikidata target, independent of its labels and
+predicted types. `ner_entity_type_s` records one type selected from occurrence
+evidence; the importer resolves ties. `content_item_count_l` is required,
+while mention and per-type counts are optional. The current contract requires
+a default label and `suggest_payload_s`, and permits language-specific labels
+for the languages listed in its `patternProperties`.
+
+An **aggregate mention** in v3 groups accepted occurrences with the same exact
+surface and predicted type, including linked and NIL occurrences. It is not
+an individual span or a document linked to one entity. The shared v3 contract
+uses deterministic `a1_…` identifiers derived from `[surface,type]`; entity
+QID, NIL status and body/title scope do not enter the key. Media-source types
+use this same schema; there is no separate media-source mention schema.
+`occurrence_count_l` and `suggest_payload_s` are required; the remaining
+counts are optional.
+
+Entity and aggregate-mention documents combine accepted body and title
+annotations. Optional `scopes_ss` records their presence scopes; distinct-CI
+counts use the union across scopes. Typed mention counts may overlap and
+must not be summed to infer unique entity-span totals.
+Entity-profile embedding documents remain a separate contract.
+
+JSON Schema validates identifier shapes, not hash derivation, cross-document
+links, or arithmetic relationships between counts. Those checks belong in
+the producer and its tests. The schema keywords, including `required`, are
+the validation contract; this overview does not replace them.
+
+## Composition and validation boundaries
+
+`allOf` validates each fragment against the **same complete document**.
+Required properties from each fragment therefore apply to the composed root.
+
+Do not set `additionalProperties: false` on a partial field fragment merely
+to reject obsolete fields: it would also reject legitimate fields defined
+by sibling fragments. Additional-property behavior varies across these
+schemas; they are not uniformly permissive or strict.
+
+Content-item roots declare `unevaluatedProperties: false`, but several
+fragments explicitly allow additional properties. Consequently, the root
+keyword alone does not guarantee rejection of every undeclared field.
+Removing a field declaration likewise does not necessarily forbid it.
+
+For offline validation, register local schemas by their `$id` and resolve
+published `$ref` URLs against that registry. The repository implements this in
+[tests/conftest.py](../../../tests/conftest.py); loading a root file alone
+without its referenced schemas is insufficient for reliable offline validation.
+
+## Examples and development workflow
+
+[Examples](../../../examples/impresso-2/solr-indexing/) mirror the schema
+hierarchy. The explicit mappings in
+[tests/test_schema_examples.py](../../../tests/test_schema_examples.py)
+determine which examples validate against which versions. Examples are
+fixtures and may contain illustrative data.
+
+- `ci_paper.v3.example.json` and `ci_audio.v3.example.json` exercise the new
+  representation through paper/audio v3, including the Portuguese body field
+  and generic section titles.
+- `ci_paper.example.json` and `ci_typescript.example.json` exercise paper v1
+  with the previous entity/mention representation.
+- `ci_paper.v2.example.json` exercises paper v2 with the new entity/mention
+  representation, which is retained in v3.
+- The two image examples exercise both image v1 and baseline v3.
+- Topic, text-reuse cluster and word-embedding examples exercise both v1 and v3.
+- `ci_audio.example.json` is currently empty and excluded from example tests.
+- Separate entity and mention examples cover the available registered versions.
+
+Run commands from the repository root with the virtual environment activated:
 
 ```bash
-cd impresso_solr/schemas/scripts
-
-# Validate all schemas
-python validate_schemas.py --schema --data all
-
-# Validate specific dataset
-python validate_schemas.py --schema --example --data ci-paper
-
-# Validate only examples
-python validate_schemas.py --example --data all
-
-# Generate Avro schemas
-python validate_schemas.py --schema --avro --data ci-paper
+source .venv/bin/activate
+make tests-imp2
+make tests
+make format-check
+make documentation-imp2
 ```
 
-### Available Datasets
+To validate only the Solr example cases:
 
-**Content Items:**
-- `ci-paper` - Newspaper articles
-- `ci-audio` - Audio/transcript documents  
-- `ci-image` - Image documents
-
-**Semantic Enrichments:**
-- `topics` - Topic classifications
-- `entities` - Entity profiles
-- `mentions` - Entity mentions
-- `tr-passages` - Text reuse passages
-- `tr-clusters` - Text reuse clusters
-- `wemb` - Word embeddings
-
-**Special:**
-- `all` - Validate all datasets
-
-### Command-Line Options
-
-```
---schema          Validate JSON schemas are well-formed
---example         Validate examples against schemas
---avro            Generate Avro schemas from JSON schemas
---data TYPE       Dataset to validate (ci-paper, topics, all, etc.)
+```bash
+python -m pytest tests/test_schema_examples.py -v -k 'content-item or sem.root'
 ```
 
----
+The full suites also check Draft 2020-12 validity, unique/path-matching
+identifiers, local reference resolution, and registered invalid cases.
+Dependency setup is documented in the [repository README](../../../README.md).
 
-## 🎨 Schema Design Principles
+For a new contract, add a versioned schema with a matching `$id`, preserve
+existing published paths, provide corresponding examples, register their
+test cases, and validate references and composition. Keep reusable fragments
+within the lifecycle area where their semantics apply.
 
-### 1. **Modular Architecture**
-- Split schemas into reusable parts
-- Compose complete schemas from parts using `$ref`
-- Enables code reuse and easier maintenance
+Documentation is generated from the JSON schemas into the gitignored
+`docs/` tree for local preview and published by CI on pushes to `master`.
+Browse the [published schema documentation](https://impresso.github.io/impresso-schemas/).
+The old importer-local `validate_schemas.py` and Avro-generation workflow
+are not this repository's validation interface.
 
-### 2. **Permissive by Default**
-- All schemas use `"additionalProperties": true`
-- Allows flexibility for future fields
-- Easier evolution without breaking changes
+### CI text contract history
 
-### 3. **Clear Documentation**
-- Every property includes a `description` field
-- Examples illustrate expected values
-- Consistent naming conventions
-
-### 4. **Validation Levels**
-
-| Level | Description |
-|-------|-------------|
-| **Required** | Fields that must be present (e.g., `id`, `title`) |
-| **Optional** | Fields that may or may not be present |
-| **Nullable** | Fields that can be `null` when present |
-
-### 5. **JSON Schema 2020-12**
-All schemas use the `2020-12` specification for modern features and better tooling support.
-
----
-
-## 🔍 Schema Reference Guide
-
-### Common Field Patterns
-
-#### Identifier Fields
-```json
-"id": {
-  "type": "string",
-  "description": "Unique identifier for the document",
-  "pattern": "^[A-Z]+-\\d{4}-\\d{2}-\\d{2}-[a-z]-[ip]\\d+"
-}
-```
-
-#### Date Fields
-```json
-"date": {
-  "type": "string",
-  "description": "Publication date in ISO 8601 format",
-  "format": "date"
-}
-```
-
-#### Multi-language Text Fields
-```json
-"title": {
-  "type": "string",
-  "description": "Title of the content item"
-},
-"lg": {
-  "type": "string",
-  "description": "Language code (ISO 639-1)",
-  "pattern": "^[a-z]{2}$"
-}
-```
-
-#### Array of References
-```json
-"entity_ids": {
-  "type": "array",
-  "items": {"type": "string"},
-  "description": "List of entity IDs mentioned in this document"
-}
-```
-
----
-
-## 📚 Usage in Code
-
-### Validating Documents Before Indexing
-
-The schemas are used during the Solr indexing process to validate documents:
-
-```python
-from impresso_solr.schemas.helpers.schema_validators import validate_jsonschema_partition
-
-# Validate a partition of documents
-bag_validated = bag_docs.map_partitions(
-    validate_jsonschema_partition,
-    data_type='text',  # or 'topics', 'entities', etc.
-    mode='log'         # Log errors but don't raise
-)
-```
-
-### Loading Schemas Programmatically
-
-```python
-from pathlib import Path
-import json
-
-# Load a schema
-schema_dir = Path("impresso_solr/schemas/json/content-item")
-with open(schema_dir / "content-item.root.paper.schema.json") as f:
-    schema = json.load(f)
-
-# Validate a document
-import jsonschema
-jsonschema.validate(document, schema)
-```
-
----
-
-## 🚀 Future Work
-
-### Planned Enhancements
-
-1. **Avro Schemas**
-   - Complete conversion from JSON Schema to Avro
-   - Enable efficient binary serialization
-   - Better integration with data pipelines
-
-2. **Schema Registry**
-   - Central repository for schema versions
-   - Schema evolution tracking
-   - Backward/forward compatibility checks
-
-3. **Automated Testing**
-   - CI/CD integration for schema validation
-   - Regression tests for schema changes
-   - Performance benchmarks
-
-4. **Documentation Generation**
-   - Auto-generate HTML documentation from schemas
-   - Interactive schema explorer
-   - Field statistics and usage examples
-
----
-
-## 🤝 Contributing
-
-When adding or modifying schemas:
-
-1. **Update the schema** in `json/` directory
-2. **Add/update examples** in `examples/` directory
-3. **Run validation** to ensure everything passes:
-   ```bash
-   python scripts/validate_schemas.py --schema --example --data all
-   ```
-4. **Update this README** if structure changes
-5. **Document breaking changes** in commit messages
-
-### Schema Naming Conventions
-
-- **Part schemas**: `{category}.part.{name}.schema.json`
-- **Root schemas**: `{category}.root.{type}.schema.json`
-- **Examples**: `{category}_{type}.example.json`
-
-Where:
-- `{category}` = `content-item` or `sem` (semantic enrichment)
-- `{name}` = descriptive name of the schema part
-- `{type}` = media type or enrichment type
-
----
-
-## 📞 Contact & Support
-
-- **Schema Issues**: Open an issue in the repository
-- **Questions**: Contact the Impresso development team
-- **Documentation**: See the main project README
-
----
-
-## 📄 License
-
-These schemas are part of the Impresso project. See the main project LICENSE file for details.
-
----
-
-**Last Updated**: January 2026
-**Schema Version**: 1.0
-**Maintainer**: Impresso Development Team
+Paper/audio v3 were introduced on 2026-10-20 using transcript v2 and semantic
+enrichments v2. The baseline alignment selects equivalent v3 fragments.
+Portuguese remains accepted among the required-body alternatives, and optional
+`section_title_txt` must be a string. Legacy `content_txt_lb` and unrestricted
+two-letter language patterns remain accepted. Deployment must pin a committed
+schema revision; a local uncommitted checkout is not a deployable pin.

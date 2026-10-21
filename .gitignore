@@ -12,3 +12,6 @@ __pycache__/
 
 # Generated documentation (published via GitHub Pages, not committed)
 /docs/
+
+# PyCharm project files
+.idea/

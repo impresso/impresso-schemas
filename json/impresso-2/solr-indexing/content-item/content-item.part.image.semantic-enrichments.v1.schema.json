@@ -45,6 +45,16 @@
       },
       "minItems": 768,
       "maxItems": 768
+    },
+    "siglip_emb_v768": {
+      "type": "array",
+      "title": "SigLIP image embedding (768D)",
+      "description": "Dense vector representation of the image computed using the SigLIP model. The vector has a fixed dimensionality of 768.",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 768,
+      "maxItems": 768
     }
   },
   "required": [

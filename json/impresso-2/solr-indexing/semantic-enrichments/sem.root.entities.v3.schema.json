@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/semantic-enrichments/sem.root.entities.v3.schema.json",
+  "title": "Entity Solr Document (v3)",
+  "description": "Entity Solr document in the v3 representation: one document per non-null Wikidata QID across accepted body and title annotations from ordinary and media-source deliveries. It preserves supplied language-specific labels and a display default, selects a NER type with media-source precedence, and distinguishes unique linked-span counts, overlapping per-type evidence counts and distinct-content-item counts.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique Wikidata identifier of the entity.",
+      "pattern": "^Q[1-9][0-9]*$"
+    },
+    "default_label_s": {
+      "type": "string",
+      "description": "Required display label. Prefer the English label, then an accepted label matching the selected Wikipedia reference language, then an accepted other-language label. If still unresolved, choose a remaining accepted label in this order: French, German, then remaining language codes alphabetically. Finally, use the Wikipedia page name. Select the Wikipedia reference independently: prefer en, fr, de, then other language codes alphabetically; break same-language ties by exact page name.",
+      "minLength": 1
+    },
+    "entitySuggest": {
+      "type": "array",
+      "description": "Labels supplied directly by the importer in complete entity documents for Solr auto-completion. The default label comes first, followed by accepted language labels in sorted field-name order, retaining the first occurrence of each exact string without trimming, case folding or Unicode normalization. Solr stores this array; copy rules must not append default_label_s or label_* values into entitySuggest. The field remains optional at schema level for compatibility with historical documents. Distinct matching labels can still return the same QID|type payload; clients group those matches by payload and display default_label_s.",
+      "items": { "type": "string" }
+    },
+    "ner_entity_type_s": {
+      "type": "string",
+      "description": "One type selected from accepted linked evidence for this QID across body and title and all annotation sources. Any pressagency or radiostation evidence takes precedence over ordinary types, even if less frequent. If both media-source types occur, select the one with the larger distinct linked-span count; equal media counts prefer pressagency over radiostation. With no media-source evidence, select the ordinary type with the largest distinct linked-span count; ties prefer loc, then pers, then org. Rejected annotations do not contribute. This field records one type and does not use a mixed value.",
+      "enum": [
+        "pers",
+        "loc",
+        "org",
+        "pressagency",
+        "radiostation"
+      ]
+    },
+    "content_item_count_l": {
+      "type": "integer",
+      "description": "Integer number of distinct content items containing at least one accepted body or title annotation linked to this QID. Count each content item once across text parts, types and annotation sources. Former field name: article_fq_f.",
+      "minimum": 0
+    },
+    "mention_count_l": {
+      "type": "integer",
+      "description": "Integer number of unique accepted linked spans for this QID across body and title and all annotation sources. Span identity is (content-item id, text part, start offset, end offset, QID); type, source and surface spelling do not split it. Count an identical span once across types and sources. Different spans, content items or body/title parts remain distinct. Per-type evidence counts may overlap and their sum can exceed this total: one identical span classified as org and pressagency gives mention_count_l=1 and each corresponding per-type count=1. Former field name: mention_fq_f.",
+      "minimum": 0
+    },
+    "ner_type_pers_count_l": {
+      "type": "integer",
+      "description": "Integer number of distinct accepted body or title spans linked to this QID with type pers. Deduplicate identical (content-item id, text part, start offset, end offset, QID) evidence within this type across annotation sources. A span may contribute to multiple type counts while contributing once to mention_count_l; per-type counts are overlapping evidence and must not be summed as a unique-span total.",
+      "minimum": 0
+    },
+    "ner_type_loc_count_l": {
+      "type": "integer",
+      "description": "Integer number of distinct accepted body or title spans linked to this QID with type loc. Deduplicate identical (content-item id, text part, start offset, end offset, QID) evidence within this type across annotation sources. A span may contribute to multiple type counts while contributing once to mention_count_l; per-type counts are overlapping evidence and must not be summed as a unique-span total.",
+      "minimum": 0
+    },
+    "ner_type_org_count_l": {
+      "type": "integer",
+      "description": "Integer number of distinct accepted body or title spans linked to this QID with type org. Deduplicate identical (content-item id, text part, start offset, end offset, QID) evidence within this type across annotation sources. A span may contribute to multiple type counts while contributing once to mention_count_l; per-type counts are overlapping evidence and must not be summed as a unique-span total.",
+      "minimum": 0
+    },
+    "ner_type_pressagency_count_l": {
+      "type": "integer",
+      "description": "Integer number of distinct accepted body or title spans linked to this QID with type pressagency. Deduplicate identical (content-item id, text part, start offset, end offset, QID) evidence within this type across annotation sources. A span may contribute to multiple type counts while contributing once to mention_count_l; per-type counts are overlapping evidence and must not be summed as a unique-span total.",
+      "minimum": 0
+    },
+    "ner_type_radiostation_count_l": {
+      "type": "integer",
+      "description": "Integer number of distinct accepted body or title spans linked to this QID with type radiostation. Deduplicate identical (content-item id, text part, start offset, end offset, QID) evidence within this type across annotation sources. A span may contribute to multiple type counts while contributing once to mention_count_l; per-type counts are overlapping evidence and must not be summed as a unique-span total.",
+      "minimum": 0
+    },
+     "suggest_payload_s": {
+       "type": "string",
+       "pattern": "^Q[0-9]+[|](pers|loc|org|pressagency|radiostation)$",
+       "description": "Required importer-built Solr suggester payload containing the document id followed by a literal pipe and ner_entity_type_s: QID|type."
+     }
+    "scopes_ss": {
+      "type": "array",
+      "description": "Optional presence scopes for this entity: the union of body/title text parts containing accepted annotations linked to this QID. Emit body before title when both are present. Scopes do not split entity identity; unique-span counts preserve text part in span identity, and distinct-content-item counts use the union across parts, types and annotation sources.",
+      "items": {
+        "type": "string",
+        "enum": ["body", "title"]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    }
+  },
+  "patternProperties": {
+    "^label_(?:en|fr|de|it|es|pt|nl|lb|rm|ca|da|sv|no|nb|nn|is|fo|fi|se|pl|cs|sk|sl|hr|bs|sr|bg|mk|ru|uk|be)_s$": {
+      "type": "string",
+      "description": "Entity label in the specified supported language (ISO 639-1 code).",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "default_label_s",
+    "ner_entity_type_s",
+    "content_item_count_l",
+    "suggest_payload_s"
+  ]
+}
