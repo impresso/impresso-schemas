@@ -70,7 +70,7 @@
        "type": "string",
        "pattern": "^Q[0-9]+[|](pers|loc|org|pressagency|radiostation)$",
        "description": "Required importer-built Solr suggester payload containing the document id followed by a literal pipe and ner_entity_type_s: QID|type."
-     }
+     },
     "scopes_ss": {
       "type": "array",
       "description": "Optional presence scopes for this entity: the union of body/title text parts containing accepted annotations linked to this QID. Emit body before title when both are present. Scopes do not split entity identity; unique-span counts preserve text part in span identity, and distinct-content-item counts use the union across parts, types and annotation sources.",
