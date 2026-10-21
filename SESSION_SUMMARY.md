@@ -258,3 +258,54 @@ fragment:
   CI links and v3 example registrations checked; diff whitespace passed.
   One pre-existing unrelated media-source mention link remains broken.
   Documentation-only update; no tests rerun, staging or commit.
+
+
+## 2026-10-20 — Correct entitySuggest schema description
+
+- Documented importer-generated suggestion labels, default-first exact-string deduplication, removal of suggestion copy rules, and client grouping/default-label display.
+- Kept the field optional for historical compatibility; validation rules, schema identity and examples are unchanged.
+- Verification: JSON parsing passed; structural comparison confirmed only the property description changed. No commit, schema publication or submodule pin update performed.
+
+
+## 2026-10-21 — Repository organisation transition assessment
+
+- Reviewed the team discussion against local schema conventions, namespace layout,
+  versioned Solr composition, test discovery, documentation workflow, branch refs,
+  and the indexing checkout's pinned-submodule schema registry. Checked the live
+  GitHub branch listing and official JSON Schema identification/reference guidance.
+- Recommended develop/master environment baselines, a production-contract inventory
+  before promotion, explicit root-contract selections, and deployment pins to a
+  complete schema revision. Preserve published legacy paths and existing versions;
+  defer directory renaming and any alternative versioning policy to a separate change.
+- Identified absolute-reference resolution and public-API JSON test coverage as
+  transition checks; the current documentation workflow targets master only.
+- Advisory review only: no branches, schemas, deployment settings, commits or remote
+  resources changed. No tests run. Existing working-tree changes preserved.
+- Remaining work: owners confirm the actual dev/prod contract selections and
+  deployed revisions before implementing the migration and release workflow.
+
+## 2026-10-21 — Solr README representation alignment
+
+- Added a compatibility matrix distinguishing the previous entity/mention representation from the QID-based entity and surface/type mention representation; clarified that CI v2 and v3 both use the new representation.
+- Documented body/title field families and shared mentions v3 coverage of all five types; removed the obsolete separate media-source schema link and clarified example selection and deployment terminology.
+- Verification: all README local links resolve; git diff --check passed. Documentation-only change; schema tests were not rerun.
+- Stopped for user review before schema description changes or further alignment. No schema, example, branch, or merge changes made.
+
+## 2026-10-21 — Align ready Solr contracts to the v3 baseline
+
+- Added 15 v3 schemas: 11 CI fragments, the image root, and topic, text-reuse cluster, and word-embedding roots. Updated existing paper/audio v3 roots to use v3 Solr dependencies. Preserved older versions and external shared vocabulary versions; passages and entity profiles remain pending.
+- Added five example registrations using existing fixtures and a dependency-closure regression check for the eight baseline roots. Updated the Solr README to distinguish this migration baseline from future independent contract versions.
+- Verification: make tests passed (82 legacy and 262 Impresso 2 tests). All 15 copies match their source contracts after ID/reference substitution; README local links resolve; git diff --check passed.
+- Environment caveats: make format-check could not run because Prettier is absent. make documentation-imp2 generated docs but failed markdownlint MD033 on the existing <digest> text in generated docs/impresso-2/sem-1.md. Generated docs are ignored.
+- No commit, staging, push, or importer edits performed. Existing staged user changes preserved. Self-contained export preview was not regenerated in this step.
+
+## 2026-10-21 — Consolidate baseline integrity test
+
+- Moved the v3 dependency check into tests/test_schema_integrity.py, reusing its existing imports and reference traversal helper. Removed the separate test_solr_v3_baseline.py file; test behavior is unchanged.
+- Verification: all 237 integrity tests passed; git diff --check passed. No commit or push.
+
+## 2026-10-21 — Restore IML-owned public API schemas
+
+- Restored EntityDetails.json, ContentItemSemanticEnrichments.json and ContentItemText.json from 86-organize-json-schemas-by-data-phase in the working tree. Public API edits are deferred to IML ownership.
+- Prepared an inline IML request for radio-station support and review of item-type aliases, including the ambiguous ent meaning.
+- Verification: all three files match the integration branch exactly; git diff --check passed. Restorations and this log addition remain unstaged; no commit or push.
