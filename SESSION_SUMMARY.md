@@ -316,3 +316,8 @@ fragment:
 - Restored the three API entity/content-item files byte-for-byte from before removal commit 867f8e1, following clarification that these edits were made by IML colleagues. Integration's other API changes are preserved.
 - Verification: 82 legacy and 265 Impresso 2 tests passed; the three restored API schemas also passed schema validation and exact-source comparison. No unresolved conflicts; staged diff whitespace check passed.
 - HTTPS fetch used because SSH authentication was unavailable. Merge and resolutions are staged for review, with no commit or push. Earlier notes deferring these API changes are superseded by this decision.
+
+## 2026-10-21 — Resolve remote feature-branch merge
+
+- Resolved the example-registration ordering conflict between the local and remote feature branches. Kept the three image-classification cases before the v3 baseline cases, with every registration present exactly once.
+- Verification: 82 legacy and 265 Impresso 2 tests passed. No commit or push; merge resolution staged for user completion.

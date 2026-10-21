@@ -137,12 +137,18 @@ IMPRESSO_2_CASES = [
     ("json/impresso-2/semantic-enrichment/image-classification/image-classification.v1.schema.json", "examples/impresso-2/semantic-enrichment/image-classification/image-classification.example-photograph.json"),
     ("json/impresso-2/semantic-enrichment/image-classification/image-classification.v1.schema.json", "examples/impresso-2/semantic-enrichment/image-classification/image-classification.example-not-image.json"),
     ("json/impresso-2/semantic-enrichment/image-classification/image-classification.v1.schema.json", "examples/impresso-2/semantic-enrichment/image-classification/image-classification.example-low-image-score.json"),
+    ("json/impresso-2/semantic-enrichment/image-classification/image-classification.v1.schema.json", "examples/impresso-2/semantic-enrichment/image-classification/image-classification.example-photograph.json"),
+    ("json/impresso-2/semantic-enrichment/image-classification/image-classification.v1.schema.json", "examples/impresso-2/semantic-enrichment/image-classification/image-classification.example-not-image.json"),
+    ("json/impresso-2/semantic-enrichment/image-classification/image-classification.v1.schema.json", "examples/impresso-2/semantic-enrichment/image-classification/image-classification.example-low-image-score.json"),
     # New-representation baseline: unchanged fixtures also validate against v3.
     ("json/impresso-2/solr-indexing/content-item/content-item.root.image.v3.schema.json", "examples/impresso-2/solr-indexing/content-item/ci_image.example.json"),
     ("json/impresso-2/solr-indexing/content-item/content-item.root.image.v3.schema.json", "examples/impresso-2/solr-indexing/content-item/ci_image.example1.json"),
     ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.topics.v3.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_topics.example.json"),
     ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.tr-clusters.v3.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_tr-clusters.example.json"),
     ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.wemb.v3.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_wemb.example.json"),
+    ("json/impresso-2/semantic-enrichment/image-classification/image-classification.v1.schema.json", "examples/impresso-2/semantic-enrichment/image-classification/image-classification.example-photograph.json"),
+    ("json/impresso-2/semantic-enrichment/image-classification/image-classification.v1.schema.json", "examples/impresso-2/semantic-enrichment/image-classification/image-classification.example-not-image.json"),
+    ("json/impresso-2/semantic-enrichment/image-classification/image-classification.v1.schema.json", "examples/impresso-2/semantic-enrichment/image-classification/image-classification.example-low-image-score.json"),
     # solr-indexing/content-item
     ("json/impresso-2/solr-indexing/content-item/content-item.root.paper.v1.schema.json", "examples/impresso-2/solr-indexing/content-item/ci_paper.example.json"),
     ("json/impresso-2/solr-indexing/content-item/content-item.root.paper.v2.schema.json", "examples/impresso-2/solr-indexing/content-item/ci_paper.v2.example.json"),
