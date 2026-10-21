@@ -71,6 +71,42 @@ not part of the contract and have no schema.
 | 500 | Plain text | Unhandled server error |
 | 502, 504 | HTML (nginx) | Backend unreachable or timed out |
 
+## v2 embeddings
+
+Version 2 has one route per input type, with the model as a request field.
+The v1 routes above are unchanged. Both v2 routes are `POST`, with the
+trailing slash.
+
+| Endpoint | Models | Request | Response |
+| -------- | ------ | ------- | -------- |
+| `/api/v2/embeddings/text/` | `gte`, `openclip`, `siglip2` | [`text-embedding-request.v1`](v2/embeddings/text-embedding-request.v1.schema.json) | [`text-embedding-response.v1`](v2/embeddings/text-embedding-response.v1.schema.json) |
+| `/api/v2/embeddings/image/` | `dinov2`, `openclip`, `siglip2` | [`image-embedding-request.v1`](v2/embeddings/image-embedding-request.v1.schema.json) | [`image-embedding-response.v1`](v2/embeddings/image-embedding-response.v1.schema.json) |
+
+- `model` is required. The `openclip` and `siglip2` text and image embeddings
+  share one space, so a text vector can be compared with an image vector of
+  the same model.
+- `normalize` (default `true`) returns the L2-normalised vector. `false`
+  returns the raw model output.
+- `dimensions` (`gte` only, 1 to 768) keeps the leading values of the vector.
+  The cut comes first, so with `normalize` the cut vector is re-normalised.
+  `dimensions` with another model is rejected with 422.
+- Values are rounded to 5 decimals.
+- `model_id` is the model's slug. The image slugs are the `model_id` of the
+  batch image-embeddings records: `emb-images_dinov2-v0.0.1`,
+  `emb-images_openclip-v0.0.1`, `emb-siglip2-v0.0.1`. The text slugs are
+  `emb-docs_gte-v0.0.1`, `emb-texts_openclip-v0.0.1` and
+  `emb-texts_siglip2-v0.0.1`. A new slug is issued whenever a model revision
+  changes.
+- The image route takes the image as JSON `bytes_b64`, or as a multipart
+  `file` field with `model`, `normalize` and `id` as form fields. It does not
+  take the raw request body, `path` or `url`. The response `id` is the request
+  `id`, otherwise `auto-0`.
+- Status codes: 422 when a field fails validation (an unknown or missing
+  `model`, a misplaced `dimensions`, a JSON body without `bytes_b64`), in both
+  the JSON and the multipart form; 400 for a multipart form without `file`, a
+  raw body, invalid base64 or an image that cannot be decoded; 503 when the
+  model is not deployed. The other codes are as in the table above.
+
 ## Conventions
 
 The contract only grows by adding keys, so `additionalProperties` is left

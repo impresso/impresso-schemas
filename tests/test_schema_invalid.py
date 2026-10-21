@@ -68,6 +68,12 @@ ANNOTATION_API_INVALID_CASES = [
     ("ner_seconds_missing", "entities/ner-response.v1.schema.json", {**WITHOUT_NER_SECONDS, "nes": []}, "required"),
     ("embedding_response_without_seconds", "embeddings/text-embedder-response.v1.schema.json", TEXT_EMBEDDING, "required"),
     ("image_embedding_without_ci_id", "embeddings/image-embedding-response.v1.schema.json", IMAGE_EMBEDDING, "required"),
+    # v2: `dimensions` only with gte; a model of the other modality is not in the enum.
+    ("v2_text_dimensions_with_openclip", "v2/embeddings/text-embedding-request.v1.schema.json", {"model": "openclip", "data": "x", "dimensions": 256}, "not"),
+    ("v2_text_model_dinov2", "v2/embeddings/text-embedding-request.v1.schema.json", {"model": "dinov2", "data": "x"}, "enum"),
+    ("v2_image_model_gte", "v2/embeddings/image-embedding-request.v1.schema.json", {"model": "gte", "bytes_b64": "AA=="}, "enum"),
+    ("v2_image_without_model", "v2/embeddings/image-embedding-request.v1.schema.json", {"bytes_b64": "AA=="}, "required"),
+    ("v2_image_response_without_normalized", "v2/embeddings/image-embedding-response.v1.schema.json", {"ts": "2026-10-21T10:00:00Z", "id": "auto-0", "model_id": "emb-siglip2-v0.0.1", "embedding": [0.1], "size": 1, "seconds": 0.1}, "required"),
 ]
 
 

@@ -167,6 +167,12 @@ IMPRESSO_2_CASES = [
     ("json/impresso-2/annotation-api/entities/ner-response.v1.schema.json", "examples/impresso-2/annotation-api/entities/ner-response.two-entities.json"),
     ("json/impresso-2/annotation-api/image-classification/image-classification-request.v1.schema.json", "examples/impresso-2/annotation-api/image-classification/image-classification-request.default.json"),
     ("json/impresso-2/annotation-api/image-classification/image-classification-response.v1.schema.json", "examples/impresso-2/annotation-api/image-classification/image-classification-response.default.json"),
+    # annotation-api v2
+    ("json/impresso-2/annotation-api/v2/embeddings/text-embedding-request.v1.schema.json", "examples/impresso-2/annotation-api/v2/embeddings/text-embedding-request.siglip2.json"),
+    ("json/impresso-2/annotation-api/v2/embeddings/text-embedding-request.v1.schema.json", "examples/impresso-2/annotation-api/v2/embeddings/text-embedding-request.gte-dimensions.json"),
+    ("json/impresso-2/annotation-api/v2/embeddings/text-embedding-response.v1.schema.json", "examples/impresso-2/annotation-api/v2/embeddings/text-embedding-response.siglip2.json"),
+    ("json/impresso-2/annotation-api/v2/embeddings/image-embedding-request.v1.schema.json", "examples/impresso-2/annotation-api/v2/embeddings/image-embedding-request.bytes-b64-id.json"),
+    ("json/impresso-2/annotation-api/v2/embeddings/image-embedding-response.v1.schema.json", "examples/impresso-2/annotation-api/v2/embeddings/image-embedding-response.auto-id.json"),
 ]
 
 def _test_id(schema_path: str, example_path: str) -> str:
