@@ -65,7 +65,7 @@ not part of the contract and have no schema.
 | Status | Body | When |
 | ------ | ---- | ---- |
 | 200 | The response schema | Success |
-| 400 | `{"error": str}` | Image endpoints: no image, invalid base64, or (`image-classification`) an undecodable image |
+| 400 | `{"error": str}` | Image endpoints: no image, invalid base64, or an undecodable image |
 | 422 | `{"detail": [...]}` | The JSON body fails request validation |
 | 503 | `{"detail": str}` | The model is not deployed on this instance |
 | 500 | Plain text | Unhandled server error |

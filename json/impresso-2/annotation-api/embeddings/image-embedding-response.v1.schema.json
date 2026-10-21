@@ -16,7 +16,7 @@
     },
     "embedding": {
       "type": "array",
-      "description": "Image embedding.",
+      "description": "Image embedding, not L2-normalised, rounded to 5 decimals. On `openclip-image` it is in the same space as `openclip-text`, which is L2-normalised: divide by this vector's norm to get a cosine.",
       "items": {
         "type": "number"
       }
