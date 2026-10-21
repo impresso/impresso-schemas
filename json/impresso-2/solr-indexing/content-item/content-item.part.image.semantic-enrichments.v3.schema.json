@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/content-item/content-item.part.image.semantic-enrichments.v3.schema.json",
+  "title": "Image semantic-enrichment fields (fragment)",
+  "description": "Solr fields containing semantic-enrichment results for an image content item, including classification labels, descriptive keywords, and image embeddings. This fragment is composed into the complete image Solr document.",
+  "type": "object",
+  "properties": {
+    "descriptive_keywords_ss": {
+      "type": "array",
+      "title": "Descriptive keywords",
+      "description": "Automatically generated descriptive keywords associated with the image.",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "type_l0_tp": {
+      "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/common/image-typology-v2-class.l0.v1.schema.json"
+    },
+    "type_l1_tp": {
+      "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/common/image-typology-v2-class.l1.v1.schema.json"
+    },
+    "type_l2_tp": {
+      "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/common/image-typology-v2-class.l2.v1.schema.json"
+    },
+    "type_l3_tp": {
+      "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/common/image-typology-v2-class.l3.v1.schema.json"
+    },
+    "dinov2_emb_v1024": {
+      "type": "array",
+      "title": "DINOv2 image embedding (1024D)",
+      "description": "Dense vector representation of the image computed using the DINOv2 model. The vector has a fixed dimensionality of 1024.",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 1024,
+      "maxItems": 1024
+    },
+    "openclip_emb_v768": {
+      "type": "array",
+      "title": "OpenCLIP image embedding (768D)",
+      "description": "Dense vector representation of the image computed using the OpenCLIP model. The vector has a fixed dimensionality of 768.",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 768,
+      "maxItems": 768
+    },
+    "siglip_emb_v768": {
+      "type": "array",
+      "title": "SigLIP image embedding (768D)",
+      "description": "Dense vector representation of the image computed using the SigLIP model. The vector has a fixed dimensionality of 768.",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 768,
+      "maxItems": 768
+    }
+  },
+  "required": [
+    "type_l0_tp",
+    "type_l1_tp",
+    "type_l2_tp",
+    "type_l3_tp"
+  ]
+}

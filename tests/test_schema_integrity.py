@@ -132,3 +132,28 @@ def test_imp2_schema_references_resolve_locally(
     _assert_impresso_schema_references_resolve_locally(
         IMP2_SCHEMA_PATHS, schema_documents, schema_registry
     )
+
+
+@pytest.mark.imp2
+def test_v3_baseline_dependency_versions(schema_documents):
+    documents = {doc["$id"]: doc for doc in schema_documents.values()}
+    roots = [
+        uri for uri in documents
+        if "/solr-indexing/" in uri
+        and ".root." in uri
+        and uri.endswith(".v3.schema.json")
+    ]
+    assert len(roots) == 8
+    pending = list(roots)
+    visited = set()
+    while pending:
+        uri = pending.pop()
+        if uri in visited:
+            continue
+        visited.add(uri)
+        if "/solr-indexing/" in uri:
+            assert uri.endswith(".v3.schema.json"), uri
+        for ref in _refs(documents[uri]):
+            target = urldefrag(urljoin(uri, ref)).url
+            assert target in documents, target
+            pending.append(target)

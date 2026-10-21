@@ -134,6 +134,12 @@ IMPRESSO_2_CASES = [
     ("json/impresso-2/semantic-enrichment/text-reuse/passage.v1.schema.json", "examples/impresso-2/semantic-enrichment/text-reuse/passage.tr_passage_example.json"),
     ("json/impresso-2/semantic-enrichment/image-embeddings/image-embeddings.v1.schema.json", "examples/impresso-2/semantic-enrichment/image-embeddings/image-embeddings.image_embedding_example.json"),
     ("json/impresso-2/semantic-enrichment/image-classification/image-classification.v1.schema.json", "examples/impresso-2/semantic-enrichment/image-classification/image-classification.excelsior-1912-09-13-a-i0207-classif-images.json"),
+    # New-representation baseline: unchanged fixtures also validate against v3.
+    ("json/impresso-2/solr-indexing/content-item/content-item.root.image.v3.schema.json", "examples/impresso-2/solr-indexing/content-item/ci_image.example.json"),
+    ("json/impresso-2/solr-indexing/content-item/content-item.root.image.v3.schema.json", "examples/impresso-2/solr-indexing/content-item/ci_image.example1.json"),
+    ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.topics.v3.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_topics.example.json"),
+    ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.tr-clusters.v3.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_tr-clusters.example.json"),
+    ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.wemb.v3.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_wemb.example.json"),
     # solr-indexing/content-item
     ("json/impresso-2/solr-indexing/content-item/content-item.root.paper.v1.schema.json", "examples/impresso-2/solr-indexing/content-item/ci_paper.example.json"),
     ("json/impresso-2/solr-indexing/content-item/content-item.root.paper.v2.schema.json", "examples/impresso-2/solr-indexing/content-item/ci_paper.v2.example.json"),
