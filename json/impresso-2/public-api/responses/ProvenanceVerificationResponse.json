@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "title": "ProvenanceVerificationResponse",
+  "oneOf": [
+    {
+      "$schema": "https://json-schema.org/draft/2019-09/schema",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "valid": {
+          "type": "boolean",
+          "enum": [true]
+        },
+        "claims": {
+          "$schema": "https://json-schema.org/draft/2019-09/schema",
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "iss": {
+              "type": "string"
+            },
+            "aud": {
+              "type": "string"
+            },
+            "iat": {
+              "type": "number"
+            },
+            "jti": {
+              "type": "string",
+              "minLength": 1
+            },
+            "userRef": {
+              "type": "string",
+              "minLength": 1
+            },
+            "kind": {
+              "enum": ["api", "export"],
+              "type": "string"
+            },
+            "path": {
+              "type": "string",
+              "minLength": 1
+            },
+            "exportId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "idsHash": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "idsCount": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": ["iss", "aud", "iat", "jti", "userRef", "kind", "idsHash", "idsCount"],
+          "oneOf": [
+            {
+              "properties": {
+                "kind": {
+                  "enum": ["api"]
+                }
+              },
+              "required": ["path"],
+              "not": {
+                "required": ["exportId"]
+              }
+            },
+            {
+              "properties": {
+                "kind": {
+                  "enum": ["export"]
+                }
+              },
+              "required": ["exportId"],
+              "not": {
+                "required": ["path"]
+              }
+            }
+          ]
+        },
+        "idsMatch": {
+          "type": "boolean"
+        }
+      },
+      "required": ["valid", "claims"]
+    },
+    {
+      "$schema": "https://json-schema.org/draft/2019-09/schema",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "valid": {
+          "type": "boolean",
+          "enum": [false]
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": ["valid", "reason"]
+    }
+  ],
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/public-api/responses/ProvenanceVerificationResponse.json",
+  "description": "Signed delivery receipts identify receiving accounts and ordered item IDs only. They do not attest item content or identify a publisher."
+}
