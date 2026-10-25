@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/annotation-api/v2/image-classification/image-classification-request.v1.schema.json",
+  "title": "Annotation API v2 image classification request",
+  "description": "JSON body of POST /api/v2/image-classification/. The same body as /api/image-classification/; the endpoint also accepts the image as a multipart `file` field or as the raw request body. Only image bytes are accepted (no path or URL).",
+  "$ref": "../../image-classification/image-classification-request.v1.schema.json"
+}

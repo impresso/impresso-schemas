@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/annotation-api/v2/image-classification/image-classification-response.v1.schema.json",
+  "title": "Annotation API v2 image classification response",
+  "description": "Response body of POST /api/v2/image-classification/: the batch image-classification record plus `seconds`. The same response as /api/image-classification/, which never had a TorchServe version and already answers the batch record.",
+  "$ref": "../../image-classification/image-classification-response.v1.schema.json"
+}

@@ -1,0 +1,40 @@
+{
+  "ts": "2026-10-21T11:03:11Z",
+  "sys_id": "nel-mgenre-multilingual",
+  "nes": [
+    {
+      "type": "pers",
+      "surface": "président Emmanuel Macron",
+      "lOffset": 3,
+      "rOffset": 28,
+      "confidence_ner": 0.9937,
+      "confidence_ner_entity": 0.9994,
+      "confidence_ner_type": 0.9943,
+      "confidence_nel": 0.9872,
+      "wkdata_qid": "Q3052772",
+      "wkpedia_lg": "fr",
+      "wkpedia_pagename": "Emmanuel Macron",
+      "label_fr": "Emmanuel Macron",
+      "label_en": "Emmanuel Macron",
+      "label_de": "Emmanuel Macron"
+    },
+    {
+      "type": "org",
+      "surface": "Conseil fédéral",
+      "lOffset": 81,
+      "rOffset": 96,
+      "confidence_ner": 0.9781,
+      "confidence_ner_entity": 0.9906,
+      "confidence_ner_type": 0.9873,
+      "confidence_nel": 1.0,
+      "wkdata_qid": "Q30917",
+      "wkpedia_lg": "fr",
+      "wkpedia_pagename": "Conseil fédéral (Suisse)",
+      "label_fr": "Conseil fédéral",
+      "label_en": "Swiss Federal Council",
+      "label_de": "Schweizerischer Bundesrat"
+    }
+  ],
+  "NEL seconds": 0.4223,
+  "NER seconds": 0.0626
+}

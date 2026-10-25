@@ -107,11 +107,63 @@ trailing slash.
   raw body, invalid base64 or an image that cannot be decoded; 503 when the
   model is not deployed. The other codes are as in the table above.
 
+## v2 entities
+
+The v2 entity routes take the same requests and return the same envelope as
+their v1 routes, including the NEL marker form. Only the entities differ:
+they are the entities of the batch NER and NEL records
+([`entities-ner.v1`](../semantic-enrichment/entities/entities-ner.v1.schema.json),
+[`entities-nel.v1`](../semantic-enrichment/entities/entities-nel.v1.schema.json)),
+with no v1 key.
+
+| Endpoint | Request | Response |
+| -------- | ------- | -------- |
+| `/api/v2/entities/ner/` | [`ner-request.v1`](v2/entities/ner-request.v1.schema.json) | [`ner-response.v1`](v2/entities/ner-response.v1.schema.json) |
+| `/api/v2/entities/nel/` | [`nel-request.v1`](v2/entities/nel-request.v1.schema.json) | [`nel-response.v1`](v2/entities/nel-response.v1.schema.json) |
+| `/api/v2/entities/ner-nel/` | [`ner-request.v1`](v2/entities/ner-request.v1.schema.json) | [`ner-nel-response.v1`](v2/entities/ner-nel-response.v1.schema.json) |
+
+- NER entities: `type`, `surface`, `lOffset`, `rOffset`, `confidence_ner`,
+  `confidence_ner_entity`, `confidence_ner_type`.
+- NEL entities add `confidence_nel`, `confidence_margin`, `wkdata_qid`,
+  `wkpedia_lg`, `wkpedia_pagename`, `label_fr`, `label_en`, `label_de`,
+  `label_other`, `label_other_lg`, `type_ner_original` and `nel_unlink`.
+- `wkdata_qid`, `wkpedia_lg`, `wkpedia_pagename` and the three labels are
+  always sent, null when empty. Every other key is left out when it has no
+  value, as in the batch records. `nel_unlink` is present only when a
+  validation rule removed a link, and `type_ner_original` only when linking
+  changed `type`.
+- Not in v2: `index`, `scope`, `wkd_pred`, `function`, `name`, `title`, and the
+  v1 names `wkd_id`, `wkpedia_url`, `entity_confidence`, `type_confidence`,
+  `confidence_nel_normalized`. The Wikipedia URL is
+  `https://<wkpedia_lg>.wikipedia.org/wiki/<wkpedia_pagename>`.
+- Two differences from the batch entity, for input the batch never sees: `type`
+  is any string (`""` in the marker form; on `/nel/`, the type the client sent),
+  and `confidence_ner` is optional (absent in the marker form, or when a `/nel/`
+  request entity has none).
+
+## v2 image classification
+
+`POST /api/v2/image-classification/` is the same endpoint as
+`/api/image-classification/`, under the v2 prefix: same input forms, same
+response ([`image-classification-request.v1`](v2/image-classification/image-classification-request.v1.schema.json),
+[`image-classification-response.v1`](v2/image-classification/image-classification-response.v1.schema.json)).
+The v1 route never had a TorchServe version and already answers the batch
+image-classification record, so the two routes give the same answer. With it,
+every v1 route has a v2 counterpart.
+
 ## Conventions
 
-The contract only grows by adding keys, so `additionalProperties` is left
-open. Keys kept for older clients are marked `"deprecated": true`, and their
-description names the replacement.
+The v1 routes return exactly the keys of the previous TorchServe backend, and
+that set is frozen. New fields, such as the linking pipeline's `wkdata_qid`,
+`wkpedia_lg` and Wikidata labels, are served by the v2 routes only. Within a
+version the contract only grows by adding keys, so `additionalProperties` is
+left open.
+
+Two v1 values differ from the TorchServe backend while the keys stay the same.
+`confidence_nel` and `confidence_nel_normalized` both carry the length-normalised
+link score, where TorchServe sent the raw sequence likelihood in
+`confidence_nel`. `function`, `name` and `title` are always null, because the
+current NER model does not produce person components.
 
 These wire names are frozen and are exceptions to the repository conventions
 (snake_case, no empty-string sentinels): `"NER seconds"`, `"NEL seconds"`,

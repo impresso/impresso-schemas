@@ -1,0 +1,26 @@
+{
+  "ts": "2026-10-21T11:03:10Z",
+  "sys_id": "ner-hipe2020-mmbert-base-final",
+  "nes": [
+    {
+      "type": "pers",
+      "surface": "président Emmanuel Macron",
+      "lOffset": 3,
+      "rOffset": 28,
+      "confidence_ner": 0.9937,
+      "confidence_ner_entity": 0.9994,
+      "confidence_ner_type": 0.9943
+    },
+    {
+      "type": "org",
+      "surface": "Conseil fédéral",
+      "lOffset": 81,
+      "rOffset": 96,
+      "confidence_ner": 0.9781,
+      "confidence_ner_entity": 0.9906,
+      "confidence_ner_type": 0.9873
+    }
+  ],
+  "NER seconds": 0.0375,
+  "NEL seconds": 0.0
+}

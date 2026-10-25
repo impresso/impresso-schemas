@@ -173,6 +173,18 @@ IMPRESSO_2_CASES = [
     ("json/impresso-2/annotation-api/v2/embeddings/text-embedding-response.v1.schema.json", "examples/impresso-2/annotation-api/v2/embeddings/text-embedding-response.siglip2.json"),
     ("json/impresso-2/annotation-api/v2/embeddings/image-embedding-request.v1.schema.json", "examples/impresso-2/annotation-api/v2/embeddings/image-embedding-request.bytes-b64-id.json"),
     ("json/impresso-2/annotation-api/v2/embeddings/image-embedding-response.v1.schema.json", "examples/impresso-2/annotation-api/v2/embeddings/image-embedding-response.auto-id.json"),
+    # the v2 entity requests are the v1 bodies
+    ("json/impresso-2/annotation-api/v2/entities/ner-request.v1.schema.json", "examples/impresso-2/annotation-api/entities/ner-request.text.json"),
+    ("json/impresso-2/annotation-api/v2/entities/nel-request.v1.schema.json", "examples/impresso-2/annotation-api/entities/nel-request.list.json"),
+    ("json/impresso-2/annotation-api/v2/entities/nel-request.v1.schema.json", "examples/impresso-2/annotation-api/entities/nel-request.marker.json"),
+    ("json/impresso-2/annotation-api/v2/entities/ner-response.v1.schema.json", "examples/impresso-2/annotation-api/v2/entities/ner-response.default.json"),
+    ("json/impresso-2/annotation-api/v2/entities/nel-response.v1.schema.json", "examples/impresso-2/annotation-api/v2/entities/nel-response.list.json"),
+    ("json/impresso-2/annotation-api/v2/entities/nel-response.v1.schema.json", "examples/impresso-2/annotation-api/v2/entities/nel-response.marker.json"),
+    ("json/impresso-2/annotation-api/v2/entities/nel-response.v1.schema.json", "examples/impresso-2/annotation-api/v2/entities/nel-response.empty.json"),
+    ("json/impresso-2/annotation-api/v2/entities/ner-nel-response.v1.schema.json", "examples/impresso-2/annotation-api/v2/entities/ner-nel-response.list.json"),
+    # v2 image classification is the v1 body and record
+    ("json/impresso-2/annotation-api/v2/image-classification/image-classification-request.v1.schema.json", "examples/impresso-2/annotation-api/image-classification/image-classification-request.default.json"),
+    ("json/impresso-2/annotation-api/v2/image-classification/image-classification-response.v1.schema.json", "examples/impresso-2/annotation-api/image-classification/image-classification-response.default.json"),
 ]
 
 def _test_id(schema_path: str, example_path: str) -> str:

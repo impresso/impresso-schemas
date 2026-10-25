@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/annotation-api/v2/entities/ner-request.v1.schema.json",
+  "title": "Annotation API v2 NER request",
+  "description": "Request body of POST /api/v2/entities/ner/ and /api/v2/entities/ner-nel/. The same body as /api/ner/.",
+  "$ref": "../../entities/ner-request.v1.schema.json"
+}

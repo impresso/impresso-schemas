@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/annotation-api/v2/entities/nel-entity.v1.schema.json",
+  "title": "Annotation API v2 NEL entity",
+  "description": "One linked named entity mention returned in `nes` by /api/v2/entities/nel/ and /api/v2/entities/ner-nel/. It is the entity of the batch NEL records (`entities-nel.v1`): every key, value and rule is taken from there, with two exceptions for input the batch never sees. `type` is any string, because the marker form has no type (`\"\"`) and /nel/ echoes the type the client sent. `confidence_ner` is optional, because the marker form has no NER step and a /nel/ request entity may carry none. Offsets are absolute in the submitted text. `wkdata_qid`, `wkpedia_lg`, `wkpedia_pagename` and the three labels are always sent, null when empty; the other keys are left out when they have no value.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Entity type: a coarse-grained Impresso-HIPE type (`pers`, `loc`, `org`, `time`, `prod`) for entities found by NER, possibly replaced by the linked item's class (see `type_ner_original`). An empty string in the marker form; on /nel/, the type sent by the client.",
+      "examples": ["pers", "loc", "org", "time", "prod", ""]
+    },
+    "surface": {
+      "$ref": "../../../semantic-enrichment/entities/entities-nel.v1.schema.json#/$defs/namedEntityList/items/properties/surface"
+    },
+    "lOffset": {
+      "$ref": "../../../semantic-enrichment/entities/entities-nel.v1.schema.json#/$defs/namedEntityList/items/properties/lOffset"
+    },
+    "rOffset": {
+      "$ref": "../../../semantic-enrichment/entities/entities-nel.v1.schema.json#/$defs/namedEntityList/items/properties/rOffset"
+    },
+    "confidence_ner": {
+      "$ref": "../../../semantic-enrichment/entities/entities-nel.v1.schema.json#/$defs/namedEntityList/items/properties/confidence_ner"
+    },
+    "confidence_ner_entity": {
+      "$ref": "../../../semantic-enrichment/entities/entities-nel.v1.schema.json#/$defs/namedEntityList/items/properties/confidence_ner_entity"
+    },
+    "confidence_ner_type": {
+      "$ref": "../../../semantic-enrichment/entities/entities-nel.v1.schema.json#/$defs/namedEntityList/items/properties/confidence_ner_type"
+    },
+    "confidence_nel": {
+      "$ref": "../../../semantic-enrichment/entities/entities-nel.v1.schema.json#/$defs/namedEntityList/items/properties/confidence_nel"
+    },
+    "confidence_margin": {
+      "$ref": "../../../semantic-enrichment/entities/entities-nel.v1.schema.json#/$defs/namedEntityList/items/properties/confidence_margin"
+    },
+    "wkdata_qid": {
+      "$ref": "../../../semantic-enrichment/entities/entities-nel.v1.schema.json#/$defs/namedEntityList/items/properties/wkdata_qid"
+    },
+    "wkpedia_lg": {
+      "$ref": "../../../semantic-enrichment/entities/entities-nel.v1.schema.json#/$defs/namedEntityList/items/properties/wkpedia_lg"
+    },
+    "wkpedia_pagename": {
+      "$ref": "../../../semantic-enrichment/entities/entities-nel.v1.schema.json#/$defs/namedEntityList/items/properties/wkpedia_pagename"
+    },
+    "label_fr": {
+      "$ref": "../../../semantic-enrichment/entities/entities-nel.v1.schema.json#/$defs/namedEntityList/items/properties/label_fr"
+    },
+    "label_en": {
+      "$ref": "../../../semantic-enrichment/entities/entities-nel.v1.schema.json#/$defs/namedEntityList/items/properties/label_en"
+    },
+    "label_de": {
+      "$ref": "../../../semantic-enrichment/entities/entities-nel.v1.schema.json#/$defs/namedEntityList/items/properties/label_de"
+    },
+    "label_other": {
+      "$ref": "../../../semantic-enrichment/entities/entities-nel.v1.schema.json#/$defs/namedEntityList/items/properties/label_other"
+    },
+    "label_other_lg": {
+      "$ref": "../../../semantic-enrichment/entities/entities-nel.v1.schema.json#/$defs/namedEntityList/items/properties/label_other_lg"
+    },
+    "type_ner_original": {
+      "$ref": "../../../semantic-enrichment/entities/entities-nel.v1.schema.json#/$defs/namedEntityList/items/properties/type_ner_original"
+    },
+    "nel_unlink": {
+      "$ref": "../../../semantic-enrichment/entities/entities-nel.v1.schema.json#/$defs/namedEntityList/items/properties/nel_unlink"
+    }
+  },
+  "required": [
+    "type",
+    "surface",
+    "lOffset",
+    "rOffset",
+    "confidence_nel",
+    "wkdata_qid",
+    "wkpedia_lg",
+    "wkpedia_pagename",
+    "label_fr",
+    "label_en",
+    "label_de"
+  ],
+  "dependentRequired": {
+    "label_other": ["label_other_lg"],
+    "label_other_lg": ["label_other"]
+  },
+  "allOf": [
+    {
+      "$ref": "../../../semantic-enrichment/entities/entities-nel.v1.schema.json#/$defs/namedEntityList/items/allOf/0"
+    },
+    {
+      "$ref": "../../../semantic-enrichment/entities/entities-nel.v1.schema.json#/$defs/namedEntityList/items/allOf/1"
+    },
+    {
+      "$ref": "../../../semantic-enrichment/entities/entities-nel.v1.schema.json#/$defs/namedEntityList/items/allOf/2"
+    },
+    {
+      "$ref": "../../../semantic-enrichment/entities/entities-nel.v1.schema.json#/$defs/namedEntityList/items/allOf/3"
+    }
+  ]
+}
