@@ -7,8 +7,8 @@
   "properties": {
     "type": {
       "type": "string",
-      "description": "Entity type. A coarse-grained Impresso-HIPE type (`pers`, `loc`, `org`, `time`, `prod`) for entities found by NER. It is an empty string when the type is unknown: in the NEL marker form, or when a /nel/ request entity has no type. /nel/ echoes the type sent by the client, so other values are possible.",
-      "examples": ["pers", "loc", "org", "time", "prod", ""]
+      "description": "Entity type. A coarse-grained Impresso-HIPE type (`pers`, `loc`, `org`, `time`, `prod`) for entities found by NER. It is `unk` when the type is unknown: in the NEL marker form, or when a /nel/ request entity has no type. /nel/ echoes the type sent by the client, so other values are possible.",
+      "examples": ["pers", "loc", "org", "time", "prod", "unk"]
     },
     "surface": {
       "type": "string",

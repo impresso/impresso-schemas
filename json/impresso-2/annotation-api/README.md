@@ -50,7 +50,7 @@ a string (`auto-0` when no id is given). It is not an Impresso content-item id.
 `nes` in the `nel` response is:
 
 - a list, when the request has `entities` or no `[START] … [END]` marker;
-- a single entity, in the marker form (`type` is `""` and `confidence_ner` is
+- a single entity, in the marker form (`type` is `unk` and `confidence_ner` is
   `null`);
 - an empty object `{}`, in the marker form when the marker is malformed or
   nothing is linked.
@@ -137,7 +137,8 @@ with no v1 key.
   `confidence_nel_normalized`. The Wikipedia URL is
   `https://<wkpedia_lg>.wikipedia.org/wiki/<wkpedia_pagename>`.
 - Two differences from the batch entity, for input the batch never sees: `type`
-  is any string (`""` in the marker form; on `/nel/`, the type the client sent),
+  is any string (`unk` in the marker form or for a `/nel/` request entity
+  without a type; otherwise on `/nel/`, the type the client sent),
   and `confidence_ner` is optional (absent in the marker form, or when a `/nel/`
   request entity has none).
 
@@ -166,5 +167,8 @@ link score, where TorchServe sent the raw sequence likelihood in
 current NER model does not produce person components.
 
 These wire names are frozen and are exceptions to the repository conventions
-(snake_case, no empty-string sentinels): `"NER seconds"`, `"NEL seconds"`,
-`lOffset`, `rOffset`, and the empty `type` (`""`).
+(snake_case): `"NER seconds"`, `"NEL seconds"`, `lOffset` and `rOffset`.
+
+An entity with no known type (the NEL marker form, or a `/nel/` request entity
+without `type`) has `type` `unk`, the value Impresso clients accept; it was
+`""` before 2026-10-25.

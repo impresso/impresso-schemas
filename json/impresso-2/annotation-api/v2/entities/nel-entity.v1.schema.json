@@ -2,13 +2,13 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/annotation-api/v2/entities/nel-entity.v1.schema.json",
   "title": "Annotation API v2 NEL entity",
-  "description": "One linked named entity mention returned in `nes` by /api/v2/entities/nel/ and /api/v2/entities/ner-nel/. It is the entity of the batch NEL records (`entities-nel.v1`): every key, value and rule is taken from there, with two exceptions for input the batch never sees. `type` is any string, because the marker form has no type (`\"\"`) and /nel/ echoes the type the client sent. `confidence_ner` is optional, because the marker form has no NER step and a /nel/ request entity may carry none. Offsets are absolute in the submitted text. `wkdata_qid`, `wkpedia_lg`, `wkpedia_pagename` and the three labels are always sent, null when empty; the other keys are left out when they have no value.",
+  "description": "One linked named entity mention returned in `nes` by /api/v2/entities/nel/ and /api/v2/entities/ner-nel/. It is the entity of the batch NEL records (`entities-nel.v1`): every key, value and rule is taken from there, with two exceptions for input the batch never sees. `type` is any string, because the marker form has no type (`unk`) and /nel/ echoes the type the client sent. `confidence_ner` is optional, because the marker form has no NER step and a /nel/ request entity may carry none. Offsets are absolute in the submitted text. `wkdata_qid`, `wkpedia_lg`, `wkpedia_pagename` and the three labels are always sent, null when empty; the other keys are left out when they have no value.",
   "type": "object",
   "properties": {
     "type": {
       "type": "string",
-      "description": "Entity type: a coarse-grained Impresso-HIPE type (`pers`, `loc`, `org`, `time`, `prod`) for entities found by NER, possibly replaced by the linked item's class (see `type_ner_original`). An empty string in the marker form; on /nel/, the type sent by the client.",
-      "examples": ["pers", "loc", "org", "time", "prod", ""]
+      "description": "Entity type: a coarse-grained Impresso-HIPE type (`pers`, `loc`, `org`, `time`, `prod`) for entities found by NER, possibly replaced by the linked item's class (see `type_ner_original`). `unk` in the marker form or when a /nel/ request entity has no type; otherwise on /nel/, the type sent by the client.",
+      "examples": ["pers", "loc", "org", "time", "prod", "unk"]
     },
     "surface": {
       "$ref": "../../../semantic-enrichment/entities/entities-nel.v1.schema.json#/$defs/namedEntityList/items/properties/surface"
