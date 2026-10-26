@@ -57,6 +57,10 @@ a string (`auto-0` when no id is given). It is not an Impresso content-item id.
 
 `ner` and `ner-nel` always return a list, `[]` when nothing is found.
 
+None of these routes splits `data` into sentences. NER runs on it whole, cut at
+512 sub-tokens, so a longer text gets no entities past the cut. NEL takes
+`data` whole and builds each prompt from a 256-token window around the mention.
+
 ## Status codes
 
 Clients should treat any status other than 200 as a failure. Error bodies are
@@ -110,8 +114,10 @@ trailing slash.
 ## v2 entities
 
 The v2 entity routes take the same requests and return the same envelope as
-their v1 routes, including the NEL marker form. Only the entities differ:
-they are the entities of the batch NER and NEL records
+their v1 routes, including the NEL marker form. The NER request adds
+`split_sentences` (default `false`): `true` splits `data` into sentences
+before NER, so a long text is recognised to its end. NEL never splits. The
+entities differ: they are the entities of the batch NER and NEL records
 ([`entities-ner.v1`](../semantic-enrichment/entities/entities-ner.v1.schema.json),
 [`entities-nel.v1`](../semantic-enrichment/entities/entities-nel.v1.schema.json)),
 with no v1 key.

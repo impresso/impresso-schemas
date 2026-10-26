@@ -2,6 +2,13 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/annotation-api/v2/entities/ner-request.v1.schema.json",
   "title": "Annotation API v2 NER request",
-  "description": "Request body of POST /api/v2/entities/ner/ and /api/v2/entities/ner-nel/. The same body as /api/ner/.",
-  "$ref": "../../entities/ner-request.v1.schema.json"
+  "description": "Request body of POST /api/v2/entities/ner/ and /api/v2/entities/ner-nel/. The body of /api/ner/ plus split_sentences.",
+  "$ref": "../../entities/ner-request.v1.schema.json",
+  "properties": {
+    "split_sentences": {
+      "type": "boolean",
+      "default": false,
+      "description": "true splits data into sentences (Punkt with the Impresso abbreviations) before NER, so a long text is recognised to its end. false runs NER on data whole, as one sentence, cut at 512 sub-tokens: nothing past the cut is recognised. NEL always takes data whole."
+    }
+  }
 }

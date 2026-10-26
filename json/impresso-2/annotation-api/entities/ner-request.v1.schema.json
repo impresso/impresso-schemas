@@ -7,7 +7,7 @@
   "properties": {
     "data": {
       "type": "string",
-      "description": "Text to process."
+      "description": "Text to process. NER runs on it whole, as one sentence, cut at 512 sub-tokens: nothing past the cut is recognised."
     }
   },
   "required": ["data"]
