@@ -15,7 +15,7 @@
     },
     "embedding": {
       "type": "array",
-      "description": "Text embedding, truncated to `vector_dimensions` values.",
+      "description": "Text embedding, truncated to `vector_dimensions` values, then L2-normalised.",
       "items": {
         "type": "number"
       }

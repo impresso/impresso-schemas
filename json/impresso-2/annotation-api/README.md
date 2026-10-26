@@ -45,6 +45,11 @@ multipart and base64 `bytes` input, and `null` for `bytes_b64`, `path` and
 `url` input on the embedding endpoints. On `image-classification` it is always
 a string (`auto-0` when no id is given). It is not an Impresso content-item id.
 
+## Embeddings
+
+Every embedding these routes return is L2-normalised. `text-embedder`
+normalises again after the `vector_dimensions` cut.
+
 ## NEL response shapes
 
 `nes` in the `nel` response is:
