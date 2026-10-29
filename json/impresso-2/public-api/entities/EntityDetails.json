@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2019-09/schema",
-  "description": "An entity: location or person.",
+  "description": "An entity: location or person or item.",
   "type": "object",
   "title": "Entity Details",
   "additionalProperties": false,
@@ -36,6 +36,9 @@
         },
         {
           "$ref": "./WikidataLocation.json"
+        },
+        {
+          "$ref": "./WikidataItem.json"
         }
       ]
     }

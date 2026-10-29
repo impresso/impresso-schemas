@@ -98,6 +98,5 @@
       }
     }
   ],
-  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/public-api/requests/ProvenanceVerificationRequest.json",
   "description": "Signed delivery receipts identify receiving accounts and ordered item IDs only. They do not attest item content or identify a publisher."
 }
