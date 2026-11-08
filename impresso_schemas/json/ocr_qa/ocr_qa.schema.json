@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/ocr_qa/ocr_qa.schema.json",
+  "title": "OCR Quality Assessment Schema",
+  "description": "This schema defines the structure for representing the quality assessment of Optical Character Recognition (OCR) applied to impresso media content items. It is intended to standardize the reporting and exchange of OCR quality metrics within digital content workflows. The schema returns a quality score between 0.0 (poor) and 1.0 (excellent). Additional properties are allowed to support advanced quality assessment and reproducibility.",
+  "type": "object",
+  "properties": {
+    "ci_id": {
+      "type": "string",
+      "description": "Globally unique string identifier referencing the content item, typically corresponding to an article or a full page if no OLR is available."
+    },
+    "ocrqa": {
+      "type": ["number", "null"],
+      "description": "Estimated OCR quality score, expressed as a decimal value between 0.0 (poor) and 1.0 (excellent). Value must be between 0.0 and 1.0, inclusive. May be null if the text is too short to assess.",
+      "minimum": 0.0,
+      "maximum": 1.0
+    },
+    "ts": {
+      "type": "string",
+      "title": "Timestamp",
+      "description": "ISO 8601 formatted timestamp indicating when the OCR quality assessment was performed. This is the primary field for recording assessment time.",
+      "examples": ["2024-12-27T16:38:46Z"],
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+    },
+    "lg": {
+      "type": "string",
+      "description": "ISO 639-1 two-letter language code of the content item (e.g., 'de' for German, 'fr' for French).",
+      "examples": ["de", "fr", "en"],
+      "pattern": "^[a-z]{2}$"
+    },
+    "bloom": {
+      "type": "string",
+      "description": "Reference to the Bloom filter dictionary used for lexical matching. Typically a Hugging Face Hub reference (e.g., 'hf://impresso-project/...') or a local file path.",
+      "examples": ["hf://impresso-project/OCR-quality-assessment-unigram/ocrqa-wp_v1.0.6-de.bloom"]
+    },
+    "subtokens": {
+      "type": "integer",
+      "description": "Number of subtokens (word-level tokens) identified in the content item during OCR quality assessment.",
+      "minimum": 0,
+      "examples": [11, 1272, 811]
+    },
+    "timestamp": {
+      "type": "string",
+      "description": "(Deprecated) ISO 8601 formatted timestamp indicating when the OCR quality assessment was performed. Use 'ts' for consistency with other impresso schemas.",
+      "examples": ["2025-09-10T14:26:38Z"],
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+    },
+    "git_version": {
+      "type": "string",
+      "description": "Git commit hash of the OCR quality assessment codebase version used for processing, supporting reproducibility and version tracking.",
+      "examples": ["7f70279"],
+      "pattern": "^[0-9a-fA-F]{7,40}$"
+    },
+    "subtoken_char_ratio": {
+      "type": "number",
+      "description": "Ratio of subtokens to characters in the content item, providing insight into text density and tokenization characteristics.",
+      "minimum": 0.0,
+      "examples": [0.175, 0.151, 0.182]
+    },
+    "ocrqa_unk_type_ratio": {
+      "type": "number",
+      "description": "Ratio of recognized unique subtoken types to all unique subtoken types, measuring the proportion of unique words found in the Bloom filter dictionary.",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "examples": [1.0, 0.96]
+    }
+  },
+  "required": ["ocrqa", "ci_id"],
+  "additionalProperties": true
+}
