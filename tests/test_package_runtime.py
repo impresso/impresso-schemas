@@ -28,6 +28,26 @@ def test_get_validator_requires_explicit_version() -> None:
     with pytest.raises(ValueError, match="unavailable for version 99"):
         get_validator("issue", contract_version=99)
 
+    with pytest.raises(ValueError, match="Unknown schema contract 'not_an_issue'"):
+        get_validator("not_an_issue", contract_version=1)
+
+
+def test_jsonlschema_cli_available() -> None:
+    result = subprocess.run(
+        [
+            sys.executable,
+            "-m",
+            "jsonlschema",
+            "--help",
+        ],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    assert result.returncode == 0, result.stderr
+    assert "Validate JSON Lines files against a schema" in result.stdout
+
 
 def test_cli_validates_example_file() -> None:
     result = subprocess.run(
