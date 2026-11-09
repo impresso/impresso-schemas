@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/semantic-enrichments/sem.root.mentions.v3.schema.json",
+  "title": "Aggregate Entity Mention Solr Document (v3)",
+  "description": "Shared aggregate-mention Solr document in the v3 representation for pers, loc, org, pressagency and radiostation. One document aggregates accepted body and title occurrences with the same exact surface and predicted type across content items and annotation sources. QID, NIL status and text part do not split its identity. The same surface with different types produces separate aggregates; their typed occurrence counts may overlap and must not be summed to infer unique entity-span totals.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Deterministic aggregate identifier: a1_ followed by unpadded base64url encoding of the first 16 bytes of SHA-256 of compact JSON [surface, predicted type], encoded as UTF-8 without ASCII escaping, extra whitespace or Unicode normalization. Only exact surface and predicted type participate; person-title metadata, body/title text part, entity QID, confidence and counts do not.",
+      "pattern": "^a1_[A-Za-z0-9_-]{21}[AQgw]$"
+    },
+    "surface_s": {
+      "type": "string",
+      "description": "The surface form of the aggregate entity mention. Previous field name: l_s.",
+      "minLength": 1
+    },
+    "mentionSuggest": {
+      "type": "array",
+      "description": "Optional Solr-generated array of surfaces exposed for mention auto-completion. It is absent from submitted disk documents and may be present in indexed readback.",
+      "items": { "type": "string" }
+    },
+    "suggest_payload_s": {
+    "type": "string",
+    "description": "Required importer-built Solr suggester payload containing the document id followed by a literal pipe and ner_predicted_type_s: a1_<digest>|type. The importer populates it for every aggregate document, including pressagency and radiostation."
+  },
+    "ner_predicted_type_s": {
+      "type": "string",
+      "enum": ["pers", "loc", "org", "pressagency", "radiostation"],
+      "description": "Predicted ordinary or media-source type of the aggregate entity mention. All five types use this shared schema. Aggregate identity is the exact surface and this type; the same surface classified as org and pressagency produces two aggregates."
+    },
+    "occurrence_count_l": {
+      "type": "integer",
+      "description": "Integer number of accepted body and title occurrences in this exact surface/type aggregate, including linked and NIL occurrences.",
+      "minimum": 0
+    },
+    "content_item_count_l": {
+      "type": "integer",
+      "description": "Integer number of distinct content items containing an accepted body or title occurrence of this aggregate. Count each content item once across both text parts.",
+      "minimum": 0
+    },
+    "linked_occurrence_count_l": {
+      "type": "integer",
+      "description": "Integer number of accepted body and title occurrences in this aggregate linked to an entity QID. It may be zero for an all-NIL aggregate.",
+      "minimum": 0
+    },
+    "linked_content_item_count_l": {
+      "type": "integer",
+      "description": "Integer number of distinct content items containing at least one linked body or title occurrence in this aggregate. Count each content item once across both parts; zero is permitted for an all-NIL aggregate.",
+      "minimum": 0
+    },
+    "nil_occurrence_count_l": {
+      "type": "integer",
+      "description": "Integer number of accepted body and title occurrences in this aggregate without a linked entity QID. It may be zero for an all-linked aggregate.",
+      "minimum": 0
+    },
+    "scopes_ss": {
+      "type": "array",
+      "description": "Optional presence scopes for this aggregate: the union of body/title text parts containing its accepted occurrences, whether linked or NIL. Emit body before title when both are present. Scopes do not split aggregate identity or counts; occurrence counts combine both parts and distinct-content-item counts use their union.",
+      "items": {
+        "type": "string",
+        "enum": ["body", "title"]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "id",
+    "surface_s",
+    "ner_predicted_type_s",
+    "occurrence_count_l",
+    "suggest_payload_s"
+  ],
+  "additionalProperties": false
+}
