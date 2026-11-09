@@ -94,6 +94,49 @@ All schemas follow **JSON Schema draft 2020-12**. Schema `$id` URIs are rooted a
 | ----------------------------- | ------------------------------ | -------------------------------------------------- |
 | `bbox_visualizer.schema.json` | Bounding box visualizer format | [docs/bbox_visualizer.md](docs/bbox_visualizer.md) |
 
+## Schema validation and runtime
+
+The repository distributes an installable Python package (`impresso-schemas`) that bundles the schema collection for **offline validation**, deterministic referencing, and explicit contract selection without network access.
+
+```bash
+pip install impresso-schemas
+```
+
+Validate JSON data programmatically:
+
+```python
+from impresso_schemas import get_validator
+
+# Contract selection requires an explicit contract_version
+validator = get_validator("issue", contract_version=1)
+validator.validate(document)
+```
+
+Or via the command-line interface:
+
+```bash
+impresso-schemas --contract-version 1 issue path/to/issue.json
+# Or validate standard input
+cat path/to/issue.json | impresso-schemas --contract-version 1 --stdin issue
+```
+
+To validate JSON Lines files (`.jsonl`):
+
+```bash
+jsonlschema --schema json/canonical/issue.schema.json -i data.jsonl
+```
+
+## Branching model and lifecycle
+
+- **`dev` branch**:
+  - The integration branch for active development and upcoming schema changes.
+  - Breaking changes to unreleased draft contracts are permitted on `dev`.
+  - Development contracts are consumed **as packages** (e.g. `pip install git+https://github.com/impresso/impresso-schemas.git@dev` or via pinned git submodules), **never via mutable HTTP URLs**.
+- **`master` branch**:
+  - Contains only approved production releases and tagged releases (`vX.Y.Z`).
+  - Published contracts on `master` are **immutable**: once released, their validation rules, semantics, and dependency references never undergo breaking changes.
+  - GitHub Pages (<https://impresso.github.io/impresso-schemas/>) is deployed solely from stable releases on `master`. Draft/dev contracts are never published to public HTTP endpoints.
+
 ## Repository layout
 
 ```

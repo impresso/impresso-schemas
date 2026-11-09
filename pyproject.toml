@@ -5,19 +5,30 @@ description = "JSON schemas for the Impresso project"
 requires-python = ">=3.11"
 dependencies = [
     "jsonschema>=4.20",
+    "smart_open>=6",
+]
+
+[project.optional-dependencies]
+test = [
     "pytest>=8",
     "check-jsonschema>=0.26",
-    "smart_open>=6",
 ]
 
 [project.scripts]
 jsonlschema = "jsonlschema:main"
+impresso-schemas = "impresso_schemas.cli:main"
 
 [build-system]
 requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
-packages = []
+include-package-data = true
 py-modules = ["jsonlschema"]
-package-dir = {"" = "scripts"}
+package-dir = {"" = "scripts", "impresso_schemas" = "impresso_schemas"}
+
+[tool.setuptools.packages.find]
+include = ["impresso_schemas*"]
+
+[tool.setuptools.package-data]
+impresso_schemas = ["json/**/*.json"]

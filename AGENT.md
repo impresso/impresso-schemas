@@ -8,6 +8,19 @@ This repository defines and maintains JSON schemas for the [Impresso project](ht
 
 ---
 
+## Branching and Release Policy
+
+- **`dev` branch**:
+  - The default development and integration branch. New features, revisions, and draft contracts are submitted against `dev`.
+  - Breaking changes are allowed for unreleased draft contracts on `dev`.
+  - Consumers must use development contracts **as packaged dependencies** (`pip install git+https://github.com/impresso/impresso-schemas.git@dev` or git submodule pinned to the commit), **never via external HTTP URLs**.
+- **`master` branch**:
+  - Approved production releases and tagged releases (`vX.Y.Z`).
+  - Contracts in tagged releases on `master` are **immutable**: once published, their validation rules, semantics, and dependency references do not break.
+  - Production schemas are published to GitHub Pages at <https://impresso.github.io/impresso-schemas/> exclusively from `master`.
+
+---
+
 ## Repository Layout
 
 ```
