@@ -1,8 +1,8 @@
 """Validate example JSON files against their schemas using jsonschema + pytest.
 
-Each entry in CASES is a (schema_path, example_path) pair, both relative to
-the repository root. Tests are fully self-contained: no shell, no network, no
-external CLI tools.
+Each entry in LEGACY_CASES or IMPRESSO_2_CASES is a
+``(schema_path, example_path)`` pair, both relative to the repository root.
+Tests are fully self-contained: no shell, no network, no external CLI tools.
 
 Run all tests:
     python -m pytest tests/ -v
@@ -25,7 +25,7 @@ ROOT = pathlib.Path(__file__).parent.parent
 # ---------------------------------------------------------------------------
 # Test cases: (schema_path, example_path), both relative to repo root.
 # ---------------------------------------------------------------------------
-CASES = [
+LEGACY_CASES = [
     # canonical/issue
     ("json/canonical/issue.schema.json", "examples/canonical_issue/example0.json"),
     ("json/canonical/issue.schema.json", "examples/canonical_issue/example1.json"),
@@ -77,6 +77,136 @@ CASES = [
     ("json/linguistic_annotation/lingproc.v2.schema.json", "examples/linguistic_annotation/example1.json"),
 ]
 
+# Impresso 2 copies of the valid legacy fixtures. These use the same data as
+# their legacy counterparts but exercise the versioned Impresso 2 contracts.
+IMPRESSO_2_CASES = [
+    ("json/impresso-2/solr-indexing/content-item/content-item.root.paper.v3.schema.json", "examples/impresso-2/solr-indexing/content-item/ci_paper.v3.example.json"),
+    ("json/impresso-2/solr-indexing/content-item/content-item.root.audio.v3.schema.json", "examples/impresso-2/solr-indexing/content-item/ci_audio.v3.example.json"),
+
+    # data-preparation/canonical
+    ("json/impresso-2/data-preparation/canonical/issue.v1.schema.json", "examples/impresso-2/data-preparation/canonical/issue.example0.json"),
+    ("json/impresso-2/data-preparation/canonical/issue.v1.schema.json", "examples/impresso-2/data-preparation/canonical/issue.example1.json"),
+    ("json/impresso-2/data-preparation/canonical/issue.v1.schema.json", "examples/impresso-2/data-preparation/canonical/issue.CFCE-1996-09-08-a.json"),
+    ("json/impresso-2/data-preparation/canonical/issue.v1.schema.json", "examples/impresso-2/data-preparation/canonical/issue.SOC_CP-1939-08-02-a.json"),
+    ("json/impresso-2/data-preparation/canonical/issue.v1.schema.json", "examples/impresso-2/data-preparation/canonical/issue.SOC_TH-1941-03-30-a.json"),
+    ("json/impresso-2/data-preparation/canonical/page.v1.schema.json", "examples/impresso-2/data-preparation/canonical/page.example0.json"),
+    ("json/impresso-2/data-preparation/canonical/page.v1.schema.json", "examples/impresso-2/data-preparation/canonical/page.example1.json"),
+    ("json/impresso-2/data-preparation/canonical/page.v1.schema.json", "examples/impresso-2/data-preparation/canonical/page.example2.json"),
+    ("json/impresso-2/data-preparation/canonical/page.v1.schema.json", "examples/impresso-2/data-preparation/canonical/page.SOC_CP-1939-03-18-a-p0001.json"),
+    ("json/impresso-2/data-preparation/canonical/page.v1.schema.json", "examples/impresso-2/data-preparation/canonical/page.SOC_TH-1941-03-30-a-p0001.json"),
+    ("json/impresso-2/data-preparation/canonical/audio-record.v1.schema.json", "examples/impresso-2/data-preparation/canonical/audio-record.CFCE-1996-09-08-a-r0001.json"),
+    # data-preparation/rebuilt
+    ("json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json", "examples/impresso-2/data-preparation/rebuilt/paper-contentitem.example0.json"),
+    ("json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json", "examples/impresso-2/data-preparation/rebuilt/paper-contentitem.example1.json"),
+    ("json/impresso-2/data-preparation/rebuilt/paper-contentitem.v1.schema.json", "examples/impresso-2/data-preparation/rebuilt/paper-contentitem.SOC_VS-1943-04-28-a-i0001.json"),
+    ("json/impresso-2/data-preparation/rebuilt/audio-record-contentitem.v1.schema.json", "examples/impresso-2/data-preparation/rebuilt/audio-record-contentitem.CFCE-1996-09-08-a-i0001.json"),
+    ("json/impresso-2/data-preparation/rebuilt/audio-record-contentitem.v1.schema.json", "examples/impresso-2/data-preparation/rebuilt/audio-record-contentitem.RDN-1950-01-12-a-i0001.json"),
+    # data-preparation/versioning and visualizer
+    ("json/impresso-2/data-preparation/versioning/manifest.v1.schema.json", "examples/impresso-2/data-preparation/versioning/manifest.canonical_v0-0-1.json"),
+    ("json/impresso-2/data-preparation/visualizer/bbox-visualizer.v1.schema.json", "examples/impresso-2/data-preparation/visualizer/bbox-visualizer.actionfem-1927-10-15-a_bbox.json"),
+    ("json/impresso-2/data-preparation/visualizer/bbox-visualizer.v1.schema.json", "examples/impresso-2/data-preparation/visualizer/bbox-visualizer.actionfem-1927-10-15-a-i0012_bbox.json"),
+    ("json/impresso-2/data-preparation/visualizer/bbox-visualizer.v1.schema.json", "examples/impresso-2/data-preparation/visualizer/bbox-visualizer.actionfem-1927-10-15-a-p0001_bbox.json"),
+    # data-preparation/segment-extraction
+    ("json/impresso-2/data-preparation/segment-extraction/image-segment.v1.schema.json", "examples/impresso-2/data-preparation/segment-extraction/image-segment.AGE52-1852-08-21-a-i0037.json"),
+    # text-processing
+    ("json/impresso-2/text-processing/language-identification/language-identification.v1.schema.json", "examples/impresso-2/text-processing/language-identification/language-identification.example0.json"),
+    ("json/impresso-2/text-processing/language-identification/language-identification.v1.schema.json", "examples/impresso-2/text-processing/language-identification/language-identification.example1.json"),
+    ("json/impresso-2/text-processing/language-identification/language-identification.v1.schema.json", "examples/impresso-2/text-processing/language-identification/language-identification.example2.json"),
+    ("json/impresso-2/text-processing/linguistic-annotation/lingproc.v1.schema.json", "examples/impresso-2/text-processing/linguistic-annotation/lingproc.example1.json"),
+    ("json/impresso-2/text-processing/ocr-qa/ocr-qa.v1.schema.json", "examples/impresso-2/text-processing/ocr-qa/ocr-qa.ocr_qa_example.json"),
+    # semantic-enrichment
+    ("json/impresso-2/semantic-enrichment/topic-model/topic-description.v1.schema.json", "examples/impresso-2/semantic-enrichment/topic-model/topic-description.example0.json"),
+    ("json/impresso-2/semantic-enrichment/entities/entities-ner.v1.schema.json", "examples/impresso-2/semantic-enrichment/entities/entities-ner.example0.json"),
+    ("json/impresso-2/semantic-enrichment/entities/entities-nel.v1.schema.json", "examples/impresso-2/semantic-enrichment/entities/entities-nel.example0.json"),
+    ("json/impresso-2/semantic-enrichment/entities/entities-nel.v1.schema.json", "examples/impresso-2/semantic-enrichment/entities/entities-nel.example1.json"),
+    ("json/impresso-2/semantic-enrichment/entities/entities-nel.v1.schema.json", "examples/impresso-2/semantic-enrichment/entities/entities-nel.example2.json"),
+    ("json/impresso-2/semantic-enrichment/entities/entities-nel.v1.schema.json", "examples/impresso-2/semantic-enrichment/entities/entities-nel.example3.json"),
+
+
+    ("json/impresso-2/semantic-enrichment/entities/entities-nel.v2.schema.json", "examples/impresso-2/semantic-enrichment/entities/entities-nel.example0.json"),
+    ("json/impresso-2/semantic-enrichment/entities/entities-nel.v2.schema.json", "examples/impresso-2/semantic-enrichment/entities/entities-nel.example1.json"),
+    ("json/impresso-2/semantic-enrichment/entities/entities-nel.v2.schema.json", "examples/impresso-2/semantic-enrichment/entities/entities-nel.example2.json"),
+    ("json/impresso-2/semantic-enrichment/entities/entities-nel.v2.schema.json", "examples/impresso-2/semantic-enrichment/entities/entities-nel.example3.json"),
+    ("json/impresso-2/semantic-enrichment/entities/entities-nel.v2.schema.json", "examples/impresso-2/semantic-enrichment/entities/entities-nel.example4.json"),
+
+    ("json/impresso-2/semantic-enrichment/document-embeddings/embeddings-docs.v1.schema.json", "examples/impresso-2/semantic-enrichment/document-embeddings/embeddings-docs.example0.json"),
+    ("json/impresso-2/semantic-enrichment/text-reuse/cluster.v1.schema.json", "examples/impresso-2/semantic-enrichment/text-reuse/cluster.tr_cluster_example.json"),
+    ("json/impresso-2/semantic-enrichment/text-reuse/passage.v1.schema.json", "examples/impresso-2/semantic-enrichment/text-reuse/passage.tr_passage_example.json"),
+    ("json/impresso-2/semantic-enrichment/image-embeddings/image-embeddings.v1.schema.json", "examples/impresso-2/semantic-enrichment/image-embeddings/image-embeddings.image_embedding_example.json"),
+    ("json/impresso-2/semantic-enrichment/image-classification/image-classification.v1.schema.json", "examples/impresso-2/semantic-enrichment/image-classification/image-classification.excelsior-1912-09-13-a-i0207-classif-images.json"),
+    ("json/impresso-2/semantic-enrichment/image-classification/image-classification.v1.schema.json", "examples/impresso-2/semantic-enrichment/image-classification/image-classification.example-photograph.json"),
+    ("json/impresso-2/semantic-enrichment/image-classification/image-classification.v1.schema.json", "examples/impresso-2/semantic-enrichment/image-classification/image-classification.example-not-image.json"),
+    ("json/impresso-2/semantic-enrichment/image-classification/image-classification.v1.schema.json", "examples/impresso-2/semantic-enrichment/image-classification/image-classification.example-low-image-score.json"),
+    # New-representation baseline: unchanged fixtures also validate against v3.
+    ("json/impresso-2/solr-indexing/content-item/content-item.root.image.v3.schema.json", "examples/impresso-2/solr-indexing/content-item/ci_image.example.json"),
+    ("json/impresso-2/solr-indexing/content-item/content-item.root.image.v3.schema.json", "examples/impresso-2/solr-indexing/content-item/ci_image.example1.json"),
+    ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.topics.v3.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_topics.example.json"),
+    ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.tr-clusters.v3.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_tr-clusters.example.json"),
+    ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.wemb.v3.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_wemb.example.json"),
+    # solr-indexing/content-item
+    ("json/impresso-2/solr-indexing/content-item/content-item.root.paper.v1.schema.json", "examples/impresso-2/solr-indexing/content-item/ci_paper.example.json"),
+    ("json/impresso-2/solr-indexing/content-item/content-item.root.paper.v2.schema.json", "examples/impresso-2/solr-indexing/content-item/ci_paper.v2.example.json"),
+    ("json/impresso-2/solr-indexing/content-item/content-item.root.paper.v1.schema.json", "examples/impresso-2/solr-indexing/content-item/ci_typescript.example.json"),
+    ("json/impresso-2/solr-indexing/content-item/content-item.root.image.v1.schema.json", "examples/impresso-2/solr-indexing/content-item/ci_image.example.json"),
+    ("json/impresso-2/solr-indexing/content-item/content-item.root.image.v1.schema.json", "examples/impresso-2/solr-indexing/content-item/ci_image.example1.json"),
+    # ci_audio.example.json is intentionally empty and excluded for now.
+    # solr-indexing/semantic-enrichments
+    ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.entities.v1.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_entities.example.json"),
+    ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.entities.v2.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_entities.v2.example.json"),
+    ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.entities.v3.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_entities.v3.example.json"),
+    ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.mentions.v1.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_mentions.example.json"),
+    ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.mentions.v2.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_mentions.v2.example.json"),
+    ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.mentions.v3.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_mentions.v3.example.json"),
+    ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.mentions.ordinary.v2.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_mentions.ordinary.v2.example.json"),
+    ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.mentions.v3.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_mentions2.v3.example.json"),
+    ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.mentions.ordinary.v2.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_mentions.ordinary.v2.titled.example.json"),
+    ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.topics.v1.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_topics.example.json"),
+    ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.tr-clusters.v1.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_tr-clusters.example.json"),
+    ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.tr-passages.v1.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_tr-passages.example.json"),
+    ("json/impresso-2/solr-indexing/semantic-enrichments/sem.root.wemb.v1.schema.json", "examples/impresso-2/solr-indexing/semantic-enrichments/sem_wemb.example.json"),
+    # annotation-api
+    ("json/impresso-2/annotation-api/embeddings/image-embedding-request.v1.schema.json", "examples/impresso-2/annotation-api/embeddings/image-embedding-request.bytes-b64-id.json"),
+    ("json/impresso-2/annotation-api/embeddings/image-embedding-request.v1.schema.json", "examples/impresso-2/annotation-api/embeddings/image-embedding-request.bytes.json"),
+    ("json/impresso-2/annotation-api/embeddings/image-embedding-request.v1.schema.json", "examples/impresso-2/annotation-api/embeddings/image-embedding-request.url.json"),
+    ("json/impresso-2/annotation-api/embeddings/image-embedding-response.v1.schema.json", "examples/impresso-2/annotation-api/embeddings/image-embedding-response.auto-id.json"),
+    ("json/impresso-2/annotation-api/embeddings/image-embedding-response.v1.schema.json", "examples/impresso-2/annotation-api/embeddings/image-embedding-response.client-id.json"),
+    ("json/impresso-2/annotation-api/embeddings/image-embedding-response.v1.schema.json", "examples/impresso-2/annotation-api/embeddings/image-embedding-response.null-id.json"),
+    ("json/impresso-2/annotation-api/embeddings/openclip-text-request.v1.schema.json", "examples/impresso-2/annotation-api/embeddings/openclip-text-request.default.json"),
+    ("json/impresso-2/annotation-api/embeddings/openclip-text-response.v1.schema.json", "examples/impresso-2/annotation-api/embeddings/openclip-text-response.default.json"),
+    ("json/impresso-2/annotation-api/embeddings/text-embedder-request.v1.schema.json", "examples/impresso-2/annotation-api/embeddings/text-embedder-request.default.json"),
+    ("json/impresso-2/annotation-api/embeddings/text-embedder-request.v1.schema.json", "examples/impresso-2/annotation-api/embeddings/text-embedder-request.dimensions.json"),
+    ("json/impresso-2/annotation-api/embeddings/text-embedder-response.v1.schema.json", "examples/impresso-2/annotation-api/embeddings/text-embedder-response.default.json"),
+    ("json/impresso-2/annotation-api/entities/nel-request.v1.schema.json", "examples/impresso-2/annotation-api/entities/nel-request.list.json"),
+    ("json/impresso-2/annotation-api/entities/nel-request.v1.schema.json", "examples/impresso-2/annotation-api/entities/nel-request.marker.json"),
+    ("json/impresso-2/annotation-api/entities/nel-response.v1.schema.json", "examples/impresso-2/annotation-api/entities/nel-response.empty.json"),
+    ("json/impresso-2/annotation-api/entities/nel-response.v1.schema.json", "examples/impresso-2/annotation-api/entities/nel-response.list.json"),
+    ("json/impresso-2/annotation-api/entities/nel-response.v1.schema.json", "examples/impresso-2/annotation-api/entities/nel-response.marker.json"),
+    ("json/impresso-2/annotation-api/entities/ner-nel-response.v1.schema.json", "examples/impresso-2/annotation-api/entities/ner-nel-response.empty.json"),
+    ("json/impresso-2/annotation-api/entities/ner-nel-response.v1.schema.json", "examples/impresso-2/annotation-api/entities/ner-nel-response.list.json"),
+    ("json/impresso-2/annotation-api/entities/ner-request.v1.schema.json", "examples/impresso-2/annotation-api/entities/ner-request.text.json"),
+    ("json/impresso-2/annotation-api/entities/ner-response.v1.schema.json", "examples/impresso-2/annotation-api/entities/ner-response.empty.json"),
+    ("json/impresso-2/annotation-api/entities/ner-response.v1.schema.json", "examples/impresso-2/annotation-api/entities/ner-response.two-entities.json"),
+    ("json/impresso-2/annotation-api/image-classification/image-classification-request.v1.schema.json", "examples/impresso-2/annotation-api/image-classification/image-classification-request.default.json"),
+    ("json/impresso-2/annotation-api/image-classification/image-classification-response.v1.schema.json", "examples/impresso-2/annotation-api/image-classification/image-classification-response.default.json"),
+    # annotation-api v2
+    ("json/impresso-2/annotation-api/v2/embeddings/text-embedding-request.v1.schema.json", "examples/impresso-2/annotation-api/v2/embeddings/text-embedding-request.siglip2.json"),
+    ("json/impresso-2/annotation-api/v2/embeddings/text-embedding-request.v1.schema.json", "examples/impresso-2/annotation-api/v2/embeddings/text-embedding-request.gte-dimensions.json"),
+    ("json/impresso-2/annotation-api/v2/embeddings/text-embedding-response.v1.schema.json", "examples/impresso-2/annotation-api/v2/embeddings/text-embedding-response.siglip2.json"),
+    ("json/impresso-2/annotation-api/v2/embeddings/image-embedding-request.v1.schema.json", "examples/impresso-2/annotation-api/v2/embeddings/image-embedding-request.bytes-b64-id.json"),
+    ("json/impresso-2/annotation-api/v2/embeddings/image-embedding-response.v1.schema.json", "examples/impresso-2/annotation-api/v2/embeddings/image-embedding-response.auto-id.json"),
+    # the v2 entity requests are the v1 bodies
+    ("json/impresso-2/annotation-api/v2/entities/ner-request.v1.schema.json", "examples/impresso-2/annotation-api/entities/ner-request.text.json"),
+    ("json/impresso-2/annotation-api/v2/entities/nel-request.v1.schema.json", "examples/impresso-2/annotation-api/entities/nel-request.list.json"),
+    ("json/impresso-2/annotation-api/v2/entities/nel-request.v1.schema.json", "examples/impresso-2/annotation-api/entities/nel-request.marker.json"),
+    ("json/impresso-2/annotation-api/v2/entities/ner-response.v1.schema.json", "examples/impresso-2/annotation-api/v2/entities/ner-response.default.json"),
+    ("json/impresso-2/annotation-api/v2/entities/nel-response.v1.schema.json", "examples/impresso-2/annotation-api/v2/entities/nel-response.list.json"),
+    ("json/impresso-2/annotation-api/v2/entities/nel-response.v1.schema.json", "examples/impresso-2/annotation-api/v2/entities/nel-response.marker.json"),
+    ("json/impresso-2/annotation-api/v2/entities/nel-response.v1.schema.json", "examples/impresso-2/annotation-api/v2/entities/nel-response.empty.json"),
+    ("json/impresso-2/annotation-api/v2/entities/ner-nel-response.v1.schema.json", "examples/impresso-2/annotation-api/v2/entities/ner-nel-response.list.json"),
+    # v2 image classification is the v1 body and record
+    ("json/impresso-2/annotation-api/v2/image-classification/image-classification-request.v1.schema.json", "examples/impresso-2/annotation-api/image-classification/image-classification-request.default.json"),
+    ("json/impresso-2/annotation-api/v2/image-classification/image-classification-response.v1.schema.json", "examples/impresso-2/annotation-api/image-classification/image-classification-response.default.json"),
+]
 
 def _test_id(schema_path: str, example_path: str) -> str:
     schema_stem = pathlib.Path(schema_path).stem.replace(".schema", "")
@@ -86,13 +216,30 @@ def _test_id(schema_path: str, example_path: str) -> str:
 
 @pytest.mark.parametrize(
     "schema_path,example_path",
-    CASES,
-    ids=[_test_id(s, e) for s, e in CASES],
+    LEGACY_CASES,
+    ids=[_test_id(s, e) for s, e in LEGACY_CASES],
 )
-def test_validates(schema_path: str, example_path: str) -> None:
+@pytest.mark.legacy
+def test_legacy_validates(schema_path: str, example_path: str, schema_registry) -> None:
     schema = json.loads((ROOT / schema_path).read_text(encoding="utf-8"))
     instance = json.loads((ROOT / example_path).read_text(encoding="utf-8"))
-    validator = Draft202012Validator(schema)
+    validator = Draft202012Validator(schema, registry=schema_registry)
+    errors = sorted(validator.iter_errors(instance), key=str)
+    assert not errors, "\n\n".join(
+        f"{e.json_path}: {e.message}" for e in errors
+    )
+
+
+@pytest.mark.parametrize(
+    "schema_path,example_path",
+    IMPRESSO_2_CASES,
+    ids=[_test_id(s, e) for s, e in IMPRESSO_2_CASES],
+)
+@pytest.mark.imp2
+def test_imp2_validates(schema_path: str, example_path: str, schema_registry) -> None:
+    schema = json.loads((ROOT / schema_path).read_text(encoding="utf-8"))
+    instance = json.loads((ROOT / example_path).read_text(encoding="utf-8"))
+    validator = Draft202012Validator(schema, registry=schema_registry)
     errors = sorted(validator.iter_errors(instance), key=str)
     assert not errors, "\n\n".join(
         f"{e.json_path}: {e.message}" for e in errors

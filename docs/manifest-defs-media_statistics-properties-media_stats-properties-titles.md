@@ -1,3 +1,0 @@
-## titles Type
-
-`integer`

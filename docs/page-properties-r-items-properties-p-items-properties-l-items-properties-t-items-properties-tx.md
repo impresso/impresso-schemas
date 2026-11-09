@@ -1,3 +1,0 @@
-## tx Type
-
-`string`

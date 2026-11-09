@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "type": "object",
+  "title": "Experiment Info",
+  "description": "Information about an available experiment including its identifier, name, and description.",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "The unique identifier of the experiment."
+    },
+    "name": {
+      "type": "string",
+      "description": "The display name of the experiment."
+    },
+    "description": {
+      "type": "string",
+      "description": "A description of what the experiment does."
+    }
+  },
+  "required": ["id", "name"]
+}

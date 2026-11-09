@@ -1,3 +1,0 @@
-## advertisement Type
-
-`boolean`

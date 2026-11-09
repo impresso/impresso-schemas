@@ -1,3 +1,0 @@
-## language Type
-
-`string`

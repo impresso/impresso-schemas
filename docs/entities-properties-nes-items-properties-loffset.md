@@ -1,3 +1,0 @@
-## lOffset Type
-
-`integer`

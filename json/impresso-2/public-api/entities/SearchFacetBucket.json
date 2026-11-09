@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "type": "object",
+  "title": "Search Facet Bucket",
+  "description": "Facet bucket",
+  "additionalProperties": false,
+  "required": ["count", "value"],
+  "properties": {
+    "count": {
+      "type": "integer",
+      "description": "Number of items in the bucket"
+    },
+    "value": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "integer"
+        }
+      ],
+      "description": "Value that represents the bucket."
+    },
+    "label": {
+      "type": "string",
+      "description": "Label of the value, if relevant."
+    },
+    "item": {
+      "description": "The item in the bucket. Particular object schema depends on the facet type",
+      "oneOf": [
+        {
+          "$ref": "./MediaSource.json"
+        },
+        {
+          "$ref": "./Collection.json"
+        },
+        {
+          "$ref": "./Entity.json"
+        },
+        {
+          "$ref": "./Topic.json"
+        },
+        {
+          "$ref": "./Year.json"
+        },
+        {
+          "$ref": "./Partner.json"
+        },
+        {
+          "$ref": "./FacetWithLabel.json"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/annotation-api/embeddings/image-embedding-request.v1.schema.json",
+  "title": "Annotation API image embedding request",
+  "description": "JSON body of POST /api/dinov2/ and POST /api/openclip-image/. These endpoints also accept the image as a multipart `file` field or as the raw request body. Give one image source.",
+  "type": "object",
+  "anyOf": [
+    {
+      "required": ["bytes_b64"]
+    },
+    {
+      "required": ["bytes"]
+    },
+    {
+      "required": ["path"]
+    },
+    {
+      "required": ["url"]
+    }
+  ],
+  "properties": {
+    "bytes_b64": {
+      "type": "string",
+      "description": "Base64-encoded image bytes."
+    },
+    "bytes": {
+      "type": "string",
+      "description": "Base64-encoded image bytes (legacy key)."
+    },
+    "path": {
+      "type": "string",
+      "description": "Path of an image file on the server."
+    },
+    "url": {
+      "type": "string",
+      "description": "URL of an image the server downloads."
+    },
+    "id": {
+      "type": "string",
+      "description": "Client identifier, echoed back as `ci_id`."
+    }
+  },
+  "required": []
+}

@@ -1,3 +1,0 @@
-## r Type
-
-`integer[][]`

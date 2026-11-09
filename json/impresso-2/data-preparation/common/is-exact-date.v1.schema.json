@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/data-preparation/common/is-exact-date.v1.schema.json",
+  "title": "Exact-date flag scalar",
+  "description": "Boolean value indicating whether the date assigned to an Impresso object (issue or content item) is exact. Set to false when the date is known to have been approximated because archival metadata is incomplete, for example when only the year or month of publication is known and the first day of that year or month is used. Set to true, or leave undefined, when the assigned date is known or assumed to be exact.",
+  "type": "boolean",
+  "examples": [true, false]
+}

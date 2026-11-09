@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/entities/entities-ner.v1.schema.json",
+  "title": "Named entity recognition output record",
+  "description": "Defines one named entity recognition (NER) output record for an Impresso content item, produced before named entity linking and indexing. In JSON Lines serialisation, each line represents one content item and its named entity mentions as offline annotations. Entity mentions are identified by character offsets relative to the corresponding content-item text element. Entity types use the coarse-grained Impresso-HIPE tagset.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/ci_id.v1.schema.json"
+    },
+    {
+      "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/model-id.v1.schema.json"
+    },
+    {
+      "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/ts.v1.schema.json"
+    }
+  ],
+  "$defs": {
+    "namedEntityList": {
+      "type": "array",
+      "description": "A list of named entity mentions occurring in one text element. Multiple mentions may refer to the same real-world entity.",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "description": "A named entity mention produced by NER. Character offsets are zero-based and use a half-open interval [lOffset, rOffset): lOffset is inclusive and rOffset is exclusive. Consequently, rOffset must be greater than lOffset and the substring covered by the offsets should equal surface.",
+        "properties": {
+          "type": {
+            "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/common/entity-type.v1.schema.json",
+            "description": "Coarse-grained Impresso-HIPE named entity type assigned to the mention."
+          },
+          "surface": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Surface form of the named entity mention exactly as it occurs in the corresponding text element."
+          },
+          "lOffset": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Zero-based character offset of the first character of the named entity mention in the corresponding text element. The offset is inclusive."
+          },
+          "rOffset": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "Zero-based character offset immediately after the last character of the named entity mention in the corresponding text element. The offset is exclusive."
+          },
+          "confidence_ner": {
+            "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/probability.v1.schema.json",
+            "description": "Overall confidence score assigned to the named entity mention by the NER process, from 0 (lowest confidence) to 1 (highest confidence). The precise computation may depend on the NER model or pipeline."
+          },
+          "confidence_ner_entity": {
+            "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/probability.v1.schema.json",
+            "description": "Confidence that the detected span is an entity mention, independent of its predicted type, from 0 (lowest confidence) to 1 (highest confidence). Computed as mean_i(1 - P(O)_i) over the entity mention's tokens. Optional; omitted when not computed."
+          },
+          "confidence_ner_type": {
+            "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/probability.v1.schema.json",
+            "description": "Confidence in the predicted entity type, conditional on the detected span being an entity mention, from 0 (lowest confidence) to 1 (highest confidence). Computed as mean_i(P(predicted_type)_i / (1 - P(O)_i)) over the entity mention's tokens. Optional; omitted when not computed."
+          }
+        },
+        "required": ["type", "surface", "lOffset", "rOffset", "confidence_ner"]
+      }
+    }
+  },
+  "properties": {
+    "lingproc_uri": {
+      "type": "string",
+      "description": "Full URI of the source linguistic-processing (lingproc) shard used as input for this NER record. It allows downstream processing, including NEL, to locate the same source text."
+    },
+    "nes": {
+      "$ref": "#/$defs/namedEntityList",
+      "description": "Named entity mentions extracted from the article body. Character offsets are relative to the article-body text."
+    },
+    "tnes": {
+      "$ref": "#/$defs/namedEntityList",
+      "description": "Named entity mentions extracted from the article title. Character offsets are relative to the title text."
+    }
+  },
+  "required": ["ci_id", "ts", "model_id", "nes", "lingproc_uri"]
+}

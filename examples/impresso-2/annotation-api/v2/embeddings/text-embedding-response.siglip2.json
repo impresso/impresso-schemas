@@ -1,0 +1,9 @@
+{
+  "ts": "2026-10-21T10:00:00Z",
+  "model_id": "emb-texts_siglip2-v0.0.1",
+  "text": "a photo of a steam locomotive",
+  "embedding": [0.01234, -0.04567, 0.02891, 0.00312],
+  "size": 768,
+  "normalized": true,
+  "seconds": 0.0213
+}

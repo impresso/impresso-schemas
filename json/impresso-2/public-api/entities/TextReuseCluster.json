@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "title": "Text Reuse Cluster",
+  "description": "Text reuse cluster details.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique ID of the text reuse cluster."
+    },
+    "lexicalOverlap": {
+      "type": "number",
+      "description": "Overlap in percents between the passages in the cluster.",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "clusterSize": {
+      "type": "integer",
+      "description": "Number of passages in the cluster.",
+      "minimum": 0
+    },
+    "textSample": {
+      "type": "string",
+      "description": "Sample of a text from one of the passages in the cluster."
+    },
+    "timeCoverage": {
+      "type": "object",
+      "description": "Time coverage of the cluster.",
+      "additionalProperties": false,
+      "properties": {
+        "startDate": {
+          "type": "string",
+          "description": "Publication date of the earliest content item in the cluster.",
+          "format": "date"
+        },
+        "endDate": {
+          "type": "string",
+          "description": "Publication date of the latest content item in the cluster.",
+          "format": "date"
+        }
+      },
+      "required": ["startDate", "endDate"]
+    }
+  },
+  "required": ["id"]
+}

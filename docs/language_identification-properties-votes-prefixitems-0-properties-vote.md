@@ -1,3 +1,0 @@
-## vote Type
-
-`number`

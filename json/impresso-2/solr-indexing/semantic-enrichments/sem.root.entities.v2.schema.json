@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/semantic-enrichments/sem.root.entities.v2.schema.json",
+  "title": "Entity Solr Document (v2)",
+  "description": "Schema for entity documents produced by the v2 importers (Impresso Project). It is the base entity contract plus the identifier, type and frequency constraints the v2 builders guarantee. Versioned side by side with sem.root.entities.schema.json rather than replacing it, because the base must keep accepting the documents already indexed in 09_impresso_entities. The collection is shared: agency entity documents (t_s 'nag', type code 55) and ordinary entity documents (t_s 'pers' | 'loc' | 'org', type codes 50 | 53 | 54) both live here, so this contract deliberately admits all four types even though one ordinary generation never produces 'nag'. INTENTIONAL IDENTIFIER DIVERGENCE, preserved from v1 and not a defect: the Role A reference written onto the content-item document uses the UNENCODED spelling (e.g. '2-54-Boudry_(Neuchatel)'); this document's 'id' and 'sqlid_s' use the ENCODED spelling (e.g. '2-54-Boudry_$28$Neuchatel$29$'); and 'p_s' embeds the UNENCODED spelling plus '|' and the type. 'p_s' is therefore deliberately NOT constrained to reproduce 'id', and a validator that required it to match would contradict the compatibility decision. SEMANTIC INVARIANTS THIS SCHEMA CANNOT EXPRESS: 'sqlid_s' equals 'id' byte for byte, and 'p_s' equals the unencoded form of 'id' followed by '|' and 't_s'. JSON Schema 2020-12 has no cross-field comparison and the project's validator (jsonschema Draft202012Validator) supports no '$data' extension, so neither can be expressed here. GENERAL PER-DOCUMENT ENFORCEMENT IS THE ME-5 IMPORTER GUARD'S JOB; the ME-3 companion tests only pin the invariants on representative example documents and demonstrate that the schema itself does not catch a violation.",
+  "allOf": [
+    {
+      "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/semantic-enrichments/sem.root.entities.v1.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Encoded entity identifier: '{el_model_run_code}-{type_code}-{masterlabel}', where type_code is 50 (pers), 53 (org), 54 (loc) or 55 (nag), and the master label has had '(', ')' and ',' replaced by their '$NN$' encodings. The trailing label part must be non-empty, so a bare '2-54-' prefix is refused. It must also contain no '|': that character is the RESERVED SEPARATOR of the composite 'p_s' form and of the Role A '{entity_id}|{count}' fields, it is NOT in the identifier encoding table, and a label carrying one would make both unparseable. Built from the CONFIGURED entity-linking model run alias, which is resolved and validated at construction; it is not the descriptive model identity a delivery carries.",
+          "pattern": "^[0-9]+-(50|53|54|55)-[^(),|]+$"
+        },
+        "sqlid_s": {
+          "type": "string",
+          "description": "The same encoded identifier as 'id', byte for byte. Equality is a semantic invariant this schema cannot express (Draft 2020-12 has no cross-field comparison): the shape is constrained here, and the equality is enforced per document by the ME-5 importer guard, with ME-3's tests pinning it only on representative examples.",
+          "pattern": "^[0-9]+-(50|53|54|55)-[^(),|]+$"
+        },
+        "l_s": {
+          "type": "string",
+          "description": "Human-readable entity label: the master label with underscores replaced by spaces.",
+          "minLength": 1
+        },
+        "t_s": {
+          "type": "string",
+          "description": "Entity type. The collection is shared with agency entity documents, so 'nag' is admitted here even though an ordinary entity generation never emits it.",
+          "enum": [
+            "pers",
+            "loc",
+            "org",
+            "nag"
+          ]
+        },
+        "p_s": {
+          "type": "string",
+          "description": "Composite path '{unencoded_id}|{t_s}'. It embeds the UNENCODED identifier spelling and is deliberately NOT required to match the encoded 'id'. Only the structure JSON Schema can honestly express is constrained: the model-run and type-code prefix, a non-empty label containing NO '|', exactly one separating '|', and a known type. '|' is reserved, so '2-54-Label|extra|loc' is refused. That the label is the unencoded form of THIS document's 'id', and that the trailing type equals THIS document's 't_s', are cross-field relationships no JSON Schema can express; the ME-5 importer guard enforces them per document.",
+          "pattern": "^[0-9]+-(50|53|54|55)-[^|]+\\|(pers|loc|org|nag)$"
+        },
+        "article_fq_f": {
+          "type": "number",
+          "description": "Number of content items containing the entity, corpus-wide, as a float. At most one contribution per entity per content item.",
+          "minimum": 0
+        },
+        "mention_fq_f": {
+          "type": "number",
+          "description": "Number of accepted deduplicated entity occurrences, corpus-wide, as a float. Absent on a freshly created document and written by the separate occurrence-frequency update pass, so it is not required here.",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "id",
+        "sqlid_s",
+        "l_s",
+        "t_s",
+        "p_s",
+        "article_fq_f"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/content-item/content-item.part.text.audio.v1.schema.json",
+  "title": "Content Item - Audio Part Schema",
+  "description": "Audio related information for audio content items.",
+  "type": "object",
+  "properties": {
+    "meta_start_time_s": {
+      "type": "string",
+      "pattern": "^\\d{2}:\\d{2}:\\d{2}$",
+      "description": "Start time of media in HH:MM:SS format (relative to the day of broadcast). Applies only to audio radio broadcasts."
+    },
+    "meta_duration_s": {
+      "type": "string",
+      "pattern": "^\\d{2}:\\d{2}:\\d{2}$",
+      "description": "Duration of the radio broadcast in HH:MM:SS format (relative to the start of the broadcast on the given broadcast day).  Applies only to audio radio broadcasts.\""
+    },
+    "record_id_ss": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Array of record identifiers for radio broadcast segments"
+    },
+    "record_nb_is": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      },
+      "description": "Array of record numbers corresponding to radio broadcast segments"
+    },
+    "nb_record_i": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Total number of records/segments in the radio broadcast"
+    },
+    "rreb_plain": {
+      "type": "string",
+      "minimum": 0,
+      "description": "Audio time stamps of the audio record. Serialized JSON of radio broadcast segments as defined in https://github.com/impresso/impresso-schemas/blob/radio-broadcast-schemas/json/rebuilt/audio_record_contentitem.schema.json."
+    },
+    "ub_plain": {
+      "type": "string",
+      "minimum": 0,
+      "description": "Utterance breaks ends offsets in content item transcript. Serialized array of integers, see 'ub' in https://github.com/impresso/impresso-schemas/blob/radio-broadcast-schemas/json/rebuilt/audio_record_contentitem.schema.json."
+    }
+  },
+  "additionalProperties": true
+}

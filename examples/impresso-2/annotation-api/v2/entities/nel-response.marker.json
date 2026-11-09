@@ -1,0 +1,19 @@
+{
+  "ts": "2026-10-21T11:03:11Z",
+  "sys_id": "nel-mgenre-multilingual",
+  "nes": {
+    "type": "",
+    "surface": "Berlin",
+    "lOffset": 0,
+    "rOffset": 6,
+    "confidence_nel": 1.0,
+    "wkdata_qid": "Q64",
+    "wkpedia_lg": "en",
+    "wkpedia_pagename": "Berlin",
+    "label_fr": "Berlin",
+    "label_en": "Berlin",
+    "label_de": "Berlin"
+  },
+  "NEL seconds": 0.1395,
+  "NER seconds": 0.0
+}

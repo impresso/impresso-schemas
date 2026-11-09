@@ -1,0 +1,8 @@
+{
+  "ts": "2026-10-15T10:00:00Z",
+  "sys_id": "gte-multilingual-base",
+  "embedding": [0.0213, -0.0458, 0.0127, 0.0391],
+  "vector_dimensions": 768,
+  "seconds": 0.0274,
+  "text": "This is a test sentence."
+}

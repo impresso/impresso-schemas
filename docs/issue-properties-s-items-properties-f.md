@@ -1,3 +1,0 @@
-## f Type
-
-`string`

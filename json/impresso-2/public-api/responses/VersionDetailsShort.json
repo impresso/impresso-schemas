@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "type": "object",
+  "title": "Version Details",
+  "description": "Details of the current version of the API and details of its aspects.",
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "type": "string",
+      "description": "Version of the API."
+    }
+  },
+  "required": ["version"]
+}

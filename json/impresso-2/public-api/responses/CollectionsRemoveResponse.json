@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "type": "object",
+  "title": "Collection Remove Response",
+  "description": "Remove collection response",
+  "additionalProperties": false,
+  "required": ["params", "task"],
+  "properties": {
+    "params": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The collection id"
+        },
+        "status": {
+          "type": "string",
+          "description": "The status of the operation",
+          "enum": ["DEL"]
+        }
+      }
+    },
+    "task": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Deletion task details",
+      "properties": {
+        "task_id": {
+          "type": "string",
+          "description": "The ID of the task"
+        },
+        "creationDate": {
+          "type": "string",
+          "description": "When task was created"
+        }
+      }
+    }
+  }
+}

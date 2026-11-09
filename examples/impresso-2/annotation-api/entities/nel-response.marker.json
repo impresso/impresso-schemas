@@ -1,0 +1,26 @@
+{
+  "ts": "2026-10-15T10:00:00Z",
+  "sys_id": "nel-mgenre-multilingual",
+  "nes": {
+    "type": "",
+    "surface": "Berlin",
+    "lOffset": 0,
+    "rOffset": 6,
+    "scope": "body",
+    "wkd_id": "Q64",
+    "wkpedia_pagename": "Berlin",
+    "wkpedia_url": "https://de.wikipedia.org/wiki/Berlin",
+    "confidence_ner": null,
+    "confidence_nel": 0.9487,
+    "confidence_nel_normalized": 0.9487,
+    "confidence_margin": 2.0518,
+    "entity_confidence": null,
+    "type_confidence": null,
+    "function": null,
+    "name": null,
+    "title": null,
+    "wkd_pred": "Berlin >> de"
+  },
+  "NEL seconds": 0.4102,
+  "NER seconds": 0.0
+}

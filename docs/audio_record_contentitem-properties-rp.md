@@ -1,3 +1,0 @@
-## rp Type
-
-`string`

@@ -1,3 +1,0 @@
-## speaker Type
-
-`string`

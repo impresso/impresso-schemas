@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "description": "An entity like location, person, etc",
+  "type": "object",
+  "title": "Entity",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier of the entity"
+    },
+    "relevance": {
+      "type": "integer",
+      "description": "Relevance of the entity in the document"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the entity"
+    }
+  },
+  "required": ["id", "relevance"]
+}

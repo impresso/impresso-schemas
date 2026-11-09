@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/semantic-enrichment/document-embeddings/embeddings-docs.v1.schema.json",
+  "title": "Document Embedding",
+  "description": "A document-level vector embedding associated with an Impresso content item.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/ci_id.v1.schema.json"
+    },
+    {
+      "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/model-id.v1.schema.json"
+    }
+  ],
+  "properties": {
+    "ci_type": {
+      "type": "string",
+      "description": "Type of the content item in the rebuilt representation."
+    },
+    "embedding": {
+      "type": "array",
+      "description": "Vector representation of the content item as a one-dimensional array of numbers.",
+      "items": {
+        "type": "number",
+        "description": "One component of the document embedding vector.",
+        "examples": [-0.11429]
+      }
+    },
+    "size": {
+      "type": "integer",
+      "description": "Dimensionality of the embedding vector. This value must equal the number of values in `embedding`."
+    },
+    "ts": {
+      "type": "string",
+      "description": "Timestamp indicating when the embedding was generated (e.g., '2024-10-09T09:29:02Z').",
+      "format": "date-time"
+    }
+  },
+  "required": ["ci_id", "embedding", "model_id", "size"]
+}

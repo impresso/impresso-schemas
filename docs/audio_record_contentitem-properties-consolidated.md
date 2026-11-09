@@ -1,3 +1,0 @@
-## consolidated Type
-
-`boolean`

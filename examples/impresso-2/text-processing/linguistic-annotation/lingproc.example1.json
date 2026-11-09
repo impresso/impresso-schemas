@@ -1,0 +1,174 @@
+{
+  "ci_id": "actionfem-1937-11-15-a-i0001",
+  "ts": "2024-11-27T22:32:11Z",
+  "tp": "ar",
+  "sents": [
+    {
+      "lg": "de",
+      "tokens": [
+        {
+          "t": "MOTTO",
+          "p": "PROPN",
+          "o": 0,
+          "e": "B-MISC"
+        },
+        {
+          "t": ":",
+          "p": "PUNCT",
+          "o": 5,
+          "l": "--"
+        },
+        {
+          "t": "Gerechtigkeit",
+          "p": "NOUN",
+          "o": 7
+        },
+        {
+          "t": "den",
+          "p": "DET",
+          "o": 21,
+          "l": "der"
+        },
+        {
+          "t": "Frauen",
+          "p": "NOUN",
+          "o": 25,
+          "l": "Frau"
+        },
+        {
+          "t": "!",
+          "p": "PUNCT",
+          "o": 31,
+          "l": "--"
+        }
+      ]
+    },
+    {
+      "lg": "de",
+      "tokens": [
+        {
+          "t": "Wenn",
+          "p": "SCONJ",
+          "o": 33,
+          "l": "wenn"
+        },
+        {
+          "t": "jeder",
+          "p": "PRON",
+          "o": 38
+        },
+        {
+          "t": "dem",
+          "p": "DET",
+          "o": 44,
+          "l": "der"
+        },
+        {
+          "t": "andern",
+          "p": "PRON",
+          "o": 48,
+          "l": "anderer"
+        },
+        {
+          "t": "gerecht",
+          "p": "ADV",
+          "o": 55
+        },
+        {
+          "t": "s",
+          "p": "PRON",
+          "o": 63
+        },
+        {
+          "t": "em",
+          "p": "PROPN",
+          "o": 65
+        },
+        {
+          "t": "wollte",
+          "p": "AUX",
+          "o": 68,
+          "l": "wollen"
+        },
+        {
+          "t": ",",
+          "p": "PUNCT",
+          "o": 74,
+          "l": "--"
+        },
+        {
+          "t": "wäre",
+          "p": "AUX",
+          "o": 76,
+          "l": "sein"
+        },
+        {
+          "t": "allen",
+          "p": "PRON",
+          "o": 81,
+          "l": "aller"
+        },
+        {
+          "t": "geholfen",
+          "p": "VERB",
+          "o": 87,
+          "l": "helfen"
+        },
+        {
+          "t": ".",
+          "p": "PUNCT",
+          "o": 95,
+          "l": "--"
+        }
+      ]
+    }
+  ],
+  "tsents": [
+    {
+      "lg": "de",
+      "tokens": [
+        {
+          "t": "MOTTO",
+          "p": "PROPN",
+          "o": 0,
+          "e": "B-MISC"
+        },
+        {
+          "t": ":",
+          "p": "PUNCT",
+          "o": 5,
+          "l": "--"
+        },
+        {
+          "t": "Gerechtigkeit",
+          "p": "NOUN",
+          "o": 7
+        },
+        {
+          "t": "den",
+          "p": "DET",
+          "o": 21,
+          "l": "der"
+        },
+        {
+          "t": "Frauen",
+          "p": "NOUN",
+          "o": 25,
+          "l": "Frau"
+        },
+        {
+          "t": "!",
+          "p": "PUNCT",
+          "o": 31,
+          "l": "--"
+        }
+      ]
+    }
+  ],
+  "model_id": "spacy@3.6.0:de_core_news_md@3.6.0:sentencizer|tok2vec|tagger|morphologizer|lemmatizer|attribute_ruler|ner",
+  "lid_path": "s3://42-processed-data-final/langident/langident_v1-4-4/actionfem/actionfem-1937.jsonl.bz2",
+  "lingproc_git": "v2024.11.27-1-ged88e44",
+  "char_count": 97,
+  "min_chars": 50,
+  "max_chars": 50000
+}

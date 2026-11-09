@@ -1,3 +1,0 @@
-## element Type
-
-`string`

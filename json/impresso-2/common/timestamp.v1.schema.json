@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/common/timestamp.v1.schema.json",
+  "title": "Impresso timestamp",
+  "description": "Canonical representation of a timestamp in Impresso data. Timestamps are expressed in UTC with second precision using the form `YYYY-MM-DDTHH:MM:SSZ`. This schema defines the representation of a point in time; the semantic meaning of that point, such as creation, modification, or processing time, is defined by the property that references this schema. The preferred property name for a generic processing or creation timestamp is `ts` where no more specific name is required.",
+  "type": "string",
+  "format": "date-time",
+  "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$",
+  "examples": ["2026-08-21T08:42:00Z"]
+}

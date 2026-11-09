@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/content-item/content-item.part.text.semantic-enrichments.v2.schema.json",
+  "title": "Semantic Enrichments Fields (part of composed schema)",
+  "description": "Semantic enrichments fields of media content items in the Impresso project.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/content-item/content-item.part.text.semantic-enrichments-entity-mentions.v1.schema.json"
+    }
+  ],
+  "properties": {
+    "ocrqa_f": {
+      "description": "OCR quality assessment score between 0.00 and 1.00, or null if unavailable.",
+      "oneOf": [
+        {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "title": "OCR QA score"
+        },
+        {
+          "type": "null",
+          "title": "Unavailable"
+        }
+      ]
+  },
+    "topics_dpfs": {
+      "type": "string",
+      "description": "Topics assigned to the content item."
+    },
+    "cluster_id_ss": {
+      "type": "array",
+      "description": "TR Cluster IDs assigned to the content item.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "gte_multi_v768": {
+      "type": "array",
+      "description": "Content item embedding as a vector of floats.",
+      "items": {
+        "type": "number"
+      }
+    }
+  },
+  "additionalProperties": true,
+  "required": [
+    "ocrqa_f"
+  ]
+}

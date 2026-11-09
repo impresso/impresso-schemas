@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "type": "object",
+  "description": "Content item mention",
+  "title": "Content Item Mention",
+  "additionalProperties": false,
+  "properties": {
+    "surfaceForm": {
+      "type": "string",
+      "description": "The surface form (label) of the entity mention"
+    },
+    "mentionConfidence": {
+      "type": "number",
+      "description": "Confidence score of the entity mention"
+    },
+    "startOffset": {
+      "type": "integer",
+      "description": "Start offset of the entity mention in the content item"
+    },
+    "endOffset": {
+      "type": "integer",
+      "description": "End offset of the entity mention in the content item"
+    }
+  }
+}

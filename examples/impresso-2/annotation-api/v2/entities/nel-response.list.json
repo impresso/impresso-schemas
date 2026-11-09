@@ -1,0 +1,54 @@
+{
+  "ts": "2026-10-21T11:03:12Z",
+  "sys_id": "nel-mgenre-multilingual",
+  "nes": [
+    {
+      "type": "pers",
+      "surface": "Hans Müller",
+      "lOffset": 0,
+      "rOffset": 11,
+      "confidence_ner": 0.97,
+      "confidence_nel": 0.8415,
+      "wkdata_qid": null,
+      "wkpedia_lg": "en",
+      "wkpedia_pagename": "Hans Müller (Komponist)",
+      "label_fr": null,
+      "label_en": null,
+      "label_de": null
+    },
+    {
+      "type": "loc",
+      "surface": "Berlin",
+      "lOffset": 21,
+      "rOffset": 27,
+      "confidence_ner": 0.99,
+      "confidence_nel": 1.0,
+      "wkdata_qid": "Q64",
+      "wkpedia_lg": "en",
+      "wkpedia_pagename": "Berlin",
+      "label_fr": "Berlin",
+      "label_en": "Berlin",
+      "label_de": "Berlin"
+    },
+    {
+      "type": "pers",
+      "surface": "Martin",
+      "lOffset": 32,
+      "rOffset": 38,
+      "confidence_ner": 0.95,
+      "confidence_nel": 0.4021,
+      "wkdata_qid": null,
+      "wkpedia_lg": "fr",
+      "wkpedia_pagename": "Martin",
+      "label_fr": null,
+      "label_en": null,
+      "label_de": null,
+      "nel_unlink": {
+        "reason": "nel.disambiguation_page",
+        "removed_wkdata_qid": "Q18002399"
+      }
+    }
+  ],
+  "NEL seconds": 0.2475,
+  "NER seconds": 0.04
+}

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/annotation-api/v2/entities/ner-response.v1.schema.json",
+  "title": "Annotation API v2 NER response",
+  "description": "Response body of POST /api/v2/entities/ner/. Same envelope as /api/ner/; the entities are the batch NER entities.",
+  "type": "object",
+  "properties": {
+    "ts": {
+      "$ref": "../../../common/timestamp.v1.schema.json",
+      "description": "UTC time at which the response was produced, as YYYY-MM-DDTHH:MM:SSZ."
+    },
+    "sys_id": {
+      "type": "string",
+      "description": "Identifier of the system (model) that served the request."
+    },
+    "nes": {
+      "type": "array",
+      "description": "Named entity mentions found in the text; `[]` when nothing is found.",
+      "items": {
+        "$ref": "ner-entity.v1.schema.json"
+      }
+    },
+    "NER seconds": {
+      "type": "number",
+      "description": "NER processing time in seconds. Frozen wire name containing a space."
+    },
+    "NEL seconds": {
+      "type": "number",
+      "description": "Always 0 for this endpoint, which does no linking. Frozen wire name containing a space."
+    }
+  },
+  "required": ["ts", "sys_id", "nes", "NER seconds", "NEL seconds"]
+}

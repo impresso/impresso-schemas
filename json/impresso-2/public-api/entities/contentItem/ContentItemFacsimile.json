@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "type": "object",
+  "description": "Facsimile-related information for digitized content",
+  "properties": {
+    "pagesCount": {
+      "type": "integer",
+      "description": "Total number of pages in the content item."
+    },
+    "isFrontPage": {
+      "type": "boolean",
+      "description": "Indicates if the content item is on the front page."
+    },
+    "isCoordinatesConverted": {
+      "type": "boolean",
+      "description": "Indicates whether coordinates were converted."
+    },
+    "pages": {
+      "type": "array",
+      "description": "List of pages this content item is on.",
+      "items": {
+        "$ref": "./ContentItemPage.json"
+      }
+    },
+    "lineBreaks": {
+      "type": "array",
+      "description": "List of line breaks offsets in the content item (relative to textual content).",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "paragraphBreaks": {
+      "type": "array",
+      "description": "List of paragraph breaks offsets in the content item (relative to textual content).",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "regionBreaks": {
+      "type": "array",
+      "description": "List of region breaks offsets in the content item (relative to textual content).",
+      "items": {
+        "type": "integer"
+      }
+    }
+  }
+}

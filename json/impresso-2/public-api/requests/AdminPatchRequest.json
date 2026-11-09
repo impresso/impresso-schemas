@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "title": "AdminPatchRequest",
+  "description": "Admin maintenance action request.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "action": {
+      "type": "string",
+      "enum": ["clear-db-cache", "clear-solr-cache", "clear-wikidata-cache", "rebuild-well-known-cache"]
+    }
+  },
+  "required": ["action"]
+}

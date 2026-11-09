@@ -1,0 +1,9 @@
+{
+  "ts": "2026-10-21T10:00:00Z",
+  "id": "auto-0",
+  "model_id": "emb-siglip2-v0.0.1",
+  "embedding": [0.02145, -0.03318, 0.01007, 0.04452],
+  "size": 768,
+  "normalized": true,
+  "seconds": 0.0874
+}

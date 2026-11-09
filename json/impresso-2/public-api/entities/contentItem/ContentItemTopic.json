@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "title": "ContentItemTopic",
+  "description": "Topic associated with a content item.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "relevance": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Relevance score of the topic in the content item, typically between 0 and 1, where 1 indicates high relevance."
+    },
+    "id": {
+      "type": "string",
+      "description": "Unique identifier of the topic."
+    },
+    "label": {
+      "type": "string",
+      "description": "Human-readable label of the topic."
+    },
+    "languageCode": {
+      "type": "string",
+      "description": "Language code of the topic, following ISO 639-1 standards."
+    }
+  },
+  "required": ["relevance", "id"]
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "type": "object",
+  "title": "Text Reuse Cluster Details",
+  "description": "Extra details of the cluster",
+  "additionalProperties": false,
+  "required": ["facets"],
+  "properties": {
+    "facets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Facet type"
+          },
+          "numBuckets": {
+            "type": "integer",
+            "description": "Number of buckets"
+          },
+          "buckets": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "description": "TODO: define bucket fields"
+            }
+          }
+        }
+      }
+    },
+    "resolution": {
+      "type": "string",
+      "enum": ["year", "month", "day"],
+      "description": "Resolution for the 'date' facet"
+    }
+  }
+}

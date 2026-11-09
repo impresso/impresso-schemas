@@ -13,7 +13,7 @@ Every schema file must include these root-level keywords:
 | Keyword       | Requirement                                                                                                                         |
 | ------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 | `$schema`     | `"https://json-schema.org/draft/2020-12/schema"` — always HTTPS, no trailing `#`                                                    |
-| `$id`         | Canonical URL rooted at `https://impresso.github.io/impresso-schemas/json/<directory>/<filename>` — must match the actual file path |
+| `$id`         | Canonical URL rooted at `https://impresso.github.io/impresso-schemas/` followed by the actual repository path — for example, `json/impresso-2/data-preparation/canonical/issue.v1.schema.json` |
 | `title`       | Short human-readable name (not `"The X Schema"`)                                                                                    |
 | `description` | One or two sentences explaining what the document represents                                                                        |
 | `type`        | Always `"object"` at the root                                                                                                       |
@@ -203,14 +203,44 @@ Example: `c68720283542-armeteufel-1904-08-07-a-i0010@8067:8460`
 
 ## 6. Schema structure patterns
 
-### 6.1 Shared definitions
+### 6.1 Shared definitions and cross-file references
 
 Use `$defs` (never `definitions`) for types reused within a single schema.
 Reference them with `"$ref": "#/$defs/<name>"`.
 
-Do **not** use cross-file `$ref` references. Each schema must be self-contained.
-Shared logical types (e.g. `langISO639Type`, `probType`) are duplicated across
-schemas by design — this is acceptable given the small number of schemas.
+Cross-file `$ref` values are permitted when the referenced schema has a stable
+published `$id`. Use relative references that resolve within the same namespace,
+and keep the repository path, published URL, and `$id` identical. For example,
+a schema in `data-preparation/canonical/` may reference a common definition as:
+
+```json
+"$ref": "../../common/language-code.v1.schema.json"
+```
+
+Use `json/impresso-2/common/` only for definitions with the same semantics
+across lifecycle areas. Keep phase-specific fields and serialisations in their
+own lifecycle directory. Solr field names, for example, remain Solr-specific
+even when their values reuse a shared definition.
+
+Reusable fragments shared only within a lifecycle area belong in that area's
+`common/` directory, for example
+`json/impresso-2/data-preparation/common/` or
+`json/impresso-2/semantic-enrichment/common/`. Do not place them in the root
+`json/impresso-2/common/` directory.
+
+Use the following filenames for reusable schemas:
+
+| Form | Filename | Use |
+| ---- | -------- | --- |
+| Standalone definition | `<concept>.vN.schema.json` | A reusable scalar or standalone object definition. |
+| Object fragment | `<concept>.part.vN.schema.json` | An object fragment with named properties, composed by a consumer through `allOf`. |
+
+For example, `common/content-item-id.part.v1.schema.json` defines the shared
+`ci_id` property. A data-preparation-only source-metadata fragment would instead
+live at `data-preparation/common/source-metadata.part.v1.schema.json`.
+
+Do not use `shared` in a filename: the location already states whether a schema
+is shared across lifecycle areas or only within one.
 
 ### 6.2 Arrays of typed objects
 
@@ -293,14 +323,16 @@ or omit the `title` keyword.
 
 ## 8. Adding a new schema — checklist
 
-1. File path: `json/<category>/<name>.schema.json`
-2. Root keywords: `$schema`, `$id`, `title`, `description`, `type`, `required`, `properties`
-3. `$id` matches the file path under `https://impresso.github.io/impresso-schemas/`
-4. All property names follow §2; any new abbreviations added to §2.2 table
-5. All shared field names (`ts`, `lg`, `ci_id`, …) use the canonical types and patterns from §3–§5
-6. No fragment `$id` on sub-properties (§6.5)
-7. No `definitions` key — use `$defs`
-8. Example file added under `examples/<category>/`
-9. Test case added to `tests/test_schema_examples.py` `CASES` list
-10. `make tests` passes
-11. `make documentation` regenerates `docs/` without errors
+1. Choose the namespace: keep existing published schemas in their legacy path;
+   create new versioned contracts under `json/impresso-2/<lifecycle-area>/`.
+2. File path: use `<name>.vN.schema.json` for new Impresso 2 schemas.
+3. Root keywords: `$schema`, `$id`, `title`, `description`, `type`, `required`, `properties`
+4. `$id` matches the file path under `https://impresso.github.io/impresso-schemas/`
+5. All property names follow §2; any new abbreviations added to §2.2 table
+6. All shared field names (`ts`, `lg`, `ci_id`, …) use the canonical types and patterns from §3–§5
+7. No fragment `$id` on sub-properties (§6.5)
+8. No `definitions` key — use `$defs`
+9. Example file added under the matching `examples/` hierarchy
+10. Test case added to `tests/test_schema_examples.py` `CASES` list
+11. `make tests` passes
+12. `make documentation` regenerates `docs/` without errors

@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/semantic-enrichments/sem.root.mentions.ordinary.v2.schema.json",
+  "title": "Ordinary Aggregate Entity Mention Solr Document (v2)",
+  "description": "Schema for ORDINARY aggregate entity mention documents produced by the v2 importers (Impresso Project) - persons, locations and organisations. It is the base mention contract plus a required deterministic identifier and the ordinary type vocabulary. Kept SEPARATE from sem.root.mentions.v2.schema.json, which is the news-agency contract and pins the 'mention-v1-' scheme: 08_impresso_mentions holds both populations, the base schema accepts either, and each specialised schema accepts only its own. Note the two '.v2' suffixes in this directory do not mean the same thing: in the agency filename it marks the schema generation while the ids it pins are 'mention-v1-', whereas here it marks the ordinary identifier scheme 'mention-v2-'. THE CANONICAL IDENTITY IS THREE COMPONENTS: [resolved_type, canonical_surface, canonical_title_or_null]. A meaningful person title therefore produces a DIFFERENT aggregate, and a different id, from the title-less occurrence of the same surface and type; the four upstream-canonicalised blank title forms (absent, JSON null, empty string, whitespace-only) all collapse to JSON null and share one title-less identity. This schema validates SHAPE ONLY: it cannot recompute or verify the digest from the document's fields, and the builder owns that derivation.",
+  "allOf": [
+    {
+      "$ref": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/semantic-enrichments/sem.root.mentions.v1.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Deterministic aggregate identifier: 'mention-v2-' followed by the SHA-256 of the compact canonical JSON encoding of [resolved_type, canonical_surface, canonical_title_or_null]. The version prefix is bumped only when that encoding changes, so a re-identification of every document is always explicit. To be built by impresso_solr.utils.ordinary_mention_ids.build_ordinary_aggregate_mention_id() (ME-8); until that helper exists this pattern is the only pinned form of the contract.",
+          "pattern": "^mention-v2-[0-9a-f]{64}$"
+        },
+        "t_s": {
+          "type": "string",
+          "description": "Ordinary entity type. Narrowed from the base vocabulary: the ordinary occurrence pipeline accepts exactly 'pers', 'loc' and 'org' and rejects 'nag' together with the whole 'org.ent.pressagency.*' namespace, so an ordinary aggregate can never carry an agency type. Agency mention documents in the same collection are validated against sem.root.mentions.v2.schema.json instead.",
+          "enum": [
+            "pers",
+            "loc",
+            "org"
+          ]
+        },
+        "title_s": {
+          "type": "string",
+          "description": "The canonical person title, emitted ONLY when it is non-null. The producer never writes this key for a title-less aggregate and never writes an empty or whitespace-only value, because all four blank forms canonicalise to JSON null upstream; a present value is therefore always meaningful and non-empty. Descriptive metadata 'name' and 'function' participate in neither this document's identity nor its aggregation key and are not declared here.",
+          "minLength": 1
+        },
+        "n_s": {
+          "type": "string",
+          "description": "The surface with its title prefix removed - the ONE deterministic derivation settled by O-15 (2026-09-10). It is emitted only when a meaningful canonical title is ALSO an exact, case-sensitive prefix of the canonical surface: the producer removes that prefix ONCE, applies lstrip() to the remainder, and writes this key only if what is left is non-empty. It is therefore never a leading-space value and never a repeated-substring removal - v1's live builder used an unrestricted surface.replace(title, ''), which produced values such as ' Perregaux' and ' Meyer et  Dubois', and v1's other builder used the prefix rule instead, so the two disagreed about what this field meant. It is NEVER the delivered JSON 'name' property: 'name' and 'function' are descriptive occurrence metadata that participate in the record-local deduplication identity and in neither this document's identity, its aggregation key, nor any of its fields. A meaningful title that is not an exact prefix of the surface, or one that consumes the whole surface, yields title_s WITHOUT n_s. New-delivery documents are expected to carry neither, since meaningful title metadata is not provided there.",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id"
+      ]
+    }
+  ]
+}

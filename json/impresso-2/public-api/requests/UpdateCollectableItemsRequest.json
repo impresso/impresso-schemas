@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "description": "Request to update collectible items in a collection",
+  "title": "Update Collectable Items Request",
+  "type": "object",
+  "properties": {
+    "add": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "IDs of the items to add to the collection"
+    },
+    "remove": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "IDs of the items to remove from the collection"
+    }
+  }
+}
