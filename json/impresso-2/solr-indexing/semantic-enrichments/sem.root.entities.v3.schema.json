@@ -23,13 +23,7 @@
     "ner_entity_type_s": {
       "type": "string",
       "description": "One type selected from accepted linked evidence for this QID across body and title and all annotation sources. Any pressagency or radiostation evidence takes precedence over ordinary types, even if less frequent. If both media-source types occur, select the one with the larger distinct linked-span count; equal media counts prefer pressagency over radiostation. With no media-source evidence, select the ordinary type with the largest distinct linked-span count; ties prefer loc, then pers, then org. Rejected annotations do not contribute. This field records one type and does not use a mixed value.",
-      "enum": [
-        "pers",
-        "loc",
-        "org",
-        "pressagency",
-        "radiostation"
-      ]
+      "enum": ["pers", "loc", "org", "pressagency", "radiostation"]
     },
     "content_item_count_l": {
       "type": "integer",
@@ -66,11 +60,11 @@
       "description": "Integer number of distinct accepted body or title spans linked to this QID with type radiostation. Deduplicate identical (content-item id, text part, start offset, end offset, QID) evidence within this type across annotation sources. A span may contribute to multiple type counts while contributing once to mention_count_l; per-type counts are overlapping evidence and must not be summed as a unique-span total.",
       "minimum": 0
     },
-     "suggest_payload_s": {
-       "type": "string",
-       "pattern": "^Q[0-9]+[|](pers|loc|org|pressagency|radiostation)$",
-       "description": "Required importer-built Solr suggester payload containing the document id followed by a literal pipe and ner_entity_type_s: QID|type."
-     },
+    "suggest_payload_s": {
+      "type": "string",
+      "pattern": "^Q[0-9]+[|](pers|loc|org|pressagency|radiostation)$",
+      "description": "Required importer-built Solr suggester payload containing the document id followed by a literal pipe and ner_entity_type_s: QID|type."
+    },
     "scopes_ss": {
       "type": "array",
       "description": "Optional presence scopes for this entity: the union of body/title text parts containing accepted annotations linked to this QID. Emit body before title when both are present. Scopes do not split entity identity; unique-span counts preserve text part in span identity, and distinct-content-item counts use the union across parts, types and annotation sources.",
@@ -90,11 +84,5 @@
     }
   },
   "additionalProperties": false,
-  "required": [
-    "id",
-    "default_label_s",
-    "ner_entity_type_s",
-    "content_item_count_l",
-    "suggest_payload_s"
-  ]
+  "required": ["id", "default_label_s", "ner_entity_type_s", "content_item_count_l", "suggest_payload_s"]
 }

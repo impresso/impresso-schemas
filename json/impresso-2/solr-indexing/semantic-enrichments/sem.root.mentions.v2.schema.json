@@ -16,9 +16,7 @@
           "pattern": "^mention-v1-[0-9a-f]{64}$"
         }
       },
-      "required": [
-        "id"
-      ]
+      "required": ["id"]
     }
   ]
 }

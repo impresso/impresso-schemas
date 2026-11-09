@@ -61,19 +61,19 @@
       "description": "Content item with no specific type provided (short version)."
     },
     {
-      "enum": ["dsc","discussion"],
+      "enum": ["dsc", "discussion"],
       "title": "Discussion",
       "description": "Radio Broadcast discussion or talk show content item."
     },
     {
-      "enum": ["ent","entertainment"],
+      "enum": ["ent", "entertainment"],
       "title": "Entertainment",
       "description": "Radio Broadcast entertainment content item."
     },
-     {
-       "const": "chapter",
-       "title": "Chapter",
-       "description": "TO BE REFINED."
-      }
+    {
+      "const": "chapter",
+      "title": "Chapter",
+      "description": "TO BE REFINED."
+    }
   ]
 }

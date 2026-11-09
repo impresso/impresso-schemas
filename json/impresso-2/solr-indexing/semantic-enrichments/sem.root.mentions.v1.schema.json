@@ -18,12 +18,7 @@
     "t_s": {
       "type": "string",
       "description": "Type of the entity (e.g., 'pers' for person, 'loc' for location, 'org' for organization, 'nag' for news agency)",
-      "enum": [
-        "pers",
-        "loc",
-        "org",
-        "nag"
-      ]
+      "enum": ["pers", "loc", "org", "nag"]
     },
     "fq_f": {
       "type": "number",
@@ -31,10 +26,6 @@
       "minimum": 0
     }
   },
-  "required": [
-    "l_s",
-    "t_s",
-    "fq_f"
-  ],
+  "required": ["l_s", "t_s", "fq_f"],
   "additionalProperties": true
 }

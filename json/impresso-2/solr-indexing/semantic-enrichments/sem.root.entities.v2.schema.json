@@ -28,12 +28,7 @@
         "t_s": {
           "type": "string",
           "description": "Entity type. The collection is shared with agency entity documents, so 'nag' is admitted here even though an ordinary entity generation never emits it.",
-          "enum": [
-            "pers",
-            "loc",
-            "org",
-            "nag"
-          ]
+          "enum": ["pers", "loc", "org", "nag"]
         },
         "p_s": {
           "type": "string",
@@ -51,14 +46,7 @@
           "minimum": 0
         }
       },
-      "required": [
-        "id",
-        "sqlid_s",
-        "l_s",
-        "t_s",
-        "p_s",
-        "article_fq_f"
-      ]
+      "required": ["id", "sqlid_s", "l_s", "t_s", "p_s", "article_fq_f"]
     }
   ]
 }

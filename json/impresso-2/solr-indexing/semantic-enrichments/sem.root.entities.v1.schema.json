@@ -36,13 +36,6 @@
       "description": "Mention frequency for the entity over the whole corpus."
     }
   },
-  "required": [
-    "id",
-    "sqlid_s",
-    "l_s",
-    "t_s",
-    "p_s",
-    "article_fq_f"
-  ],
+  "required": ["id", "sqlid_s", "l_s", "t_s", "p_s", "article_fq_f"],
   "additionalProperties": true
 }

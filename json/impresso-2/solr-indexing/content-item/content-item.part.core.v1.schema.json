@@ -64,7 +64,7 @@
       "description": "Medium of the source (audio for audio radio broadcasts, print for newspapers, typescript for digitised radio bulletin typescripts).",
       "enum": ["audio", "print", "typescript"]
     },
-     "meta_radio_program_s": {
+    "meta_radio_program_s": {
       "type": "string",
       "title": "Radio Program",
       "description": "Radio program name the broadcast belongs to. Sourced from 'radio_program' key in additional_metadata. Provider: RTS."

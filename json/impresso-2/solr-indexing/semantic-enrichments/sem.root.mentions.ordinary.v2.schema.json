@@ -18,11 +18,7 @@
         "t_s": {
           "type": "string",
           "description": "Ordinary entity type. Narrowed from the base vocabulary: the ordinary occurrence pipeline accepts exactly 'pers', 'loc' and 'org' and rejects 'nag' together with the whole 'org.ent.pressagency.*' namespace, so an ordinary aggregate can never carry an agency type. Agency mention documents in the same collection are validated against sem.root.mentions.v2.schema.json instead.",
-          "enum": [
-            "pers",
-            "loc",
-            "org"
-          ]
+          "enum": ["pers", "loc", "org"]
         },
         "title_s": {
           "type": "string",
@@ -35,9 +31,7 @@
           "minLength": 1
         }
       },
-      "required": [
-        "id"
-      ]
+      "required": ["id"]
     }
   ]
 }

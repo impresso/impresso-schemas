@@ -6,16 +6,11 @@
     "documentType": {
       "type": "string",
       "description": "Type of document, e.g., page (p) or content item (ci).",
-      "enum": [
-        "p",
-        "ci"
-      ]
+      "enum": ["p", "ci"]
     },
     "itemType": {
       "description": "Type of content item.",
-      "type": [
-        "string"
-      ],
+      "type": ["string"],
       "oneOf": [
         {
           "const": "page",
@@ -23,10 +18,7 @@
           "description": "Full page of content, in the case of OCR-only data. Later becomes 'None' or 'No-type'."
         },
         {
-          "enum": [
-            "ar",
-            "article"
-          ],
+          "enum": ["ar", "article"],
           "title": "Article",
           "description": "Textual unit(s) corresponding to a journalistic editorial unit."
         },
@@ -36,58 +28,37 @@
           "description": "Commercial or classified advertising content."
         },
         {
-          "enum": [
-            "img",
-            "image"
-          ],
+          "enum": ["img", "image"],
           "title": "Image",
           "description": "Standalone visual content."
         },
         {
-          "enum": [
-            "tb",
-            "table"
-          ],
+          "enum": ["tb", "table"],
           "title": "Table",
           "description": "Tabular content presenting structured data or listings."
         },
         {
-          "enum": [
-            "ob",
-            "death_notice"
-          ],
+          "enum": ["ob", "death_notice"],
           "title": "Obituary",
           "description": "Notice reporting a death, often including biographical information."
         },
         {
-          "enum": [
-            "w",
-            "weather"
-          ],
+          "enum": ["w", "weather"],
           "title": "Weather",
           "description": "Weather report or meteorological information."
         },
         {
-          "enum": [
-            "ch",
-            "chronicle"
-          ],
+          "enum": ["ch", "chronicle"],
           "title": "Chronicle",
           "description": "Broadcast chronicle reporting events in a factual or narrative form."
         },
         {
-          "enum": [
-            "radio_bulletin",
-            "rb"
-          ],
+          "enum": ["radio_bulletin", "rb"],
           "title": "Radio Bulletin",
           "description": "Content item originating from a radio bulletin."
         },
         {
-          "enum": [
-            "rbe",
-            "radio_broadcast_episode"
-          ],
+          "enum": ["rbe", "radio_broadcast_episode"],
           "title": "Radio Broadcast Episode",
           "description": "An individual episode or segment of a radio broadcast."
         },
@@ -97,18 +68,12 @@
           "description": "Content item with no specific type provided (short version)."
         },
         {
-          "enum": [
-            "dsc",
-            "discussion"
-          ],
+          "enum": ["dsc", "discussion"],
           "title": "Discussion",
           "description": "Radio Broadcast discussion or talk show content item."
         },
         {
-          "enum": [
-            "ent",
-            "entertainment"
-          ],
+          "enum": ["ent", "entertainment"],
           "title": "Entertainment",
           "description": "Radio Broadcast entertainment content item."
         },

@@ -71,14 +71,6 @@
       "description": "Attribution for the topic-label generation process (e.g. 'OpenAI') — topic labels v3. Optional: absent on pre-v3 topic-description-only documents."
     }
   },
-  "required": [
-    "id",
-    "lg_s",
-    "word_probs_dpf",
-    "tp_model_s",
-    "tp_nb_i",
-    "topic_suggest"
-  ],
+  "required": ["id", "lg_s", "word_probs_dpf", "tp_model_s", "tp_nb_i", "topic_suggest"],
   "additionalProperties": true
 }
-

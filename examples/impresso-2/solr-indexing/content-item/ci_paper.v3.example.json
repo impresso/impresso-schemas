@@ -150,22 +150,12 @@
     "a1_7lXKtQCEcq0Fz0BuH9IkTg",
     "a1_zxpZAuNSx9SFsycWTr4b9Q"
   ],
-  "org_mention_ner_conf_dpfs": [
-    "Meyer el C|0.9039",
-    "Hotz|0.8528",
-    "Slauffer|0.8481"
-  ],
+  "org_mention_ner_conf_dpfs": ["Meyer el C|0.9039", "Hotz|0.8528", "Slauffer|0.8481"],
   "org_mention_offsets_json_plain": "[[289,10],[2648,4],[3513,8]]",
   "org_mention_qids_json_plain": "[null,null,null]",
   "org_mention_surfaces_json_plain": "[\"Meyer el C\",\"Hotz\",\"Slauffer\"]",
-  "page_id_ss": [
-    "EXP-1855-03-22-a-p0002",
-    "EXP-1855-03-22-a-p0003"
-  ],
-  "page_nb_is": [
-    2,
-    3
-  ],
+  "page_id_ss": ["EXP-1855-03-22-a-p0002", "EXP-1855-03-22-a-p0003"],
+  "page_nb_is": [2, 3],
   "pb_plain": "[13, 41, 68, 720, 1513, 1630, 1652, 2094, 2102, 3241, 3401, 4441, 4664, 4799, 5196, 5396, 5616, 6471, 6626, 6645, 6800, 6819, 7010, 7496, 7799, 8037, 8273, 8563, 8813, 9186, 9207]",
   "pers_aggregate_mention_ids_ss": [
     "a1_7zXQrIE-TzBsRbWBzX1MoA",
@@ -203,10 +193,7 @@
     "a1_8D0T7XhAHZIrEQ6UcYrlbA",
     "a1_qphiIhWRTKTg4VoJOPLmCw"
   ],
-  "pers_entity_ids_dpfs": [
-    "Q16026012|1",
-    "Q1677589|1"
-  ],
+  "pers_entity_ids_dpfs": ["Q16026012|1", "Q1677589|1"],
   "pers_mention_ner_conf_dpfs": [
     "compatriote M. Gustave Grisel|0.9966",
     "J. Gerster, libraire|1.0",
@@ -256,15 +243,9 @@
   "rights_bm_explore_l": 2,
   "rights_bm_get_img_l": 549755813888,
   "rights_bm_get_tr_l": 549755813888,
-  "rights_bm_index_explore_is": [
-    1
-  ],
-  "rights_bm_index_get_img_is": [
-    39
-  ],
-  "rights_bm_index_get_tr_is": [
-    39
-  ],
+  "rights_bm_index_explore_is": [1],
+  "rights_bm_index_get_img_is": [39],
+  "rights_bm_index_get_tr_is": [39],
   "rights_copyright_s": "in_cpy",
   "rights_data_domain_s": "prt",
   "rights_perm_use_explore_plain": "prs-rsh-edu",

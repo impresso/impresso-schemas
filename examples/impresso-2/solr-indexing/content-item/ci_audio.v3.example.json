@@ -264,18 +264,9 @@
   "loc_mention_offsets_json_plain": "[[93,11],[179,8],[447,10],[463,15],[533,11],[727,8],[930,6],[1755,9],[1768,6],[1812,8],[1900,7],[2004,18],[2042,7],[2167,6],[2175,11],[2317,6],[2391,6],[2511,6],[2965,6],[3340,6],[3348,11],[3405,26],[3461,8],[3584,6],[3596,6],[3609,10],[3630,34],[3791,11],[3858,8],[3941,6],[3982,11],[4000,10],[4116,7],[4127,8],[4175,9],[4188,6],[4425,8],[4579,8],[4769,8],[5929,8],[6775,14],[6896,6],[6909,7],[7629,14],[7970,8],[9564,6],[9851,6],[9880,8],[9908,20],[10581,6],[10832,13],[10876,7],[10914,6],[10969,6],[11094,6],[11297,11],[11480,8],[11959,11],[12070,8],[12085,7],[12300,8],[12330,7],[12441,11],[12470,13],[12540,13],[12623,6],[12730,6],[12741,16],[13001,6],[13386,6],[13479,8],[13497,7],[13518,6],[13717,6],[13740,9],[13767,6],[13818,9],[13899,6],[14265,11],[14345,8],[14601,7],[14616,8],[14643,6],[14770,6],[15715,6],[15730,14],[16108,6],[16298,7],[16337,7],[16360,6],[16568,15],[17038,15],[17226,6],[17327,10],[17470,15],[18314,15],[18351,15],[19295,17],[19655,9],[20473,9],[21163,7],[21196,6],[21383,7],[21544,16],[21757,33],[21795,3],[21825,16],[21905,6],[22237,6],[23222,16],[23581,6],[23933,15],[23953,7],[24159,6],[24694,6],[24851,15],[24967,6],[25443,6],[25939,8],[25973,6],[25991,11],[26553,6],[26759,8],[26814,6],[26981,6],[27123,7],[27150,6],[27270,8],[27572,7],[27608,6],[27831,6],[27946,6],[28188,6],[28221,7],[28416,8],[28612,15],[28730,18],[28774,18],[29119,6],[29132,7],[29207,8],[29423,11],[29562,7],[29702,15],[29726,7],[29782,7],[29886,9],[29962,6],[29900,2],[30048,4]]",
   "loc_mention_qids_json_plain": "[\"Q27468\",\"Q679\",\"Q15180\",\"Q33946\",\"Q36704\",\"Q11194\",\"Q27468\",\"Q437\",\"Q1435\",\"Q215\",\"Q224\",\"Q65362\",\"Q5867\",\"Q225\",\"Q189863\",\"Q93347\",\"Q225\",\"Q93347\",\"Q93347\",\"Q225\",\"Q189863\",\"Q11196\",\"Q11194\",\"Q225\",\"Q403\",\"Q236\",\"Q36704\",\"Q36704\",\"Q3711\",\"Q403\",\"Q36704\",\"Q236\",\"Q224\",\"Q215\",\"Q221\",\"Q225\",\"Q3711\",\"Q11194\",\"Q11194\",\"Q11194\",\"Q4686\",\"Q225\",\"Q224\",\"Q4686\",\"Q160381\",\"Q46\",\"Q403\",\"Q3711\",\"Q36704\",\"Q46\",\"Q746607\",\"Q224\",\"Q225\",\"Q225\",\"Q71\",\"Q189863\",\"Q11194\",\"Q36704\",\"Q215\",\"Q224\",\"Q215\",\"Q224\",\"Q36704\",\"Q746607\",\"Q746607\",\"Q225\",\"Q403\",\"Q159818\",\"Q1246\",\"Q225\",\"Q215\",\"Q224\",\"Q225\",\"Q1246\",\"Q103251\",\"Q1246\",\"Q221\",\"Q225\",\"Q36704\",\"Q3711\",\"Q224\",\"Q215\",\"Q225\",\"Q225\",\"Q1246\",\"Q221\",\"Q27468\",\"Q28\",\"Q36\",\"Q27468\",\"Q33946\",\"Q33946\",\"Q1085\",\"Q1780\",\"Q33946\",\"Q33946\",\"Q33946\",\"Q42585\",\"Q214\",\"Q214\",\"Q28\",\"Q1653\",\"Q28\",\"Q15180\",\"Q7779\",\"Q7779\",\"Q15180\",\"Q159\",\"Q649\",\"Q15180\",\"Q159\",\"Q27509\",\"Q36\",\"Q159\",\"Q159\",\"Q27509\",\"Q159\",\"Q159\",\"Q217\",\"Q33968\",\"Q863\",\"Q159\",\"Q15180\",\"Q159\",\"Q159\",\"Q5428\",\"Q159\",\"Q160381\",\"Q5428\",\"Q649\",\"Q159\",\"Q159\",\"Q159\",\"Q212\",\"Q217\",\"Q27509\",\"Q27496\",\"Q27496\",\"Q159\",\"Q212\",\"Q160381\",\"Q36704\",\"Q224\",\"Q33946\",\"Q36\",\"Q212\",\"Q183\",\"Q46\",\"Q183\",\"Q15180\"]",
   "loc_mention_surfaces_json_plain": "[\"Europe de l\",\"l' Ouest\",\"soviétique\",\"Tchécoslovaquie\",\"Yougoslavie\",\"Sarajevo\",\"Europe\",\"Ljubljana\",\"Zagreb\",\"Slovénie\",\"Croatie\",\"Slavonie orientale\",\"Vukovar\",\"Bosnie\",\"Herzégovine\",\"Mostar\",\"Bosnie\",\"Mostar\",\"Mostar\",\"Bosnie\",\"Herzégovine\",\"République serbe de Bosnie\",\"Sarajevo\",\"Bosnie\",\"Serbie\",\"Monténégro\",\"République fédérale de Yougoslavie\",\"Yougoslavie\",\"Belgrade\",\"Serbie\",\"Yougoslavie\",\"Monténégro\",\"Croatie\",\"Slovénie\",\"Macédoine\",\"Bosnie\",\"Belgrade\",\"Sarajevo\",\"Sarajevo\",\"Sarajevo\",\"Slavonski Brod\",\"Bosnie\",\"Croatie\",\"Slavonski Brod\",\"Occident\",\"Europe\",\"Serbes\",\"Belgrade\",\"nouvelle Yougoslavie\",\"Europe\",\"Grande Serbie\",\"Croatie\",\"Bosnie\",\"Bosnie\",\"Genève\",\"Herzégovine\",\"Sarajevo\",\"Yougoslavie\",\"Slovénie\",\"Croatie\",\"Slovénie\",\"Croatie\",\"Yougoslavie\",\"Grande Serbie\",\"Grande Serbie\",\"Bosnie\",\"Serbes\",\"ville de Travnik\",\"Kosovo\",\"Bosnie\",\"Slovénie\",\"Croatie\",\"Bosnie\",\"Kosovo\",\"Macédoine\",\"Kosovo\",\"Macédoine\",\"Bosnie\",\"Yougoslavie\",\"Belgrade\",\"Croatie\",\"Slovénie\",\"Bosnie\",\"Bosnie\",\"Kosovo\",\"Macédoine Vert\",\"Europe\",\"Hongrie\",\"Pologne\",\"Europe\",\"Tchécoslovaquie\",\"Tchécoslovaquie\",\"Prague\",\"Bratislava\",\"Tchécoslovaquie\",\"Tchécoslovaquie\",\"Tchécoslovaquie\",\"royaume de Bohème\",\"Slovaquie\",\"Slovaquie\",\"Hongrie\",\"Danube\",\"Hongrie\",\"Union soviétique\",\"Communauté des États indépendants\",\"CEI\",\"Union soviétique\",\"Russie\",\"Moscou\",\"Union soviétique\",\"Russie\",\"Europe centrale\",\"Pologne\",\"Russie\",\"Russie\",\"Europe centrale\",\"Russie\",\"Russie\",\"Moldavie\",\"Ossète\",\"Tadjikistan\",\"Russie\",\"ex- URSS\",\"Russie\",\"Russie\",\"Sibérie\",\"Russie\",\"Occident\",\"Sibérie\",\"Moscou\",\"Russie\",\"Russie\",\"Russie\",\"Ukraine\",\"Moldavie\",\"Europe centrale\",\"Europe occidentale\",\"Europe occidentale\",\"Russie\",\"Ukraine\",\"Occident\",\"Yougoslavie\",\"Croatie\",\"Tchécoslovaquie\",\"Pologne\",\"Ukraine\",\"Allemagne\",\"Europe\",\"ex\",\"URSS\"]",
-  "loc_title_aggregate_mention_ids_ss": [
-    "a1_u6sZLYJO9nzeOI06KZpqUw",
-    "a1_F6fq5a8lEHYKfh2q8yO8Ew"
-  ],
-  "loc_title_entity_ids_dpfs": [
-    "Q46|1",
-    "Q11194|1"
-  ],
-  "loc_title_mention_ner_conf_dpfs": [
-    "Europe|1.0",
-    "Sarajevo|0.9995"
-  ],
+  "loc_title_aggregate_mention_ids_ss": ["a1_u6sZLYJO9nzeOI06KZpqUw", "a1_F6fq5a8lEHYKfh2q8yO8Ew"],
+  "loc_title_entity_ids_dpfs": ["Q46|1", "Q11194|1"],
+  "loc_title_mention_ner_conf_dpfs": ["Europe|1.0", "Sarajevo|0.9995"],
   "loc_title_mention_offsets_json_plain": "[[2,6],[127,8]]",
   "loc_title_mention_qids_json_plain": "[\"Q46\",\"Q11194\"]",
   "loc_title_mention_surfaces_json_plain": "[\"Europe\",\"Sarajevo\"]",
@@ -293,14 +284,7 @@
   "meta_periodicity_s": "na",
   "meta_polorient_s": "na",
   "meta_province_code_s": "VD",
-  "meta_prv_geo_descriptors_ss": [
-    "Bosnie",
-    "Yougoslavie",
-    "Serbie",
-    "Monténégro",
-    "Tchôcoslovaquie",
-    "Russie"
-  ],
+  "meta_prv_geo_descriptors_ss": ["Bosnie", "Yougoslavie", "Serbie", "Monténégro", "Tchôcoslovaquie", "Russie"],
   "meta_prv_live_b": false,
   "meta_prv_participants_ss": [
     "Jacques Rupnik (Interviewé/e), spécialiste des pays de l'Est, auteur de \"Sarajevo à Sarajevo\"",
@@ -317,10 +301,7 @@
     "Philippe Kottelat (Présentateur/trice), collaborateur RSR"
   ],
   "meta_prv_production_type_s": "Production propre",
-  "meta_prv_thematic_descriptors_ss": [
-    "politique",
-    "vie politique"
-  ],
+  "meta_prv_thematic_descriptors_ss": ["politique", "vie politique"],
   "meta_radio_channel_s": "La Première",
   "meta_radio_program_s": "Forum",
   "meta_source_medium_s": "audio",
@@ -340,12 +321,7 @@
     "a1_gixV3xQm2o2bgA7w18_7kg",
     "a1_pRXYTD49KTJ44lmywKywdg"
   ],
-  "org_entity_ids_dpfs": [
-    "Q1065|3",
-    "Q260487|1",
-    "Q37230|1",
-    "Q13371|1"
-  ],
+  "org_entity_ids_dpfs": ["Q1065|3", "Q260487|1", "Q37230|1", "Q13371|1"],
   "org_mention_ner_conf_dpfs": [
     "ONU|1.0",
     "ONU|1.0",
@@ -444,36 +420,20 @@
   "pers_mention_offsets_json_plain": "[[61,24],[632,46],[795,15],[2474,30],[3730,15],[4736,16],[6061,5],[6313,7],[6760,13],[7607,8],[8537,15],[10397,14],[11660,14],[12517,18],[14434,9],[16927,30],[16965,35],[17252,30],[17687,12],[17815,15],[17657,8],[18190,14],[18460,12],[19965,15],[20665,41],[20811,6],[21660,19],[22245,17],[23124,14],[23758,7],[24001,23],[24170,7],[24569,14],[25031,7],[25270,8],[25540,7],[25724,14],[28750,14]]",
   "pers_mention_qids_json_plain": "[null,\"Q3159941\",\"Q3159941\",null,null,null,null,null,\"Q3371766\",\"Q116804\",null,\"Q3159941\",\"Q3159941\",null,null,\"Q57434\",null,null,\"Q57434\",\"Q316526\",null,\"Q3159941\",\"Q36233\",\"Q36233\",null,\"Q43669\",null,null,\"Q3159941\",null,null,\"Q34453\",\"Q3159941\",\"Q34453\",null,\"Q34453\",\"Q3159941\",\"Q3159941\"]",
   "pers_mention_surfaces_json_plain": "[\"Manuel Girardin Philippe\",\"Jacques Rupnik, spécialiste des pays de l' Est\",\"Jacques Rupnick\",\"collaboratrice Ariane Quentier\",\"Ariane Quentier\",\"Hervé Guéquières\",\"Queen\",\"Jeannot\",\"Paul Marchand\",\"Giacobbo\",\"Agnès Vahramian\",\"Jacques Rupnik\",\"Jacques Rupnik\",\"Monsieur Milosevic\",\"Milosevic\",\"dirigeant tchèque Vaclav Klaus\",\"homologue slovaque, Vladimir Béchir\",\"correspondant Pierre Perrichon\",\"Vaclav Klaus\",\"Vladimir Meciar\",\"slovaque\",\"Jacques Rupnik\",\"Vaclav Havel\",\"président Havel\",\"Premier Ministre slovaque Monsieur Medjar\",\"Thomas\",\"Mikhaïl Gorbatschow\",\"Patrick Chaboudez\",\"Jacques Rupnik\",\"Yeltsin\",\"Monsieur Jeffries Sachs\",\"Yeltsin\",\"Jacques Rupnik\",\"Yeltsin\",\"Ieltsine\",\"Eltsine\",\"Jacques Rupnik\",\"Jacques Rupnik\"]",
-  "pers_title_aggregate_mention_ids_ss": [
-    "a1_SRoXXtH5_NZQcq4Q1rC8Qg"
-  ],
-  "pers_title_entity_ids_dpfs": [
-    "Q3159941|1"
-  ],
-  "pers_title_mention_ner_conf_dpfs": [
-    "Jacques Rupnik, spécialiste des pays de l'Est|1.0"
-  ],
+  "pers_title_aggregate_mention_ids_ss": ["a1_SRoXXtH5_NZQcq4Q1rC8Qg"],
+  "pers_title_entity_ids_dpfs": ["Q3159941|1"],
+  "pers_title_mention_ner_conf_dpfs": ["Jacques Rupnik, spécialiste des pays de l'Est|1.0"],
   "pers_title_mention_offsets_json_plain": "[[58,45]]",
   "pers_title_mention_qids_json_plain": "[\"Q3159941\"]",
   "pers_title_mention_surfaces_json_plain": "[\"Jacques Rupnik, spécialiste des pays de l'Est\"]",
-  "record_id_ss": [
-    "forum-1992-12-29-a-r0001"
-  ],
-  "record_nb_is": [
-    1
-  ],
+  "record_id_ss": ["forum-1992-12-29-a-r0001"],
+  "record_nb_is": [1],
   "rights_bm_explore_l": 2,
   "rights_bm_get_img_l": 131072,
   "rights_bm_get_tr_l": 131072,
-  "rights_bm_index_explore_is": [
-    1
-  ],
-  "rights_bm_index_get_img_is": [
-    17
-  ],
-  "rights_bm_index_get_tr_is": [
-    17
-  ],
+  "rights_bm_index_explore_is": [1],
+  "rights_bm_index_get_img_is": [17],
+  "rights_bm_index_get_tr_is": [17],
   "rights_copyright_s": "in_cpy",
   "rights_data_domain_s": "prt",
   "rights_perm_use_explore_plain": "prs-rsh-edu",

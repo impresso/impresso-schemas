@@ -19,12 +19,9 @@
           "title": "Unavailable"
         }
       ]
-  },
+    },
     "nag_mentions": {
-      "type": [
-        "string",
-        "null"
-      ],
+      "type": ["string", "null"],
       "description": "List of mentions from news agencies."
     },
     "nag_offset_plain": {
@@ -35,101 +32,59 @@
       }
     },
     "nag_mention_conf_dpfs": {
-      "type": [
-        "string",
-        "null"
-      ],
+      "type": ["string", "null"],
       "description": "Confidence scores for news agency mentions."
     },
     "nag_entities_dpfs": {
-      "type": [
-        "string",
-        "null"
-      ],
+      "type": ["string", "null"],
       "description": "Entities of type news agency."
     },
     "pers_mentions": {
-      "type": [
-        "string",
-        "null"
-      ],
+      "type": ["string", "null"],
       "description": "List of detected person mention surface strings extracted from the content (may contain duplicates)."
     },
     "pers_mention_conf_dpfs": {
-      "type": [
-        "string",
-        "null"
-      ],
+      "type": ["string", "null"],
       "description": "List of person mention confidence annotations; each entry is typically a string combining mention and confidence in the pipeline format (for example: 'Mention text|95.2')."
     },
     "pers_entities_dpfs": {
-      "type": [
-        "string",
-        "null"
-      ],
+      "type": ["string", "null"],
       "description": "Serialized person entity annotations (for example qid/identifier or JSON fragment) produced by the entity recognition pipeline."
     },
     "pers_entities_conf_dpfs": {
-      "type": [
-        "string",
-        "null"
-      ],
+      "type": ["string", "null"],
       "description": "Confidence scores for person entities."
     },
     "loc_mentions": {
-      "type": [
-        "string",
-        "null"
-      ],
+      "type": ["string", "null"],
       "description": "List of detected location mention surface strings extracted from the content."
     },
     "loc_mention_conf_dpfs": {
-      "type": [
-        "string",
-        "null"
-      ],
+      "type": ["string", "null"],
       "description": "List of location mention confidence annotations; entries typically encode mention and confidence (e.g. 'Location|87.3')."
     },
     "loc_entities_dpfs": {
-      "type": [
-        "string",
-        "null"
-      ],
+      "type": ["string", "null"],
       "description": "Serialized location entity annotations (identifier or JSON) assigned to the detected location mentions."
     },
     "loc_entities_conf_dpfs": {
-      "type": [
-        "string",
-        "null"
-      ],
+      "type": ["string", "null"],
       "description": "Confidence scores for location entities."
     },
     "org_mentions": {
-      "type": [
-        "string",
-        "null"
-      ],
+      "type": ["string", "null"],
       "description": "List of detected organization mention surface strings extracted from the content."
     },
     "org_mention_conf_dpfs": {
-      "type": [
-        "string",
-        "null"
-      ],
+      "type": ["string", "null"],
       "description": "List of organization mention confidence annotations; strings typically combine mention and confidence (e.g. 'Org name|75.4')."
     },
     "org_entities_dpfs": {
-      "type": [
-        "string",
-        "null"
-      ],
+      "type": ["string", "null"],
       "description": "Serialized organization entity annotations (identifier or JSON) assigned to the detected organization mentions."
     },
     "org_entities_conf_dpfs": {
-      "type": [
-        "string",
-        "null"
-      ],
+      "type": ["string", "null"],
       "description": "Confidence scores for organization entities."
     },
     "nem_offset_plain": {
@@ -159,7 +114,5 @@
     }
   },
   "additionalProperties": true,
-  "required": [
-    "ocrqa_f"
-  ]
+  "required": ["ocrqa_f"]
 }

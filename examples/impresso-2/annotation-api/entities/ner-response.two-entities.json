@@ -7,10 +7,7 @@
       "surface": "Albert Einstein",
       "lOffset": 0,
       "rOffset": 15,
-      "index": [
-        0,
-        2
-      ],
+      "index": [0, 2],
       "confidence_ner": 0.9871,
       "entity_confidence": 0.9952,
       "type_confidence": 0.9918,
@@ -23,10 +20,7 @@
       "surface": "Berlin",
       "lOffset": 25,
       "rOffset": 31,
-      "index": [
-        4,
-        5
-      ],
+      "index": [4, 5],
       "confidence_ner": 0.9934,
       "entity_confidence": 0.9978,
       "type_confidence": 0.9956,

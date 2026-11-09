@@ -13,14 +13,8 @@
   "media_year": "SOC_CJ-1940",
   "meta_source_type_s": "radio_broadcast",
   "meta_source_medium_s": "typescript",
-  "page_id_ss": [
-    "SOC_CJ-1940-08-19-a-p0001",
-    "SOC_CJ-1940-08-19-a-p0002"
-  ],
-  "page_nb_is": [
-    1,
-    2
-  ],
+  "page_id_ss": ["SOC_CJ-1940-08-19-a-p0001", "SOC_CJ-1940-08-19-a-p0002"],
+  "page_nb_is": [1, 2],
   "nb_pages_i": 2,
   "reading_order_i": 1,
   "meta_radio_channel_s": "SOC (KWD)",

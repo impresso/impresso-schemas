@@ -24,7 +24,7 @@
           "title": "Unavailable"
         }
       ]
-  },
+    },
     "topics_dpfs": {
       "type": "string",
       "description": "Topics assigned to the content item."
@@ -45,7 +45,5 @@
     }
   },
   "additionalProperties": true,
-  "required": [
-    "ocrqa_f"
-  ]
+  "required": ["ocrqa_f"]
 }

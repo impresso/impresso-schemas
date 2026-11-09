@@ -21,9 +21,9 @@
       "items": { "type": "string" }
     },
     "suggest_payload_s": {
-    "type": "string",
-    "description": "Required importer-built Solr suggester payload containing the document id followed by a literal pipe and ner_predicted_type_s: a1_<digest>|type. The importer populates it for every aggregate document, including pressagency and radiostation."
-  },
+      "type": "string",
+      "description": "Required importer-built Solr suggester payload containing the document id followed by a literal pipe and ner_predicted_type_s: a1_<digest>|type. The importer populates it for every aggregate document, including pressagency and radiostation."
+    },
     "ner_predicted_type_s": {
       "type": "string",
       "enum": ["pers", "loc", "org", "pressagency", "radiostation"],
@@ -65,12 +65,6 @@
       "uniqueItems": true
     }
   },
-  "required": [
-    "id",
-    "surface_s",
-    "ner_predicted_type_s",
-    "occurrence_count_l",
-    "suggest_payload_s"
-  ],
+  "required": ["id", "surface_s", "ner_predicted_type_s", "occurrence_count_l", "suggest_payload_s"],
   "additionalProperties": false
 }
