@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/annotation-api/image-classification/image-classification-response.v1.schema.json",
+  "title": "Annotation API image classification response",
+  "description": "Response body of POST /api/image-classification/: the batch image-classification record plus `seconds`.",
+  "type": "object",
+  "properties": {
+    "ci_id": {
+      "type": "string",
+      "description": "The request `ci_id` or `id`, otherwise `auto-0`. Not necessarily an Impresso content-item id.",
+      "examples": ["auto-0"]
+    },
+    "ts": {
+      "$ref": "../../common/timestamp.v1.schema.json",
+      "description": "UTC time at which the response was produced, as YYYY-MM-DDTHH:MM:SSZ."
+    },
+    "model_id": {
+      "$ref": "../../common/model-id.v1.schema.json#/properties/model_id",
+      "description": "Identifier of the model that produced the response."
+    },
+    "level0_predictions": {
+      "$ref": "../../semantic-enrichment/image-classification/image-classification.v1.schema.json#/properties/level0_predictions",
+      "description": "Level 0 predictions, as in the batch image-classification record."
+    },
+    "level1_predictions": {
+      "$ref": "../../semantic-enrichment/image-classification/image-classification.v1.schema.json#/properties/level1_predictions",
+      "description": "Level 1 predictions, as in the batch image-classification record."
+    },
+    "level2_predictions": {
+      "$ref": "../../semantic-enrichment/image-classification/image-classification.v1.schema.json#/properties/level2_predictions",
+      "description": "Level 2 predictions, as in the batch image-classification record."
+    },
+    "level3_predictions": {
+      "$ref": "../../semantic-enrichment/image-classification/image-classification.v1.schema.json#/properties/level3_predictions",
+      "description": "Level 3 predictions, as in the batch image-classification record."
+    },
+    "seconds": {
+      "type": "number",
+      "description": "Processing time of the request, in seconds."
+    }
+  },
+  "required": [
+    "ci_id",
+    "ts",
+    "model_id",
+    "level0_predictions",
+    "level1_predictions",
+    "level2_predictions",
+    "level3_predictions",
+    "seconds"
+  ]
+}

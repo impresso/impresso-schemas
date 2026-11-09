@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/annotation-api/v2/embeddings/text-embedding-request.v1.schema.json",
+  "title": "Annotation API v2 text embedding request",
+  "description": "JSON body of POST /api/v2/embeddings/text/.",
+  "type": "object",
+  "properties": {
+    "model": {
+      "type": "string",
+      "enum": ["gte", "openclip", "siglip2"],
+      "description": "Embedding model. `gte` is a text-only model; `openclip` and `siglip2` embed text in the same space as their image embeddings."
+    },
+    "data": {
+      "type": "string",
+      "description": "Text to embed."
+    },
+    "normalize": {
+      "type": "boolean",
+      "default": true,
+      "description": "Return the L2-normalised embedding (true) or the raw model output (false). With `dimensions`, normalisation applies to the cut vector."
+    },
+    "dimensions": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 768,
+      "default": 768,
+      "description": "Number of leading dimensions to keep (Matryoshka cut). Only with `model` `gte`."
+    }
+  },
+  "required": ["model", "data"],
+  "if": {
+    "properties": {
+      "model": {
+        "not": {
+          "const": "gte"
+        }
+      }
+    },
+    "required": ["model"]
+  },
+  "then": {
+    "not": {
+      "required": ["dimensions"]
+    }
+  },
+  "examples": [
+    {
+      "model": "siglip2",
+      "data": "a photo of a steam locomotive"
+    },
+    {
+      "model": "gte",
+      "data": "This is a test sentence.",
+      "dimensions": 256,
+      "normalize": true
+    }
+  ]
+}

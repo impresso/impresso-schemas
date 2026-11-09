@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/annotation-api/v2/embeddings/image-embedding-request.v1.schema.json",
+  "title": "Annotation API v2 image embedding request",
+  "description": "JSON body of POST /api/v2/embeddings/image/. The endpoint also accepts a multipart form: the image in a `file` field, and `model`, `normalize` and `id` as form fields.",
+  "type": "object",
+  "properties": {
+    "model": {
+      "type": "string",
+      "enum": ["dinov2", "openclip", "siglip2"],
+      "description": "Embedding model. `openclip` and `siglip2` embed images in the same space as their text embeddings."
+    },
+    "bytes_b64": {
+      "type": "string",
+      "description": "Base64-encoded image file bytes."
+    },
+    "id": {
+      "type": "string",
+      "description": "Client identifier, echoed back as `id`."
+    },
+    "normalize": {
+      "type": "boolean",
+      "default": true,
+      "description": "Return the L2-normalised embedding (true) or the raw model output (false)."
+    }
+  },
+  "required": ["model", "bytes_b64"],
+  "examples": [
+    {
+      "model": "dinov2",
+      "bytes_b64": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4nGNgYGD4DwABBAEAwS2OUAAAAABJRU5ErkJggg==",
+      "id": "EXP-1937-03-19-a-i0012"
+    }
+  ]
+}

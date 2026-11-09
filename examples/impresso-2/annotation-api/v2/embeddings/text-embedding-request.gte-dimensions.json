@@ -1,0 +1,6 @@
+{
+  "model": "gte",
+  "data": "This is a test sentence.",
+  "dimensions": 256,
+  "normalize": true
+}

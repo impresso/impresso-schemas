@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/annotation-api/v2/embeddings/image-embedding-response.v1.schema.json",
+  "title": "Annotation API v2 image embedding response",
+  "description": "Response body of POST /api/v2/embeddings/image/. The server sends every key listed here.",
+  "type": "object",
+  "properties": {
+    "ts": {
+      "$ref": "../../../common/timestamp.v1.schema.json",
+      "description": "UTC time at which the response was produced, as YYYY-MM-DDTHH:MM:SSZ."
+    },
+    "id": {
+      "type": "string",
+      "description": "The request `id`, otherwise `auto-0`. Not necessarily an Impresso content-item id.",
+      "examples": ["auto-0", "EXP-1937-03-19-a-i0012"]
+    },
+    "model_id": {
+      "$ref": "../../../common/model-id.v1.schema.json#/properties/model_id",
+      "description": "Slug of the model that produced the embedding, the same `model_id` as the batch image-embeddings records. A new slug is issued whenever the model revision changes.",
+      "examples": ["emb-images_dinov2-v0.0.1", "emb-images_openclip-v0.0.1", "emb-siglip2-v0.0.1"]
+    },
+    "embedding": {
+      "type": "array",
+      "description": "Image embedding, rounded to 5 decimals.",
+      "items": {
+        "type": "number"
+      }
+    },
+    "size": {
+      "type": "integer",
+      "description": "Number of values in `embedding`."
+    },
+    "normalized": {
+      "type": "boolean",
+      "description": "Whether `embedding` is L2-normalised (the request's `normalize`)."
+    },
+    "seconds": {
+      "type": "number",
+      "description": "Processing time of the request, in seconds."
+    }
+  },
+  "required": ["ts", "id", "model_id", "embedding", "size", "normalized", "seconds"]
+}

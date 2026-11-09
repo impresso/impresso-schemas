@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/annotation-api/v2/entities/ner-entity.v1.schema.json",
+  "title": "Annotation API v2 NER entity",
+  "description": "One named entity mention returned in `nes` by /api/v2/entities/ner/. It is the entity of the batch NER records (`entities-ner.v1`): the same keys, values and rules. Offsets are absolute in the submitted text. Optional keys are left out when they have no value.",
+  "$ref": "../../../semantic-enrichment/entities/entities-ner.v1.schema.json#/$defs/namedEntityList/items"
+}

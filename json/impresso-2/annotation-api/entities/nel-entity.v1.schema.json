@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/annotation-api/entities/nel-entity.v1.schema.json",
+  "title": "Annotation API NEL entity",
+  "description": "One linked named entity mention returned in `nes` by the /api/nel/ and /api/ner-nel/ endpoints. Offsets are absolute in the submitted text. The keys are those of the previous TorchServe backend, frozen; the linking pipeline's own fields (`wkdata_qid`, `wkpedia_lg`, the Wikidata labels, the link-filter provenance) are served by the v2 entity routes. When the mention does not resolve to a Wikidata item (NIL link), `wkd_id` is null while the Wikipedia fields may still be set. The server sends every key listed here, with null when there is no value.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "Entity type. A coarse-grained Impresso-HIPE type (`pers`, `loc`, `org`, `time`, `prod`) for entities found by NER. It is an empty string when the type is unknown: in the NEL marker form, or when a /nel/ request entity has no type. /nel/ echoes the type sent by the client, so other values are possible. A link-validation rule may replace the NER type with the linked item's class.",
+      "examples": ["pers", "loc", "org", "time", "prod", ""]
+    },
+    "surface": {
+      "type": "string",
+      "description": "Surface form of the mention as it occurs in the submitted text."
+    },
+    "lOffset": {
+      "type": "integer",
+      "description": "Zero-based offset of the first character of the mention in the submitted text (inclusive). Frozen wire name."
+    },
+    "rOffset": {
+      "type": "integer",
+      "description": "Zero-based offset just after the last character of the mention in the submitted text (exclusive). Frozen wire name."
+    },
+    "scope": {
+      "type": ["string", "null"],
+      "description": "Part of the text the mention belongs to (`body`), or null."
+    },
+    "wkd_id": {
+      "type": ["string", "null"],
+      "description": "Wikidata QID of the linked entity, or null when the mention did not resolve or a validation rule removed the link. Named `wkdata_qid` in v2.",
+      "examples": ["Q64"]
+    },
+    "wkpedia_pagename": {
+      "type": ["string", "null"],
+      "description": "Wikipedia page name of the linked entity, or null.",
+      "examples": ["Berlin"]
+    },
+    "wkpedia_url": {
+      "type": ["string", "null"],
+      "description": "Wikipedia URL of `wkpedia_pagename`, or null. It is not URL-encoded and can contain spaces."
+    },
+    "confidence_ner": {
+      "anyOf": [
+        {
+          "$ref": "../../common/probability.v1.schema.json"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Overall NER confidence of the mention, or null when not available (the marker form, or a /nel/ request entity without one)."
+    },
+    "confidence_nel": {
+      "anyOf": [
+        {
+          "$ref": "../../common/probability.v1.schema.json"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Confidence of the link: the per-token likelihood of the predicted title, length-normalised. Null when not available. The previous TorchServe backend sent the raw sequence likelihood here."
+    },
+    "confidence_nel_normalized": {
+      "anyOf": [
+        {
+          "$ref": "../../common/probability.v1.schema.json"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Same value as `confidence_nel`."
+    },
+    "confidence_margin": {
+      "type": ["number", "null"],
+      "description": "Difference between the top-1 and top-2 beam-search scores, or null when only one candidate was computed."
+    },
+    "entity_confidence": {
+      "anyOf": [
+        {
+          "$ref": "../../common/probability.v1.schema.json"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Confidence that the span is an entity mention, independent of its type, or null when not computed. Named `confidence_ner_entity` in v2."
+    },
+    "type_confidence": {
+      "anyOf": [
+        {
+          "$ref": "../../common/probability.v1.schema.json"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Confidence in the predicted type, given that the span is a mention, or null when not computed. Named `confidence_ner_type` in v2."
+    },
+    "function": {
+      "type": ["string", "null"],
+      "description": "For a person mention, its `function` component (Impresso HIPE guidelines), otherwise null. The current NER model does not produce it."
+    },
+    "name": {
+      "type": ["string", "null"],
+      "description": "For a person mention, its `name` component (Impresso HIPE guidelines), otherwise null. The current NER model does not produce it."
+    },
+    "title": {
+      "type": ["string", "null"],
+      "description": "For a person mention, its `title` component (Impresso HIPE guidelines), otherwise null. The current NER model does not produce it."
+    },
+    "wkd_pred": {
+      "type": ["string", "null"],
+      "description": "Raw prediction of the linking model, as `title >> lang`.",
+      "deprecated": true,
+      "examples": ["Berlin >> de"]
+    }
+  },
+  "required": [
+    "type",
+    "surface",
+    "lOffset",
+    "rOffset",
+    "scope",
+    "wkd_id",
+    "wkpedia_pagename",
+    "wkpedia_url",
+    "confidence_ner",
+    "confidence_nel",
+    "confidence_nel_normalized",
+    "confidence_margin",
+    "entity_confidence",
+    "type_confidence",
+    "function",
+    "name",
+    "title"
+  ]
+}

@@ -92,6 +92,7 @@ imp2_groups = {
     'Semantic Enrichment': [],
     'Solr Indexing': [],
     'Common Schemas': [],
+    'Annotation API': [],
     'Web App': []
 }
 
@@ -136,6 +137,8 @@ for p in sorted(glob.glob('json/**/*.schema.json', recursive=True)):
             imp2_groups['Solr Indexing'].append(entry)
         elif area == 'common':
             imp2_groups['Common Schemas'].append(entry)
+        elif area == 'annotation-api':
+            imp2_groups['Annotation API'].append(entry)
         elif area == 'web-app':
             imp2_groups['Web App'].append(entry)
     else:

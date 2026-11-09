@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/annotation-api/v2/entities/nel-request.v1.schema.json",
+  "title": "Annotation API v2 NEL request",
+  "description": "Request body of POST /api/v2/entities/nel/. The same body as /api/nel/: the text and its entities, or the `[START] … [END]` marker form. The request entities may use the v1 or the v2 confidence names (`entity_confidence` or `confidence_ner_entity`, `type_confidence` or `confidence_ner_type`).",
+  "$ref": "../../entities/nel-request.v1.schema.json"
+}

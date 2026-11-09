@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/annotation-api/embeddings/text-embedder-request.v1.schema.json",
+  "title": "Annotation API text embedder request",
+  "description": "JSON body of POST /api/text-embedder/.",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "string",
+      "description": "Text to embed."
+    },
+    "vector_dimensions": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 768,
+      "description": "Number of leading dimensions to keep. Defaults to 768."
+    },
+    "model": {
+      "type": "string",
+      "enum": ["gte"],
+      "description": "Embedding model. Defaults to `gte`."
+    }
+  },
+  "required": ["data"]
+}

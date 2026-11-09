@@ -1,0 +1,8 @@
+{
+  "ts": "2026-10-15T10:00:00Z",
+  "ci_id": null,
+  "embedding": [0.1532, -0.2874, 0.0461, 0.3318],
+  "size": 768,
+  "model_id": "openclip",
+  "seconds": 0.2104
+}
