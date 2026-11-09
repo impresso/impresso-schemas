@@ -362,3 +362,9 @@ fragment:
 - Caveat: `confidence_ner_type` uses the 0–1 probability ref; the NER code computes it as a ratio that
   is at most 1 in theory, but a label/P(O) desync could exceed 1.
 
+## 2026-10-29 — Schema release procedure issue draft
+
+- Prepared a GitHub issue covering independent immutable contracts, develop/master promotion, tagged collection releases, canonical HTTPS publication, manifests, and offline Python/Node consumption.
+- Issue creation failed: GitHub connector returned HTTP 403 (resource not accessible by integration); local GitHub CLI reports an invalid token. No issue was created.
+- Saved the complete issue draft at /tmp/impresso-schema-release-issue.md for submission after authentication is restored. No schema or packaging changes; tests not applicable.
+

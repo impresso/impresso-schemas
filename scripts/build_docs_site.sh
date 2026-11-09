@@ -22,6 +22,10 @@ fi
 rm -rf "$SITE_DIR"
 mkdir -p "$SITE_DIR"
 
+# Copy raw JSON schemas to the site directory so that schema $id and $ref URLs
+# continue to resolve directly over HTTPS on GitHub Pages.
+cp -r json "$SITE_DIR/json"
+
 # Convert every generated Markdown file to HTML, preserving the docs/
 # directory structure, and rewrite intra-doc .md links to .html so they
 # resolve once served as static pages.
