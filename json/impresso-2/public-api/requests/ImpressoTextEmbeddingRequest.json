@@ -10,6 +10,11 @@
       "description": "Which embedding space the embedding is going to be used in",
       "enum": ["multimodal", "text"]
     },
+    "model": {
+      "type": "string",
+      "description": "Embedding model to use. Must be compatible with `searchTarget`: `multimodal` supports `openclip-768` (default) and `siglip2-768`; `text` supports only the text embedding model configured on the server (default). When not provided, the default model for the `searchTarget` is used.",
+      "enum": ["openclip-768", "siglip2-768", "gte-768", "gte-256"]
+    },
     "text": {
       "type": "string",
       "description": "Text to be embedded",

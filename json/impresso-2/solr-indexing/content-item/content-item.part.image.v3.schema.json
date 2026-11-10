@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://impresso.github.io/impresso-schemas/json/impresso-2/solr-indexing/content-item/content-item.part.image.v3.schema.json",
+  "title": "Image document fields (fragment)",
+  "description": "Solr fields describing an image content item and its placement in a newspaper issue. This fragment is composed with core, access-rights, and image semantic-enrichment fields in the complete image Solr document.",
+  "type": "object",
+  "properties": {
+    "linked_ci_s": {
+      "type": "string",
+      "title": "Linked Content Item ID",
+      "description": "Identifier of the related content item (CI), as identified by the OLR process."
+    },
+    "reading_order_i": {
+      "type": "integer",
+      "title": "Reading order",
+      "description": "Reading order position of the content item within the issue.",
+      "minimum": 1
+    },
+    "page_nb_is": {
+      "type": "array",
+      "title": "Page numbers",
+      "description": "Page numbers on which the content item appears.",
+      "items": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "minItems": 1
+    },
+    "front_b": {
+      "type": "boolean",
+      "title": "Appears on front page",
+      "description": "Indicates whether the content item appears on the front page of the issue."
+    },
+    "cc_b": {
+      "type": "boolean",
+      "title": "Converted Coordinates (legacy)",
+      "description": "Whether the content item has reliable coordinate information"
+    },
+    "caption_txt": {
+      "type": "string",
+      "minLength": 1,
+      "title": "Image caption",
+      "description": "Original caption associated with the image."
+    },
+    "item_type_s": {
+      "type": "string",
+      "title": "Item type",
+      "description": "Type of content item.",
+      "const": "image"
+    },
+    "coords_is": {
+      "type": "array",
+      "title": "Image coordinates",
+      "description": "Bounding box of the image on the page, expressed as [x, y, width, height] in pixel coordinates.",
+      "prefixItems": [
+        {
+          "type": "integer",
+          "title": "X"
+        },
+        {
+          "type": "integer",
+          "title": "Y"
+        },
+        {
+          "type": "integer",
+          "title": "Width"
+        },
+        {
+          "type": "integer",
+          "title": "Height"
+        }
+      ],
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "iiif_url_s": {
+      "type": "string",
+      "title": "IIIF image URL",
+      "description": "IIIF Image API URL for the image.",
+      "format": "uri"
+    },
+    "page_id_ss": {
+      "type": "array",
+      "title": "Page identifiers",
+      "description": "Identifiers of the pages on which the content item appears.",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "lg_orig_s": {
+      "type": "string",
+      "description": "Original language of the content item."
+    }
+  },
+  "required": [
+    "reading_order_i",
+    "page_nb_is",
+    "front_b",
+    "cc_b",
+    "item_type_s",
+    "coords_is",
+    "iiif_url_s",
+    "page_id_ss"
+  ],
+  "patternProperties": {
+    "^caption_txt_[a-z]{2}$": {
+      "type": "string",
+      "minLength": 1,
+      "title": "Image caption, language-analysed",
+      "description": "Original caption, in the field for the language of the caption."
+    }
+  }
+}

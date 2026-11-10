@@ -114,6 +114,7 @@
     "wkd_pred": {
       "type": ["string", "null"],
       "description": "Raw prediction of the linking model, as `title >> lang`.",
+      "deprecated": true,
       "examples": ["Berlin >> de"]
     }
   },
@@ -134,7 +135,6 @@
     "type_confidence",
     "function",
     "name",
-    "title",
-    "wkd_pred"
+    "title"
   ]
 }
