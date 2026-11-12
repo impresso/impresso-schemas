@@ -5,6 +5,14 @@
   "title": "Content Item Mention",
   "additionalProperties": false,
   "properties": {
+    "id": {
+      "type": "string",
+      "description": "The unique identifier of the entity mention"
+    },
+    "entityId": {
+      "type": "string",
+      "description": "The unique identifier of the entity"
+    },
     "surfaceForm": {
       "type": "string",
       "description": "The surface form (label) of the entity mention"
